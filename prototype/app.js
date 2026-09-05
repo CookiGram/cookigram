@@ -1470,8 +1470,9 @@ function setupViewToggle() {
   el.toggleViewBtn.addEventListener("click", () => {
     state.isMobileView = !state.isMobileView;
     el.mobileFrame.classList.toggle("full-width", !state.isMobileView);
-    el.toggleViewBtn.querySelector(".label").textContent = state.isMobileView ? "Mobile" : "Plein Écran";
-    el.toggleViewBtn.querySelector(".icon").textContent = state.isMobileView ? "📱" : "💻";
+    el.toggleViewBtn.title = state.isMobileView ? "Afficher en plein écran" : "Afficher en mode mobile";
+    el.toggleViewBtn.querySelector(".label").textContent = state.isMobileView ? "Plein écran" : "Mobile";
+    el.toggleViewBtn.querySelector(".icon").textContent = state.isMobileView ? "💻" : "📱";
     saveState();
   });
 }
