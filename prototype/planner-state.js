@@ -26,6 +26,12 @@ export function removeMeal(weekPlan, dayIndex, period) {
   setMeal(weekPlan, dayIndex, period, null);
 }
 
+export function getCurrentDinner(weekPlan) {
+  const today = weekPlan.find(day => day?.isToday) ?? weekPlan[0];
+  const dinner = today?.dinner;
+  return dinner && typeof dinner === "object" && dinner.type ? dinner : null;
+}
+
 export function moveMeal(weekPlan, fromDayIndex, fromPeriod, toDayIndex, toPeriod) {
   assertSlot(weekPlan, fromDayIndex, fromPeriod);
   assertSlot(weekPlan, toDayIndex, toPeriod);

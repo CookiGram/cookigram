@@ -1,10 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal, toShoppingPlannerInput } from "./planner-state.js";
+import { getCurrentDinner, moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal, toShoppingPlannerInput } from "./planner-state.js";
 
 function week() {
   return [0, 1].map(dayIndex => ({
     dateStr: `2026-09-0${dayIndex + 1}`,
+    isToday: dayIndex === 0,
     lunch: null,
     dinner: dayIndex === 0 ? recipeMeal("soupe", 3) : null
   }));
@@ -33,6 +34,20 @@ test("supprime un repas sans modifier les autres créneaux", () => {
   removeMeal(plan, 0, "dinner");
   assert.equal(plan[0].dinner, null);
   assert.equal(plan[1].dinner, null);
+  assert.equal(getCurrentDinner(plan), null);
+});
+
+test("traite un dîner courant vide comme un créneau non planifié", () => {
+  const plan = week();
+  plan[0].dinner = {};
+  assert.equal(getCurrentDinner(plan), null);
+});
+
+test("le dîner courant reste rendable après déplacement vers un créneau vide", () => {
+  const plan = week();
+  moveMeal(plan, 0, "dinner", 1, "dinner");
+  assert.equal(getCurrentDinner(plan), null);
+  assert.equal(plan[1].dinner.recipeId, "soupe");
 });
 
 test("expose une structure minimale pour Shopping Planner", () => {

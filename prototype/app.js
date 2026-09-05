@@ -3,7 +3,7 @@
  * Nutrition Plaisir & Santé (80/20) + Vie Réelle + Semaine Dynamique Glissante + Persistance LocalStorage
  */
 
-import { moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal } from "./planner-state.js";
+import { getCurrentDinner, moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal } from "./planner-state.js";
 
 const STORAGE_KEY = "cookigram:meal-plan:v3";
 
@@ -899,9 +899,9 @@ function renderStep2() {
 function renderHeroCard() {
   const today = state.weekPlan.find(d => d.isToday) || state.weekPlan[0];
   const todayIndex = state.weekPlan.indexOf(today);
-  const dinnerSlot = today.dinner;
+  const dinnerSlot = getCurrentDinner(state.weekPlan);
 
-  if (dinnerSlot.type === "recipe") {
+  if (dinnerSlot?.type === "recipe") {
     const recipe = RECIPES[dinnerSlot.recipeId] || RECIPES["colin-alaska-tomate-estragon"];
     const isShort = state.shortEveningActive && recipe.shortEveningAlternative;
 
@@ -998,20 +998,26 @@ function renderHeroCard() {
     });
 
   } else {
-    // Hero when eating out or leftovers
-    const title = dinnerSlot.customTitle || "Repas libre";
-    const badgeLabel = dinnerSlot.type === "eating_out" ? "🍽️ Sortie Restaurant / Cantine" : (dinnerSlot.type === "leftovers" ? "🍱 Finir les restes" : "✍️ Recette libre");
+    // Hero when the dinner is empty, eating out, or leftovers
+    const isEmpty = !dinnerSlot;
+    const title = dinnerSlot?.customTitle || (isEmpty ? "Aucun dîner planifié" : "Repas libre");
+    const badgeLabel = isEmpty
+      ? "🗓️ Créneau vide"
+      : dinnerSlot.type === "eating_out" ? "🍽️ Sortie Restaurant / Cantine" : (dinnerSlot.type === "leftovers" ? "🍱 Finir les restes" : "✍️ Recette libre");
+    const description = isEmpty
+      ? "Ce créneau est libre. Choisissez une recette quand vous serez prêt à cuisiner."
+      : dinnerSlot.type === "eating_out" ? "Soirée libre à l'extérieur : aucun temps de préparation ni vaisselle à faire !" : "Réchauffage express : vous valorisez les restes déjà cuisinés.";
 
     el.heroTodayCard.innerHTML = `
       <div class="hero-card">
         <div class="hero-top-badge-row">
-          <span class="badge ${dinnerSlot.type}">${badgeLabel}</span>
+          <span class="badge ${isEmpty ? "" : dinnerSlot.type}">${badgeLabel}</span>
           <span class="hero-freshness-pill">0 course nécessaire</span>
         </div>
 
         <h1 class="hero-title">${title}</h1>
         <p class="subtitle" style="margin-bottom: 16px;">
-          ${dinnerSlot.type === "eating_out" ? "Soirée libre à l'extérieur : aucun temps de préparation ni vaisselle à faire !" : "Réchauffage express : vous valorisez les restes déjà cuisinés."}
+          ${description}
         </p>
 
         <div class="hero-buttons-row">
