@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CookiGram — Ma Semaine (Meal Planning 80/20 & Vie Réelle)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Device Frame Wrapper for Desktop / Presentation -->
+  <div class="app-layout">
+    <!-- Top Bar Controls -->
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo-emoji">🍳</span>
+        <div class="brand-text">
+          <span class="brand-name">CookiGram</span>
+          <span class="brand-badge">Kitchen OS • Prototype v3</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-reset-plan" class="pill-btn secondary" title="Réinitialiser pour une nouvelle semaine">
+          <span class="icon">🔄</span>
+          <span class="label">Nouveau cycle</span>
+        </button>
+        <button id="toggle-view-btn" class="pill-btn secondary" title="Basculer la taille de vue">
+          <span class="icon">📱</span>
+          <span class="label">Mobile</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Mobile Container -->
+    <main class="mobile-frame" id="mobile-frame">
+      <!-- Step Navigation Tabs -->
+      <nav class="step-nav" aria-label="Étapes de planification">
+        <button class="step-tab active" data-step="1">
+          <span class="step-num">1</span>
+          <span class="step-name">Kiffs & Départ</span>
+        </button>
+        <button class="step-tab" data-step="2">
+          <span class="step-num">2</span>
+          <span class="step-name">Ma Semaine</span>
+        </button>
+        <button class="step-tab" data-step="3">
+          <span class="step-num">3</span>
+          <span class="step-name">30 Plantes & Courses</span>
+        </button>
+      </nav>
+
+      <!-- VIEW 1: Les Kiffs d'Abord & Jour des courses -->
+      <section id="view-step-1" class="step-view active">
+        <div class="view-intro">
+          <div class="intro-badge">Règle d'or PDR-0010</div>
+          <h2>Les Kiffs & Vos Courses</h2>
+          <p class="subtitle">Votre semaine démarre quand vous faites vos courses. Choisissez votre jour d'approvisionnement et 1 ou 2 recettes de pur plaisir !</p>
+        </div>
+
+        <!-- Dynamic Shopping / Start Day Selector -->
+        <div class="shopping-day-banner">
+          <div class="banner-icon">🛒</div>
+          <div class="banner-content">
+            <label for="select-start-day" class="banner-label">Jour des courses (démarrage du planning) :</label>
+            <select id="select-start-day" class="banner-select">
+              <!-- Dynamically populated with real dates -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Kitchen Equipment Selector (PDR-0004 & Profil matériel) -->
+        <div class="equipment-banner">
+          <div class="equipment-header">
+            <div class="equipment-title">🍳 Mon équipement en cuisine</div>
+            <div class="equipment-hint">Seules les recettes compatibles avec votre matériel seront suggérées</div>
+          </div>
+          <div class="equipment-chips" id="equipment-chips">
+            <button type="button" class="equip-chip active locked" data-equip="stovetop" title="Plaques, casseroles et poêles (Indispensable)">
+              <span class="equip-icon">🍳</span>
+              <span>Plaques & Poêles</span>
+            </button>
+            <button type="button" class="equip-chip active" data-equip="oven" title="Four traditionnel">
+              <span class="equip-icon">🥧</span>
+              <span>Four</span>
+            </button>
+            <button type="button" class="equip-chip" data-equip="thermomix" title="Robot cuiseur multifonction (Thermomix, Magimix, etc.)">
+              <span class="equip-icon">🤖</span>
+              <span>Thermomix</span>
+            </button>
+            <button type="button" class="equip-chip" data-equip="sous_vide" title="Thermoplongeur sous-vide (Anova, etc.)">
+              <span class="equip-icon">💧</span>
+              <span>Sous-vide</span>
+            </button>
+            <button type="button" class="equip-chip" data-equip="pressure_cooker" title="Cocotte minute / Autocuiseur">
+              <span class="equip-icon">⚡</span>
+              <span>Cocotte minute</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="kiff-selection-status">
+          <div class="status-counter">
+            <span class="count-highlight" id="selected-kiffs-count">1</span> kiff(s) sélectionné(s)
+          </div>
+          <div class="status-hint">💡 Conseil 80/20 : 1 ou 2 moments festifs pour allier plaisir et forme sans contrainte</div>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all">Tous</button>
+          <button class="chip" data-filter="mijoté">Mijotés & Convivial</button>
+          <button class="chip" data-filter="monde">Épices & Monde</button>
+          <button class="chip" data-filter="douceur">Douceurs</button>
+        </div>
+
+        <!-- Cards List -->
+        <div class="kiff-cards-grid" id="kiff-cards-container">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Bottom Action Bar -->
+        <div class="bottom-action-bar">
+          <button id="btn-generate-week" class="btn primary full-width">
+            <span>Générer ma semaine 80/20</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- VIEW 2: Ma Semaine 80/20 & Vie Réelle -->
+      <section id="view-step-2" class="step-view">
+        <div class="view-intro">
+          <div class="intro-badge vitality">Semaine Glissante • 7 Jours</div>
+          <h2 id="week-title-heading">Ma Semaine Intelligente</h2>
+          <p class="subtitle" id="week-subtitle-range">Du samedi 5 au vendredi 11 septembre. Fraîcheur ordonnancée depuis vos courses.</p>
+        </div>
+
+        <!-- HERO CARD: Repas Actif / Aujourd'hui (Lisible à 1 mètre) -->
+        <section class="hero-today-section" id="hero-today-card">
+          <!-- Dynamically populated -->
+        </section>
+
+        <!-- Batch Prep Tip Banner -->
+        <div class="batch-prep-card">
+          <div class="batch-header">
+            <span class="batch-icon">💡</span>
+            <span class="batch-title">Batch Prep & Restes (45 min le jour des courses)</span>
+            <button class="toggle-details-btn" id="toggle-batch-prep">Voir</button>
+          </div>
+          <div class="batch-content" id="batch-prep-content" style="display: none;">
+            <p>Rincer les herbes au torchon, cuire les légumineuses et pré-portionner les légumes. <strong>Vous gagnez 15 minutes chaque soir et vos lunchboxes du midi sont prêtes !</strong></p>
+            <ul class="batch-list">
+              <li>✅ Légumes et herbes fragiles lavés et stockés au sec</li>
+              <li>✅ 1 base de céréales ou légumineuses cuite d'avance</li>
+              <li>✅ Poisson frais priorisé pour les 48h après achat</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week Day-by-Day Timeline (Midi & Soir) -->
+        <div class="week-timeline-header">
+          <div>
+            <h3>Les 7 Jours (Midi & Soir)</h3>
+            <span class="timeline-hint">Cliquez sur un créneau pour modifier, déclarer un resto ou finir des restes</span>
+          </div>
+        </div>
+
+        <div class="week-cards-list" id="week-days-container">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Bottom Action Bar -->
+        <div class="bottom-action-bar flex-row">
+          <button class="btn secondary" id="btn-back-to-kiffs">← Kiffs</button>
+          <button class="btn primary flex-grow" id="btn-go-to-basket">
+            <span>30 Plantes & Courses</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- VIEW 3: Jardin des 30 Plantes & Liste de Courses -->
+      <section id="view-step-3" class="step-view">
+        <div class="view-intro">
+          <div class="intro-badge garden">Microbiote & Diversité</div>
+          <h2>Le Jardin des 30 Plantes</h2>
+          <p class="subtitle">La diversité végétale renforce votre microbiote. Seuls les repas cuisinés chez vous sont comptabilisés.</p>
+        </div>
+
+        <!-- Summary of week balance -->
+        <div class="week-stats-callout" id="week-stats-callout">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Garden Visual Dashboard -->
+        <div class="garden-card">
+          <div class="garden-summary">
+            <div class="garden-gauge">
+              <span class="gauge-value" id="garden-count">24</span>
+              <span class="gauge-target">/ 30</span>
+            </div>
+            <div class="garden-text">
+              <h4>Plantes uniques cuisinées</h4>
+              <p class="garden-cheer" id="garden-cheer-msg">🎉 Superbe diversité ! Votre microbiote vous remercie.</p>
+            </div>
+          </div>
+
+          <!-- 80/20 Ratio Indicator -->
+          <div class="ratio-bar-wrapper">
+            <div class="ratio-labels">
+              <span class="ratio-vitality" id="ratio-vitality-label">🍃 80% Vitalité & Équilibre</span>
+              <span class="ratio-pleasure" id="ratio-pleasure-label">✨ 20% Kiff & Plaisir</span>
+            </div>
+            <div class="ratio-bar">
+              <div class="ratio-fill-vitality" id="ratio-vitality-bar" style="width: 80%;"></div>
+              <div class="ratio-fill-pleasure" id="ratio-pleasure-bar" style="width: 20%;"></div>
+            </div>
+            <div class="ratio-advice-text" id="ratio-advice-msg" style="font-size: 13px; color: #57534e; margin-top: 8px; font-weight: 500; line-height: 1.4;">
+              💡 <strong>Conseil 80/20 :</strong> Équilibre idéal atteint cette semaine.
+            </div>
+          </div>
+
+          <!-- Plant Badges Grid -->
+          <div class="garden-grid" id="garden-plants-grid">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- SHOPPING LIST SECTION -->
+        <div class="shopping-section">
+          <div class="shopping-header">
+            <h3>Panier Consolidé de la Semaine</h3>
+            <span class="shopping-badge">Sauvegardé & interactif</span>
+          </div>
+          <p class="shopping-intro">Vos cases cochées restent sauvegardées dans votre téléphone en rayon. <strong>Les repas au restaurant ou sur les restes ne génèrent aucun achat superflu !</strong></p>
+
+          <div class="shopping-aisles-container" id="shopping-aisles-container">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Export Actions -->
+          <div class="shopping-actions">
+            <button class="btn primary full-width" id="btn-copy-shopping">
+              <span class="icon">📋</span>
+              <span>Copier la liste pour Notes / WhatsApp</span>
+            </button>
+            <button class="btn secondary full-width mt-sm" id="btn-regenerate-menu">
+              <span class="icon">🔄</span>
+              <span>Régénérer une autre proposition de semaine</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Action Bar -->
+        <div class="bottom-action-bar">
+          <button class="btn secondary full-width" id="btn-back-to-week">
+            <span>← Revenir au planning de la semaine</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- RICH SLOT EDIT MODAL (Recette CookiGram / Dehors / Restes / Recette Libre) -->
+      <div class="modal-overlay" id="swap-modal" style="display: none;">
+        <div class="modal-sheet">
+          <div class="modal-header">
+            <h3 id="modal-slot-title">Personnaliser ce repas</h3>
+            <button class="modal-close-btn" id="btn-close-modal">✕</button>
+          </div>
+          <p class="modal-subtitle" id="modal-slot-sub">Choisissez une recette CookiGram ou déclarez un repas de la vraie vie.</p>
+
+          <div class="slot-management-box">
+            <label for="meal-portions">Personnes / portions (si recette)</label>
+            <input id="meal-portions" type="number" min="1" step="1" value="2" inputmode="numeric">
+            <label for="modal-move-target">Déplacer ce créneau vers</label>
+            <select id="modal-move-target"></select>
+            <button class="btn-small" id="btn-move-meal" type="button">Déplacer</button>
+            <button class="btn-small danger" id="btn-delete-meal" type="button">Supprimer le repas</button>
+          </div>
+
+          <!-- Quick Life Actions (Dehors, Restes, Libre) -->
+          <div class="modal-quick-actions">
+            <button class="quick-action-btn eating-out" id="modal-btn-eating-out">
+              <span class="btn-icon">🍽️</span>
+              <span class="btn-title">Manger dehors</span>
+              <span class="btn-sub">Resto / Cantine (0 course)</span>
+            </button>
+            <button class="quick-action-btn leftovers" id="modal-btn-leftovers">
+              <span class="btn-icon">🍱</span>
+              <span class="btn-title">Finir les restes</span>
+              <span class="btn-sub">Zéro gaspi (lunchbox)</span>
+            </button>
+          </div>
+
+          <!-- Custom Free Recipe Accordion / Box -->
+          <div class="custom-recipe-box">
+            <div class="custom-input-label">✍️ Ou une recette libre / hors catalogue :</div>
+            <div class="custom-input-row">
+              <input type="text" id="custom-recipe-input" placeholder="Ex: Salade composée, Omelette..." class="custom-text-input">
+              <button class="btn-small primary" id="btn-apply-custom-recipe">Valider</button>
+            </div>
+          </div>
+
+          <!-- Section: Choisir une recette CookiGram -->
+          <div class="modal-catalog-section">
+            <div class="catalog-section-title">📖 Ou choisir une recette CookiGram :</div>
+            <div class="modal-recipes-list" id="modal-recipes-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOAST NOTIFICATION -->
+      <div class="toast" id="toast-notification"></div>
+    </main>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
