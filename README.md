@@ -10,6 +10,16 @@
 🌐 **Site publié :** [pierrecsn.github.io/cookigram](https://pierrecsn.github.io/cookigram/)<br>
 🇬🇧 **English:** [README.en.md](README.en.md) · 🤝 **Contribuer :** [CONTRIBUTING.md](CONTRIBUTING.md)
 
+## Prototype expérimental
+
+🧪 **[Meal Planner — prototype V3 / Kitchen OS](https://cookigram-meal-planner-prototype.comitari-8167.chatgpt.site)**
+
+Ce prototype publié sert à explorer l’expérience du futur meal planner, à
+valider des parcours UX et à recueillir des retours. Il est expérimental,
+indépendant du site de production et ne constitue pas une fonctionnalité
+déployée de CookiGram. Les retours et bugs peuvent être signalés via les
+[issues de ce dépôt](https://github.com/PierreCsn/cookigram/issues).
+
 ## Ce dépôt
 
 `PierreCsn/cookigram` est le dépôt public de contenu de CookiGram. Il rassemble :
