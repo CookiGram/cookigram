@@ -5,7 +5,18 @@
     "max_heartbeat_age_minutes": 15,
     "require_approved_label": "potential-dev-work"
   },
-  "active_claims": {},
+  "active_claims": {
+    "160": {
+      "issue": 160,
+      "title": "[PROTOTYPE][MEAL PLANNER] Reprendre et faire évoluer le prototype de planification des repas",
+      "agent": "Dev-#160-Meal-Planner",
+      "workspace": "/home/pierrecsn/Work/cookigram",
+      "branch": "feat/issue-160-meal-planner-prototype",
+      "claimed_at": "2026-09-05T22:15:03+02:00",
+      "last_heartbeat": "2026-09-05T22:15:03+02:00",
+      "status": "in_progress"
+    }
+  },
   "completed_claims": [
     {
       "pr": 157,
