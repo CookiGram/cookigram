@@ -1,0 +1,28 @@
+complete_recipe:
+  title: Plat complet fixture
+  meal:
+    completeness: complete
+
+unknown_recipe:
+  title: Recette historique sans qualification
+
+invalid:
+  needs_main:
+    meal:
+      completeness: partial
+      role: main
+      needs: [main]
+  duplicate_needs:
+    meal:
+      completeness: partial
+      role: main
+      needs: [starch, starch]
+  overlapping_relations:
+    meal:
+      completeness: partial
+      role: main
+      needs: [starch]
+      benefits_from: [starch]
+  component_without_role:
+    meal:
+      completeness: component
