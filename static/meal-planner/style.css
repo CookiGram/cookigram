@@ -399,6 +399,7 @@ h2 {
   border: 1px solid var(--border-default);
   background: var(--btn-bg);
   color: var(--text-main);
+  min-height: 44px;
 }
 
 /* STEP 2: Week Overview & Hero Card */
@@ -1072,8 +1073,8 @@ h2 {
 }
 
 .shopping-checkbox {
-  width: 20px;
-  height: 20px;
+  width: 44px;
+  height: 44px;
   accent-color: var(--brand-orange);
   cursor: pointer;
 }
@@ -1554,6 +1555,7 @@ h2 {
   outline: none;
   cursor: pointer;
   width: 100%;
+  min-height: 44px;
 }
 
 .shopping-day-banner .banner-select:focus {
@@ -1632,6 +1634,30 @@ h2 {
   background: #f0fdf4;
   border-color: #86efac;
   color: #166534;
+}
+
+[data-theme="dark"] .planner-main .hero-metrics-bar,
+[data-theme="dark"] .planner-main .meal-slot-row,
+[data-theme="dark"] .planner-main .short-evening-toggle-box,
+[data-theme="dark"] .planner-main .short-mode-explanation,
+[data-theme="dark"] .planner-main .badge.eating-out,
+[data-theme="dark"] .planner-main .badge.leftovers,
+[data-theme="dark"] .planner-main .badge.free,
+[data-theme="dark"] .planner-main .equip-chip.active,
+[data-theme="dark"] .planner-main .equip-chip.locked,
+[data-theme="dark"] .planner-main .week-stats-callout {
+  background: var(--cream);
+  color: var(--text-main);
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .planner-main .slot-period-tag,
+[data-theme="dark"] .planner-main .short-evening-title,
+[data-theme="dark"] .planner-main .short-evening-sub,
+[data-theme="dark"] .planner-main .short-mode-explanation,
+[data-theme="dark"] .planner-main .equip-chip.active,
+[data-theme="dark"] .planner-main .equip-chip.locked {
+  color: var(--text-main);
 }
 
 .equip-warning-badge {
