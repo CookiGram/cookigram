@@ -24,7 +24,7 @@ import yaml
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 VERSION_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 CONTRACT_REPO = "https://github.com/PierreCsn/cookigram-contract.git"
-CORE_REPO = "git@github.com:PierreCsn/cookigram-core.git"
+CORE_REPO = "git@github.com:CookiGram/cookigram-core.git"
 WORKFLOWS = (Path(".github/workflows/ci.yml"), Path(".github/workflows/pages.yml"))
 
 
@@ -104,7 +104,7 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
         except OSError:
             text = ""
         core_job = workflow.get("jobs", {}).get("private-integration" if relative.name == "ci.yml" else "build", {})
-        checkout = next((step for step in core_job.get("steps", []) if isinstance(step, dict) and step.get("uses") == "actions/checkout@v4" and step.get("with", {}).get("repository") == "PierreCsn/cookigram-core"), None)
+        checkout = next((step for step in core_job.get("steps", []) if isinstance(step, dict) and step.get("uses") == "actions/checkout@v4" and step.get("with", {}).get("repository") == "CookiGram/cookigram-core"), None)
         if not isinstance(checkout, dict) or checkout.get("with", {}).get("ref") != "${{ steps.core-ref.outputs.sha }}":
             findings.append(Finding("core-pin-not-used", "error", f"{relative} ne checkout pas Core avec la sortie du pin local."))
         if "cat .core-version" not in text:
