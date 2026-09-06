@@ -772,6 +772,9 @@ function renderKiffList(filterCategory) {
 
     const card = document.createElement("div");
     card.className = `kiff-card ${isSelected ? "selected" : ""} ${hasMissing ? "incompatible-equip" : ""}`;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-pressed", String(isSelected));
+    card.tabIndex = 0;
 
     const currentSlot = state.selectedKiffSlots[recipe.id] || { dayIndex: 5, period: "dinner" };
     const slotValue = `${currentSlot.dayIndex}-${currentSlot.period}`;
@@ -816,6 +819,13 @@ function renderKiffList(filterCategory) {
         showToast(`⚠️ Attention : cette recette nécessite "${names}". Activez ce matériel en haut si vous le possédez.`);
       }
       toggleKiffSelection(recipe.id);
+    });
+    card.addEventListener("keydown", event => {
+      if (event.target !== card) return;
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        card.click();
+      }
     });
 
     el.kiffCardsContainer.appendChild(card);
@@ -1095,6 +1105,7 @@ function renderWeekTimeline() {
       const isExpanded = body.style.display !== "none";
       body.style.display = isExpanded ? "none" : "block";
       card.classList.toggle("expanded", !isExpanded);
+      header.setAttribute("aria-expanded", String(!isExpanded));
     });
     header.addEventListener("keydown", event => {
       if (event.key === "Enter" || event.key === " ") {
