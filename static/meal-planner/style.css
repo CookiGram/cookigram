@@ -1,4 +1,4 @@
-/* CookiGram Kitchen OS — Prototype Ma Semaine (Meal Planning 80/20) */
+/* CookiGram — Meal Planner Beta */
 
 :root {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -39,7 +39,6 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.08);
-  --shadow-device: 0 25px 50px -12px rgba(40, 30, 20, 0.25);
 }
 
 * {
@@ -58,9 +57,10 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* App Layout & Desktop Wrap */
+/* Product shell */
 .app-layout {
   width: 100%;
   display: flex;
@@ -70,13 +70,15 @@ body {
 
 .app-header {
   width: 100%;
-  max-width: 480px;
+  max-width: 1120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 18px;
-  background-color: #292524;
-  color: #fafaf9;
+  gap: 20px;
+  padding: 16px 24px;
+  background-color: var(--bg-screen);
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .brand {
@@ -102,10 +104,41 @@ body {
 
 .brand-badge {
   font-size: 11px;
-  color: #fb923c;
+  color: var(--brand-orange);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.product-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.product-nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.product-nav-link:hover,
+.product-nav-link.active {
+  color: var(--brand-orange);
+  background: var(--brand-orange-light);
+}
+
+.beta-badge {
+  font-size: 10px;
+  color: var(--brand-orange);
+  border: 1px solid var(--brand-orange);
+  border-radius: var(--radius-pill);
+  padding: 2px 6px;
+  margin-left: 4px;
 }
 
 .pill-btn {
@@ -127,22 +160,16 @@ body {
   background: #57534e;
 }
 
-/* Mobile Frame (Default 390px mobile simulator, toggleable) */
-.mobile-frame {
+/* Responsive planner surface */
+.planner-main {
   width: 100%;
-  max-width: 420px;
+  max-width: 1120px;
   min-height: 100vh;
   background-color: var(--bg-screen);
-  box-shadow: var(--shadow-device);
   position: relative;
   display: flex;
   flex-direction: column;
   padding-bottom: 90px; /* space for fixed action bar */
-  transition: max-width 0.3s ease;
-}
-
-.mobile-frame.full-width {
-  max-width: 768px;
 }
 
 /* Step Navigation Tabs */
@@ -1183,9 +1210,51 @@ h2 {
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.mobile-frame.full-width ~ .bottom-action-bar,
 .full-width-bar {
-  max-width: 768px;
+  max-width: 1120px;
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .product-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 8px;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+  .pill-btn {
+    padding: 6px 9px;
+  }
+
+  .step-view {
+    padding: 14px;
+  }
+
+  .kiff-selection-status {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .status-hint {
+    max-width: none;
+    text-align: left;
+  }
 }
 
 /* Modal Sheet */

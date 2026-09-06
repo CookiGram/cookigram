@@ -1,5 +1,5 @@
 /**
- * CookiGram Kitchen OS — Prototype « Ma Semaine » v3
+ * CookiGram — Meal Planner Beta
  * Nutrition Plaisir & Santé (80/20) + Vie Réelle + Semaine Dynamique Glissante + Persistance LocalStorage
  */
 
@@ -436,7 +436,6 @@ function createDefaultState(startDate = new Date()) {
     },
     shortEveningActive: false,
     activeSlotEditing: null,
-    isMobileView: true,
     checkedShoppingItems: [],
     weekPlan: weekPlan
   };
@@ -533,8 +532,6 @@ const el = {
   btnMoveMeal: document.getElementById("btn-move-meal"),
 
   btnResetPlan: document.getElementById("btn-reset-plan"),
-  toggleViewBtn: document.getElementById("toggle-view-btn"),
-  mobileFrame: document.getElementById("mobile-frame"),
   toast: document.getElementById("toast-notification")
 };
 
@@ -547,7 +544,6 @@ function init() {
   renderKiffList("all");
   renderStep2();
   renderStep3();
-  setupViewToggle();
 
   // Hash routing
   function checkHash() {
@@ -1462,18 +1458,6 @@ function handleCopyShoppingList() {
     showToast("📋 Liste copiée dans le presse-papier !");
   }).catch(() => {
     showToast("Erreur lors de la copie");
-  });
-}
-
-// VIEWPORT TOGGLE
-function setupViewToggle() {
-  el.toggleViewBtn.addEventListener("click", () => {
-    state.isMobileView = !state.isMobileView;
-    el.mobileFrame.classList.toggle("full-width", !state.isMobileView);
-    el.toggleViewBtn.title = state.isMobileView ? "Afficher en plein écran" : "Afficher en mode mobile";
-    el.toggleViewBtn.querySelector(".label").textContent = state.isMobileView ? "Plein écran" : "Mobile";
-    el.toggleViewBtn.querySelector(".icon").textContent = state.isMobileView ? "💻" : "📱";
-    saveState();
   });
 }
 
