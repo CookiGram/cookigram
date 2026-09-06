@@ -987,7 +987,28 @@ h2 {
   align-items: center;
   gap: 4px;
   cursor: pointer;
+  min-height: 44px;
   transition: all 0.15s ease;
+}
+
+.modal-recipe-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.modal-recipe-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.equipment-warning-inline {
+  color: var(--accent-text);
+  background: var(--balanced-bg);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .plant-tag.highlighted {

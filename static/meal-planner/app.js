@@ -1161,13 +1161,13 @@ window.openSlotModal = function(dayIndex, period) {
     let warningTag = "";
     if (hasMissing) {
       const missingNames = missingEquip.map(e => EQUIPMENT_LABELS[e] || e).join(", ");
-      warningTag = `<span style="font-size: 11px; color: #b45309; background: #fef3c7; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-weight: 700;">⚠️ ${missingNames} requis</span>`;
+      warningTag = `<span class="equipment-warning-inline">⚠️ ${missingNames} requis</span>`;
     }
 
     item.innerHTML = `
       <div>
-        <div style="font-weight: 700; font-size: 15px;">${recipe.title} ${warningTag}</div>
-        <div style="font-size: 12px; color: #57534e;">⏱️ ${recipe.timeTotal} • ${recipe.appliance} • ${recipe.dishes}</div>
+        <div class="modal-recipe-title">${recipe.title} ${warningTag}</div>
+        <div class="modal-recipe-meta">⏱️ ${recipe.timeTotal} • ${recipe.appliance} • ${recipe.dishes}</div>
       </div>
       <span class="badge ${recipe.profile}">${recipe.profile === "pleasure" ? "Plaisir" : "Vitalité"}</span>
     `;
@@ -1273,12 +1273,20 @@ function renderMicrobiomeGarden() {
   Array.from(plantSet).sort().forEach(plant => {
     const tag = document.createElement("div");
     tag.className = "plant-tag";
+    tag.setAttribute("role", "button");
+    tag.tabIndex = 0;
     tag.innerHTML = `<span>🌿</span> <span>${plant}</span>`;
     tag.title = `Présent dans : ${plantToRecipeMap[plant].join(", ")}`;
 
     tag.addEventListener("click", () => {
       tag.classList.toggle("highlighted");
       showToast(`${plant} : présent dans ${plantToRecipeMap[plant].join(" & ")}`);
+    });
+    tag.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        tag.click();
+      }
     });
 
     el.gardenPlantsGrid.appendChild(tag);
