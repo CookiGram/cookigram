@@ -1,17 +1,15 @@
-/* CookiGram — Meal Planner Beta */
+/* CookiGram — Meal Planner Beta. The document shell and global tokens come from Core. */
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-
-  --bg-app: #f4efe6;
-  --bg-screen: #faf7f2;
-  --bg-card: #ffffff;
-  --bg-elevated: #ffffff;
-
-  --text-main: #1c1917;
-  --text-muted: #57534e;
-  --text-light: #78716c;
+  --bg-app: var(--paper);
+  --bg-screen: var(--paper);
+  --bg-card: var(--card);
+  --bg-elevated: var(--card);
+  --text-main: var(--ink);
+  --text-muted: var(--muted);
+  --text-light: var(--muted);
+  --brand-orange: var(--orange);
+  --brand-orange-light: var(--banner-bg);
 
   --vitality-color: #059669;
   --vitality-bg: #ecfdf5;
@@ -25,126 +23,23 @@
   --pleasure-bg: #fff1f2;
   --pleasure-border: #fecdd3;
 
-  --brand-orange: #ea580c;
-  --brand-orange-light: #ffedd5;
-
-  --border-subtle: #e7e5e4;
-  --border-default: #d6d3d1;
-
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-pill: 9999px;
-
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --border-subtle: var(--line);
+  --border-default: var(--line);
+  --radius-pill: var(--radius-full);
+  --shadow-sm: 0 1px 2px #40352618;
+  --shadow-md: var(--shadow);
+  --shadow-lg: var(--shadow);
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--bg-app);
-  color: var(--text-main);
-  line-height: 1.5;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* Product shell */
-.app-layout {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.app-header {
-  width: 100%;
-  max-width: 1120px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 16px 24px;
-  background-color: var(--bg-screen);
-  color: var(--text-main);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-emoji {
-  font-size: 24px;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-name {
-  font-weight: 800;
-  font-size: 17px;
-  letter-spacing: -0.02em;
-}
-
-.brand-badge {
-  font-size: 11px;
-  color: var(--brand-orange);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.product-nav {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: auto;
-}
-
-.product-nav-link {
-  color: var(--text-muted);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: var(--radius-pill);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.product-nav-link:hover,
-.product-nav-link.active {
-  color: var(--brand-orange);
-  background: var(--brand-orange-light);
-}
-
-.beta-badge {
-  font-size: 10px;
-  color: var(--brand-orange);
-  border: 1px solid var(--brand-orange);
-  border-radius: var(--radius-pill);
-  padding: 2px 6px;
-  margin-left: 4px;
-}
-
 .pill-btn {
-  background: #44403c;
-  color: #f5f5f4;
-  border: 1px solid #57534e;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--muted);
   padding: 6px 12px;
   border-radius: var(--radius-pill);
   font-size: 13px;
@@ -153,29 +48,46 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  min-height: 44px;
   transition: all 0.2s ease;
 }
 
 .pill-btn:hover {
-  background: #57534e;
+  background: var(--muted);
 }
 
 /* Responsive planner surface */
 .planner-main {
   width: 100%;
   max-width: 1120px;
-  min-height: 100vh;
+  margin-inline: auto;
   background-color: var(--bg-screen);
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-bottom: 90px; /* space for fixed action bar */
+  padding: 0 24px 90px;
+}
+
+.planner-page-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 0 0;
+}
+
+[data-theme="dark"] {
+  --vitality-bg: #17382c;
+  --vitality-border: #2c7657;
+  --balanced-bg: #3a2d14;
+  --balanced-border: #80621e;
+  --pleasure-bg: #3b1b28;
+  --pleasure-border: #8d3450;
 }
 
 /* Step Navigation Tabs */
 .step-nav {
   display: flex;
-  background: #ffffff;
+  overflow-x: auto;
+  background: var(--card);
   border-bottom: 1px solid var(--border-subtle);
   position: sticky;
   top: 0;
@@ -183,7 +95,7 @@ body {
 }
 
 .step-tab {
-  flex: 1;
+  flex: 1 0 112px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,7 +113,7 @@ body {
 .step-tab .step-num {
   font-size: 11px;
   font-weight: 700;
-  background: #e7e5e4;
+  background: var(--line);
   color: var(--text-muted);
   width: 20px;
   height: 20px;
@@ -215,7 +127,9 @@ body {
 .step-tab .step-name {
   font-size: 12px;
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .step-tab.active {
@@ -225,7 +139,7 @@ body {
 
 .step-tab.active .step-num {
   background: var(--brand-orange);
-  color: #ffffff;
+  color: var(--paper);
 }
 
 /* Step Views */
@@ -268,8 +182,8 @@ body {
 }
 
 .intro-badge.garden {
-  background: #e0f2fe;
-  color: #0369a1;
+  background: var(--cream);
+  color: var(--green);
 }
 
 h2 {
@@ -289,7 +203,7 @@ h2 {
 
 /* Step 1: Kiff Selection */
 .kiff-selection-status {
-  background: #ffffff;
+  background: var(--card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 12px 16px;
@@ -337,18 +251,18 @@ h2 {
   padding: 7px 14px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-default);
-  background: #ffffff;
+  background: var(--card);
   font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
   white-space: nowrap;
   cursor: pointer;
-  min-height: 38px;
+  min-height: 44px;
 }
 
 .chip.active {
   background: var(--text-main);
-  color: #ffffff;
+  color: var(--paper);
   border-color: var(--text-main);
 }
 
@@ -359,7 +273,7 @@ h2 {
 }
 
 .kiff-card {
-  background: #ffffff;
+  background: var(--card);
   border: 2px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 14px;
@@ -377,7 +291,7 @@ h2 {
 
 .kiff-card.selected {
   border-color: var(--pleasure-color);
-  background-color: #fff9fa;
+  background-color: var(--pleasure-bg);
   box-shadow: 0 4px 12px rgba(225, 29, 72, 0.12);
 }
 
@@ -406,13 +320,13 @@ h2 {
   flex-shrink: 0;
   font-size: 14px;
   color: transparent;
-  background: #ffffff;
+  background: var(--card);
 }
 
 .kiff-card.selected .kiff-select-indicator {
   background: var(--pleasure-color);
   border-color: var(--pleasure-color);
-  color: #ffffff;
+  color: var(--paper);
 }
 
 .kiff-card-desc {
@@ -457,9 +371,9 @@ h2 {
 }
 
 .badge.freshness {
-  background: #f0fdf4;
-  color: #166534;
-  border: 1px solid #bbf7d0;
+  background: var(--vitality-bg);
+  color: var(--vitality-color);
+  border: 1px solid var(--vitality-border);
 }
 
 .kiff-day-picker {
@@ -483,8 +397,9 @@ h2 {
   font-weight: 700;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-default);
-  background: #ffffff;
+  background: var(--btn-bg);
   color: var(--text-main);
+  min-height: 44px;
 }
 
 /* STEP 2: Week Overview & Hero Card */
@@ -493,7 +408,7 @@ h2 {
 }
 
 .hero-card {
-  background: #ffffff;
+  background: var(--card);
   border: 2px solid var(--border-default);
   border-radius: var(--radius-lg);
   padding: 20px 18px;
@@ -509,7 +424,7 @@ h2 {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, var(--vitality-color), #10b981);
+  background: linear-gradient(90deg, var(--vitality-color), var(--vitality-color));
 }
 
 .hero-top-badge-row {
@@ -530,8 +445,8 @@ h2 {
 .hero-freshness-pill {
   font-size: 12px;
   font-weight: 700;
-  background: #e0f2fe;
-  color: #0369a1;
+  background: var(--cream);
+  color: var(--green);
   padding: 3px 10px;
   border-radius: var(--radius-pill);
 }
@@ -549,7 +464,7 @@ h2 {
 .hero-metrics-bar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: #f8fafc;
+  background: var(--cream);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 10px 8px;
@@ -578,8 +493,8 @@ h2 {
 
 /* Mode Soirée Courte (< 20 min) Banner */
 .short-evening-toggle-box {
-  background: #fffbeb;
-  border: 1.5px solid #fde68a;
+  background: var(--balanced-bg);
+  border: 1.5px solid var(--balanced-border);
   border-radius: var(--radius-md);
   padding: 12px 14px;
   margin-bottom: 16px;
@@ -591,8 +506,8 @@ h2 {
 }
 
 .short-evening-toggle-box.active {
-  background: #fef3c7;
-  border-color: #f59e0b;
+  background: var(--balanced-bg);
+  border-color: var(--balanced-color);
   box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
 }
 
@@ -605,7 +520,7 @@ h2 {
 .short-evening-title {
   font-size: 14px;
   font-weight: 800;
-  color: #92400e;
+  color: var(--accent-text);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -613,14 +528,14 @@ h2 {
 
 .short-evening-sub {
   font-size: 12px;
-  color: #78350f;
+  color: var(--accent-text);
   line-height: 1.3;
 }
 
 .switch-pill {
   width: 46px;
   height: 26px;
-  background: #d1d5db;
+  background: var(--line);
   border-radius: 13px;
   position: relative;
   transition: background 0.2s;
@@ -634,14 +549,14 @@ h2 {
   left: 3px;
   width: 20px;
   height: 20px;
-  background: #ffffff;
+  background: var(--card);
   border-radius: 50%;
   transition: transform 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .short-evening-toggle-box.active .switch-pill {
-  background: #f59e0b;
+  background: var(--balanced-color);
 }
 
 .short-evening-toggle-box.active .switch-pill::after {
@@ -650,14 +565,14 @@ h2 {
 
 /* Short evening active alert description */
 .short-mode-explanation {
-  background: #fef3c7;
+  background: var(--balanced-bg);
   border-radius: var(--radius-sm);
   padding: 10px 12px;
   font-size: 13px;
-  color: #92400e;
+  color: var(--accent-text);
   line-height: 1.4;
   margin-bottom: 16px;
-  border-left: 4px solid #f59e0b;
+  border-left: 4px solid var(--balanced-color);
 }
 
 /* Hero Action Buttons (Touch targets >= 44px) */
@@ -684,21 +599,21 @@ h2 {
 
 .btn.primary {
   background-color: var(--brand-orange);
-  color: #ffffff;
+  color: var(--paper);
 }
 
 .btn.primary:hover {
-  background-color: #c2410c;
+  background-color: var(--orange);
 }
 
 .btn.secondary {
-  background-color: #ffffff;
+  background-color: var(--btn-bg);
   color: var(--text-main);
   border: 1.5px solid var(--border-default);
 }
 
 .btn.secondary:hover {
-  background-color: #f5f5f4;
+  background-color: var(--cream);
 }
 
 .btn.full-width {
@@ -720,7 +635,7 @@ h2 {
 
 /* Batch Prep Banner */
 .batch-prep-card {
-  background: #ffffff;
+  background: var(--card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 12px 16px;
@@ -754,6 +669,7 @@ h2 {
   font-weight: 700;
   cursor: pointer;
   padding: 4px 8px;
+  min-height: 44px;
 }
 
 .batch-content {
@@ -797,7 +713,7 @@ h2 {
 }
 
 .day-card {
-  background: #ffffff;
+  background: var(--card);
   border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -826,7 +742,7 @@ h2 {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #f5f5f4;
+  background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -838,7 +754,7 @@ h2 {
 
 .day-card.active-day .day-index-circle {
   background: var(--brand-orange);
-  color: #ffffff;
+  color: var(--paper);
 }
 
 .day-title-block {
@@ -884,8 +800,8 @@ h2 {
 
 .day-card-body {
   padding: 0 14px 14px 14px;
-  border-top: 1px solid #f5f5f4;
-  background: #fafaf9;
+  border-top: 1px solid var(--line);
+  background: var(--cream);
 }
 
 .slot-management-box {
@@ -895,7 +811,7 @@ h2 {
   align-items: center;
   padding: 12px;
   margin: 12px 0 16px;
-  background: #fafaf9;
+  background: var(--cream);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   font-size: 12px;
@@ -904,10 +820,10 @@ h2 {
 
 .slot-management-box input,
 .slot-management-box select {
-  min-height: 36px;
+  min-height: 44px;
   border: 1px solid var(--border-default);
   border-radius: var(--radius-sm);
-  background: #fff;
+  background: var(--btn-bg);
   padding: 6px 8px;
   font: inherit;
   color: var(--text-main);
@@ -915,7 +831,7 @@ h2 {
 
 .slot-management-box input { width: 64px; }
 .slot-management-box select { min-width: 0; }
-.btn-small.danger { color: #b91c1c; border-color: #fecaca; }
+.btn-small.danger { color: var(--pleasure-color); border-color: var(--pleasure-border); }
 
 .day-card-details {
   display: flex;
@@ -933,8 +849,8 @@ h2 {
 .day-mutualized-note {
   font-size: 12px;
   font-weight: 600;
-  color: #15803d;
-  background: #f0fdf4;
+  color: var(--vitality-color);
+  background: var(--vitality-bg);
   padding: 4px 8px;
   border-radius: var(--radius-sm);
   display: inline-block;
@@ -951,16 +867,16 @@ h2 {
   font-size: 12px;
   font-weight: 700;
   padding: 6px 12px;
-  min-height: 36px;
+  min-height: 44px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-default);
-  background: #ffffff;
+  background: var(--card);
   cursor: pointer;
 }
 
 /* STEP 3: 30 Plantes & Courses */
 .garden-card {
-  background: #ffffff;
+  background: var(--card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 18px;
@@ -976,7 +892,7 @@ h2 {
 }
 
 .garden-gauge {
-  background: #ecfdf5;
+  background: var(--vitality-bg);
   border: 3px solid var(--vitality-color);
   width: 72px;
   height: 72px;
@@ -998,7 +914,7 @@ h2 {
 .gauge-target {
   font-size: 11px;
   font-weight: 700;
-  color: #065f46;
+  color: var(--vitality-color);
 }
 
 .garden-text h4 {
@@ -1036,19 +952,19 @@ h2 {
 
 .ratio-bar {
   height: 12px;
-  background: #e7e5e4;
+  background: var(--line);
   border-radius: var(--radius-pill);
   display: flex;
   overflow: hidden;
 }
 
 .ratio-fill-vitality {
-  background: linear-gradient(90deg, #10b981, #059669);
+  background: linear-gradient(90deg, var(--vitality-color), var(--vitality-color));
   height: 100%;
 }
 
 .ratio-fill-pleasure {
-  background: linear-gradient(90deg, #f43f5e, #e11d48);
+  background: linear-gradient(90deg, var(--pleasure-color), var(--pleasure-color));
   height: 100%;
 }
 
@@ -1060,7 +976,7 @@ h2 {
 }
 
 .plant-tag {
-  background: #f5f5f4;
+  background: var(--cream);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-pill);
   padding: 4px 10px;
@@ -1071,19 +987,40 @@ h2 {
   align-items: center;
   gap: 4px;
   cursor: pointer;
+  min-height: 44px;
   transition: all 0.15s ease;
 }
 
+.modal-recipe-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.modal-recipe-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.equipment-warning-inline {
+  color: var(--accent-text);
+  background: var(--balanced-bg);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
 .plant-tag.highlighted {
-  background: #dcfce7;
-  border-color: #86efac;
-  color: #14532d;
+  background: var(--vitality-bg);
+  border-color: var(--vitality-border);
+  color: var(--vitality-color);
   font-weight: 700;
 }
 
 /* Shopping Section */
 .shopping-section {
-  background: #ffffff;
+  background: var(--card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 18px;
@@ -1105,8 +1042,8 @@ h2 {
 .shopping-badge {
   font-size: 11px;
   font-weight: 700;
-  background: #f3e8ff;
-  color: #7e22ce;
+  background: var(--cream);
+  color: var(--green);
   padding: 3px 8px;
   border-radius: var(--radius-pill);
 }
@@ -1120,7 +1057,7 @@ h2 {
 
 .aisle-block {
   margin-bottom: 16px;
-  border-bottom: 1px solid #f5f5f4;
+  border-bottom: 1px solid var(--line);
   padding-bottom: 12px;
 }
 
@@ -1157,8 +1094,8 @@ h2 {
 }
 
 .shopping-checkbox {
-  width: 20px;
-  height: 20px;
+  width: 44px;
+  height: 44px;
   accent-color: var(--brand-orange);
   cursor: pointer;
 }
@@ -1188,8 +1125,8 @@ h2 {
 .item-shared-badge {
   font-size: 10px;
   font-weight: 700;
-  background: #dcfce7;
-  color: #166534;
+  background: var(--vitality-bg);
+  color: var(--vitality-color);
   padding: 2px 6px;
   border-radius: var(--radius-pill);
 }
@@ -1201,8 +1138,8 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 420px;
-  background: rgba(255, 255, 255, 0.96);
+  max-width: 1120px;
+  background: var(--card);
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-subtle);
   padding: 12px 16px;
@@ -1215,26 +1152,9 @@ h2 {
 }
 
 @media (max-width: 600px) {
-  .app-header {
-    flex-wrap: wrap;
-    padding: 12px 16px;
-  }
-
-  .brand {
-    min-width: 0;
-  }
-
-  .product-nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    margin-left: 0;
-    border-top: 1px solid var(--border-subtle);
-    padding-top: 8px;
-  }
-
-  .header-actions {
-    margin-left: auto;
+  .planner-main {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .pill-btn {
@@ -1272,7 +1192,7 @@ h2 {
 }
 
 .modal-sheet {
-  background: #ffffff;
+  background: var(--card);
   width: 100%;
   max-width: 480px;
   border-radius: 20px 20px 0 0;
@@ -1295,10 +1215,10 @@ h2 {
 }
 
 .modal-close-btn {
-  background: #f5f5f4;
+  background: var(--cream);
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   font-size: 16px;
   cursor: pointer;
@@ -1330,7 +1250,7 @@ h2 {
 }
 
 .modal-recipe-item:hover {
-  background: #fafaf9;
+  background: var(--cream);
   border-color: var(--brand-orange);
 }
 
@@ -1340,8 +1260,8 @@ h2 {
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%) translateY(30px);
-  background: #1c1917;
-  color: #fafaf9;
+  background: var(--ink);
+  color: var(--cream);
   font-size: 14px;
   font-weight: 600;
   padding: 10px 20px;
@@ -1371,16 +1291,17 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f8fafc;
+  background: var(--cream);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 8px 12px;
+  min-height: 44px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .meal-slot-row:hover {
-  background: #f1f5f9;
+  background: var(--cream);
   border-color: var(--brand-orange);
 }
 
@@ -1395,8 +1316,8 @@ h2 {
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #64748b;
-  background: #e2e8f0;
+  color: var(--muted);
+  background: var(--cream);
   padding: 2px 6px;
   border-radius: 4px;
   letter-spacing: 0.05em;
@@ -1421,21 +1342,21 @@ h2 {
 
 /* Slot Type Badges */
 .badge.eating-out {
-  background: #f3e8ff;
-  color: #7e22ce;
-  border: 1px solid #d8b4fe;
+  background: var(--cream);
+  color: var(--green);
+  border: 1px solid var(--pleasure-border);
 }
 
 .badge.leftovers {
-  background: #ecfeff;
-  color: #0e7490;
-  border: 1px solid #a5f3fc;
+  background: var(--cream);
+  color: var(--green);
+  border: 1px solid var(--vitality-border);
 }
 
 .badge.free {
-  background: #fef3c7;
-  color: #b45309;
-  border: 1px solid #fde68a;
+  background: var(--balanced-bg);
+  color: var(--accent-text);
+  border: 1px solid var(--balanced-border);
 }
 
 /* Modal Quick Actions */
@@ -1447,7 +1368,7 @@ h2 {
 }
 
 .quick-action-btn {
-  background: #ffffff;
+  background: var(--card);
   border: 1.5px solid var(--border-default);
   border-radius: var(--radius-md);
   padding: 12px 10px;
@@ -1467,13 +1388,13 @@ h2 {
 }
 
 .quick-action-btn.eating-out {
-  border-color: #d8b4fe;
-  background: #faf5ff;
+  border-color: var(--pleasure-border);
+  background: var(--cream);
 }
 
 .quick-action-btn.leftovers {
-  border-color: #a5f3fc;
-  background: #f0fdfa;
+  border-color: var(--vitality-border);
+  background: var(--cream);
 }
 
 .quick-action-btn .btn-icon {
@@ -1495,8 +1416,8 @@ h2 {
 
 /* Custom Recipe Box */
 .custom-recipe-box {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
+  background: var(--balanced-bg);
+  border: 1px solid var(--balanced-border);
   border-radius: var(--radius-md);
   padding: 12px 14px;
   margin-bottom: 16px;
@@ -1505,7 +1426,7 @@ h2 {
 .custom-input-label {
   font-size: 12px;
   font-weight: 700;
-  color: #92400e;
+  color: var(--accent-text);
   margin-bottom: 6px;
 }
 
@@ -1519,7 +1440,7 @@ h2 {
   padding: 8px 12px;
   font-family: var(--font-sans);
   font-size: 13px;
-  border: 1px solid #d97706;
+  border: 1px solid var(--balanced-color);
   border-radius: var(--radius-sm);
   outline: none;
 }
@@ -1529,11 +1450,52 @@ h2 {
 }
 
 .btn-small.primary {
-  background: #d97706;
-  color: #ffffff;
+  background: var(--balanced-color);
+  color: var(--paper);
   border: none;
   font-weight: 700;
   padding: 0 14px;
+  min-height: 44px;
+}
+
+/* Planner states keep their meaning while following the Core theme surface. */
+[data-theme="dark"] .custom-recipe-box {
+  background: #352a16;
+  border-color: #80621e;
+}
+
+[data-theme="dark"] .kiff-card.selected,
+[data-theme="dark"] .day-card-body,
+[data-theme="dark"] .quick-action-btn.eating-out,
+[data-theme="dark"] .quick-action-btn.leftovers {
+  background: var(--cream);
+}
+
+[data-theme="dark"] .garden-gauge,
+[data-theme="dark"] .day-mutualized-note,
+[data-theme="dark"] .plant-tag.highlighted,
+[data-theme="dark"] .item-shared-badge {
+  background: var(--vitality-bg);
+  color: #a7f3d0;
+}
+
+[data-theme="dark"] .shopping-badge {
+  background: #312044;
+  color: var(--pleasure-border);
+}
+
+[data-theme="dark"] .custom-input-label {
+  color: #f5d58a;
+}
+
+[data-theme="dark"] .custom-text-input {
+  background: var(--btn-bg);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .item-shared-badge {
+  background: #173b2b;
+  color: #a7f3d0;
 }
 
 /* Catalog Section */
@@ -1548,7 +1510,7 @@ h2 {
 
 /* Week Stats Callout */
 .week-stats-callout {
-  background: #ffffff;
+  background: var(--card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 12px 16px;
@@ -1565,7 +1527,7 @@ h2 {
 
 /* Dynamic Shopping / Start Day Banner */
 .shopping-day-banner {
-  background: #ffffff;
+  background: var(--card);
   border: 1.5px solid var(--border-default);
   border-radius: var(--radius-md);
   padding: 12px 14px;
@@ -1608,13 +1570,14 @@ h2 {
   font-size: 14px;
   font-weight: 700;
   color: var(--text-main);
-  background: #fafaf9;
+  background: var(--cream);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-sm);
   padding: 6px 10px;
   outline: none;
   cursor: pointer;
   width: 100%;
+  min-height: 44px;
 }
 
 .shopping-day-banner .banner-select:focus {
@@ -1623,7 +1586,7 @@ h2 {
 
 /* Kitchen Equipment Banner & Filter */
 .equipment-banner {
-  background: #ffffff;
+  background: var(--card);
   border: 1.5px solid var(--border-default);
   border-radius: var(--radius-md);
   padding: 12px 14px;
@@ -1667,31 +1630,68 @@ h2 {
   padding: 6px 11px;
   border-radius: var(--radius-full);
   border: 1.5px solid var(--border-default);
-  background: #fafaf9;
+  background: var(--cream);
   color: var(--text-muted);
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
+  min-height: 44px;
   transition: all 0.2s ease;
   user-select: none;
 }
 
 .equip-chip:hover {
-  border-color: #d6d3d1;
+  border-color: var(--line);
 }
 
 .equip-chip.active {
-  background: #ecfdf5;
-  border-color: #10b981;
-  color: #047857;
+  background: var(--vitality-bg);
+  border-color: var(--vitality-color);
+  color: var(--vitality-color);
 }
 
 .equip-chip.locked {
   cursor: default;
-  background: #f0fdf4;
-  border-color: #86efac;
-  color: #166534;
+  background: var(--vitality-bg);
+  border-color: var(--vitality-border);
+  color: var(--vitality-color);
+}
+
+[data-theme="dark"] .planner-main .hero-metrics-bar,
+[data-theme="dark"] .planner-main .meal-slot-row,
+[data-theme="dark"] .planner-main .short-evening-toggle-box,
+[data-theme="dark"] .planner-main .short-mode-explanation,
+[data-theme="dark"] .planner-main .badge.eating-out,
+[data-theme="dark"] .planner-main .badge.leftovers,
+[data-theme="dark"] .planner-main .badge.free,
+[data-theme="dark"] .planner-main .equip-chip.active,
+[data-theme="dark"] .planner-main .equip-chip.locked,
+[data-theme="dark"] .planner-main .week-stats-callout {
+  background: var(--cream);
+  color: var(--text-main);
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .planner-main .slot-period-tag,
+[data-theme="dark"] .planner-main .badge.freshness,
+[data-theme="dark"] .planner-main .equip-warning-badge,
+[data-theme="dark"] .planner-main .short-evening-title,
+[data-theme="dark"] .planner-main .short-evening-sub,
+[data-theme="dark"] .planner-main .short-mode-explanation,
+[data-theme="dark"] .planner-main .equip-chip.active,
+[data-theme="dark"] .planner-main .equip-chip.locked {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .planner-main .badge.freshness {
+  background: var(--vitality-bg);
+  border-color: var(--vitality-border);
+}
+
+[data-theme="dark"] .planner-main .equip-warning-badge {
+  background: var(--balanced-bg);
+  color: var(--accent-text);
 }
 
 .equip-warning-badge {
@@ -1700,8 +1700,8 @@ h2 {
   gap: 4px;
   font-size: 10px;
   font-weight: 700;
-  color: #b45309;
-  background: #fef3c7;
+  color: var(--accent-text);
+  background: var(--balanced-bg);
   padding: 2px 7px;
   border-radius: 6px;
   margin-top: 4px;

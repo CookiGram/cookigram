@@ -772,6 +772,9 @@ function renderKiffList(filterCategory) {
 
     const card = document.createElement("div");
     card.className = `kiff-card ${isSelected ? "selected" : ""} ${hasMissing ? "incompatible-equip" : ""}`;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-pressed", String(isSelected));
+    card.tabIndex = 0;
 
     const currentSlot = state.selectedKiffSlots[recipe.id] || { dayIndex: 5, period: "dinner" };
     const slotValue = `${currentSlot.dayIndex}-${currentSlot.period}`;
@@ -816,6 +819,13 @@ function renderKiffList(filterCategory) {
         showToast(`⚠️ Attention : cette recette nécessite "${names}". Activez ce matériel en haut si vous le possédez.`);
       }
       toggleKiffSelection(recipe.id);
+    });
+    card.addEventListener("keydown", event => {
+      if (event.target !== card) return;
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        card.click();
+      }
     });
 
     el.kiffCardsContainer.appendChild(card);
@@ -931,7 +941,7 @@ function renderHeroCard() {
         </div>
 
         <!-- Mode Soirée Courte (< 20 min) Button -->
-        <div class="short-evening-toggle-box ${state.shortEveningActive ? "active" : ""}" id="btn-toggle-short-evening">
+        <div class="short-evening-toggle-box ${state.shortEveningActive ? "active" : ""}" id="btn-toggle-short-evening" role="button" tabindex="0" aria-pressed="${state.shortEveningActive}">
           <div class="short-evening-info">
             <span class="short-evening-title">⚡ Mode Soirée Courte (&lt; 20 min)</span>
             <span class="short-evening-sub">${state.shortEveningActive ? "Activé : version express avec les mêmes ingrédients !" : "Rentré tard ou fatigué ? Simplifier sans racheter."}</span>
@@ -962,11 +972,18 @@ function renderHeroCard() {
       </div>
     `;
 
-    document.getElementById("btn-toggle-short-evening").addEventListener("click", () => {
+    const shortEveningToggle = document.getElementById("btn-toggle-short-evening");
+    shortEveningToggle.addEventListener("click", () => {
       state.shortEveningActive = !state.shortEveningActive;
       saveState();
       renderHeroCard();
       showToast(state.shortEveningActive ? "⚡ Mode Soirée Courte activé !" : "Mode classique restauré.");
+    });
+    shortEveningToggle.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        shortEveningToggle.click();
+      }
     });
 
     document.getElementById("btn-start-cooking").addEventListener("click", () => {
@@ -1038,7 +1055,7 @@ function renderWeekTimeline() {
     card.className = `day-card ${day.isToday ? "active-day" : ""}`;
 
     card.innerHTML = `
-      <div class="day-card-header">
+      <div class="day-card-header" role="button" tabindex="0" aria-expanded="true">
         <div class="day-left-meta">
           <div class="day-index-circle">${day.dateLabel}</div>
           <div class="day-title-block">
@@ -1055,7 +1072,7 @@ function renderWeekTimeline() {
       <div class="day-card-body" style="display: block;">
         <div class="day-slots-container">
           <!-- Midi (Déjeuner) -->
-          <div class="meal-slot-row" onclick="openSlotModal(${dayIndex}, 'lunch')">
+          <div class="meal-slot-row" role="button" tabindex="0" onclick="openSlotModal(${dayIndex}, 'lunch')">
             <div class="slot-left">
               <span class="slot-period-tag">Midi</span>
               <span class="slot-title">${getSlotDisplayTitle(day.lunch)}</span>
@@ -1067,7 +1084,7 @@ function renderWeekTimeline() {
           </div>
 
           <!-- Soir (Dîner) -->
-          <div class="meal-slot-row" onclick="openSlotModal(${dayIndex}, 'dinner')">
+          <div class="meal-slot-row" role="button" tabindex="0" onclick="openSlotModal(${dayIndex}, 'dinner')">
             <div class="slot-left">
               <span class="slot-period-tag">Soir</span>
               <span class="slot-title">${getSlotDisplayTitle(day.dinner)}</span>
@@ -1088,6 +1105,21 @@ function renderWeekTimeline() {
       const isExpanded = body.style.display !== "none";
       body.style.display = isExpanded ? "none" : "block";
       card.classList.toggle("expanded", !isExpanded);
+      header.setAttribute("aria-expanded", String(!isExpanded));
+    });
+    header.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        header.click();
+      }
+    });
+    card.querySelectorAll(".meal-slot-row").forEach(row => {
+      row.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          row.click();
+        }
+      });
     });
 
     el.weekDaysContainer.appendChild(card);
@@ -1157,17 +1189,19 @@ window.openSlotModal = function(dayIndex, period) {
 
     const item = document.createElement("div");
     item.className = "modal-recipe-item";
+    item.setAttribute("role", "button");
+    item.tabIndex = 0;
 
     let warningTag = "";
     if (hasMissing) {
       const missingNames = missingEquip.map(e => EQUIPMENT_LABELS[e] || e).join(", ");
-      warningTag = `<span style="font-size: 11px; color: #b45309; background: #fef3c7; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-weight: 700;">⚠️ ${missingNames} requis</span>`;
+      warningTag = `<span class="equipment-warning-inline">⚠️ ${missingNames} requis</span>`;
     }
 
     item.innerHTML = `
       <div>
-        <div style="font-weight: 700; font-size: 15px;">${recipe.title} ${warningTag}</div>
-        <div style="font-size: 12px; color: #57534e;">⏱️ ${recipe.timeTotal} • ${recipe.appliance} • ${recipe.dishes}</div>
+        <div class="modal-recipe-title">${recipe.title} ${warningTag}</div>
+        <div class="modal-recipe-meta">⏱️ ${recipe.timeTotal} • ${recipe.appliance} • ${recipe.dishes}</div>
       </div>
       <span class="badge ${recipe.profile}">${recipe.profile === "pleasure" ? "Plaisir" : "Vitalité"}</span>
     `;
@@ -1178,6 +1212,12 @@ window.openSlotModal = function(dayIndex, period) {
         showToast(`⚠️ Matériel requis : ${missingNames}. Pensez à l'activer dans votre équipement !`);
       }
       applySlotAction(recipeMeal(recipe.id, el.mealPortions.value, recipe.profile === "pleasure" ? "✨" : "🍳"));
+    });
+    item.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        item.click();
+      }
     });
 
     el.modalRecipesList.appendChild(item);
@@ -1273,12 +1313,20 @@ function renderMicrobiomeGarden() {
   Array.from(plantSet).sort().forEach(plant => {
     const tag = document.createElement("div");
     tag.className = "plant-tag";
+    tag.setAttribute("role", "button");
+    tag.tabIndex = 0;
     tag.innerHTML = `<span>🌿</span> <span>${plant}</span>`;
     tag.title = `Présent dans : ${plantToRecipeMap[plant].join(", ")}`;
 
     tag.addEventListener("click", () => {
       tag.classList.toggle("highlighted");
       showToast(`${plant} : présent dans ${plantToRecipeMap[plant].join(" & ")}`);
+    });
+    tag.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        tag.click();
+      }
     });
 
     el.gardenPlantsGrid.appendChild(tag);
