@@ -37,9 +37,9 @@
 }
 
 .pill-btn {
-  background: #44403c;
-  color: #f5f5f4;
-  border: 1px solid #57534e;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--muted);
   padding: 6px 12px;
   border-radius: var(--radius-pill);
   font-size: 13px;
@@ -53,7 +53,7 @@
 }
 
 .pill-btn:hover {
-  background: #57534e;
+  background: var(--muted);
 }
 
 /* Responsive planner surface */
@@ -182,8 +182,8 @@
 }
 
 .intro-badge.garden {
-  background: #e0f2fe;
-  color: #0369a1;
+  background: var(--cream);
+  color: var(--green);
 }
 
 h2 {
@@ -291,7 +291,7 @@ h2 {
 
 .kiff-card.selected {
   border-color: var(--pleasure-color);
-  background-color: #fff9fa;
+  background-color: var(--pleasure-bg);
   box-shadow: 0 4px 12px rgba(225, 29, 72, 0.12);
 }
 
@@ -371,9 +371,9 @@ h2 {
 }
 
 .badge.freshness {
-  background: #f0fdf4;
-  color: #166534;
-  border: 1px solid #bbf7d0;
+  background: var(--vitality-bg);
+  color: var(--vitality-color);
+  border: 1px solid var(--vitality-border);
 }
 
 .kiff-day-picker {
@@ -424,7 +424,7 @@ h2 {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, var(--vitality-color), #10b981);
+  background: linear-gradient(90deg, var(--vitality-color), var(--vitality-color));
 }
 
 .hero-top-badge-row {
@@ -445,8 +445,8 @@ h2 {
 .hero-freshness-pill {
   font-size: 12px;
   font-weight: 700;
-  background: #e0f2fe;
-  color: #0369a1;
+  background: var(--cream);
+  color: var(--green);
   padding: 3px 10px;
   border-radius: var(--radius-pill);
 }
@@ -464,7 +464,7 @@ h2 {
 .hero-metrics-bar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: #f8fafc;
+  background: var(--cream);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 10px 8px;
@@ -493,8 +493,8 @@ h2 {
 
 /* Mode Soirée Courte (< 20 min) Banner */
 .short-evening-toggle-box {
-  background: #fffbeb;
-  border: 1.5px solid #fde68a;
+  background: var(--balanced-bg);
+  border: 1.5px solid var(--balanced-border);
   border-radius: var(--radius-md);
   padding: 12px 14px;
   margin-bottom: 16px;
@@ -506,8 +506,8 @@ h2 {
 }
 
 .short-evening-toggle-box.active {
-  background: #fef3c7;
-  border-color: #f59e0b;
+  background: var(--balanced-bg);
+  border-color: var(--balanced-color);
   box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
 }
 
@@ -520,7 +520,7 @@ h2 {
 .short-evening-title {
   font-size: 14px;
   font-weight: 800;
-  color: #92400e;
+  color: var(--accent-text);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -528,14 +528,14 @@ h2 {
 
 .short-evening-sub {
   font-size: 12px;
-  color: #78350f;
+  color: var(--accent-text);
   line-height: 1.3;
 }
 
 .switch-pill {
   width: 46px;
   height: 26px;
-  background: #d1d5db;
+  background: var(--line);
   border-radius: 13px;
   position: relative;
   transition: background 0.2s;
@@ -556,7 +556,7 @@ h2 {
 }
 
 .short-evening-toggle-box.active .switch-pill {
-  background: #f59e0b;
+  background: var(--balanced-color);
 }
 
 .short-evening-toggle-box.active .switch-pill::after {
@@ -565,14 +565,14 @@ h2 {
 
 /* Short evening active alert description */
 .short-mode-explanation {
-  background: #fef3c7;
+  background: var(--balanced-bg);
   border-radius: var(--radius-sm);
   padding: 10px 12px;
   font-size: 13px;
-  color: #92400e;
+  color: var(--accent-text);
   line-height: 1.4;
   margin-bottom: 16px;
-  border-left: 4px solid #f59e0b;
+  border-left: 4px solid var(--balanced-color);
 }
 
 /* Hero Action Buttons (Touch targets >= 44px) */
@@ -603,7 +603,7 @@ h2 {
 }
 
 .btn.primary:hover {
-  background-color: #c2410c;
+  background-color: var(--orange);
 }
 
 .btn.secondary {
@@ -613,7 +613,7 @@ h2 {
 }
 
 .btn.secondary:hover {
-  background-color: #f5f5f4;
+  background-color: var(--cream);
 }
 
 .btn.full-width {
@@ -831,7 +831,7 @@ h2 {
 
 .slot-management-box input { width: 64px; }
 .slot-management-box select { min-width: 0; }
-.btn-small.danger { color: #b91c1c; border-color: #fecaca; }
+.btn-small.danger { color: var(--pleasure-color); border-color: var(--pleasure-border); }
 
 .day-card-details {
   display: flex;
@@ -849,8 +849,8 @@ h2 {
 .day-mutualized-note {
   font-size: 12px;
   font-weight: 600;
-  color: #15803d;
-  background: #f0fdf4;
+  color: var(--vitality-color);
+  background: var(--vitality-bg);
   padding: 4px 8px;
   border-radius: var(--radius-sm);
   display: inline-block;
@@ -892,7 +892,7 @@ h2 {
 }
 
 .garden-gauge {
-  background: #ecfdf5;
+  background: var(--vitality-bg);
   border: 3px solid var(--vitality-color);
   width: 72px;
   height: 72px;
@@ -914,7 +914,7 @@ h2 {
 .gauge-target {
   font-size: 11px;
   font-weight: 700;
-  color: #065f46;
+  color: var(--vitality-color);
 }
 
 .garden-text h4 {
@@ -959,12 +959,12 @@ h2 {
 }
 
 .ratio-fill-vitality {
-  background: linear-gradient(90deg, #10b981, #059669);
+  background: linear-gradient(90deg, var(--vitality-color), var(--vitality-color));
   height: 100%;
 }
 
 .ratio-fill-pleasure {
-  background: linear-gradient(90deg, #f43f5e, #e11d48);
+  background: linear-gradient(90deg, var(--pleasure-color), var(--pleasure-color));
   height: 100%;
 }
 
@@ -991,9 +991,9 @@ h2 {
 }
 
 .plant-tag.highlighted {
-  background: #dcfce7;
-  border-color: #86efac;
-  color: #14532d;
+  background: var(--vitality-bg);
+  border-color: var(--vitality-border);
+  color: var(--vitality-color);
   font-weight: 700;
 }
 
@@ -1021,8 +1021,8 @@ h2 {
 .shopping-badge {
   font-size: 11px;
   font-weight: 700;
-  background: #f3e8ff;
-  color: #7e22ce;
+  background: var(--cream);
+  color: var(--green);
   padding: 3px 8px;
   border-radius: var(--radius-pill);
 }
@@ -1104,8 +1104,8 @@ h2 {
 .item-shared-badge {
   font-size: 10px;
   font-weight: 700;
-  background: #dcfce7;
-  color: #166534;
+  background: var(--vitality-bg);
+  color: var(--vitality-color);
   padding: 2px 6px;
   border-radius: var(--radius-pill);
 }
@@ -1239,8 +1239,8 @@ h2 {
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%) translateY(30px);
-  background: #1c1917;
-  color: #fafaf9;
+  background: var(--ink);
+  color: var(--cream);
   font-size: 14px;
   font-weight: 600;
   padding: 10px 20px;
@@ -1270,7 +1270,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f8fafc;
+  background: var(--cream);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 8px 12px;
@@ -1279,7 +1279,7 @@ h2 {
 }
 
 .meal-slot-row:hover {
-  background: #f1f5f9;
+  background: var(--cream);
   border-color: var(--brand-orange);
 }
 
@@ -1294,8 +1294,8 @@ h2 {
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #64748b;
-  background: #e2e8f0;
+  color: var(--muted);
+  background: var(--cream);
   padding: 2px 6px;
   border-radius: 4px;
   letter-spacing: 0.05em;
@@ -1320,21 +1320,21 @@ h2 {
 
 /* Slot Type Badges */
 .badge.eating-out {
-  background: #f3e8ff;
-  color: #7e22ce;
-  border: 1px solid #d8b4fe;
+  background: var(--cream);
+  color: var(--green);
+  border: 1px solid var(--pleasure-border);
 }
 
 .badge.leftovers {
-  background: #ecfeff;
-  color: #0e7490;
-  border: 1px solid #a5f3fc;
+  background: var(--cream);
+  color: var(--green);
+  border: 1px solid var(--vitality-border);
 }
 
 .badge.free {
-  background: #fef3c7;
-  color: #b45309;
-  border: 1px solid #fde68a;
+  background: var(--balanced-bg);
+  color: var(--accent-text);
+  border: 1px solid var(--balanced-border);
 }
 
 /* Modal Quick Actions */
@@ -1366,13 +1366,13 @@ h2 {
 }
 
 .quick-action-btn.eating-out {
-  border-color: #d8b4fe;
-  background: #faf5ff;
+  border-color: var(--pleasure-border);
+  background: var(--cream);
 }
 
 .quick-action-btn.leftovers {
-  border-color: #a5f3fc;
-  background: #f0fdfa;
+  border-color: var(--vitality-border);
+  background: var(--cream);
 }
 
 .quick-action-btn .btn-icon {
@@ -1394,8 +1394,8 @@ h2 {
 
 /* Custom Recipe Box */
 .custom-recipe-box {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
+  background: var(--balanced-bg);
+  border: 1px solid var(--balanced-border);
   border-radius: var(--radius-md);
   padding: 12px 14px;
   margin-bottom: 16px;
@@ -1404,7 +1404,7 @@ h2 {
 .custom-input-label {
   font-size: 12px;
   font-weight: 700;
-  color: #92400e;
+  color: var(--accent-text);
   margin-bottom: 6px;
 }
 
@@ -1418,7 +1418,7 @@ h2 {
   padding: 8px 12px;
   font-family: var(--font-sans);
   font-size: 13px;
-  border: 1px solid #d97706;
+  border: 1px solid var(--balanced-color);
   border-radius: var(--radius-sm);
   outline: none;
 }
@@ -1428,7 +1428,7 @@ h2 {
 }
 
 .btn-small.primary {
-  background: #d97706;
+  background: var(--balanced-color);
   color: var(--paper);
   border: none;
   font-weight: 700;
@@ -1459,7 +1459,7 @@ h2 {
 
 [data-theme="dark"] .shopping-badge {
   background: #312044;
-  color: #d8b4fe;
+  color: var(--pleasure-border);
 }
 
 [data-theme="dark"] .custom-input-label {
@@ -1620,20 +1620,20 @@ h2 {
 }
 
 .equip-chip:hover {
-  border-color: #d6d3d1;
+  border-color: var(--line);
 }
 
 .equip-chip.active {
-  background: #ecfdf5;
-  border-color: #10b981;
-  color: #047857;
+  background: var(--vitality-bg);
+  border-color: var(--vitality-color);
+  color: var(--vitality-color);
 }
 
 .equip-chip.locked {
   cursor: default;
-  background: #f0fdf4;
-  border-color: #86efac;
-  color: #166534;
+  background: var(--vitality-bg);
+  border-color: var(--vitality-border);
+  color: var(--vitality-color);
 }
 
 [data-theme="dark"] .planner-main .hero-metrics-bar,
@@ -1652,6 +1652,8 @@ h2 {
 }
 
 [data-theme="dark"] .planner-main .slot-period-tag,
+[data-theme="dark"] .planner-main .badge.freshness,
+[data-theme="dark"] .planner-main .equip-warning-badge,
 [data-theme="dark"] .planner-main .short-evening-title,
 [data-theme="dark"] .planner-main .short-evening-sub,
 [data-theme="dark"] .planner-main .short-mode-explanation,
@@ -1660,14 +1662,24 @@ h2 {
   color: var(--text-main);
 }
 
+[data-theme="dark"] .planner-main .badge.freshness {
+  background: var(--vitality-bg);
+  border-color: var(--vitality-border);
+}
+
+[data-theme="dark"] .planner-main .equip-warning-badge {
+  background: var(--balanced-bg);
+  color: var(--accent-text);
+}
+
 .equip-warning-badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   font-size: 10px;
   font-weight: 700;
-  color: #b45309;
-  background: #fef3c7;
+  color: var(--accent-text);
+  background: var(--balanced-bg);
   padding: 2px 7px;
   border-radius: 6px;
   margin-top: 4px;
