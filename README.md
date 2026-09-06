@@ -12,7 +12,7 @@
 
 ## Ce dépôt
 
-`PierreCsn/cookigram` est le dépôt public de contenu de CookiGram. Il rassemble :
+`CookiGram/cookigram` est le dépôt public de contenu de CookiGram. Il rassemble :
 
 - les recettes structurées dans [`recipes/`](recipes/) au format [Gram](https://gram-lang.org/) ;
 - la base d’ingrédients et ses sources dans [`.gram/`](.gram/) ;
