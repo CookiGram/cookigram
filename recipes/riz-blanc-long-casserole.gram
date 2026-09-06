@@ -16,6 +16,9 @@ scaling:
   min: 2
   max: 6
   step: 2
+meal:
+  completeness: component
+  role: starch
 image: images/riz-blanc-long-casserole.webp
 image_credit:
   author: CookiGram

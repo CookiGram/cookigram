@@ -42,6 +42,13 @@ scaling:
   enabled: false
   reason: Recette calibrée pour le mode Hautes températures du bol Thermomix (TM6/TM7)
     ; les quantités et la chauffe ne sont pas validées à une autre échelle.
+meal:
+  completeness: partial
+  role: main
+  needs:
+    - starch
+  benefits_from:
+    - vegetable
 spiciness: 1
 flavors:
   pairing:
