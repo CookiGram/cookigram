@@ -931,7 +931,7 @@ function renderHeroCard() {
         </div>
 
         <!-- Mode Soirée Courte (< 20 min) Button -->
-        <div class="short-evening-toggle-box ${state.shortEveningActive ? "active" : ""}" id="btn-toggle-short-evening">
+        <div class="short-evening-toggle-box ${state.shortEveningActive ? "active" : ""}" id="btn-toggle-short-evening" role="button" tabindex="0" aria-pressed="${state.shortEveningActive}">
           <div class="short-evening-info">
             <span class="short-evening-title">⚡ Mode Soirée Courte (&lt; 20 min)</span>
             <span class="short-evening-sub">${state.shortEveningActive ? "Activé : version express avec les mêmes ingrédients !" : "Rentré tard ou fatigué ? Simplifier sans racheter."}</span>
@@ -962,11 +962,18 @@ function renderHeroCard() {
       </div>
     `;
 
-    document.getElementById("btn-toggle-short-evening").addEventListener("click", () => {
+    const shortEveningToggle = document.getElementById("btn-toggle-short-evening");
+    shortEveningToggle.addEventListener("click", () => {
       state.shortEveningActive = !state.shortEveningActive;
       saveState();
       renderHeroCard();
       showToast(state.shortEveningActive ? "⚡ Mode Soirée Courte activé !" : "Mode classique restauré.");
+    });
+    shortEveningToggle.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        shortEveningToggle.click();
+      }
     });
 
     document.getElementById("btn-start-cooking").addEventListener("click", () => {
@@ -1038,7 +1045,7 @@ function renderWeekTimeline() {
     card.className = `day-card ${day.isToday ? "active-day" : ""}`;
 
     card.innerHTML = `
-      <div class="day-card-header">
+      <div class="day-card-header" role="button" tabindex="0" aria-expanded="true">
         <div class="day-left-meta">
           <div class="day-index-circle">${day.dateLabel}</div>
           <div class="day-title-block">
@@ -1055,7 +1062,7 @@ function renderWeekTimeline() {
       <div class="day-card-body" style="display: block;">
         <div class="day-slots-container">
           <!-- Midi (Déjeuner) -->
-          <div class="meal-slot-row" onclick="openSlotModal(${dayIndex}, 'lunch')">
+          <div class="meal-slot-row" role="button" tabindex="0" onclick="openSlotModal(${dayIndex}, 'lunch')">
             <div class="slot-left">
               <span class="slot-period-tag">Midi</span>
               <span class="slot-title">${getSlotDisplayTitle(day.lunch)}</span>
@@ -1067,7 +1074,7 @@ function renderWeekTimeline() {
           </div>
 
           <!-- Soir (Dîner) -->
-          <div class="meal-slot-row" onclick="openSlotModal(${dayIndex}, 'dinner')">
+          <div class="meal-slot-row" role="button" tabindex="0" onclick="openSlotModal(${dayIndex}, 'dinner')">
             <div class="slot-left">
               <span class="slot-period-tag">Soir</span>
               <span class="slot-title">${getSlotDisplayTitle(day.dinner)}</span>
@@ -1088,6 +1095,20 @@ function renderWeekTimeline() {
       const isExpanded = body.style.display !== "none";
       body.style.display = isExpanded ? "none" : "block";
       card.classList.toggle("expanded", !isExpanded);
+    });
+    header.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        header.click();
+      }
+    });
+    card.querySelectorAll(".meal-slot-row").forEach(row => {
+      row.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          row.click();
+        }
+      });
     });
 
     el.weekDaysContainer.appendChild(card);
@@ -1157,6 +1178,8 @@ window.openSlotModal = function(dayIndex, period) {
 
     const item = document.createElement("div");
     item.className = "modal-recipe-item";
+    item.setAttribute("role", "button");
+    item.tabIndex = 0;
 
     let warningTag = "";
     if (hasMissing) {
@@ -1178,6 +1201,12 @@ window.openSlotModal = function(dayIndex, period) {
         showToast(`⚠️ Matériel requis : ${missingNames}. Pensez à l'activer dans votre équipement !`);
       }
       applySlotAction(recipeMeal(recipe.id, el.mealPortions.value, recipe.profile === "pleasure" ? "✨" : "🍳"));
+    });
+    item.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        item.click();
+      }
     });
 
     el.modalRecipesList.appendChild(item);

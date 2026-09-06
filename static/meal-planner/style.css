@@ -1295,6 +1295,7 @@ h2 {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 8px 12px;
+  min-height: 44px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
