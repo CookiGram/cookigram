@@ -33,11 +33,11 @@ jobs:
 
       - name: Vérifier la provenance du contrat public
         run: |
-          actual="$(git ls-remote https://github.com/PierreCsn/cookigram-contract.git "refs/tags/v${CONTRACT_VERSION}^{}" | cut -f1)"
+          actual="$(git ls-remote https://github.com/CookiGram/cookigram-contract.git "refs/tags/v${CONTRACT_VERSION}^{}" | cut -f1)"
           test "${actual}" = "${CONTRACT_SHA}"
 
       - name: Installer le contrat public versionné
-        run: python -m pip install "git+https://github.com/PierreCsn/cookigram-contract.git@v${CONTRACT_VERSION}"
+        run: python -m pip install "git+https://github.com/CookiGram/cookigram-contract.git@v${CONTRACT_VERSION}"
 
       - name: Vérifier les pins et produire le rapport JSON
         run: python scripts/check-pins.py --json
