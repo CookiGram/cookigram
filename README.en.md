@@ -1,13 +1,13 @@
 # CookiGram 🍳
 
-[![CI](https://github.com/PierreCsn/cookigram/actions/workflows/ci.yml/badge.svg)](https://github.com/PierreCsn/cookigram/actions/workflows/ci.yml)
-[![Deploy GitHub Pages](https://github.com/PierreCsn/cookigram/actions/workflows/pages.yml/badge.svg)](https://github.com/PierreCsn/cookigram/actions/workflows/pages.yml)
+[![CI](https://github.com/CookiGram/cookigram/actions/workflows/ci.yml/badge.svg)](https://github.com/CookiGram/cookigram/actions/workflows/ci.yml)
+[![Deploy GitHub Pages](https://github.com/CookiGram/cookigram/actions/workflows/pages.yml/badge.svg)](https://github.com/CookiGram/cookigram/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Gram Language](https://img.shields.io/badge/Gram-Gram%20Language-orange.svg)](https://gram-lang.org)
 
 > A structured Gram recipe notebook designed for real cooking at the counter.
 
-🌐 **Published site:** [pierrecsn.github.io/cookigram](https://pierrecsn.github.io/cookigram/)<br>
+🌐 **Published site:** [cookigram.github.io/cookigram](https://cookigram.github.io/cookigram/)<br>
 🇫🇷 **Français:** [README.md](README.md) · 🤝 **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## This repository
@@ -24,7 +24,7 @@ Recipes and their sources are the authority. Contributions may improve wording o
 
 ## Boundary with the private engine
 
-The generation engine, full Gram parser and validator, static site/PWA, and application test suites live in [`PierreCsn/cookigram-core`](https://github.com/PierreCsn/cookigram-core), a private repository.
+The generation engine, full Gram parser and validator, static site/PWA, and application test suites live in [`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core), a private repository.
 
 This repository therefore does not contain the engine code and cannot be built standalone. [`.core-version`](.core-version) pins the engine commit used by CI and deployment; it is not a package to install from this repository.
 

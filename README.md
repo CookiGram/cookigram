@@ -1,13 +1,13 @@
 # CookiGram 🍳
 
-[![CI](https://github.com/PierreCsn/cookigram/actions/workflows/ci.yml/badge.svg)](https://github.com/PierreCsn/cookigram/actions/workflows/ci.yml)
-[![Deploy GitHub Pages](https://github.com/PierreCsn/cookigram/actions/workflows/pages.yml/badge.svg)](https://github.com/PierreCsn/cookigram/actions/workflows/pages.yml)
+[![CI](https://github.com/CookiGram/cookigram/actions/workflows/ci.yml/badge.svg)](https://github.com/CookiGram/cookigram/actions/workflows/ci.yml)
+[![Deploy GitHub Pages](https://github.com/CookiGram/cookigram/actions/workflows/pages.yml/badge.svg)](https://github.com/CookiGram/cookigram/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Gram Language](https://img.shields.io/badge/Gram-Gram%20Language-orange.svg)](https://gram-lang.org)
 
 > Carnet de recettes Gram, pensé pour une exécution claire sur le plan de travail.
 
-🌐 **Site publié :** [pierrecsn.github.io/cookigram](https://pierrecsn.github.io/cookigram/)<br>
+🌐 **Site publié :** [cookigram.github.io/cookigram](https://cookigram.github.io/cookigram/)<br>
 🇬🇧 **English:** [README.en.md](README.en.md) · 🤝 **Contribuer :** [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Ce dépôt
@@ -24,7 +24,7 @@ La recette et ses sources sont la référence. Une contribution peut améliorer 
 
 ## Frontière avec le moteur privé
 
-Le moteur de génération, le parseur et validateur complet Gram, le site statique/PWA, ainsi que les tests applicatifs résident dans [`PierreCsn/cookigram-core`](https://github.com/PierreCsn/cookigram-core), un dépôt privé.
+Le moteur de génération, le parseur et validateur complet Gram, le site statique/PWA, ainsi que les tests applicatifs résident dans [`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core), un dépôt privé.
 
 Ce dépôt ne contient donc pas le code du moteur et ne se construit pas seul. Le fichier [`.core-version`](.core-version) épingle le commit du moteur utilisé par l’intégration continue et le déploiement. Il ne constitue pas une dépendance à installer depuis ce dépôt.
 
