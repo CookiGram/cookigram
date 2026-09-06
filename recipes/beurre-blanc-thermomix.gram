@@ -1,0 +1,48 @@
+---
+title: Beurre blanc au Thermomix
+portions: 6
+prep_time: 10 min
+total_time: 15 min
+spiciness: 0
+description: "Sauce beurre blanc onctueuse, émulsionnée au Thermomix avec échalote, vin blanc, vinaigre et beurre froid."
+tags: [sauce, beurre-blanc, thermomix, poisson, française]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r99394
+author: Cookidoo / Thermomix
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Spatule Thermomix
+  - Saucière
+scaling:
+  enabled: false
+  reason: "Quantités calibrées pour une émulsion stable dans le bol du Thermomix ; multiplication non validée."
+flavors:
+  pairing: [poisson blanc, échalote, vin blanc, beurre]
+  notes: [beurré, acidulé, onctueux]
+  harmony: "La réduction acidulée d'échalote équilibre la richesse du beurre et accompagne les poissons délicats."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/beurre-blanc-thermomix.md
+---
+[Hacher l'échalote]
+- Mettre l'@échalote{60 g, épluchée} dans le #bol Thermomix{} et hacher ~{3 s} à vitesse 7.
+- Racler les parois avec la #spatule{} et hacher de nouveau ~{3 s} à vitesse 7.
+- Racler une dernière fois les parois avec la #spatule{}.
+[Réduire les liquides]
+- Ajouter le @vinaigre de vin{30 g} et le @vin blanc{50 g} dans le bol.
+- Cuire ~{6 min} à ^{100 C} à vitesse 2, sans le gobelet doseur.
+[Refroidir la réduction]
+- Retirer le couvercle du bol et laisser refroidir jusqu'à ^{60 C}, environ ~{5 min}.
+[Monter au beurre]
+- Ajouter le @beurre demi-sel{250 g, froid, en cubes de 2 cm} dans le bol.
+- Cuire ~{150 s} à ^{60 C} à vitesse 2.
+- Poursuivre la cuisson ~{3 min} à ^{60 C} à vitesse 3.
+[Servir]
+- Transvaser dans une #saucière{} et servir immédiatement avec un poisson poché ou cuit à la vapeur.
