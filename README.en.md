@@ -12,7 +12,7 @@
 
 ## This repository
 
-`PierreCsn/cookigram` is CookiGram’s public content repository. It contains:
+`CookiGram/cookigram` is CookiGram’s public content repository. It contains:
 
 - structured [Gram](https://gram-lang.org/) recipes in [`recipes/`](recipes/);
 - the ingredient database and provenance in [`.gram/`](.gram/);
