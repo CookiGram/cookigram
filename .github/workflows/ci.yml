@@ -72,7 +72,7 @@ jobs:
         if: ${{ env.HAVE_CORE_KEY == 'true' }}
         uses: actions/checkout@v4
         with:
-          repository: PierreCsn/cookigram-core
+          repository: CookiGram/cookigram-core
           ssh-key: ${{ secrets.CORE_SSH_KEY }}
           ref: ${{ steps.core-ref.outputs.sha }}
           path: core
