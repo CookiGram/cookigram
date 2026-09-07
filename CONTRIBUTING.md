@@ -20,7 +20,7 @@ Depuis la racine du dépôt :
 ```bash
 python -c "import yaml, glob; [yaml.safe_load(open(f, encoding='utf-8')) for f in glob.glob('.gram/*.yaml')]"
 python scripts/audit-recipe-images.py --check
-python scripts/lint-public-content.py --mode blocking --format json
+python scripts/lint-public-content.py --check --warn-only --json
 ```
 
 Le second contrôle échoue lorsqu’un prompt déclare une image placeholder, une image absente ou un prompt absent. Le linter SEO/content et ses règles sont décrits dans [`docs/PUBLIC-CONTENT-LINT.md`](docs/PUBLIC-CONTENT-LINT.md). Le validateur Gram complet et le build ne sont pas installés ici : ils appartiennent à `cookigram-core` et sont exécutés par la CI lorsque le secret du moteur est disponible. Les PR publiques sans ce secret passent par le contrôle YAML, l’audit des images et le linter public.

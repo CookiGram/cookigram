@@ -41,7 +41,7 @@ The public checks can be run from the repository root:
 ```bash
 python -c "import yaml, glob; [yaml.safe_load(open(f, encoding='utf-8')) for f in glob.glob('.gram/*.yaml')]"
 python scripts/audit-recipe-images.py --check
-python scripts/lint-public-content.py --mode blocking --format json
+python scripts/lint-public-content.py --check --warn-only --json
 ```
 
 The full `python -m generator.recipe_check` validator, build, and Python/JavaScript test suites are not present in this repository; they require an authorized installation of `cookigram-core`. Do not treat `npm`, `pytest`, `ruff`, or `generator` commands as local prerequisites here.

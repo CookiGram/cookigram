@@ -1,0 +1,8 @@
+---
+title: Une recette de test avec image partagée
+description: Une description de test suffisamment longue pour respecter le seuil.
+tags: [test]
+image: images/shared.jpg
+---
+[Tester]
+- Tester.
