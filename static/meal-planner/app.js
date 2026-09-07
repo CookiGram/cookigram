@@ -1519,4 +1519,8 @@ function showToast(message) {
 }
 
 // START
-window.addEventListener("DOMContentLoaded", init);
+// The legacy slot UI remains available to older snapshots, but the shipped
+// page uses intent-app.js. Avoid starting two state machines on one document.
+if (document.getElementById("legacy-slot-planner")) window.addEventListener("DOMContentLoaded", init);
+
+export { RECIPES };
