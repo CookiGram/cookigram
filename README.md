@@ -41,7 +41,7 @@ Les contrôles publics peuvent être lancés depuis la racine du dépôt :
 ```bash
 python -c "import yaml, glob; [yaml.safe_load(open(f, encoding='utf-8')) for f in glob.glob('.gram/*.yaml')]"
 python scripts/audit-recipe-images.py --check
-python scripts/lint-public-content.py --mode blocking --format json
+python scripts/lint-public-content.py --check --warn-only --json
 ```
 
 Le validateur complet `python -m generator.recipe_check`, le build et les tests Python/JavaScript ne sont pas disponibles dans ce dépôt ; ils nécessitent une installation de `cookigram-core` autorisée. Ne pas documenter de couverture ou de commande `npm`, `pytest`, `ruff` ou `generator` comme prérequis local ici.

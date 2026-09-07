@@ -15,11 +15,11 @@ Les dates dont la clé est `date`, se termine par `_date` ou `_at` (par exemple 
 Depuis la racine, sans secret Core ni moteur privé :
 
 ```bash
-python scripts/lint-public-content.py --mode warning --format json
-python scripts/lint-public-content.py --mode blocking --format json
+python scripts/lint-public-content.py --json
+python scripts/lint-public-content.py --check --warn-only --json
 ```
 
-`warning` retourne toujours le code 0 et convient à l’exploration. `blocking` retourne le code 1 si une erreur de contrat est trouvée. Le JSON contient `version`, `files`, `summary` et une liste `issues` triée par chemin de recette ; il peut être consommé sans parser le texte humain. `--format text` est disponible pour une lecture rapide.
+`--check` retourne le code 1 si une erreur est trouvée et le code 0 sinon ; sans `--check`, le rapport retourne toujours le code 0. `--warn-only` conserve les dépassements de longueur du titre et de la description comme avertissements transitoires, tandis que les doublons de clés YAML et les autres règles restent bloquants. Le JSON contient `version`, `files`, `summary` et une liste `findings` triée par chemin de recette ; chaque finding contient `path`, `line`, `rule`, `level` et `message`.
 
 Le linter est ajouté après le contrat YAML public et l’audit image dans la CI. Ces deux contrôles existants restent inchangés. Comme aucun build ni sortie HTML n’est présent dans ce dépôt de contenu, il ne valide pas de JSON-LD généré : le JSON produit ici est le rapport structuré du linter. La validation des données structurées rendues reste du ressort de `cookigram-core` quand il est disponible.
 

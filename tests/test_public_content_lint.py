@@ -65,6 +65,19 @@ class PublicContentLintTests(unittest.TestCase):
         self.assertEqual(transition["summary"]["errors"], 0)
         self.assertEqual({finding["level"] for finding in transition["findings"]}, {"warning"})
 
+    def test_production_invocation_returns_json_findings(self) -> None:
+        completed = subprocess.run(
+            ["python", str(ROOT / "scripts/lint-public-content.py"), "--check", "--warn-only", "--json"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        report = json.loads(completed.stdout)
+        self.assertEqual(completed.returncode, 0)
+        self.assertEqual(set(report), {"version", "tool", "files", "summary", "findings"})
+        self.assertTrue(all(set(finding) == {"path", "line", "rule", "level", "message"} for finding in report["findings"]))
+        self.assertEqual(report["summary"]["errors"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()
