@@ -31,6 +31,31 @@
   --shadow-lg: var(--shadow);
 }
 
+.intent-planner { max-width: 1100px; margin: 0 auto; }
+.intent-toolbar, .intent-controls, .planner-section-heading { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.intent-toolbar { margin: 18px 0 24px; }
+.intent-toolbar .custom-text-input { flex: 1; min-width: 220px; }
+.intentions-list { display: grid; gap: 12px; margin: 12px 0 30px; }
+.intent-card, .week-day-card, .kitchen-fact { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 16px; }
+.intent-card { display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; }
+.intent-controls { justify-content: flex-end; }
+.intent-controls label, .kitchen-fact { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; font-size: .9rem; }
+.intent-controls input, .intent-controls select, .kitchen-fact input, .kitchen-fact select { max-width: 170px; padding: 7px; border: 1px solid var(--border-default); border-radius: 8px; background: var(--bg-elevated); color: var(--text-main); }
+.recipe-link { display: block; color: var(--brand-orange); margin-top: 6px; font-size: .9rem; }
+.week-cards-list { display: grid; gap: 12px; }
+.week-day-card { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.week-day-card div { min-width: 150px; display: grid; gap: 4px; }
+.week-day-card div span { color: var(--text-muted); font-size: .9rem; }
+.week-day-card p { flex: 1; margin: 0; font-weight: 600; }
+.shopping-section { margin: 18px 0; }
+.shopping-intent { display: block; padding: 9px 0; }
+.kitchen-fact { justify-content: space-between; margin: 8px 0; }
+.kitchen-fact small { color: var(--text-muted); }
+.shopping-result { margin-top: 18px; padding-top: 8px; border-top: 1px solid var(--border-subtle); }
+.shopping-result li { margin: 8px 0; }
+.empty-state { color: var(--text-muted); padding: 18px 0; }
+@media (max-width: 600px) { .intent-card, .week-day-card { align-items: stretch; } .intent-controls { justify-content: flex-start; } .intent-controls label { width: 100%; justify-content: space-between; } .intent-controls input, .intent-controls select { max-width: 55%; } .kitchen-fact { align-items: stretch; } }
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
