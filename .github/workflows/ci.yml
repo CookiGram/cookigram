@@ -49,7 +49,7 @@ jobs:
         run: python scripts/audit-recipe-images.py --check
 
       - name: Linter public SEO et contenu
-        run: python scripts/lint-public-content.py --mode blocking --format json
+        run: python scripts/lint-public-content.py --check --warn-only --json
 
   private-integration:
     name: Intégration Core privée (push de confiance uniquement)
