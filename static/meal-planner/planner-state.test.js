@@ -38,6 +38,12 @@ test("exact quantity can cover a requirement without an inventory ledger", () =>
   assert.equal(result.covered[0].name, "Farine");
 });
 
+test("a quantity without an explicit presence declaration stays uncertain", () => {
+  const intentions = addIntention([], { id: "a", type: "recipe", recipeId: "stew", title: "Ragoût" });
+  const result = buildShoppingAssessment(intentions, recipes, { farine: { certainty: "exact", quantity: "250 g" } }, ["a"]);
+  assert.equal(result.toVerify[0].name, "Farine");
+});
+
 test("portion scaling without explicit recipe support goes to verify", () => {
   const intentions = addIntention([], { id: "a", type: "recipe", recipeId: "stew", title: "Ragoût", portions: 4 });
   const result = buildShoppingAssessment(intentions, recipes, {}, ["a"]);

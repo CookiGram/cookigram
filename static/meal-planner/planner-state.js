@@ -48,6 +48,7 @@ function formatQuantity(amount, unit) {
 function assess(ingredient, fact) {
   if (!fact || fact.certainty === "unknown") return "verify";
   if (fact.status === "absent") return "buy";
+  if (fact.status !== "present") return "verify";
   if (fact.certainty !== "exact" || !fact.quantity) return "verify";
   const required = parseQuantity(ingredient.qty);
   const available = parseQuantity(fact.quantity);
