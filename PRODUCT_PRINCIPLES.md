@@ -1,7 +1,7 @@
 # CookiGram — Product Principles
 
 > **Document de référence produit**  
-> *Dernière mise à jour : 5 septembre 2026*
+> *Dernière mise à jour : 8 septembre 2026*
 > *Product Owner (User #1) : Pierre (@PierreCsn)*  
 > *Product Lead : AI Assistant*  
 > *Décision de référence : PDR-0001*
@@ -54,3 +54,13 @@ La santé se construit à l’échelle de la semaine, sans opposer les repas nou
 * La diversité végétale est valorisée par le compteur explicable des 30 plantes distinctes par semaine.
 * La compensation signifie variété, digestion et mutualisation des courses ; elle ne retire jamais un plaisir choisi.
 * Les profils, les plantes et les paniers sont calculés de façon déterministe et traçable dans le moteur [`cookigram-core`](https://github.com/PierreCsn/cookigram-core), conformément à la [spécification Meal Planning](docs/MEAL_PLANNING_NUTRITION.md).
+
+## 9. Utile sans compte, sans tracking d’usage
+CookiGram doit apporter sa valeur principale immédiatement, sans inscription, compte utilisateur, identité persistante ni collecte comportementale.
+* **Aucun compte requis** : consulter, choisir et cuisiner des recettes ne doit jamais dépendre de la création d'un profil utilisateur.
+* **Pas de tracking d’usage comme moteur produit** : le suivi global des comportements n’est pas un objectif de CookiGram et ne doit pas être nécessaire au classement, à la découverte ou à la pertinence de l’expérience.
+* **Pas de profilage par appareil/PWA** : un état local peut être conservé lorsqu’une fonctionnalité explicite en a besoin, mais il ne doit pas servir à construire silencieusement un profil comportemental ou un moteur de recommandation.
+* **Personnalisation honnête** : sans intention explicitement fournie par l’utilisateur, l’interface ne prétend pas connaître ses goûts et évite les promesses du type « Pour vous » ou « Recommandé pour vous ».
+* **Mécanismes simples et neutres par défaut** : lorsqu’aucun signal utilisateur n’est nécessaire, préférer une solution générique, stable et compréhensible à une logique de recommandation artificielle.
+
+**Règle produit** : CookiGram doit rester utile sans compte et sans tracking d’usage. Toute exception future qui rendrait une fonction essentielle dépendante d’une identité ou d’un suivi comportemental exige une décision produit explicite.
