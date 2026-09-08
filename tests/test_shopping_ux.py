@@ -21,7 +21,7 @@ class ShoppingUxContractTests(unittest.TestCase):
         self.assertIn('}).join("")}</ul></section>`).join("")', source)
         self.assertIn('data-shopping-item', source)
         self.assertIn('${state[key] ? "checked" : ""}', source)
-        self.assertIn('next[cb.dataset.shoppingItem] = !cb.checked', source)
+        self.assertIn('next[cb.dataset.shoppingItem] = cb.checked', source)
 
 
 if __name__ == "__main__":
