@@ -3,8 +3,8 @@
   <div id="planner-empty" class="planner-panel empty-state" hidden>Votre sélection est vide. <a href="../">Choisir des recettes</a></div>
   <div id="planner-content" hidden>
     <section class="planner-panel planner-toolbar" aria-label="Navigation de la semaine">
-      <div><h2 id="planner-week-title">Ma semaine</h2><p class="hint">Déplacez une recette ou utilisez les commandes accessibles pour la placer.</p></div>
-      <div class="planner-week-actions"><button type="button" class="btn" data-week-prev>← Semaine précédente</button><button type="button" class="btn" data-week-today>Cette semaine</button><button type="button" class="btn" data-week-next>Semaine suivante →</button></div>
+      <div><h2 id="planner-week-title">Ma semaine</h2><p class="hint">Faites glisser une recette vers un créneau, ou utilisez les commandes accessibles.</p></div>
+      <div class="planner-week-actions"><button type="button" class="btn planner-week-arrow" data-week-prev aria-label="Semaine précédente">‹</button><button type="button" class="btn" data-week-today>Cette semaine</button><button type="button" class="btn planner-week-arrow" data-week-next aria-label="Semaine suivante">›</button></div>
     </section>
     <div class="planner-board-shell">
       <section class="planner-panel planner-unplaced" aria-labelledby="unplaced-title">
@@ -18,6 +18,7 @@
       </section>
     </div>
   </div>
+  <div id="planner-feedback" class="planner-feedback" role="status" aria-live="polite" hidden><span id="planner-feedback-message"></span><button type="button" class="btn" data-undo-removal hidden>Annuler</button></div>
   <p><a href="../selection/">← Ma sélection</a></p>
   <dialog id="planner-slot-dialog" class="planner-dialog">
     <form method="dialog"><h2>Ajouter une recette au créneau</h2><label for="planner-slot-recipe">Recette</label><select id="planner-slot-recipe"></select><div class="planner-dialog-actions"><button value="cancel" class="btn">Annuler</button><button value="place" class="btn primary">Placer</button></div></form>
