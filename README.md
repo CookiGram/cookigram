@@ -22,21 +22,35 @@
 
 La recette et ses sources sont la référence. Une contribution peut améliorer la formulation ou la structuration, mais ne doit pas inventer de quantité, de durée, de compatibilité appareil ou de provenance.
 
-## Vocabulaire CookiGram
+## Vocabulaire officiel CookiGram
 
-CookiGram utilise volontairement un vocabulaire culinaire pour parler du produit sans exposer inutilement ses détails techniques. Ces termes décrivent le modèle mental du produit ; ils n’impliquent pas à eux seuls de compte, de rôle d’authentification ou de permission runtime.
+CookiGram assume une identité culinaire française dans son vocabulaire produit. L’objectif n’est pas de laisser toute l’interface en français, mais de conserver quelques concepts de marque reconnaissables tout en traduisant normalement ce qui sert à accomplir une tâche.
+
+> **French culinary identity, locally understandable UX.**
+
+### Modèle produit
 
 - **Cuisine** : une instance CookiGram configurée et déployée. Une Cuisine possède sa propre identité visuelle, ses choix éditoriaux et peut réunir plusieurs Livres de recettes.
 - **Grand Chef** : la personne qui configure, maintient et donne sa personnalité à une Cuisine. C’est un rôle éditorial, pas un compte ou un rôle d’autorisation imposé par l’application.
 - **Livre de recettes** : une source ou collection cohérente de recettes rattachée à une Cuisine. Une même Cuisine peut avoir plusieurs Livres.
-- **Catalogue** : la vue agrégée des recettes proposées par la Cuisine à partir de ses Livres.
-- **Panier** : la sélection courante de recettes retenues par l’utilisateur ; c’est le concept derrière `Ma sélection`.
-- **Préparateur de courses** : la fonction qui transforme tout ou partie des recettes retenues en besoins d’achat et liste de courses.
-- **Planificateur** : la fonction qui organise les recettes dans le temps. **Semainier** est un nom de travail possible pour l’interface actuelle lorsque la planification porte sur une semaine.
+- **Catalogue** : la vue agrégée des recettes proposées par une Cuisine à partir de ses Livres.
+- **Panier** : la sélection courante de recettes retenues par l’utilisateur ; c’est le concept derrière `Ma sélection`. **Panier est un terme CookiGram assumé**, y compris dans un contexte international, car son sens est renforcé par une représentation visuelle explicite.
+- **Planificateur** : la fonction qui organise les recettes dans le temps. Son libellé d’interface peut évoluer ou être localisé sans changer le concept.
 - **Menu** : le résultat de cette organisation temporelle, plutôt que le nom de l’outil lui-même.
+- **Courses** : la fonction qui prépare les besoins d’achat à partir de tout ou partie du Panier. Le libellé est descriptif et peut être localisé ; il ne constitue pas un terme de marque à préserver à tout prix.
 - **Thème** : l’ambiance visuelle d’une Cuisine. Les thèmes disponibles et leurs noms appartiennent à la Cuisine et sont définis par son Grand Chef ; ils ne constituent pas un vocabulaire global imposé par Core.
 
-Ce vocabulaire est amené à évoluer avec le produit. Un terme de travail ne doit pas devenir une abstraction technique ou un nouveau chantier simplement parce qu’il apparaît ici.
+### Règle d’internationalisation
+
+Les termes de marque suivants sont destinés à pouvoir rester en français dans toutes les langues : **Cuisine**, **Grand Chef**, **Panier** et **Menu**.
+
+Les termes descriptifs comme **Livre de recettes**, **Catalogue**, **Planificateur**, **Courses** ou **Thème** peuvent être traduits lorsque cela améliore la compréhension locale.
+
+Les actions et messages opérationnels doivent être localisés normalement : ajouter, retirer, réinitialiser, planifier, préparer une liste, états accessibles, aide, erreurs, confirmations, etc.
+
+Un terme français ne doit pas être conservé uniquement pour le style s’il oblige l’utilisateur à apprendre une mécanique. S’il devient difficile à comprendre dans le parcours normal, il doit être renommé, traduit ou remplacé. **Panier fait volontairement exception à cette prudence** parce que l’interface le rend visuel et immédiatement contextualisé.
+
+Ce vocabulaire décrit le modèle mental de CookiGram. Il ne crée pas à lui seul de nouvelle abstraction technique, de permission, de compte ou de chantier d’architecture.
 
 ## Frontière avec le moteur privé
 
