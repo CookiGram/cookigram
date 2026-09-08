@@ -1,39 +1,9 @@
-<main class="planner-main intent-planner">
-  <div class="planner-page-toolbar">
-    <span class="intro-badge">Bêta publique</span>
-    <button id="btn-reset-plan" class="pill-btn secondary">Nouveau départ</button>
+<main class="planner-main">
+  <header class="planner-intro"><span class="beta-badge">Beta</span><h1>Planifier ma semaine</h1><p class="subtitle">Les recettes de Ma sélection sont prêtes à être réparties dans le temps. Aucune recherche à refaire ici.</p></header>
+  <div id="planner-empty" class="planner-panel empty-state" hidden>Votre sélection est vide. <a href="../">Choisir des recettes</a></div>
+  <div id="planner-content" class="planner-grid">
+    <section class="planner-panel"><h2>Recettes à placer</h2><p class="hint">Choisissez un jour et un moment pour chaque recette.</p><div id="planner-selection" class="planner-list"></div></section>
+    <section class="planner-panel"><h2>Ma semaine</h2><p class="hint">Cette vue reflète uniquement les recettes que vous avez placées.</p><div id="planner-week" class="planner-list"></div></section>
   </div>
-  <header class="view-intro">
-    <h1>Planifier ma semaine</h1>
-    <p class="subtitle">Gardez vos idées de repas, datez seulement ce qui est décidé, puis préparez les courses dont vous avez réellement besoin.</p>
-  </header>
-
-  <nav class="step-nav" aria-label="Parcours du planner">
-    <button class="step-tab active" data-view="intentions">1 · Mes intentions</button>
-    <button class="step-tab" data-view="week">2 · Ma semaine</button>
-    <button class="step-tab" data-view="shopping">3 · Préparer les courses</button>
-  </nav>
-
-  <section id="view-intentions" class="step-view active">
-    <div class="planner-section-heading"><div><h2>Ce que j’ai envie de manger</h2><p class="subtitle">Une intention peut rester sans date. Ajoutez une recette ou une idée libre.</p></div><span id="intentions-count" class="shopping-badge"></span></div>
-    <div class="intent-toolbar"><input id="recipe-search" class="custom-text-input" type="search" placeholder="Chercher une recette CookiGram…" aria-label="Chercher une recette"><button id="btn-add-free" class="btn secondary">+ Idée libre</button></div>
-    <div id="recipe-catalog" class="kiff-cards-grid"></div>
-    <h3>Mes intentions</h3>
-    <div id="intentions-list" class="intentions-list"></div>
-  </section>
-
-  <section id="view-week" class="step-view">
-    <div class="view-intro"><span class="intro-badge vitality">Projection</span><h2>Ma semaine</h2><p class="subtitle">Seules les intentions datées apparaissent ici. Les autres restent à placer.</p></div>
-    <div id="week-projection" class="week-cards-list"></div>
-    <div id="undated-intentions" class="empty-state"></div>
-  </section>
-
-  <section id="view-shopping" class="step-view">
-    <div class="view-intro"><span class="intro-badge garden">Préparer</span><h2>Une vraie course</h2><p class="subtitle">Sélectionnez les intentions qui vous intéressent maintenant. Vous n’avez pas besoin de remplir la semaine.</p></div>
-    <div id="shopping-selection" class="shopping-section"></div>
-    <div id="kitchen-facts" class="shopping-section"></div>
-    <div id="shopping-result" class="shopping-section"></div>
-  </section>
-  <div class="toast" id="toast-notification" role="status"></div>
+  <p><a href="../selection/">← Ma sélection</a></p>
 </main>
-<script type="module" src="./intent-app.js"></script>
