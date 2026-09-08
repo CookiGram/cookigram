@@ -80,7 +80,7 @@ const renderShopping = () => {
     const key = `${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`;
     return `<li class="shopping-item${item.review ? " shopping-item--review" : ""}${state[key] ? " shopping-item--available" : ""}"><label><input type="checkbox" data-shopping-item="${esc(key)}" ${state[key] ? "checked" : ""}><span><strong>${esc(item.name)}</strong><small>${esc(qty)} · ${esc(item.recipes.join(", "))}</small></span></label></li>`;
   }).join("")}</ul></section>`).join("") : `<p class="shopping-empty">Ajoutez des recettes à Ma sélection pour préparer une liste.</p>`;
-  shoppingList.querySelectorAll("[data-shopping-item]").forEach(cb => cb.addEventListener("change", () => { const next = readShoppingState(); next[cb.dataset.shoppingItem] = !cb.checked; saveShoppingState(next); }));
+  shoppingList.querySelectorAll("[data-shopping-item]").forEach(cb => cb.addEventListener("change", () => { const next = readShoppingState(); next[cb.dataset.shoppingItem] = cb.checked; saveShoppingState(next); }));
 };
 document.addEventListener("cookigram:selection-change", renderShopping);
 fetch("../recipes.json").then(response => response.json()).then(data => { recipes = Array.isArray(data) ? data : data.recipes || []; if (shoppingLoading) shoppingLoading.hidden = true; renderShopping(); }).catch(() => { if (shoppingLoading) shoppingLoading.textContent = "La liste consolidée est temporairement indisponible."; });
