@@ -1,5 +1,6 @@
 import { addPlacement, loadPlanning, MOMENTS, removePlacement, savePlanning } from "./planner-state.js";
 const SELECTION_KEY = "cookigram:recipe-selection";
+const focusSlug = new URLSearchParams(window.location.search).get("recipe");
 const readSelection = () => { try { const value = JSON.parse(localStorage.getItem(SELECTION_KEY) || "[]"); return Array.isArray(value) ? value.filter(item => item?.slug) : []; } catch { return []; } };
 let selection = readSelection();
 let planning = loadPlanning();
@@ -10,10 +11,11 @@ const render = () => {
   selection = readSelection();
   document.getElementById("planner-empty").hidden = selection.length > 0;
   document.getElementById("planner-content").hidden = selection.length === 0;
-  document.getElementById("planner-selection").innerHTML = selection.map(item => { const placed = planning[item.slug] || {}; return `<div class="planner-row"><a href="../recipes/${encodeURIComponent(item.slug)}/">${esc(item.title || item.slug)}</a><select data-place="${esc(item.slug)}" aria-label="Planifier ${esc(item.title || item.slug)}"><option value="">À placer</option>${dates.map(date => `<option value="${date}" ${placed.date === date ? "selected" : ""}>${date}</option>`).join("")}</select><select data-moment="${esc(item.slug)}" aria-label="Moment"><option value="">Moment</option>${MOMENTS.map(moment => `<option ${placed.moment === moment ? "selected" : ""}>${moment}</option>`).join("")}</select><button type="button" data-remove-plan="${esc(item.slug)}">Retirer du planning</button></div>`; }).join("");
+  document.getElementById("planner-selection").innerHTML = selection.map(item => { const placed = planning[item.slug] || {}; return `<div class="planner-row${item.slug === focusSlug ? " planner-row--focused" : ""}" data-planner-recipe="${esc(item.slug)}"><a href="../recipes/${encodeURIComponent(item.slug)}/">${esc(item.title || item.slug)}</a><select data-place="${esc(item.slug)}" aria-label="Planifier ${esc(item.title || item.slug)}"><option value="">À placer</option>${dates.map(date => `<option value="${date}" ${placed.date === date ? "selected" : ""}>${date}</option>`).join("")}</select><select data-moment="${esc(item.slug)}" aria-label="Moment"><option value="">Moment</option>${MOMENTS.map(moment => `<option ${placed.moment === moment ? "selected" : ""}>${moment}</option>`).join("")}</select><button type="button" data-remove-plan="${esc(item.slug)}">Retirer du planning</button></div>`; }).join("");
   const placed = selection.filter(item => planning[item.slug]?.date).sort((a,b) => planning[a.slug].date.localeCompare(planning[b.slug].date));
   document.getElementById("planner-week").innerHTML = placed.length ? placed.map(item => `<div class="planner-row"><strong>${esc(planning[item.slug].date)}</strong><span>${esc(planning[item.slug].moment || "Moment libre")}</span><a href="../recipes/${encodeURIComponent(item.slug)}/">${esc(item.title || item.slug)} ↗</a></div>`).join("") : '<p class="empty-state">Aucune recette placée pour le moment.</p>';
   document.querySelectorAll("[data-place],[data-moment]").forEach(input => input.addEventListener("change", () => { const slug = input.dataset.place || input.dataset.moment; const date = document.querySelector(`[data-place="${CSS.escape(slug)}"]`).value; const moment = document.querySelector(`[data-moment="${CSS.escape(slug)}"]`).value; if (date) planning = addPlacement(planning, slug, date, moment); else planning = removePlacement(planning, slug); savePlanning(planning); render(); }));
   document.querySelectorAll("[data-remove-plan]").forEach(button => button.addEventListener("click", () => { planning = removePlacement(planning, button.dataset.removePlan); savePlanning(planning); render(); }));
+  if (focusSlug) document.querySelector(`[data-planner-recipe="${CSS.escape(focusSlug)}"]`)?.scrollIntoView({ block: "center" });
 };
 render();
