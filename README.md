@@ -22,6 +22,22 @@
 
 La recette et ses sources sont la référence. Une contribution peut améliorer la formulation ou la structuration, mais ne doit pas inventer de quantité, de durée, de compatibilité appareil ou de provenance.
 
+## Vocabulaire CookiGram
+
+CookiGram utilise volontairement un vocabulaire culinaire pour parler du produit sans exposer inutilement ses détails techniques. Ces termes décrivent le modèle mental du produit ; ils n’impliquent pas à eux seuls de compte, de rôle d’authentification ou de permission runtime.
+
+- **Cuisine** : une instance CookiGram configurée et déployée. Une Cuisine possède sa propre identité visuelle, ses choix éditoriaux et peut réunir plusieurs Livres de recettes.
+- **Grand Chef** : la personne qui configure, maintient et donne sa personnalité à une Cuisine. C’est un rôle éditorial, pas un compte ou un rôle d’autorisation imposé par l’application.
+- **Livre de recettes** : une source ou collection cohérente de recettes rattachée à une Cuisine. Une même Cuisine peut avoir plusieurs Livres.
+- **Catalogue** : la vue agrégée des recettes proposées par la Cuisine à partir de ses Livres.
+- **Panier** : la sélection courante de recettes retenues par l’utilisateur ; c’est le concept derrière `Ma sélection`.
+- **Préparateur de courses** : la fonction qui transforme tout ou partie des recettes retenues en besoins d’achat et liste de courses.
+- **Planificateur** : la fonction qui organise les recettes dans le temps. **Semainier** est un nom de travail possible pour l’interface actuelle lorsque la planification porte sur une semaine.
+- **Menu** : le résultat de cette organisation temporelle, plutôt que le nom de l’outil lui-même.
+- **Thème** : l’ambiance visuelle d’une Cuisine. Les thèmes disponibles et leurs noms appartiennent à la Cuisine et sont définis par son Grand Chef ; ils ne constituent pas un vocabulaire global imposé par Core.
+
+Ce vocabulaire est amené à évoluer avec le produit. Un terme de travail ne doit pas devenir une abstraction technique ou un nouveau chantier simplement parce qu’il apparaît ici.
+
 ## Frontière avec le moteur privé
 
 Le moteur de génération, le parseur et validateur complet Gram, le site statique/PWA, ainsi que les tests applicatifs résident dans [`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core), un dépôt privé.
