@@ -15,6 +15,7 @@ const formatRange = dates => `${dates[0].toLocaleDateString("fr-FR", { day: "num
 let selection = readSelection();
 let planning = loadPlanning();
 let weekStart = readWeek();
+let catalog = new Map();
 let dialogSlot = null;
 let lastBulkRemoval = null;
 let feedbackTimer = null;
@@ -35,18 +36,24 @@ const openSlotDialog = (date, moment) => {
   const dialog = document.querySelector("#planner-slot-dialog");
   if (typeof dialog.showModal === "function") dialog.showModal(); else if (window.confirm("Placer la première recette non planifiée dans ce créneau ?")) place(candidates[0].slug, date, moment);
 };
+const recipeFor = item => catalog.get(item.slug) || item;
+const recipeTitle = item => recipeFor(item).title || item.title || item.slug;
+const recipeImage = item => {
+  const image = recipeFor(item).image;
+  return image ? `<img src="../assets/${esc(image)}" alt="" loading="lazy">` : `<span aria-hidden="true">${esc(recipeTitle(item).slice(0, 2).toUpperCase())}</span>`;
+};
 const renderRecipe = (item, placed) => {
-  return `<article class="planner-recipe" draggable="true" data-planner-recipe="${esc(item.slug)}">
-    <span class="planner-drag-handle" aria-hidden="true">⠿</span><a href="../recipes/${encodeURIComponent(item.slug)}/">${esc(item.title || item.slug)}</a>
+  return `<article class="planner-recipe" draggable="true" title="${esc(recipeTitle(item))}" data-planner-recipe="${esc(item.slug)}">
+    <span class="planner-recipe-thumb" aria-hidden="true">${recipeImage(item)}</span><span class="planner-drag-handle" aria-hidden="true">⠿</span><a href="../recipes/${encodeURIComponent(item.slug)}/" title="${esc(recipeTitle(item))}">${esc(recipeTitle(item))}</a>
     <div class="planner-recipe-actions">
-      ${placed ? `<button type="button" class="btn" data-unplan="${esc(item.slug)}">Retirer du planning</button>` : `<label class="sr-only" for="place-${esc(item.slug)}">Créneau pour ${esc(item.title || item.slug)}</label><select id="place-${esc(item.slug)}" data-assign="${esc(item.slug)}"><option value="">Placer dans…</option>${dates().flatMap((date, index) => MOMENTS.map(moment => `<option value="${date}|${moment}">${DAYS[index]} · ${moment}</option>`)).join("")}</select>`}
+      ${placed ? `<button type="button" class="btn" data-unplan="${esc(item.slug)}">Retirer du planning</button>` : `<label class="sr-only" for="place-${esc(item.slug)}">Créneau pour ${esc(recipeTitle(item))}</label><select id="place-${esc(item.slug)}" data-assign="${esc(item.slug)}"><option value="">Placer dans…</option>${dates().flatMap((date, index) => MOMENTS.map(moment => `<option value="${date}|${moment}">${DAYS[index]} · ${moment}</option>`)).join("")}</select>`}
       <button type="button" class="btn danger" data-remove-selection="${esc(item.slug)}">Retirer de Ma sélection</button>
     </div>
   </article>`;
 };
-const renderPlacedRecipe = item => `<article class="planner-recipe planner-recipe-placed" draggable="true" data-planner-recipe="${esc(item.slug)}">
-  <span class="planner-drag-handle" aria-hidden="true">⠿</span><a href="../recipes/${encodeURIComponent(item.slug)}/">${esc(item.title || item.slug)}</a>
-  <details class="planner-recipe-menu"><summary aria-label="Actions pour ${esc(item.title || item.slug)}">…</summary><div class="planner-recipe-menu-items"><button type="button" class="btn" data-unplan="${esc(item.slug)}">Retirer du planning</button><button type="button" class="btn danger" data-remove-selection="${esc(item.slug)}">Retirer de Ma sélection</button></div></details>
+const renderPlacedRecipe = item => `<article class="planner-recipe planner-recipe-placed" draggable="true" title="${esc(recipeTitle(item))}" data-planner-recipe="${esc(item.slug)}">
+  <span class="planner-recipe-thumb" aria-hidden="true">${recipeImage(item)}</span><span class="planner-drag-handle" aria-hidden="true">⠿</span><a href="../recipes/${encodeURIComponent(item.slug)}/" title="${esc(recipeTitle(item))}">${esc(recipeTitle(item))}</a>
+  <details class="planner-recipe-menu"><summary aria-label="Actions pour ${esc(recipeTitle(item))}">…</summary><div class="planner-recipe-menu-items"><button type="button" class="btn" data-unplan="${esc(item.slug)}">Retirer du planning</button><button type="button" class="btn danger" data-remove-selection="${esc(item.slug)}">Retirer de Ma sélection</button></div></details>
 </article>`;
 const renderSlot = (date, moment) => {
   const items = selection.filter(item => planning[item.slug]?.date === date && planning[item.slug]?.moment === moment);
@@ -120,4 +127,5 @@ document.querySelector("[data-week-prev]").addEventListener("click", () => { wee
 document.querySelector("[data-week-next]").addEventListener("click", () => { weekStart.setDate(weekStart.getDate() + 7); persist(); render(); });
 document.querySelector("[data-week-today]").addEventListener("click", () => { weekStart = monday(new Date()); persist(); render(); });
 document.querySelector("#planner-slot-dialog").addEventListener("close", event => { if (event.target.returnValue === "place" && dialogSlot) { place(document.querySelector("#planner-slot-recipe").value, dialogSlot.date, dialogSlot.moment); } dialogSlot = null; });
+fetch("../recipes.json").then(response => response.json()).then(data => { const recipes = Array.isArray(data) ? data : data.recipes || []; catalog = new Map(recipes.filter(recipe => recipe?.slug).map(recipe => [recipe.slug, recipe])); render(); }).catch(() => {});
 render();
