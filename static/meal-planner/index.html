@@ -6,15 +6,17 @@
       <div><h2 id="planner-week-title">Ma semaine</h2><p class="hint">Déplacez une recette ou utilisez les commandes accessibles pour la placer.</p></div>
       <div class="planner-week-actions"><button type="button" class="btn" data-week-prev>← Semaine précédente</button><button type="button" class="btn" data-week-today>Cette semaine</button><button type="button" class="btn" data-week-next>Semaine suivante →</button></div>
     </section>
-    <section class="planner-panel planner-unplaced" aria-labelledby="unplaced-title">
-      <div class="planner-section-heading"><div><h2 id="unplaced-title">À placer</h2><p class="hint">Ces recettes restent dans Ma sélection.</p></div><button type="button" class="btn danger" data-remove-unplanned hidden></button></div>
-      <div id="planner-selection" class="planner-list" aria-live="polite"></div>
-      <p id="planner-selection-empty" class="empty-state" hidden>Toutes les recettes sélectionnées sont placées.</p>
-    </section>
-    <section class="planner-panel" aria-labelledby="week-board-title">
-      <h2 id="week-board-title" class="sr-only">Jours de la semaine</h2>
-      <div id="planner-week" class="planner-board" aria-live="polite"></div>
-    </section>
+    <div class="planner-board-shell">
+      <section class="planner-panel planner-unplaced" aria-labelledby="unplaced-title">
+        <div class="planner-section-heading"><div><h2 id="unplaced-title">À placer</h2><p class="hint">Ces recettes restent dans Ma sélection.</p></div><button type="button" class="btn danger" data-remove-unplanned hidden></button></div>
+        <div id="planner-selection" class="planner-list" aria-live="polite"></div>
+        <p id="planner-selection-empty" class="empty-state" hidden>Toutes les recettes sélectionnées sont placées.</p>
+      </section>
+      <section class="planner-panel planner-week-panel" aria-labelledby="week-board-title">
+        <h2 id="week-board-title" class="sr-only">Jours de la semaine</h2>
+        <div id="planner-week" class="planner-board" aria-live="polite"></div>
+      </section>
+    </div>
   </div>
   <p><a href="../selection/">← Ma sélection</a></p>
   <dialog id="planner-slot-dialog" class="planner-dialog">
