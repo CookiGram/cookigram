@@ -14,3 +14,8 @@ test("a placement can move without affecting the selection", () => {
   const placements = addPlacement({}, "curry", "2026-09-10", "Soir");
   assert.deepEqual(movePlacement(placements, "curry", "2026-09-12", "Midi")["curry"], { slug: "curry", date: "2026-09-12", moment: "Midi" });
 });
+
+test("legacy meal moments remain visible after the Midi/Soir migration", () => {
+  const storage = { value: JSON.stringify({ curry: { slug: "curry", date: "2026-09-10", moment: "Dîner" } }), getItem() { return this.value; } };
+  assert.equal(loadPlanning(storage).curry.moment, "Soir");
+});
