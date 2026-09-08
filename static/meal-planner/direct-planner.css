@@ -1,0 +1,123 @@
+.planner-board-shell.planner-board-shell-full {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.planner-all-placed {
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.planner-unplaced .planner-recipe-unplaced {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  user-select: none;
+}
+
+.planner-recipe-title {
+  min-width: 0;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.planner-recipe-unplaced[aria-pressed="true"] {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--orange) 25%, transparent);
+  background: color-mix(in srgb, var(--card) 90%, var(--orange));
+}
+
+.planner-slot {
+  cursor: default;
+}
+
+.planner-slot-ready {
+  cursor: pointer;
+  border-color: color-mix(in srgb, var(--orange) 75%, var(--line));
+}
+
+.planner-slot-ready:hover,
+.planner-slot-ready:focus-visible {
+  background: color-mix(in srgb, var(--card) 86%, var(--orange));
+}
+
+.planner-slot-heading {
+  min-height: 44px;
+  align-items: center;
+}
+
+.planner-slot .planner-recipe-placed {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.planner-recipe-placed .planner-recipe-thumb {
+  display: grid;
+  width: 100%;
+  height: 76px;
+  border-radius: 9px;
+}
+
+.planner-recipe-placed .planner-recipe-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 2px;
+  padding: 18px 7px 6px;
+  background: linear-gradient(to top, rgb(0 0 0 / 78%), transparent);
+  color: #fff;
+  font-size: .7rem;
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease;
+}
+
+.planner-recipe-overlay strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planner-recipe-placed:hover .planner-recipe-overlay,
+.planner-recipe-placed:focus-visible .planner-recipe-overlay {
+  opacity: 1;
+}
+
+.planner-recipe-placed:active,
+.planner-recipe-placed.planner-recipe-dragging {
+  cursor: grabbing;
+}
+
+@media (max-width: 760px) {
+  .planner-unplaced .planner-recipe-unplaced {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .planner-recipe-placed .planner-recipe-thumb {
+    height: 88px;
+  }
+
+  .planner-board-shell.planner-board-shell-full {
+    display: block;
+  }
+}
