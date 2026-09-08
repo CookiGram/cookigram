@@ -53,7 +53,7 @@ const renderRecipe = (item, placed) => {
 };
 const renderPlacedRecipe = item => `<article class="planner-recipe planner-recipe-placed" draggable="true" title="${esc(recipeTitle(item))}" data-planner-recipe="${esc(item.slug)}">
   <span class="planner-recipe-thumb" aria-hidden="true">${recipeImage(item)}</span><span class="planner-drag-handle" aria-hidden="true">⠿</span><a href="../recipes/${encodeURIComponent(item.slug)}/" title="${esc(recipeTitle(item))}">${esc(recipeTitle(item))}</a>
-  <details class="planner-recipe-menu"><summary aria-label="Actions pour ${esc(recipeTitle(item))}">…</summary><div class="planner-recipe-menu-items"><button type="button" class="btn" data-unplan="${esc(item.slug)}">Retirer du planning</button><button type="button" class="btn danger" data-remove-selection="${esc(item.slug)}">Retirer de Ma sélection</button></div></details>
+  <button type="button" class="btn planner-unplan" data-unplan="${esc(item.slug)}" aria-label="Remettre ${esc(recipeTitle(item))} dans À placer">↩ <span class="planner-unplan-label">Remettre dans À placer</span></button>
 </article>`;
 const renderSlot = (date, moment) => {
   const items = selection.filter(item => planning[item.slug]?.date === date && planning[item.slug]?.moment === moment);

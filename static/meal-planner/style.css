@@ -26,11 +26,7 @@
 .planner-recipe-placed { display: grid; grid-template-columns: 44px auto minmax(0,1fr) auto; gap: 6px; align-items: center; padding: 7px 8px; font-size: .82rem; }
 .planner-recipe-placed .planner-recipe-thumb { flex-basis: 44px; width: 44px; height: 44px; }
 .planner-recipe-placed > a { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.planner-recipe-menu { position: relative; }
-.planner-recipe-menu summary { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; cursor: pointer; list-style: none; font-size: 1.2rem; }
-.planner-recipe-menu summary::-webkit-details-marker { display: none; }
-.planner-recipe-menu-items { position: absolute; z-index: 4; right: 0; top: calc(100% + 4px); display: grid; gap: 4px; min-width: 190px; padding: 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); box-shadow: 0 8px 24px rgb(0 0 0 / 16%); }
-.planner-recipe-menu-items .btn { min-height: 40px; border: 0; border-radius: 7px; text-align: left; }
+.planner-unplan { min-height: 44px; white-space: nowrap; }
 .planner-feedback { position: fixed; z-index: 10; right: 20px; bottom: 20px; display: flex; gap: 12px; align-items: center; max-width: min(420px, calc(100vw - 32px)); padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: 0 8px 28px rgb(0 0 0 / 18%); }
 .planner-feedback .btn { min-height: 40px; }
 @media (min-width: 1300px) {
