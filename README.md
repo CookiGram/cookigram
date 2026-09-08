@@ -106,6 +106,68 @@ Règles essentielles : étapes lisibles et atomiques, un geste ou réglage par p
 
 Chaque recette publiée peut référencer une image sous `static/images/` et, pour une illustration générée, un prompt correspondant sous `image-prompts/`. Les crédits et conditions d’utilisation sont conservés dans le frontmatter de la recette. Consultez [`generate-recipe-image`](.agents/skills/generate-recipe-image/SKILL.md) avant de remplacer une illustration.
 
+## Roadmap interne
+
+Cette roadmap donne une direction au produit ; elle ne remplace ni les issues ni les décisions prises à partir des retours d’usage. Plus l’horizon est lointain, moins les éléments ci-dessous constituent des engagements.
+
+Le principe reste constant : **valider un usage réel avant d’élargir le produit**. CookiGram doit rester Git-first, static-first, sans compte obligatoire, sans backend central requis et sans télémétrie nécessaire à son fonctionnement.
+
+### Court terme — réussir le PoC et ouvrir le pilot
+
+L’objectif immédiat est de rendre CookiGram suffisamment cohérent pour être confié à quelques utilisateurs sans accompagnement constant. Le gate de référence est [#267 — PoC testeurs / READY FOR PILOT](https://github.com/CookiGram/cookigram/issues/267).
+
+Priorités :
+
+- amener les quatre surfaces principales au seuil **READY FOR PILOT** : Catalogue, fiche recette, Planificateur et Courses ;
+- terminer la convergence UX de l’accueil : recherche, filtres, tris, sélection et lisibilité desktop/mobile ;
+- terminer le polish du Planificateur sans ajouter de sophistication non nécessaire ;
+- rendre Courses suffisamment fiable pour une utilisation réelle, notamment sur mobile ;
+- conserver une navigation, des thèmes et des états interactifs cohérents entre toutes les pages ;
+- faire produire à Core un builder Linux x86_64 versionné, publiquement récupérable et vérifiable ;
+- faire construire et déployer ce dépôt avec exactement le même builder que celui destiné aux utilisateurs ;
+- permettre à un fork ou à une Cuisine indépendante de déployer son propre GitHub Pages sans accès ni secret vers `cookigram-core` ;
+- documenter le parcours minimal puis le faire tester par les premiers utilisateurs externes.
+
+**Garde-fou :** jusqu’au pilot, toute nouvelle fonctionnalité qui n’aide pas directement cette validation doit normalement attendre.
+
+### Moyen terme — consolider le modèle après le pilot
+
+Une fois le PoC validé, l’objectif devient de transformer le parcours démontré en modèle reproductible et maintenable, sans perdre la simplicité qui fait partie du produit.
+
+Sujets probables :
+
+- traiter en priorité les frictions observées chez les testeurs plutôt que les améliorations imaginées en interne ;
+- stabiliser le contrat du builder autour d’une transformation simple `sources -> _site/`, avec releases explicites et compatibilité maîtrisée ;
+- simplifier la création d’une nouvelle Cuisine : dépôt modèle, configuration minimale et documentation de déploiement ;
+- clarifier encore la séparation entre moteur, application générée et contenu afin qu’un dépôt de recettes tiers puisse rester maître de ses données ;
+- faire mûrir le modèle Cuisine / Livres / Catalogue lorsque des cas d’usage réels nécessitent plusieurs sources de recettes ;
+- continuer à améliorer recherche, tris, thèmes, accessibilité, PWA et usages mobile/offline à partir des retours réels ;
+- renforcer les workflows éditoriaux : import, validation Gram, provenance, images et qualité du corpus ;
+- durcir la stabilité des builds, des migrations de données locales et des tests de non-régression ;
+- expérimenter un premier adaptateur GitLab ou Gitea seulement lorsqu’un besoin concret justifie de sortir du chemin GitHub-first.
+
+À cet horizon, l’absence de compte CookiGram et de collecte d’usage centralisée reste un choix produit à préserver, pas une lacune à corriger par défaut.
+
+### Long terme — sujets d’exploration
+
+Ces sujets décrivent des directions possibles. Ils ne doivent pas influencer prématurément l’architecture du PoC ou du produit à court terme.
+
+- portabilité complète vers plusieurs forges et scénarios auto-hébergés ;
+- builders locaux et cibles supplémentaires : macOS, Windows, ARM et environnements sans GitHub Actions ;
+- séparation encore plus libre entre une Cuisine, ses Livres et l’application qui les rend, afin de faciliter les écosystèmes de dépôts tiers ;
+- planification culinaire plus riche : menus plus longs, calendrier et coordination de préparation lorsque l’usage le justifie ;
+- nutrition, inventaire/garde-manger, substitutions et autres données culinaires enrichies, uniquement lorsque leurs sources et règles de calcul sont suffisamment fiables ;
+- assistance à l’exécution en cuisine : ordonnancement des tâches, appareils, parallélisation et éventuel Kitchen Scheduler ;
+- intégrations optionnelles avec calendriers, assistants domestiques ou autres surfaces de consultation en cuisine ;
+- liens entre recettes et production de contenu, notamment les workflows vidéo ;
+- circulation et partage de Livres de recettes entre Cuisines sans imposer de plateforme centrale CookiGram.
+
+### Principes qui ne sont pas dans la roadmap
+
+La croissance de CookiGram ne doit pas supposer qu’il faudra un SaaS central, des comptes utilisateurs, du multi-tenant ou du tracking comportemental. Git et les fichiers restent des fondations du modèle, et la sortie statique doit rester suffisamment simple pour pouvoir être servie ailleurs que sur l’infrastructure choisie pour le premier PoC.
+
+Une fonctionnalité lointaine ne doit pas créer de dette architecturale aujourd’hui : **on généralise après avoir appris, pas avant**.
+
 ## Documents associés
 
 - [Charte](CHARTER.md) · [Principes produit](PRODUCT_PRINCIPLES.md)
