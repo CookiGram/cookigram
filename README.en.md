@@ -22,6 +22,36 @@
 
 Recipes and their sources are the authority. Contributions may improve wording or structure, but must not silently invent quantities, timings, appliance compatibility, or provenance.
 
+## Official CookiGram vocabulary
+
+CookiGram intentionally keeps a French culinary identity in its product vocabulary. The goal is not to leave the whole interface in French, but to preserve a small set of recognizable brand concepts while localizing the language needed to complete tasks.
+
+> **French culinary identity, locally understandable UX.**
+
+### Product model
+
+- **Cuisine**: a configured and deployed CookiGram instance. A Cuisine has its own visual identity, editorial choices, and may bring together several recipe books.
+- **Grand Chef**: the person who configures, maintains, and gives personality to a Cuisine. This is an editorial concept, not a mandatory account, authentication role, or runtime permission.
+- **Recipe book**: a coherent recipe source or collection attached to a Cuisine. A Cuisine may contain several books.
+- **Catalogue**: the aggregated view of recipes offered by a Cuisine from its books.
+- **Panier**: the user’s current recipe selection; this is the concept behind `Ma sélection`. **Panier is intentionally kept as a CookiGram term internationally**, because its meaning is reinforced by an explicit basket visual in the interface.
+- **Planner**: the function that organizes recipes over time. Its visible label may evolve or be localized without changing the underlying concept.
+- **Menu**: the result of that time-based organization rather than the name of the planning tool itself.
+- **Shopping**: the function that prepares purchase needs from all or part of the Panier. This is descriptive interface vocabulary and may be localized; it is not a brand term that must remain French.
+- **Theme**: the visual atmosphere of a Cuisine. Available themes and their visible names belong to the Cuisine and are defined by its Grand Chef; Core does not impose one global theme vocabulary.
+
+### Internationalization rule
+
+The following brand terms are intended to be allowed to remain in French in every language: **Cuisine**, **Grand Chef**, **Panier**, and **Menu**.
+
+Descriptive terms such as **recipe book**, **Catalogue**, **Planner**, **Shopping**, or **Theme** may be translated whenever that improves local understanding.
+
+Operational actions and messages should be localized normally: add, remove, reset, plan, prepare a list, accessible states, help text, errors, confirmations, and similar task-oriented language.
+
+A French term should not be preserved purely for style if it makes the normal workflow harder to understand. If a term becomes difficult to understand in context, it should be renamed, translated, or replaced. **Panier is a deliberate exception to that caution** because the interface makes it visual and immediately contextual.
+
+This vocabulary describes CookiGram’s product mental model. It does not, by itself, create a technical abstraction, permission system, account model, or architecture project.
+
 ## Boundary with the private engine
 
 The generation engine, full Gram parser and validator, static site/PWA, and application test suites live in [`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core), a private repository.
