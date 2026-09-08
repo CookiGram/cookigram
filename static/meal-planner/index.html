@@ -1,9 +1,23 @@
 <main class="planner-main">
-  <header class="planner-intro"><span class="beta-badge">Beta</span><h1>Planifier ma semaine</h1><p class="subtitle">Les recettes de Ma sélection sont prêtes à être réparties dans le temps. Aucune recherche à refaire ici.</p></header>
+  <header class="planner-intro"><span class="beta-badge">Beta</span><h1>Planifier ma semaine</h1><p class="subtitle">Répartissez les recettes de Ma sélection quand vous voulez les cuisiner.</p></header>
   <div id="planner-empty" class="planner-panel empty-state" hidden>Votre sélection est vide. <a href="../">Choisir des recettes</a></div>
-  <div id="planner-content" class="planner-grid">
-    <section class="planner-panel"><h2>Recettes à placer</h2><p class="hint">Choisissez un jour et un moment pour chaque recette.</p><div id="planner-selection" class="planner-list"></div></section>
-    <section class="planner-panel"><h2>Ma semaine</h2><p class="hint">Cette vue reflète uniquement les recettes que vous avez placées.</p><div id="planner-week" class="planner-list"></div></section>
+  <div id="planner-content" hidden>
+    <section class="planner-panel planner-toolbar" aria-label="Navigation de la semaine">
+      <div><h2 id="planner-week-title">Ma semaine</h2><p class="hint">Déplacez une recette ou utilisez les commandes accessibles pour la placer.</p></div>
+      <div class="planner-week-actions"><button type="button" class="btn" data-week-prev>← Semaine précédente</button><button type="button" class="btn" data-week-today>Cette semaine</button><button type="button" class="btn" data-week-next>Semaine suivante →</button></div>
+    </section>
+    <section class="planner-panel planner-unplaced" aria-labelledby="unplaced-title">
+      <div class="planner-section-heading"><div><h2 id="unplaced-title">À placer</h2><p class="hint">Ces recettes restent dans Ma sélection.</p></div><button type="button" class="btn danger" data-remove-unplanned hidden></button></div>
+      <div id="planner-selection" class="planner-list" aria-live="polite"></div>
+      <p id="planner-selection-empty" class="empty-state" hidden>Toutes les recettes sélectionnées sont placées.</p>
+    </section>
+    <section class="planner-panel" aria-labelledby="week-board-title">
+      <h2 id="week-board-title" class="sr-only">Jours de la semaine</h2>
+      <div id="planner-week" class="planner-board" aria-live="polite"></div>
+    </section>
   </div>
   <p><a href="../selection/">← Ma sélection</a></p>
+  <dialog id="planner-slot-dialog" class="planner-dialog">
+    <form method="dialog"><h2>Ajouter une recette au créneau</h2><label for="planner-slot-recipe">Recette</label><select id="planner-slot-recipe"></select><div class="planner-dialog-actions"><button value="cancel" class="btn">Annuler</button><button value="place" class="btn primary">Placer</button></div></form>
+  </dialog>
 </main>
