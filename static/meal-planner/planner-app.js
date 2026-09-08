@@ -1,4 +1,5 @@
 import { addPlacement, loadPlanning, MOMENTS, removePlacement, savePlanning } from "./planner-state.js";
+import { buildCalendarExport } from "./calendar-export.js";
 
 const SELECTION_KEY = "cookigram:recipe-selection";
 const WEEK_KEY = "cookigram:meal-planning-week:v1";
@@ -98,7 +99,23 @@ const removeButtonHandler = () => {
     selection = selection.filter(item => plannedSlugs.has(item.slug)); writeSelection(selection); persist(); render(); showFeedback(`${count} recettes retirées de Ma sélection.`, true);
   };
 };
+const exportCalendar = () => {
+  const weekDates = dates();
+  try {
+    const content = buildCalendarExport({ placements: planning, selection, weekDates, baseUrl: new URL("../", window.location.href) });
+    const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `cookigram-semaine-${weekDates[0]}.ics`;
+    link.click();
+    window.setTimeout(() => URL.revokeObjectURL(link.href), 0);
+    showFeedback("La photo de cette semaine a été exportée.", false);
+  } catch (error) {
+    showFeedback(error.message, false);
+  }
+};
 document.querySelector("[data-undo-removal]").addEventListener("click", () => { if (!lastBulkRemoval) return; selection = lastBulkRemoval.selection; writeSelection(selection); render(); showFeedback("Les recettes retirées ont été restaurées.", false); lastBulkRemoval = null; });
+document.querySelector("[data-export-calendar]").addEventListener("click", exportCalendar);
 document.querySelector("[data-week-prev]").addEventListener("click", () => { weekStart.setDate(weekStart.getDate() - 7); persist(); render(); });
 document.querySelector("[data-week-next]").addEventListener("click", () => { weekStart.setDate(weekStart.getDate() + 7); persist(); render(); });
 document.querySelector("[data-week-today]").addEventListener("click", () => { weekStart = monday(new Date()); persist(); render(); });

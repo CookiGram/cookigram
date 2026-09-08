@@ -51,6 +51,9 @@ jobs:
       - name: Linter public SEO et contenu
         run: python scripts/lint-public-content.py --check --warn-only --json
 
+      - name: Tester l’export iCalendar du Planner
+        run: node --test tests/calendar-export.test.mjs
+
   private-integration:
     name: Intégration Core privée (push de confiance uniquement)
     if: ${{ github.event_name != 'pull_request' }}

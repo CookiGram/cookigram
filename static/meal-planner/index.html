@@ -4,8 +4,9 @@
   <div id="planner-content" hidden>
     <section class="planner-panel planner-toolbar" aria-label="Navigation de la semaine">
       <div><h2 id="planner-week-title">Ma semaine</h2><p class="hint">Faites glisser une recette vers un créneau, ou utilisez les commandes accessibles.</p></div>
-      <div class="planner-week-actions"><button type="button" class="btn planner-week-arrow" data-week-prev aria-label="Semaine précédente">‹</button><button type="button" class="btn" data-week-today>Cette semaine</button><button type="button" class="btn planner-week-arrow" data-week-next aria-label="Semaine suivante">›</button></div>
+      <div class="planner-week-actions"><button type="button" class="btn planner-week-arrow" data-week-prev aria-label="Semaine précédente">‹</button><button type="button" class="btn" data-week-today>Cette semaine</button><button type="button" class="btn planner-week-arrow" data-week-next aria-label="Semaine suivante">›</button><button type="button" class="btn primary" data-export-calendar>Exporter cette semaine</button></div>
     </section>
+    <p class="hint planner-export-note">Exporte une photo de cette semaine vers ton calendrier. Les modifications suivantes ne seront pas synchronisées.</p>
     <div class="planner-board-shell">
       <section class="planner-panel planner-unplaced" aria-labelledby="unplaced-title">
         <div class="planner-section-heading"><div><h2 id="unplaced-title">À placer</h2><p class="hint">Ces recettes restent dans Ma sélection.</p></div><button type="button" class="btn danger" data-remove-unplanned hidden></button></div>
