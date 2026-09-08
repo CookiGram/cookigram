@@ -10,5 +10,67 @@ const render = () => {
   empty.hidden = items.length > 0;
   list.querySelectorAll("[data-remove]").forEach(button => button.addEventListener("click", () => { toggleRecipeSelection(button.dataset.remove); render(); }));
   list.querySelectorAll("[data-move]").forEach(button => button.addEventListener("click", () => { const next = [...getRecipeSelection()]; const index = Number(button.dataset.index); const target = button.dataset.move === "up" ? index - 1 : index + 1; if (target < 0 || target >= next.length) return; [next[index], next[target]] = [next[target], next[index]]; write(next); render(); list.querySelector(`[data-index="${target}"]`)?.focus(); }));
+  document.dispatchEvent(new CustomEvent("cookigram:selection-change"));
 };
 render();
+
+const shoppingSection = document.querySelector("[data-selection-shopping]");
+const shoppingList = document.querySelector("[data-shopping-list]");
+const shoppingLoading = document.querySelector("[data-shopping-loading]");
+const shoppingStateKey = "cookigram:selection-shopping";
+let recipes = [];
+const readShoppingState = () => { try { const value = JSON.parse(localStorage.getItem(shoppingStateKey) || "{}"); return value && typeof value === "object" ? value : {}; } catch { return {}; } };
+const saveShoppingState = value => localStorage.setItem(shoppingStateKey, JSON.stringify(value));
+const fraction = value => { const [a, b] = String(value).split("/").map(Number); return b ? a / b : Number(value); };
+const parseQuantity = raw => {
+  const match = String(raw || "").trim().match(/^([\d./]+)\s*(.*)$/);
+  if (!match) return null;
+  const amount = fraction(match[1]);
+  if (!Number.isFinite(amount)) return null;
+  const unit = match[2].trim().toLowerCase();
+  const family = /^(kg|g|mg)$/.test(unit) ? "mass" : /^(l|dl|cl|ml)$/.test(unit) ? "volume" : /^(pièce|pièces|piece|pieces|unité|unités)$/.test(unit) ? "piece" : /c\.\s*à\s*(café|soupe)/.test(unit) ? "spoon" : null;
+  if (!family) return null;
+  const factors = { kg: 1000, g: 1, mg: .001, l: 1000, dl: 100, cl: 10, ml: 1, "c. à soupe": 15, "c. à café": 5 };
+  return { amount: amount * (factors[unit] || 1), family, unit };
+};
+const formatQuantity = (total, family, unit) => {
+  const units = family === "mass" ? ["kg", 1000] : family === "volume" ? ["l", 1000] : family === "spoon" ? ["ml", 1] : [unit, 1];
+  const value = total / units[1];
+  return `${Number.isInteger(value) ? value : Number(value.toFixed(2))} ${units[0]}`;
+};
+const consolidate = selected => {
+  const groups = new Map();
+  selected.forEach(recipe => {
+    const entries = [...(recipe.shopping?.aisles ? Object.entries(recipe.shopping.aisles).flatMap(([aisle, items]) => items.map(item => ({ ...item, aisle }))) : []), ...(recipe.shopping?.staples || []).map(item => ({ ...item, aisle: "Fond de placard" }))];
+    entries.forEach(item => {
+      const parsed = parseQuantity(item.quantity);
+      const key = `${item.slug}|${parsed?.family || "review"}|${parsed?.unit || item.quantity}`;
+      const group = groups.get(key) || { ...item, recipes: [], parsed, total: 0, review: !parsed };
+      if (parsed) group.total += parsed.amount;
+      group.recipes.push(recipe.title);
+      groups.set(key, group);
+    });
+  });
+  return [...groups.values()].sort((a, b) => a.aisle.localeCompare(b.aisle) || a.name.localeCompare(b.name));
+};
+const selectedRecipes = () => getRecipeSelection().map(item => recipes.find(recipe => recipe.slug === item.slug)).filter(Boolean);
+const renderShopping = () => {
+  if (!shoppingList) return;
+  const items = consolidate(selectedRecipes());
+  const state = readShoppingState();
+  shoppingList.innerHTML = items.length ? items.reduce((html, item) => {
+    const qty = item.parsed ? formatQuantity(item.total, item.parsed.family, item.parsed.unit) : `À vérifier · ${item.quantity || "quantité non précisée"}`;
+    const key = `${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`;
+    return `${html}<div class="shopping-group" data-aisle="${esc(item.aisle)}"><h3>${esc(item.aisle)}</h3><div class="shopping-item${item.review ? " shopping-item--review" : ""}"><label><input type="checkbox" data-shopping-item="${esc(key)}" ${state[key] ? "" : "checked"}><span><strong>${esc(item.name)}</strong><small>${esc(qty)} · ${esc(item.recipes.join(", "))}${item.review ? " · à vérifier" : ""}</small></span></label></div></div>`;
+  }, "") : `<p class="shopping-empty">Ajoutez des recettes à Ma sélection pour préparer une liste.</p>`;
+  shoppingList.querySelectorAll("[data-shopping-item]").forEach(cb => cb.addEventListener("change", () => { const next = readShoppingState(); next[cb.dataset.shoppingItem] = !cb.checked; saveShoppingState(next); }));
+};
+const showShopping = () => { if (!shoppingSection) return; shoppingSection.hidden = false; renderShopping(); shoppingSection.scrollIntoView({ behavior: "smooth", block: "start" }); };
+document.querySelector("[data-open-shopping]")?.addEventListener("click", showShopping);
+document.addEventListener("cookigram:selection-change", () => { if (!shoppingSection?.hidden) renderShopping(); });
+fetch("../recipes.json").then(response => response.json()).then(data => { recipes = Array.isArray(data) ? data : data.recipes || []; if (shoppingLoading) shoppingLoading.hidden = true; }).catch(() => { if (shoppingLoading) shoppingLoading.textContent = "La liste consolidée est temporairement indisponible."; });
+const shoppingText = () => consolidate(selectedRecipes()).map(item => `${item.name} : ${item.parsed ? formatQuantity(item.total, item.parsed.family, item.parsed.unit) : `À vérifier · ${item.quantity || "quantité non précisée"}`}`).join("\n");
+const copyShopping = async () => { const text = shoppingText(); try { await navigator.clipboard.writeText(text); } catch { const area = document.createElement("textarea"); area.value = text; document.body.append(area); area.select(); document.execCommand("copy"); area.remove(); } };
+document.querySelector("[data-copy-shopping]")?.addEventListener("click", async () => { await copyShopping(); });
+document.querySelector("[data-share-shopping]")?.addEventListener("click", async () => { const text = shoppingText(); if (navigator.share) await navigator.share({ title: "Courses · Ma sélection", text }); else await copyShopping(); });
+document.querySelector("[data-export-shopping]")?.addEventListener("click", () => { const blob = new Blob([shoppingText()], { type: "text/plain;charset=utf-8" }); const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "courses-cookigram.txt"; link.click(); URL.revokeObjectURL(link.href); });
