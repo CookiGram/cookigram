@@ -2,6 +2,10 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
+/* Synchronise the header, Midi and Soir tracks across every day column. */
+.planner-board { grid-template-rows: auto repeat(2, minmax(118px, auto)); }
+.planner-day { display: grid; grid-template-rows: subgrid; grid-row: span 3; }
+
 .planner-all-placed {
   margin: 0 0 12px;
   padding: 10px 14px;
@@ -109,6 +113,8 @@
 }
 
 @media (max-width: 760px) {
+  .planner-day { display: block; grid-template-rows: none; grid-row: auto; }
+
   .planner-unplaced .planner-recipe-unplaced {
     grid-template-columns: 56px minmax(0, 1fr);
   }
