@@ -38,6 +38,9 @@ const formatQuantity = (total, family, unit) => {
   const value = total / units[1];
   return `${Number.isInteger(value) ? value : Number(value.toFixed(2))} ${units[0]}`;
 };
+const itemKey = item => item.parsed ? `${item.slug}|${item.parsed.family}` : `${item.slug}|review|${item.quantity}`;
+const legacyItemKey = item => `${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`;
+const isShoppingChecked = (item, state) => Boolean(state[itemKey(item)] || state[legacyItemKey(item)]);
 const normalizeAisle = aisle => ({
   "Fruits & Légumes": "Fruits & légumes",
   "Boucherie & Volailles": "Boucherie & volailles",
@@ -46,6 +49,12 @@ const normalizeAisle = aisle => ({
   "Épicerie & Féculents": "Épicerie",
   "Boissons & Vins": "Épicerie",
   "Fond de placard": "Fond de placard",
+  "Fruits à coque et graines": "Épicerie",
+  "Produits laitiers et matières grasses": "Crèmerie & œufs",
+  "Boucherie et volaille": "Boucherie & volailles",
+  "Épicerie sucrée": "Épicerie",
+  "Conserves et bocaux": "Épicerie",
+  "Pâtes et céréales": "Épicerie",
 }[aisle] || "À vérifier");
 const consolidate = selected => {
   const groups = new Map();
@@ -53,7 +62,7 @@ const consolidate = selected => {
     const entries = [...(recipe.shopping?.aisles ? Object.entries(recipe.shopping.aisles).flatMap(([aisle, items]) => items.map(item => ({ ...item, aisle }))) : []), ...(recipe.shopping?.staples || []).map(item => ({ ...item, aisle: "Fond de placard" }))];
     entries.forEach(item => {
       const parsed = parseQuantity(item.quantity);
-      const key = `${item.slug}|${parsed?.family || "review"}|${parsed?.unit || item.quantity}`;
+      const key = itemKey({ ...item, parsed });
       const group = groups.get(key) || { ...item, aisle: normalizeAisle(item.aisle), recipes: [], parsed, total: 0, review: !parsed };
       if (parsed) group.total += parsed.amount;
       group.recipes.push(recipe.title);
@@ -64,21 +73,22 @@ const consolidate = selected => {
   return [...groups.values()].sort((a, b) => (order.indexOf(a.aisle) - order.indexOf(b.aisle)) || a.name.localeCompare(b.name, "fr"));
 };
 const selectedRecipes = () => getRecipeSelection().map(item => recipes.find(recipe => recipe.slug === item.slug)).filter(Boolean);
-const shoppingItemsToBuy = () => consolidate(selectedRecipes()).filter(item => !readShoppingState()[`${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`]);
+const shoppingItemsToBuy = () => consolidate(selectedRecipes()).filter(item => !isShoppingChecked(item, readShoppingState()));
 const renderShopping = () => {
   if (!shoppingList) return;
   const items = consolidate(selectedRecipes());
   const state = readShoppingState();
   shoppingSection.hidden = getRecipeSelection().length === 0;
-  const already = items.filter(item => state[`${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`]).length;
+  const already = items.filter(item => isShoppingChecked(item, state)).length;
   const review = items.filter(item => item.review).length;
   const summary = document.querySelector("[data-shopping-summary]");
   if (summary) summary.textContent = `${items.length - already} à acheter · ${already} déjà disponibles · ${review} à vérifier`;
   const grouped = items.reduce((groups, item) => { const group = groups.find(entry => entry.aisle === item.aisle); if (group) group.items.push(item); else groups.push({ aisle: item.aisle, items: [item] }); return groups; }, []);
   shoppingList.innerHTML = items.length ? grouped.map(group => `<section class="shopping-group" data-aisle="${esc(group.aisle)}"><h3>${esc(group.aisle)}</h3><ul class="shopping-group-items">${group.items.map(item => {
     const qty = item.parsed ? formatQuantity(item.total, item.parsed.family, item.parsed.unit) : `À vérifier · ${item.quantity || "quantité non précisée"}`;
-    const key = `${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`;
-    return `<li class="shopping-item${item.review ? " shopping-item--review" : ""}${state[key] ? " shopping-item--available" : ""}"><label><input type="checkbox" data-shopping-item="${esc(key)}" ${state[key] ? "checked" : ""}><span><strong>${esc(item.name)}</strong><small>${esc(qty)} · ${esc(item.recipes.join(", "))}</small></span></label></li>`;
+    const key = itemKey(item);
+    const checked = isShoppingChecked(item, state);
+    return `<li class="shopping-item${item.review ? " shopping-item--review" : ""}${checked ? " shopping-item--available" : ""}"><label><input type="checkbox" data-shopping-item="${esc(key)}" aria-label="${checked ? "Déjà disponible" : "À acheter"} : ${esc(item.name)}" ${checked ? "checked" : ""}>${item.icon ? `<img class="shopping-item-icon" src="../assets/${esc(item.icon)}" alt="" aria-hidden="true" loading="lazy">` : ""}<span><strong>${esc(item.name)}</strong><small>${esc(qty)} · ${esc(item.recipes.join(", "))}</small></span>${item.review ? `<span class="shopping-review-icon" title="À vérifier" aria-label="À vérifier">⌕</span>` : ""}</label></li>`;
   }).join("")}</ul></section>`).join("") : `<p class="shopping-empty">Ajoutez des recettes à Ma sélection pour préparer une liste.</p>`;
   shoppingList.querySelectorAll("[data-shopping-item]").forEach(cb => cb.addEventListener("change", () => { const next = readShoppingState(); next[cb.dataset.shoppingItem] = cb.checked; saveShoppingState(next); }));
 };
