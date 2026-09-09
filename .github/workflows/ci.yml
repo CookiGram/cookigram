@@ -91,3 +91,4 @@ jobs:
           python scripts/check-pins.py --markdown --no-remote
           python -m generator.recipe_check --root .
           python -m generator.build --content-dir . --output /tmp/_test_site
+          python scripts/check-generated-surfaces.py --site-dir /tmp/_test_site
