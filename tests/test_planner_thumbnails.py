@@ -14,6 +14,9 @@ class PlannerThumbnailContractTests(unittest.TestCase):
         self.assertIn('class="planner-recipe-thumb"', source)
         self.assertIn('draggable="true"', source)
         self.assertIn('import { buildCalendarExport } from "./calendar-export.js"', source)
+        self.assertIn('const reorder =', source)
+        self.assertIn('data-reorder="up"', source)
+        self.assertIn('data-unplan=', source)
 
     def test_thumbnail_cards_remain_accessible_and_responsive(self):
         source = (ROOT / "static/meal-planner/style.css").read_text(encoding="utf-8")
@@ -22,6 +25,7 @@ class PlannerThumbnailContractTests(unittest.TestCase):
         self.assertIn(".planner-recipe:hover", source)
         self.assertIn("@media (max-width: 760px)", source)
         self.assertIn(".planner-recipe-placed .planner-recipe-thumb", source)
+        self.assertIn(".planner-unplan", source)
 
 
 if __name__ == "__main__":

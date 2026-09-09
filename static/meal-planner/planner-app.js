@@ -29,19 +29,39 @@ const unplanned = () => selection.filter(item => !planning[item.slug]?.date);
 const recipeFor = item => catalog.get(item.slug) || item;
 const recipeTitle = item => recipeFor(item).title || item.title || item.slug;
 const itemForSlug = slug => selection.find(item => item.slug === slug) || { slug };
+const slotItems = (date, moment) => selection.filter(item => planning[item.slug]?.date === date && planning[item.slug]?.moment === moment).sort((a, b) => (planning[a.slug]?.order ?? selection.indexOf(a)) - (planning[b.slug]?.order ?? selection.indexOf(b)));
 const recipeImage = item => {
   const image = recipeFor(item).image;
   return image ? `<img src="../assets/${esc(image)}" alt="" loading="lazy">` : `<span aria-hidden="true">${esc(recipeTitle(item).slice(0, 2).toUpperCase())}</span>`;
 };
 const place = (slug, date, moment) => {
   if (!slug || !date || !moment) return;
+  const order = slotItems(date, moment).length;
   planning = addPlacement(planning, slug, date, moment);
+  planning[slug].order = order;
   if (selectedSlug === slug) selectedSlug = null;
   persist();
   render();
 };
 const unplan = slug => {
   planning = removePlacement(planning, slug);
+  persist();
+  render();
+};
+const reorder = (slug, direction) => {
+  const placement = planning[slug];
+  if (!placement?.date || !placement?.moment) return;
+  const items = slotItems(placement.date, placement.moment);
+  const index = items.findIndex(item => item.slug === slug);
+  const target = index + direction;
+  if (index < 0 || target < 0 || target >= items.length) return;
+  const next = { ...planning };
+  const first = items[index].slug;
+  const second = items[target].slug;
+  const firstOrder = next[first].order ?? index;
+  next[first] = { ...next[first], order: next[second].order ?? target };
+  next[second] = { ...next[second], order: firstOrder };
+  planning = next;
   persist();
   render();
 };
@@ -62,14 +82,18 @@ const renderUnplannedRecipe = item => {
 
 const renderPlacedRecipe = item => {
   const title = recipeTitle(item);
-  return `<article class="planner-recipe planner-recipe-placed" draggable="true" tabindex="0" role="button" aria-label="Remettre ${esc(title)} dans À placer" title="${esc(title)} — cliquer pour remettre dans À placer" data-planner-recipe="${esc(item.slug)}" data-unplan-card="${esc(item.slug)}">
+  const placement = planning[item.slug];
+  const peers = slotItems(placement.date, placement.moment);
+  const index = peers.findIndex(peer => peer.slug === item.slug);
+  return `<article class="planner-recipe planner-recipe-placed" draggable="true" tabindex="0" aria-label="${esc(title)}" title="${esc(title)}" data-planner-recipe="${esc(item.slug)}">
     <span class="planner-recipe-thumb" aria-hidden="true">${recipeImage(item)}</span>
-    <span class="planner-recipe-overlay" aria-hidden="true"><strong>${esc(title)}</strong><span>↩ À placer</span></span>
+    <span class="planner-recipe-overlay" aria-hidden="true"><strong>${esc(title)}</strong></span>
+    <span class="planner-recipe-actions"><button type="button" class="planner-order" data-reorder="up" data-recipe="${esc(item.slug)}" aria-label="Monter ${esc(title)}" ${index === 0 ? "disabled" : ""}>↑</button><button type="button" class="planner-order" data-reorder="down" data-recipe="${esc(item.slug)}" aria-label="Descendre ${esc(title)}" ${index === peers.length - 1 ? "disabled" : ""}>↓</button><button type="button" class="planner-unplan" data-unplan="${esc(item.slug)}" aria-label="Remettre ${esc(title)} dans À placer" title="Remettre dans À placer">×</button></span>
   </article>`;
 };
 
 const renderSlot = (date, moment) => {
-  const items = selection.filter(item => planning[item.slug]?.date === date && planning[item.slug]?.moment === moment);
+  const items = slotItems(date, moment);
   const selected = selectedSlug ? recipeTitle(itemForSlug(selectedSlug)) : null;
   const label = selected ? `Placer ${selected} dans ${moment} du ${date}` : `${moment} du ${date}. Sélectionnez une recette dans À placer pour la placer ici`;
   return `<div class="planner-slot${selectedSlug ? " planner-slot-ready" : ""}" data-slot-date="${date}" data-slot-moment="${moment}" tabindex="0" role="button" aria-label="${esc(label)}">
@@ -120,12 +144,8 @@ const bindEvents = () => {
       if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateUnplanned(card); }
     });
   });
-  document.querySelectorAll("[data-unplan-card]").forEach(card => {
-    card.addEventListener("click", event => { event.stopPropagation(); activatePlaced(card); });
-    card.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); event.stopPropagation(); activatePlaced(card); }
-    });
-  });
+  document.querySelectorAll("[data-unplan]").forEach(button => button.addEventListener("click", event => { event.stopPropagation(); unplan(button.dataset.unplan); }));
+  document.querySelectorAll("[data-reorder]").forEach(button => button.addEventListener("click", event => { event.stopPropagation(); reorder(button.dataset.recipe, button.dataset.reorder === "up" ? -1 : 1); }));
   document.querySelectorAll("[data-planner-recipe]").forEach(card => {
     card.addEventListener("dragstart", event => {
       draggingSlug = card.dataset.plannerRecipe;
