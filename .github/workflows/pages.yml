@@ -55,6 +55,9 @@ jobs:
       - name: Build Static Site & PWA
         run: python -m generator.build --content-dir . --output _site
 
+      - name: Verify consumer fragments in generated site
+        run: python scripts/check-generated-surfaces.py --site-dir _site
+
       - name: Write build provenance
         env:
           CORE_SHA: ${{ steps.core-ref.outputs.sha }}
