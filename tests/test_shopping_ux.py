@@ -11,7 +11,7 @@ class ShoppingUxContractTests(unittest.TestCase):
         self.assertNotIn('data-open-shopping', html)
         self.assertIn('class="selection-heading"', html)
         self.assertIn('data-selection-shopping hidden', html)
-        self.assertIn('Cochez les ingrédients que vous avez déjà en réserve.', html)
+        self.assertIn('Cochez une case quand vous avez déjà l’ingrédient à la maison.', html)
 
     def test_shopping_groups_before_render_and_exports_only_items_to_buy(self):
         source = (ROOT / "static/selection/selection-app.js").read_text(encoding="utf-8")
@@ -20,7 +20,9 @@ class ShoppingUxContractTests(unittest.TestCase):
         self.assertIn('group.items.map(item =>', source)
         self.assertIn('}).join("")}</ul></section>`).join("")', source)
         self.assertIn('data-shopping-item', source)
-        self.assertIn('${state[key] ? "checked" : ""}', source)
+        self.assertIn('const itemKey = item =>', source)
+        self.assertIn('const isShoppingChecked = (item, state) =>', source)
+        self.assertIn('${checked ? "checked" : ""}', source)
         self.assertIn('next[cb.dataset.shoppingItem] = cb.checked', source)
 
 
