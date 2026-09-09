@@ -1,0 +1,24 @@
+<main class="info-page">
+  <h1>CookiGram · Build info</h1>
+  <p class="info-note">Page de diagnostic non liée dans l’interface.</p>
+
+  <dl class="info-grid">
+    <dt>URL</dt><dd data-info-url>—</dd>
+    <dt>Content SHA</dt><dd><code data-info-content-sha>—</code></dd>
+    <dt>Core SHA</dt><dd><code data-info-core-sha>—</code></dd>
+    <dt>Build UTC</dt><dd data-info-built-at>—</dd>
+    <dt>Service Worker</dt><dd data-info-sw>—</dd>
+    <dt>SW controller</dt><dd><code data-info-sw-controller>—</code></dd>
+    <dt>Cache Storage</dt><dd><code data-info-caches>—</code></dd>
+    <dt>Online</dt><dd data-info-online>—</dd>
+    <dt>User agent</dt><dd><code data-info-ua>—</code></dd>
+  </dl>
+
+  <p data-info-error hidden></p>
+</main>
+
+<script type="module" src="./info.js"></script>
+
+<style>
+.info-page{max-width:900px;margin:0 auto;padding:24px 18px}.info-page h1{margin-bottom:6px}.info-note{color:var(--muted);margin-top:0}.info-grid{display:grid;grid-template-columns:minmax(130px,190px) 1fr;gap:10px 18px;margin-top:28px}.info-grid dt{font-weight:700}.info-grid dd{margin:0;overflow-wrap:anywhere}.info-grid code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.92em}[data-info-error]{margin-top:24px;color:var(--orange)}@media(max-width:600px){.info-grid{grid-template-columns:1fr;gap:4px}.info-grid dd{margin-bottom:10px}}
+</style>
