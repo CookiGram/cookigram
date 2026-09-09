@@ -42,11 +42,16 @@ const formatQuantity = (total, family, unit) => {
 const itemKey = item => item.parsed ? `${item.slug}|${item.parsed.family}` : `${item.slug}|review|${item.quantity}`;
 const legacyItemKey = item => `${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`;
 const isShoppingChecked = (item, state) => Boolean(state[itemKey(item)] || state[legacyItemKey(item)]);
+const normalizeIngredientName = value => String(value || "").trim().toLocaleLowerCase("fr-FR").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 const recipeShoppingChoice = (recipe, item) => {
   try {
     const saved = JSON.parse(localStorage.getItem(`cookigram:${recipe.slug}:shopping-eval`) || "null");
-    if (!saved || typeof saved !== "object" || !(item.slug in saved)) return true;
-    return saved[item.slug] !== false;
+    if (saved && typeof saved === "object" && item.slug in saved) return saved[item.slug] !== false;
+
+    const checked = JSON.parse(localStorage.getItem(`cookigram:${recipe.slug}:main:checked`) || "[]");
+    if (!Array.isArray(checked)) return true;
+    const ingredientName = normalizeIngredientName(item.name);
+    return !checked.some(value => normalizeIngredientName(value) === ingredientName);
   } catch { return true; }
 };
 const normalizeAisle = aisle => ({
