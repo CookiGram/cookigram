@@ -7,7 +7,9 @@
 .planner-week-arrow { width: 44px; padding: 8px; font-size: 1.4rem; }
 .planner-board-shell { grid-template-columns: minmax(220px, 250px) minmax(0, 1fr); }
 .planner-board { min-width: 0; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
-.planner-day { min-width: 0; }
+/* Synchronise the header, Midi and Soir tracks across every day column. */
+.planner-board { grid-template-rows: auto repeat(2, minmax(118px, auto)); }
+.planner-day { min-width: 0; display: grid; grid-template-rows: subgrid; grid-row: span 3; }
 .planner-day h3 { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .03em; }
 .planner-day-name { font-size: 1rem; }
 .planner-day-date { color: var(--muted); font-size: .8rem; font-weight: 500; text-transform: none; letter-spacing: 0; }
@@ -38,6 +40,7 @@
 @media (max-width: 760px) {
   .planner-week-actions { display: grid; grid-template-columns: 44px 1fr 44px; gap: 8px; }
   .planner-board { min-width: 0; }
+  .planner-day { display: block; grid-template-rows: none; grid-row: auto; }
   .planner-day h3 { flex-direction: row; align-items: baseline; flex-wrap: wrap; text-transform: uppercase; }
   .planner-day-name::after { content: " ·"; }
   .planner-day-date { font-size: .86rem; }
