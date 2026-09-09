@@ -128,10 +128,6 @@ const activateUnplanned = card => {
   if (ignoreClickSlug === card.dataset.selectPlanner) return;
   selectForPlacement(card.dataset.selectPlanner);
 };
-const activatePlaced = card => {
-  if (ignoreClickSlug === card.dataset.unplanCard) return;
-  unplan(card.dataset.unplanCard);
-};
 const activateSlot = slot => {
   if (!selectedSlug) return;
   place(selectedSlug, slot.dataset.slotDate, slot.dataset.slotMoment);
