@@ -17,6 +17,7 @@ render();
 const shoppingSection = document.querySelector("[data-selection-shopping]");
 const shoppingList = document.querySelector("[data-shopping-list]");
 const shoppingLoading = document.querySelector("[data-shopping-loading]");
+const plannerLink = document.querySelector(".selection-planner-link");
 const shoppingStateKey = "cookigram:selection-shopping:v2";
 let recipes = [];
 const readShoppingState = () => { try { const value = JSON.parse(localStorage.getItem(shoppingStateKey) || "{}"); return value && typeof value === "object" ? value : {}; } catch { return {}; } };
@@ -41,6 +42,13 @@ const formatQuantity = (total, family, unit) => {
 const itemKey = item => item.parsed ? `${item.slug}|${item.parsed.family}` : `${item.slug}|review|${item.quantity}`;
 const legacyItemKey = item => `${item.slug}|${item.parsed?.family || "review"}|${item.parsed?.unit || item.quantity}`;
 const isShoppingChecked = (item, state) => Boolean(state[itemKey(item)] || state[legacyItemKey(item)]);
+const recipeShoppingChoice = (recipe, item) => {
+  try {
+    const saved = JSON.parse(localStorage.getItem(`cookigram:${recipe.slug}:shopping-eval`) || "null");
+    if (!saved || typeof saved !== "object" || !(item.slug in saved)) return true;
+    return saved[item.slug] !== false;
+  } catch { return true; }
+};
 const normalizeAisle = aisle => ({
   "Fruits & Légumes": "Fruits & légumes",
   "Boucherie & Volailles": "Boucherie & volailles",
@@ -59,7 +67,7 @@ const normalizeAisle = aisle => ({
 const consolidate = selected => {
   const groups = new Map();
   selected.forEach(recipe => {
-    const entries = [...(recipe.shopping?.aisles ? Object.entries(recipe.shopping.aisles).flatMap(([aisle, items]) => items.map(item => ({ ...item, aisle }))) : []), ...(recipe.shopping?.staples || []).map(item => ({ ...item, aisle: "Fond de placard" }))];
+    const entries = [...(recipe.shopping?.aisles ? Object.entries(recipe.shopping.aisles).flatMap(([aisle, items]) => items.map(item => ({ ...item, aisle }))) : []), ...(recipe.shopping?.staples || []).map(item => ({ ...item, aisle: "Fond de placard" }))].filter(item => recipeShoppingChoice(recipe, item));
     entries.forEach(item => {
       const parsed = parseQuantity(item.quantity);
       const key = itemKey({ ...item, parsed });
@@ -79,10 +87,7 @@ const renderShopping = () => {
   const items = consolidate(selectedRecipes());
   const state = readShoppingState();
   shoppingSection.hidden = getRecipeSelection().length === 0;
-  const already = items.filter(item => isShoppingChecked(item, state)).length;
-  const review = items.filter(item => item.review).length;
-  const summary = document.querySelector("[data-shopping-summary]");
-  if (summary) summary.textContent = `${items.length - already} à acheter · ${already} déjà disponibles · ${review} à vérifier`;
+  if (plannerLink) plannerLink.hidden = items.length === 0;
   const grouped = items.reduce((groups, item) => { const group = groups.find(entry => entry.aisle === item.aisle); if (group) group.items.push(item); else groups.push({ aisle: item.aisle, items: [item] }); return groups; }, []);
   shoppingList.innerHTML = items.length ? grouped.map(group => `<section class="shopping-group" data-aisle="${esc(group.aisle)}"><h3>${esc(group.aisle)}</h3><ul class="shopping-group-items">${group.items.map(item => {
     const qty = item.parsed ? formatQuantity(item.total, item.parsed.family, item.parsed.unit) : `À vérifier · ${item.quantity || "quantité non précisée"}`;
