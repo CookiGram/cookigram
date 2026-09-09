@@ -106,7 +106,7 @@ Règles essentielles : étapes lisibles et atomiques, un geste ou réglage par p
 
 Chaque recette publiée peut référencer une image sous `static/images/` et, pour une illustration générée, un prompt correspondant sous `image-prompts/`. Les crédits et conditions d’utilisation sont conservés dans le frontmatter de la recette. Consultez [`generate-recipe-image`](.agents/skills/generate-recipe-image/SKILL.md) avant de remplacer une illustration.
 
-## Roadmap — Entrée, Plat, Dessert
+## Roadmap — Entrée, Plat, Dessert, Café, Digestif
 
 Cette roadmap décrit la progression du produit comme un repas complet. Elle ne remplace ni les issues ni les décisions prises à partir des retours d’usage.
 
@@ -178,13 +178,51 @@ L’objectif sera de transformer des recettes planifiées en déroulé d’exéc
 
 Le Kitchen Planner ne doit pas être anticipé dans l’architecture du Plat. Il devra partir des données et usages réellement validés dans les recettes et le Planificateur plutôt que d’introduire aujourd’hui des abstractions destinées à un futur hypothétique.
 
-La chaîne produit visée devient donc :
+### ☕ Café — connecter CookiGram au quotidien — LATER
 
-**Livre de recettes → Panier → Menu → Courses → Exécution en cuisine**
+Le Café regroupe les intégrations qui deviennent utiles une fois le cœur du produit mature. Elles doivent rester optionnelles et découplées du fonctionnement de base de CookiGram.
 
-### Après le dessert
+Directions possibles :
 
-Les autres directions restent des sujets d’exploration et non des engagements : nutrition plus riche, inventaire/garde-manger, substitutions, plusieurs forges, builders locaux supplémentaires, assistants domestiques, workflows vidéo ou circulation de Livres entre Cuisines.
+- calendriers et autres outils de planification ;
+- inventaire ou garde-manger ;
+- assistants domestiques et écrans de cuisine ;
+- domotique et appareils connectés lorsque leur intégration apporte une valeur concrète ;
+- plusieurs sources ou Livres de recettes ;
+- circulation de données entre Cuisines ;
+- nutrition, substitutions et autres enrichissements culinaires lorsque leurs données sont fiables ;
+- workflows externes comme la préparation de contenu ou de vidéos.
+
+Le Café n’est pas une plateforme centrale à construire : ce sont des prolongements du produit, activés uniquement lorsqu’ils servent un usage réel.
+
+### 🥃 Digestif — IA et MCP — EXPLORATION
+
+Le Digestif correspond à une couche d’intelligence et d’orchestration au-dessus des capacités déjà fiables de CookiGram.
+
+L’idée n’est pas de rendre l’IA nécessaire au fonctionnement du produit. Le cœur doit continuer à fonctionner sans modèle, sans service distant et sans compte. L’IA intervient comme un orchestrateur optionnel capable de composer les primitives de CookiGram et les capacités exposées par des MCP.
+
+Exemples de scénarios :
+
+- planifier plusieurs repas en tenant compte d’un calendrier externe ;
+- transformer un Menu en Courses puis comparer les besoins avec un inventaire ;
+- proposer quoi préparer à l’avance lorsqu’un créneau de cuisine est limité ;
+- suggérer une recette à partir d’ingrédients disponibles sans inventer les contraintes de la source ;
+- générer un plan d’exécution tenant compte des appareils disponibles ;
+- envoyer ou récupérer des informations via des outils externes exposés par MCP.
+
+Le principe architectural est :
+
+**CookiGram expose des primitives stables → les MCP ouvrent des capacités externes → l’IA compose et orchestre.**
+
+Le Digestif ne doit donc jamais devenir une dépendance du Catalogue, du Panier, du Planificateur, des Courses ou du Kitchen Planner. Il vient après eux et s’appuie sur eux.
+
+La chaîne produit complète visée devient :
+
+**Livre de recettes → Panier → Menu → Courses → Exécution en cuisine → Intégrations → Orchestration IA**
+
+### Après le digestif
+
+Les autres directions restent des sujets d’exploration et non des engagements : portabilité vers plusieurs forges, builders locaux supplémentaires ou nouvelles surfaces d’usage encore inconnues aujourd’hui.
 
 Elles ne doivent être engagées que lorsqu’un besoin concret le justifie. L’absence de compte CookiGram et de collecte d’usage centralisée reste un choix produit à préserver, pas une lacune à corriger par défaut.
 
