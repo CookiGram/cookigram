@@ -106,61 +106,87 @@ Règles essentielles : étapes lisibles et atomiques, un geste ou réglage par p
 
 Chaque recette publiée peut référencer une image sous `static/images/` et, pour une illustration générée, un prompt correspondant sous `image-prompts/`. Les crédits et conditions d’utilisation sont conservés dans le frontmatter de la recette. Consultez [`generate-recipe-image`](.agents/skills/generate-recipe-image/SKILL.md) avant de remplacer une illustration.
 
-## Roadmap interne
+## Roadmap — Entrée, Plat, Dessert
 
-Cette roadmap donne une direction au produit ; elle ne remplace ni les issues ni les décisions prises à partir des retours d’usage. Plus l’horizon est lointain, moins les éléments ci-dessous constituent des engagements.
+Cette roadmap décrit la progression du produit comme un repas complet. Elle ne remplace ni les issues ni les décisions prises à partir des retours d’usage.
 
 Le principe reste constant : **valider un usage réel avant d’élargir le produit**. CookiGram doit rester Git-first, static-first, sans compte obligatoire, sans backend central requis et sans télémétrie nécessaire à son fonctionnement.
 
-### Court terme — réussir le PoC et ouvrir le pilot
+### 🥗 Entrée — le livre de recettes — DONE
 
-L’objectif immédiat est de rendre CookiGram suffisamment cohérent pour être confié à quelques utilisateurs sans accompagnement constant. Le gate de référence est [#267 — PoC testeurs / READY FOR PILOT](https://github.com/CookiGram/cookigram/issues/267).
+L’Entrée devait rendre CookiGram utile avant toute sophistication de planification : disposer d’un livre de recettes clair, agréable à parcourir et réellement utilisable sur le plan de travail.
 
-Priorités :
+Le socle est désormais en place :
 
-- amener les quatre surfaces principales au seuil **READY FOR PILOT** : Catalogue, fiche recette, Planificateur et Courses ;
-- terminer la convergence UX de l’accueil : recherche, filtres, tris, sélection et lisibilité desktop/mobile ;
-- terminer le polish du Planificateur sans ajouter de sophistication non nécessaire ;
-- rendre Courses suffisamment fiable pour une utilisation réelle, notamment sur mobile ;
+- Catalogue de recettes, recherche, filtres et tris ;
+- fiches recettes exploitables et navigation cohérente ;
+- expérience responsive desktop/mobile et PWA ;
+- thèmes et identité visuelle d’une Cuisine ;
+- format Gram, corpus, images, provenance et workflows éditoriaux ;
+- sélection de recettes via le Panier (`Ma sélection`) ;
+- séparation entre le contenu public et le moteur Core suffisamment stable pour poursuivre le produit.
+
+L’Entrée est considérée comme terminée. Les corrections de bugs, ajustements d’accessibilité et finitions UX continuent naturellement, mais ne constituent plus une phase produit distincte.
+
+### 🍽️ Plat — organiser les repas et les courses — IN PROGRESS
+
+Le Plat transforme le livre de recettes en outil d’organisation quotidienne. Le parcours de référence est :
+
+**Catalogue → Panier → Planificateur → Courses**
+
+Le Panier est l’état intermédiaire commun : on choisit d’abord les recettes que l’on envisage, puis on décide lesquelles placer dans le Menu et lesquelles doivent alimenter les Courses.
+
+Le travail est déjà bien engagé :
+
+- ajout et retrait de recettes dans le Panier avec persistance locale ;
+- Planificateur séparé des Courses ;
+- placement des recettes par jour et par service ;
+- interactions desktop/mobile, glisser-déposer et alternatives accessibles ;
+- remise d’une recette dans les éléments à placer ;
+- cohérence entre le Panier, le Menu planifié et les Courses ;
+- export calendrier lorsque le Menu est suffisamment défini.
+
+La priorité actuelle n’est pas d’ajouter de nouvelles couches fonctionnelles, mais de rendre ce parcours évident, robuste et agréable :
+
+- terminer la convergence UX de l’accueil, du Panier, du Planificateur et des Courses ;
+- rendre les quatre surfaces principales — Catalogue, fiche recette, Planificateur et Courses — suffisamment cohérentes pour le gate [#267 — PoC testeurs / READY FOR PILOT](https://github.com/CookiGram/cookigram/issues/267) ;
+- préserver la synchronisation attendue lorsqu’une recette est ajoutée, retirée ou planifiée ;
+- rendre les Courses réellement utilisables sur mobile ;
 - conserver une navigation, des thèmes et des états interactifs cohérents entre toutes les pages ;
 - faire produire à Core un builder Linux x86_64 versionné, publiquement récupérable et vérifiable ;
-- faire construire et déployer ce dépôt avec exactement le même builder que celui destiné aux utilisateurs ;
+- construire et déployer ce dépôt avec le même builder que celui destiné aux utilisateurs ;
 - permettre à un fork ou à une Cuisine indépendante de déployer son propre GitHub Pages sans accès ni secret vers `cookigram-core` ;
-- documenter le parcours minimal puis le faire tester par les premiers utilisateurs externes.
+- documenter le parcours minimal puis le confronter à de vrais utilisateurs.
 
-**Garde-fou :** jusqu’au pilot, toute nouvelle fonctionnalité qui n’aide pas directement cette validation doit normalement attendre.
+**Garde-fou :** tant que ce Plat n’est pas validé par l’usage, une fonctionnalité qui n’améliore pas directement le parcours `Catalogue → Panier → Planificateur → Courses` doit normalement attendre.
 
-### Moyen terme — consolider le modèle après le pilot
+### 🍰 Dessert — Kitchen Planner — NEXT
 
-Une fois le PoC validé, l’objectif devient de transformer le parcours démontré en modèle reproductible et maintenable, sans perdre la simplicité qui fait partie du produit.
+Le Dessert commencera lorsque CookiGram saura non seulement répondre à **« qu’est-ce que je mange ? »**, mais aussi organiser correctement le Menu et les Courses.
 
-Sujets probables :
+Le Kitchen Planner répondra alors à une nouvelle question : **« comment est-ce que je cuisine tout cela efficacement ? »**
 
-- traiter en priorité les frictions observées chez les testeurs plutôt que les améliorations imaginées en interne ;
-- stabiliser le contrat du builder autour d’une transformation simple `sources -> _site/`, avec releases explicites et compatibilité maîtrisée ;
-- simplifier la création d’une nouvelle Cuisine : dépôt modèle, configuration minimale et documentation de déploiement ;
-- clarifier encore la séparation entre moteur, application générée et contenu afin qu’un dépôt de recettes tiers puisse rester maître de ses données ;
-- faire mûrir le modèle Cuisine / Livres / Catalogue lorsque des cas d’usage réels nécessitent plusieurs sources de recettes ;
-- continuer à améliorer recherche, tris, thèmes, accessibilité, PWA et usages mobile/offline à partir des retours réels ;
-- renforcer les workflows éditoriaux : import, validation Gram, provenance, images et qualité du corpus ;
-- durcir la stabilité des builds, des migrations de données locales et des tests de non-régression ;
-- expérimenter un premier adaptateur GitLab ou Gitea seulement lorsqu’un besoin concret justifie de sortir du chemin GitHub-first.
+L’objectif sera de transformer des recettes planifiées en déroulé d’exécution en cuisine, par exemple :
 
-À cet horizon, l’absence de compte CookiGram et de collecte d’usage centralisée reste un choix produit à préserver, pas une lacune à corriger par défaut.
+- ordonner les préparations et leurs dépendances ;
+- identifier ce qui peut être préparé à l’avance ;
+- paralléliser les tâches lorsque cela a du sens ;
+- tenir compte des temps actifs, des attentes, cuissons et repos ;
+- coordonner four, plaques, Thermomix et autres équipements disponibles ;
+- gérer les remises en température et le moment du service ;
+- éventuellement préparer des scénarios de batch cooking ou meal prep lorsque l’usage le justifie.
 
-### Long terme — sujets d’exploration
+Le Kitchen Planner ne doit pas être anticipé dans l’architecture du Plat. Il devra partir des données et usages réellement validés dans les recettes et le Planificateur plutôt que d’introduire aujourd’hui des abstractions destinées à un futur hypothétique.
 
-Ces sujets décrivent des directions possibles. Ils ne doivent pas influencer prématurément l’architecture du PoC ou du produit à court terme.
+La chaîne produit visée devient donc :
 
-- portabilité complète vers plusieurs forges et scénarios auto-hébergés ;
-- builders locaux et cibles supplémentaires : macOS, Windows, ARM et environnements sans GitHub Actions ;
-- séparation encore plus libre entre une Cuisine, ses Livres et l’application qui les rend, afin de faciliter les écosystèmes de dépôts tiers ;
-- planification culinaire plus riche : menus plus longs, calendrier et coordination de préparation lorsque l’usage le justifie ;
-- nutrition, inventaire/garde-manger, substitutions et autres données culinaires enrichies, uniquement lorsque leurs sources et règles de calcul sont suffisamment fiables ;
-- assistance à l’exécution en cuisine : ordonnancement des tâches, appareils, parallélisation et éventuel Kitchen Scheduler ;
-- intégrations optionnelles avec calendriers, assistants domestiques ou autres surfaces de consultation en cuisine ;
-- liens entre recettes et production de contenu, notamment les workflows vidéo ;
-- circulation et partage de Livres de recettes entre Cuisines sans imposer de plateforme centrale CookiGram.
+**Livre de recettes → Panier → Menu → Courses → Exécution en cuisine**
+
+### Après le dessert
+
+Les autres directions restent des sujets d’exploration et non des engagements : nutrition plus riche, inventaire/garde-manger, substitutions, plusieurs forges, builders locaux supplémentaires, assistants domestiques, workflows vidéo ou circulation de Livres entre Cuisines.
+
+Elles ne doivent être engagées que lorsqu’un besoin concret le justifie. L’absence de compte CookiGram et de collecte d’usage centralisée reste un choix produit à préserver, pas une lacune à corriger par défaut.
 
 ### Principes qui ne sont pas dans la roadmap
 
