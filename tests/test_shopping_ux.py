@@ -27,6 +27,8 @@ class ShoppingUxContractTests(unittest.TestCase):
         self.assertIn('next[cb.dataset.shoppingItem] = cb.checked', source)
         self.assertIn('recipeShoppingChoice', source)
         self.assertIn('filter(item => recipeShoppingChoice(recipe, item))', source)
+        self.assertIn('cookigram:${recipe.slug}:main:checked', source)
+        self.assertIn('normalizeIngredientName', source)
         self.assertIn('plannerLink.hidden = items.length === 0', source)
         self.assertIn('shopping-review-icon', source)
 
