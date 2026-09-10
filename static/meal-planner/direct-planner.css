@@ -18,7 +18,7 @@
 
 .planner-unplaced .planner-recipe-unplaced {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: 64px minmax(0, 1fr) 44px;
   gap: 10px;
   align-items: center;
   width: 100%;
@@ -36,6 +36,25 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.planner-selection-remove {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--orange);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.planner-selection-remove:hover,
+.planner-selection-remove:focus-visible {
+  background: color-mix(in srgb, var(--orange) 12%, transparent);
 }
 
 .planner-recipe-unplaced[aria-pressed="true"] {
@@ -148,7 +167,7 @@
   .planner-day { display: block; grid-template-rows: none; grid-row: auto; }
 
   .planner-unplaced .planner-recipe-unplaced {
-    grid-template-columns: 56px minmax(0, 1fr);
+    grid-template-columns: 56px minmax(0, 1fr) 44px;
   }
 
   .planner-recipe-placed .planner-recipe-thumb {
