@@ -48,6 +48,13 @@ const unplan = slug => {
   persist();
   render();
 };
+const removeFromSelection = slug => {
+  const next = readSelection().filter(item => item.slug !== slug);
+  localStorage.setItem(SELECTION_KEY, JSON.stringify(next));
+  if (selectedSlug === slug) selectedSlug = null;
+  document.dispatchEvent(new CustomEvent("cookigram:selection-change"));
+  render();
+};
 const reorder = (slug, direction) => {
   const placement = planning[slug];
   if (!placement?.date || !placement?.moment) return;
@@ -77,6 +84,7 @@ const renderUnplannedRecipe = item => {
   return `<article class="planner-recipe planner-recipe-unplaced${active ? " planner-recipe-selected" : ""}" draggable="true" tabindex="0" role="button" aria-pressed="${active}" aria-label="Sélectionner ${esc(title)} pour le placement" title="${esc(title)}" data-planner-recipe="${esc(item.slug)}" data-select-planner="${esc(item.slug)}">
     <span class="planner-recipe-thumb" aria-hidden="true">${recipeImage(item)}</span>
     <span class="planner-recipe-title">${esc(title)}</span>
+    <button type="button" class="planner-selection-remove" data-remove-selection="${esc(item.slug)}" aria-label="Retirer ${esc(title)} de Ma sélection" title="Retirer de Ma sélection">×</button>
   </article>`;
 };
 
@@ -137,9 +145,11 @@ const bindEvents = () => {
   document.querySelectorAll("[data-select-planner]").forEach(card => {
     card.addEventListener("click", () => activateUnplanned(card));
     card.addEventListener("keydown", event => {
+      if (event.target !== card) return;
       if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateUnplanned(card); }
     });
   });
+  document.querySelectorAll("[data-remove-selection]").forEach(button => button.addEventListener("click", event => { event.preventDefault(); event.stopPropagation(); removeFromSelection(button.dataset.removeSelection); }));
   document.querySelectorAll("[data-unplan]").forEach(button => button.addEventListener("click", event => { event.stopPropagation(); unplan(button.dataset.unplan); }));
   document.querySelectorAll("[data-reorder]").forEach(button => button.addEventListener("click", event => { event.stopPropagation(); reorder(button.dataset.recipe, button.dataset.reorder === "up" ? -1 : 1); }));
   document.querySelectorAll("[data-planner-recipe]").forEach(card => {
