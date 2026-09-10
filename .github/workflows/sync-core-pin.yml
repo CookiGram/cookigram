@@ -1,0 +1,160 @@
+name: Sync Core pin
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-core-pin
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  sync:
+    name: Converge Core pin
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: automation/core-pin
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout CookiGram consumer
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Checkout latest Core main
+        uses: actions/checkout@v4
+        with:
+          repository: CookiGram/cookigram-core
+          ssh-key: ${{ secrets.CORE_SSH_KEY }}
+          ref: main
+          path: core
+          fetch-depth: 1
+
+      - name: Resolve Core candidate
+        id: core
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="$(git -C core rev-parse HEAD)"
+          pinned="$(tr -d '[:space:]' < .core-version)"
+          echo "target=${target}" >> "$GITHUB_OUTPUT"
+          echo "pinned=${pinned}" >> "$GITHUB_OUTPUT"
+          if [[ "$target" == "$pinned" ]]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Core pin already converged at ${target}."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Core pin needs update: ${pinned} -> ${target}."
+          fi
+
+      - name: Prepare pin branch
+        if: steps.core.outputs.changed == 'true'
+        id: candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf core
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$BRANCH" || true
+          git checkout -B "$BRANCH" origin/main
+          printf '%s\n' '${{ steps.core.outputs.target }}' > .core-version
+
+          changed_files="$(git diff --name-only)"
+          if [[ "$changed_files" != ".core-version" ]]; then
+            echo "Unexpected files in Core pin update:" >&2
+            printf '%s\n' "$changed_files" >&2
+            exit 1
+          fi
+
+          git add .core-version
+          git commit -m "chore(core): pin latest validated Core"
+          candidate="$(git rev-parse HEAD)"
+          echo "sha=${candidate}" >> "$GITHUB_OUTPUT"
+          git push --force-with-lease origin "HEAD:${BRANCH}"
+
+      - name: Open or refresh convergence PR
+        if: steps.core.outputs.changed == 'true'
+        id: pr
+        shell: bash
+        run: |
+          set -euo pipefail
+          pr_number="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --base main --state open --json number --jq '.[0].number // empty')"
+          if [[ -z "$pr_number" ]]; then
+            pr_url="$(gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore(core): converge consumer to latest Core" \
+              --body "Automated Core pin convergence. Updates only \`.core-version\` to Core main \`${{ steps.core.outputs.target }}\`. Merge is allowed only after the explicit consumer CI run succeeds.")"
+            pr_number="${pr_url##*/}"
+          fi
+          echo "number=${pr_number}" >> "$GITHUB_OUTPUT"
+
+      - name: Run consumer CI explicitly
+        if: steps.core.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$BRANCH"
+
+      - name: Wait for candidate CI
+        if: steps.core.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          candidate='${{ steps.candidate.outputs.sha }}'
+          run_id=""
+
+          for _ in $(seq 1 60); do
+            run_id="$(gh run list \
+              --repo "$GITHUB_REPOSITORY" \
+              --workflow ci.yml \
+              --branch "$BRANCH" \
+              --event workflow_dispatch \
+              --limit 20 \
+              --json databaseId,headSha \
+              --jq ".[] | select(.headSha == \"${candidate}\") | .databaseId" \
+              | head -n1)"
+            [[ -n "$run_id" ]] && break
+            sleep 5
+          done
+
+          if [[ -z "$run_id" ]]; then
+            echo "Could not locate the explicitly dispatched CI run for ${candidate}." >&2
+            exit 1
+          fi
+
+          echo "Waiting for CI run ${run_id}."
+          if ! gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status; then
+            echo "Consumer CI failed; leaving PR #${{ steps.pr.outputs.number }} open for diagnosis." >&2
+            exit 1
+          fi
+
+      - name: Merge validated pin
+        if: steps.core.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          pr='${{ steps.pr.outputs.number }}'
+          expected='${{ steps.candidate.outputs.sha }}'
+          actual="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq .headRefOid)"
+          if [[ "$actual" != "$expected" ]]; then
+            echo "PR head moved (${actual} != ${expected}); refusing automatic merge." >&2
+            exit 1
+          fi
+          gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --squash --delete-branch
+
+      - name: Deploy Pages explicitly
+        if: steps.core.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main
