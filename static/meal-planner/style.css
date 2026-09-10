@@ -48,3 +48,4 @@
   .planner-recipe-thumb { flex-basis: 56px; width: 56px; height: 56px; }
   .planner-feedback { right: 12px; bottom: 12px; left: 12px; justify-content: space-between; }
 }
+.planner-empty-state{display:grid;place-items:center;margin:32px 0}.planner-empty-state img{display:block;width:min(100%,520px);height:auto}
