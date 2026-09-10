@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify that generated product pages preserve consumer-owned body fragments."""
+"""Verify generated product pages and required local assets."""
 
 from __future__ import annotations
 
@@ -9,6 +9,9 @@ from pathlib import Path
 
 
 MAIN_RE = re.compile(r"<main\b[^>]*>.*?</main>", re.DOTALL)
+REQUIRED_ASSETS = (
+    Path("assets/illustrations/empty-fridge.webp"),
+)
 
 
 def main_fragment(path: Path) -> str:
@@ -27,6 +30,12 @@ def check(root: Path, site: Path) -> None:
             continue
         if main_fragment(source) != main_fragment(generated):
             failures.append(f"fragment divergent: {source} != {generated}")
+
+    for relative in REQUIRED_ASSETS:
+        generated_asset = site / relative
+        if not generated_asset.is_file():
+            failures.append(f"asset généré absent: {generated_asset}")
+
     if failures:
         raise SystemExit("\n".join(failures))
 
