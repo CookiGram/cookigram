@@ -15,7 +15,8 @@ class Issue254PlannerDirectGestureTests(unittest.TestCase):
         self.assertIn("selectedSlug", source)
         self.assertNotIn("data-slot-add", source)
         self.assertNotIn("data-assign", source)
-        self.assertNotIn("data-remove-selection", source)
+        # #308 supersedes the original #254 rule forbidding removal from À placer.
+        self.assertIn("data-remove-selection", source)
         self.assertNotIn("openSlotDialog", source)
 
     def test_drag_and_click_paths_are_kept_separate(self):
@@ -25,6 +26,14 @@ class Issue254PlannerDirectGestureTests(unittest.TestCase):
         self.assertIn("ignoreClickSlug", source)
         self.assertIn('event.dataTransfer.effectAllowed = "move"', source)
         self.assertIn("activateSlot", source)
+
+    def test_unplaced_removal_is_isolated_from_placement(self):
+        source = (ROOT / "static/meal-planner/planner-app.js").read_text(encoding="utf-8")
+        self.assertIn("removeFromSelection", source)
+        self.assertIn('new CustomEvent("cookigram:selection-change")', source)
+        self.assertIn("event.stopPropagation()", source)
+        self.assertIn("if (event.target !== card) return;", source)
+        self.assertIn('aria-label="Retirer ${esc(title)} de Ma sélection"', source)
 
     def test_planner_markup_removes_intermediary_controls(self):
         source = (ROOT / "static/meal-planner/index.html").read_text(encoding="utf-8")
@@ -38,6 +47,8 @@ class Issue254PlannerDirectGestureTests(unittest.TestCase):
         self.assertIn(".planner-recipe-placed .planner-recipe-thumb", source)
         self.assertIn(".planner-recipe-overlay", source)
         self.assertIn(".planner-board-shell.planner-board-shell-full", source)
+        self.assertIn(".planner-selection-remove", source)
+        self.assertIn("grid-template-columns: 64px minmax(0, 1fr) 44px", source)
         self.assertIn('@media (max-width: 760px)', source)
 
 
