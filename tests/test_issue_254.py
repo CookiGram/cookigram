@@ -38,9 +38,23 @@ class Issue254PlannerDirectGestureTests(unittest.TestCase):
     def test_planner_markup_removes_intermediary_controls(self):
         source = (ROOT / "static/meal-planner/index.html").read_text(encoding="utf-8")
         self.assertIn('id="planner-all-placed"', source)
+        self.assertIn('class="sr-only"', source)
         self.assertIn('href="./direct-planner.css"', source)
         self.assertNotIn("planner-slot-dialog", source)
         self.assertNotIn("data-remove-unplanned", source)
+
+    def test_planner_visible_copy_stays_minimal(self):
+        markup = (ROOT / "static/meal-planner/index.html").read_text(encoding="utf-8")
+        app = (ROOT / "static/meal-planner/planner-app.js").read_text(encoding="utf-8")
+        self.assertNotIn("Répartissez les recettes", markup)
+        self.assertNotIn("Glissez pour placer", markup)
+        self.assertNotIn("Exporte une photo", markup)
+        self.assertNotIn("← Ma sélection", markup)
+        self.assertNotIn("Cette semaine ·", app)
+        self.assertNotIn(">Déposer ici<", app)
+        self.assertNotIn(">Placer ici<", app)
+        self.assertIn('aria-label="Exporter cette semaine"', markup)
+        self.assertIn("À placer", markup)
 
     def test_direct_planner_styles_make_thumbnail_primary(self):
         source = (ROOT / "static/meal-planner/direct-planner.css").read_text(encoding="utf-8")
