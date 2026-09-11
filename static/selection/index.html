@@ -10,10 +10,41 @@
     <div class="selection-shopping-head">
       <h2 class="visually-hidden">Courses</h2>
       <div class="shopping-actions" aria-label="Actions de la liste de courses">
-        <button type="button" class="shopping-action" data-copy-shopping aria-label="Copier la liste de courses" title="Copier la liste de courses">⧉</button>
-        <button type="button" class="shopping-action" data-share-shopping aria-label="Partager la liste de courses" title="Partager la liste de courses">↗</button>
-        <button type="button" class="shopping-action" data-export-shopping aria-label="Exporter la liste de courses" title="Exporter la liste de courses">↓</button>
-        <a class="selection-planner-link" href="../meal-planner/" aria-label="Ouvrir le Planner" title="Ouvrir le Planner" hidden>→</a>
+        <button type="button" class="shopping-action shopping-action--copy" data-copy-shopping aria-label="Copier la liste de courses" title="Copier la liste de courses">
+          <svg class="shopping-action-icon" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+            <rect x="8" y="7" width="20" height="24" rx="4" class="icon-paper"/>
+            <path d="M14 7.5V5.8c0-1 0.8-1.8 1.8-1.8h4.4c1 0 1.8.8 1.8 1.8v1.7" class="icon-ink"/>
+            <path d="M14 14h9M14 19h9M14 24h7" class="icon-ink"/>
+            <circle cx="11.2" cy="14" r="1.1" class="icon-accent-fill"/>
+            <circle cx="11.2" cy="19" r="1.1" class="icon-accent-fill"/>
+            <circle cx="11.2" cy="24" r="1.1" class="icon-accent-fill"/>
+            <path d="M29 8.5l2-2M30 12h2.5" class="icon-accent"/>
+          </svg>
+        </button>
+        <button type="button" class="shopping-action shopping-action--share" data-share-shopping aria-label="Partager la liste de courses" title="Partager la liste de courses">
+          <svg class="shopping-action-icon" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+            <rect x="5.5" y="9" width="25" height="19" rx="4" class="icon-paper"/>
+            <path d="M7.5 11.5L18 20l10.5-8.5" class="icon-ink"/>
+            <path d="M7 26l8.2-7M29 26l-8.2-7" class="icon-ink"/>
+            <path d="M28.5 6.5l2-2M31 9h2" class="icon-accent"/>
+          </svg>
+        </button>
+        <button type="button" class="shopping-action shopping-action--export" data-export-shopping aria-label="Exporter la liste de courses" title="Exporter la liste de courses">
+          <svg class="shopping-action-icon" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+            <path d="M9 10.5h18l-1.5 19h-15z" class="icon-paper"/>
+            <path d="M13 10.5c0-3 2.2-5 5-5s5 2 5 5" class="icon-ink"/>
+            <path d="M18 13v9M14.8 19l3.2 3.4 3.2-3.4" class="icon-ink"/>
+            <path d="M27.8 8l2-2M29.8 11h2" class="icon-accent"/>
+            <path d="M12 26h12" class="icon-accent"/>
+          </svg>
+        </button>
+        <span class="shopping-actions-separator" aria-hidden="true"></span>
+        <a class="selection-planner-link" href="../meal-planner/" aria-label="Ouvrir le Planner" title="Ouvrir le Planner" hidden>
+          <svg class="shopping-action-icon shopping-action-icon--planner" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+            <path d="M9 18h16M20 12l6 6-6 6" class="icon-planner-arrow"/>
+            <path d="M28.5 8l2-2M30 11h2.5" class="icon-planner-accent"/>
+          </svg>
+        </a>
       </div>
     </div>
     <p class="shopping-loading" data-shopping-loading>Chargement de la liste…</p>
