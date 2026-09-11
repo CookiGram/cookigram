@@ -13,6 +13,8 @@ class ShoppingUxContractTests(unittest.TestCase):
         self.assertNotIn('Gardez ici les recettes que vous envisagez', html)
         self.assertNotIn('data-shopping-summary', html)
         self.assertIn('selection-planner-link', html)
+        self.assertIn('class="shopping-action"', html)
+        self.assertNotIn('class="btn secondary" data-copy-shopping', html)
 
     def test_shopping_groups_before_render_and_exports_only_items_to_buy(self):
         source = (ROOT / "static/selection/selection-app.js").read_text(encoding="utf-8")
@@ -30,7 +32,23 @@ class ShoppingUxContractTests(unittest.TestCase):
         self.assertIn('cookigram:${recipe.slug}:main:checked', source)
         self.assertIn('normalizeIngredientName', source)
         self.assertIn('plannerLink.hidden = items.length === 0', source)
-        self.assertIn('shopping-review-icon', source)
+        self.assertNotIn('shopping-review-icon', source)
+        self.assertIn('shopping-item-copy', source)
+
+    def test_selection_rows_no_longer_expose_reorder_or_text_remove_controls(self):
+        source = (ROOT / "static/selection/selection-app.js").read_text(encoding="utf-8")
+        self.assertNotIn('data-move=', source)
+        self.assertNotIn('selection-reorder', source)
+        self.assertNotIn('>Retirer</button>', source)
+        self.assertIn('title="Retirer de Ma sélection">×</button>', source)
+
+    def test_selection_css_uses_light_checkboxes_and_flat_groups(self):
+        css = (ROOT / "static/selection/style.css").read_text(encoding="utf-8")
+        self.assertIn('appearance:none', css)
+        self.assertIn('.shopping-item input:checked', css)
+        self.assertIn('text-decoration:line-through', css)
+        self.assertIn('.shopping-group{padding:0;background:transparent}', css)
+        self.assertNotIn('.shopping-review-icon', css)
 
 
 if __name__ == "__main__":

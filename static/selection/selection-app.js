@@ -1,15 +1,12 @@
 import { getRecipeSelection, toggleRecipeSelection } from "../assets/js/modules/recipe-selection.js";
 const list = document.querySelector("[data-selection-list]");
 const empty = document.querySelector("[data-selection-empty]");
-const storageKey = "cookigram:recipe-selection";
-const write = items => localStorage.setItem(storageKey, JSON.stringify(items));
 const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c]));
 const render = () => {
   const items = getRecipeSelection();
-  list.innerHTML = items.map((item, index) => `<article class="selection-row"><a href="../recipes/${encodeURIComponent(item.slug)}/">${esc(item.title || item.slug)}</a><div class="selection-row-actions"><button type="button" class="selection-reorder" data-move="up" data-index="${index}" ${index === 0 ? "disabled" : ""} aria-label="Monter ${esc(item.title || item.slug)}">↑</button><button type="button" class="selection-reorder" data-move="down" data-index="${index}" ${index === items.length - 1 ? "disabled" : ""} aria-label="Descendre ${esc(item.title || item.slug)}">↓</button><button type="button" class="selection-remove" data-remove="${esc(item.slug)}">Retirer</button></div></article>`).join("");
+  list.innerHTML = items.map(item => `<article class="selection-row"><a href="../recipes/${encodeURIComponent(item.slug)}/">${esc(item.title || item.slug)}</a><div class="selection-row-actions"><button type="button" class="selection-remove" data-remove="${esc(item.slug)}" aria-label="Retirer ${esc(item.title || item.slug)} de Ma sélection" title="Retirer de Ma sélection">×</button></div></article>`).join("");
   empty.hidden = items.length > 0;
   list.querySelectorAll("[data-remove]").forEach(button => button.addEventListener("click", () => { toggleRecipeSelection(button.dataset.remove); render(); }));
-  list.querySelectorAll("[data-move]").forEach(button => button.addEventListener("click", () => { const next = [...getRecipeSelection()]; const index = Number(button.dataset.index); const target = button.dataset.move === "up" ? index - 1 : index + 1; if (target < 0 || target >= next.length) return; [next[index], next[target]] = [next[target], next[index]]; write(next); render(); list.querySelector(`[data-index="${target}"]`)?.focus(); }));
   document.dispatchEvent(new CustomEvent("cookigram:selection-change"));
 };
 render();
@@ -98,7 +95,7 @@ const renderShopping = () => {
     const qty = item.parsed ? formatQuantity(item.total, item.parsed.family, item.parsed.unit) : `À vérifier · ${item.quantity || "quantité non précisée"}`;
     const key = itemKey(item);
     const checked = isShoppingChecked(item, state);
-    return `<li class="shopping-item${item.review ? " shopping-item--review" : ""}${checked ? " shopping-item--available" : ""}"><label><input type="checkbox" data-shopping-item="${esc(key)}" aria-label="${checked ? "Déjà disponible" : "À acheter"} : ${esc(item.name)}" ${checked ? "checked" : ""}>${item.icon ? `<img class="shopping-item-icon" src="../assets/${esc(item.icon)}" alt="" aria-hidden="true" loading="lazy">` : ""}<span><strong>${esc(item.name)}</strong><small>${esc(qty)} · ${esc(item.recipes.join(", "))}</small></span>${item.review ? `<span class="shopping-review-icon" role="img" title="À vérifier" aria-label="À vérifier">⌕</span>` : ""}</label></li>`;
+    return `<li class="shopping-item${item.review ? " shopping-item--review" : ""}${checked ? " shopping-item--available" : ""}"><label><input type="checkbox" data-shopping-item="${esc(key)}" aria-label="${checked ? "Déjà disponible" : "À acheter"} : ${esc(item.name)}" ${checked ? "checked" : ""}>${item.icon ? `<img class="shopping-item-icon" src="../assets/${esc(item.icon)}" alt="" aria-hidden="true" loading="lazy">` : `<span class="shopping-item-icon" aria-hidden="true"></span>`}<span class="shopping-item-copy"><strong>${esc(item.name)}</strong><small>${esc(qty)} · ${esc(item.recipes.join(", "))}</small></span></label></li>`;
   }).join("")}</ul></section>`).join("") : `<p class="shopping-empty">Ajoutez des recettes à Ma sélection pour préparer une liste.</p>`;
   shoppingList.querySelectorAll("[data-shopping-item]").forEach(cb => cb.addEventListener("change", () => { const next = readShoppingState(); next[cb.dataset.shoppingItem] = cb.checked; saveShoppingState(next); const row = cb.closest(".shopping-item"); row?.classList.toggle("shopping-item--available", cb.checked); const name = row?.querySelector("strong")?.textContent || "l’ingrédient"; cb.setAttribute("aria-label", `${cb.checked ? "Déjà disponible" : "À acheter"} : ${name}`); }));
 };

@@ -7,7 +7,15 @@
     <img src="../assets/illustrations/empty-fridge.webp" alt="Réfrigérateur vide" loading="lazy">
   </p>
   <section id="courses" class="selection-shopping" data-selection-shopping hidden aria-live="polite">
-    <div class="selection-shopping-head"><h2 class="visually-hidden">Courses</h2><div class="shopping-actions"><button type="button" class="btn secondary" data-copy-shopping aria-label="Copier la liste de courses" title="Copier la liste de courses">⧉</button><button type="button" class="btn secondary" data-share-shopping aria-label="Partager la liste de courses" title="Partager la liste de courses">↗</button><button type="button" class="btn secondary" data-export-shopping aria-label="Exporter la liste de courses" title="Exporter la liste de courses">↓</button><a class="btn primary selection-planner-link" href="../meal-planner/" aria-label="Ouvrir le Planner" title="Ouvrir le Planner" hidden>→</a></div></div>
+    <div class="selection-shopping-head">
+      <h2 class="visually-hidden">Courses</h2>
+      <div class="shopping-actions" aria-label="Actions de la liste de courses">
+        <button type="button" class="shopping-action" data-copy-shopping aria-label="Copier la liste de courses" title="Copier la liste de courses">⧉</button>
+        <button type="button" class="shopping-action" data-share-shopping aria-label="Partager la liste de courses" title="Partager la liste de courses">↗</button>
+        <button type="button" class="shopping-action" data-export-shopping aria-label="Exporter la liste de courses" title="Exporter la liste de courses">↓</button>
+        <a class="selection-planner-link" href="../meal-planner/" aria-label="Ouvrir le Planner" title="Ouvrir le Planner" hidden>→</a>
+      </div>
+    </div>
     <p class="shopping-loading" data-shopping-loading>Chargement de la liste…</p>
     <div class="shopping-list" data-shopping-list></div>
   </section>
