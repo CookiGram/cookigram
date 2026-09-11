@@ -23,7 +23,6 @@ let feedbackTimer = null;
 
 const dates = () => Array.from({ length: 7 }, (_, index) => { const date = new Date(weekStart); date.setDate(weekStart.getDate() + index); return iso(date); });
 const dayLabel = index => { const date = new Date(`${dates()[index]}T12:00:00`); return { day: DAYS[index], date: date.toLocaleDateString("fr-FR", { day: "numeric", month: "short" }) }; };
-const isCurrentWeek = () => iso(weekStart) === iso(monday(new Date()));
 const persist = () => { savePlanning(planning); localStorage.setItem(WEEK_KEY, iso(weekStart)); };
 const unplanned = () => selection.filter(item => !planning[item.slug]?.date);
 const recipeFor = item => catalog.get(item.slug) || item;
@@ -106,7 +105,7 @@ const renderSlot = (date, moment) => {
   const label = selected ? `Placer ${selected} dans ${moment} du ${date}` : `${moment} du ${date}. Sélectionnez une recette dans À placer pour la placer ici`;
   return `<div class="planner-slot${selectedSlug ? " planner-slot-ready" : ""}" data-slot-date="${date}" data-slot-moment="${moment}" tabindex="0" role="button" aria-label="${esc(label)}">
     <div class="planner-slot-heading"><span>${moment}</span></div>
-    <div class="planner-slot-items">${items.length ? items.map(renderPlacedRecipe).join("") : `<span class="planner-slot-empty">${selectedSlug ? "Placer ici" : "Déposer ici"}</span>`}</div>
+    <div class="planner-slot-items">${items.length ? items.map(renderPlacedRecipe).join("") : `<span class="planner-slot-empty" aria-hidden="true"></span>`}</div>
   </div>`;
 };
 
@@ -117,7 +116,7 @@ const render = () => {
   const datesForWeek = dates();
   document.querySelector("#planner-empty").hidden = selection.length > 0;
   document.querySelector("#planner-content").hidden = selection.length === 0;
-  document.querySelector("#planner-week-title").textContent = `${isCurrentWeek() ? "Cette semaine · " : ""}${formatRange(datesForWeek.map(date => new Date(`${date}T12:00:00`)))}`;
+  document.querySelector("#planner-week-title").textContent = formatRange(datesForWeek.map(date => new Date(`${date}T12:00:00`)));
   document.querySelector("#planner-selection").innerHTML = pending.map(renderUnplannedRecipe).join("");
   const unplacedPanel = document.querySelector(".planner-unplaced");
   unplacedPanel.hidden = pending.length === 0;
