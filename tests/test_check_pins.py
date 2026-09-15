@@ -16,7 +16,7 @@ SPEC.loader.exec_module(check_pins)
 
 def _repo(tmp_path: Path) -> Path:
     (tmp_path / ".github/workflows").mkdir(parents=True)
-    for relative in (".core-version", ".github/workflows/ci.yml", ".github/workflows/pages.yml"):
+    for relative in (".core-version", ".builder.json", ".github/workflows/ci.yml", ".github/workflows/pages.yml"):
         destination = tmp_path / relative
         destination.write_text((ROOT / relative).read_text(encoding="utf-8"), encoding="utf-8")
     subprocess.run(["git", "init", "-q"], cwd=tmp_path, check=True)
@@ -90,13 +90,14 @@ def test_invalid_core_pin_fails_before_remote_lookup(tmp_path) -> None:
 def test_pages_provenance_uses_the_checked_out_content_sha() -> None:
     workflow = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
     build = workflow["jobs"]["build"]
-    expected_ref = "${{ github.event_name == 'workflow_dispatch' && github.sha || github.event.workflow_run.head_sha }}"
+    expected_ref = "${{ github.event.workflow_run.head_sha }}"
 
     assert build["env"]["CONTENT_SHA"] == expected_ref
     checkout = next(step for step in build["steps"] if step.get("name") == "Checkout CookiGram Recettes (Public)")
     assert checkout["with"]["ref"] == "${{ env.CONTENT_SHA }}"
 
-    provenance = next(step for step in build["steps"] if step.get("name") == "Write build provenance")
-    assert provenance["env"]["CORE_SHA"] == "${{ steps.core-ref.outputs.sha }}"
-    assert 'os.environ["CONTENT_SHA"]' in provenance["run"]
-    assert "${{ github.sha }}" not in provenance["run"]
+    artifact = next(step for step in build["steps"] if step.get("name") == "Download exactly the qualified Pages artifact")
+    assert artifact["with"]["run-id"] == "${{ github.event.workflow_run.id }}"
+    provenance = next(step for step in build["steps"] if step.get("name") == "Verify qualified artifact provenance")
+    assert 'provenance = json.loads(Path("_site/provenance.json")' in provenance["run"]
+    assert '"qualifying_ci_run_id"' in provenance["run"]

@@ -113,7 +113,9 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
         if relative.name == "pages.yml" and (root / BUILDER_CONFIG).is_file():
             if isinstance(checkout, dict):
                 findings.append(Finding("private-core-checkout-in-pages", "error", "pages.yml checkout encore le Core privé."))
-            if ".builder.json" not in text or "sha256sum" not in text or "releases/download" not in text:
+            qualified_artifact = "actions/download-artifact@v4" in text and "run-id:" in text and "cookigram-pages-" in text
+            public_builder = ".builder.json" in text and "sha256sum" in text and "releases/download" in text
+            if not qualified_artifact and not public_builder:
                 findings.append(Finding("public-builder-not-verified", "error", "pages.yml ne consomme pas un builder public piné et vérifié."))
         else:
             if not isinstance(checkout, dict) or checkout.get("with", {}).get("ref") != "${{ steps.core-ref.outputs.sha }}":
