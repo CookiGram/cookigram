@@ -26,6 +26,7 @@ VERSION_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 CONTRACT_REPO = "https://github.com/PierreCsn/cookigram-contract.git"
 CORE_REPO = "git@github.com:CookiGram/cookigram-core.git"
 WORKFLOWS = (Path(".github/workflows/ci.yml"), Path(".github/workflows/pages.yml"))
+BUILDER_CONFIG = Path(".builder.json")
 
 
 @dataclass
@@ -86,6 +87,10 @@ def _workflow_data(root: Path, findings: list[Finding]) -> dict[Path, dict[str, 
 
 
 def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: list[Finding]) -> tuple[str | None, str | None]:
+    try:
+        core_pin = (root / ".core-version").read_text(encoding="utf-8").strip()
+    except OSError:
+        core_pin = None
     ci = data.get(WORKFLOWS[0], {})
     pages = data.get(WORKFLOWS[1], {})
     ci_env = ci.get("jobs", {}).get("recipe-check", {}).get("env", {})
@@ -105,13 +110,34 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
             text = ""
         core_job = workflow.get("jobs", {}).get("private-integration" if relative.name == "ci.yml" else "build", {})
         checkout = next((step for step in core_job.get("steps", []) if isinstance(step, dict) and step.get("uses") == "actions/checkout@v4" and step.get("with", {}).get("repository") == "CookiGram/cookigram-core"), None)
-        if not isinstance(checkout, dict) or checkout.get("with", {}).get("ref") != "${{ steps.core-ref.outputs.sha }}":
-            findings.append(Finding("core-pin-not-used", "error", f"{relative} ne checkout pas Core avec la sortie du pin local."))
-        if "cat .core-version" not in text:
-            findings.append(Finding("core-pin-not-read", "error", f"{relative} ne lit pas .core-version."))
+        if relative.name == "pages.yml" and (root / BUILDER_CONFIG).is_file():
+            if isinstance(checkout, dict):
+                findings.append(Finding("private-core-checkout-in-pages", "error", "pages.yml checkout encore le Core privé."))
+            if ".builder.json" not in text or "sha256sum" not in text or "releases/download" not in text:
+                findings.append(Finding("public-builder-not-verified", "error", "pages.yml ne consomme pas un builder public piné et vérifié."))
+        else:
+            if not isinstance(checkout, dict) or checkout.get("with", {}).get("ref") != "${{ steps.core-ref.outputs.sha }}":
+                findings.append(Finding("core-pin-not-used", "error", f"{relative} ne checkout pas Core avec la sortie du pin local."))
+            if "core-version" not in text:
+                findings.append(Finding("core-pin-not-read", "error", f"{relative} ne lit pas .core-version."))
 
     if pages and "CONTRACT_VERSION" in str(pages):
         findings.append(Finding("duplicate-contract-pin", "error", "La version du contrat est définie hors du job public CI."))
+    builder = root / BUILDER_CONFIG
+    if builder.is_file():
+        try:
+            config = json.loads(builder.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            findings.append(Finding("invalid-builder-config", "error", f"{BUILDER_CONFIG}: {exc}"))
+        else:
+            for key in ("release", "artifact", "sha256", "core_sha"):
+                value = config.get(key)
+                if not isinstance(value, str) or not value.strip():
+                    findings.append(Finding("invalid-builder-config", "error", f"{BUILDER_CONFIG} ne contient pas `{key}`."))
+            if isinstance(config.get("sha256"), str) and not re.fullmatch(r"[0-9a-f]{64}", config["sha256"]):
+                findings.append(Finding("invalid-builder-sha256", "error", f"{BUILDER_CONFIG}.sha256 doit être un SHA256 hexadécimal."))
+            if isinstance(config.get("core_sha"), str) and config.get("core_sha") != core_pin:
+                findings.append(Finding("builder-core-mismatch", "error", "Le builder public ne correspond pas à .core-version.", {"builder": config.get("core_sha"), "core_pin": core_pin}))
     return version, contract_sha
 
 
