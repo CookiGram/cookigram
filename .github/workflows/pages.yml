@@ -85,16 +85,23 @@ jobs:
       - name: Verify consumer fragments in generated site
         run: python scripts/check-generated-surfaces.py --site-dir _site
 
-      - name: Verify build provenance
+      - name: Write and verify build provenance
         env:
           EXPECTED_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
           EXPECTED_CONTENT_SHA: ${{ env.CONTENT_SHA }}
         run: |
           python - <<'PY'
+          import datetime
           import json
           import os
           from pathlib import Path
 
+          provenance = {
+              "content_sha": os.environ["EXPECTED_CONTENT_SHA"],
+              "core_sha": os.environ["EXPECTED_CORE_SHA"],
+              "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          }
+          Path("_site/provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
           provenance = json.loads(Path("_site/provenance.json").read_text(encoding="utf-8"))
           assert provenance["core_sha"] == os.environ["EXPECTED_CORE_SHA"]
           assert provenance["content_sha"] == os.environ["EXPECTED_CONTENT_SHA"]
