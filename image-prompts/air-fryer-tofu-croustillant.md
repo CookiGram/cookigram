@@ -1,1 +1,1 @@
-Photo culinaire manga réaliste, bouchées de tofu croustillantes et dorées, panure à l’ail et paprika, dip léger.
+Photographie culinaire réaliste, bouchées de tofu croustillantes et dorées, panure à l’ail et au paprika, servies seules sur une assiette simple, lumière naturelle douce, présentation domestique crédible, plat clairement visible, sans sauce, sans texte, sans logo, sans marque, sans personnage, sans emballage, sans décoration inutile.

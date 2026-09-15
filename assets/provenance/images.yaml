@@ -1,0 +1,53 @@
+static/images/air-fryer-pommes-terre-romarin.webp:
+  recipe: air-fryer-pommes-terre-romarin
+  origin: generated
+  generator: image_gen
+  generated_at: 2026-09-15
+  prompt: "Photo culinaire manga réaliste, quartiers de pommes de terre croustillants au romarin, panier air fryer, assiette rustique."
+  sha256: 5677e6d6fa668265f99fe122d1722eea8d7a516d07b1447bddf21eba1989aec2
+  attribution: CookiGram
+
+static/images/air-fryer-poulet-paprika-herbes.webp:
+  recipe: air-fryer-poulet-paprika-herbes
+  origin: generated
+  generator: image_gen
+  generated_at: 2026-09-15
+  prompt: "Photo culinaire manga réaliste, blancs de poulet dorés au paprika et aux herbes dans un panier air fryer, lumière chaleureuse."
+  sha256: e84a7e5993b1a64e81d0727cdb9377cdf7e68864ac2b91fd2329e4ae89ad0a68
+  attribution: CookiGram
+
+static/images/air-fryer-quesadillas-poulet-fromage.webp:
+  recipe: air-fryer-quesadillas-poulet-fromage
+  origin: generated
+  generator: image_gen
+  generated_at: 2026-09-15
+  prompt: "Photo culinaire manga réaliste, quesadillas triangulaires dorées, poulet épicé et fromage fondant, panier air fryer, guacamole."
+  sha256: 964301be90ee8615961a88d62d4d1e4940c820ba99d7d337d6c81d1d5a8cb1f8
+  attribution: CookiGram
+
+static/images/air-fryer-saucisses-poivrons-oignons.webp:
+  recipe: air-fryer-saucisses-poivrons-oignons
+  origin: generated
+  generator: image_gen
+  generated_at: 2026-09-15
+  prompt: "Photo culinaire manga réaliste, saucisses dorées avec poivrons et oignons caramélisés, panier air fryer, couleurs appétissantes."
+  sha256: ee26c1b3e36ea7d55eb28e16d3f205d35ab2188f81c6c695b89f15300812e76f
+  attribution: CookiGram
+
+static/images/air-fryer-saumon-citron-aneth.webp:
+  recipe: air-fryer-saumon-citron-aneth
+  origin: generated
+  generator: image_gen
+  generated_at: 2026-09-15
+  prompt: "Photo culinaire manga réaliste, pavé de saumon nacré au citron et à l’aneth, panier air fryer, assiette lumineuse."
+  sha256: d757a4e99428a416dfe611d5286297f562f84a5ef7653683b64911bcb0536516
+  attribution: CookiGram
+
+static/images/air-fryer-tofu-croustillant.webp:
+  recipe: air-fryer-tofu-croustillant
+  origin: generated
+  generator: image_gen
+  generated_at: 2026-09-15
+  prompt: "Photographie culinaire réaliste, bouchées de tofu croustillantes et dorées, panure à l’ail et au paprika, servies seules sur une assiette simple, lumière naturelle douce, présentation domestique crédible, plat clairement visible, sans sauce, sans texte, sans logo, sans marque, sans personnage, sans emballage, sans décoration inutile."
+  sha256: ef92fadafdb38daff88f9e0a8caa58a3df9f7b5b973195e29e512c576db2fc56
+  attribution: CookiGram

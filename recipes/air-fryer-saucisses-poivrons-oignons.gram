@@ -13,7 +13,7 @@ image: images/air-fryer-saucisses-poivrons-oignons.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation: {prompt_file: image-prompts/air-fryer-saucisses-poivrons-oignons.md}
 scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---

@@ -13,7 +13,7 @@ image: images/air-fryer-quesadillas-poulet-fromage.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation: {prompt_file: image-prompts/air-fryer-quesadillas-poulet-fromage.md}
 scaling: {enabled: true, min: 2, max: 4, step: 1}
 ---
