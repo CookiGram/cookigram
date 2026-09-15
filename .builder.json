@@ -1,6 +1,6 @@
 {
-  "release": "core-ca62a4b",
+  "release": "core-ca2a221",
   "artifact": "cookigram_core-0.1.0-py3-none-any.whl",
-  "sha256": "9c8711cdae60490f266292f09c25ebdf2e585de6606e270562c242f9a5f4b7d6",
-  "core_sha": "ca62a4bd451270b4868d992615e5f3a53977ab55"
+  "sha256": "183bf0f1ccc0ff74f839529019872288e91980fe554234dcf9a6793e2e172f35",
+  "core_sha": "ca2a221a1bddd7c61be01ce40b3750a56e35b2b0"
 }
