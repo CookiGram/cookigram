@@ -10,6 +10,8 @@ actionable image/prompt mismatch.
 from __future__ import annotations
 
 import argparse
+import datetime as dt
+import hashlib
 import json
 import sys
 from dataclasses import asdict, dataclass
@@ -20,6 +22,9 @@ import yaml
 
 
 PLACEHOLDER = "images/placeholder-recipe.jpg"
+TEMPORARY_CREDIT = "Illustration temporaire"
+GENERATED_CREDIT = "Illustration générée pour CookiGram"
+PROVENANCE_MANIFEST = "assets/provenance/images.yaml"
 
 
 @dataclass(frozen=True)
@@ -43,8 +48,62 @@ def _frontmatter(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
-def audit(root: Path) -> list[Finding]:
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _manifest(root: Path) -> dict[str, Any]:
+    path = root / PROVENANCE_MANIFEST
+    if not path.is_file():
+        return {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return data if isinstance(data, dict) else {}
+
+
+def _manifest_findings(root: Path, manifest: dict[str, Any]) -> list[Finding]:
     findings: list[Finding] = []
+    mapped_recipes: dict[str, str] = {}
+    for asset, record in manifest.items():
+        if not isinstance(asset, str) or not isinstance(record, dict):
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "invalid-manifest", "manifest", "chaque asset doit avoir un mapping YAML"))
+            continue
+        asset_path = root / asset
+        if not asset_path.is_file():
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "missing-provenance-asset", "manifest", f"fichier absent: {asset}"))
+            continue
+        expected_hash = record.get("sha256")
+        if not isinstance(expected_hash, str) or expected_hash != _sha256(asset_path):
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "provenance-hash", "manifest", f"SHA-256 incorrect: {asset}"))
+        recipe = record.get("recipe")
+        if not isinstance(recipe, str) or not recipe.strip():
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "provenance-recipe", "manifest", f"recipe absente: {asset}"))
+        elif recipe in mapped_recipes:
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "duplicate-provenance-recipe", "manifest", f"recipe mappée deux fois: {recipe}"))
+        else:
+            mapped_recipes[recipe] = asset
+            recipe_path = root / "recipes" / f"{recipe}.gram"
+            if not recipe_path.is_file():
+                findings.append(Finding(PROVENANCE_MANIFEST, None, "unknown-provenance-recipe", "manifest", f"recipe introuvable: {recipe}"))
+        for key in ("origin", "generator", "prompt", "attribution"):
+            if not isinstance(record.get(key), str) or not record[key].strip():
+                findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-provenance", "manifest", f"{key} absent pour {asset}"))
+        generated_at = record.get("generated_at")
+        if isinstance(generated_at, (dt.date, dt.datetime)):
+            pass
+        elif not isinstance(generated_at, str) or not generated_at.strip():
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-provenance", "manifest", f"generated_at absent pour {asset}"))
+        if record.get("origin") != "generated":
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "provenance-origin", "manifest", f"origin non générée pour {asset}"))
+    return findings
+
+
+def audit(root: Path) -> list[Finding]:
+    manifest = _manifest(root)
+    findings: list[Finding] = _manifest_findings(root, manifest)
     recipes_dir = root / "recipes"
 
     for recipe_path in sorted(recipes_dir.glob("*.gram")):
@@ -83,6 +142,51 @@ def audit(root: Path) -> list[Finding]:
                 )
             )
 
+        credit = metadata.get("image_credit")
+        license_name = credit.get("license") if isinstance(credit, dict) else None
+        if license_name == TEMPORARY_CREDIT:
+            findings.append(
+                Finding(
+                    recipe=recipe_path.relative_to(root).as_posix(),
+                    image=image,
+                    prompt_file=prompt,
+                    status="temporary-credit",
+                    message="crédit d'illustration temporaire encore présent",
+                )
+            )
+        elif license_name == GENERATED_CREDIT:
+            asset_key = f"static/{image}" if image else ""
+            record = manifest.get(asset_key)
+            if not isinstance(record, dict):
+                findings.append(
+                    Finding(
+                        recipe=recipe_path.relative_to(root).as_posix(),
+                        image=image,
+                        prompt_file=prompt,
+                        status="missing-provenance",
+                        message="illustration générée sans entrée de provenance",
+                    )
+                )
+            elif record.get("recipe") != recipe_path.stem:
+                findings.append(
+                    Finding(
+                        recipe=recipe_path.relative_to(root).as_posix(),
+                        image=image,
+                        prompt_file=prompt,
+                        status="provenance-mismatch",
+                        message="la recette du manifest ne correspond pas au fichier",
+                    )
+                )
+            elif prompt_path.is_file() and record.get("prompt") != prompt_path.read_text(encoding="utf-8").strip():
+                findings.append(
+                    Finding(
+                        recipe=recipe_path.relative_to(root).as_posix(),
+                        image=image,
+                        prompt_file=prompt,
+                        status="provenance-prompt-mismatch",
+                        message="le prompt du manifest diffère du prompt versionné",
+                    )
+                )
         if not prompt_path.is_file():
             findings.append(
                 Finding(

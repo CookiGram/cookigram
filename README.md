@@ -74,6 +74,12 @@ python scripts/audit-recipe-images.py --check
 python scripts/lint-public-content.py --check --warn-only --json
 ```
 
+Les illustrations générées pour CookiGram sont enregistrées dans
+[`assets/provenance/images.yaml`](assets/provenance/images.yaml). L’audit des
+illustrations vérifie le lien recette/asset, le prompt versionné et le SHA-256
+du fichier final ; il rejette aussi tout nouveau crédit `Illustration
+temporaire`.
+
 Le validateur complet `python -m generator.recipe_check`, le build et les tests Python/JavaScript ne sont pas disponibles dans ce dépôt ; ils nécessitent une installation de `cookigram-core` autorisée. Ne pas documenter de couverture ou de commande `npm`, `pytest`, `ruff` ou `generator` comme prérequis local ici.
 
 ## Format d’une recette
