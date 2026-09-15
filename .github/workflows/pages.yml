@@ -24,9 +24,24 @@ jobs:
         with:
           ref: ${{ env.CONTENT_SHA }}
 
-      - name: Read pinned Core SHA
-        id: core-ref
-        run: echo "sha=$(cat .core-version | tr -d '[:space:]')" >> $GITHUB_OUTPUT
+      - name: Read pinned public builder
+        id: builder
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path(".builder.json").read_text(encoding="utf-8"))
+          for key in ("release", "artifact", "sha256", "core_sha"):
+              value = data.get(key)
+              if not isinstance(value, str) or not value.strip():
+                  raise SystemExit(f"Invalid .builder.json field: {key}")
+              print(f"{key}={value}")
+          PY
+
+          test "$(tr -d '[:space:]' < .core-version)" = "$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -39,39 +54,52 @@ jobs:
       - name: Vérifier les pins et produire le rapport JSON
         run: python scripts/check-pins.py --json
 
-      - name: Checkout CookiGram Core Engine (Private)
-        uses: actions/checkout@v4
-        with:
-          repository: CookiGram/cookigram-core
-          ssh-key: ${{ secrets.CORE_SSH_KEY }}
-          ref: ${{ steps.core-ref.outputs.sha }}
-          path: core
+      - name: Download pinned public builder
+        id: download-builder
+        env:
+          BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+          BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          builder_path="$RUNNER_TEMP/$BUILDER_ARTIFACT"
+          builder_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${BUILDER_RELEASE}/${BUILDER_ARTIFACT}"
+          echo "Builder source: $builder_url"
+          echo "Expected SHA256: $BUILDER_SHA256"
+          curl --fail --location --retry 3 --output "$builder_path" "$builder_url"
+          printf '%s  %s\n' "$BUILDER_SHA256" "$builder_path" | sha256sum --check --status
+          echo "SHA256 verification: PASS"
 
-      - name: Install Core Engine & Dependencies
+      - name: Install public Core builder
         run: |
           python -m pip install --upgrade pip
-          pip install -e ./core
+          pip install "Jinja2>=3.1,<4" "PyYAML>=6,<7"
+          pip install "$RUNNER_TEMP/${{ steps.builder.outputs.artifact }}"
 
       - name: Build Static Site & PWA
+        env:
+          COOKIGRAM_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
         run: python -m generator.build --content-dir . --output _site
 
       - name: Verify consumer fragments in generated site
         run: python scripts/check-generated-surfaces.py --site-dir _site
 
-      - name: Write build provenance
+      - name: Verify build provenance
         env:
-          CORE_SHA: ${{ steps.core-ref.outputs.sha }}
+          EXPECTED_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
+          EXPECTED_CONTENT_SHA: ${{ env.CONTENT_SHA }}
         run: |
-          python -c '
-          import datetime, json, os
-          data = {
-              "content_sha": os.environ["CONTENT_SHA"],
-              "core_sha": os.environ["CORE_SHA"],
-              "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
-          }
-          with open("_site/provenance.json", "w") as f:
-              json.dump(data, f, indent=2)
-          '
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          provenance = json.loads(Path("_site/provenance.json").read_text(encoding="utf-8"))
+          assert provenance["core_sha"] == os.environ["EXPECTED_CORE_SHA"]
+          assert provenance["content_sha"] == os.environ["EXPECTED_CONTENT_SHA"]
+          print(json.dumps(provenance, indent=2))
+          PY
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
