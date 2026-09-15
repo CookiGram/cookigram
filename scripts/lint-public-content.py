@@ -81,7 +81,14 @@ def _date_is_valid(value: Any) -> bool:
     return True
 
 
-def lint_recipe(path: Path, root: Path, images: dict[str, Path], *, warn_only: bool = False) -> list[Finding]:
+def lint_recipe(
+    path: Path,
+    root: Path,
+    images: dict[str, Path],
+    *,
+    warn_only: bool = False,
+    require_editorial_dates: bool = False,
+) -> list[Finding]:
     try:
         raw, start_line = _frontmatter(path)
         data = yaml.load(raw, Loader=NoDuplicateLoader)
@@ -109,6 +116,17 @@ def lint_recipe(path: Path, root: Path, images: dict[str, Path], *, warn_only: b
         add("required-field", "description doit être une chaîne non vide")
     if isinstance(description, str) and not 50 <= len(description.strip()) <= 160:
         add("description-length", "description doit contenir entre 50 et 160 caractères")
+
+    published = data.get("date_published")
+    modified = data.get("date_modified")
+    if require_editorial_dates:
+        if not _date_is_valid(published):
+            add("required-field", "date_published doit être une date ISO 8601 valide")
+        if not _date_is_valid(modified):
+            add("required-field", "date_modified doit être une date ISO 8601 valide")
+        if _date_is_valid(published) and _date_is_valid(modified):
+            if str(modified)[:10] < str(published)[:10]:
+                add("date-order", "date_modified doit être supérieure ou égale à date_published")
 
     tags = data.get("tags")
     if "tags" not in data or not isinstance(tags, list) or not tags:
@@ -140,7 +158,7 @@ def lint_recipe(path: Path, root: Path, images: dict[str, Path], *, warn_only: b
     return findings
 
 
-def run(root: Path, *, warn_only: bool = False) -> dict[str, Any]:
+def run(root: Path, *, warn_only: bool = False, require_editorial_dates: bool = False) -> dict[str, Any]:
     root = root.resolve()
     files = sorted(root.glob("recipes/*.gram"))
     images: dict[str, Path] = {}
@@ -153,7 +171,17 @@ def run(root: Path, *, warn_only: bool = False) -> dict[str, Any]:
         image = data.get("image") if isinstance(data, dict) else None
         if isinstance(image, str) and image.strip():
             images.setdefault(image.strip(), path)
-    findings = [finding for path in files for finding in lint_recipe(path, root, images, warn_only=warn_only)]
+    findings = [
+        finding
+        for path in files
+        for finding in lint_recipe(
+            path,
+            root,
+            images,
+            warn_only=warn_only,
+            require_editorial_dates=require_editorial_dates,
+        )
+    ]
     errors = sum(finding.level == "error" for finding in findings)
     warnings = sum(finding.level == "warning" for finding in findings)
     return {"version": "1", "tool": "cookigram-public-content-lint", "files": len(files), "summary": {"errors": errors, "warnings": warnings, "status": "fail" if errors else "pass"}, "findings": [asdict(finding) for finding in findings]}
@@ -165,9 +193,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--json", action="store_true", help="produire le rapport JSON")
     parser.add_argument("--check", action="store_true", help="retourner 1 si une erreur est détectée")
     parser.add_argument("--warn-only", action="store_true", help="maintenir les règles transitoires en avertissement")
+    parser.add_argument("--require-editorial-dates", action="store_true", help="exiger date_published et date_modified")
     args = parser.parse_args(argv)
     try:
-        result = run(args.root, warn_only=args.warn_only)
+        result = run(args.root, warn_only=args.warn_only, require_editorial_dates=args.require_editorial_dates)
     except (OSError, ValueError) as exc:
         print(f"Erreur pendant le lint: {exc}", file=sys.stderr)
         return 2

@@ -71,7 +71,7 @@ Les contrôles publics peuvent être lancés depuis la racine du dépôt :
 ```bash
 python -c "import yaml, glob; [yaml.safe_load(open(f, encoding='utf-8')) for f in glob.glob('.gram/*.yaml')]"
 python scripts/audit-recipe-images.py --check
-python scripts/lint-public-content.py --check --warn-only --json
+python scripts/lint-public-content.py --check --warn-only --require-editorial-dates --json
 ```
 
 Les illustrations générées pour CookiGram sont enregistrées dans
