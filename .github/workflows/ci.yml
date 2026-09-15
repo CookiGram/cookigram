@@ -93,6 +93,9 @@ jobs:
           PY
           test "$(tr -d '[:space:]' < .core-version)" = "$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
 
+      - name: Install validation dependencies
+        run: python -m pip install "PyYAML>=6,<7"
+
       - name: Verify pins
         run: python scripts/check-pins.py --json
 
