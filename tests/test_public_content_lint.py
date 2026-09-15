@@ -16,7 +16,7 @@ SPEC.loader.exec_module(LINTER)
 
 class PublicContentLintTests(unittest.TestCase):
     def test_public_corpus_is_deterministically_clean_except_seo_advisories(self) -> None:
-        result = LINTER.run(ROOT, warn_only=True)
+        result = LINTER.run(ROOT, warn_only=True, require_editorial_dates=True)
         self.assertEqual(result["files"], 162)
         self.assertEqual(result["summary"]["errors"], 0)
         self.assertEqual(result["summary"]["warnings"], 0)
@@ -38,6 +38,10 @@ class PublicContentLintTests(unittest.TestCase):
         result = LINTER.run(ROOT / "tests/fixtures/public-content-lint/invalid")
         rules = {item["rule"] for item in result["findings"]}
         self.assertTrue({"tags", "date-format"} <= rules)
+
+    def test_editorial_dates_are_required_for_the_production_corpus(self) -> None:
+        result = LINTER.run(ROOT / "tests/fixtures/public-content-lint/invalid", require_editorial_dates=True)
+        self.assertTrue(any(item["rule"] == "required-field" for item in result["findings"]))
 
     def test_image_paths_and_seo_thresholds_are_deterministic(self) -> None:
         fixture = ROOT / "tests/fixtures/public-content-lint/invalid"

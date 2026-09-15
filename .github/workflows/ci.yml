@@ -49,7 +49,7 @@ jobs:
         run: python scripts/audit-recipe-images.py --check
 
       - name: Linter public SEO et contenu
-        run: python scripts/lint-public-content.py --check --warn-only --json
+        run: python scripts/lint-public-content.py --check --warn-only --require-editorial-dates --json
 
       - name: Tester l’export iCalendar du Planner
         run: node --test tests/calendar-export.test.mjs

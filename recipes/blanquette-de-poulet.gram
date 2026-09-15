@@ -1,6 +1,7 @@
 ---
 title: Blanquette de poulet
 date_published: 2026-09-01
+date_modified: 2026-09-15
 description: "Émincés de poulet fondants mijotés aux carottes et champignons, nappés d'une sauce veloutée à la crème et au citron."
 nutrition_profile: balanced
 portions: 4
@@ -69,4 +70,3 @@ image_generation:
 - Mélanger ~{1 min} à vitesse 3 pour lier la sauce et lui donner une texture satinée.
 - Napper généreusement le poulet et les légumes réservés avec la sauce veloutée.
 - Servir bien chaud, accompagné d'un riz blanc ou de tagliatelles fraîches.
-
