@@ -19,7 +19,7 @@ class PublicContentLintTests(unittest.TestCase):
         result = LINTER.run(ROOT, warn_only=True)
         self.assertEqual(result["files"], 162)
         self.assertEqual(result["summary"]["errors"], 0)
-        self.assertGreater(result["summary"]["warnings"], 0)
+        self.assertEqual(result["summary"]["warnings"], 0)
         self.assertEqual(json.dumps(result, ensure_ascii=False), json.dumps(LINTER.run(ROOT, warn_only=True), ensure_ascii=False))
         self.assertTrue(all(not item["path"].startswith("/") for item in result["findings"]))
 
