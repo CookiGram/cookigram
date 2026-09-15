@@ -35,6 +35,20 @@ Utilisez un nom en kebab-case dérivé du slug. Une image finale est placée dan
 
 Pour importer une recette depuis le Web, commencez par le formulaire [`recipe_request.md`](.github/ISSUE_TEMPLATE/recipe_request.md), puis suivez [`import-recipe-gram`](.agents/skills/import-recipe-gram/SKILL.md). Conservez l’URL et l’auteur de la source, et signalez toute incertitude qui affecte la préparation.
 
+### Tags canoniques
+
+Les tags publics utilisent des formes minuscules, en kebab-case, et une forme singulière naturelle. Lors d’un import, appliquer uniquement les alias validés suivants :
+
+| Alias | Forme canonique |
+| --- | --- |
+| `one pot` | `one-pot` |
+| `carottes`, `oignons`, `tomates` | `carotte`, `oignon`, `tomate` |
+| `pomme de terre`, `pommes-de-terre` | `pomme-de-terre` |
+| `aubergines` | `aubergine` |
+| `italienne`, `italie` | `italien` |
+| `vin rouge` | `vin-rouge` |
+| `petits pois` | `petits-pois` |
+
 ## Pull request
 
 Décrivez le contenu modifié, les sources utilisées et les contrôles exécutés. Une PR doit rester limitée au contenu et à la documentation de ce dépôt. La CI et, après succès, le workflow [GitHub Pages](.github/workflows/pages.yml) gèrent la validation complète et la publication.

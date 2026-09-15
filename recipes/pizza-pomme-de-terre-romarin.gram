@@ -6,7 +6,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Une pizza rustique et fondante aux pommes de terre en tranches fines, mozzarella, romarin et huile d’olive."
-tags: [pizza, pomme de terre, romarin, végétarien]
+tags: [pizza, pomme-de-terre, romarin, végétarien]
 source: https://ooni.com/blogs/recipes/pizza-potato-rosemary
 author: Ooni HQ
 appliances:

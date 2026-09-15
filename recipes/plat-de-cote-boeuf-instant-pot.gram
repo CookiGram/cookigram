@@ -6,7 +6,7 @@ prep_time: 15 min
 total_time: 1 h 25 min
 spiciness: 0
 description: "Plat de côte de bœuf fondant braisé au vin rouge, carottes et aromates (Instant Pot, Cookeo ou cocotte en fonte)."
-tags: [bœuf, instant pot, mijoté, réconfort, vin rouge, carottes]
+tags: [bœuf, instant pot, mijoté, réconfort, vin-rouge, carotte]
 source: https://github.com/PierreCsn/cookigram
 author: Pierre Cousin
 appliances:
