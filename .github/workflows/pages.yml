@@ -1,12 +1,12 @@
 name: Deploy GitHub Pages
 on:
-  workflow_dispatch:
   workflow_run:
     workflows: [CI]
     types: [completed]
     branches: [main]
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 concurrency:
@@ -14,10 +14,10 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     env:
-      CONTENT_SHA: ${{ github.event_name == 'workflow_dispatch' && github.sha || github.event.workflow_run.head_sha }}
+      CONTENT_SHA: ${{ github.event.workflow_run.head_sha }}
     steps:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@v4
@@ -54,57 +54,45 @@ jobs:
       - name: Vérifier les pins et produire le rapport JSON
         run: python scripts/check-pins.py --json
 
-      - name: Download pinned public builder
-        id: download-builder
-        env:
-          BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
-          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
-          BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          builder_path="$RUNNER_TEMP/$BUILDER_ARTIFACT"
-          builder_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${BUILDER_RELEASE}/${BUILDER_ARTIFACT}"
-          echo "Builder source: $builder_url"
-          echo "Expected SHA256: $BUILDER_SHA256"
-          curl --fail --location --retry 3 --output "$builder_path" "$builder_url"
-          printf '%s  %s\n' "$BUILDER_SHA256" "$builder_path" | sha256sum --check --status
-          echo "SHA256 verification: PASS"
-
-      - name: Install public Core builder
-        run: |
-          python -m pip install --upgrade pip
-          pip install "Jinja2>=3.1,<4" "PyYAML>=6,<7"
-          pip install "$RUNNER_TEMP/${{ steps.builder.outputs.artifact }}"
-
-      - name: Build Static Site & PWA
-        env:
-          COOKIGRAM_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
-        run: python -m generator.build --content-dir . --output _site
+      - name: Download exactly the qualified Pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: cookigram-pages-${{ env.CONTENT_SHA }}
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ github.event.workflow_run.id }}
+          path: _site
 
       - name: Verify consumer fragments in generated site
         run: python scripts/check-generated-surfaces.py --site-dir _site
 
-      - name: Write and verify build provenance
+      - name: Verify qualified artifact provenance
         env:
           EXPECTED_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
           EXPECTED_CONTENT_SHA: ${{ env.CONTENT_SHA }}
+          EXPECTED_BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
+          EXPECTED_BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+          EXPECTED_BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
+          EXPECTED_CI_RUN_ID: ${{ github.event.workflow_run.id }}
         run: |
           python - <<'PY'
-          import datetime
           import json
           import os
           from pathlib import Path
 
-          provenance = {
+          provenance = json.loads(Path("_site/provenance.json").read_text(encoding="utf-8"))
+          expected = {
               "content_sha": os.environ["EXPECTED_CONTENT_SHA"],
               "core_sha": os.environ["EXPECTED_CORE_SHA"],
-              "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "contract_version": "1.0.0",
+              "builder_release": os.environ["EXPECTED_BUILDER_RELEASE"],
+              "builder_artifact": os.environ["EXPECTED_BUILDER_ARTIFACT"],
+              "builder_sha256": os.environ["EXPECTED_BUILDER_SHA256"],
+              "pages_artifact": f"cookigram-pages-{os.environ['EXPECTED_CONTENT_SHA']}",
+              "qualifying_ci_run_id": os.environ["EXPECTED_CI_RUN_ID"],
           }
-          Path("_site/provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
-          provenance = json.loads(Path("_site/provenance.json").read_text(encoding="utf-8"))
-          assert provenance["core_sha"] == os.environ["EXPECTED_CORE_SHA"]
-          assert provenance["content_sha"] == os.environ["EXPECTED_CONTENT_SHA"]
+          for key, value in expected.items():
+              assert provenance.get(key) == value, (key, provenance.get(key), value)
           print(json.dumps(provenance, indent=2))
           PY
 

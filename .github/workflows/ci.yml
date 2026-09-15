@@ -57,6 +57,113 @@ jobs:
       - name: Tester les contrats UX statiques
         run: python -m unittest discover -s tests -v
 
+  qualified-pages-artifact:
+    name: Build qualified Pages artifact
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    env:
+      CONTENT_SHA: ${{ github.sha }}
+      CONTRACT_VERSION: "1.0.0"
+    steps:
+      - name: Checkout CookiGram Recettes (Public)
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Read pinned public builder
+        id: builder
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path(".builder.json").read_text(encoding="utf-8"))
+          for key in ("release", "artifact", "sha256", "core_sha"):
+              value = data.get(key)
+              if not isinstance(value, str) or not value.strip():
+                  raise SystemExit(f"Invalid .builder.json field: {key}")
+              print(f"{key}={value}")
+          PY
+          test "$(tr -d '[:space:]' < .core-version)" = "$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
+
+      - name: Verify pins
+        run: python scripts/check-pins.py --json
+
+      - name: Download and verify pinned builder
+        env:
+          BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+          BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          builder_path="$RUNNER_TEMP/$BUILDER_ARTIFACT"
+          builder_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${BUILDER_RELEASE}/${BUILDER_ARTIFACT}"
+          echo "Builder source: $builder_url"
+          echo "Expected SHA256: $BUILDER_SHA256"
+          curl --fail --location --retry 3 --output "$builder_path" "$builder_url"
+          printf '%s  %s\n' "$BUILDER_SHA256" "$builder_path" | sha256sum --check --status
+          echo "SHA256 verification: PASS"
+
+      - name: Install pinned builder
+        env:
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install "Jinja2>=3.1,<4" "PyYAML>=6,<7" "$RUNNER_TEMP/$BUILDER_ARTIFACT"
+
+      - name: Build qualified static site once
+        env:
+          COOKIGRAM_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
+        run: python -m generator.build --content-dir . --output _site
+
+      - name: Verify generated site and write qualification provenance
+        env:
+          BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+          BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
+          BUILDER_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
+          PAGES_ARTIFACT: cookigram-pages-${{ github.sha }}
+          QUALIFYING_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          python scripts/check-generated-surfaces.py --site-dir _site
+          python - <<'PY'
+          import datetime
+          import json
+          import os
+          from pathlib import Path
+
+          provenance = {
+              "content_sha": os.environ["CONTENT_SHA"],
+              "core_sha": os.environ["BUILDER_CORE_SHA"],
+              "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "contract_version": os.environ["CONTRACT_VERSION"],
+              "builder_release": os.environ["BUILDER_RELEASE"],
+              "builder_artifact": os.environ["BUILDER_ARTIFACT"],
+              "builder_sha256": os.environ["BUILDER_SHA256"],
+              "pages_artifact": os.environ["PAGES_ARTIFACT"],
+              "qualifying_ci_run_id": os.environ["QUALIFYING_RUN_ID"],
+          }
+          Path("_site/provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
+          print(json.dumps(provenance, indent=2))
+          PY
+
+      - name: Upload exactly the qualified Pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cookigram-pages-${{ github.sha }}
+          path: _site
+          include-hidden-files: true
+          retention-days: 14
+
   private-integration:
     name: Intégration Core privée (push de confiance uniquement)
     if: ${{ github.event_name != 'pull_request' }}
