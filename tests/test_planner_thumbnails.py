@@ -12,20 +12,21 @@ class PlannerThumbnailContractTests(unittest.TestCase):
         self.assertIn("let catalog = new Map()", source)
         self.assertIn("const recipeFor = item => catalog.get(item.slug) || item", source)
         self.assertIn('class="planner-recipe-thumb"', source)
-        self.assertIn('draggable="true"', source)
+        self.assertIn("draggableAttribute", source)
         self.assertIn('import { buildCalendarExport } from "./calendar-export.js"', source)
-        self.assertIn('const reorder =', source)
-        self.assertIn('data-reorder="up"', source)
-        self.assertIn('data-unplan=', source)
+        self.assertNotIn('const reorder =', source)
+        self.assertNotIn('data-reorder="up"', source)
+        self.assertIn('data-unplan-card=', source)
 
     def test_thumbnail_cards_remain_accessible_and_responsive(self):
-        source = (ROOT / "static/meal-planner/style.css").read_text(encoding="utf-8")
+        source = (ROOT / "static/meal-planner/style.css").read_text(encoding="utf-8") + (ROOT / "static/meal-planner/direct-planner.css").read_text(encoding="utf-8")
+        direct_source = (ROOT / "static/meal-planner/direct-planner.css").read_text(encoding="utf-8")
         self.assertIn("cursor: grab", source)
         self.assertIn("cursor: grabbing", source)
         self.assertIn(".planner-recipe:hover", source)
         self.assertIn("@media (max-width: 760px)", source)
         self.assertIn(".planner-recipe-placed .planner-recipe-thumb", source)
-        self.assertIn(".planner-unplan", source)
+        self.assertNotIn(".planner-unplan", direct_source)
 
 
 if __name__ == "__main__":

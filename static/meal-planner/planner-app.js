@@ -17,9 +17,11 @@ let planning = loadPlanning();
 let weekStart = readWeek();
 let catalog = new Map();
 let selectedSlug = null;
-let draggingSlug = null;
 let ignoreClickSlug = null;
 let feedbackTimer = null;
+
+const nativeDragEnabled = () => !window.matchMedia("(pointer: coarse)").matches;
+const draggableAttribute = () => nativeDragEnabled() ? ' draggable="true"' : '';
 
 const dates = () => Array.from({ length: 7 }, (_, index) => { const date = new Date(weekStart); date.setDate(weekStart.getDate() + index); return iso(date); });
 const dayLabel = index => { const date = new Date(`${dates()[index]}T12:00:00`); return { day: DAYS[index], date: date.toLocaleDateString("fr-FR", { day: "numeric", month: "short" }) }; };
@@ -54,23 +56,6 @@ const removeFromSelection = slug => {
   document.dispatchEvent(new CustomEvent("cookigram:selection-change"));
   render();
 };
-const reorder = (slug, direction) => {
-  const placement = planning[slug];
-  if (!placement?.date || !placement?.moment) return;
-  const items = slotItems(placement.date, placement.moment);
-  const index = items.findIndex(item => item.slug === slug);
-  const target = index + direction;
-  if (index < 0 || target < 0 || target >= items.length) return;
-  const next = { ...planning };
-  const first = items[index].slug;
-  const second = items[target].slug;
-  const firstOrder = next[first].order ?? index;
-  next[first] = { ...next[first], order: next[second].order ?? target };
-  next[second] = { ...next[second], order: firstOrder };
-  planning = next;
-  persist();
-  render();
-};
 const selectForPlacement = slug => {
   if (!unplanned().some(item => item.slug === slug)) return;
   selectedSlug = slug;
@@ -80,7 +65,7 @@ const selectForPlacement = slug => {
 const renderUnplannedRecipe = item => {
   const active = item.slug === selectedSlug;
   const title = recipeTitle(item);
-  return `<article class="planner-recipe planner-recipe-unplaced${active ? " planner-recipe-selected" : ""}" draggable="true" tabindex="0" role="button" aria-pressed="${active}" aria-label="Sélectionner ${esc(title)} pour le placement" title="${esc(title)}" data-planner-recipe="${esc(item.slug)}" data-select-planner="${esc(item.slug)}">
+  return `<article class="planner-recipe planner-recipe-unplaced${active ? " planner-recipe-selected" : ""}"${draggableAttribute()} tabindex="0" role="button" aria-pressed="${active}" aria-label="Sélectionner ${esc(title)} pour le placement" title="${esc(title)}" data-planner-recipe="${esc(item.slug)}" data-select-planner="${esc(item.slug)}">
     <span class="planner-recipe-thumb" aria-hidden="true">${recipeImage(item)}</span>
     <span class="planner-recipe-title">${esc(title)}</span>
     <button type="button" class="planner-selection-remove" data-remove-selection="${esc(item.slug)}" aria-label="Retirer ${esc(title)} de Ma sélection" title="Retirer de Ma sélection">×</button>
@@ -89,13 +74,9 @@ const renderUnplannedRecipe = item => {
 
 const renderPlacedRecipe = item => {
   const title = recipeTitle(item);
-  const placement = planning[item.slug];
-  const peers = slotItems(placement.date, placement.moment);
-  const index = peers.findIndex(peer => peer.slug === item.slug);
-  return `<article class="planner-recipe planner-recipe-placed" draggable="true" tabindex="0" aria-label="${esc(title)}" title="${esc(title)}" data-planner-recipe="${esc(item.slug)}">
+  return `<article class="planner-recipe planner-recipe-placed"${draggableAttribute()} tabindex="0" role="button" aria-label="Remettre ${esc(title)} dans À placer" title="${esc(title)} — cliquer pour remettre dans À placer" data-planner-recipe="${esc(item.slug)}" data-unplan-card="${esc(item.slug)}">
     <span class="planner-recipe-thumb" aria-hidden="true">${recipeImage(item)}</span>
-    <span class="planner-recipe-overlay" aria-hidden="true"><strong>${esc(title)}</strong></span>
-    <span class="planner-recipe-actions"><button type="button" class="planner-order" data-reorder="up" data-recipe="${esc(item.slug)}" aria-label="Monter ${esc(title)}" ${index === 0 ? "disabled" : ""}>↑</button><button type="button" class="planner-order" data-reorder="down" data-recipe="${esc(item.slug)}" aria-label="Descendre ${esc(title)}" ${index === peers.length - 1 ? "disabled" : ""}>↓</button><button type="button" class="planner-unplan" data-unplan="${esc(item.slug)}" aria-label="Remettre ${esc(title)} dans À placer" title="Remettre dans À placer">×</button></span>
+    <span class="planner-recipe-overlay" aria-hidden="true"><strong>${esc(title)}</strong><span>↩ À placer</span></span>
   </article>`;
 };
 
@@ -132,8 +113,12 @@ const render = () => {
 };
 
 const activateUnplanned = card => {
-  if (ignoreClickSlug === card.dataset.selectPlanner) return;
+  if (ignoreClickSlug === card.dataset.selectPlanner) { ignoreClickSlug = null; return; }
   selectForPlacement(card.dataset.selectPlanner);
+};
+const activatePlaced = card => {
+  if (ignoreClickSlug === card.dataset.unplanCard) { ignoreClickSlug = null; return; }
+  unplan(card.dataset.unplanCard);
 };
 const activateSlot = slot => {
   if (!selectedSlug) return;
@@ -149,18 +134,21 @@ const bindEvents = () => {
     });
   });
   document.querySelectorAll("[data-remove-selection]").forEach(button => button.addEventListener("click", event => { event.preventDefault(); event.stopPropagation(); removeFromSelection(button.dataset.removeSelection); }));
-  document.querySelectorAll("[data-unplan]").forEach(button => button.addEventListener("click", event => { event.stopPropagation(); unplan(button.dataset.unplan); }));
-  document.querySelectorAll("[data-reorder]").forEach(button => button.addEventListener("click", event => { event.stopPropagation(); reorder(button.dataset.recipe, button.dataset.reorder === "up" ? -1 : 1); }));
+  document.querySelectorAll("[data-unplan-card]").forEach(card => {
+    card.addEventListener("click", () => activatePlaced(card));
+    card.addEventListener("keydown", event => {
+      if (event.target !== card) return;
+      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activatePlaced(card); }
+    });
+  });
   document.querySelectorAll("[data-planner-recipe]").forEach(card => {
     card.addEventListener("dragstart", event => {
-      draggingSlug = card.dataset.plannerRecipe;
-      event.dataTransfer.setData("text/plain", draggingSlug);
+      event.dataTransfer.setData("text/plain", card.dataset.plannerRecipe);
       event.dataTransfer.effectAllowed = "move";
       card.classList.add("planner-recipe-dragging");
     });
     card.addEventListener("dragend", () => {
-      const slug = draggingSlug;
-      draggingSlug = null;
+      const slug = card.dataset.plannerRecipe;
       ignoreClickSlug = slug;
       card.classList.remove("planner-recipe-dragging");
       window.setTimeout(() => { if (ignoreClickSlug === slug) ignoreClickSlug = null; }, 0);
