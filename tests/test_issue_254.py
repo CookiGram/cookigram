@@ -9,8 +9,8 @@ class Issue254PlannerDirectGestureTests(unittest.TestCase):
     def test_planner_uses_direct_recipe_and_slot_controls(self):
         source = (ROOT / "static/meal-planner/planner-app.js").read_text(encoding="utf-8")
         self.assertIn("data-select-planner", source)
-        self.assertIn("data-unplan=", source)
-        self.assertNotIn("data-unplan-card", source)
+        self.assertIn("data-unplan-card", source)
+        self.assertNotIn("data-unplan=", source)
         self.assertIn("planner-slot-ready", source)
         self.assertIn("selectedSlug", source)
         self.assertNotIn("data-slot-add", source)
@@ -25,7 +25,10 @@ class Issue254PlannerDirectGestureTests(unittest.TestCase):
         self.assertIn("dragend", source)
         self.assertIn("ignoreClickSlug", source)
         self.assertIn('event.dataTransfer.effectAllowed = "move"', source)
+        self.assertIn("activatePlaced", source)
         self.assertIn("activateSlot", source)
+        self.assertIn('window.matchMedia("(pointer: coarse)")', source)
+        self.assertIn("draggableAttribute", source)
 
     def test_unplaced_removal_is_isolated_from_placement(self):
         source = (ROOT / "static/meal-planner/planner-app.js").read_text(encoding="utf-8")
@@ -63,6 +66,7 @@ class Issue254PlannerDirectGestureTests(unittest.TestCase):
         self.assertIn(".planner-board-shell.planner-board-shell-full", source)
         self.assertIn(".planner-selection-remove", source)
         self.assertIn("grid-template-columns: 64px minmax(0, 1fr) 44px", source)
+        self.assertNotIn(".planner-unplan", source)
         self.assertIn('@media (max-width: 760px)', source)
 
 

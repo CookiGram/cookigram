@@ -11,14 +11,15 @@ class Issue247ContractTests(unittest.TestCase):
         self.assertIn('data-selection-shopping hidden', source)
         self.assertIn('href="../meal-planner/"', source)
 
-    def test_placed_recipe_has_only_the_unplan_action(self):
+    def test_placed_recipe_is_the_unplan_action(self):
         source = (ROOT / "static/meal-planner/planner-app.js").read_text(encoding="utf-8")
         start = source.index("const renderPlacedRecipe")
         end = source.index("const renderSlot", start)
         placed = source[start:end]
-        self.assertIn("data-unplan", placed)
+        self.assertIn("data-unplan-card", placed)
         self.assertIn("Remettre", placed)
         self.assertIn("dans À placer", placed)
+        self.assertNotIn("<button", placed)
         self.assertNotIn("data-remove-selection", placed)
         self.assertNotIn("planner-recipe-menu", placed)
 
@@ -26,7 +27,7 @@ class Issue247ContractTests(unittest.TestCase):
         source = (ROOT / "static/meal-planner/planner-app.js").read_text(encoding="utf-8")
         self.assertIn('import { addPlacement, loadPlanning, MOMENTS, removePlacement, savePlanning }', source)
         self.assertIn('import { buildCalendarExport }', source)
-        self.assertIn('draggable="true"', source)
+        self.assertIn("draggableAttribute", source)
 
 
 if __name__ == "__main__":
