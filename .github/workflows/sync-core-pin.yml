@@ -1,6 +1,8 @@
 name: Sync Core pin
 
 on:
+  repository_dispatch:
+    types: [core-builder-published]
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
@@ -15,7 +17,7 @@ permissions:
 
 jobs:
   sync:
-    name: Converge Core pin
+    name: Converge verified Core builder
     runs-on: ubuntu-latest
     env:
       BRANCH: automation/core-pin
@@ -27,74 +29,139 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Checkout latest Core main
-        uses: actions/checkout@v4
-        with:
-          repository: CookiGram/cookigram-core
-          ssh-key: ${{ secrets.CORE_SSH_KEY }}
-          ref: main
-          path: core
-          fetch-depth: 1
-
-      - name: Resolve Core candidate
-        id: core
+      - name: Resolve and verify public builder candidate
+        id: builder
         shell: bash
+        env:
+          DISPATCH_RELEASE: ${{ github.event.client_payload.release }}
+          DISPATCH_CORE_SHA: ${{ github.event.client_payload.core_sha }}
         run: |
           set -euo pipefail
-          target="$(git -C core rev-parse HEAD)"
+
+          release="$DISPATCH_RELEASE"
+          if [[ -z "$release" ]]; then
+            release="$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" \
+              --jq '[.[] | select(.draft == false and .prerelease == false and (.tag_name | startswith("core-")))] | first | .tag_name // empty')"
+          fi
+          test -n "$release"
+          [[ "$release" =~ ^core-[0-9a-f]{7}$ ]]
+
+          work="$RUNNER_TEMP/builder-candidate"
+          rm -rf "$work"
+          mkdir -p "$work"
+          gh release download "$release" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern builder-provenance.json \
+            --dir "$work"
+
+          python - "$work/builder-provenance.json" "$release" "$DISPATCH_CORE_SHA" <<'PY' > "$work/values"
+          import json
+          import re
+          import sys
+          from pathlib import Path
+
+          path, expected_release, dispatched_core = sys.argv[1:]
+          data = json.loads(Path(path).read_text(encoding="utf-8"))
+          required = ("core_sha", "artifact", "sha256", "release", "contract_version")
+          for key in required:
+              if not isinstance(data.get(key), str) or not data[key].strip():
+                  raise SystemExit(f"invalid builder provenance field: {key}")
+          if data["release"] != expected_release:
+              raise SystemExit("builder provenance release mismatch")
+          if data["contract_version"] != "1.0.0":
+              raise SystemExit("builder provenance contract version mismatch")
+          if not re.fullmatch(r"[0-9a-f]{40}", data["core_sha"]):
+              raise SystemExit("builder provenance core_sha is invalid")
+          if dispatched_core and data["core_sha"] != dispatched_core:
+              raise SystemExit("repository_dispatch core_sha does not match provenance")
+          if not data["artifact"].endswith(".whl"):
+              raise SystemExit("builder provenance artifact is not a wheel")
+          if not re.fullmatch(r"[0-9a-f]{64}", data["sha256"]):
+              raise SystemExit("builder provenance sha256 is invalid")
+          print(data["core_sha"])
+          print(data["artifact"])
+          print(data["sha256"])
+          PY
+
+          mapfile -t values < "$work/values"
+          core_sha="${values[0]}"
+          artifact="${values[1]}"
+          sha256="${values[2]}"
+
+          gh release download "$release" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern "$artifact" \
+            --dir "$work"
+          printf '%s  %s\n' "$sha256" "$work/$artifact" | sha256sum --check --status
+
           pinned="$(tr -d '[:space:]' < .core-version)"
-          echo "target=${target}" >> "$GITHUB_OUTPUT"
-          echo "pinned=${pinned}" >> "$GITHUB_OUTPUT"
-          if [[ "$target" == "$pinned" ]]; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Core pin already converged at ${target}."
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "Core pin needs update: ${pinned} -> ${target}."
+          current_builder="$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
+          changed=true
+          if [[ "$core_sha" == "$pinned" && "$core_sha" == "$current_builder" ]]; then
+            changed=false
           fi
 
+          echo "release=$release" >> "$GITHUB_OUTPUT"
+          echo "core_sha=$core_sha" >> "$GITHUB_OUTPUT"
+          echo "artifact=$artifact" >> "$GITHUB_OUTPUT"
+          echo "sha256=$sha256" >> "$GITHUB_OUTPUT"
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "Verified public builder $release for Core $core_sha."
+
       - name: Prepare validated candidate branch
-        if: steps.core.outputs.changed == 'true'
+        if: steps.builder.outputs.changed == 'true'
         id: candidate
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf core
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH" origin/main
-          printf '%s\n' '${{ steps.core.outputs.target }}' > .core-version
 
-          changed_files="$(git diff --name-only)"
-          if [[ "$changed_files" != ".core-version" ]]; then
-            echo "Unexpected files in Core pin update:" >&2
+          printf '%s\n' '${{ steps.builder.outputs.core_sha }}' > .core-version
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = {
+              "release": "${{ steps.builder.outputs.release }}",
+              "artifact": "${{ steps.builder.outputs.artifact }}",
+              "sha256": "${{ steps.builder.outputs.sha256 }}",
+              "core_sha": "${{ steps.builder.outputs.core_sha }}",
+          }
+          Path(".builder.json").write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+          PY
+
+          changed_files="$(git diff --name-only | sort)"
+          expected_files="$(printf '%s\n' .builder.json .core-version | sort)"
+          if [[ "$changed_files" != "$expected_files" ]]; then
+            echo "Unexpected files in builder convergence update:" >&2
             printf '%s\n' "$changed_files" >&2
             exit 1
           fi
 
-          git add .core-version
-          git commit -m "chore(core): pin latest validated Core"
+          git add .core-version .builder.json
+          git commit -m "chore(core): converge to verified public builder"
           candidate="$(git rev-parse HEAD)"
           base="$(git rev-parse origin/main)"
           echo "sha=${candidate}" >> "$GITHUB_OUTPUT"
           echo "base=${base}" >> "$GITHUB_OUTPUT"
           git push --force-with-lease origin "HEAD:${BRANCH}"
 
-      - name: Run consumer CI explicitly
-        if: steps.core.outputs.changed == 'true'
+      - name: Run candidate consumer CI explicitly
+        if: steps.builder.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
           gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$BRANCH"
 
       - name: Wait for candidate CI
-        if: steps.core.outputs.changed == 'true'
+        if: steps.builder.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
           candidate='${{ steps.candidate.outputs.sha }}'
           run_id=""
-
           for _ in $(seq 1 60); do
             run_id="$(gh run list \
               --repo "$GITHUB_REPOSITORY" \
@@ -108,55 +175,82 @@ jobs:
             [[ -n "$run_id" ]] && break
             sleep 5
           done
+          test -n "$run_id"
+          gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
 
-          if [[ -z "$run_id" ]]; then
-            echo "Could not locate the explicitly dispatched CI run for ${candidate}." >&2
-            exit 1
-          fi
-
-          echo "Waiting for CI run ${run_id}."
-          if ! gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status; then
-            echo "Consumer CI failed; refusing to update main." >&2
-            exit 1
-          fi
-
-      - name: Fast-forward validated pin to main
-        if: steps.core.outputs.changed == 'true'
+      - name: Fast-forward validated pins to main
+        if: steps.builder.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
           candidate='${{ steps.candidate.outputs.sha }}'
           expected_base='${{ steps.candidate.outputs.base }}'
-
           git fetch origin main
           actual_base="$(git rev-parse origin/main)"
-          if [[ "$actual_base" != "$expected_base" ]]; then
-            echo "main moved during validation (${actual_base} != ${expected_base}); refusing update and letting the next sync retry." >&2
-            exit 1
-          fi
-
+          [[ "$actual_base" == "$expected_base" ]]
           parent="$(git rev-parse "${candidate}^")"
-          if [[ "$parent" != "$expected_base" ]]; then
-            echo "Candidate parent ${parent} does not match expected main ${expected_base}." >&2
-            exit 1
-          fi
-
+          [[ "$parent" == "$expected_base" ]]
           git push origin "${candidate}:main"
 
-      - name: Verify converged main
-        if: steps.core.outputs.changed == 'true'
+      - name: Run converged main CI explicitly
+        if: steps.builder.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          git fetch origin main
-          main_sha="$(git rev-parse origin/main)"
-          candidate='${{ steps.candidate.outputs.sha }}'
-          if [[ "$main_sha" != "$candidate" ]]; then
-            echo "main did not converge to validated candidate (${main_sha} != ${candidate})." >&2
-            exit 1
-          fi
+          gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref main
 
-      - name: Pages deployment follows successful main CI
-        if: steps.core.outputs.changed == 'true'
+      - name: Wait for converged main CI
+        if: steps.builder.outputs.changed == 'true'
+        id: main_ci
+        shell: bash
         run: |
-          echo "Validated pin is now on main. The push triggers CI on main; pages.yml will deploy only after that CI succeeds."
+          set -euo pipefail
+          candidate='${{ steps.candidate.outputs.sha }}'
+          run_id=""
+          for _ in $(seq 1 60); do
+            run_id="$(gh run list \
+              --repo "$GITHUB_REPOSITORY" \
+              --workflow ci.yml \
+              --branch main \
+              --event workflow_dispatch \
+              --limit 20 \
+              --json databaseId,headSha \
+              --jq ".[] | select(.headSha == \"${candidate}\") | .databaseId" \
+              | head -n1)"
+            [[ -n "$run_id" ]] && break
+            sleep 5
+          done
+          test -n "$run_id"
+          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+          gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
+
+      - name: Wait for Pages deployment
+        if: steps.builder.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          candidate='${{ steps.candidate.outputs.sha }}'
+          pages_run=""
+          for _ in $(seq 1 60); do
+            pages_run="$(gh run list \
+              --repo "$GITHUB_REPOSITORY" \
+              --workflow pages.yml \
+              --branch main \
+              --limit 20 \
+              --json databaseId,headSha \
+              --jq ".[] | select(.headSha == \"${candidate}\") | .databaseId" \
+              | head -n1)"
+            [[ -n "$pages_run" ]] && break
+            sleep 5
+          done
+          test -n "$pages_run"
+          gh run watch "$pages_run" --repo "$GITHUB_REPOSITORY" --exit-status
+
+      - name: Report convergence
+        if: always()
+        run: |
+          echo "Builder release: ${{ steps.builder.outputs.release }}"
+          echo "Core SHA: ${{ steps.builder.outputs.core_sha }}"
+          echo "Changed: ${{ steps.builder.outputs.changed }}"
+          echo "Candidate SHA: ${{ steps.candidate.outputs.sha }}"
+          echo "Main CI run: ${{ steps.main_ci.outputs.run_id }}"
