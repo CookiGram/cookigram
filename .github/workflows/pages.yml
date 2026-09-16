@@ -1,5 +1,15 @@
 name: Deploy GitHub Pages
 on:
+  workflow_dispatch:
+    inputs:
+      content_sha:
+        description: "Validated content commit to publish"
+        required: true
+        type: string
+      ci_run_id:
+        description: "Successful CI run qualifying that commit"
+        required: true
+        type: string
   workflow_run:
     workflows: [CI]
     types: [completed]
@@ -14,10 +24,11 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    if: github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     env:
-      CONTENT_SHA: ${{ github.event.workflow_run.head_sha }}
+      CONTENT_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.content_sha || github.event.workflow_run.head_sha }}
+      CI_RUN_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.ci_run_id || github.event.workflow_run.id }}
     steps:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@v4
@@ -43,6 +54,37 @@ jobs:
 
           test "$(tr -d '[:space:]' < .core-version)" = "$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
 
+      - name: Verify explicitly dispatched CI provenance
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          EXPECTED_CONTENT_SHA: ${{ env.CONTENT_SHA }}
+          EXPECTED_CI_RUN_ID: ${{ env.CI_RUN_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_CONTENT_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$EXPECTED_CI_RUN_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$EXPECTED_CI_RUN_ID" > "$RUNNER_TEMP/ci-run.json"
+          python - "$RUNNER_TEMP/ci-run.json" "$EXPECTED_CONTENT_SHA" "$EXPECTED_CI_RUN_ID" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          run = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          expected_sha, expected_id = sys.argv[2:]
+          expected = {
+              "id": int(expected_id),
+              "path": ".github/workflows/ci.yml",
+              "event": "workflow_dispatch",
+              "head_branch": "main",
+              "head_sha": expected_sha,
+              "status": "completed",
+              "conclusion": "success",
+          }
+          for key, value in expected.items():
+              assert run.get(key) == value, (key, run.get(key), value)
+          PY
+
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
@@ -60,7 +102,7 @@ jobs:
           name: cookigram-pages-${{ env.CONTENT_SHA }}
           github-token: ${{ github.token }}
           repository: ${{ github.repository }}
-          run-id: ${{ github.event.workflow_run.id }}
+          run-id: ${{ env.CI_RUN_ID }}
           path: _site
 
       - name: Verify consumer fragments in generated site
@@ -73,7 +115,7 @@ jobs:
           EXPECTED_BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
           EXPECTED_BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
           EXPECTED_BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
-          EXPECTED_CI_RUN_ID: ${{ github.event.workflow_run.id }}
+          EXPECTED_CI_RUN_ID: ${{ env.CI_RUN_ID }}
         run: |
           python - <<'PY'
           import json

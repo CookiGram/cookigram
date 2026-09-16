@@ -224,6 +224,17 @@ jobs:
           echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
           gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
 
+      - name: Dispatch Pages for validated main CI explicitly
+        if: steps.builder.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run pages.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            --field content_sha='${{ steps.candidate.outputs.sha }}' \
+            --field ci_run_id='${{ steps.main_ci.outputs.run_id }}'
+
       - name: Wait for Pages deployment
         if: steps.builder.outputs.changed == 'true'
         shell: bash
@@ -236,6 +247,7 @@ jobs:
               --repo "$GITHUB_REPOSITORY" \
               --workflow pages.yml \
               --branch main \
+              --event workflow_dispatch \
               --limit 20 \
               --json databaseId,headSha \
               --jq ".[] | select(.headSha == \"${candidate}\") | .databaseId" \
