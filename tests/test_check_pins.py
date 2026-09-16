@@ -90,14 +90,25 @@ def test_invalid_core_pin_fails_before_remote_lookup(tmp_path) -> None:
 def test_pages_provenance_uses_the_checked_out_content_sha() -> None:
     workflow = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
     build = workflow["jobs"]["build"]
-    expected_ref = "${{ github.event.workflow_run.head_sha }}"
+    triggers = workflow.get("on", workflow[True])
+    expected_ref = "${{ github.event_name == 'workflow_dispatch' && inputs.content_sha || github.event.workflow_run.head_sha }}"
 
     assert build["env"]["CONTENT_SHA"] == expected_ref
+    assert build["env"]["CI_RUN_ID"] == "${{ github.event_name == 'workflow_dispatch' && inputs.ci_run_id || github.event.workflow_run.id }}"
+    assert "workflow_dispatch" in triggers
+    assert set(triggers["workflow_dispatch"]["inputs"]) == {"content_sha", "ci_run_id"}
     checkout = next(step for step in build["steps"] if step.get("name") == "Checkout CookiGram Recettes (Public)")
     assert checkout["with"]["ref"] == "${{ env.CONTENT_SHA }}"
 
     artifact = next(step for step in build["steps"] if step.get("name") == "Download exactly the qualified Pages artifact")
-    assert artifact["with"]["run-id"] == "${{ github.event.workflow_run.id }}"
+    assert artifact["with"]["run-id"] == "${{ env.CI_RUN_ID }}"
     provenance = next(step for step in build["steps"] if step.get("name") == "Verify qualified artifact provenance")
     assert 'provenance = json.loads(Path("_site/provenance.json")' in provenance["run"]
     assert '"qualifying_ci_run_id"' in provenance["run"]
+
+
+def test_sync_dispatches_pages_with_validated_sha_and_ci_run() -> None:
+    workflow = (ROOT / ".github/workflows/sync-core-pin.yml").read_text(encoding="utf-8")
+    assert "gh workflow run pages.yml" in workflow
+    assert "--field content_sha='${{ steps.candidate.outputs.sha }}'" in workflow
+    assert "--field ci_run_id='${{ steps.main_ci.outputs.run_id }}'" in workflow
