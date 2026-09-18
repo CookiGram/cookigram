@@ -41,7 +41,7 @@ jobs:
           release="$DISPATCH_RELEASE"
           if [[ -z "$release" ]]; then
             release="$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" \
-              --jq '[.[] | select(.draft == false and .prerelease == false and (.tag_name | startswith("core-")))] | first | .tag_name // empty')"
+              --jq '[.[] | select(.draft == false and .prerelease == false and (.tag_name | startswith("core-")))] | max_by(.published_at) | .tag_name // empty')"
           fi
           test -n "$release"
           [[ "$release" =~ ^core-[0-9a-f]{7}$ ]]
