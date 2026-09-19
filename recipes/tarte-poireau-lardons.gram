@@ -30,18 +30,29 @@ image_generation:
 ---
 
 [Râper le fromage]
-- Mettre l'@emmental râpé{80 g, en morceaux} dans le bol et râper ~{5 s} à vitesse 10. Transvaser et réserver.
+- Mettre l'@emmental râpé{80 g, en morceaux} dans le bol.
+- Râper ~{5 s} à vitesse 10.
+- Transvaser et réserver.
 
 [Cuire les lardons et les poireaux]
-- Mettre les @lardons fumés{200 g} dans le bol et faire revenir ~{5 min} à ^{120 C}, vitesse 0,5, sans gobelet doseur. Transvaser les lardons sans leur jus et réserver.
-- Mettre les @poireaux{700 g, finement émincés} dans le bol et faire revenir ~{10 min} à ^{120 C}, sens inverse, vitesse 2. Transvaser dans le #panier cuisson{} et laisser égoutter.
+- Mettre les @lardons fumés{200 g} dans le bol.
+- Faire revenir ~{5 min} à ^{120 C}, vitesse 0,5, sans gobelet doseur.
+- Transvaser les lardons sans leur jus et réserver.
+- Mettre les @poireaux{700 g, finement émincés} dans le bol.
+- Faire revenir ~{10 min} à ^{120 C}, sens inverse, vitesse 2.
+- Transvaser dans le #panier cuisson{} et laisser égoutter.
 
 [Préparer l'appareil]
-- Mettre les @œufs{2 pièces}, la @crème fraîche épaisse{60 g}, le @sel{3 pincées} et le @poivre blanc moulu{3 pincées} dans le bol, puis mélanger ~{20 s} à vitesse 4.
-- Verser l'appareil sur les poireaux et les lardons, mélanger avec la #spatule{} et réserver au frais ~{1 h}.
+- Mettre les @œufs{2 pièces}, la @crème fraîche épaisse{60 g}, le @sel{3 pincées} et le @poivre blanc moulu{3 pincées} dans le bol.
+- Mélanger ~{20 s} à vitesse 4.
+- Verser l'appareil sur les poireaux et les lardons.
+- Mélanger avec la #spatule{}.
+- Réserver au frais ~{1 h}.
 
 [Garnir et cuire la tarte]
 - Préchauffer le #four{} à ^{180 C}.
 - Abaisser la @pâte feuilletée{1 pièce, maison} sur un plan de travail fariné et en garnir un #moule à tarte{} de 22 cm.
-- Verser l'appareil sur le fond de tarte, saupoudrer d'emmental râpé et cuire ~{35 à 40 min} à ^{180 C}.
+- Verser l'appareil sur le fond de tarte.
+- Saupoudrer d'emmental râpé.
+- Cuire ~{35 à 40 min} à ^{180 C}.
 - Déguster chaud.

@@ -40,7 +40,8 @@ image_generation:
 - Hacher ~{5 s} à vitesse 5.
 - Racler les parois avec la #spatule{}.
 - Ajouter le @poivron rouge{1 pièce, coupé en morceaux}.
-- Hacher de nouveau ~{5 s} à vitesse 5 puis racler les parois.
+- Hacher de nouveau ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
 
 [Faire suer les légumes]
 - Ajouter l'@huile de coco{10 g}.

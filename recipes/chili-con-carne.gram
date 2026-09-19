@@ -42,13 +42,18 @@ image_generation:
 ---
 
 [Hacher les légumes]
-- Mettre le @poivron rouge{100 g}, le @poivron vert{100 g}, l'@oignon{100 g, coupé en deux} et l'@ail{2 gousses} dans le bol. Mixer ~{5 s} à vitesse 5, puis racler les parois avec la #spatule{}.
+- Mettre le @poivron rouge{100 g}, le @poivron vert{100 g}, l'@oignon{100 g, coupé en deux} et l'@ail{2 gousses} dans le bol.
+- Mixer ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
 
 [Cuire le bœuf]
 - Ajouter l'@huile d'olive{20 g}, la @viande hachée{500 g, de bœuf}, le @cumin en poudre{1 c. à café} et le @paprika{1 c. à café}.
 - Cuire ~{5 min} à ^{120 C}, sens inverse, vitesse cuillère.
 
 [Mijoter le chili]
-- Ajouter le @coulis de tomate{400 g}, le @sel{} et le @poivre moulu{}, puis cuire ~{8 min} à ^{120 C}, sens inverse, vitesse cuillère.
-- Ajouter les @haricots rouges{500 g, en conserve, égouttés} et le @maïs{140 g, en conserve, égoutté}, puis cuire ~{5 min} à ^{110 C}, sens inverse, vitesse cuillère.
-- Transvaser, parsemer de @coriandre fraîche{2 brins, ciselés} et servir aussitôt.
+- Ajouter le @coulis de tomate{400 g}, le @sel{} et le @poivre moulu{}.
+- Cuire ~{8 min} à ^{120 C}, sens inverse, vitesse cuillère.
+- Ajouter les @haricots rouges{500 g, en conserve, égouttés} et le @maïs{140 g, en conserve, égoutté}.
+- Cuire ~{5 min} à ^{110 C}, sens inverse, vitesse cuillère.
+- Transvaser dans un plat de service.
+- Parsemer de @coriandre fraîche{2 brins, ciselés} et servir aussitôt.
