@@ -1,6 +1,6 @@
 {
-  "release": "core-d936088",
+  "release": "core-bb60879",
   "artifact": "cookigram_core-0.1.0-py3-none-any.whl",
-  "sha256": "cc6acb0358884004e7ac45e64fbd2c7b2ba62c626ed3ae5bd592e586fcb1f249",
-  "core_sha": "d93608809b52ff4d3eff29cbae4b042af2df9a44"
+  "sha256": "40837b792bbb8c7b2473299c114b354b615248ccb1671e38ac3e9663ec0439ed",
+  "core_sha": "bb60879dad40e906382117cc075fa6d0448a3303"
 }
