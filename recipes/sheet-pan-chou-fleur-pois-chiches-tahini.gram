@@ -21,11 +21,16 @@ flavors:
   notes: [toasté, citronné, crémeux]
   harmony: "Le tahini crémeux et citronné contraste avec les bords caramélisés du chou-fleur et le croquant des pois chiches."
   tips: "Retourner le chou-fleur à mi-cuisson pour dorer ses deux faces sans le dessécher."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-chou-fleur-pois-chiches-tahini.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: '2026-09-19'
+  prompt_file: image-prompts/sheet-pan-chou-fleur-pois-chiches-tahini.md
 ---
 
 ## Chou-fleur rôti, pois chiches & tahini citronné sur une plaque
