@@ -1,0 +1,3 @@
+# Prompt d’illustration — Saumon miel-moutarde, brocoli & patate douce sur une plaque
+
+Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show one rimmed sheet pan with a glazed center-cut salmon fillet, roasted broccoli florets, sweet-potato fries and whole roasted garlic cloves. The salmon should have a glossy whole-grain mustard and honey glaze with lightly caramelized edges. Warm contemporary manga-inspired food illustration, fine ink contours, watercolor texture and soft cel shading, believable roasting, centered three-quarter view and responsive crop margins. No text, logo, watermark, packaging, people or photorealism.
