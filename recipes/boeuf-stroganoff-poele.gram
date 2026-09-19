@@ -29,12 +29,17 @@ conservation:
   fridge_days: 2
   freezable: true
   reheat: "Réchauffer doucement à la poêle avec un trait d'eau ou de bouillon."
-image: images/placeholder-recipe.jpg
+image: images/boeuf-stroganoff-poele.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
   prompt_file: image-prompts/boeuf-stroganoff-poele.md
 ---
 [Attendrir les aromates]

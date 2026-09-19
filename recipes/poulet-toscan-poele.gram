@@ -9,7 +9,7 @@ spiciness: 0
 description: "Poulet doré, tomates séchées et épinards nappés d'une sauce crémeuse au parmesan, cuits dans une seule poêle."
 tags: [poulet, poêle, skillet, épinards, tomates séchées, parmesan, crémeux]
 source: https://www.delish.com/cooking/recipe-ideas/a19636089/creamy-tuscan-chicken-recipe/
-author: Delish
+author: Lena Abraham
 required_equipment:
   - Grande poêle
   - Planche à découper
@@ -29,12 +29,17 @@ conservation:
   fridge_days: 2
   freezable: true
   reheat: "Réchauffer à feu doux en détendant la sauce avec une cuillère d'eau."
-image: images/placeholder-recipe.jpg
+image: images/poulet-toscan-poele.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
   prompt_file: image-prompts/poulet-toscan-poele.md
 ---
 [Dorer le poulet]
