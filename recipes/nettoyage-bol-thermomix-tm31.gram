@@ -1,0 +1,49 @@
+---
+title: Nettoyage du bol Thermomix TM31 — fond accroché
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 1
+prep_time: 40 s
+total_time: 15 min
+spiciness: 0
+description: Pré-nettoyage du bol TM31 et méthode douce au bicarbonate pour décoller les résidus brûlés sans abrasif.
+tags: [thermomix, tm31, entretien, nettoyage, astuce]
+source: https://www.vorwerk.com/fr/fr/c/vorwerk/produits/thermomix/multifonction/comment-nettoyer
+author: Vorwerk
+appliances:
+  thermomix: [TM31]
+scaling:
+  enabled: false
+  reason: Ce protocole concerne un seul bol Thermomix et ne se dimensionne pas comme une recette alimentaire.
+required_equipment:
+  - Thermomix TM31
+  - Liquide vaisselle doux
+  - Éponge douce non abrasive
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+---
+
+## Nettoyage du bol Thermomix TM31 — fond accroché
+
+[Préparer le bol]
+- Verrouiller correctement le #bol Thermomix{} sur son socle avant d'y verser un liquide.
+- Verser de l'@eau{quantité suffisante, chaude et savonneuse} dans le bol et ajouter quelques gouttes de liquide vaisselle doux.
+- Fermer le couvercle et mettre le #gobelet doseur{} en place.
+
+[Lancer le pré-nettoyage]
+- Mixer ~{40 s} à vitesse 5.
+- Vider l'eau savonneuse, rincer le bol à l'eau claire puis passer une #éponge douce non abrasive{}.
+- Vérifier le fond du bol : si les résidus sont partis, rincer et sécher.
+
+[Traiter un fond encore accroché]
+- Si une couche légèrement brûlée reste visible, vider et refroidir le bol.
+- Tapisser le fond avec l'@bicarbonate de sodium{2 c. à soupe, environ}, puis ajouter un peu d'eau pour obtenir une pâte.
+- Laisser agir ~{15 min}.
+- Frotter doucement avec une #éponge douce non abrasive{}, puis rincer soigneusement.
+
+[Protéger le Thermomix]
+- Ne jamais verser d'eau ou de liquide directement sur la base du TM31.
+- Ne pas utiliser de détergent agressif ni de produit abrasif sur le bol ou les accessoires.
