@@ -51,3 +51,180 @@ static/images/air-fryer-tofu-croustillant.webp:
   prompt: "Photographie culinaire réaliste, bouchées de tofu croustillantes et dorées, panure à l’ail et au paprika, servies seules sur une assiette simple, lumière naturelle douce, présentation domestique crédible, plat clairement visible, sans sauce, sans texte, sans logo, sans marque, sans personnage, sans emballage, sans décoration inutile."
   sha256: ef92fadafdb38daff88f9e0a8caa58a3df9f7b5b973195e29e512c576db2fc56
   attribution: CookiGram
+
+static/images/sheet-pan-poulet-citron-haricots-verts.jpg:
+  recipe: sheet-pan-poulet-citron-haricots-verts
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Poulet citron, pommes de terre & haricots verts
+    sur une plaque
+
+
+    Create an entirely original horizontal 16:9 CookiGram culinary illustration based
+    only on the written recipe. Show a single rimmed sheet pan with golden roasted
+    boneless chicken thighs, quartered potatoes, bright green beans, onion wedges,
+    roasted lemon and visible garlic, all glazed with lemony pan juices. Warm contemporary
+    manga-inspired food illustration, fine ink contours, hand-painted watercolor texture
+    and soft cel shading. Three-quarter view, one-pan composition obvious, realistic
+    roasting and caramelization, safe margins for responsive crops. No text, logo,
+    watermark, packaging, people or photorealism.'
+  sha256: a201b710c406a862392c1467e13028da9b198ae927feae276b0084d2f146ec7c
+  attribution: CookiGram
+
+static/images/sheet-pan-saucisses-toulouse-poivrons.jpg:
+  recipe: sheet-pan-saucisses-toulouse-poivrons
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Saucisses de Toulouse, poivrons & pommes de terre
+    sur une plaque
+
+
+    Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show
+    one large rimmed sheet pan filled with browned Toulouse sausages, golden potato
+    cubes, red and yellow pepper pieces, cherry tomatoes, shallot wedges and garlic,
+    finished with small creamy ricotta dollops and basil leaves. Warm contemporary
+    manga-inspired food illustration, fine ink contours, watercolor texture, soft
+    cel shading, believable caramelized edges and pan juices. Three-quarter view,
+    one-pan cooking clearly readable, safe margins. No text, logo, watermark, packaging,
+    people or photorealism.'
+  sha256: 348029cbb70aaaceb92d2d95746717e52fb13c29270e74ab0ed798862fe6ad34
+  attribution: CookiGram
+
+static/images/sheet-pan-poulet-shawarma.jpg:
+  recipe: sheet-pan-poulet-shawarma
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Poulet shawarma, chou-fleur & oignons rouges
+    sur une plaque
+
+
+    Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show
+    one sheet pan with deeply roasted shawarma-spiced chicken thigh pieces, browned
+    cauliflower florets, red onion wedges and colorful bell peppers. Add a modest
+    drizzle of creamy lemon-garlic yogurt after roasting. Warm contemporary manga-inspired
+    food illustration, fine ink contours, hand-painted watercolor texture and soft
+    cel shading, visible toasted spice crust and caramelized vegetables. Three-quarter
+    view, one-pan composition obvious, no extra unsupported garnish. No text, logo,
+    watermark, packaging, people or photorealism.'
+  sha256: d9ef0b8ab4f165e2718e83e9365f53140647d19d05177ba743d4706afdd9189b
+  attribution: CookiGram
+
+static/images/sheet-pan-saumon-brocoli-patate-douce.jpg:
+  recipe: sheet-pan-saumon-brocoli-patate-douce
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Saumon miel-moutarde, brocoli & patate douce
+    sur une plaque
+
+
+    Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show
+    one rimmed sheet pan with a glazed center-cut salmon fillet, roasted broccoli
+    florets, sweet-potato fries and whole roasted garlic cloves. The salmon should
+    have a glossy whole-grain mustard and honey glaze with lightly caramelized edges.
+    Warm contemporary manga-inspired food illustration, fine ink contours, watercolor
+    texture and soft cel shading, believable roasting, centered three-quarter view
+    and responsive crop margins. No text, logo, watermark, packaging, people or photorealism.'
+  sha256: c4e07f6aed43eb349bc9ccd4689c177de3b1d6a7cff10adcd31e1de4b7fa13e0
+  attribution: CookiGram
+
+static/images/sheet-pan-gnocchi-burrata.jpg:
+  recipe: sheet-pan-gnocchi-burrata
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Gnocchi rôtis, poivrons & burrata sur une plaque
+
+
+    Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show
+    one sheet pan of lightly browned pillowy gnocchi and deeply roasted red, orange
+    and yellow peppers with visible garlic, topped after roasting with torn creamy
+    burrata, fresh basil leaves and a thin balsamic glaze. Warm contemporary manga-inspired
+    food illustration, fine ink contours, hand-painted watercolor texture and soft
+    cel shading. Three-quarter view, one-pan method obvious, safe margins. No text,
+    logo, watermark, packaging, people or photorealism.'
+  sha256: f332b4e7d227f8072874eed7b8912fa096486cfe87514b06c68b8c8bd274f59b
+  attribution: CookiGram
+
+static/images/sheet-pan-fajitas-crevettes.jpg:
+  recipe: sheet-pan-fajitas-crevettes
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Sheet pan fajitas de crevettes
+
+
+    Create an entirely original horizontal 16:9 culinary illustration for CookiGram.
+    Show a single rimmed baking sheet filled with juicy roasted shrimp, strips of
+    red, yellow and green bell peppers, and red onion, visibly seasoned with smoky
+    spices and finished with lime and cilantro. Warm contemporary manga-inspired food
+    illustration, fine ink contours, hand-painted watercolor texture and soft cel
+    shading. Three-quarter view, clear single-pan composition, safe margins for mobile
+    crops. No text, logo, watermark, packaging, people or photorealism.'
+  sha256: 6fa2faa45aea2dcac04107940a64a2d8f9fc7026e80c2d208233eea72e7815f5
+  attribution: CookiGram
+
+static/images/sheet-pan-feta-pois-chiches.jpg:
+  recipe: sheet-pan-feta-pois-chiches
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Sheet pan feta, pois chiches, courgette & tomates
+
+
+    Create an entirely original horizontal 16:9 culinary illustration for CookiGram.
+    Show a single baking sheet with roasted chickpeas, caramelized zucchini cubes,
+    burst cherry tomatoes, red onion wedges, Kalamata olives and golden-edged cubes
+    of feta, with lemon and oregano. Warm contemporary manga-inspired food illustration,
+    fine ink contours, watercolor texture and soft cel shading. Three-quarter view,
+    appetizing roast textures, safe crop margins. No text, logo, watermark, packaging,
+    people or photorealism.'
+  sha256: ce81ebe632a14a392aae7a3e14e661b12302bbef1bb70cdcd151a6d9918bbe78
+  attribution: CookiGram
+
+static/images/sheet-pan-filet-mignon-pommes-patates-douces.jpg:
+  recipe: sheet-pan-filet-mignon-pommes-patates-douces
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Sheet pan filet mignon, pommes & patates douces
+
+
+    Create an entirely original horizontal 16:9 culinary illustration for CookiGram.
+    Show one rimmed baking sheet with a glossy roasted pork tenderloin in the center,
+    surrounded by caramelized apple wedges and orange sweet-potato wedges, lightly
+    glazed with maple-Dijon and rosemary. Warm contemporary manga-inspired food illustration,
+    fine ink contours, watercolor texture and soft cel shading. Three-quarter view,
+    autumnal food tones, safe crop margins. No text, logo, watermark, packaging, people
+    or photorealism.'
+  sha256: 2667a77b34cb8c4036bd36236d578eee4a4d26090706ad547fcf78cf2a621d84
+  attribution: CookiGram
+
+static/images/sheet-pan-halloumi-pois-chiches-zaatar.jpg:
+  recipe: sheet-pan-halloumi-pois-chiches-zaatar
+  origin: generated
+  generator: Google Imagen 3
+  generated_at: '2026-09-19'
+  prompt: '# Prompt d’illustration — Sheet pan halloumi, pois chiches & zaatar
+
+
+    Create an entirely original horizontal 16:9 culinary illustration for CookiGram.
+    Show a single baking sheet with browned halloumi slices, roasted chickpeas, aubergine
+    rounds, red and orange pepper pieces and thin lemon slices dusted with zaatar.
+    Warm contemporary manga-inspired food illustration, fine ink contours, watercolor
+    texture and soft cel shading. Three-quarter view, crisp roasted edges, safe crop
+    margins. No text, logo, watermark, packaging, people or photorealism.'
+  sha256: fcd228f994c9d6a36bdf2fd1a6dd439e32eca1f740694a8f982202004ea4bb93
+  attribution: CookiGram
+
+static/images/sheet-pan-chou-fleur-pois-chiches-tahini.jpg:
+  recipe: sheet-pan-chou-fleur-pois-chiches-tahini
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: "# Prompt d’illustration — Sheet pan chou-fleur, pois chiches & tahini\n\nCreate an entirely original horizontal 16:9 culinary illustration for CookiGram. Show one baking sheet with deeply roasted cauliflower slices and florets, crisp golden chickpeas and a bright lemon-herb tahini drizzle added after roasting. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, clear roasted textures, safe crop margins. No text, logo, watermark, packaging, people or photorealism."
+  sha256: 0de7ca2c8173352282c5177d3a443b081003a88444e80069fc3eba2271e0d657
+  attribution: CookiGram

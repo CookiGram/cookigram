@@ -1,0 +1,3 @@
+# Prompt d’illustration — Poulet shawarma, chou-fleur & oignons rouges sur une plaque
+
+Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show one sheet pan with deeply roasted shawarma-spiced chicken thigh pieces, browned cauliflower florets, red onion wedges and colorful bell peppers. Add a modest drizzle of creamy lemon-garlic yogurt after roasting. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading, visible toasted spice crust and caramelized vegetables. Three-quarter view, one-pan composition obvious, no extra unsupported garnish. No text, logo, watermark, packaging, people or photorealism.

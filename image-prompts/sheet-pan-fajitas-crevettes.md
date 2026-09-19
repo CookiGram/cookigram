@@ -1,0 +1,3 @@
+# Prompt d’illustration — Sheet pan fajitas de crevettes
+
+Create an entirely original horizontal 16:9 culinary illustration for CookiGram. Show a single rimmed baking sheet filled with juicy roasted shrimp, strips of red, yellow and green bell peppers, and red onion, visibly seasoned with smoky spices and finished with lime and cilantro. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, clear single-pan composition, safe margins for mobile crops. No text, logo, watermark, packaging, people or photorealism.

@@ -1,0 +1,3 @@
+# Prompt d’illustration — Gnocchi rôtis, poivrons & burrata sur une plaque
+
+Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show one sheet pan of lightly browned pillowy gnocchi and deeply roasted red, orange and yellow peppers with visible garlic, topped after roasting with torn creamy burrata, fresh basil leaves and a thin balsamic glaze. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, one-pan method obvious, safe margins. No text, logo, watermark, packaging, people or photorealism.

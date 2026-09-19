@@ -1,0 +1,3 @@
+# Prompt d’illustration — Poulet citron, pommes de terre & haricots verts sur une plaque
+
+Create an entirely original horizontal 16:9 CookiGram culinary illustration based only on the written recipe. Show a single rimmed sheet pan with golden roasted boneless chicken thighs, quartered potatoes, bright green beans, onion wedges, roasted lemon and visible garlic, all glazed with lemony pan juices. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, one-pan composition obvious, realistic roasting and caramelization, safe margins for responsive crops. No text, logo, watermark, packaging, people or photorealism.
