@@ -9,7 +9,7 @@ spiciness: 0
 description: "Aubergines fondantes, tomate, mozzarella et parmesan superposés puis gratinés au four jusqu'à une surface dorée."
 tags: [aubergine, four, gratin, italien, végétarien, mozzarella, parmesan]
 source: https://www.bbcgoodfood.com/recipes/roast-aubergine-parmigiana
-author: Good Food
+author: Jane Hornby
 required_equipment:
   - Grand plat à gratin
   - Poêle
@@ -29,12 +29,16 @@ conservation:
   fridge_days: 3
   freezable: true
   reheat: "20 min au four à 170 C."
-image: images/placeholder-recipe.jpg
+image: images/aubergines-parmigiana-four.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration sélectionnée et intégrée par un humain.
 image_generation:
+  provider: OpenAI
+  generated_at: "2026-09-19"
   prompt_file: image-prompts/aubergines-parmigiana-four.md
 ---
 [Préparer les aubergines]
