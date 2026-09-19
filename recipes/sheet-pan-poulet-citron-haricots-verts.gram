@@ -1,0 +1,52 @@
+---
+title: Poulet citron, pommes de terre & haricots verts sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 6
+prep_time: 15 min
+total_time: 1 h 15 min
+spiciness: 0
+description: "Poulet citronné et ailé, pommes de terre fondantes et haricots verts rôtis ensemble sur une seule plaque."
+tags: [sheet-pan, one-pan, poulet, pommes de terre, haricots verts, four, familial]
+source: https://www.abc.net.au/news/2026-01-17/lemon-garlic-chicken-with-green-beans-and-potatoes/106232614
+author: Lina Jebeile
+scaling:
+  enabled: true
+  min_portions: 3
+  max_portions: 6
+  step: 1
+  note: Conserver une seule couche sur la plaque ; utiliser deux plaques au-delà de six portions.
+flavors:
+  pairing: [poulet, citron, ail, thym]
+  notes: [citronné, rôti, herbacé]
+  harmony: "Le citron et la moutarde réveillent les sucs du poulet, tandis que le beurre aide les pommes de terre à dorer."
+  tips: "Ajouter les haricots verts seulement en fin de cuisson pour qu'ils restent verts et légèrement fermes."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sheet-pan-poulet-citron-haricots-verts.md
+---
+
+## Poulet citron, pommes de terre & haricots verts sur une plaque
+
+[Précuire les pommes de terre]
+- Préchauffer le #four{} à ^{200 C}.
+- Répartir les @pommes de terre{5 à 6 petites, coupées en quartiers} et l'@oignon{1 pièce, en gros quartiers} sur une #plaque de cuisson{}.
+- Ajouter l'@huile d'olive{1.5 c. à soupe, sur 3 c. à soupe au total}, le @sel{selon goût} et le @poivre moulu{selon goût}, puis mélanger directement sur la plaque.
+- Enfourner ~{20 min} pour donner une avance de cuisson aux pommes de terre.
+
+[Assaisonner le poulet]
+- Mélanger les @hauts de cuisse de poulet{6 pièces, désossés}, le @beurre doux{50 g, fondu}, l'@huile d'olive{1.5 c. à soupe, sur 3 c. à soupe au total}, le @jus de citron{1 citron}, le @zeste de citron{1 citron}, l'@ail{6 à 8 gousses, hachées}, la @moutarde à l'ancienne{2 c. à café}, le @paprika{1 c. à café}, les @herbes italiennes{1 c. à café}, le @thym frais{3 à 4 brins}, le @sel{selon goût} et le @poivre moulu{selon goût}.
+
+[Rôtir le poulet]
+- Sortir la plaque et poser le poulet assaisonné au milieu des pommes de terre et de l'oignon.
+- Verser sur la plaque toute la marinade restante afin qu'elle parfume les légumes.
+- Enfourner ~{25 min} à ^{200 C}.
+
+[Ajouter les haricots verts]
+- Répartir les @haricots verts{250 g, équeutés} sur la plaque et les arroser avec les jus de cuisson.
+- Poursuivre la cuisson ~{15 min}, jusqu'à ce que le poulet soit doré, les pommes de terre tendres et les haricots encore légèrement fermes.
+- Parsemer de @persil frais{2 c. à soupe, haché} et servir directement depuis la plaque.
