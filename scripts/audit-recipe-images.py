@@ -19,11 +19,15 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from PIL import Image, UnidentifiedImageError
 
 
 PLACEHOLDER = "images/placeholder-recipe.jpg"
 TEMPORARY_CREDIT = "Illustration temporaire"
 GENERATED_CREDIT = "Illustration générée pour CookiGram"
+# Migration boundary: the older "Illustration générée par IA pour CookiGram"
+# records are intentionally not required to have a manifest entry yet. New or
+# repaired generated assets use GENERATED_CREDIT and must be manifested.
 PROVENANCE_MANIFEST = "assets/provenance/images.yaml"
 
 
@@ -101,12 +105,60 @@ def _manifest_findings(root: Path, manifest: dict[str, Any]) -> list[Finding]:
     return findings
 
 
+def _recipe_image_refs(root: Path) -> dict[str, list[str]]:
+    refs: dict[str, list[str]] = {}
+    for recipe_path in sorted((root / "recipes").rglob("*.gram")):
+        metadata = _frontmatter(recipe_path)
+        image = metadata.get("image")
+        if isinstance(image, str) and image.strip():
+            refs.setdefault(f"static/{image.strip()}", []).append(recipe_path.stem)
+    return refs
+
+
+def _image_findings(root: Path, refs: dict[str, list[str]]) -> list[Finding]:
+    findings: list[Finding] = []
+    for asset, recipes in refs.items():
+        path = root / asset
+        if not path.is_file():
+            findings.append(Finding(
+                recipe=recipes[0], image=asset.removeprefix("static/"),
+                prompt_file="", status="missing-image",
+                message=f"fichier image introuvable: {asset}",
+            ))
+            continue
+        try:
+            with Image.open(path) as image:
+                image.verify()
+        except (OSError, UnidentifiedImageError) as exc:
+            findings.append(Finding(
+                recipe=recipes[0], image=asset.removeprefix("static/"),
+                prompt_file="", status="corrupt-image",
+                message=f"image illisible: {asset} ({exc})",
+            ))
+
+    # placeholder-recipe.jpg is an intentional shared fallback, not a recipe
+    # asset. All other files in this directory must be referenced by a recipe.
+    image_dir = root / "static" / "images"
+    for path in sorted(image_dir.rglob("*")) if image_dir.is_dir() else []:
+        if not path.is_file():
+            continue
+        asset = path.relative_to(root).as_posix()
+        if asset not in refs and path.name != "placeholder-recipe.jpg":
+            findings.append(Finding(
+                recipe=PROVENANCE_MANIFEST, image=asset.removeprefix("static/"),
+                prompt_file="", status="orphan-image",
+                message=f"image recipe sans référence: {asset}",
+            ))
+    return findings
+
+
 def audit(root: Path) -> list[Finding]:
     manifest = _manifest(root)
     findings: list[Finding] = _manifest_findings(root, manifest)
+    findings.extend(_image_findings(root, _recipe_image_refs(root)))
     recipes_dir = root / "recipes"
 
-    for recipe_path in sorted(recipes_dir.glob("*.gram")):
+    for recipe_path in sorted(recipes_dir.rglob("*.gram")):
         metadata = _frontmatter(recipe_path)
         generation = metadata.get("image_generation")
         if not isinstance(generation, dict):

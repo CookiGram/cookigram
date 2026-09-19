@@ -20,7 +20,7 @@ class ImageProvenanceTests(unittest.TestCase):
         self.assertEqual(findings, [])
 
         manifest = yaml.safe_load((ROOT / AUDIT.PROVENANCE_MANIFEST).read_text(encoding="utf-8"))
-        self.assertEqual(len(manifest), 20)
+        self.assertEqual(len(manifest), 23)
         self.assertEqual({record["recipe"] for record in manifest.values()}, {
             "air-fryer-pommes-terre-romarin",
             "air-fryer-poulet-paprika-herbes",
@@ -42,6 +42,9 @@ class ImageProvenanceTests(unittest.TestCase):
             "sheet-pan-poulet-shawarma",
             "sheet-pan-saucisses-toulouse-poivrons",
             "sheet-pan-saumon-brocoli-patate-douce",
+            "hachis-parmentier",
+            "quiche-lorraine",
+            "ratatouille",
         })
 
     def test_temporary_credit_is_rejected(self):
@@ -58,6 +61,32 @@ class ImageProvenanceTests(unittest.TestCase):
             )
             statuses = {finding.status for finding in AUDIT.audit(root)}
             self.assertIn("temporary-credit", statuses)
+
+    def test_nested_corrupt_missing_and_orphan_images_are_audited(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "recipes/nested/deeper").mkdir(parents=True)
+            (root / "static/images/nested").mkdir(parents=True)
+            (root / "static/images/placeholder-recipe.jpg").write_bytes(b"placeholder")
+            (root / "static/images/nested/corrupt.webp").write_bytes(b"not an image")
+            (root / "static/images/nested/orphan.webp").write_bytes(b"not an image")
+            (root / "static/images/nested/directory-only").mkdir()
+            (root / "recipes/nested/deeper/corrupt.gram").write_text(
+                "---\nimage: images/nested/corrupt.webp\n---\n", encoding="utf-8"
+            )
+            (root / "recipes/nested/deeper/missing.gram").write_text(
+                "---\nimage: images/nested/missing.webp\n---\n", encoding="utf-8"
+            )
+
+            findings = AUDIT.audit(root)
+            statuses = {finding.status for finding in findings}
+            self.assertIn("corrupt-image", statuses)
+            self.assertIn("missing-image", statuses)
+            self.assertIn("orphan-image", statuses)
+            self.assertEqual(
+                [finding.image for finding in findings if finding.status == "orphan-image"],
+                ["images/nested/orphan.webp"],
+            )
 
 
 if __name__ == "__main__":
