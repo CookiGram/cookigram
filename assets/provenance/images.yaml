@@ -257,7 +257,7 @@ static/images/hachis-parmentier.webp:
   generator: image_gen
   generated_at: '2026-09-19'
   prompt: "# Prompt d’illustration — Hachis parmentier\n\nCreate an entirely original horizontal 16:9 culinary illustration for CookiGram, based only on the written recipe. Show a family-size gratin dish of hachis parmentier with a deeply golden gruyère crust, ridged creamy mashed-potato topping and a visible cut portion revealing a moist minced-beef, carrot, onion and shallot layer underneath. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, centered dish on a simple home-kitchen table, appetizing steam, safe margins for mobile crops. Keep only the gratin as the subject; no unsupported herbs, garnish, loose ingredients or decorative props. No text, logo, watermark, packaging, people or photorealism."
-  sha256: 4334f7873fa56482c885d36560cb1f4def85e0e068ab907f137b48dc68061b48
+  sha256: 910500b47ef115b54302a0c60ba1bdbb5823b00754f60a86382f3ba4a4df5179
   attribution: CookiGram
 
 static/images/quiche-lorraine.webp:
