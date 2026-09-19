@@ -14,11 +14,11 @@ appliances:
   thermomix: [TM31]
 scaling:
   enabled: false
-  reason: Ce protocole est calibré pour un seul bol Thermomix et ne correspond pas à un nombre de portions.
+  reason: Ce protocole concerne un seul bol Thermomix et ne se dimensionne pas comme une recette alimentaire.
 required_equipment:
   - Thermomix TM31
   - Liquide vaisselle doux
-  - Éponge ou brosse douce non abrasive
+  - Éponge douce non abrasive
 image: images/placeholder-recipe.jpg
 image_credit:
   author: CookiGram
@@ -29,20 +29,21 @@ image_credit:
 ## Nettoyage du bol Thermomix TM31 — fond accroché
 
 [Préparer le bol]
-- Retirer le #bol Thermomix{} de la base et vérifier que les contacts électriques sous le bol sont propres et secs.
-- Verser l'@eau{1 l} dans le bol, puis ajouter seulement 2 à 3 gouttes de #liquide vaisselle doux{}.
-- Replacer le bol sur le TM31, fermer correctement le couvercle et mettre le #gobelet doseur{} en place.
+- Verrouiller correctement le #bol Thermomix{} sur son socle avant d'y verser un liquide.
+- Verser de l'@eau{1 l, chaude mais non bouillante} dans le bol et ajouter quelques gouttes de liquide vaisselle doux.
+- Fermer le couvercle et mettre le #gobelet doseur{} en place.
 
 [Lancer le pré-nettoyage]
-- Mixer ~{30 s} à vitesse 10 pour décoller les résidus.
-- Vider le bol puis le rincer à l'eau claire.
-- Vérifier le fond : si les traces sont parties, terminer avec une #éponge douce non abrasive{} puis rincer et sécher.
+- Mixer ~{40 s} à vitesse 5.
+- Vider l'eau savonneuse, rincer le bol à l'eau claire puis passer une #éponge douce non abrasive{}.
+- Vérifier le fond du bol : si les résidus sont partis, rincer et sécher.
 
 [Traiter un fond encore accroché]
-- Si une couche brûlée reste visible, retirer le bol de la base et le laisser refroidir avant de poursuivre.
-- Saupoudrer le fond avec l'@bicarbonate de sodium{2 c. à soupe, environ, facultatif}, puis ajouter juste assez d'eau pour former une pâte épaisse.
-- Laisser agir ~{15 min}, puis frotter délicatement avec une #éponge douce non abrasive{} sans utiliser de grattoir métallique ni d'objet pointu.
-- Rincer soigneusement, puis sécher complètement l'extérieur et les contacts sous le bol avant de le remettre sur la base.
+- Si une couche légèrement brûlée reste visible, vider et refroidir le bol.
+- Tapisser le fond avec l'@bicarbonate de sodium{2 c. à soupe, environ}, puis ajouter un peu d'eau pour obtenir une pâte.
+- Laisser agir ~{15 min}.
+- Frotter doucement avec une #éponge douce non abrasive{}, puis rincer soigneusement.
 
-[Arrêter si nécessaire]
-- Si des résidus restent fortement incrustés après ce nettoyage doux, ne pas forcer : utiliser un nettoyant adapté à l'acier inoxydable conformément au manuel du TM31.
+[Protéger le Thermomix]
+- Ne jamais verser d'eau ou de liquide directement sur la base du TM31.
+- Ne pas utiliser de détergent agressif ni de produit abrasif sur le bol ou les accessoires.
