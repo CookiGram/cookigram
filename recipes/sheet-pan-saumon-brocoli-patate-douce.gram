@@ -1,0 +1,49 @@
+---
+title: Saumon miel-moutarde, brocoli & patate douce sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 15 min
+total_time: 48 min
+spiciness: 0
+description: "Saumon glacé miel-moutarde, brocoli rôti et patate douce fondante, cuits ensemble sur une seule plaque."
+tags: [sheet-pan, one-pan, saumon, brocoli, patate douce, miel, four]
+source: https://katieleekitchen.com/honey-mustard-glazed-salmon/
+author: Katie Lee Biegel
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 4
+  step: 1
+  note: Garder le saumon entier et les légumes en une seule couche pour respecter le temps de cuisson.
+flavors:
+  pairing: [saumon, moutarde, miel, brocoli]
+  notes: [sucré-salé, rôti, fondant]
+  harmony: "La moutarde apporte du relief au miel tandis que le brocoli et la patate douce absorbent le glaçage du saumon."
+  tips: "Surveiller attentivement le passage sous le gril : le miel colore très vite."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sheet-pan-saumon-brocoli-patate-douce.md
+---
+
+## Saumon miel-moutarde, brocoli & patate douce sur une plaque
+
+[Préparer la plaque]
+- Préchauffer le #four{} à ^{220 C} et couvrir une #plaque de cuisson{} de papier cuisson.
+- Poser le @saumon{450 g, filet entier sans peau} au centre de la plaque et ajouter le @sel{selon goût} et le @poivre moulu{selon goût}.
+
+[Assaisonner les légumes]
+- Mélanger le @brocoli{1 tête, en fleurettes}, la @patate douce{1 pièce moyenne, en bâtonnets}, l'@ail{4 gousses, entières}, l'@huile d'olive{2 c. à café}, le @sel{selon goût} et le @poivre moulu{selon goût}.
+- Répartir les légumes tout autour du saumon en une seule couche.
+
+[Glacer et rôtir]
+- Mélanger la @moutarde à l'ancienne{3 c. à café} et le @miel{2 c. à café}, puis napper le saumon avec ce glaçage.
+- Enfourner ~{30 min}, jusqu'à ce que la patate douce soit tendre et que le saumon s'effeuille facilement.
+
+[Caraméliser]
+- Passer sous le gril du #four{} pendant ~{3 min} en restant devant le four pour caraméliser le dessus sans brûler le miel.
+- Mélanger délicatement les légumes avec le glaçage tombé sur la plaque et servir aussitôt.
