@@ -1,0 +1,47 @@
+---
+title: Quiche lorraine
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 10 min
+total_time: 40 min
+spiciness: 0
+description: "Quiche lorraine dorée aux lardons fumés, œufs, crème et muscade, sur une pâte brisée croustillante au four."
+tags: [quiche, lorraine, lardons, tarte salée, traditionnel, four]
+source: https://www.editions-larousse.fr/recette/quiche-lorraine/
+author: Larousse
+scaling:
+  enabled: false
+  reason: Le format est calibré pour un rouleau de pâte brisée et un moule à tarte de 26 cm.
+flavors:
+  pairing: [lardons fumés, œufs, crème fraîche, muscade]
+  notes: [fumé, crémeux, croustillant]
+  harmony: "Le lard fumé relève la migaine crémeuse tandis que la muscade apporte une chaleur discrète à l’ensemble."
+  tips: "Égoutter les lardons après coloration pour garder une garniture savoureuse sans détremper la pâte."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/quiche-lorraine.md
+---
+
+## Quiche lorraine
+
+[Préparer le fond de tarte]
+- Préchauffer le #four{} à ^{210 C}.
+- Foncer un #moule à tarte{26 cm} avec la @pâte brisée{230 g, préétalée} en conservant son papier cuisson.
+
+[Préparer la migaine]
+- Fouetter dans un #saladier{} les @œufs{2 pièces}, les @jaunes d'œufs{2 pièces} et la @crème fraîche épaisse{25 cl}.
+- Ajouter la @noix de muscade{selon goût}, le @sel{selon goût} et le @poivre{selon goût}, puis mélanger sans trop incorporer d'air.
+
+[Dorer les lardons]
+- Faire revenir les @lardons fumés{200 g} dans une #poêle{} à feu vif jusqu'à légère coloration.
+- Les égoutter sur du papier absorbant afin de limiter le gras qui pourrait détremper la pâte, puis les répartir sur le fond de tarte.
+
+[Cuire la quiche]
+- Verser la migaine sur les lardons et enfourner à ^{210 C} pendant ~{5 min}.
+- Baisser le four à ^{180 C} et poursuivre la cuisson ~{25 min}, jusqu'à ce que la quiche soit bien dorée et que le centre reste juste pris.
+- Laisser reposer quelques minutes et servir chaud ou tiède.
