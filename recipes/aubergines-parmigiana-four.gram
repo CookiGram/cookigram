@@ -1,0 +1,57 @@
+---
+title: Aubergines alla Parmigiana gratinées au four
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 20 min
+total_time: 1 h 20 min
+spiciness: 0
+description: "Aubergines fondantes, tomate, mozzarella et parmesan superposés puis gratinés au four jusqu'à une surface dorée."
+tags: [aubergine, four, gratin, italien, végétarien, mozzarella, parmesan]
+source: https://www.bbcgoodfood.com/recipes/roast-aubergine-parmigiana
+author: Good Food
+required_equipment:
+  - Grand plat à gratin
+  - Poêle
+  - Couteau de chef
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 2
+  note: Utiliser un plat plus grand au-delà de 4 portions et conserver des couches fines.
+flavors:
+  pairing: [aubergine, tomate, mozzarella, parmesan]
+  notes: [fondant, gratiné, acidulé, herbacé]
+  harmony: "La tomate acidulée équilibre les fromages fondants tandis que l'aubergine apporte une texture douce et charnue."
+  tips: "Laisser reposer quelques minutes après cuisson pour stabiliser les couches avant le service."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "20 min au four à 170 C."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/aubergines-parmigiana-four.md
+---
+[Préparer les aubergines]
+- Préchauffer le #four{} à ^{200 C}.
+- Couper les @aubergines{800 g} en tranches de 1 cm et les badigeonner d'@huile d'olive{30 g}.
+- Les disposer sur une plaque et cuire ~{25 min} jusqu'à ce qu'elles soient tendres et légèrement dorées.
+
+[Préparer la tomate]
+- Faire revenir l'@ail{2 gousses, hachées} dans l'@huile d'olive{15 g} pendant ~{1 min}.
+- Ajouter les @tomates concassées{800 g}, l'@origan{1 c. à café}, le @sel{4 g} et le @poivre moulu{2 g}.
+- Laisser mijoter ~{10 min}.
+
+[Monter la parmigiana]
+- Verser une fine couche de sauce tomate dans un #plat à gratin{}.
+- Alterner aubergines, sauce, @mozzarella{250 g, égouttée et tranchée} et @parmesan{60 g, râpé}.
+- Terminer par sauce, mozzarella et parmesan.
+
+[Gratiner]
+- Enfourner ~{30 min} à ^{200 C}, jusqu'à ce que le plat bouillonne et dore en surface.
+- Laisser reposer ~{5 min} avant de servir.
