@@ -1,0 +1,45 @@
+---
+title: Feta rôtie, pois chiches, courgette & tomates sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 10 min
+total_time: 50 min
+spiciness: 0
+description: "Pois chiches croustillants, courgette, tomates, olives et feta rôtis au citron et à l’origan sur une plaque."
+tags: [sheet-pan, one-pan, feta, pois chiches, courgette, végétarien, méditerranéen]
+source: https://www.mediterraneanliving.com/sheet-pan-mediterranean-chickpeas-and-feta/
+author: Jess Haines-Stephan
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 1
+  note: Ne pas surcharger la plaque afin de garder des bords rôtis et non étuvés.
+flavors:
+  pairing: [pois chiches, feta, courgette, citron]
+  notes: [salin, citronné, rôti]
+  harmony: "La feta salée et les olives équilibrent la douceur des tomates tandis que le citron et l’origan gardent l’ensemble vif."
+  tips: "Bien sécher les pois chiches avant de les déposer sur la plaque pour favoriser leur croustillant."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sheet-pan-feta-pois-chiches.md
+---
+
+## Feta rôtie, pois chiches, courgette & tomates sur une plaque
+
+[Assembler]
+- Préchauffer le #four{} à ^{230 C}.
+- Répartir les @pois chiches{250 g, cuits et égouttés}, les @olives kalamata{0.5 tasse, dénoyautées et hachées}, les @tomates cerises{1 pinte}, la @courgette{1 moyenne, en dés de 1 cm}, la @feta{170 g, en cubes} et les @oignons rouges{2 petits, en quartiers} sur une #plaque de cuisson{}.
+
+[Assaisonner]
+- Ajouter l'@origan séché{1 c. à café}, le @jus de citron{1 citron}, l'@huile d'olive{60 ml}, le @sel{selon goût} et le @poivre moulu{selon goût}.
+- Mélanger délicatement directement sur la plaque puis étaler en une seule couche.
+
+[Rôtir]
+- Enfourner ~{35 min}, jusqu'à ce que la courgette soit tendre, les tomates éclatées et les pois chiches légèrement dorés.
+- Servir chaud directement depuis la plaque, avec un trait de citron supplémentaire si souhaité.
