@@ -1,0 +1,46 @@
+---
+title: Gnocchi rôtis, poivrons & burrata sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 5 min
+total_time: 35 min
+spiciness: 1
+description: "Gnocchi dorés au four avec poivrons et ail, servis avec burrata crémeuse, basilic frais et balsamique."
+tags: [sheet-pan, one-pan, gnocchi, burrata, poivron, végétarien, four]
+source: https://www.delish.com/cooking/recipe-ideas/a38688266/sheet-pan-burrata-gnocchi-recipe/
+author: Justin Sullivan
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 4
+  step: 1
+  note: Les gnocchi et poivrons doivent rester en une seule couche pour rôtir au lieu de cuire à la vapeur.
+flavors:
+  pairing: [gnocchi, poivron, burrata, basilic]
+  notes: [rôti, crémeux, acidulé]
+  harmony: "Les gnocchi croustillent au contact de la plaque tandis que la burrata et le balsamique apportent richesse et fraîcheur."
+  tips: "Utiliser des gnocchi frais réfrigérés : ils rôtissent directement sans précuisson."
+image: images/sheet-pan-gnocchi-burrata.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/sheet-pan-gnocchi-burrata.md
+---
+
+## Gnocchi rôtis, poivrons & burrata sur une plaque
+
+[Assembler sur la plaque]
+- Préchauffer le #four{} à ^{220 C}.
+- Répartir les @poivrons{4 pièces rouges, orange ou jaunes, grossièrement coupés}, les @gnocchi frais{340 g} et l'@ail{3 gousses, hachées} sur une #plaque de cuisson{}.
+- Ajouter l'@huile d'olive{2 c. à soupe, sur 3 c. à soupe au total}, le @sel{selon goût}, le @poivre moulu{selon goût} et les @flocons de piment{1 pincée}, puis mélanger.
+
+[Rôtir]
+- Enfourner ~{30 min}, en mélangeant à mi-cuisson, jusqu'à ce que les poivrons soient fondants et les gnocchi dorés par endroits.
+
+[Finir]
+- Répartir la @burrata{115 g, déchirée en morceaux} et le @basilic frais{0.5 tasse, feuilles déchirées} sur la plaque chaude.
+- Ajouter l'@huile d'olive{1 c. à soupe, sur 3 c. à soupe au total} et la @crème de vinaigre balsamique{1.5 c. à soupe}.
+- Servir immédiatement pendant que la burrata commence juste à fondre sur les gnocchi.

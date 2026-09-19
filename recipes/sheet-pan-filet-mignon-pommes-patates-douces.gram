@@ -1,0 +1,48 @@
+---
+title: Filet mignon, pommes & patates douces sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 15 min
+total_time: 55 min
+spiciness: 0
+description: "Filet mignon rôti avec pommes et patates douces, laqué au sirop d’érable, moutarde de Dijon et romarin."
+tags: [sheet-pan, one-pan, porc, pomme, patate douce, automne, four]
+source: https://onapples.com/recipe/sheet-pan-maple-dijon-apples-pork.php
+author: Ontario Apple Growers / The Kitchen Fairy
+scaling:
+  enabled: false
+  reason: Le temps de cuisson dépend du diamètre du filet mignon et de sa température à cœur.
+flavors:
+  pairing: [porc, pomme, patate douce, moutarde]
+  notes: [sucré-salé, rôti, automnal]
+  harmony: "L’érable caramélise les pommes et patates douces tandis que la moutarde apporte l’acidité nécessaire au porc."
+  tips: "Laisser reposer le filet quelques minutes avant de le trancher afin de conserver ses jus."
+image: images/sheet-pan-filet-mignon-pommes-patates-douces.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/sheet-pan-filet-mignon-pommes-patates-douces.md
+---
+
+## Filet mignon, pommes & patates douces sur une plaque
+
+[Préparer]
+- Préchauffer le #four{} à ^{220 C}.
+- Frotter le @filet mignon de porc{450 g} avec le @romarin séché{1 c. à soupe, sur 2 c. à soupe au total}, le @sel{0.5 c. à café, sur 1 c. à café au total} et le @poivre moulu{0.5 c. à café, sur 1 c. à café au total}.
+
+[Assembler la plaque]
+- Répartir les @pommes{4 pièces, en 8 quartiers chacune} et les @patates douces{2 moyennes, en petits quartiers} sur une #plaque de cuisson{}.
+- Ajouter l'@huile d'olive{1 c. à soupe, sur 2 c. à soupe au total}, le @romarin séché{1 c. à soupe, sur 2 c. à soupe au total}, le @sel{0.5 c. à café, sur 1 c. à café au total} et le @poivre moulu{0.5 c. à café, sur 1 c. à café au total}.
+- Placer le filet mignon au centre et l'arroser avec l'@huile d'olive{1 c. à soupe, sur 2 c. à soupe au total}.
+
+[Rôtir]
+- Enfourner ~{25 min}.
+
+[Laquer]
+- Mélanger le @sirop d'érable{120 ml} et la @moutarde de Dijon{120 ml}.
+- Badigeonner la moitié du glaçage sur le porc, les pommes et les patates douces.
+- Remettre au four ~{10 min}, puis vérifier que le porc atteint au moins ^{63 C à cœur} et que les patates douces sont tendres.
+- Laisser reposer le porc ~{5 min} avant de le trancher et servir avec le reste du glaçage à côté.

@@ -15,6 +15,18 @@ scaling:
   enabled: false
   reason: La quantité de viande et de garniture est calibrée pour quatre portions.
 spiciness: 2
+conservation:
+  fridge_days: 4
+  freezable: true
+  reheat: "Décongeler une nuit au réfrigérateur puis réchauffer doucement jusqu'à frémissement."
+variants:
+  - id: service-immediat
+    name: Service immédiat
+    default: true
+    description: Préparation Thermomix servie dès la fin du mijotage.
+  - id: freezer-meal
+    name: Freezer meal
+    description: Refroidir complètement le chili, portionner hermétiquement et congeler ; décongeler au réfrigérateur avant réchauffage.
 image: images/chili-con-carne.jpg
 image_credit:
   author: CookiGram

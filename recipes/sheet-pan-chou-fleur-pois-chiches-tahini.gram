@@ -1,0 +1,52 @@
+---
+title: Chou-fleur rôti, pois chiches & tahini citronné sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 10 min
+total_time: 40 min
+spiciness: 0
+description: "Chou-fleur caramélisé et pois chiches croustillants, servis avec tahini citronné, ail et herbes fraîches."
+tags: [sheet-pan, one-pan, chou-fleur, pois chiches, tahini, végétalien, four]
+source: https://www.lastingredient.com/roasted-cauliflower-and-chickpeas-with-herby-tahini/
+author: Paige Adams
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 1
+  note: Laisser de l’espace entre les morceaux de chou-fleur pour conserver des bords croustillants.
+flavors:
+  pairing: [chou-fleur, pois chiches, tahini, citron]
+  notes: [toasté, citronné, crémeux]
+  harmony: "Le tahini crémeux et citronné contraste avec les bords caramélisés du chou-fleur et le croquant des pois chiches."
+  tips: "Retourner le chou-fleur à mi-cuisson pour dorer ses deux faces sans le dessécher."
+image: images/sheet-pan-chou-fleur-pois-chiches-tahini.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: '2026-09-19'
+  prompt_file: image-prompts/sheet-pan-chou-fleur-pois-chiches-tahini.md
+---
+
+## Chou-fleur rôti, pois chiches & tahini citronné sur une plaque
+
+[Assaisonner]
+- Préchauffer le #four{} à ^{220 C}.
+- Mélanger l'@huile d'olive{2 c. à soupe}, le @cumin moulu{1 c. à café}, le @paprika fumé{0.5 c. à café}, l'@oignon en poudre{0.25 c. à café}, l'@ail en poudre{0.25 c. à café}, le @sel{1 c. à café} et le @poivre moulu{0.25 c. à café}.
+- Ajouter le @chou-fleur{1 tête, en tranches épaisses et fleurettes} et les @pois chiches{425 g, cuits et égouttés}, puis bien les enrober.
+
+[Rôtir]
+- Étaler le chou-fleur et les pois chiches en une seule couche sur une #plaque de cuisson{}.
+- Enfourner ~{25 min}, en retournant le chou-fleur à mi-cuisson, jusqu'à ce que les bords soient bruns et les pois chiches légèrement croustillants.
+
+[Préparer le tahini]
+- Mixer l'@ail{1 gousse}, le @tahini{80 ml}, le @persil frais{0.5 tasse}, la @coriandre fraîche{0.5 tasse}, l'@oignon nouveau{1 pièce, émincé}, le @jus de citron{1 citron}, le @sel{0.25 c. à café} et l'@eau{3 c. à soupe}.
+- Ajouter jusqu'à @eau{1 c. à soupe supplémentaire} si nécessaire pour obtenir une sauce épaisse mais coulante.
+
+[Servir]
+- Napper le chou-fleur et les pois chiches de sauce tahini juste avant de servir.

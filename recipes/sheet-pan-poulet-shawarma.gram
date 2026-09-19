@@ -1,0 +1,51 @@
+---
+title: Poulet shawarma, chou-fleur & oignons rouges sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 20 min
+total_time: 1 h 25 min
+spiciness: 1
+description: "Poulet shawarma épicé, chou-fleur, poivrons et oignons rouges rôtis ensemble, avec sauce yaourt citronnée."
+tags: [sheet-pan, one-pan, poulet, shawarma, chou-fleur, moyen-orient, four]
+source: https://www.mediterraneanliving.com/sheet-pan-chicken-shawarma-with-yogurt-sauce/
+author: Jess Haines-Stephan
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 4
+  step: 1
+  note: Une seule couche est indispensable ; utiliser deux plaques au-delà de quatre portions.
+flavors:
+  pairing: [poulet, cumin, chou-fleur, citron]
+  notes: [épicé doux, rôti, citronné]
+  harmony: "Les épices chaudes enrobent le poulet et les légumes, tandis que le yaourt citronné rafraîchit chaque bouchée."
+  tips: "Laisser au moins 30 minutes de marinade pour parfumer le poulet sans alourdir la préparation."
+image: images/sheet-pan-poulet-shawarma.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/sheet-pan-poulet-shawarma.md
+---
+
+## Poulet shawarma, chou-fleur & oignons rouges sur une plaque
+
+[Mariner le poulet]
+- Mélanger l'@ail{5 gousses, hachées}, le @cumin moulu{1.5 c. à café}, la @coriandre moulue{1.5 c. à café}, le @paprika{1.5 c. à café}, le @curcuma{1.5 c. à café}, le @poivre moulu{1.5 c. à café}, le @sel{1.5 c. à café}, la @cardamome moulue{0.75 c. à café}, les @clous de girofle{0.25 c. à café, moulus}, l'@huile d'olive{6 c. à soupe} et le @jus de citron{1 citron}.
+- Ajouter les @hauts de cuisse de poulet{450 g, désossés} et bien les enrober.
+- Laisser mariner au réfrigérateur ~{30 min}.
+
+[Ajouter les légumes]
+- Préchauffer le #four{} à ^{220 C}.
+- Ajouter dans la marinade le @chou-fleur{1 petite tête, en fleurettes}, les @poivrons{2 pièces, en morceaux} et les @oignons rouges{2 petits, en quartiers}.
+- Mélanger pour enduire les légumes avec les épices restant au fond du saladier.
+
+[Rôtir sur une plaque]
+- Étaler le poulet et les légumes en une seule couche sur une #plaque de cuisson{}.
+- Enfourner ~{30 min}, puis vérifier que le poulet atteint ^{74 C à cœur} et que le chou-fleur est doré ; prolonger de quelques minutes si nécessaire.
+
+[Préparer la sauce et servir]
+- Mélanger le @yaourt grec{120 g}, le @jus de citron{0.5 citron}, l'@huile d'olive{1 c. à soupe}, le @sel{0.5 c. à café} et l'@ail{1 petite gousse, râpée}.
+- Napper le poulet et les légumes avec la sauce juste avant de servir.

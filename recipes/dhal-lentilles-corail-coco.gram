@@ -29,6 +29,18 @@ flavors:
   notes: [épicé, crémeux, végétal, acidulé, parfumé]
   harmony: "La rondeur soyeuse du lait de coco enrobe la vivacité du gingembre et du garam masala torréfiés."
   tips: "Rincer abondamment les lentilles corail sous l'eau froide jusqu'à ce que l'eau soit parfaitement claire pour éliminer l'amidon de surface."
+conservation:
+  fridge_days: 4
+  freezable: true
+  reheat: "Décongeler complètement puis réchauffer à feu doux avec un trait d'eau pour détendre le dhal."
+variants:
+  - id: service-immediat
+    name: Service immédiat
+    default: true
+    description: Dhal crémeux terminé aux épinards et servi chaud.
+  - id: freezer-meal
+    name: Freezer meal
+    description: Refroidir en portions, congeler puis décongeler complètement ; détendre avec un peu d'eau au réchauffage.
 image: images/dhal-lentilles-corail-coco.jpg
 image_credit:
   author: CookiGram

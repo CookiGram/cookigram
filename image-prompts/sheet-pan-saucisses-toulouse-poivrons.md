@@ -1,0 +1,3 @@
+# Prompt d’illustration — Saucisses de Toulouse, poivrons & pommes de terre sur une plaque
+
+Create an entirely original horizontal 16:9 CookiGram culinary illustration. Show one large rimmed sheet pan filled with browned Toulouse sausages, golden potato cubes, red and yellow pepper pieces, cherry tomatoes, shallot wedges and garlic, finished with small creamy ricotta dollops and basil leaves. Warm contemporary manga-inspired food illustration, fine ink contours, watercolor texture, soft cel shading, believable caramelized edges and pan juices. Three-quarter view, one-pan cooking clearly readable, safe margins. No text, logo, watermark, packaging, people or photorealism.

@@ -1,0 +1,47 @@
+---
+title: Saucisses de Toulouse, poivrons & pommes de terre sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 15 min
+total_time: 1 h
+spiciness: 0
+description: "Saucisses de Toulouse rôties avec pommes de terre, poivrons et tomates cerises, le tout cuit sur une plaque."
+tags: [sheet-pan, one-pan, saucisse de Toulouse, poivron, pommes de terre, four, familial]
+source: https://www.hellofresh.fr/recipes/saucisse-de-toulouse-and-ses-legumes-estivaux-66503dacd7e2204fdd094c41
+author: HelloFresh
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 4
+  step: 1
+  note: Utiliser une seconde plaque si les ingrédients ne tiennent plus en une seule couche.
+flavors:
+  pairing: [saucisse de Toulouse, poivron, tomate, basilic]
+  notes: [rôti, charnu, méditerranéen]
+  harmony: "Les sucs de la saucisse assaisonnent les légumes tandis que le balsamique et le basilic apportent fraîcheur et acidité."
+  tips: "Couper les pommes de terre en dés réguliers de 2 cm pour qu'elles cuisent en même temps que les saucisses."
+image: images/sheet-pan-saucisses-toulouse-poivrons.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/sheet-pan-saucisses-toulouse-poivrons.md
+---
+
+## Saucisses de Toulouse, poivrons & pommes de terre sur une plaque
+
+[Préparer la plaque]
+- Préchauffer le #four{} à ^{210 C} chaleur tournante.
+- Couper les @pommes de terre{800 g} et les @poivrons{2 pièces} en dés d'environ 2 cm.
+- Couper les @échalotes{2 pièces} en quartiers et hacher l'@ail{2 gousses}.
+
+[Rôtir]
+- Disposer les @saucisses de Toulouse{4 pièces}, les pommes de terre, les poivrons, les échalotes, l'ail et les @tomates cerises{500 g} sur une #plaque de cuisson{} recouverte de papier cuisson.
+- Arroser avec l'@huile d'olive{2 c. à soupe}, ajouter le @sel{selon goût} et le @poivre moulu{selon goût}, puis mélanger les légumes en gardant les saucisses bien exposées à la chaleur.
+- Enfourner ~{35 min}, puis vérifier la tendreté des pommes de terre ; prolonger jusqu'à ~{10 min} si nécessaire, jusqu'à ce que les légumes soient dorés et les saucisses cuites à cœur.
+
+[Finir et servir]
+- Ajouter le @vinaigre balsamique{4 c. à café} et le @basilic frais{1 petit bouquet, feuilles} sur les légumes encore chauds et mélanger délicatement.
+- Répartir la @ricotta{1 pot} par petites cuillerées au moment de servir.
