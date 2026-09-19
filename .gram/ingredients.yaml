@@ -2868,6 +2868,20 @@ ingredients:
     - piment en flocons
     - flocons de piment rouge
     category: Condiments et assaisonnements
+  flocons-d-avoine:
+    name: Flocons d'avoine
+    aliases:
+    - flocons d'avoine
+    - flocon d'avoine
+    - rolled oats
+    category: Produits céréaliers
+  graines-de-chia:
+    name: Graines de chia
+    aliases:
+    - graines de chia
+    - graine de chia
+    - chia seeds
+    category: Fruits à coque et graines
   oignon-en-poudre:
     name: Oignon en poudre
     aliases:

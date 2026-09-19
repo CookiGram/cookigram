@@ -17,6 +17,12 @@ ingredients:
   onglet-de-boeuf:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
+  flocons-d-avoine:
+    source: Ingrédient générique ajouté pour le work-item CookiGram/cookigram-core#333 ; valeur nutritionnelle à compléter depuis CIQUAL.
+    status: incomplete
+  graines-de-chia:
+    source: Ingrédient générique ajouté pour le work-item CookiGram/cookigram-core#333 ; valeur nutritionnelle à compléter depuis CIQUAL.
+    status: incomplete
   sambal-oelek:
     source: Produit préparé ; valeurs nutritionnelles variables selon la marque.
     status: incomplete
