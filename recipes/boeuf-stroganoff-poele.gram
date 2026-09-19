@@ -44,8 +44,10 @@ image_generation:
 ---
 [Attendrir les aromates]
 - Chauffer l'@huile d'olive{15 g} dans une #grande poêle{} à feu moyen.
-- Ajouter l'@oignon{1 pièce, émincé} et cuire ~{10 min} jusqu'à ce qu'il soit tendre.
-- Ajouter l'@ail{1 gousse, hachée} et le @beurre{15 g}, puis cuire ~{2 min}.
+- Ajouter l'@oignon{1 pièce, émincé}.
+- Cuire ~{10 min} jusqu'à ce qu'il soit tendre.
+- Ajouter l'@ail{1 gousse, hachée} et le @beurre{15 g}.
+- Cuire ~{2 min}.
 
 [Cuire les champignons]
 - Ajouter les @champignons de Paris{250 g, émincés}.
@@ -59,5 +61,6 @@ image_generation:
 [Lier la sauce]
 - Remettre les champignons et l'oignon dans la poêle.
 - Ajouter le @bouillon de boeuf{100 ml}, la @moutarde de Dijon{10 g} et la @crème fraîche{150 g}.
-- Mélanger et cuire doucement ~{5 min} sans forte ébullition.
+- Mélanger.
+- Cuire doucement ~{5 min} sans forte ébullition.
 - Parsemer de @persil frais{10 g, haché} et servir immédiatement.
