@@ -22,7 +22,8 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Préparer la pâte]
 - Mélanger la @farine{100 g}, le @paprika{1 c. à café}, le @piment rouge{1/2 c. à café}, le @sel{1/2 c. à café} et l'@eau{120 ml}.
-- Enrober les @chou-fleur{600 g, en fleurettes} dans la pâte puis les égoutter légèrement.
+- Enrober les @chou-fleur{600 g, en fleurettes} dans la pâte.
+- Égoutter légèrement les fleurettes.
 [Cuire]
 - Huiler avec l'@huile végétale{1 c. à soupe} et cuire dans le #panier air fryer{} à ^{200 C} ~{20 min}, en retournant à mi-cuisson.
 - Les fleurettes doivent être dorées et croustillantes sur les arêtes.
