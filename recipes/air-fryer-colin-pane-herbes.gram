@@ -21,7 +21,8 @@ image_generation: {prompt_file: image-prompts/air-fryer-colin-pane-herbes.md}
 scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Paner]
-- Passer les @filets de poisson{600 g} dans la @farine{80 g}, puis dans les @œufs{2 pièces, battus}.
+- Passer les @filets de poisson{600 g} dans la @farine{80 g}.
+- Passer le poisson fariné dans les @œufs{2 pièces, battus}.
 - Mélanger la @chapelure{150 g}, le @persil frais{1 c. à soupe}, le @zeste de citron{1 citron} et le @sel{1 c. à café}; presser la panure sur le poisson.
 [Cuire]
 - Vaporiser l'@huile d'olive{1 c. à soupe} sur le poisson et cuire dans le #panier air fryer{} à ^{200 C} ~{12 min}.
