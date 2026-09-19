@@ -19,11 +19,18 @@ required_equipment:
   - Thermomix TM31
   - Liquide vaisselle doux
   - Éponge douce non abrasive
-image: images/placeholder-recipe.jpg
+image: images/nettoyage-bol-thermomix-tm31.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
+  prompt_file: image-prompts/nettoyage-bol-thermomix-tm31.md
 ---
 
 ## Nettoyage du bol Thermomix TM31 — fond accroché
