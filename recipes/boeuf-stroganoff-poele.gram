@@ -1,0 +1,58 @@
+---
+title: Bœuf Stroganoff à la poêle
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 10 min
+total_time: 45 min
+spiciness: 0
+description: "Bœuf saisi, champignons fondants et sauce crémeuse moutardée réunis dans une seule poêle généreuse."
+tags: [boeuf, poêle, skillet, champignons, crémeux, rapide, réconfort]
+source: https://www.bbcgoodfood.com/recipes/beef-stroganoff
+author: Elena Silcock
+required_equipment:
+  - Grande poêle ou sauteuse
+  - Planche à découper
+  - Couteau de chef
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 1
+  note: Saisir le bœuf en plusieurs fois au-delà de 4 portions pour ne pas faire chuter la température de la poêle.
+flavors:
+  pairing: [bœuf, champignons, moutarde, crème]
+  notes: [crémeux, umami, acidulé, poivré]
+  harmony: "La crème adoucit la moutarde tandis que les champignons renforcent les sucs du bœuf saisi."
+  tips: "Ajouter la crème à feu doux et éviter l'ébullition prolongée pour garder une sauce lisse."
+conservation:
+  fridge_days: 2
+  freezable: true
+  reheat: "Réchauffer doucement à la poêle avec un trait d'eau ou de bouillon."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/boeuf-stroganoff-poele.md
+---
+[Attendrir les aromates]
+- Chauffer l'@huile d'olive{15 g} dans une #grande poêle{} à feu moyen.
+- Ajouter l'@oignon{1 pièce, émincé} et cuire ~{10 min} jusqu'à ce qu'il soit tendre.
+- Ajouter l'@ail{1 gousse, hachée} et le @beurre{15 g}, puis cuire ~{2 min}.
+
+[Cuire les champignons]
+- Ajouter les @champignons de Paris{250 g, émincés}.
+- Cuire ~{5 min} à feu moyen-vif jusqu'à ce qu'ils soient fondants et légèrement dorés.
+- Réserver les légumes sur une assiette en gardant la même poêle.
+
+[Saisir le bœuf]
+- Assaisonner le @faux-filet de bœuf{500 g, émincé} avec le @sel{3 g} et le @poivre moulu{2 g}.
+- Saisir dans la poêle très chaude pendant ~{4 min}, juste le temps de colorer la viande.
+
+[Lier la sauce]
+- Remettre les champignons et l'oignon dans la poêle.
+- Ajouter le @bouillon de boeuf{100 ml}, la @moutarde de Dijon{10 g} et la @crème fraîche{150 g}.
+- Mélanger et cuire doucement ~{5 min} sans forte ébullition.
+- Parsemer de @persil frais{10 g, haché} et servir immédiatement.

@@ -1,0 +1,1 @@
+Illustration culinaire CookiGram, format 16:9. Poêle contenant des escalopes de poulet dorées dans une sauce crémeuse au parmesan, tomates séchées rouges et jeunes épinards verts. Ambiance chaleureuse, rendu manga culinaire détaillé, sans texte ni logo.

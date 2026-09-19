@@ -1,0 +1,1 @@
+Illustration culinaire CookiGram, format 16:9. Grande poêle sombre contenant un bœuf Stroganoff crémeux, fines lamelles de bœuf saisies, champignons dorés, sauce ivoire légèrement moutardée, persil frais. Vue trois-quarts, rendu manga culinaire chaleureux, appétissant, sans texte ni logo.

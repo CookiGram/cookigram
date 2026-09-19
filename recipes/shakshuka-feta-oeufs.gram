@@ -26,6 +26,36 @@ flavors:
   notes: [doux, fumé, acidulé, fondant, crémeux]
   harmony: "Le jaune d'œuf coulant et la fraîcheur saline de la feta apaisent le piquant relevé de la sauce poivron-tomate."
   tips: "Huiler légèrement 4 petits ramequins pour pocher les œufs au Varoma afin d'assurer un démoulage impeccable au cœur de la sauce."
+variants:
+  - id: thermomix-varoma
+    name: Thermomix + Varoma
+    default: true
+    description: Sauce préparée au bol puis œufs pochés en ramequins au Varoma.
+  - id: poele-unique
+    name: Poêle unique traditionnelle
+    description: Piperade mijotée puis œufs pochés directement dans la sauce, sans robot ni ramequins.
+    prep_time: 15 min
+    total_time: 35 min
+    required_equipment:
+      - Grande poêle avec couvercle
+      - Planche à découper
+      - Couteau de chef
+    steps:
+      replace:
+        chop-peppers: |
+          [chop-peppers | Confire oignon et poivrons à la poêle]
+          - Chauffer l'@huile d'olive{30 g} dans une #grande poêle{}.
+          - Ajouter l'@oignon{1 pièce, émincé}, les @gousses d'ail{2 pièces, hachées}, les @poivrons rouges{250 g, en lanières} et les @poivrons jaunes{150 g, en lanières}.
+          - Cuire à feu moyen ~{10 min} en remuant jusqu'à ce que les légumes soient tendres.
+        simmer-sauce: |
+          [simmer-sauce | Mijoter la sauce dans la même poêle]
+          - Ajouter les @tomates concassées{400 g}, le @concentré de tomates{30 g}, le @cumin{1 c. à café}, le @paprika doux{1 c. à café}, l'@harissa{1 c. à café}, le @sel{1 c. à café} et le @poivre{2 pincées}.
+          - Laisser mijoter à découvert ~{12 min} jusqu'à épaississement.
+        poach-eggs: |
+          [poach-eggs | Pocher les œufs directement dans la sauce]
+          - Creuser quatre cavités dans la sauce frémissante et casser un @œuf{1 pièce} dans chacune, soit 4 œufs.
+          - Couvrir la poêle et cuire ~{6 min}, jusqu'à ce que les blancs soient pris et les jaunes encore coulants.
+          - Parsemer de la @feta{80 g, émiettée} et de la @coriandre fraîche{2 c. à soupe, ciselée}, puis servir immédiatement.
 image: images/shakshuka-feta-oeufs.jpg
 image_credit:
   author: CookiGram
