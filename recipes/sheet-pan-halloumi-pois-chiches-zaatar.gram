@@ -1,0 +1,45 @@
+---
+title: Halloumi, aubergine, poivrons & pois chiches au zaatar sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 5 min
+total_time: 25 min
+spiciness: 0
+description: "Halloumi doré, aubergine, poivrons et pois chiches rôtis au zaatar et au citron sur une seule plaque."
+tags: [sheet-pan, one-pan, halloumi, pois chiches, aubergine, zaatar, végétarien]
+source: https://www.abbeyskitchen.com/halloumi-chickpea-vegetarian-sheet-pan-dinner/
+author: Abbey Sharp
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 1
+  note: Étaler sans superposer pour permettre au halloumi et aux pois chiches de dorer.
+flavors:
+  pairing: [halloumi, pois chiches, aubergine, zaatar]
+  notes: [salin, citronné, grillé]
+  harmony: "Le halloumi salé contraste avec la douceur des poivrons, tandis que le zaatar et le citron structurent l’ensemble."
+  tips: "Sécher les pois chiches et espacer les tranches de halloumi pour obtenir des bords bien dorés."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sheet-pan-halloumi-pois-chiches-zaatar.md
+---
+
+## Halloumi, aubergine, poivrons & pois chiches au zaatar sur une plaque
+
+[Assembler]
+- Préchauffer le #four{} à ^{220 C}.
+- Répartir l'@aubergine{1 petite, en rondelles}, le @poivron rouge{1 pièce, en dés}, le @poivron orange{1 pièce, en dés}, le @citron{0.5 pièce, en fines rondelles}, les @pois chiches{540 g, cuits, égouttés et bien séchés} et le @halloumi{160 g, en tranches} sur une #plaque de cuisson{}.
+
+[Assaisonner]
+- Ajouter l'@huile d'olive{2 c. à soupe}, le @zaatar{1 c. à soupe}, le @sel{1 pincée} et le @poivre moulu{1 pincée}.
+- Mélanger les légumes et pois chiches en laissant le halloumi bien exposé à la chaleur.
+
+[Rôtir]
+- Enfourner ~{15 min}, jusqu'à ce que les légumes soient tendres et le halloumi coloré.
+- Passer sous le gril ~{2 min} si nécessaire pour accentuer le brunissement, en surveillant constamment.
