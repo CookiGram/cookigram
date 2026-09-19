@@ -42,9 +42,11 @@ image_generation:
 
 [Hacher les aromates et râper le parmesan]
 - Mettre le @persil frais{10 g, feuilles} dans le #bol Thermomix{}.
-- Hacher ~{2 s} à vitesse 8 et réserver dans un ramequin.
+- Hacher ~{2 s} à vitesse 8.
+- Réserver dans un ramequin.
 - Mettre le @parmesan{100 g, en morceaux} dans le bol.
-- Râper ~{8 s} à vitesse 9 et réserver séparément.
+- Râper ~{8 s} à vitesse 9.
+- Réserver séparément.
 
 [Cuisson combinée à la vapeur]
 - Mettre l'@eau{800 g} dans le bol.
@@ -53,11 +55,14 @@ image_generation:
 - Mettre les @épinards surgelés{250 g, décongelés et égouttés} dans le fond du Varoma.
 - Ajouter les @pavés de saumon{300 g, coupés en cubes} avec le @sel{1 pincée} et le @poivre{1 pincée}.
 - Cuire ~{25 min} à ^{Varoma} et vitesse 1.
-- Retirer le Varoma et le panier. Vider l'eau du bol. Écaler les œufs durs et les couper en quartiers.
+- Retirer le Varoma et le panier.
+- Vider l'eau du bol.
+- Écaler les œufs durs et les couper en quartiers.
 
 [Préparer la sauce crémeuse citron-moutarde]
 - Mettre les @oignons{140 g, en morceaux} et l'@huile d'olive{25 g} dans le bol.
-- Hacher ~{5 s} à vitesse 5 puis racler les parois.
+- Hacher ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
 - Rissoler ~{4 min 30 s} à ^{120 C} et vitesse 1.
 - Ajouter la @crème fraîche épaisse{200 g}, le @jus de citron{0.5 pièce}, la @moutarde douce{1 c. à café}, le @sel{0.25 c. à café} et le persil haché réservé.
 - Cuire ~{4 min} à ^{90 C} et vitesse 1.
@@ -65,7 +70,8 @@ image_generation:
 [Assembler et gratiner au four]
 - Préchauffer le #four{} à ^{200 C}.
 - Dans un plat à gratin, réunir les pommes de terre, le saumon, les épinards et les quartiers d'œufs durs.
-- Napper avec la sauce crémeuse et mélanger délicatement.
+- Napper avec la sauce crémeuse.
+- Mélanger délicatement.
 - Saupoudrer du parmesan râpé réservé.
 - Enfourner ~{10 min} à ^{200 C} au four jusqu'à ce que le gratin soit bien doré.
 - Servir bien chaud.

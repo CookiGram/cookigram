@@ -30,16 +30,22 @@ image_generation:
 ---
 
 [Hacher l'oignon]
-- Mettre l'@oignon{100 g, en quartiers} dans le bol et mixer ~{5 s} à vitesse 5. Racler les parois avec la #spatule{}.
-- Ajouter l'@huile d'olive{2 c. à soupe} et faire revenir ~{3 min} à ^{120 C}, vitesse 1.
+- Mettre l'@oignon{100 g, en quartiers} dans le bol.
+- Mixer ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
+- Ajouter l'@huile d'olive{2 c. à soupe}.
+- Faire revenir ~{3 min} à ^{120 C}, vitesse 1.
 
 [Nacrer le riz]
-- Ajouter le @riz spécial risotto{250 g} et cuire ~{2 min} à ^{120 C}, vitesse 1.
+- Ajouter le @riz spécial risotto{250 g}.
+- Cuire ~{2 min} à ^{120 C}, vitesse 1.
 
 [Cuire le risotto]
 - Ajouter l'@eau{600 g}, le @cube de bouillon de légumes{1 pièce} et les @petits pois{150 g}.
-- Saler avec le @sel{} et poivrer avec le @poivre moulu{}, puis cuire ~{15 min} à ^{100 C}, sens inverse, vitesse cuillère.
+- Saler avec le @sel{} et poivrer avec le @poivre moulu{}.
+- Cuire ~{15 min} à ^{100 C}, sens inverse, vitesse cuillère.
 
 [Finir et servir]
 - Ajouter le @jambon{150 g, en dés} et la @ricotta{100 g, émiettée}.
-- Arroser d'un filet d'huile d'olive, parsemer de @persil frais{quelques feuilles, ciselé}, rectifier l'assaisonnement et servir sans attendre.
+- Arroser d'un filet d'huile d'olive et parsemer de @persil frais{quelques feuilles, ciselé}.
+- Rectifier l'assaisonnement et servir sans attendre.
