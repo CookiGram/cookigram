@@ -251,6 +251,33 @@ static/images/sheet-pan-chou-fleur-pois-chiches-tahini.jpg:
   sha256: 0de7ca2c8173352282c5177d3a443b081003a88444e80069fc3eba2271e0d657
   attribution: CookiGram
 
+static/images/hachis-parmentier.webp:
+  recipe: hachis-parmentier
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: "# Prompt d’illustration — Hachis parmentier\n\nCreate an entirely original horizontal 16:9 culinary illustration for CookiGram, based only on the written recipe. Show a family-size gratin dish of hachis parmentier with a deeply golden gruyère crust, ridged creamy mashed-potato topping and a visible cut portion revealing a moist minced-beef, carrot, onion and shallot layer underneath. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, centered dish on a simple home-kitchen table, appetizing steam, safe margins for mobile crops. Keep only the gratin as the subject; no unsupported herbs, garnish, loose ingredients or decorative props. No text, logo, watermark, packaging, people or photorealism."
+  sha256: 4334f7873fa56482c885d36560cb1f4def85e0e068ab907f137b48dc68061b48
+  attribution: CookiGram
+
+static/images/quiche-lorraine.webp:
+  recipe: quiche-lorraine
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: "# Prompt d’illustration — Quiche lorraine\n\nCreate an entirely original horizontal 16:9 culinary illustration for CookiGram, based only on the written recipe. Show a classic quiche lorraine in a round tart tin with a crisp golden shortcrust edge, smooth lightly browned egg-and-heavy-cream custard and visible smoked lardon pieces, with one neat slice removed to reveal the tender interior. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, centered composition on a simple warm kitchen table, safe crop margins. Keep only the quiche as the subject; no cheese, onion, herbs, salad or decorative props. No text, logo, watermark, packaging, people or photorealism."
+  sha256: 206379d368e22a3ba7637c2d1ae5d4ecbe01e8feab2382fa4dfd10f053150fe3
+  attribution: CookiGram
+
+static/images/ratatouille.webp:
+  recipe: ratatouille
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: "# Prompt d’illustration — Ratatouille\n\nCreate an entirely original horizontal 16:9 culinary illustration for CookiGram, based only on the written recipe. Show a rustic shallow casserole of ratatouille with clearly recognizable aubergine, courgette, tomato, onion and red/yellow pepper pieces, glossy with a light coating of olive oil and softly stewed rather than puréed. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, centered dish, simple warm home-kitchen tabletop, generous safe margins for responsive crops. No unsupported garnish, no loose ingredients or decorative props, no text, no logo, no watermark, no packaging, no people, no photorealism."
+  sha256: 9c65093f04ebaa59d88072d2a6e3afd176b8ce6f3352292b2eba550e66c6ffbe
+  attribution: CookiGram
+
 static/images/overnight-oats-banane-cacahuete-chia.jpg:
   recipe: overnight-oats-banane-cacahuete-chia
   origin: generated

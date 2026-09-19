@@ -20,7 +20,7 @@ class ImageProvenanceTests(unittest.TestCase):
         self.assertEqual(findings, [])
 
         manifest = yaml.safe_load((ROOT / AUDIT.PROVENANCE_MANIFEST).read_text(encoding="utf-8"))
-        self.assertEqual(len(manifest), 20)
+        self.assertEqual(len(manifest), 23)
         self.assertEqual({record["recipe"] for record in manifest.values()}, {
             "air-fryer-pommes-terre-romarin",
             "air-fryer-poulet-paprika-herbes",
@@ -42,6 +42,9 @@ class ImageProvenanceTests(unittest.TestCase):
             "sheet-pan-poulet-shawarma",
             "sheet-pan-saucisses-toulouse-poivrons",
             "sheet-pan-saumon-brocoli-patate-douce",
+            "hachis-parmentier",
+            "quiche-lorraine",
+            "ratatouille",
         })
 
     def test_temporary_credit_is_rejected(self):
@@ -58,6 +61,20 @@ class ImageProvenanceTests(unittest.TestCase):
             )
             statuses = {finding.status for finding in AUDIT.audit(root)}
             self.assertIn("temporary-credit", statuses)
+
+    def test_corrupt_and_orphan_images_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "recipes").mkdir()
+            (root / "static/images").mkdir(parents=True)
+            (root / "static/images/corrupt.webp").write_bytes(b"not an image")
+            (root / "static/images/orphan.webp").write_bytes(b"not an image")
+            (root / "recipes/test.gram").write_text(
+                "---\nimage: images/corrupt.webp\n---\n", encoding="utf-8"
+            )
+            statuses = {finding.status for finding in AUDIT.audit(root)}
+            self.assertIn("corrupt-image", statuses)
+            self.assertIn("orphan-image", statuses)
 
 
 if __name__ == "__main__":

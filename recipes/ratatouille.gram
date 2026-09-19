@@ -25,7 +25,7 @@ image: images/ratatouille.webp
 image_credit:
   author: CookiGram
   source: https://github.com/CookiGram/cookigram
-  license: Illustration générée par IA pour CookiGram
+  license: Illustration générée pour CookiGram
   license_url: https://openai.com/policies/terms-of-use/
   modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP 640 × 360.
 image_generation:
