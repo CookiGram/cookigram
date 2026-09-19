@@ -2874,6 +2874,19 @@ ingredients:
     - oignon en poudre
     category: Condiments
     pantry_staple: true
+  flocons-d-avoine:
+    name: Flocons d'avoine
+    aliases:
+    - flocons d'avoine
+    - flocons d’avoine
+    - rolled oats
+    category: Céréales et féculents
+  graines-de-chia:
+    name: Graines de chia
+    aliases:
+    - graines de chia
+    - chia
+    category: Fruits à coque et graines
   halloumi:
     name: Halloumi
     aliases:
