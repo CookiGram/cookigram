@@ -10,6 +10,37 @@
 🌐 **Published site:** [cookigram.github.io/cookigram](https://cookigram.github.io/cookigram/)<br>
 🇫🇷 **Français:** [README.md](README.md) · 🤝 **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
 
+## CookiGram for users
+
+CookiGram should first be useful to someone who does not know what Git, Gram, or
+MCP are.
+
+The public experience aims to stay simple:
+
+```text
+find / import a recipe
+        ↓
+cook it
+        ↓
+notice what should change
+        ↓
+come back to a better version next time
+```
+
+The product can rely on rich technical foundations without requiring users to
+understand them. Git provides history, Gram provides precision, Core provides
+deterministic rules, and an agent can progressively act as a **sous-chef** that
+turns free-form intent into structured operations.
+
+Those mechanisms are not prerequisites for normal use: CookiGram should remain a
+directly usable PWA, with no mandatory account, no central backend required for
+core workflows, and no telemetry required for the product to function.
+
+> **CookiGram is the Cuisine. The agent is the sous-chef.**
+
+The sous-chef may help import, organize, qualify, or improve recipes. The Cuisine
+keeps the recipes, rules, provenance, and history.
+
 ## This repository
 
 `CookiGram/cookigram` is CookiGram’s public content repository. It contains:
@@ -52,11 +83,38 @@ A French term should not be preserved purely for style if it makes the normal wo
 
 This vocabulary describes CookiGram’s product mental model. It does not, by itself, create a technical abstraction, permission system, account model, or architecture project.
 
-## Boundary with the private engine
+## Boundary with the engine
 
-The generation engine, full Gram parser and validator, static site/PWA, and application test suites live in [`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core), a private repository.
+This repository represents CookiGram's **public content and public usage**. The
+generation engine, full Gram parser/validator, PWA runtime, and application tests
+currently live in
+[`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core).
 
-This repository therefore does not contain the engine code and cannot be built standalone. [`.core-version`](.core-version) pins the engine commit used by CI and deployment; it is not a package to install from this repository.
+The target boundary is explicit:
+
+```text
+Cuisine / catalogue
+      ↓
+CookiGram Contract
+      ↓
+content validation
+      ↓
+build with a published/pinned Core version
+```
+
+Adding or updating a recipe should evolve **the Cuisine**, not require a Core
+change, rebuild, or full engine qualification. Rebuilding the static site may
+still be necessary; rebuilding Core should not be.
+
+Today, [`.core-version`](.core-version) still pins the engine commit used by CI
+and deployment. The decoupling work aims to make this relationship stable enough
+for a contract-compliant catalogue to evolve and eventually be self-hosted
+independently from Core development.
+
+The public README intentionally focuses on the product experience and content.
+Engine architecture, MCP methodology, and any future professional service model
+belong to Core and do not change the public promise: **the product should remain
+fully useful in self-service.**
 
 ## Available validation
 
