@@ -21,12 +21,17 @@ flavors:
   notes: [fondant, gratiné, réconfortant]
   harmony: "La purée douce et muscadée adoucit le bœuf et les légumes, tandis que le gruyère apporte une croûte savoureuse."
   tips: "Écraser les pommes de terre encore chaudes et incorporer le lait tiède pour garder une purée souple."
-image: images/placeholder-recipe.jpg
+image: images/hachis-parmentier.webp
 image_credit:
   author: CookiGram
-  source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  source: https://github.com/CookiGram/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP 640 × 360.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
   prompt_file: image-prompts/hachis-parmentier.md
 ---
 

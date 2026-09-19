@@ -21,12 +21,17 @@ flavors:
   notes: [fondant, végétal, méditerranéen]
   harmony: "La tomate lie les légumes d’été tandis que l’huile d’olive et les herbes de Provence prolongent leurs arômes."
   tips: "Couper les légumes de taille régulière pour obtenir une cuisson homogène sans les réduire en purée."
-image: images/placeholder-recipe.jpg
+image: images/ratatouille.webp
 image_credit:
   author: CookiGram
-  source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  source: https://github.com/CookiGram/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP 640 × 360.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
   prompt_file: image-prompts/ratatouille.md
 ---
 

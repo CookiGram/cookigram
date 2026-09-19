@@ -18,12 +18,17 @@ flavors:
   notes: [fumé, crémeux, croustillant]
   harmony: "Le lard fumé relève la migaine crémeuse tandis que la muscade apporte une chaleur discrète à l’ensemble."
   tips: "Égoutter les lardons après coloration pour garder une garniture savoureuse sans détremper la pâte."
-image: images/placeholder-recipe.jpg
+image: images/quiche-lorraine.webp
 image_credit:
   author: CookiGram
-  source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  source: https://github.com/CookiGram/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP 640 × 360.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
   prompt_file: image-prompts/quiche-lorraine.md
 ---
 
