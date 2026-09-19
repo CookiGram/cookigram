@@ -2868,6 +2868,22 @@ ingredients:
     - piment en flocons
     - flocons de piment rouge
     category: Condiments et assaisonnements
+  flocons-d-avoine:
+    name: Flocons d'avoine
+    aliases:
+    - flocons d'avoine
+    - flocons d’avoine
+    - flocon d'avoine
+    - rolled oats
+    category: Céréales et féculents
+  graines-de-chia:
+    name: Graines de chia
+    aliases:
+    - graines de chia
+    - graine de chia
+    - chia seeds
+    - chia
+    category: Fruits à coque et graines
   oignon-en-poudre:
     name: Oignon en poudre
     aliases:
@@ -2893,3 +2909,10 @@ ingredients:
     - pâte brisée
     - pate brisee
     category: Produits céréaliers
+  myrtilles:
+    name: Myrtilles
+    aliases:
+    - myrtilles
+    - myrtilles fraîches
+    - myrtilles surgelées
+    category: Fruits et légumes

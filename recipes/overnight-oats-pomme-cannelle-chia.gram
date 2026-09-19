@@ -1,0 +1,57 @@
+---
+title: Overnight oats pomme, cannelle & chia
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 1
+prep_time: 5 min
+total_time: 6 h 05 min
+spiciness: 0
+description: "Overnight oats crémeux au yaourt grec, pomme râpée et cannelle, épaissi doucement par les graines de chia."
+tags: [petit-déjeuner, sans cuisson, overnight oats, avoine, pomme, cannelle, chia]
+source: https://lecoupdegrace.ca/recette/gruau-overnight-a-la-pomme-et-a-la-cannelle/
+author: Le Coup de Grâce
+scaling:
+  enabled: true
+  min_portions: 1
+  max_portions: 4
+  step: 1
+  note: Multiplier les ingrédients et préparer chaque portion dans un bocal séparé ; conserver le repos d'au moins 6 h.
+flavors:
+  pairing: [pomme, cannelle, yaourt grec, noix]
+  notes: [crémeux, fruité, épicé doux, croquant]
+  harmony: "La pomme râpée apporte son jus au yaourt grec, tandis que la cannelle arrondit l'avoine et le chia épaissit l'ensemble."
+  tips: "Râper la pomme gros dans le bocal pour conserver des filaments et l'incorporer aussitôt au yaourt sans ajouter de lait."
+conservation:
+  fridge_days: 3
+  freezable: false
+image: images/overnight-oats-pomme-cannelle-chia.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI
+  model: built-in image_gen
+  generated_at: "2026-09-19"
+  prompt_file: image-prompts/overnight-oats-pomme-cannelle-chia.md
+---
+
+## Overnight oats pomme, cannelle & chia
+
+[Préparer la pomme]
+- Râper gros la @pomme{110 g, avec la peau} directement dans un #bocal hermétique{} ; la pomme doit rester en filaments.
+
+[Ajouter les ingrédients secs]
+- Ajouter les @flocons d'avoine{50 g}, les @graines de chia{10 g}, la @cannelle{1/2 c. à café} et le @sel{1 pincée}.
+
+[Former la base crémeuse]
+- Ajouter le @yaourt grec{170 g} et le @sirop d'érable{8 g, facultatif}.
+
+[Mélanger]
+- Remuer soigneusement jusqu'à répartir les graines de chia et ne laisser aucune zone sèche.
+
+[Laisser épaissir]
+- Fermer le bocal et réfrigérer au moins ~{6 h} ; la préparation doit être épaisse et l'avoine correctement hydratée.
+
+[Servir]
+- Mélanger une dernière fois, puis parsemer les @noix{10 g, concassées, facultatif} juste avant de manger froid.

@@ -7,6 +7,28 @@ static/images/air-fryer-pommes-terre-romarin.webp:
   sha256: 5677e6d6fa668265f99fe122d1722eea8d7a516d07b1447bddf21eba1989aec2
   attribution: CookiGram
 
+static/images/overnight-oats-pomme-cannelle-chia.webp:
+  recipe: overnight-oats-pomme-cannelle-chia
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: |-
+    # Prompt d’illustration — Overnight oats pomme, cannelle & chia
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of “Overnight oats pomme, cannelle & chia” based only on the written recipe, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: One open glass jar containing thick, creamy overnight oats made with Greek yogurt, visibly fine apple shreds and tiny chia seeds. Show a small optional scatter of chopped walnuts on top, with no other garnish. The apple should look freshly grated and integrated into the pale creamy mixture; cinnamon should read as a subtle warm dusting.
+    Style/medium: Polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing but believable food textures, original CookiGram visual identity, generic manga aesthetic and no imitation of any named artist, studio, series or existing artwork.
+    Composition/framing: Landscape 16:9, three-quarter view at about 45 degrees, jar centred with generous safe crop margins for mobile and desktop cards.
+    Lighting/mood: Warm natural morning light, welcoming and homely.
+    Colour palette: Creamy white yogurt and oats, muted red-gold apple shreds, warm cinnamon brown and restrained walnut beige against a quiet amber kitchen background.
+    Constraints: Visually faithful to the recipe; no milk, no cooked fruit, no berries, no granola, no extra fruit, fully original composition.
+    Avoid: Text, letters, logos, brand marks, watermarks, product packaging, people, hands, faces, unrelated garnish, third-party image imitation and photorealism.
+  sha256: 97494ef24208c68abe1e19a8a14b622c1eae6a096e592875cc76ad7ee7b23193
+  attribution: CookiGram
+
 static/images/air-fryer-poulet-paprika-herbes.webp:
   recipe: air-fryer-poulet-paprika-herbes
   origin: generated
@@ -227,4 +249,48 @@ static/images/sheet-pan-chou-fleur-pois-chiches-tahini.jpg:
   generated_at: '2026-09-19'
   prompt: "# Prompt d’illustration — Sheet pan chou-fleur, pois chiches & tahini\n\nCreate an entirely original horizontal 16:9 culinary illustration for CookiGram. Show one baking sheet with deeply roasted cauliflower slices and florets, crisp golden chickpeas and a bright lemon-herb tahini drizzle added after roasting. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, clear roasted textures, safe crop margins. No text, logo, watermark, packaging, people or photorealism."
   sha256: 0de7ca2c8173352282c5177d3a443b081003a88444e80069fc3eba2271e0d657
+  attribution: CookiGram
+
+static/images/overnight-oats-banane-cacahuete-chia.jpg:
+  recipe: overnight-oats-banane-cacahuete-chia
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: |
+    # Prompt d’illustration — Overnight oats banane, cacahuète & chia
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of “Overnight oats banane, cacahuète & chia” based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: One transparent, unbranded individual glass jar filled with thick creamy overnight oats. The mixture is pale ivory with visible rolled oat flakes and tiny chia seeds, lightly marbled by mashed ripe banana and peanut butter. Show a modest topping of a few fresh banana rounds because the recipe allows optional banana at service; do not add other fruits, nuts, chocolate, coconut, honey, milk or unsupported garnish.
+    Style/medium: Polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: Landscape 16:9, three-quarter view at about 45 degrees, jar centred with generous safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: Warm natural late-afternoon kitchen light, welcoming and homely.
+    Colour palette: Creamy ivory oats, warm golden banana, caramel peanut butter, small charcoal chia flecks, muted terracotta and honey tones in the quiet background.
+    Constraints: Visually faithful to the no-cook recipe; the jar must read as thick and spoonable after chilling; fully original composition; suitable as a website recipe illustration.
+    Avoid: Text, letters, logos, watermarks, brand marks, product packaging, characters, faces, extra ingredients, third-party image imitation, photorealism.
+  sha256: 5f7b8d132b07abd0c58c83e65ba561e6a5fbfcdb26b59d9b13f7987c7db04959
+  attribution: CookiGram
+
+static/images/overnight-oats-myrtille-citron-chia.webp:
+  recipe: overnight-oats-myrtille-citron-chia
+  origin: generated
+  generator: OpenAI image generation
+  generated_at: '2026-09-19'
+  prompt: |
+    # Prompt d’illustration — Overnight oats myrtille, citron & chia
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Overnight oats myrtille, citron & chia" based only on the written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: One clear airtight jar filled with thick creamy overnight oats tinted pale violet by mashed blueberries, with a few visible blueberry pieces and a delicate trace of finely grated lemon zest. The texture should look spoonable and well hydrated, with no milk shown.
+    Style/medium: Polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: Landscape 16:9, three-quarter view at about 45 degrees, jar centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: Warm natural kitchen light, fresh and welcoming morning mood.
+    Colour palette: Blue-violet blueberries, white and pale cream Greek yogurt, soft golden oats, and bright yellow lemon zest.
+    Constraints: Visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: Text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism, almonds, nuts, granola, unrelated garnish or accompaniments.
+  sha256: a2d7f737c5bed47e9e8420ad2997b78655de74688edf13ca7d5ba6d9497af888
   attribution: CookiGram

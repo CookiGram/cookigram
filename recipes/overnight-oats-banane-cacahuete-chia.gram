@@ -1,0 +1,62 @@
+---
+title: Overnight oats banane, cacahuète & chia
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 1
+prep_time: 10 min
+total_time: 6 h 10 min
+spiciness: 0
+description: Avoine fondante au yaourt grec, banane mûre et beurre de cacahuète, épaissie par le chia après une nuit au frais.
+tags: [petit-déjeuner, sans cuisson, végétarien, rapide]
+source: https://cleananddelicious.com/peanut-butter-banana-overnight-oats/
+author: Dani Spies
+required_equipment:
+  - Bol
+  - Pot hermétique individuel
+scaling:
+  enabled: true
+  min_portions: 1
+  max_portions: 4
+  step: 1
+  note: Multiplier chaque quantité et répartir dans des pots individuels ; conserver au moins 6 h de repos au frais.
+flavors:
+  pairing: [banane, beurre de cacahuète, yaourt grec, graines de chia]
+  notes: [crémeux, doux, toasté]
+  harmony: "La banane mûre hydrate et adoucit l'avoine, tandis que le beurre de cacahuète souligne la rondeur du yaourt grec."
+  tips: "Écraser la banane dans la base pour obtenir une texture crémeuse sans ajouter de lait."
+conservation:
+  fridge_days: 3
+  freezable: false
+image: images/overnight-oats-banane-cacahuete-chia.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration originale générée pour CookiGram, sélectionnée et optimisée en JPEG 1280 × 720.
+image_generation:
+  provider: OpenAI
+  model: Image Generation
+  generated_at: "2026-09-19"
+  prompt_file: image-prompts/overnight-oats-banane-cacahuete-chia.md
+---
+
+## Overnight oats banane, cacahuète & chia
+
+[Écraser la banane]
+- Écraser la @banane{90 g, très mûre et sans peau} à la fourchette dans un #bol{} jusqu'à obtenir une purée légèrement grumeleuse.
+
+[Former la base crémeuse]
+- Ajouter le @yaourt grec{150 g}, le @beurre de cacahuète{15 g}, la @cannelle{1/2 c. à café} et le @sel{1 pincée}; mélanger jusqu'à homogénéité.
+
+[Hydrater l'avoine et le chia]
+- Incorporer les @flocons d'avoine{50 g} et les @graines de chia{9 g}; remuer jusqu'à ce qu'il ne reste plus de flocons secs.
+
+[Mettre en pot]
+- Transvaser la préparation dans un #pot hermétique{} individuel et fermer soigneusement.
+
+[Laisser épaissir au frais]
+- Réfrigérer ~{6 h} minimum ; l'avoine doit être souple et le chia doit avoir épaissi la crème avant le service.
+
+[Ajouter le topping facultatif]
+- Juste avant de manger, ajouter la @banane{10 g, fraîche et en rondelles, facultatif}.
