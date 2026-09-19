@@ -1,0 +1,1 @@
+Illustration culinaire CookiGram 16:9, gratin de penne à la tomate et basilic, mozzarella filante et parmesan doré dans un plat familial, vapeur appétissante, style manga culinaire chaleureux, sans texte ni logo.
