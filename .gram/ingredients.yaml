@@ -2872,15 +2872,17 @@ ingredients:
     name: Flocons d'avoine
     aliases:
     - flocons d'avoine
+    - flocons d’avoine
     - flocon d'avoine
     - rolled oats
-    category: Produits céréaliers
+    category: Céréales et féculents
   graines-de-chia:
     name: Graines de chia
     aliases:
     - graines de chia
     - graine de chia
     - chia seeds
+    - chia
     category: Fruits à coque et graines
   oignon-en-poudre:
     name: Oignon en poudre
@@ -2888,19 +2890,6 @@ ingredients:
     - oignon en poudre
     category: Condiments
     pantry_staple: true
-  flocons-d-avoine:
-    name: Flocons d'avoine
-    aliases:
-    - flocons d'avoine
-    - flocons d’avoine
-    - rolled oats
-    category: Céréales et féculents
-  graines-de-chia:
-    name: Graines de chia
-    aliases:
-    - graines de chia
-    - chia
-    category: Fruits à coque et graines
   halloumi:
     name: Halloumi
     aliases:
@@ -2920,16 +2909,6 @@ ingredients:
     - pâte brisée
     - pate brisee
     category: Produits céréaliers
-  flocons-d-avoine:
-    name: Flocons d'avoine
-    aliases:
-    - flocons d'avoine
-    category: Céréales et féculents
-  graines-de-chia:
-    name: Graines de chia
-    aliases:
-    - graines de chia
-    category: Graines et fruits à coque
   myrtilles:
     name: Myrtilles
     aliases:
