@@ -228,3 +228,25 @@ static/images/sheet-pan-chou-fleur-pois-chiches-tahini.jpg:
   prompt: "# Prompt d’illustration — Sheet pan chou-fleur, pois chiches & tahini\n\nCreate an entirely original horizontal 16:9 culinary illustration for CookiGram. Show one baking sheet with deeply roasted cauliflower slices and florets, crisp golden chickpeas and a bright lemon-herb tahini drizzle added after roasting. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, clear roasted textures, safe crop margins. No text, logo, watermark, packaging, people or photorealism."
   sha256: 0de7ca2c8173352282c5177d3a443b081003a88444e80069fc3eba2271e0d657
   attribution: CookiGram
+
+static/images/overnight-oats-banane-cacahuete-chia.jpg:
+  recipe: overnight-oats-banane-cacahuete-chia
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: |
+    # Prompt d’illustration — Overnight oats banane, cacahuète & chia
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of “Overnight oats banane, cacahuète & chia” based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: One transparent, unbranded individual glass jar filled with thick creamy overnight oats. The mixture is pale ivory with visible rolled oat flakes and tiny chia seeds, lightly marbled by mashed ripe banana and peanut butter. Show a modest topping of a few fresh banana rounds because the recipe allows optional banana at service; do not add other fruits, nuts, chocolate, coconut, honey, milk or unsupported garnish.
+    Style/medium: Polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: Landscape 16:9, three-quarter view at about 45 degrees, jar centred with generous safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: Warm natural late-afternoon kitchen light, welcoming and homely.
+    Colour palette: Creamy ivory oats, warm golden banana, caramel peanut butter, small charcoal chia flecks, muted terracotta and honey tones in the quiet background.
+    Constraints: Visually faithful to the no-cook recipe; the jar must read as thick and spoonable after chilling; fully original composition; suitable as a website recipe illustration.
+    Avoid: Text, letters, logos, watermarks, brand marks, product packaging, characters, faces, extra ingredients, third-party image imitation, photorealism.
+  sha256: 5f7b8d132b07abd0c58c83e65ba561e6a5fbfcdb26b59d9b13f7987c7db04959
+  attribution: CookiGram
