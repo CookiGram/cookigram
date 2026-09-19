@@ -107,7 +107,7 @@ def _manifest_findings(root: Path, manifest: dict[str, Any]) -> list[Finding]:
 
 def _recipe_image_refs(root: Path) -> dict[str, list[str]]:
     refs: dict[str, list[str]] = {}
-    for recipe_path in sorted((root / "recipes").glob("*.gram")):
+    for recipe_path in sorted((root / "recipes").rglob("*.gram")):
         metadata = _frontmatter(recipe_path)
         image = metadata.get("image")
         if isinstance(image, str) and image.strip():
@@ -139,7 +139,9 @@ def _image_findings(root: Path, refs: dict[str, list[str]]) -> list[Finding]:
     # placeholder-recipe.jpg is an intentional shared fallback, not a recipe
     # asset. All other files in this directory must be referenced by a recipe.
     image_dir = root / "static" / "images"
-    for path in sorted(image_dir.iterdir()) if image_dir.is_dir() else []:
+    for path in sorted(image_dir.rglob("*")) if image_dir.is_dir() else []:
+        if not path.is_file():
+            continue
         asset = path.relative_to(root).as_posix()
         if asset not in refs and path.name != "placeholder-recipe.jpg":
             findings.append(Finding(
@@ -156,7 +158,7 @@ def audit(root: Path) -> list[Finding]:
     findings.extend(_image_findings(root, _recipe_image_refs(root)))
     recipes_dir = root / "recipes"
 
-    for recipe_path in sorted(recipes_dir.glob("*.gram")):
+    for recipe_path in sorted(recipes_dir.rglob("*.gram")):
         metadata = _frontmatter(recipe_path)
         generation = metadata.get("image_generation")
         if not isinstance(generation, dict):

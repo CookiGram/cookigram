@@ -62,19 +62,31 @@ class ImageProvenanceTests(unittest.TestCase):
             statuses = {finding.status for finding in AUDIT.audit(root)}
             self.assertIn("temporary-credit", statuses)
 
-    def test_corrupt_and_orphan_images_are_rejected(self):
+    def test_nested_corrupt_missing_and_orphan_images_are_audited(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            (root / "recipes").mkdir()
-            (root / "static/images").mkdir(parents=True)
-            (root / "static/images/corrupt.webp").write_bytes(b"not an image")
-            (root / "static/images/orphan.webp").write_bytes(b"not an image")
-            (root / "recipes/test.gram").write_text(
-                "---\nimage: images/corrupt.webp\n---\n", encoding="utf-8"
+            (root / "recipes/nested/deeper").mkdir(parents=True)
+            (root / "static/images/nested").mkdir(parents=True)
+            (root / "static/images/placeholder-recipe.jpg").write_bytes(b"placeholder")
+            (root / "static/images/nested/corrupt.webp").write_bytes(b"not an image")
+            (root / "static/images/nested/orphan.webp").write_bytes(b"not an image")
+            (root / "static/images/nested/directory-only").mkdir()
+            (root / "recipes/nested/deeper/corrupt.gram").write_text(
+                "---\nimage: images/nested/corrupt.webp\n---\n", encoding="utf-8"
             )
-            statuses = {finding.status for finding in AUDIT.audit(root)}
+            (root / "recipes/nested/deeper/missing.gram").write_text(
+                "---\nimage: images/nested/missing.webp\n---\n", encoding="utf-8"
+            )
+
+            findings = AUDIT.audit(root)
+            statuses = {finding.status for finding in findings}
             self.assertIn("corrupt-image", statuses)
+            self.assertIn("missing-image", statuses)
             self.assertIn("orphan-image", statuses)
+            self.assertEqual(
+                [finding.image for finding in findings if finding.status == "orphan-image"],
+                ["images/nested/orphan.webp"],
+            )
 
 
 if __name__ == "__main__":
