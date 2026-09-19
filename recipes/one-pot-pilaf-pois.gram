@@ -26,10 +26,16 @@ scaling: {enabled: true, min: 2, max: 8, step: 1}
 flavors: {pairing: [riz basmati, petits pois, cumin, oignon], notes: [parfumé, épicé, léger], harmony: "Les épices parfument l’huile et le riz cuit ensuite par absorption, grain par grain."}
 ---
 [Parfumer l’huile]
-- Chauffer l'@huile végétale{6 c. à soupe} dans une #cocotte{}; ajouter le @cumin{2 c. à café} et les @clous de girofle{8 pièces} ~{1 min}.
-- Ajouter les @oignons{3 pièces, hachés} et cuire couvert ~{10 min} jusqu'à ce qu'ils soient tendres et dorés.
+- Chauffer l'@huile végétale{6 c. à soupe} dans une #cocotte{}.
+- Y ajouter le @cumin{2 c. à café} et les @clous de girofle{8 pièces} et laisser chauffer ~{1 min}.
+- Ajouter les @oignons{3 pièces, hachés}.
+- Cuire couvert ~{10 min} jusqu'à ce qu'ils soient tendres et dorés.
 [Cuire le riz]
-- Ajouter les @piments verts{3 pièces, fendus}, le @laurier{3 feuilles} et le @riz basmati{500 g}; mélanger pour enrober les grains.
-- Verser le @bouillon de légumes{700 ml}, ajouter les @petits pois{250 g}, couvrir et cuire ~{15 min} à feu doux.
+- Ajouter les @piments verts{3 pièces, fendus}, le @laurier{3 feuilles} et le @riz basmati{500 g}.
+- Mélanger pour enrober les grains.
+- Verser le @bouillon de légumes{700 ml} et ajouter les @petits pois{250 g}.
+- Couvrir et cuire ~{15 min} à feu doux.
 [Laisser reposer]
-- Couper le feu et laisser reposer couvert ~{5 min}; égrener à la fourchette avant de servir.
+- Couper le feu et laisser reposer couvert ~{5 min}.
+- Égrener à la fourchette.
+- Servir.
