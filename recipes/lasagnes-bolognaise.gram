@@ -37,6 +37,18 @@ flavors:
   notes: [riche, umami, gratiné, réconfortant]
   harmony: "L'acidité mijotée de la sauce tomate au bœuf est enveloppée par l'onctuosité de la béchamel parfumée à la noix de muscade."
   tips: "Laisser reposer le plat 10 minutes hors du four avant de trancher pour que les couches se stabilisent et retiennent les sucs."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Décongeler 48 h au réfrigérateur avant cuisson ; prévoir 10 à 15 min supplémentaires si nécessaire."
+variants:
+  - id: service-immediat
+    name: Cuisson immédiate
+    default: true
+    description: Monter les lasagnes puis les cuire directement jusqu'à ce qu'elles soient bouillonnantes et gratinées.
+  - id: freezer-meal
+    name: Freezer meal avant cuisson
+    description: Assembler complètement, refroidir, emballer hermétiquement et congeler avant cuisson ; décongeler au réfrigérateur avant d'enfourner.
 image: images/lasagnes-bolognaise.jpg
 image_credit:
   author: CookiGram
