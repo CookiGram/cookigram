@@ -802,6 +802,8 @@ ingredients:
     aliases:
     - olives noires
     - olives noires à la grecque
+    - olives kalamata
+    - olives de Kalamata
     category: Condiments
     nutrition:
       calories: 130
@@ -953,6 +955,8 @@ ingredients:
     - poivrons rouges
     - poivron jaune
     - poivrons jaunes
+    - poivron orange
+    - poivrons oranges
     category: Légumes et aromates
     name: Poivron
     nutrition:
@@ -1082,6 +1086,7 @@ ingredients:
     aliases:
     - romarin
     - romarin frais
+    - romarin séché
     category: Herbes et épices
     nutrition:
       calories: 131
@@ -1477,6 +1482,7 @@ ingredients:
     aliases:
     - cumin
     - cumin en poudre
+    - cumin moulu
     category: Épicerie salée
     nutrition:
       calories: 375
@@ -1687,6 +1693,7 @@ ingredients:
     - piment d'espelette
     - piment doux
     - purée de piment
+    - piment en poudre
     category: Condiments
     nutrition:
       calories: 318
@@ -2821,3 +2828,62 @@ ingredients:
     name: Haricots blancs
     aliases: [haricots-blancs, haricots blancs]
     category: Légumineuses
+  herbes-italiennes:
+    name: Herbes italiennes
+    aliases:
+    - herbes italiennes
+    - assaisonnement italien
+    category: Condiments et assaisonnements
+  haricots-verts:
+    name: Haricots verts
+    aliases:
+    - haricots verts
+    - haricot vert
+    category: Légumes et aromates
+  saucisse-de-toulouse:
+    name: Saucisse de Toulouse
+    aliases:
+    - saucisse de Toulouse
+    - saucisses de Toulouse
+    category: Boucherie et charcuterie
+  cardamome:
+    name: Cardamome
+    aliases:
+    - cardamome
+    - cardamome moulue
+    - graines de cardamome
+    category: Condiments et assaisonnements
+  gnocchi:
+    name: Gnocchi
+    aliases:
+    - gnocchi
+    - gnocchis
+    - gnocchi frais
+    - gnocchis frais
+    category: Pâtes et préparations
+  flocons-de-piment:
+    name: Flocons de piment
+    aliases:
+    - flocons de piment
+    - piment en flocons
+    - flocons de piment rouge
+    category: Condiments et assaisonnements
+  oignon-en-poudre:
+    name: Oignon en poudre
+    aliases:
+    - oignon en poudre
+    category: Condiments
+    pantry_staple: true
+  halloumi:
+    name: Halloumi
+    aliases:
+    - halloumi
+    - fromage halloumi
+    category: Fromages
+  zaatar:
+    name: Zaatar
+    aliases:
+    - zaatar
+    - za'atar
+    - mélange zaatar
+    category: Condiments et assaisonnements

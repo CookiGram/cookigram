@@ -928,6 +928,33 @@ ingredients:
   beurre-de-cacahuete:
     status: incomplete
     source: Valeur nutritionnelle à vérifier contre CIQUAL pour un beurre de cacahuète nature.
+  herbes-italiennes:
+    status: incomplete
+    source: Mélange d'herbes séchées ; valeur nutritionnelle générique.
+  haricots-verts:
+    status: incomplete
+    source: Légume frais générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  saucisse-de-toulouse:
+    status: incomplete
+    source: Charcuterie fraîche de porc ; valeur nutritionnelle à compléter depuis CIQUAL.
+  cardamome:
+    status: incomplete
+    source: Épice générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  gnocchi:
+    status: incomplete
+    source: Pâtes fraîches de pomme de terre ; valeur nutritionnelle à compléter depuis CIQUAL.
+  flocons-de-piment:
+    status: incomplete
+    source: Piment séché concassé ; valeur nutritionnelle générique.
+  oignon-en-poudre:
+    status: incomplete
+    source: Condiment déshydraté ; valeur nutritionnelle générique.
+  halloumi:
+    status: incomplete
+    source: Fromage traditionnel de Chypre ; valeur nutritionnelle à compléter depuis CIQUAL.
+  zaatar:
+    status: incomplete
+    source: Mélange d'épices du Levant (thym, sésame, sumac) ; valeur nutritionnelle générique.
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES
