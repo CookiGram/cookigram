@@ -1,0 +1,3 @@
+# Prompt d’illustration — Quiche lorraine
+
+Create an entirely original horizontal 16:9 culinary illustration for CookiGram, based only on the written recipe. Show a classic quiche lorraine in a round tart tin with a crisp golden shortcrust edge, lightly browned creamy egg filling and visible smoked lardon pieces, with one neat slice removed to reveal the tender interior. Warm contemporary manga-inspired food illustration, fine ink contours, hand-painted watercolor texture and soft cel shading. Three-quarter view, centered composition on a simple warm kitchen table, safe crop margins. No cheese garnish, no onion, no text, logo, watermark, packaging, people or photorealism.
