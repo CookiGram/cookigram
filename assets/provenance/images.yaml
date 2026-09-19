@@ -294,3 +294,12 @@ static/images/overnight-oats-myrtille-citron-chia.webp:
     Avoid: Text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism, almonds, nuts, granola, unrelated garnish or accompaniments.
   sha256: a2d7f737c5bed47e9e8420ad2997b78655de74688edf13ca7d5ba6d9497af888
   attribution: CookiGram
+
+static/images/nettoyage-bol-thermomix-tm31.webp:
+  recipe: nettoyage-bol-thermomix-tm31
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-19'
+  prompt: "# Prompt d’illustration — Nettoyage du bol Thermomix TM31\n\nUse case: illustration-story\nAsset type: horizontal 16:9 recipe illustration\nPrimary request: An original warm utilitarian culinary illustration of gently cleaning a stainless-steel Thermomix TM31-style mixing bowl after food has stuck to the bottom.\nScene/backdrop: bright clean home kitchen countertop, warm wood, pale neutral backsplash, uncluttered.\nSubject: one large stainless-steel mixing bowl in three-quarter top view, partially filled with soapy water, softened browned residue patches on the bottom; beside it a soft non-abrasive sponge and a small dish of baking soda; subtle clean cloth in background. The action must read immediately as pre-soaking and gentle cleaning.\nStyle/medium: polished contemporary manga-inspired culinary illustration, fine ink contours, hand-painted watercolor texture, soft cel shading, believable materials, matching CookiGram recipe illustrations; original generic style.\nComposition/framing: landscape 16:9, bowl centered and large, safe crop margins, no people or hands.\nLighting/mood: soft warm daylight, calm clean practical atmosphere.\nColour palette: cool silver, pale blue soapy water, warm beige/caramel residue, muted green sponge, light wood and cream.\nConstraints: no exposed blades, no dangerous action, no text, logos, brand marks, watermarks, packaging, photorealism or clutter."
+  sha256: c3bb79b7e00b088d31abbbeef10a67abbb97c0f040ff8df25443fd5474e1f32b
+  attribution: CookiGram
