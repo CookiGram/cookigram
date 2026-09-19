@@ -1,0 +1,1 @@
+Illustration culinaire CookiGram 16:9, hachis Parmentier familial dans un plat à gratin, couche de purée striée et dorée, viande mijotée visible à la coupe, ambiance chaleureuse, style manga culinaire, sans texte ni logo.
