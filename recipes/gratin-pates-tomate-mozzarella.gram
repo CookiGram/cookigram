@@ -1,0 +1,60 @@
+---
+title: Gratin de pâtes tomate, mozzarella & parmesan
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 15 min
+total_time: 50 min
+spiciness: 0
+description: "Pâtes enrobées de tomate au basilic, mozzarella fondante et parmesan, gratinées au four pour un dîner familial."
+tags: [pâtes, four, gratin, tomate, mozzarella, parmesan, réconfort]
+source: https://www.bbcgoodfoodme.com/recipes/tomato-and-mozzarella-spaghetti-bake/
+author: Good Food
+required_equipment:
+  - Grande casserole
+  - Plat à gratin
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Adapter la taille du plat à gratin pour garder une épaisseur régulière.
+flavors:
+  pairing: [pâtes, tomate, mozzarella, parmesan]
+  notes: [fondant, gratiné, acidulé, herbacé]
+  harmony: "La tomate vive et le basilic équilibrent la richesse de la mozzarella et du parmesan fondus."
+  tips: "Cuire les pâtes légèrement al dente afin qu'elles terminent leur cuisson dans la sauce au four."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "15 min au four à 170 C."
+image: images/gratin-pates-tomate-mozzarella.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration sélectionnée et intégrée par un humain.
+image_generation:
+  provider: OpenAI
+  generated_at: "2026-09-19"
+  prompt_file: image-prompts/gratin-pates-tomate-mozzarella.md
+---
+[Préparer la sauce]
+- Préchauffer le #four{} à ^{200 C}.
+- Chauffer l'@huile d'olive{30 g} et faire revenir l'@ail{2 gousses, hachées} pendant ~{1 min}.
+- Ajouter les @tomates concassées{800 g}, le @sel{4 g} et le @poivre moulu{2 g}.
+- Laisser mijoter ~{10 min}, puis incorporer le @basilic frais{15 g, ciselé}.
+
+[Cuire les pâtes]
+- Cuire les @penne{400 g} dans une #grande casserole{} d'eau salée jusqu'à 2 minutes avant le temps indiqué sur le paquet.
+- Égoutter puis mélanger immédiatement avec la sauce tomate.
+
+[Monter le gratin]
+- Verser la moitié des pâtes dans un #plat à gratin{}.
+- Répartir la moitié de la @mozzarella{250 g, tranchée} et du @parmesan{50 g, râpé}.
+- Ajouter le reste des pâtes puis terminer avec les fromages restants.
+
+[Gratiner]
+- Enfourner ~{18 min} à ^{200 C}, jusqu'à ce que le fromage soit fondu et légèrement doré.
+- Laisser reposer ~{5 min} avant de servir.

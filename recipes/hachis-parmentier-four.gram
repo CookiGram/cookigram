@@ -1,0 +1,65 @@
+---
+title: Hachis Parmentier gratiné au four
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 20 min
+total_time: 1 h
+spiciness: 0
+description: "Bœuf mijoté sous une purée de pommes de terre onctueuse, gratiné au four jusqu'à obtenir une croûte dorée."
+tags: [boeuf, four, gratin, parmentier, réconfort, familial]
+source: https://www.mangerbouger.fr/manger-mieux/la-fabrique-a-menus/recettes/2425-hachis-parmentier
+author: Manger Bouger
+required_equipment:
+  - Plat à gratin
+  - Casserole
+  - Poêle
+  - Presse-purée
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Adapter la taille du plat ; le temps de gratinage varie peu.
+flavors:
+  pairing: [bœuf, pomme de terre, muscade, gruyère]
+  notes: [fondant, gratiné, doux, réconfortant]
+  harmony: "La purée douce et muscadée adoucit le bœuf savoureux tandis que le fromage apporte une croûte gratinée."
+  tips: "Étaler la purée en couche régulière puis strier la surface à la fourchette pour multiplier les zones dorées."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "20 min au four à 170 C, couvert puis découvert 5 min."
+image: images/hachis-parmentier-four.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration sélectionnée et intégrée par un humain.
+image_generation:
+  provider: OpenAI
+  generated_at: "2026-09-19"
+  prompt_file: image-prompts/hachis-parmentier-four.md
+---
+[Cuire les pommes de terre]
+- Éplucher les @pommes de terre{1 kg} et les couper en morceaux.
+- Cuire dans une #casserole{} d'eau salée pendant ~{20 min}, jusqu'à ce qu'elles soient tendres.
+
+[Préparer le hachis]
+- Chauffer l'@huile d'olive{15 g} dans une #poêle{}.
+- Faire revenir l'@oignon{1 pièce, émincé}, l'@échalote{1 pièce, émincée}, l'@ail{1 gousse, hachée} et la @carotte{1 pièce, en petits dés} pendant ~{8 min}.
+- Ajouter la @viande hachée{500 g, bœuf}, le @sel{3 g}, le @poivre moulu{2 g} et l'@origan{1 c. à café}, puis cuire ~{8 min}.
+
+[Écraser la purée]
+- Égoutter les pommes de terre puis les écraser au #presse-purée{}.
+- Incorporer le @lait demi-écrémé{200 ml}, l'@huile d'olive{30 g}, la @noix de muscade{3 pincées}, le @sel{2 g} et le @poivre moulu{1 g}.
+
+[Monter le plat]
+- Préchauffer le #four{} à ^{210 C}.
+- Répartir le hachis dans un #plat à gratin{} puis couvrir de purée.
+- Parsemer de @gruyère{60 g, râpé}.
+
+[Gratiner]
+- Enfourner ~{10 min} à ^{210 C}.
+- Terminer sous le gril ~{3 min} jusqu'à obtenir une surface bien dorée.
