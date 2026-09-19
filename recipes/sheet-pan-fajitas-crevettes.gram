@@ -1,0 +1,48 @@
+---
+title: Fajitas de crevettes, poivrons & oignons sur une plaque
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 4
+prep_time: 10 min
+total_time: 20 min
+spiciness: 1
+description: "Crevettes juteuses, poivrons et oignons rôtis aux épices fajita, servis avec citron vert et tortillas."
+tags: [sheet-pan, one-pan, crevettes, fajitas, poivrons, mexicain, rapide]
+source: https://www.seafoodnutrition.org/project/sheetpan-shrimp-fajitas/
+author: Seafood Nutrition Partnership
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 1
+  note: Garder les crevettes et légumes en une seule couche ; utiliser deux plaques si nécessaire.
+flavors:
+  pairing: [crevettes, poivron, cumin, citron vert]
+  notes: [fumé, citronné, légèrement épicé]
+  harmony: "Les épices chaudes soulignent la douceur des crevettes tandis que le citron vert apporte une finale fraîche."
+  tips: "Sécher les crevettes avant cuisson pour qu'elles rôtissent au lieu de rendre de l'eau."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sheet-pan-fajitas-crevettes.md
+---
+
+## Fajitas de crevettes, poivrons & oignons sur une plaque
+
+[Préparer la plaque]
+- Préchauffer le #four{} à ^{230 C}.
+- Répartir les @crevettes{680 g, décortiquées et déveinées}, le @poivron jaune{1 pièce, émincé}, le @poivron rouge{1 pièce, émincé}, le @poivron vert{1 pièce, émincé} et l'@oignon rouge{1 petit, émincé} sur une #plaque de cuisson{}.
+
+[Assaisonner]
+- Ajouter l'@huile d'olive{1.5 c. à soupe}, le @sel{1 c. à café}, le @poivre moulu{selon goût}, le @piment en poudre{2 c. à café}, l'@ail en poudre{0.5 c. à café}, l'@oignon en poudre{0.5 c. à café}, le @cumin moulu{0.5 c. à café} et le @paprika fumé{1 c. à café}.
+- Mélanger directement sur la plaque afin d'enrober uniformément les crevettes et les légumes.
+
+[Rôtir]
+- Enfourner ~{10 min}, jusqu'à ce que les crevettes soient opaques et juste fermes et que les poivrons commencent à s'attendrir.
+
+[Finir et servir]
+- Arroser avec le @jus de citron vert{1 citron vert} et parsemer de @coriandre fraîche{2 c. à soupe, hachée}.
+- Servir avec les @tortillas de blé{8 petites, réchauffées} à côté.
