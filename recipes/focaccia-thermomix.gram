@@ -46,12 +46,14 @@ image_generation:
 
 [Faire lever la pâte]
 - Transvaser la pâte, qui est collante, dans le saladier préparé.
-- Replacer le bol sur sa base et faire tourner les couteaux ~{5 s} à vitesse 6 pour décoller la pâte restante, puis racler le surplus dans le saladier.
+- Replacer le bol sur sa base et faire tourner les couteaux ~{5 s} à vitesse 6 pour décoller la pâte restante.
+- Racler le surplus dans le saladier.
 - Couvrir et laisser lever ~{1 à 2 h}, jusqu'à ce que la pâte ait doublé de volume.
 
 [Étaler et faire pousser]
 - Huiler généreusement une #grande plaque de cuisson{}.
-- Étaler la pâte sur la plaque avec une #spatule{} huilée, puis laisser pousser ~{30 min}.
+- Étaler la pâte sur la plaque avec une #spatule{} huilée.
+- Laisser pousser ~{30 min}.
 
 [Garnir la focaccia]
 - Préchauffer le #four{} à ^{220 C}.
@@ -62,5 +64,6 @@ image_generation:
 
 [Cuire et refroidir]
 - Cuire ~{20 min} à ^{220 C}, jusqu'à ce que la focaccia soit bien dorée.
-- Laisser refroidir ~{5 min} sur la plaque, puis transférer sur une #grille de refroidissement{}.
+- Laisser refroidir ~{5 min} sur la plaque.
+- Transférer sur une #grille de refroidissement{}.
 - Servir tiède ou laisser refroidir complètement.
