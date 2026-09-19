@@ -955,6 +955,10 @@ ingredients:
   zaatar:
     status: incomplete
     source: Mélange d'épices du Levant (thym, sésame, sumac) ; valeur nutritionnelle générique.
+  pate-brisee:
+    status: incomplete
+    source: Préparation boulangère ; composition variable selon la recette.
+
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES

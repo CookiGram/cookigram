@@ -1,0 +1,51 @@
+---
+title: Ratatouille
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 9
+prep_time: 15 min
+total_time: 40 min
+spiciness: 0
+description: "Ratatouille fondante de légumes d’été, mijotée doucement à l’huile d’olive et aux herbes de Provence."
+tags: [ratatouille, légumes, provençal, végétarien, traditionnel, été]
+source: https://www.mangerbouger.fr/manger-mieux/la-fabrique-a-menus/recettes/1356-ratatouille
+author: Manger Bouger
+scaling:
+  enabled: true
+  min_portions: 3
+  max_portions: 9
+  step: 3
+  note: Adapter le nombre de légumes par tiers ; le temps de mijotage dépend surtout de leur taille de coupe.
+flavors:
+  pairing: [aubergine, courgette, tomate, poivron]
+  notes: [fondant, végétal, méditerranéen]
+  harmony: "La tomate lie les légumes d’été tandis que l’huile d’olive et les herbes de Provence prolongent leurs arômes."
+  tips: "Couper les légumes de taille régulière pour obtenir une cuisson homogène sans les réduire en purée."
+image: images/ratatouille.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/CookiGram/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP 640 × 360.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
+  prompt_file: image-prompts/ratatouille.md
+---
+
+## Ratatouille
+
+[Préparer les légumes]
+- Laver puis couper les @courgettes{2 pièces} en fines rondelles, les @tomates{700 g} en morceaux et l'@aubergine{1 pièce} en dés.
+- Éplucher et émincer les @oignons{2 pièces}, puis épépiner et tailler les @poivrons{2 pièces} en lanières.
+
+[Saisir les légumes]
+- Faire chauffer l'@huile d'olive{2 c. à soupe} dans une #cocotte{} ou une grande #sauteuse{}.
+- Ajouter les légumes préparés et cuire à feu vif ~{5 min} en remuant régulièrement pour amorcer leur coloration sans les laisser attacher.
+
+[Mijoter]
+- Ajouter les @herbes de Provence{2 pincées}, mélanger puis baisser à feu doux.
+- Laisser mijoter ~{20 min}, en remuant de temps en temps, jusqu'à ce que les légumes soient bien fondants tout en gardant encore leur forme.
+- Goûter, rectifier l'assaisonnement selon votre préférence et servir chaud, tiède ou à température ambiante.

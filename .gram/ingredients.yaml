@@ -2887,3 +2887,9 @@ ingredients:
     - za'atar
     - mélange zaatar
     category: Condiments et assaisonnements
+  pate-brisee:
+    name: Pâte brisée
+    aliases:
+    - pâte brisée
+    - pate brisee
+    category: Produits céréaliers
