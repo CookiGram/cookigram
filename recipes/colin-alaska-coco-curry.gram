@@ -42,7 +42,8 @@ image_generation:
 
 [Parfumer la poêle]
 - Chauffer l'@huile d'olive{30 g} dans une #poêle{} à feu moyen.
-- Ajouter l'@ail{10 g, écrasé} et le faire revenir ~{1 min}, sans le laisser colorer.
+- Ajouter l'@ail{10 g, écrasé}.
+- Le faire revenir ~{1 min}, sans le laisser colorer.
 
 [Cuire le poisson]
 - Déposer les @filets de poisson{4 pièces, colin d'Alaska surgelé} dans la poêle.
@@ -54,4 +55,5 @@ image_generation:
 
 [Terminer la cuisson]
 - Poursuivre la cuisson ~{4 min}, jusqu'à ce que le poisson soit opaque à cœur et que la sauce frémisse.
-- Mélanger doucement la sauce autour des filets, puis servir immédiatement avec du riz.
+- Mélanger doucement la sauce autour des filets.
+- Servir immédiatement avec du riz.
