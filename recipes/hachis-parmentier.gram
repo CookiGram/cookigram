@@ -38,8 +38,10 @@ image_generation:
 ## Hachis parmentier
 
 [Préparer la purée]
-- Éplucher les @pommes de terre{1 kg}, les couper en morceaux réguliers et les cuire dans une #casserole{} d'eau frémissante ~{20 min}, jusqu'à ce que la pointe d'un couteau entre sans résistance.
-- Égoutter puis écraser les pommes de terre au #presse-purée{}.
+- Éplucher les @pommes de terre{1 kg} et les couper en morceaux réguliers.
+- Les cuire dans une #casserole{} d'eau frémissante ~{20 min}, jusqu'à ce que la pointe d'un couteau entre sans résistance.
+- Égoutter les pommes de terre.
+- Les écraser au #presse-purée{}.
 - Incorporer le @lait demi-écrémé{200 ml, tiède}, l'@huile d'olive{2 c. à soupe, sur 3 c. à soupe au total} et la @noix de muscade{3 pincées} ; mélanger juste assez pour obtenir une purée souple.
 
 [Préparer le hachis de bœuf]
@@ -50,6 +52,9 @@ image_generation:
 
 [Assembler et gratiner]
 - Préchauffer le #four{} à ^{210 C}.
-- Répartir le hachis dans un #plat à gratin{}, couvrir uniformément avec la purée puis parsemer de @gruyère{60 g, râpé}.
-- Enfourner ~{10 min}, puis passer sous le gril environ ~{3 min}, en surveillant, jusqu'à obtenir une surface bien dorée.
-- Laisser reposer quelques minutes avant de servir pour que les couches se tiennent mieux à la découpe.
+- Répartir le hachis dans un #plat à gratin{} et le couvrir uniformément avec la purée.
+- Parsemer de @gruyère{60 g, râpé}.
+- Enfourner ~{10 min}.
+- Passer sous le gril environ ~{3 min}, en surveillant, jusqu'à obtenir une surface bien dorée.
+- Laisser reposer quelques minutes pour que les couches se tiennent mieux à la découpe.
+- Servir.
