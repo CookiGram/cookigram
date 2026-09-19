@@ -1,0 +1,58 @@
+---
+title: Overnight oats myrtille, citron & chia
+date_published: 2026-09-19
+date_modified: 2026-09-19
+portions: 1
+prep_time: 10 min
+total_time: 6 h 10 min
+spiciness: 0
+description: Overnight oats crémeux au yaourt grec, myrtilles fondantes et citron vif, épaissis par les graines de chia.
+tags: [petit-déjeuner, overnight-oats, avoine, myrtilles, citron, sans-cuisson]
+source: https://www.walderwellness.com/blueberry-lemon-overnight-oats-with-chia/
+author: Carrie Walder, RD
+scaling:
+  enabled: true
+  min_portions: 1
+  max_portions: 4
+  step: 1
+  note: Multiplier les ingrédients ; conserver au moins 6 h et utiliser un bocal assez grand pour mélanger.
+flavors:
+  pairing: [myrtilles, citron, yaourt grec, graines de chia]
+  notes: [crémeux, acidulé, fruité]
+  harmony: "Le yaourt grec donne une base dense et crémeuse, relevée par le citron et arrondie par les myrtilles."
+  tips: "Avec des myrtilles surgelées, les écraser dès qu'elles commencent à rendre leur jus pour hydrater régulièrement l'avoine."
+conservation:
+  fridge_days: 4
+  freezable: false
+image: images/overnight-oats-myrtille-citron-chia.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, sans reprise de la photographie source.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-19"
+  prompt_file: image-prompts/overnight-oats-myrtille-citron-chia.md
+---
+
+## Overnight oats myrtille, citron & chia
+
+[Écraser les myrtilles]
+- Verser les @myrtilles{80 g, fraîches ou surgelées} dans un #bocal hermétique{} ; si elles sont surgelées, attendre qu'elles commencent à libérer leur jus.
+- Écraser grossièrement les myrtilles pour obtenir une pulpe encore un peu texturée.
+
+[Former la base crémeuse]
+- Ajouter le @yaourt grec{170 g}, les @graines de chia{10 g}, le @miel{5 g, facultatif}, le @jus de citron{1 c. à café} et le @citron{1/2 pièce, zeste finement râpé}.
+- Mélanger jusqu'à ce que le yaourt soit uniformément parfumé et que le jus des myrtilles soit réparti.
+
+[Incorporer les flocons]
+- Ajouter les @flocons d'avoine{50 g} et mélanger jusqu'à disparition des zones sèches.
+
+[Laisser épaissir]
+- Fermer le bocal et réfrigérer ~{6 h}, jusqu'à ce que les flocons soient tendres et les graines de chia gonflées.
+
+[Servir]
+- Mélanger une dernière fois et déguster froid ; la texture doit être crémeuse et épaisse mais encore facile à manger à la cuillère.

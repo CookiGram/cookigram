@@ -2893,3 +2893,20 @@ ingredients:
     - pâte brisée
     - pate brisee
     category: Produits céréaliers
+  flocons-d-avoine:
+    name: Flocons d'avoine
+    aliases:
+    - flocons d'avoine
+    category: Céréales et féculents
+  graines-de-chia:
+    name: Graines de chia
+    aliases:
+    - graines de chia
+    category: Graines et fruits à coque
+  myrtilles:
+    name: Myrtilles
+    aliases:
+    - myrtilles
+    - myrtilles fraîches
+    - myrtilles surgelées
+    category: Fruits et légumes
