@@ -29,6 +29,18 @@ required_equipment:
   - Spatule
   - Couteau de chef
   - Planche à découper
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Décongeler au réfrigérateur puis réchauffer doucement sans forte ébullition pour préserver la sauce."
+variants:
+  - id: service-immediat
+    name: Service immédiat
+    default: true
+    description: Cuisson Thermomix et service dès que le poulet est tendre.
+  - id: freezer-meal
+    name: Freezer meal
+    description: Refroidir rapidement, portionner et congeler ; décongeler au réfrigérateur puis réchauffer doucement.
 image: images/butter-chicken.jpg
 image_credit:
   author: CookiGram
