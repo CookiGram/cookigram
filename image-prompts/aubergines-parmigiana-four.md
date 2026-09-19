@@ -1,0 +1,1 @@
+Illustration culinaire CookiGram 16:9, aubergines alla Parmigiana dans un plat en céramique, couches visibles d'aubergines fondantes, sauce tomate rouge, mozzarella filante et parmesan doré, style manga culinaire, sans texte ni logo.
