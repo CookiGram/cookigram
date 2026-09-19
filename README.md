@@ -10,6 +10,38 @@
 🌐 **Site publié :** [cookigram.github.io/cookigram](https://cookigram.github.io/cookigram/)<br>
 🇬🇧 **English:** [README.en.md](README.en.md) · 🤝 **Contribuer :** [CONTRIBUTING.md](CONTRIBUTING.md)
 
+## CookiGram côté utilisateur
+
+CookiGram doit d'abord être utile à quelqu'un qui ne sait ni ce qu'est Git, ni
+ce qu'est Gram, ni ce qu'est MCP.
+
+L'expérience publique recherchée est simple :
+
+```text
+trouver / importer une recette
+        ↓
+la cuisiner
+        ↓
+observer ce qui mérite d'être ajusté
+        ↓
+retrouver une meilleure version la prochaine fois
+```
+
+Le produit peut s'appuyer sur des fondations techniques riches sans demander à
+l'utilisateur de les comprendre. Git apporte l'historique, Gram la précision,
+Core les règles déterministes et, progressivement, un agent peut servir de
+**sous-chef** pour transformer une intention libre en opérations structurées.
+
+Ces mécanismes ne sont pas des prérequis à l'usage normal : CookiGram doit rester
+une PWA directement utilisable, sans compte obligatoire, sans backend central
+requis pour les parcours de base et sans télémétrie nécessaire à son
+fonctionnement.
+
+> **CookiGram est la Cuisine. L'agent est le sous-chef.**
+
+Le sous-chef peut aider à importer, organiser, qualifier ou améliorer. La Cuisine
+conserve les recettes, les règles, la provenance et l'historique.
+
 ## Ce dépôt
 
 `CookiGram/cookigram` est le dépôt public de contenu de CookiGram. Il rassemble :
@@ -52,11 +84,40 @@ Un terme français ne doit pas être conservé uniquement pour le style s’il o
 
 Ce vocabulaire décrit le modèle mental de CookiGram. Il ne crée pas à lui seul de nouvelle abstraction technique, de permission, de compte ou de chantier d’architecture.
 
-## Frontière avec le moteur privé
+## Frontière avec le moteur
 
-Le moteur de génération, le parseur et validateur complet Gram, le site statique/PWA, ainsi que les tests applicatifs résident dans [`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core), un dépôt privé.
+Ce dépôt représente le **contenu public et l'usage public** de CookiGram. Le
+moteur de génération, le parseur/validateur complet, le runtime PWA et les tests
+applicatifs vivent aujourd'hui dans
+[`CookiGram/cookigram-core`](https://github.com/CookiGram/cookigram-core).
 
-Ce dépôt ne contient donc pas le code du moteur et ne se construit pas seul. Le fichier [`.core-version`](.core-version) épingle le commit du moteur utilisé par l’intégration continue et le déploiement. Il ne constitue pas une dépendance à installer depuis ce dépôt.
+La frontière visée est explicite :
+
+```text
+Cuisine / catalogue
+      ↓
+CookiGram Contract
+      ↓
+validation du contenu
+      ↓
+build avec une version Core publiée/pinnée
+```
+
+Ajouter ou mettre à jour une recette doit faire évoluer **la Cuisine**, pas
+nécessiter une modification, un rebuild ou une qualification complète du moteur.
+Un rebuild du site statique peut rester nécessaire ; un rebuild de Core ne doit
+pas l'être.
+
+Dans l'état actuel, [`.core-version`](.core-version) épingle encore le commit
+du moteur utilisé par l'intégration continue et le déploiement. Le chantier de
+découplage vise à rendre cette relation suffisamment stable pour qu'un catalogue
+conforme puisse évoluer et, à terme, être self-hosté indépendamment du
+développement de Core.
+
+Le README public décrit volontairement l'expérience et le contenu. Les choix
+d'architecture du moteur, la méthodologie MCP et un éventuel axe professionnel
+de services relèvent de Core et ne changent pas la promesse d'usage public :
+**le produit doit rester pleinement utile en self-service.**
 
 ## Validation disponible
 
@@ -201,11 +262,41 @@ Directions possibles :
 
 Le Café n’est pas une plateforme centrale à construire : ce sont des prolongements du produit, activés uniquement lorsqu’ils servent un usage réel.
 
-### 🥃 Digestif — IA et MCP — EXPLORATION
+### 🥃 Digestif — IA et MCP — STRUCTURATION EN COURS
 
-Le Digestif correspond à une couche d’intelligence et d’orchestration au-dessus des capacités déjà fiables de CookiGram.
+L'IA reste optionnelle pour cuisiner avec CookiGram, mais MCP devient dès
+maintenant une **interface structurante pour l'utilisation et l'administration
+agentiques d'une Cuisine**.
 
-L’idée n’est pas de rendre l’IA nécessaire au fonctionnement du produit. Le cœur doit continuer à fonctionner sans modèle, sans service distant et sans compte. L’IA intervient comme un orchestrateur optionnel capable de composer les primitives de CookiGram et les capacités exposées par des MCP.
+La distinction est importante :
+
+- CookiGram doit continuer à fonctionner sans modèle, sans service distant et
+  sans compte pour ses parcours publics de base ;
+- lorsqu'un agent agit comme sous-chef, il doit passer progressivement par des
+  opérations métier CookiGram plutôt que réinventer le workflow dans chaque
+  prompt ;
+- le développement de Core reste libre et n'est pas contraint par cette surface
+  MCP.
+
+Premier cas de référence :
+
+```text
+"trouve-moi 10 recettes sur ce thème"
+        ↓
+intention libre
+        ↓
+Batch
+        ↓
+10 jobs d'import indépendants
+        ↓
+validation / preview / publication
+```
+
+L'objectif est de garder une interaction très simple tout en rendant les
+mutations de la Cuisine précises, traçables, reprenables et reproductibles.
+
+L'IA ne devient donc pas la source de vérité : elle comprend, propose et
+orchestre ; CookiGram conserve les règles et la mémoire.
 
 Exemples de scénarios :
 
