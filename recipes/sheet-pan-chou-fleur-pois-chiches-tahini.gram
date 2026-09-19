@@ -26,8 +26,6 @@ image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
   license: Illustration temporaire
-image_generation:
-  prompt_file: image-prompts/sheet-pan-chou-fleur-pois-chiches-tahini.md
 ---
 
 ## Chou-fleur rôti, pois chiches & tahini citronné sur une plaque

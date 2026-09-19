@@ -21,11 +21,11 @@ flavors:
   notes: [citronné, rôti, herbacé]
   harmony: "Le citron et la moutarde réveillent les sucs du poulet, tandis que le beurre aide les pommes de terre à dorer."
   tips: "Ajouter les haricots verts seulement en fin de cuisson pour qu'ils restent verts et légèrement fermes."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-poulet-citron-haricots-verts.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-poulet-citron-haricots-verts.md
 ---

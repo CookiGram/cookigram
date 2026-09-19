@@ -21,11 +21,11 @@ flavors:
   notes: [sucré-salé, rôti, fondant]
   harmony: "La moutarde apporte du relief au miel tandis que le brocoli et la patate douce absorbent le glaçage du saumon."
   tips: "Surveiller attentivement le passage sous le gril : le miel colore très vite."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-saumon-brocoli-patate-douce.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-saumon-brocoli-patate-douce.md
 ---

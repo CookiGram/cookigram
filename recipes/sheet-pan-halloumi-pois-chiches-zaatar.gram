@@ -1,5 +1,5 @@
 ---
-title: Halloumi, aubergine, poivrons & pois chiches au zaatar sur une plaque
+title: Halloumi, aubergine & pois chiches au zaatar sur une plaque
 date_published: 2026-09-19
 date_modified: 2026-09-19
 portions: 4
@@ -21,16 +21,16 @@ flavors:
   notes: [salin, citronné, grillé]
   harmony: "Le halloumi salé contraste avec la douceur des poivrons, tandis que le zaatar et le citron structurent l’ensemble."
   tips: "Sécher les pois chiches et espacer les tranches de halloumi pour obtenir des bords bien dorés."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-halloumi-pois-chiches-zaatar.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-halloumi-pois-chiches-zaatar.md
 ---
 
-## Halloumi, aubergine, poivrons & pois chiches au zaatar sur une plaque
+## Halloumi, aubergine & pois chiches au zaatar sur une plaque
 
 [Assembler]
 - Préchauffer le #four{} à ^{220 C}.

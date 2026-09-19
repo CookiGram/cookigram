@@ -21,11 +21,11 @@ flavors:
   notes: [épicé doux, rôti, citronné]
   harmony: "Les épices chaudes enrobent le poulet et les légumes, tandis que le yaourt citronné rafraîchit chaque bouchée."
   tips: "Laisser au moins 30 minutes de marinade pour parfumer le poulet sans alourdir la préparation."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-poulet-shawarma.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-poulet-shawarma.md
 ---

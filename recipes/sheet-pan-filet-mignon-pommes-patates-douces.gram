@@ -18,11 +18,11 @@ flavors:
   notes: [sucré-salé, rôti, automnal]
   harmony: "L’érable caramélise les pommes et patates douces tandis que la moutarde apporte l’acidité nécessaire au porc."
   tips: "Laisser reposer le filet quelques minutes avant de le trancher afin de conserver ses jus."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-filet-mignon-pommes-patates-douces.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-filet-mignon-pommes-patates-douces.md
 ---

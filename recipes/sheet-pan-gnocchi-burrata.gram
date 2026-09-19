@@ -21,11 +21,11 @@ flavors:
   notes: [rôti, crémeux, acidulé]
   harmony: "Les gnocchi croustillent au contact de la plaque tandis que la burrata et le balsamique apportent richesse et fraîcheur."
   tips: "Utiliser des gnocchi frais réfrigérés : ils rôtissent directement sans précuisson."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-gnocchi-burrata.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-gnocchi-burrata.md
 ---

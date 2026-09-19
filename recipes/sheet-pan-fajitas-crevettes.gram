@@ -21,11 +21,11 @@ flavors:
   notes: [fumé, citronné, légèrement épicé]
   harmony: "Les épices chaudes soulignent la douceur des crevettes tandis que le citron vert apporte une finale fraîche."
   tips: "Sécher les crevettes avant cuisson pour qu'elles rôtissent au lieu de rendre de l'eau."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-fajitas-crevettes.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-fajitas-crevettes.md
 ---

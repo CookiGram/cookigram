@@ -21,11 +21,11 @@ flavors:
   notes: [rôti, charnu, méditerranéen]
   harmony: "Les sucs de la saucisse assaisonnent les légumes tandis que le balsamique et le basilic apportent fraîcheur et acidité."
   tips: "Couper les pommes de terre en dés réguliers de 2 cm pour qu'elles cuisent en même temps que les saucisses."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-saucisses-toulouse-poivrons.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-saucisses-toulouse-poivrons.md
 ---

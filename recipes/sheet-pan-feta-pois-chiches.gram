@@ -21,11 +21,11 @@ flavors:
   notes: [salin, citronné, rôti]
   harmony: "La feta salée et les olives équilibrent la douceur des tomates tandis que le citron et l’origan gardent l’ensemble vif."
   tips: "Bien sécher les pois chiches avant de les déposer sur la plaque pour favoriser leur croustillant."
-image: images/placeholder-recipe.jpg
+image: images/sheet-pan-feta-pois-chiches.jpg
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
 image_generation:
   prompt_file: image-prompts/sheet-pan-feta-pois-chiches.md
 ---
