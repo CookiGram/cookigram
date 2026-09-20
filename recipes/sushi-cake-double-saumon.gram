@@ -5,6 +5,7 @@ title: Sushi cake double saumon
 portions: 8
 prep_time: non indiqué
 total_time: non indiqué
+timing_note: La source ne publie pas de durée ; les étapes sont à planifier selon la cuisson du riz, le refroidissement et le maintien du saumon cru au froid.
 spiciness: 2
 description: "Sushi cake maison en étages de saumon cru pimenté et teriyaki, riz vinaigré, maïs doux et tamago moelleux."
 tags: [sushi, saumon, cru, teriyaki, repas-froid]
@@ -58,8 +59,11 @@ image_generation:
 
 [Monter les étages]
 - Chemiser le #moule à gâteau{} de film alimentaire et tasser une première couche de riz.
-- Poser le @nori{1 feuille} puis étaler le saumon cru assaisonné.
-- Ajouter une deuxième couche de riz, le @nori{1 feuille} et le saumon teriyaki émietté.
+- Poser le @nori{1 feuille} sur le riz.
+- Étaler le saumon cru assaisonné ; il doit rester bien froid.
+- Ajouter une deuxième couche de riz et la presser légèrement.
+- Poser le @nori{1 feuille}.
+- Répartir le saumon teriyaki émietté.
 - Terminer avec le reste du riz et le @nori{1 feuille}; presser doucement pour solidariser les couches.
 
 [Démouler et finir]
