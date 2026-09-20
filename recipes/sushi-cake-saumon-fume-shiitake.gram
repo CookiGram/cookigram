@@ -1,0 +1,64 @@
+---
+title: Sushi cake au saumon fumé et shiitakés
+portions: 1
+prep_time: 30 min
+total_time: 45 min
+spiciness: 1
+description: "Sushi cake individuel au saumon fumé, avocat et champignons laqués, relevé d'une mayonnaise au wasabi."
+tags: [sushi, saumon-fume, shiitake, avocat, japonais, froid]
+source: https://www.kikkoman.fr/recettes/detail/sushi-cake
+author: Kikkoman
+required_equipment: [Moule rond de 16 cm, Poêle antiadhésive, Économe, Film alimentaire]
+scaling:
+  enabled: false
+  reason: La source calibre les couches pour un moule rond de 16 cm et une portion.
+flavors:
+  pairing: [saumon fumé, avocat, sauce soja, wasabi]
+  notes: [fumé, umami, crémeux, piquant doux]
+  harmony: "Le fumé et l'umami des champignons s'équilibrent avec l'avocat doux et la mayonnaise au wasabi."
+  tips: "Laisser refroidir chaque garniture avant le montage pour que le riz reste compact."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "Servir immédiatement après le démoulage."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-saumon-fume-shiitake.md
+---
+
+[Préparer l'omelette]
+- Mélanger les @œufs{1}, le @lait-demi-ecreme{1 c. à soupe}, la @farine{1 c. à café}, le @sucre{2 pincées} et le @sel{1 pincée}.
+- Cuire en couche fine dans une #poêle{} avec l'@huile végétale{1 c. à café}, refroidir et tailler en lanières.
+
+[Laquer les champignons]
+- Retirer les pieds des @champignons-de-paris{100 g} et les émincer.
+- Ajouter les champignons, le @sirop d'érable{1 c. à soupe}, la @sauce-soja{1 c. à soupe}, le @sucre{1/2 c. à café} et l'@eau{100 ml} dans une #poêle{}.
+- Porter à ébullition puis réduire jusqu'à évaporation presque complète ; refroidir.
+
+[Préparer les légumes]
+- Couper l'@avocat{1/2 pièce} en tranches et le @concombre{1 pièce} en rubans à l'économe.
+- Tailler le @radis{1 pièce} en rondelles fines ; garder les légumes croquants.
+
+[Former les fleurs]
+- Découper le @saumon fumé{100 g} en lanières chevauchées et les rouler.
+- Ouvrir légèrement le sommet des rouleaux ; conserver au froid.
+
+[Assembler les couches]
+- Chemiser le #moule{} de film et répartir le @riz à sushi{67 g} au fond.
+- Ajouter l'@avocat{1/2 pièce, tranché}, puis le @riz à sushi{67 g} et les @champignons-de-paris{100 g, cuits}.
+- Recouvrir avec le @riz à sushi{66 g}, filmer et presser légèrement.
+
+[Démouler et décorer]
+- Poser une #assiette{} sur le moule, retourner, puis retirer le moule et le film.
+- Répartir les lanières d'@œufs{1 œuf cuit}, les fleurs de @saumon fumé{100 g}, le @concombre{1 pièce} et le @radis{1 pièce}.
+
+[Saucer et servir]
+- Mélanger la @mayonnaise{2 c. à soupe} et le @wasabi{1/2 c. à café}, puis déposer quatre points de sauce.
+- Servir avec la @sauce-soja{1 c. à soupe} restante à part.

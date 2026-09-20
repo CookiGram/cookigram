@@ -1,0 +1,61 @@
+---
+title: Sushi cake chirashi festif
+portions: 4
+prep_time: 40 min
+total_time: 1 h 10 min
+spiciness: 0
+description: "Sushi cake en couches de riz nacré, saumon, crevettes et omelette, ponctué de fraîcheur croquante et iodée."
+tags: [sushi, chirashi, saumon, crevettes, japonais, froid]
+source: https://www.justonecookbook.com/chirashi-sushi-cake/
+author: Namiko Hirasawa Chen
+required_equipment: [Casserole avec couvercle, Moule rond ou carré, Grande assiette, Poêle antiadhésive]
+scaling:
+  enabled: false
+  reason: Le montage et les garnitures décoratives sont calibrés pour un cake de 4 portions.
+flavors:
+  pairing: [riz à sushi, saumon, crevettes, concombre]
+  notes: [iodé, vinaigré, frais, moelleux]
+  harmony: "Le riz vinaigré porte le saumon et les crevettes tandis que le concombre apporte une coupe fraîche."
+  tips: "Découper les garnitures finement et presser sans écraser pour garder des couches nettes."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "À consommer immédiatement, surtout avec le poisson cru."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-chirashi.md
+---
+
+[Cuire le riz]
+- Rincer le @riz à sushi{300 g}, l'égoutter ~{10 min}, puis le cuire avec l'@eau{330 g} dans une #casserole{} couverte.
+- Couper le feu et laisser reposer couvert ~{10 min} ; les grains doivent être tendres.
+
+[Assaisonner le riz]
+- Mélanger le @vinaigre de riz{60 g}, le @sucre{15 g} et le @sel{6 g} jusqu'à dissolution.
+- Verser sur le riz chaud dans un #saladier{}, soulever les grains à la spatule et laisser tiédir.
+
+[Préparer l'omelette]
+- Battre les @œufs{2} avec le @sel{1 pincée}, puis cuire une omelette très fine dans une #poêle{}.
+- Refroidir et tailler l'omelette en fines lanières souples.
+
+[Préparer les garnitures]
+- Trancher le @concombre{1 pièce} et couper les @crevettes{12 pièces} cuites en deux.
+- Tailler le @saumon-frais{150 g, qualité sashimi} en fines tranches et le garder au froid.
+
+[Monter le cake]
+- Chemiser un #moule{} de film et couvrir le fond avec les lanières d'@œufs{2 œufs cuits}.
+- Ajouter le @riz à sushi{100 g}, presser doucement, placer le @concombre{1/2 pièce, tranché}, puis le @riz à sushi{200 g}.
+
+[Retourner]
+- Poser une #assiette{} sur le moule, retourner, retirer le moule et le film ; vérifier que les couches tiennent.
+
+[Décorer et servir]
+- Disposer le @saumon-frais{150 g, tranché} en rose et répartir les @crevettes{12 pièces} autour.
+- Ajouter le @concombre{1/2 pièce, tranché} et servir immédiatement, le poisson restant bien froid.

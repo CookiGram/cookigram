@@ -1,0 +1,67 @@
+---
+title: Sushi cake végétarien avocat et tamagoyaki
+portions: 1
+prep_time: 40 min
+total_time: 1 h
+spiciness: 2
+description: "Sushi cake végétarien aux couches d'avocat assaisonné, crudités croquantes et omelette japonaise moelleuse."
+tags: [sushi, vegetarien, avocat, tamagoyaki, concombre, froid]
+source: https://zarskitchen.com/sushi-cake/
+author: Zarina
+required_equipment: [Cercle de dressage de 8 cm avec poussoir, Poêle antiadhésive, Planche à découper]
+scaling:
+  enabled: false
+  reason: La source est calibrée pour un mini cake individuel dans un cercle de 8 cm.
+flavors:
+  pairing: [avocat, concombre, radis, huile de sésame]
+  notes: [frais, crémeux, croquant, relevé]
+  harmony: "L'avocat crémeux reçoit le soja et le sésame, tandis que le concombre et le radis gardent le cake vif."
+  tips: "Mélanger l'avocat avec précaution afin de conserver des dés visibles dans la couche."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "Servir immédiatement après le démoulage."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-vegetarien.md
+---
+
+[Assaisonner le riz]
+- Mélanger le @riz à sushi{300 g, cuit} avec le @vinaigre de riz{1 trait}, la @sauce-soja{2 c. à café} et l'@huile de sésame{1/2 c. à café}.
+- Ajouter le @sel{1 pincée} et garder couvert d'un linge humide.
+
+[Préparer l'omelette]
+- Battre les @œufs{2} avec le @sucre{1 pincée} et la @sauce-soja{1 c. à café}.
+- Cuire une omelette ronde dans une #poêle{} et la laisser refroidir avant de l'ajuster au cercle.
+
+[Préparer l'avocat]
+- Tailler l'@avocat{1 pièce} en petits dés sans l'écraser.
+- Mélanger avec la @sauce-soja{2 c. à café}, l'@huile de sésame{1/2 c. à café}, la @mayonnaise{1 c. à soupe} et le @jus de citron{1 c. à café}.
+
+[Préparer les crudités]
+- Tailler le @concombre{1 petit} en fines demi-lunes et le @radis{4 pièces} en rondelles.
+- Réserver quelques tranches pour le décor ; elles doivent rester fermes.
+
+[Préparer la sauce]
+- Mélanger la @mayonnaise{2 c. à soupe} et la @sauce-soja{1 c. à café}.
+- Ajouter le @piment de Cayenne{1 pincée} ; la sauce doit être relevée sans masquer l'avocat.
+
+[Former la base]
+- Huiler l'intérieur du #cercle de dressage{} avec l'@huile de sésame{1/2 c. à café}.
+- Remplir le premier tiers avec le @riz à sushi{100 g} et presser avec le poussoir.
+
+[Empiler les garnitures]
+- Disposer le @concombre{1/2 petit, tranché} puis le @radis{2 pièces, tranché} en éventail.
+- Ajouter l'@avocat{1 pièce, assaisonné}, les @œufs{2, omelette cuite}, puis le @riz à sushi{200 g} restant ; presser doucement.
+
+[Démouler et servir]
+- Soulever lentement le cercle et vérifier que les couches tiennent.
+- Décorer avec le @concombre{1/2 petit, réservé}, le @radis{2 pièces, réservé} et la sauce.
+- Servir immédiatement ; le nori croustillant optionnel de la source est signalé comme ingrédient manquant.
