@@ -1143,7 +1143,7 @@ ingredients:
     aliases:
     - saumon fumé
     - saumon
-    category: poissons et fruits de mer
+    category: Poissons et fruits de mer
     nutrition:
       calories: 185
       carbs: 0.5
@@ -3062,3 +3062,23 @@ ingredients:
     aliases:
     - sauce ponzu
     category: Condiments
+  kombu-seche:
+    name: Kombu séché
+    aliases:
+    - kombu séché
+    - kombu
+    - algue kombu
+    category: Poissons et fruits de mer
+  shiso:
+    name: Shiso frais
+    aliases:
+    - shiso
+    - feuilles de shiso
+    category: Herbes et épices
+  umeboshi:
+    name: Umeboshi
+    aliases:
+    - umeboshi
+    - prune umeboshi
+    - prunes umeboshi
+    category: Condiments et assaisonnements

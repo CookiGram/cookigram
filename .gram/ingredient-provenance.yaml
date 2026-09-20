@@ -1045,6 +1045,15 @@ ingredients:
   sauce-ponzu:
     status: incomplete
     source: Condiment japonais agrume-soja ; composition variable selon le produit.
+  kombu-seche:
+    status: incomplete
+    source: Algue séchée générique ; valeur nutritionnelle à vérifier contre CIQUAL.
+  shiso:
+    status: incomplete
+    source: Herbe fraîche japonaise ; valeur nutritionnelle à vérifier contre CIQUAL.
+  umeboshi:
+    status: incomplete
+    source: Prune japonaise salée et acidifiée ; composition variable selon la préparation.
 
 sources:
   ciqual:

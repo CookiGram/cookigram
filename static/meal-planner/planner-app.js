@@ -1,20 +1,20 @@
 import { addPlacement, loadPlanning, MOMENTS, removePlacement, savePlanning } from "./planner-state.js";
+import { resolveInitialWeekStart, startOfLocalDay, toLocalISODate } from "./planner-state.js";
 import { buildCalendarExport } from "./calendar-export.js";
 
 const SELECTION_KEY = "cookigram:recipe-selection";
 const WEEK_KEY = "cookigram:meal-planning-week:v1";
 const focusSlug = new URLSearchParams(window.location.search).get("recipe");
-const DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+const DAYS_FROM_SUNDAY = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c]));
 const readSelection = () => { try { const value = JSON.parse(localStorage.getItem(SELECTION_KEY) || "[]"); return Array.isArray(value) ? value.filter(item => item?.slug) : []; } catch { return []; } };
-const monday = value => { const date = new Date(value); const day = date.getDay() || 7; date.setHours(12, 0, 0, 0); date.setDate(date.getDate() - day + 1); return date; };
-const iso = date => date.toISOString().slice(0, 10);
-const readWeek = () => { const stored = localStorage.getItem(WEEK_KEY); return stored ? monday(stored) : monday(new Date()); };
+const iso = date => toLocalISODate(date);
 const formatRange = dates => `${dates[0].toLocaleDateString("fr-FR", { day: "numeric", month: "long" })} – ${dates[6].toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}`;
 
 let selection = readSelection();
 let planning = loadPlanning();
-let weekStart = readWeek();
+let weekStart = resolveInitialWeekStart();
+let weekPinned = false;
 let catalog = new Map();
 let selectedSlug = null;
 let ignoreClickSlug = null;
@@ -24,8 +24,16 @@ const nativeDragEnabled = () => !window.matchMedia("(pointer: coarse)").matches;
 const draggableAttribute = () => nativeDragEnabled() ? ' draggable="true"' : '';
 
 const dates = () => Array.from({ length: 7 }, (_, index) => { const date = new Date(weekStart); date.setDate(weekStart.getDate() + index); return iso(date); });
-const dayLabel = index => { const date = new Date(`${dates()[index]}T12:00:00`); return { day: DAYS[index], date: date.toLocaleDateString("fr-FR", { day: "numeric", month: "short" }) }; };
+const dayLabel = index => { const date = new Date(`${dates()[index]}T12:00:00`); return { day: DAYS_FROM_SUNDAY[date.getDay()], date: date.toLocaleDateString("fr-FR", { day: "numeric", month: "short" }) }; };
 const persist = () => { savePlanning(planning); localStorage.setItem(WEEK_KEY, iso(weekStart)); };
+const refreshWindowForToday = () => {
+  if (weekPinned) return false;
+  const today = startOfLocalDay(new Date());
+  if (iso(today) === iso(weekStart)) return false;
+  weekStart = today;
+  persist();
+  return true;
+};
 const unplanned = () => selection.filter(item => !planning[item.slug]?.date);
 const recipeFor = item => catalog.get(item.slug) || item;
 const recipeTitle = item => recipeFor(item).title || item.title || item.slug;
@@ -91,6 +99,7 @@ const renderSlot = (date, moment) => {
 };
 
 const render = () => {
+  refreshWindowForToday();
   selection = readSelection();
   const pending = unplanned();
   if (selectedSlug && !pending.some(item => item.slug === selectedSlug)) selectedSlug = null;
@@ -199,8 +208,10 @@ const exportCalendar = () => {
 };
 
 document.querySelector("[data-export-calendar]").addEventListener("click", exportCalendar);
-document.querySelector("[data-week-prev]").addEventListener("click", () => { weekStart.setDate(weekStart.getDate() - 7); persist(); render(); });
-document.querySelector("[data-week-next]").addEventListener("click", () => { weekStart.setDate(weekStart.getDate() + 7); persist(); render(); });
-document.querySelector("[data-week-today]").addEventListener("click", () => { weekStart = monday(new Date()); persist(); render(); });
+document.querySelector("[data-week-prev]").addEventListener("click", () => { weekStart.setDate(weekStart.getDate() - 7); weekPinned = true; persist(); render(); });
+document.querySelector("[data-week-next]").addEventListener("click", () => { weekStart.setDate(weekStart.getDate() + 7); weekPinned = true; persist(); render(); });
+document.querySelector("[data-week-today]").addEventListener("click", () => { weekStart = resolveInitialWeekStart(); weekPinned = false; persist(); render(); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden && refreshWindowForToday()) render(); });
+window.addEventListener("focus", () => { if (refreshWindowForToday()) render(); });
 fetch("../recipes.json").then(response => response.json()).then(data => { const recipes = Array.isArray(data) ? data : data.recipes || []; catalog = new Map(recipes.filter(recipe => recipe?.slug).map(recipe => [recipe.slug, recipe])); render(); }).catch(() => {});
 render();

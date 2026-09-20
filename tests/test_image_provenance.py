@@ -20,7 +20,7 @@ class ImageProvenanceTests(unittest.TestCase):
         self.assertEqual(findings, [])
 
         manifest = yaml.safe_load((ROOT / AUDIT.PROVENANCE_MANIFEST).read_text(encoding="utf-8"))
-        self.assertEqual(len(manifest), 33)
+        self.assertEqual(len(manifest), 43)
         self.assertEqual({record["recipe"] for record in manifest.values()}, {
             "air-fryer-pommes-terre-romarin",
             "air-fryer-poulet-paprika-herbes",
@@ -55,6 +55,11 @@ class ImageProvenanceTests(unittest.TestCase):
             "sushi-cake-thon-mangue-avocat",
             "sushi-cake-thon-mayonnaise-avocat",
             "sushi-cake-vegetarien",
+            "onigiri-saumon-grille-sesame",
+            "onigiri-tuna-mayo-japonais",
+            "onigiri-poulet-miso-gingembre",
+            "onigiri-kombu-sesame",
+            "onigiri-umeboshi-shiso-sesame",
         })
 
     def test_temporary_credit_is_rejected(self):
