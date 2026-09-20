@@ -19,7 +19,7 @@ ingredients:
     name: Ail en poudre
     aliases:
     - ail en poudre
-    category: Condiments
+    category: épicerie salée
     pantry_staple: true
     nutrition:
       calories: 331
@@ -1143,7 +1143,7 @@ ingredients:
     aliases:
     - saumon fumé
     - saumon
-    category: Poissons et fruits de mer
+    category: poissons et fruits de mer
     nutrition:
       calories: 185
       carbs: 0.5
@@ -2974,3 +2974,73 @@ ingredients:
     - shiitakes
     - shiitake
     category: Légumes et aromates
+  chirashi-sushi-mix:
+    name: Chirashi sushi mix
+    aliases:
+    - chirashi sushi mix
+    - chirashi mix
+    category: Condiments
+  sakura-denbu:
+    name: Sakura denbu
+    aliases:
+    - sakura denbu
+    category: Poissons et fruits de mer
+  kinshi-tamago:
+    name: Kinshi tamago
+    aliases:
+    - kinshi tamago
+    - omelette fine japonaise
+    category: produits laitiers
+  farine-de-pomme-de-terre:
+    name: Farine de pomme de terre
+    aliases:
+    - farine de pomme de terre
+    category: féculents et céréales
+  tomate-datte-jaune:
+    name: Tomate datte jaune
+    aliases:
+    - tomate datte jaune
+    category: légumes et aromates
+  furikake:
+    name: Furikake
+    aliases:
+    - furikake
+    category: épicerie salée
+  eclats-de-nori-tempura:
+    name: Éclats de nori tempura
+    aliases:
+    - éclats de nori tempura
+    - nori tempura
+    category: épicerie salée
+  omelette-tamagoyaki:
+    name: Omelette tamagoyaki
+    aliases:
+    - omelette tamagoyaki
+    - tamagoyaki
+    category: produits laitiers
+  mirin:
+    name: Mirin
+    aliases:
+    - mirin
+    category: épicerie salée
+  flocons-d-algue:
+    name: Flocons d'algue
+    aliases:
+    - flocons d'algue
+    - seaweed flakes
+    category: épicerie salée
+  mayonnaise-japonaise:
+    name: Mayonnaise japonaise
+    aliases:
+    - mayonnaise japonaise
+    category: épicerie salée
+  sauce-teriyaki:
+    name: Sauce teriyaki
+    aliases:
+    - sauce teriyaki
+    category: épicerie salée
+  sauce-ponzu:
+    name: Sauce ponzu
+    aliases:
+    - sauce ponzu
+    category: Condiments

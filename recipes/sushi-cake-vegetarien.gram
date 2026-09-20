@@ -6,7 +6,7 @@ portions: 1
 prep_time: 40 min
 total_time: 1 h
 spiciness: 2
-description: "Sushi cake végétarien aux couches d'avocat assaisonné, crudités croquantes et omelette japonaise moelleuse."
+description: "Sushi cake végétarien aux crudités, tartare d'avocat sriracha-furikake, tamagoyaki et nori croustillant."
 tags: [sushi, vegetarien, avocat, tamagoyaki, concombre, froid]
 source: https://zarskitchen.com/sushi-cake/
 author: Zarina
@@ -15,10 +15,10 @@ scaling:
   enabled: false
   reason: La source est calibrée pour un mini cake individuel dans un cercle de 8 cm.
 flavors:
-  pairing: [avocat, concombre, radis, huile de sésame]
+  pairing: [avocat, concombre, furikake, sriracha]
   notes: [frais, crémeux, croquant, relevé]
-  harmony: "L'avocat crémeux reçoit le soja et le sésame, tandis que le concombre et le radis gardent le cake vif."
-  tips: "Mélanger l'avocat avec précaution afin de conserver des dés visibles dans la couche."
+  harmony: "L'avocat reçoit le soja, le sésame, la sriracha et le furikake, avec une finition nori croustillante."
+  tips: "Mélanger l'avocat délicatement afin de garder des dés visibles dans le tartare."
 conservation:
   fridge_days: 0
   freezable: false
@@ -38,34 +38,29 @@ image_generation:
 ---
 
 [Assaisonner le riz]
-- Mélanger le @riz à sushi{300 g, cuit} avec le @vinaigre de riz{1 trait}, la @sauce soja salée{2 c. à café} et l'@huile de sésame{1/2 c. à café}.
-- Ajouter le @sel{1 pincée} et garder couvert d'un linge humide.
+- Mélanger le @riz à sushi{300 g, cuit} avec le @vinaigre de riz{1 trait}, la @sauce soja salée{2 c. à café} et le @furikake{1 c. à café}.
+- Couvrir d'un linge humide pour empêcher le riz de sécher.
 
-[Préparer l'omelette]
-- Battre les @œufs{2} avec le @sucre{1 pincée} et la @sauce soja salée{1 c. à café}.
-- Cuire une omelette ronde dans une #poêle{} et la laisser refroidir avant de l'ajuster au cercle.
+[Préparer le tamagoyaki]
+- Préparer l'@omelette tamagoyaki{1 pièce, selon la recette liée par la source} ou une omelette ronde de la taille du cercle, puis la laisser refroidir.
 
-[Préparer l'avocat]
-- Tailler l'@avocat{1 pièce} en petits dés sans l'écraser.
-- Mélanger avec la @sauce soja salée{2 c. à café}, l'@huile de sésame{1/2 c. à café}, la @mayonnaise{1 c. à soupe} et le @jus de citron{1 c. à café}.
+[Préparer le nori]
+- Réserver les @éclats de nori tempura{quantité selon la source, optionnels} ; la source indique de les préparer séparément ou de les omettre.
 
-[Préparer les crudités]
-- Tailler le @concombre{1 petit} en fines demi-lunes et le @radis{4 pièces} en rondelles.
-- Réserver quelques tranches pour le décor ; elles doivent rester fermes.
+[Préparer le tartare d'avocat]
+- Tailler l'@avocat{1 pièce} en dés et mélanger délicatement avec la @sauce soja salée{2 c. à café}, l'@huile de sésame{1 c. à café}, la @sriracha{1 c. à café}, la @mayonnaise{1 c. à soupe}, le @furikake{1 c. à café} et la @ciboulette{1 c. à soupe, ciselée}.
 
 [Préparer la sauce]
-- Mélanger la @mayonnaise{2 c. à soupe} et la @sauce soja salée{1 c. à café}.
-- Ajouter le @piment de Cayenne{1 pincée} ; la sauce doit être relevée sans masquer l'avocat.
+- Mélanger la @sriracha{1 c. à café} et la @mayonnaise{2 c. à soupe} pour la sauce de finition.
 
 [Former la base]
-- Huiler l'intérieur du #cercle de dressage{} avec l'@huile de sésame{1/2 c. à café}.
-- Remplir le premier tiers avec le @riz à sushi{100 g} et presser avec le poussoir.
+- Huiler le #cercle de dressage{} et la planche avec l'@huile de sésame{quantité nécessaire pour graisser}.
+- Remplir le premier tiers avec le @riz à sushi{1/3 des 300 g} et presser avec le poussoir.
 
 [Empiler les garnitures]
-- Disposer le @concombre{1/2 petit, tranché} puis le @radis{2 pièces, tranché} en éventail.
-- Ajouter l'@avocat{1 pièce, assaisonné}, les @œufs{2, omelette cuite}, puis le @riz à sushi{200 g} restant ; presser doucement.
+- Ajouter le @concombre{1 petit, en tranches fines} puis le @radis{1 poignée, en demi-lunes fines}.
+- Ajouter le tartare d'@avocat{1 pièce, assaisonné}, l'@omelette tamagoyaki{1 pièce}, puis le @riz à sushi{reste des 300 g} ; presser sans écraser.
 
 [Démouler et servir]
-- Soulever lentement le cercle et vérifier que les couches tiennent.
-- Décorer avec le @concombre{1/2 petit, réservé}, le @radis{2 pièces, réservé} et la sauce.
-- Servir immédiatement ; le nori croustillant optionnel de la source est signalé comme ingrédient manquant.
+- Soulever lentement le cercle et décorer avec des tranches de @concombre{1 petit, réservées}, de @radis{1 poignée, réservés}, la sauce préparée et les @éclats de nori tempura{réservés}.
+- Servir immédiatement.

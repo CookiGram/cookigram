@@ -6,19 +6,19 @@ portions: 4
 prep_time: 25 min
 total_time: 50 min
 spiciness: 0
-description: "Sushi cake de saumon juste flambé, nappé de teriyaki et mayonnaise, avec œuf tendre et riz vinaigré japonais."
+description: "Sushi cake de saumon aburi, teriyaki au mirin, mayonnaise japonaise, œufs tendres et flocons d'algue."
 tags: [sushi, saumon, aburi, teriyaki, japonais, chalumeau]
 source: https://www.pholfoodmafia.com/recipe/salmon-sushi-rice-%E0%B8%8B%E0%B8%B9%E0%B8%8A%E0%B8%B4%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%8B%E0%B8%A5%E0%B8%A1%E0%B8%AD%E0%B8%99/
 author: Nakul Kavinrat
 required_equipment: [Cuiseur à riz ou casserole, Casserole, Moule à sushi, Chalumeau de cuisine]
 scaling:
   enabled: false
-  reason: La source donne une mesure de riz en tasse et un montage en moule sans capacité détaillée ; l'échelle n'est pas validée.
+  reason: La source donne une mesure de riz en tasse et un montage en moule sans capacité détaillée.
 flavors:
-  pairing: [saumon, sauce soja, sucre roux, mayonnaise]
+  pairing: [saumon, sauce soja, mirin, mayonnaise japonaise]
   notes: [fumé, umami, sucré-salé, fondant]
-  harmony: "La flamme apporte une note fumée au saumon, équilibrée par le teriyaki sucré-salé et la mayonnaise."
-  tips: "Passer le chalumeau brièvement en mouvement pour colorer la surface sans cuire à cœur le saumon."
+  harmony: "Le saumon juste flambé rencontre le teriyaki au mirin, la mayonnaise japonaise et les flocons d'algue."
+  tips: "Passer le chalumeau en mouvement pour colorer la surface sans prolonger la cuisson du saumon."
 conservation:
   fridge_days: 0
   freezable: false
@@ -38,32 +38,27 @@ image_generation:
 ---
 
 [Cuire et assaisonner le riz]
-- Rincer le @riz à sushi{180 g} jusqu'à ce que l'eau soit claire, puis le cuire selon le mode riz à sushi du #cuiseur à riz{}.
+- Rincer le @riz à sushi{1 tasse} jusqu'à ce que l'eau soit claire, puis le cuire selon le #cuiseur à riz{} avec environ 10 % moins d'eau que pour du riz blanc.
 - Mélanger le riz chaud avec le @vinaigre de riz{1,5 c. à soupe} et le laisser tiédir.
 
 [Préparer le teriyaki]
-- Mélanger la @sauce soja salée{2 c. à soupe}, le @sucre roux{2 c. à soupe} et l'@eau{1 c. à soupe} dans une #casserole{}.
-- Faire frémir jusqu'à ce que la sauce épaississe légèrement, puis la laisser refroidir.
+- Mélanger la @sauce soja salée{2 c. à soupe}, le @mirin{1 c. à soupe} et le @sucre roux{2 c. à soupe} dans une #casserole{}.
+- Faire frémir jusqu'à épaississement, puis laisser refroidir.
 
 [Préparer les œufs]
 - Porter l'@eau{400 ml} à ébullition, couper le feu et ajouter l'@eau{80 ml, à température ambiante}.
-- Immerger les @œufs{2} et couvrir ~{18 min}, puis les refroidir dans de l'eau froide ; le blanc doit être pris.
+- Immerger les @œufs{2}, couvrir ~{18 min}, puis les plonger dans l'eau froide ; le blanc doit être pris.
 
 [Mouler le riz]
-- Tasser le @riz à sushi{180 g, assaisonné} dans un #moule à sushi{} en couche régulière.
-- Démouler sur une assiette ; la surface doit être compacte avant d'ajouter le poisson.
+- Tasser le @riz à sushi{1 tasse, assaisonné} dans le #moule à sushi{} et démouler sur une assiette.
 
-[Poser le saumon]
-- Trancher le @saumon frais{300 g, qualité sashimi} finement et le disposer sur le riz en chevauchant les tranches.
-- Garder le cake bien froid jusqu'au flambage.
+[Poser et flamber le saumon]
+- Trancher le @saumon frais{300 g, qualité sashimi} finement et le disposer sur le riz.
+- Passer le #chalumeau de cuisine{} sur le saumon jusqu'à ce qu'il soit légèrement cuit et fumé.
 
-[Flamber aburi]
-- Passer le #chalumeau de cuisine{} sur le @saumon frais{300 g, en surface} jusqu'à légère coloration et odeur fumée.
-- Arrêter dès que la surface blanchit par endroits ; le cœur reste peu cuit.
+[Napper et garnir]
+- Arroser de @sauce teriyaki{préparée} et de @mayonnaise japonaise{pour servir}.
+- Parsemer de @flocons d'algue{pour servir}, casser les @œufs{2, refroidis} au centre et ajouter le @tobiko{pour servir}.
 
-[Napper]
-- Arroser de @sauce soja salée{2 c. à soupe, réduite} et de @mayonnaise{2 c. à soupe} en filets.
-- Parsemer de @ciboulette{1 c. à soupe, ciselée} si désiré.
-
-[Garnir et servir]
-- Poser les @œufs{2, refroidis} au centre, ajouter le @tobiko{pour servir} et servir immédiatement.
+[Servir]
+- Servir immédiatement, sans ajouter de ciboulette absente de la source.

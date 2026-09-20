@@ -4,9 +4,9 @@ date_modified: 2026-09-20
 title: Sushi cake au saumon fumé et shiitakés
 portions: 1
 prep_time: 30 min
-total_time: 45 min
+total_time: 30 min
 spiciness: 1
-description: "Sushi cake individuel au saumon fumé, avocat et champignons laqués, relevé d'une mayonnaise au wasabi."
+description: "Sushi cake individuel au saumon fumé, avocat, shiitakés laqués et légumes décoratifs croquants."
 tags: [sushi, saumon-fume, shiitake, avocat, japonais, froid]
 source: https://www.kikkoman.fr/recettes/detail/sushi-cake
 author: Kikkoman
@@ -17,8 +17,8 @@ scaling:
 flavors:
   pairing: [saumon fumé, avocat, sauce soja, wasabi]
   notes: [fumé, umami, crémeux, piquant doux]
-  harmony: "Le fumé et l'umami des champignons s'équilibrent avec l'avocat doux et la mayonnaise au wasabi."
-  tips: "Laisser refroidir chaque garniture avant le montage pour que le riz reste compact."
+  harmony: "Le fumé et l'umami des champignons s'équilibrent avec l'avocat doux et le wasabi."
+  tips: "Laisser refroidir l'omelette et les shiitakés avant de presser les couches de riz."
 conservation:
   fridge_days: 0
   freezable: false
@@ -38,31 +38,32 @@ image_generation:
 ---
 
 [Préparer l'omelette]
-- Mélanger les @œufs{1}, le @lait demi-écrémé{1 c. à soupe}, la @farine{1 c. à café}, le @sucre{2 pincées} et le @sel{1 pincée}.
-- Cuire en couche fine dans une #poêle{} avec l'@huile végétale{1 c. à café}, refroidir et tailler en lanières.
+- Mélanger l'@œuf{1}, le @lait demi-écrémé{1 c. à soupe}, la @farine de pomme de terre{1 c. à café}, le @sucre{2 pincées} et le @sel{1 pincée}.
+- Huiler la #poêle{} avec l'@huile végétale{1 c. à café}, cuire la préparation en couche fine des deux côtés, puis la refroidir et la tailler en lanières.
 
-[Laquer les champignons]
-- Retirer les pieds des @shiitakés{100 g} et les émincer.
+[Laquer les shiitakés]
+- Retirer les pieds des @shiitakés{5 pièces} et les émincer finement.
 - Ajouter les shiitakés, le @sirop d'érable{1 c. à soupe}, la @sauce soja salée{1 c. à soupe}, le @sucre{1/2 c. à café} et l'@eau{100 ml} dans une #poêle{}.
-- Porter à ébullition puis réduire jusqu'à évaporation presque complète ; refroidir.
+- Porter à ébullition, réduire jusqu'à presque évaporation du liquide, refroidir puis tailler les champignons.
 
 [Préparer les légumes]
-- Couper l'@avocat{1/2 pièce} en tranches et le @concombre{1 pièce} en rubans à l'économe.
-- Tailler le @radis{1 pièce} en rondelles fines ; garder les légumes croquants.
+- Blanchir les @pois gourmands{3 pièces}, les refroidir et les couper en biais ; trancher l'@avocat{1/2 pièce} et le @radis{1 pièce}.
+- Former des fleurs avec le @concombre{1 mini concombre, en rubans} et couper la @tomate datte jaune{1 pièce} en quatre.
 
-[Former les fleurs]
-- Découper le @saumon fumé{100 g} en lanières chevauchées et les rouler.
-- Ouvrir légèrement le sommet des rouleaux ; conserver au froid.
+[Former les fleurs de saumon]
+- Découper le @saumon fumé{100 g} en lanières, les faire se chevaucher puis les rouler.
+- Ouvrir le sommet des rouleaux pour former cinq fleurs et les garder au froid.
 
 [Assembler les couches]
-- Chemiser le #moule{} de film et répartir le @riz à sushi{67 g} au fond.
-- Ajouter l'@avocat{1/2 pièce, tranché}, puis le @riz à sushi{67 g} et les @shiitakés{100 g, cuits}.
-- Recouvrir avec le @riz à sushi{66 g}, filmer et presser légèrement.
+- Chemiser le #moule{} de film et répartir le @riz à sushi{1/3 de la quantité cuite} au fond.
+- Ajouter l'@avocat{1/2 pièce, tranché}, un deuxième @riz à sushi{1/3 de la quantité cuite}, les @shiitakés{5 pièces, cuits}, puis le @riz à sushi{1/3 de la quantité cuite}.
 
-[Démouler et décorer]
-- Poser une #assiette{} sur le moule, retourner, puis retirer le moule et le film.
-- Répartir les lanières d'@œufs{1 œuf cuit}, les fleurs de @saumon fumé{100 g}, le @concombre{1 pièce} et le @radis{1 pièce}.
+[Démouler]
+- Retirer le film, poser une #assiette{} sur le moule et retourner le sushi cake ; retirer le moule.
+
+[Décorer]
+- Répartir les lanières d'@œuf{1 omelette cuite}, les fleurs de @saumon fumé{100 g}, les rubans de @concombre{1 mini concombre}, le @radis{1 pièce}, les @pois gourmands{3 pièces} et la @tomate datte jaune{1 pièce}.
 
 [Saucer et servir]
-- Mélanger la @mayonnaise{2 c. à soupe} et le @wasabi{1/2 c. à café}, puis déposer quatre points de sauce.
-- Servir avec la @sauce soja salée{1 c. à soupe} restante à part.
+- Mélanger la @mayonnaise{2 c. à soupe} et le @wasabi{à son gré}, puis déposer quatre points de sauce.
+- Servir avec la @sauce soja salée{à son gré} à part.
