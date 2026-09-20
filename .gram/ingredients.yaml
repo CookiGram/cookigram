@@ -3023,6 +3023,12 @@ ingredients:
     aliases:
     - mirin
     category: épicerie salée
+  shichimi:
+    name: Shichimi
+    aliases:
+    - shichimi
+    - shichimi togarashi
+    category: épicerie salée
   flocons-d-algue:
     name: Flocons d'algue
     aliases:
@@ -3033,6 +3039,12 @@ ingredients:
     name: Mayonnaise japonaise
     aliases:
     - mayonnaise japonaise
+    category: épicerie salée
+  sriracha-mayo:
+    name: Sriracha Mayo
+    aliases:
+    - sriracha mayo
+    - mayonnaise sriracha
     category: épicerie salée
   sauce-teriyaki:
     name: Sauce teriyaki

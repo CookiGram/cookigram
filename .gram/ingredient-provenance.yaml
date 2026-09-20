@@ -1024,12 +1024,18 @@ ingredients:
   mirin:
     status: incomplete
     source: Condiment japonais ; composition variable selon le produit.
+  shichimi:
+    status: incomplete
+    source: Mélange japonais de piments et d'épices ; composition variable selon le produit.
   flocons-d-algue:
     status: incomplete
     source: Flocons d'algue assaisonnés ; composition variable selon le produit.
   mayonnaise-japonaise:
     status: incomplete
     source: Mayonnaise japonaise ; composition variable selon la marque.
+  sriracha-mayo:
+    status: incomplete
+    source: Sauce préparée avec mayonnaise et sriracha ; proportions selon la recette source.
   sauce-teriyaki:
     status: incomplete
     source: Sauce préparée dans la recette avec sauce soja, mirin et sucre roux.
