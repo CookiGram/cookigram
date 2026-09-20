@@ -3,9 +3,9 @@ date_published: 2026-09-20
 date_modified: 2026-09-20
 title: Sushi cake double saumon
 portions: 8
-prep_time: non indiqué
-total_time: non indiqué
-timing_note: La source ne publie pas de durée ; les étapes sont à planifier selon la cuisson du riz, le refroidissement et le maintien du saumon cru au froid.
+prep_time: 1 h 30 min
+total_time: 2 h 30 min
+timing_note: Estimation éditoriale, la source ne publie pas de durée ; elle inclut la cuisson, le refroidissement, l'assemblage et 1 h de maintien au froid avant service.
 spiciness: 2
 description: "Sushi cake maison en étages de saumon cru pimenté et teriyaki, riz vinaigré, maïs doux et tamago moelleux."
 tags: [sushi, saumon, cru, teriyaki, repas-froid]
@@ -44,7 +44,7 @@ image_generation:
 
 [Préparer le saumon cru]
 - Tailler le @saumon frais{300 g, qualité sashimi} en petits dés dans un #saladier{}.
-- Mélanger avec la @mayonnaise{2 c. à soupe}, le @piment en poudre{1 c. à soupe}, le @shichimi{1 c. à soupe} et l'@huile de sésame{quelques gouttes}.
+- Mélanger avec la @mayonnaise{2 c. à soupe}, le @piment en poudre{1 c. à soupe}, le @shichimi{1 c. à soupe} et l'@huile de sésame{1/2 c. à café}.
 - Couvrir et garder au réfrigérateur; le poisson doit rester bien froid.
 
 [Cuire le saumon teriyaki]

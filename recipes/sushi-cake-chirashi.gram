@@ -4,7 +4,8 @@ date_modified: 2026-09-20
 title: Sushi cake chirashi festif
 portions: 4
 prep_time: 40 min
-total_time: 40 min
+total_time: 1 h 10 min
+timing_note: Estimation éditoriale incluant la cuisson, le refroidissement et le montage ; la source indique 40 min de préparation.
 spiciness: 0
 description: "Sushi cake chirashi en couches roses et blanches, saumon, crevettes, ikura et pois croquants."
 tags: [sushi, chirashi, saumon, crevettes, japonais, froid]
@@ -41,7 +42,7 @@ image_generation:
 - Cuire le @riz à sushi{360 ml non cuit} dans une #casserole{} couverte selon la méthode du riz à sushi ; le riz doit être tendre.
 
 [Faire le riz rose]
-- Prélever une partie du riz chaud et l'assaisonner avec le @sakura denbu{quantité selon le paquet} pour obtenir une couche rose.
+- Prélever une partie du riz chaud et l'assaisonner avec le @sakura denbu{2 c. à soupe} pour obtenir une couche rose.
 - Mélanger le reste du riz chaud avec le @chirashi sushi mix{1 paquet} et couvrir d'un linge humide.
 
 [Préparer l'omelette]
