@@ -1,0 +1,80 @@
+---
+date_published: 2026-09-20
+date_modified: 2026-09-20
+title: Sushi cake thon épicé, crabe et saumon
+portions: 8
+prep_time: 45 min
+total_time: 1 h 30 min
+spiciness: 2
+description: "Sushi cake coloré à trois garnitures, thon relevé, crabe crémeux, avocat et saumon sashimi sur riz vinaigré."
+tags: [sushi, thon, crabe, saumon, avocat, épicé]
+source: https://www.notquitenigella.com/sushi-cake/
+author: Lorraine Elliott
+required_equipment:
+  - Moule à charnière rond de 20 cm
+  - Film alimentaire
+  - Petite casserole
+scaling:
+  enabled: false
+  reason: Les trois couches et le moule de 20 cm sont calibrés pour 8 à 10 parts.
+flavors:
+  pairing: [thon, crabe, avocat, saumon]
+  notes: [crémeux, pimenté, iodé]
+  harmony: "La mayonnaise pimentée lie le thon et le crabe, tandis que l'avocat adoucit le saumon cru."
+  tips: "Ajoutez la mayonnaise et la sauce teriyaki au dernier moment si le cake attend au froid."
+image: images/sushi-cake-thon-epice-crabe-saumon.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-thon-epice-crabe-saumon.md
+---
+
+[Cuire le riz violet]
+- Rincer le @riz à sushi{200 g} jusqu'à eau claire, puis cuire avec l'@eau{360 g} et le @chou rouge{90 g, émincé} dans une #casserole{}.
+- Cuire à feu doux ~{15 min}; les grains doivent être tendres et le liquide absorbé.
+- Mélanger le @vinaigre de riz{30 ml}, le @sucre{2 c. à café} et le @sel{1/2 c. à café}; incorporer au riz puis refroidir.
+
+[Cuire le riz orange]
+- Rincer le @riz à sushi{100 g}, le cuire avec l'@eau{180 g} et la @pitaya rouge{90 g, réduite en purée}.
+- Cuire à feu doux ~{15 min}; les grains doivent être tendres.
+- Mélanger le @vinaigre de riz{15 ml}, le @sucre{1 c. à café} et le @sel{1/4 c. à café}; incorporer puis refroidir.
+
+[Préparer le thon épicé]
+- Émietter le @thon{200 g, égoutté} dans un #saladier{}.
+- Ajouter la @mayonnaise{80 g}, la @sriracha{2 c. à soupe}, la @ciboulette{2 c. à soupe, ciselée} et le @jus de citron{1 c. à café}.
+- Mélanger; la farce doit être liée mais encore texturée, puis réserver au froid.
+
+[Préparer le crabe]
+- Effilocher le @crabe{200 g, chair ou surimi} entre les doigts.
+- Ajouter la @mayonnaise{80 g}, la @sriracha{2 c. à café} et l'@huile de sésame{1 c. à café}; mélanger puis réserver au froid.
+
+[Former la base violette]
+- Chemiser le #moule à charnière{} de film alimentaire en laissant dépasser les bords.
+- Tasser la moitié du @riz à sushi{violet préparé} au fond du moule; la surface doit être plane.
+
+[Ajouter le crabe]
+- Étaler la farce de @crabe{toute la préparation} sur le riz; la couche doit rester régulière.
+- Couvrir avec le @nori{1 feuille}; la feuille doit recouvrir la garniture.
+
+[Former la couche orange]
+- Tasser tout le @riz à sushi{orange préparé} sur le nori; la surface doit être plane.
+
+[Ajouter l'avocat et le thon]
+- Poser l'@avocat{1 gros, 280 g de chair, en lamelles} sur le riz orange.
+- Couvrir avec le @nori{1 feuille}, puis étaler la farce de @thon{toute la préparation}.
+
+[Fermer le cake]
+- Tasser le reste du @riz à sushi{violet préparé} sur le thon; la couche doit être compacte.
+- Couvrir avec le @nori{1 feuille}; la feuille doit fermer le montage.
+
+[Refroidir et décorer]
+- Rabattre le film sur le dessus, presser légèrement et réfrigérer ~{45 min}; le cake doit se tenir à la coupe.
+- Démouler et couvrir avec le @saumon frais{270 g, qualité sashimi, en tranches}; le poisson doit rester bien froid.
+- Parsemer le @tobiko{1 c. à soupe} et les @graines de sésame{1/2 c. à café}; décorer avec la @mayonnaise{2 c. à soupe} et la @sauce teriyaki{2 c. à soupe}, puis servir aussitôt.

@@ -967,15 +967,93 @@ ingredients:
   pate-brisee:
     status: incomplete
     source: Préparation boulangère ; composition variable selon la recette.
+  chou-rouge:
+    status: incomplete
+    source: Légume générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  crabe:
+    status: incomplete
+    source: Produit de la mer ; valeur nutritionnelle variable selon crabe frais ou préparation.
+  daurade:
+    status: incomplete
+    source: Poisson générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  mangue:
+    status: incomplete
+    source: Fruit générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  nori:
+    status: incomplete
+    source: Algue séchée ; valeur nutritionnelle variable selon le produit.
+  pitaya-rouge:
+    status: incomplete
+    source: Fruit générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  sriracha:
+    status: incomplete
+    source: Sauce préparée ; valeur nutritionnelle variable selon la marque.
+  tobiko:
+    status: incomplete
+    source: Œufs de poisson préparés ; valeur nutritionnelle variable selon le produit.
+  ikura:
+    status: incomplete
+    source: Œufs de saumon préparés ; valeur nutritionnelle variable selon le produit.
+  oeufs-de-truite:
+    status: incomplete
+    source: Œufs de truite préparés ; valeur nutritionnelle variable selon le produit.
+  oeufs-de-poisson:
+    status: incomplete
+    source: Œufs de poisson préparés ; valeur nutritionnelle variable selon le produit.
+  shiitake:
+    status: incomplete
+    source: Champignon shiitaké frais ; valeur nutritionnelle à compléter depuis CIQUAL.
+  chirashi-sushi-mix:
+    status: incomplete
+    source: Mélange d'assaisonnement pour chirashi ; composition variable selon la marque.
+  sakura-denbu:
+    status: incomplete
+    source: Flocons de poisson assaisonnés ; composition variable selon le produit.
+  kinshi-tamago:
+    status: incomplete
+    source: Préparation d'omelette japonaise ; valeur dépendante de la recette utilisée.
+  farine-de-pomme-de-terre:
+    status: incomplete
+    source: Fécule/farine de pomme de terre ; valeur à vérifier contre CIQUAL.
+  tomate-datte-jaune:
+    status: incomplete
+    source: Tomate datte jaune ; valeur nutritionnelle à vérifier contre CIQUAL.
+  furikake:
+    status: incomplete
+    source: Condiment japonais composé ; composition variable selon le mélange.
+  eclats-de-nori-tempura:
+    status: incomplete
+    source: Nori tempura ; composition variable selon la préparation.
+  omelette-tamagoyaki:
+    status: incomplete
+    source: Omelette japonaise préparée selon la recette liée par la source primaire.
+  mirin:
+    status: incomplete
+    source: Condiment japonais ; composition variable selon le produit.
+  shichimi:
+    status: incomplete
+    source: Mélange japonais de piments et d'épices ; composition variable selon le produit.
+  flocons-d-algue:
+    status: incomplete
+    source: Flocons d'algue assaisonnés ; composition variable selon le produit.
+  mayonnaise-japonaise:
+    status: incomplete
+    source: Mayonnaise japonaise ; composition variable selon la marque.
+  sriracha-mayo:
+    status: incomplete
+    source: Sauce préparée avec mayonnaise et sriracha ; proportions selon la recette source.
+  gingembre-marine:
+    status: incomplete
+    source: Condiment de gingembre mariné ; composition variable selon le produit.
+  sauce-teriyaki:
+    status: incomplete
+    source: Sauce préparée dans la recette avec sauce soja, mirin et sucre roux.
+  sauce-ponzu:
+    status: incomplete
+    source: Condiment japonais agrume-soja ; composition variable selon le produit.
   kombu-seche:
     status: incomplete
     source: Algue séchée générique ; valeur nutritionnelle à vérifier contre CIQUAL.
-  mirin:
-    status: incomplete
-    source: Condiment japonais ; composition variable selon la formulation.
-  nori:
-    status: incomplete
-    source: Feuille d'algue séchée générique ; valeur nutritionnelle à vérifier contre CIQUAL.
   shiso:
     status: incomplete
     source: Herbe fraîche japonaise ; valeur nutritionnelle à vérifier contre CIQUAL.

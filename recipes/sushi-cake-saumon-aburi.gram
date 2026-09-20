@@ -1,0 +1,64 @@
+---
+date_published: 2026-09-20
+date_modified: 2026-09-20
+title: Sushi cake de saumon aburi, teriyaki et mayonnaise
+portions: 4
+prep_time: 25 min
+total_time: 50 min
+spiciness: 0
+description: "Sushi cake de saumon aburi, teriyaki au mirin, mayonnaise japonaise, œufs tendres et flocons d'algue."
+tags: [sushi, saumon, aburi, teriyaki, japonais, chalumeau]
+source: https://www.pholfoodmafia.com/recipe/salmon-sushi-rice-%E0%B8%8B%E0%B8%B9%E0%B8%8A%E0%B8%B4%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%8B%E0%B8%A5%E0%B8%A1%E0%B8%AD%E0%B8%99/
+author: Nakul Kavinrat
+required_equipment: [Cuiseur à riz ou casserole, Casserole, Moule à sushi, Chalumeau de cuisine]
+scaling:
+  enabled: false
+  reason: La source donne une mesure de riz en tasse et un montage en moule sans capacité détaillée.
+flavors:
+  pairing: [saumon, sauce soja, mirin, mayonnaise japonaise]
+  notes: [fumé, umami, sucré-salé, fondant]
+  harmony: "Le saumon juste flambé rencontre le teriyaki au mirin, la mayonnaise japonaise et les flocons d'algue."
+  tips: "Passer le chalumeau en mouvement pour colorer la surface sans prolonger la cuisson du saumon."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "À consommer immédiatement après le flambage."
+image: images/sushi-cake-saumon-aburi.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-saumon-aburi.md
+---
+
+[Cuire et assaisonner le riz]
+- Rincer le @riz à sushi{1 tasse} jusqu'à ce que l'eau soit claire, puis le cuire dans le #cuiseur à riz{} avec 10 % d'eau de moins que la consigne habituelle du cuiseur ; le riz doit être tendre.
+- Mélanger le riz chaud avec le @vinaigre de riz{1,5 c. à soupe} et le laisser tiédir.
+
+[Préparer le teriyaki]
+- Mélanger la @sauce soja salée{2 c. à soupe}, le @mirin{1 c. à soupe} et le @sucre roux{2 c. à soupe} dans une #casserole{}.
+- Faire frémir jusqu'à épaississement, puis laisser refroidir.
+
+[Préparer les œufs]
+- Porter l'@eau{400 ml} à ébullition, couper le feu et ajouter l'@eau{80 ml, à température ambiante}.
+- Immerger les @œufs{2}, couvrir ~{18 min}, puis les plonger dans l'eau froide ; le blanc doit être pris.
+
+[Mouler le riz]
+- Tasser le @riz à sushi{préparé et assaisonné} dans le #moule à sushi{} et démouler sur une assiette.
+
+[Poser et flamber le saumon]
+- Trancher le @saumon frais{300 g, qualité sashimi} finement et le disposer sur le riz.
+- Passer le #chalumeau de cuisine{} sur le saumon jusqu'à ce qu'il soit légèrement cuit et fumé.
+
+[Napper et garnir]
+- Arroser de @sauce teriyaki{préparée} et de @mayonnaise japonaise{pour servir}.
+- Parsemer de @flocons d'algue{pour servir}, casser les @œufs{2, refroidis} au centre et ajouter le @tobiko{pour servir}.
+
+[Servir]
+- Servir immédiatement, sans ajouter de ciboulette absente de la source.

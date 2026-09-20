@@ -2916,24 +2916,170 @@ ingredients:
     - myrtilles fraîches
     - myrtilles surgelées
     category: Fruits et légumes
+  chou-rouge:
+    name: Chou rouge
+    aliases:
+    - chou rouge
+    category: Légumes et aromates
+  crabe:
+    name: Crabe
+    aliases:
+    - crabe
+    - chair de crabe
+    category: Poissons et fruits de mer
+  daurade:
+    name: Daurade
+    aliases:
+    - daurade
+    category: Poissons et fruits de mer
+  mangue:
+    name: Mangue
+    aliases:
+    - mangue
+    category: Fruits
+  nori:
+    name: Nori
+    aliases:
+    - nori
+    - feuille de nori
+    category: Condiments
+  pitaya-rouge:
+    name: Pitaya rouge
+    aliases:
+    - pitaya rouge
+    - fruit du dragon rouge
+    category: Fruits
+  sriracha:
+    name: Sriracha
+    aliases:
+    - sriracha
+    category: Condiments
+  tobiko:
+    name: Tobiko
+    aliases:
+    - tobiko
+    category: Poissons et fruits de mer
+  ikura:
+    name: Ikura
+    aliases:
+    - ikura
+    - œufs de saumon
+    - oeufs de saumon
+    category: Poissons et fruits de mer
+  oeufs-de-truite:
+    name: Œufs de truite
+    aliases:
+    - œufs de truite
+    - oeufs de truite
+    category: Poissons et fruits de mer
+  oeufs-de-poisson:
+    name: Œufs de poisson
+    aliases:
+    - œufs de poisson
+    - oeufs de poisson
+    category: Poissons et fruits de mer
+  shiitake:
+    name: Shiitaké
+    aliases:
+    - shiitaké
+    - shiitakés
+    - shiitakes
+    - shiitake
+    category: Légumes et aromates
+  chirashi-sushi-mix:
+    name: Chirashi sushi mix
+    aliases:
+    - chirashi sushi mix
+    - chirashi mix
+    category: Condiments
+  sakura-denbu:
+    name: Sakura denbu
+    aliases:
+    - sakura denbu
+    category: Poissons et fruits de mer
+  kinshi-tamago:
+    name: Kinshi tamago
+    aliases:
+    - kinshi tamago
+    - omelette fine japonaise
+    category: produits laitiers
+  farine-de-pomme-de-terre:
+    name: Farine de pomme de terre
+    aliases:
+    - farine de pomme de terre
+    category: féculents et céréales
+  tomate-datte-jaune:
+    name: Tomate datte jaune
+    aliases:
+    - tomate datte jaune
+    category: légumes et aromates
+  furikake:
+    name: Furikake
+    aliases:
+    - furikake
+    category: épicerie salée
+  eclats-de-nori-tempura:
+    name: Éclats de nori tempura
+    aliases:
+    - éclats de nori tempura
+    - nori tempura
+    category: épicerie salée
+  omelette-tamagoyaki:
+    name: Omelette tamagoyaki
+    aliases:
+    - omelette tamagoyaki
+    - tamagoyaki
+    category: produits laitiers
+  mirin:
+    name: Mirin
+    aliases:
+    - mirin
+    category: épicerie salée
+  shichimi:
+    name: Shichimi
+    aliases:
+    - shichimi
+    - shichimi togarashi
+    category: épicerie salée
+  flocons-d-algue:
+    name: Flocons d'algue
+    aliases:
+    - flocons d'algue
+    - seaweed flakes
+    category: épicerie salée
+  mayonnaise-japonaise:
+    name: Mayonnaise japonaise
+    aliases:
+    - mayonnaise japonaise
+    category: épicerie salée
+  sriracha-mayo:
+    name: Sriracha Mayo
+    aliases:
+    - sriracha mayo
+    - mayonnaise sriracha
+    category: épicerie salée
+  gingembre-marine:
+    name: Gingembre mariné
+    aliases:
+    - gingembre mariné
+    - gari
+    category: épicerie salée
+  sauce-teriyaki:
+    name: Sauce teriyaki
+    aliases:
+    - sauce teriyaki
+    category: épicerie salée
+  sauce-ponzu:
+    name: Sauce ponzu
+    aliases:
+    - sauce ponzu
+    category: Condiments
   kombu-seche:
     name: Kombu séché
     aliases:
     - kombu séché
     - kombu
     - algue kombu
-    category: Poissons et fruits de mer
-  mirin:
-    name: Mirin
-    aliases:
-    - mirin
-    category: Condiments et assaisonnements
-  nori:
-    name: Feuille de nori
-    aliases:
-    - nori
-    - feuille de nori
-    - feuilles de nori
     category: Poissons et fruits de mer
   shiso:
     name: Shiso frais

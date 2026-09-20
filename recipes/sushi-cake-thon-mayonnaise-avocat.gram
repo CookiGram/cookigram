@@ -1,0 +1,69 @@
+---
+date_published: 2026-09-20
+date_modified: 2026-09-20
+title: Sushi cake thon-mayonnaise et avocat
+portions: 8
+prep_time: 25 min
+total_time: 55 min
+spiciness: 0
+description: "Sushi cake sans poisson cru au thon-mayonnaise, avocat citronné, nori et échalotes frites croustillantes."
+tags: [sushi, thon, avocat, sans-poisson-cru, rapide]
+source: https://www.lespetitsplaisirsdedoro.fr/2021/05/sushi-cake-thon-avocat-cookeo.html
+author: Doro
+appliances:
+  cookeo: [Cookeo]
+required_equipment:
+  - Moule carré ou moule tablette
+  - Film alimentaire
+  - Moulinex Cookeo
+scaling:
+  enabled: false
+  reason: La source Cookeo calibre le riz, la cuve et le moule pour huit parts ; aucune réduction sûre du temps sous pression n'est démontrée.
+flavors:
+  pairing: [thon, mayonnaise, avocat, échalotes frites]
+  notes: [crémeux, croustillant, acidulé]
+  harmony: "Le thon-mayonnaise apporte le moelleux, l'avocat la fraîcheur et les échalotes le croquant."
+  tips: "Citronnez l'avocat juste avant le montage pour garder une couleur nette."
+image: images/sushi-cake-thon-mayonnaise-avocat.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-thon-mayonnaise-avocat.md
+---
+
+[Cuire le riz au Cookeo]
+- Rincer le @riz à sushi{350 g} plusieurs fois dans une #passoire{} jusqu'à ce que l'eau soit presque claire.
+- Mettre le riz rincé et l'@eau{350 ml} dans la cuve du #cookeo{}.
+- Lancer la cuisson sous pression pendant ~{3 min}; le riz doit rester couvert par l'eau avant le départ.
+- Laisser le Cookeo en maintien au chaud pendant ~{10 min} sans ouvrir; cette attente est nécessaire à la méthode source.
+
+[Assaisonner le riz]
+- Chauffer sans bouillir le @vinaigre de riz{40 ml}, le @sucre{10 g} et le @sel{1/2 c. à café} dans une petite #casserole{}.
+- Incorporer au riz puis l'étaler dans un plat pour le refroidir à température ambiante.
+
+[Préparer le thon]
+- Égoutter le @thon{1 boîte et demie} et le mélanger avec la @mayonnaise{30 g}.
+- Garder la préparation couverte au réfrigérateur jusqu'au montage.
+
+[Préparer l'avocat]
+- Tailler l'@avocat{1/2, environ 50 g de chair} en fines lamelles.
+- Arroser avec le @jus de citron vert{prélevé sur 1 citron vert, selon besoin}; l'avocat doit rester vert et ferme.
+
+[Monter le cake]
+- Répartir les @échalotes frites{20 g} au fond du #moule carré{} chemisé de film alimentaire.
+- Tasser une première couche du @riz à sushi{préparé et assaisonné} et vérifier que la couche est plane.
+- Couvrir avec le @nori{2 feuilles}; les feuilles doivent recouvrir le riz.
+- Étaler le @thon{toute la préparation} sur le nori.
+- Poser l'@avocat{les lamelles} sur le thon.
+- Couvrir avec le reste du @riz à sushi{préparé et assaisonné} et presser doucement.
+
+[Raffermir et servir]
+- Filmer le dessus et conserver au réfrigérateur jusqu'au service; le cake doit être ferme au toucher.
+- Retourner sur un plat, retirer le film et servir immédiatement.

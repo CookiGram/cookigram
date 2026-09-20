@@ -1,0 +1,76 @@
+---
+date_published: 2026-09-20
+date_modified: 2026-09-20
+title: Sushi cake au saumon fumé et shiitakés
+portions: 1
+prep_time: 30 min
+total_time: 30 min
+spiciness: 1
+description: "Sushi cake individuel au saumon fumé, avocat, shiitakés laqués et légumes décoratifs croquants."
+tags: [sushi, saumon-fume, shiitake, avocat, japonais, froid]
+source: https://www.kikkoman.fr/recettes/detail/sushi-cake
+author: Kikkoman
+required_equipment: [Moule rond de 16 cm, Poêle antiadhésive, Économe, Film alimentaire]
+scaling:
+  enabled: false
+  reason: La source calibre les couches pour un moule rond de 16 cm et une portion.
+flavors:
+  pairing: [saumon fumé, avocat, sauce soja, wasabi]
+  notes: [fumé, umami, crémeux, piquant doux]
+  harmony: "Le fumé et l'umami des champignons s'équilibrent avec l'avocat doux et le wasabi."
+  tips: "Laisser refroidir l'omelette et les shiitakés avant de presser les couches de riz."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "Servir immédiatement après le démoulage."
+image: images/sushi-cake-saumon-fume-shiitake.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-saumon-fume-shiitake.md
+---
+
+[Préparer l'omelette]
+- Mélanger l'@œuf{1}, le @lait demi-écrémé{1 c. à soupe}, la @farine de pomme de terre{1 c. à café}, le @sucre{2 pincées} et le @sel{1 pincée}.
+- Huiler la #poêle{} avec l'@huile végétale{1 c. à café}, cuire la préparation en couche fine des deux côtés, puis la refroidir et la tailler en lanières.
+
+[Préparer le riz]
+- Utiliser le @riz à sushi{200 g, cuit et refroidi} comme indiqué par la source ; les grains doivent rester séparés pour le montage.
+
+[Laquer les shiitakés]
+- Retirer les pieds des @shiitakés{5 pièces} et les émincer finement.
+- Ajouter les shiitakés, le @sirop d'érable{1 c. à soupe}, la @sauce soja salée{1 c. à soupe}, le @sucre{1/2 c. à café} et l'@eau{100 ml} dans une #poêle{}.
+- Porter à ébullition, réduire jusqu'à presque évaporation du liquide, refroidir puis tailler les champignons.
+
+[Préparer les légumes]
+- Blanchir les @pois gourmands{3 pièces}, les refroidir et les couper en biais ; trancher l'@avocat{1/2 pièce} et le @radis{1 pièce}.
+- Former des fleurs avec le @concombre{1 mini concombre, en rubans} et couper la @tomate datte jaune{1 pièce} en quatre.
+- Préparer la @roquette{1 poignée}, les @crevettes{2 pièces, cuites et coupées en deux}, les @œufs de truite{1 c. à soupe} et les @œufs de poisson{1 c. à café} pour le décor.
+
+[Former les fleurs de saumon]
+- Découper le @saumon fumé{100 g} en lanières, les faire se chevaucher puis les rouler.
+- Ouvrir le sommet des rouleaux pour former cinq fleurs et les garder au froid.
+
+[Assembler les couches]
+- Chemiser le #moule{} de film et répartir un premier tiers du @riz à sushi{préparé} au fond.
+- Ajouter l'@avocat{1/2 pièce, tranché}.
+- Répartir un deuxième tiers du @riz à sushi{préparé}.
+- Ajouter les @shiitakés{5 pièces, cuits}.
+- Terminer avec le reste du @riz à sushi{préparé}.
+
+[Démouler]
+- Retirer le film, poser une #assiette{} sur le moule et retourner le sushi cake ; retirer le moule.
+
+[Décorer]
+- Répartir les lanières d'@œuf{1 omelette cuite}, les fleurs de @saumon fumé{100 g}, les rubans de @concombre{1 mini concombre}, le @radis{1 pièce}, les @pois gourmands{3 pièces}, la @tomate datte jaune{1 pièce}, la @roquette{1 poignée}, les @crevettes{2 pièces, cuites et coupées en deux}, les @œufs de truite{1 c. à soupe} et les @œufs de poisson{1 c. à café}.
+
+[Saucer et servir]
+- Mélanger la @mayonnaise{2 c. à soupe} et le @wasabi{à son gré}, puis déposer quatre points de sauce.
+- Servir avec la @sauce soja salée{pour servir} à part.

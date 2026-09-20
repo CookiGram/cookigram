@@ -1,0 +1,68 @@
+---
+date_published: 2026-09-20
+date_modified: 2026-09-20
+title: Sushi cake de thon, mangue et avocat
+portions: 4
+prep_time: 20 min
+total_time: 35 min
+spiciness: 0
+description: "Sushi cake frais de thon cru, mangue, avocat et concombre, relevé de ponzu et de sauce soja sucrée."
+tags: [sushi, thon, mangue, avocat, tartare, froid]
+source: https://www.epicetoutlacuisinededany.fr/sushi-cake-au-thon-mangue-et-avocat/
+author: Dany
+required_equipment: [Casserole, Cercles de dressage (1 par portion), Saladier, Planche à découper]
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Les quantités se multiplient ; conserver le montage et servir dès le dressage.
+flavors:
+  pairing: [thon, mangue, avocat, ponzu]
+  notes: [frais, acidulé, fondant, sucré-salé]
+  harmony: "Le ponzu et le citron réveillent le thon et l'avocat, tandis que la mangue apporte une douceur fruitée."
+  tips: "Tailler les dés régulièrement et tasser chaque couche juste assez pour faciliter le décerclage."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "Aucun ; consommer dès le montage après la décongélation au réfrigérateur."
+image: images/sushi-cake-thon-mangue-avocat.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-thon-mangue-avocat.md
+---
+
+[Congeler le thon la veille]
+- Congeler le @thon{400 g, très frais} la veille, puis le réserver au réfrigérateur le matin de la préparation comme l'indique la source.
+
+[Cuire le riz]
+- Cuire le @riz à sushi{200 g} dans de l'eau bouillante salée.
+- Égoutter, laisser tiédir, puis mélanger avec le @vinaigre de riz{2 c. à soupe}, la @mayonnaise{1 c. à soupe} et le @poivre moulu{selon goût}.
+
+[Assaisonner le thon]
+- Tailler le @thon{400 g, décongelé au réfrigérateur} en cubes et mélanger avec la @sauce ponzu{1,5 c. à café}, la @sauce soja sucrée{4 c. à café}, le @sel{légèrement} et le @poivre moulu{selon goût}.
+- Réserver au froid jusqu'au montage.
+
+[Préparer la mangue]
+- Tailler la @mangue{1 pièce} et l'@échalote{1 belle pièce} en dés.
+- Arroser de @jus de citron{un filet} et mélanger sans écraser.
+
+[Préparer l'avocat et le concombre]
+- Tailler l'@avocat{1 pièce mûre} et le @concombre{1 petit} en dés.
+- Arroser de @jus de citron{1 c. à soupe} et réserver au froid.
+
+[Former les cakes]
+- Placer quatre #cercles de dressage{} et répartir le @riz à sushi{préparé et assaisonné} en première couche ; tasser.
+- Ajouter le @thon{400 g, assaisonné}, puis le mélange @avocat{1 pièce} et @concombre{1 petit}, et terminer avec la @mangue{1 pièce} et l'@échalote{1 pièce}.
+
+[Décercler et servir]
+- Tasser légèrement, soulever chaque cercle verticalement et vérifier que les couches restent nettes.
+- Servir de suite, le thon restant réfrigéré jusqu'au dernier geste.

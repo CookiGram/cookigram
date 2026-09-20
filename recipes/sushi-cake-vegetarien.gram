@@ -1,0 +1,66 @@
+---
+date_published: 2026-09-20
+date_modified: 2026-09-20
+title: Sushi cake végétarien avocat et tamagoyaki
+portions: 1
+prep_time: 40 min
+total_time: 1 h
+spiciness: 2
+description: "Sushi cake végétarien aux crudités, tartare d'avocat sriracha-furikake, tamagoyaki et nori croustillant."
+tags: [sushi, vegetarien, avocat, tamagoyaki, concombre, froid]
+source: https://zarskitchen.com/sushi-cake/
+author: Zarina
+required_equipment: [Cercle de dressage de 8 cm avec poussoir, Poêle antiadhésive, Planche à découper]
+scaling:
+  enabled: false
+  reason: La source est calibrée pour un mini cake individuel dans un cercle de 8 cm.
+flavors:
+  pairing: [avocat, concombre, furikake, sriracha]
+  notes: [frais, crémeux, croquant, relevé]
+  harmony: "L'avocat reçoit le soja, le sésame, la sriracha et le furikake, avec une finition nori croustillante."
+  tips: "Mélanger l'avocat délicatement afin de garder des dés visibles dans le tartare."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "Servir immédiatement après le démoulage."
+image: images/sushi-cake-vegetarien.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-vegetarien.md
+---
+
+[Assaisonner le riz]
+- Mélanger le @riz à sushi{300 g, cuit} avec le @vinaigre de riz{un trait}, la @sauce soja salée{2 c. à café} et le @furikake{1 c. à café}.
+- Couvrir d'un linge humide pour empêcher le riz de sécher.
+
+[Préparer le tamagoyaki]
+- Préparer l'@omelette tamagoyaki{selon la recette liée par la source, facultative} dans une #poêle{} ronde, puis découper un disque à la taille du cercle et le laisser refroidir.
+
+[Préparer le nori]
+- Réserver les @éclats de nori tempura{quelques éclats, facultatifs} ; la source indique de les préparer séparément ou de les omettre.
+
+[Préparer le tartare d'avocat]
+- Tailler l'@avocat{1 pièce} en dés et mélanger délicatement avec la @sauce soja salée{2 c. à café}, l'@huile de sésame{1 c. à café}, la @sriracha{1 c. à café}, la @mayonnaise{1 c. à soupe}, le @furikake{1 c. à café} et la @ciboulette{1 c. à soupe, ciselée}.
+
+[Préparer la sauce]
+- Mélanger la @sriracha{1 c. à café} et la @mayonnaise{2 c. à soupe} pour la sauce de finition.
+
+[Former la base]
+- Huiler légèrement le #cercle de dressage{} et la planche avec l'@huile de sésame{un peu}.
+- Remplir le premier tiers du cercle avec une partie du @riz à sushi{préparé et assaisonné} et presser avec le poussoir.
+
+[Empiler les garnitures]
+- Ajouter le @concombre{1 petit, en tranches fines} puis le @radis{une poignée, en fines demi-lunes}.
+- Ajouter le tartare d'@avocat{1 pièce, assaisonné}, l'@omelette tamagoyaki{le disque préparé, facultatif}, puis compléter jusqu'en haut avec le reste du @riz à sushi{préparé et assaisonné} ; presser sans écraser.
+
+[Démouler et servir]
+- Soulever lentement le cercle et décorer avec des tranches de @concombre{réservées}, de @radis{réservées}, la sauce préparée et les @éclats de nori tempura{quelques éclats, facultatifs}.
+- Servir immédiatement.

@@ -1,0 +1,69 @@
+---
+date_published: 2026-09-20
+date_modified: 2026-09-20
+title: Sushi cake façon Philadelphia aux deux saumons
+portions: 6
+prep_time: 1 h 30 min
+total_time: 3 h 30 min
+timing_note: La préparation active est estimée à 1 h 30 ; le total inclut 1 h d'égouttage du riz et 2 h de réfrigération indiquées par la source.
+spiciness: 1
+description: "Cake de sushi au saumon frais et fumé, cream cheese Philadelphia, avocat et nori, raffermi au froid."
+tags: [sushi, philadelphia, saumon-fumé, saumon, avocat, sans-cuisson]
+source: https://cookwithsousou.com/en/recipe/salmon-sushi-cake
+author: Cook with Sousou
+required_equipment:
+  - Moule rectangulaire de 25 cm
+  - Casserole avec couvercle
+  - Film alimentaire
+  - Couteau bien aiguisé
+  - Réfrigérateur
+scaling:
+  enabled: false
+  reason: Le volume du plat et les couches sont calibrés pour 6 parts.
+flavors:
+  pairing: [saumon frais, saumon fumé, fromage frais Philadelphia, avocat]
+  notes: [fumé, crémeux, frais]
+  harmony: "Le saumon fumé et le saumon frais alternent avec le fromage frais et l'avocat."
+  tips: "Pressez sans écraser le riz afin de garder des couches nettes au démoulage."
+image: images/sushi-cake-philadelphia.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/sushi-cake-philadelphia.md
+---
+
+[Préparer le riz]
+- Mélanger le @vinaigre de riz{4 c. à soupe}, le @sel{1 c. à café} et le @sucre{1 c. à soupe} dans un #bol{} ; réserver.
+- Rincer le @riz à sushi{1 tasse} dans une #passoire{} et le laisser s'égoutter ~{1 h}; les grains doivent être bien drainés.
+- Cuire le riz avec l'@eau{1 1/4 tasse} dans une #casserole{} couverte ; après ébullition, réduire le feu et cuire ~{12 min}.
+- Couper le feu et laisser reposer couvert ~{10 min}, puis transférer le riz dans un plat non métallique et incorporer progressivement l'assaisonnement en l'éventant ; le riz doit refroidir.
+
+[Préparer le moule]
+- Chemiser le #plat rectangulaire{} de film alimentaire, en laissant dépasser les bords pour le démoulage.
+
+[Préparer les garnitures]
+- Tailler l'@avocat{1, en fines lamelles}.
+- Ramollir le @fromage frais Philadelphia{1 boîte} dans un #bol{} pour pouvoir l'étaler régulièrement.
+
+[Poser le saumon]
+- Couvrir le fond du moule avec le @saumon fumé{1 paquet, en tranches}; aucune zone ne doit rester vide.
+- Ajouter la moitié du @riz à sushi{préparé et refroidi} et le tasser doucement avec le dos d'une cuillère.
+
+[Former le cœur du cake]
+- Poser le @nori{2 feuilles} sur le riz.
+- Étaler le @fromage frais Philadelphia{1 boîte} sur le nori, puis répartir le @saumon frais{1 paquet, en tranches épaisses} et l'@avocat{les lamelles}.
+
+[Fermer et raffermir]
+- Couvrir avec le @nori{1 feuille} restant puis ajouter le reste du @riz à sushi{préparé et refroidi}.
+- Presser avec la paume, couvrir et réfrigérer ~{2 h}; ce froid est indiqué par la source pour raffermir le cake.
+
+[Démouler et servir]
+- Passer un couteau sur les bords, retourner le moule sur un plat et retirer le film.
+- Servir avec la @sauce soja salée{pour servir}, le @wasabi{pour servir} et le @gingembre mariné{pour servir}.
