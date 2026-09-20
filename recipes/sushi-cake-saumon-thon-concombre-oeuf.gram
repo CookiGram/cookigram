@@ -1,13 +1,13 @@
 ---
 date_published: 2026-09-20
 date_modified: 2026-09-20
-title: Sushi cake saumon, thon, concombre et œuf
+title: Sushi cake saumon, thon, daurade, concombre et œuf
 portions: 4
 prep_time: 30 min
 total_time: 50 min
 spiciness: 0
-description: "Sushi cake japonais festif au saumon cru, thon assaisonné, concombre et œuf brouillé sur riz vinaigré."
-tags: [sushi, saumon, thon, concombre, œuf, japonais]
+description: "Sushi cake japonais festif au saumon cru, thon ou daurade, concombre et œuf brouillé sur riz vinaigré."
+tags: [sushi, saumon, thon, daurade, concombre, œuf, japonais]
 source: https://www.asahi.co.jp/daidokoro/recipe/2022/20221028_1.html
 author: 山本ゆり
 required_equipment:
@@ -23,7 +23,7 @@ flavors:
   notes: [iodé, frais, doux]
   harmony: "Le saumon cru et le thon assaisonné contrastent avec l'œuf moelleux et le concombre frais."
   tips: "Utilisez du saumon vendu pour être consommé cru et servez le montage aussitôt."
-image: images/sushi-cake-saumon-daurade-avocat.webp
+image: images/sushi-cake-saumon-thon-concombre-oeuf.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
@@ -34,12 +34,11 @@ image_generation:
   provider: OpenAI
   model: ChatGPT image generation
   generated_at: "2026-09-20"
-  prompt_file: image-prompts/sushi-cake-saumon-daurade-avocat.md
+  prompt_file: image-prompts/sushi-cake-saumon-thon-concombre-oeuf.md
 ---
 
 [Préparer le riz]
-- Cuire le @riz à sushi{225 g} avec l'@eau{240 g} dans une #casserole{}.
-- Mélanger le @vinaigre de riz{30 ml}, le @miel{1 c. à soupe}, le @sel{2/3 c. à café} et la @sauce soja salée{1 c. à soupe}, puis incorporer au riz chaud.
+- Mélanger le @sucre{3 c. à soupe}, le @vinaigre de riz{4 c. à soupe} et le @sel{1 c. à café}, puis incorporer cet assaisonnement au @riz à sushi{2 go, cuit très chaud} ; laisser refroidir.
 - Étaler et laisser tiédir; le riz doit être assez frais pour ne pas réchauffer le poisson.
 
 [Préparer l'œuf brouillé]
@@ -49,10 +48,10 @@ image_generation:
 
 [Préparer les garnitures]
 - Former 3 fleurs avec le @saumon frais{9 tranches, qualité sashimi}.
-- Couper le @thon{70 g, égoutté} et le @concombre{1/2 pièce} en morceaux pour le décor.
+- Couper la @daurade{6 tranches de sashimi} en trois et tailler le @concombre{1/2 pièce} en rubans au #économe{} pour le décor ; la source autorise aussi six tranches de thon sashimi.
 
 [Préparer le thon assaisonné]
-- Mélanger le @thon{70 g, égoutté}, le @sucre{1 c. à soupe} et la @sauce soja salée{1 c. à soupe}; la préparation doit être liée.
+- Égoutter le @thon{1 boîte, 70 g} et le mélanger avec le @sucre{1 c. à soupe} et la @sauce soja salée{1 c. à soupe}; la préparation doit être liée.
 
 [Monter le cake]
 - Chemiser le #moule rond{} de film alimentaire et déposer l'@œuf{la préparation cuite} au fond.
@@ -62,5 +61,5 @@ image_generation:
 
 [Démouler et décorer]
 - Retourner le cake sur un plat et retirer le film alimentaire.
-- Poser le @saumon frais{les fleurs} et le @concombre{les morceaux} sur le dessus.
+- Poser la @daurade{les tranches coupées} sur le dessus, puis les fleurs de @saumon frais{les 9 tranches} et les rubans de @concombre{préparés} sur le pourtour.
 - Servir aussitôt; le montage contient du poisson cru.

@@ -338,7 +338,7 @@ static/images/sushi-cake-chirashi.webp:
   generated_at: '2026-09-20'
   prompt: |-
     Illustration-story CookiGram originale, paysage 16:9 : sushi cake chirashi festif démoulé sur une assiette claire, couches visibles de riz à sushi nacré, omelette en fines lanières, saumon cru qualité sashimi en rose, ikura, crevettes cuites autour et concombre finement tranché. Vue trois-quarts à 45 degrés, composition lisible, contours fins, aquarelle et cel shading doux, textures crédibles, ambiance japonaise sobre. Aucun texte, logo, marque, filigrane, personne ou emballage.
-  sha256: 39f3ca9d3ae196919be4b49d00a2e1348798d5ff6850de38026f9b3aeb8a9e1b
+  sha256: aec4ed0933785f4c96dc6d67fac2905568067094d8914415f724020a38171c19
   attribution: CookiGram
 
 static/images/sushi-cake-double-saumon.webp:
@@ -350,7 +350,7 @@ static/images/sushi-cake-double-saumon.webp:
     # Sushi cake double saumon
 
     Illustration culinaire originale CookiGram, format hero 16:9. Montrer un sushi cake rond en couches nettes de riz, nori, saumon cru pimenté et saumon teriyaki, avec maïs et fines lanières de tamago sur le dessus. Ajouter une petite fleur de saumon sashimi. Palette japonaise fraîche, lumière douce, vue trois-quarts, sans texte, sans emballage, sans ingrédient absent de la recette.
-  sha256: 243dca15693d5403d25512825e8f752ec5ba7d7e90a0aac9bf8fe6c26a1c8f8d
+  sha256: 22a7d8fe60732e1f289b0a482c23b12821eaf950603a68921ee5e3028870000c
   attribution: CookiGram
 
 static/images/sushi-cake-philadelphia.webp:
@@ -359,10 +359,10 @@ static/images/sushi-cake-philadelphia.webp:
   generator: image_gen
   generated_at: '2026-09-20'
   prompt: |-
-    # Sushi cake façon Philadelphia
+    # Sushi cake façon Philadelphia aux deux saumons
 
-    Illustration culinaire originale CookiGram, format hero 16:9. Montrer un sushi cake rectangulaire démoulé, enveloppé de saumon fumé, avec couches visibles de riz, nori, fromage frais, concombre et avocat, finition au sésame. Style japonais contemporain, lumière froide et nette, vue trois-quarts, sans texte.
-  sha256: cf8e285db9bbdfc0b1e65788b20b487691e23c7d7912a396f245e1974044644a
+    Illustration culinaire originale CookiGram, format hero 16:9. Montrer un sushi cake rectangulaire démoulé, enveloppé de saumon fumé, avec couches visibles de riz, nori, cream cheese Philadelphia, saumon frais et avocat. Style manga culinaire CookiGram, contours d'encre fins et lavis aquarelle, vue trois-quarts, sans texte, sans mayonnaise pimentée.
+  sha256: aef0dc13691e84769812273a7917b6e587273b5d536230cb427bbb49d8b3ff77
   attribution: CookiGram
 
 static/images/sushi-cake-saumon-aburi.webp:
@@ -372,19 +372,19 @@ static/images/sushi-cake-saumon-aburi.webp:
   generated_at: '2026-09-20'
   prompt: |-
     Illustration-story CookiGram originale, paysage 16:9 : sushi cake de saumon aburi sur assiette sombre, bloc de riz vinaigré couvert de tranches de saumon juste flambées et légèrement dorées, nappage teriyaki brillant, mayonnaise en filet, deux œufs tendres au centre, tobiko et ciboulette. Évoquer une surface fumée sans représenter un feu actif. Vue trois-quarts à 45 degrés, contours fins, aquarelle et cel shading doux, textures crédibles. Aucun texte, logo, marque, filigrane ou emballage.
-  sha256: b871c56c3f28bb0c88a4c34c1e7c92a78273f54481126a3faed68e006baed1fb
+  sha256: 77cfc7684d484b2b4e93b99578a6482993d5d0acf62f5fda7230a5f84d99af3c
   attribution: CookiGram
 
-static/images/sushi-cake-saumon-daurade-avocat.webp:
-  recipe: sushi-cake-saumon-daurade-avocat
+static/images/sushi-cake-saumon-thon-concombre-oeuf.webp:
+  recipe: sushi-cake-saumon-thon-concombre-oeuf
   origin: generated
   generator: image_gen
   generated_at: '2026-09-20'
   prompt: |-
-    # Sushi cake saumon, thon, concombre et œuf
+    # Sushi cake saumon, thon, daurade, concombre et œuf
 
-    Illustration culinaire originale CookiGram, format hero 16:9. Montrer un sushi cake rond japonais au riz vinaigré, couche de thon assaisonné et œuf brouillé fin, décoré de fleurs de saumon cru et de rubans de concombre. Présentation sobre, vue trois-quarts, lumière naturelle, sans texte, sans avocat ni daurade.
-  sha256: 1794f3705e40488cdd73effa4a27fb58f82640f9de51f861667a8e56bb48aed1
+    Illustration culinaire originale CookiGram, format hero 16:9. Montrer un sushi cake rond japonais au riz vinaigré, couche de thon assaisonné et œuf brouillé fin, décoré de tranches de thon ou daurade sashimi, fleurs de saumon cru et rubans de concombre. Présentation sobre, vue trois-quarts, lumière naturelle, sans texte, sans avocat.
+  sha256: b135138faee5ac4600ab2060b5cf9326c52998fd1be91f23974465c2aa007697
   attribution: CookiGram
 
 static/images/sushi-cake-saumon-fume-shiitake.webp:
@@ -394,7 +394,7 @@ static/images/sushi-cake-saumon-fume-shiitake.webp:
   generated_at: '2026-09-20'
   prompt: |-
     Illustration-story CookiGram originale, paysage 16:9 : sushi cake individuel retourné dans un moule rond, couches nettes de riz à sushi, avocat en tranches et shiitakés laqués, décor de fleurs de saumon fumé, lanières d'omelette, rubans de concombre et rondelles de radis, petits points de mayonnaise au wasabi. Vue trois-quarts à 45 degrés, palette rose, verte et brune, contours fins, aquarelle et cel shading doux, textures crédibles. Aucun texte, logo, marque ou filigrane.
-  sha256: 15b241dcae404539aeae4cae6d822af882f5258913fd9f97f3b0e37bb62aede2
+  sha256: eb9135a9bdaf20da28bd9095840b401b17ae71b1f2f43247174821f9ed107ea5
   attribution: CookiGram
 
 static/images/sushi-cake-thon-epice-crabe-saumon.webp:
@@ -406,7 +406,7 @@ static/images/sushi-cake-thon-epice-crabe-saumon.webp:
     # Sushi cake thon épicé, crabe et saumon
 
     Illustration culinaire originale CookiGram, format hero 16:9. Montrer un sushi cake rond en tranches révélant riz violet et orange, couches de crabe crémeux, thon épicé, nori et avocat, surmontées de tranches de saumon sashimi, tobiko et graines de sésame. Aspect de fête, vue trois-quarts, sans texte, sans décor alimentaire absent de la recette.
-  sha256: 27b35c82e2b0036a8a834a2f731465f5a5c591a01092cb2e9c8a7933bb4346c3
+  sha256: 2c82ebf3434468dedc8f5b759fe16b19f977b55415a66f0206084ad7a961ab7a
   attribution: CookiGram
 
 static/images/sushi-cake-thon-mangue-avocat.webp:
@@ -416,7 +416,7 @@ static/images/sushi-cake-thon-mangue-avocat.webp:
   generated_at: '2026-09-20'
   prompt: |-
     Illustration-story CookiGram originale, paysage 16:9 : quatre petits sushi cakes en cercle, couches distinctes de riz vinaigré, thon cru en dés, avocat et concombre, mélange fruité de mangue et échalote, finition citronnée. Présenter un tartare frais et réfrigéré, sans décoration inventée. Vue trois-quarts à 45 degrés, couleurs vertes, rouges et dorées, contours fins, aquarelle et cel shading doux, textures crédibles. Aucun texte, logo, marque, filigrane, personne ou emballage.
-  sha256: c9c65b08b8f02ca91871ac292dcc3e17ee17ca9f32f7af551022c0ab3c0b06a7
+  sha256: 1bcc430af7eab9654c5bdfe91e48c3be7b099abc700490614625459e7c75cc0f
   attribution: CookiGram
 
 static/images/sushi-cake-thon-mayonnaise-avocat.webp:
@@ -428,7 +428,7 @@ static/images/sushi-cake-thon-mayonnaise-avocat.webp:
     # Sushi cake thon-mayonnaise et avocat
 
     Illustration culinaire originale CookiGram, format hero 16:9. Montrer un sushi cake carré froid au thon-mayonnaise et avocat, couches de riz et nori, échalotes frites visibles en finition. Présentation familiale nette, textures crémeuses et croustillantes, vue trois-quarts, sans poisson cru, sans texte.
-  sha256: ab817ab2a25df2d716c259097fd0eff6deb2693af850397c803e71626a0cef13
+  sha256: 857cb12d7e40225ec4f468caea01c3958b7ecb58049f8cdda4785c4032cda83b
   attribution: CookiGram
 
 static/images/sushi-cake-vegetarien.webp:
@@ -438,5 +438,5 @@ static/images/sushi-cake-vegetarien.webp:
   generated_at: '2026-09-20'
   prompt: |-
     Illustration-story CookiGram originale, paysage 16:9 : mini sushi cake végétarien démoulé sur planche claire, trois couches de riz vinaigré, concombre et radis croquants, avocat en dés assaisonné, omelette ronde et sauce claire en filet. Montrer un rendu frais et compact. Vue trois-quarts à 45 degrés, contours fins, aquarelle et cel shading doux, textures crédibles, espace négatif pour une hero image. Aucun texte, logo, marque, filigrane, personne ou emballage.
-  sha256: cd7c342b3bac5379abfc4a2635bb5494a79b92f6df4307653c9a75e576563f8a
+  sha256: a79d50687e782b4e9d64b08d820be68f9fc7fca182d4980a501beddb890d5454
   attribution: CookiGram

@@ -1,26 +1,28 @@
 ---
 date_published: 2026-09-20
 date_modified: 2026-09-20
-title: Sushi cake façon Philadelphia à la Sriracha Mayo
+title: Sushi cake façon Philadelphia aux deux saumons
 portions: 6
-prep_time: 20 min
-total_time: 1 h 05 min
+prep_time: 3 h 30 min
+total_time: 3 h 30 min
 spiciness: 1
-description: "Cake de sushi frais sans cuisson au saumon fumé, cream cheese, avocat, concombre et Sriracha Mayo relevée."
-tags: [sushi, philadelphia, saumon-fumé, avocat, sriracha-mayo, sans-cuisson]
-source: https://ca.lkk.com/en/recipes/salmon-sushi-cake-recipe
-author: Lee Kum Kee
+description: "Cake de sushi au saumon frais et fumé, cream cheese Philadelphia, avocat et nori, raffermi au froid."
+tags: [sushi, philadelphia, saumon-fumé, saumon, avocat, sans-cuisson]
+source: https://cookwithsousou.com/en/recipe/salmon-sushi-cake
+author: Cook with Sousou
 required_equipment:
-  - Plat rectangulaire ou moule à cake
+  - Moule rectangulaire de 25 cm
+  - Casserole avec couvercle
   - Film alimentaire
   - Couteau bien aiguisé
+  - Réfrigérateur
 scaling:
   enabled: false
   reason: Le volume du plat et les couches sont calibrés pour 6 parts.
 flavors:
-  pairing: [saumon fumé, fromage frais Philadelphia, avocat, sésame]
+  pairing: [saumon frais, saumon fumé, fromage frais Philadelphia, avocat]
   notes: [fumé, crémeux, frais]
-  harmony: "Le saumon fumé et le fromage frais sont allégés par l'avocat et le concombre croquant."
+  harmony: "Le saumon fumé et le saumon frais alternent avec le fromage frais et l'avocat."
   tips: "Pressez sans écraser le riz afin de garder des couches nettes au démoulage."
 image: images/sushi-cake-philadelphia.webp
 image_credit:
@@ -36,26 +38,32 @@ image_generation:
   prompt_file: image-prompts/sushi-cake-philadelphia.md
 ---
 
+[Préparer le riz]
+- Mélanger le @vinaigre de riz{4 c. à soupe}, le @sel{1 c. à café} et le @sucre{1 c. à soupe} dans un #bol{} ; réserver.
+- Rincer le @riz à sushi{1 tasse} dans une #passoire{} et le laisser s'égoutter ~{1 h}; les grains doivent être bien drainés.
+- Cuire le riz avec l'@eau{1 1/4 tasse} dans une #casserole{} couverte ; après ébullition, réduire le feu et cuire ~{12 min}.
+- Couper le feu et laisser reposer couvert ~{10 min}, puis transférer le riz dans un plat non métallique et incorporer progressivement l'assaisonnement en l'éventant ; le riz doit refroidir.
+
 [Préparer le moule]
 - Chemiser le #plat rectangulaire{} de film alimentaire, en laissant dépasser les bords pour le démoulage.
 - Huiler très légèrement avec l'@huile de sésame{1 c. à café} afin que le cake se retourne sans accrocher.
 
 [Préparer les garnitures]
-- Tailler le @concombre{1/2, en julienne} et l'@avocat{1, en fines lamelles}.
+- Tailler l'@avocat{1, en fines lamelles}.
 - Ramollir le @fromage frais Philadelphia{100 g} dans un #bol{} pour pouvoir l'étaler régulièrement.
 
 [Poser le saumon]
-- Couvrir le fond du moule avec le @saumon fumé{200 g, en tranches}; aucune zone ne doit rester vide.
-- Ajouter le @riz à sushi{2 tasses, cuit et refroidi} et le tasser doucement avec le dos d'une cuillère.
+- Couvrir le fond du moule avec le @saumon fumé{1 paquet, en tranches}; aucune zone ne doit rester vide.
+- Ajouter la moitié du @riz à sushi{1/2 tasse, cuit et refroidi} et le tasser doucement avec le dos d'une cuillère.
 
 [Former le cœur du cake]
-- Poser le @nori{1 feuille} sur le riz.
-- Étaler le @fromage frais Philadelphia{100 g} sur le nori, puis répartir le @concombre{la julienne} et l'@avocat{les lamelles}.
+- Poser le @nori{2 feuilles} sur le riz.
+- Étaler le @fromage frais Philadelphia{100 g} sur le nori, puis répartir le @saumon frais{1 paquet, en tranches épaisses} et l'@avocat{les lamelles}.
 
 [Fermer et raffermir]
-- Couvrir avec le @nori{1 feuille} restant puis ajouter le @riz à sushi{2 tasses, cuit et refroidi} restant.
-- Presser légèrement, couvrir et réfrigérer ~{30 min}; ce froid est le minimum indiqué par la source pour raffermir le cake.
+- Couvrir avec le @nori{1 feuille} restant puis ajouter le @riz à sushi{1/2 tasse, cuit et refroidi} restant.
+- Presser avec la paume, couvrir et réfrigérer ~{2 h}; ce froid est indiqué par la source pour raffermir le cake.
 
 [Démouler et servir]
 - Passer un couteau sur les bords, retourner le moule sur un plat et retirer le film.
-- Parsemer les @graines de sésame{1 c. à soupe} et arroser de @sriracha mayo{selon le goût} juste avant de servir.
+- Servir avec la @sauce soja salée{selon le goût}, le @wasabi{selon le goût} et le @gingembre mariné{selon le goût}.

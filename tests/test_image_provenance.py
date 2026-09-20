@@ -49,7 +49,7 @@ class ImageProvenanceTests(unittest.TestCase):
             "sushi-cake-double-saumon",
             "sushi-cake-philadelphia",
             "sushi-cake-saumon-aburi",
-            "sushi-cake-saumon-daurade-avocat",
+            "sushi-cake-saumon-thon-concombre-oeuf",
             "sushi-cake-saumon-fume-shiitake",
             "sushi-cake-thon-epice-crabe-saumon",
             "sushi-cake-thon-mangue-avocat",
