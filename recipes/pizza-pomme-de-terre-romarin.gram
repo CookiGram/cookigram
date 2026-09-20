@@ -39,7 +39,8 @@ image_generation:
 
 [Préparer la base]
 - Fariner légèrement la #pelle à pizza{} et étirer l'@pâte à pizza{250 g} en disque de 30 cm, en gardant un bord plus épais.
-- Déposer la pâte sur la pelle et vérifier qu'elle glisse librement avant de la garnir.
+- Déposer la pâte sur la pelle.
+- Vérifier qu'elle glisse librement.
 
 [Garnir la pizza]
 - Répartir @mozzarella{90 g} et @pomme de terre{120 g, précuites et en fines tranches} et @romarin{2 g, haché} sur le centre en laissant 2 cm de bord.
@@ -52,4 +53,5 @@ image_generation:
 - Retirer quand le bord est gonflé, tacheté et doré, et que le fromage est fondu.
 
 [Finaliser]
-- Laisser reposer ~{60 s} sur une #grille{}, puis servir.
+- Laisser reposer ~{60 s} sur une #grille{}.
+- Servir.
