@@ -4,8 +4,8 @@ date_modified: 2026-09-20
 title: Sushi cake chirashi festif
 portions: 4
 prep_time: 40 min
-total_time: 1 h 10 min
-timing_note: Estimation éditoriale incluant la cuisson, le refroidissement et le montage ; la source indique 40 min de préparation.
+total_time: 40 min
+timing_note: La source indique 40 min pour son montage et s'appuie sur du riz japonais déjà cuit.
 spiciness: 0
 description: "Sushi cake chirashi en couches roses et blanches, saumon, crevettes, ikura et pois croquants."
 tags: [sushi, chirashi, saumon, crevettes, japonais, froid]
@@ -39,7 +39,7 @@ image_generation:
 ---
 
 [Cuire le riz]
-- Rincer le @riz à sushi{360 ml non cuit}, puis le cuire avec l'@eau{450 ml} dans une #casserole{} couverte pendant ~{20 min}; le riz doit être tendre.
+- Préparer 4 portions de @riz à sushi{360 ml non cuit, soit environ 3 1/2 tasses cuites} selon la méthode de cuisson indiquée par la source ; les grains doivent être tendres.
 
 [Faire le riz rose]
 - Prélever une partie du riz chaud et l'assaisonner avec le @sakura denbu{2 c. à soupe} pour obtenir une couche rose.
