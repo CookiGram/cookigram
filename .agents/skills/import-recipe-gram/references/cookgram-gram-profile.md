@@ -88,6 +88,7 @@ Rules for ingredients:
 - **Step-Ingredient Systematic Annotation (Cooking First)** : Every ingredient incorporated during a step **MUST** be explicitly annotated with `@ingredient{quantity}` in the action line or sub-step (`- `). CookiGram extracts these to populate the "Ingrédients pour cette étape" card in Cook Mode. Never mention an ingredient in plain text only.
 - **Nutritional Integrity (CIQUAL)** : Fats, proteins, dairy, produce, and carbs must always carry a concrete quantity or volume. Never leave empty brackets like `@huile{}` or `@eau{}` without a measure, as this prevents CIQUAL nutritional calculation and grocery list compilation.
 - **Multi-step ingredients** : When an ingredient is used across multiple steps (e.g. part of the butter for dough, part for greasing), specify the step quantity clearly to ensure accurate grocery list consolidation.
+- **Intermediate products** : `@ingredient{quantity}` is reserved for **entry ingredients** that belong in derived surfaces such as shopping, nutrition and scaling. A broth, juice, sauce or other product created, transformed or recovered during the recipe from already-declared ingredients is an **intermediate product**: when reused later, reference it in plain prose (with a quantity when useful) and do **not** create a new `@ingredient{}`. A split portion of a genuine entry ingredient remains an `@ingredient{}` and its quantities must be allocated explicitly across steps.
 
 ## Equipment
 
