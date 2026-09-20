@@ -1,0 +1,48 @@
+---
+title: Onigiri umeboshi, shiso & sésame
+date_published: 2026-09-20
+date_modified: 2026-09-20
+portions: 6
+prep_time: 20 min
+total_time: 55 min
+spiciness: 0
+description: "Onigiri mazé au riz japonais tiède, umeboshi acidulé, shiso frais et sésame, sans assaisonnement vinaigré."
+tags: [onigiri, riz, umeboshi, shiso, japonais]
+source: https://www.justonecookbook.com/plum-rice-ball/
+author: Namiko Hirasawa Chen
+required_equipment:
+  - Casserole avec couvercle
+  - Grand saladier ou plat
+  - Moule à onigiri ou film alimentaire
+scaling:
+  enabled: false
+  reason: La proportion de umeboshi salé et le façonnage sont calibrés pour six pièces.
+image: images/onigiri-umeboshi-shiso-sesame.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/onigiri-umeboshi-shiso-sesame.md
+---
+
+[Cuire le riz]
+- Rincer le @riz à sushi{210 g} dans une #passoire fine{} jusqu'à ce que l'eau soit presque claire.
+- Laisser le riz s'égoutter ~{10 min}, puis le mettre dans une #casserole{} avec l'@eau{230 g}.
+- Couvrir, porter à ébullition puis cuire à feu très doux ~{13 min} ; l'eau doit être absorbée.
+- Couper le feu et laisser reposer à couvert ~{10 min}.
+
+[Mélanger la garniture au riz]
+- Dénoyauter et hacher finement l'@umeboshi{60 g}.
+- Retirer les tiges des @shiso{8 feuilles}, les émincer finement puis les mélanger avec l'umeboshi et les @graines de sésame{12 g}.
+- Incorporer ce mélange au riz encore chaud dans un #grand saladier{} avec un mouvement de coupe, sans écraser les grains.
+
+[Façonner les onigiri]
+- Laisser le riz tiédir jusqu'à pouvoir le manipuler sans se brûler ; ne pas ajouter de sel, l'umeboshi étant déjà salé.
+- Prélever environ 75 g de riz assaisonné, humidifier les mains et presser doucement pour former un triangle compact.
+- Répéter pour les 6 pièces et servir immédiatement ou à température ambiante.

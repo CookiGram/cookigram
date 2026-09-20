@@ -2916,3 +2916,35 @@ ingredients:
     - myrtilles fraîches
     - myrtilles surgelées
     category: Fruits et légumes
+  kombu-seche:
+    name: Kombu séché
+    aliases:
+    - kombu séché
+    - kombu
+    - algue kombu
+    category: Poissons et fruits de mer
+  mirin:
+    name: Mirin
+    aliases:
+    - mirin
+    category: Condiments et assaisonnements
+  nori:
+    name: Feuille de nori
+    aliases:
+    - nori
+    - feuille de nori
+    - feuilles de nori
+    category: Poissons et fruits de mer
+  shiso:
+    name: Shiso frais
+    aliases:
+    - shiso
+    - feuilles de shiso
+    category: Herbes et épices
+  umeboshi:
+    name: Umeboshi
+    aliases:
+    - umeboshi
+    - prune umeboshi
+    - prunes umeboshi
+    category: Condiments et assaisonnements

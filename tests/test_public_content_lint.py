@@ -17,7 +17,7 @@ SPEC.loader.exec_module(LINTER)
 class PublicContentLintTests(unittest.TestCase):
     def test_public_corpus_is_deterministically_clean_except_seo_advisories(self) -> None:
         result = LINTER.run(ROOT, warn_only=True, require_editorial_dates=True)
-        self.assertEqual(result["files"], 184)
+        self.assertEqual(result["files"], 189)
         self.assertEqual(result["summary"]["errors"], 0)
         self.assertEqual(result["summary"]["warnings"], 0)
         self.assertEqual(json.dumps(result, ensure_ascii=False), json.dumps(LINTER.run(ROOT, warn_only=True), ensure_ascii=False))
