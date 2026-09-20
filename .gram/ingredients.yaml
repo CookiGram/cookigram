@@ -2966,6 +2966,18 @@ ingredients:
     - œufs de saumon
     - oeufs de saumon
     category: Poissons et fruits de mer
+  oeufs-de-truite:
+    name: Œufs de truite
+    aliases:
+    - œufs de truite
+    - oeufs de truite
+    category: Poissons et fruits de mer
+  oeufs-de-poisson:
+    name: Œufs de poisson
+    aliases:
+    - œufs de poisson
+    - oeufs de poisson
+    category: Poissons et fruits de mer
   shiitake:
     name: Shiitaké
     aliases:

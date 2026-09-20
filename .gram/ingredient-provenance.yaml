@@ -994,6 +994,12 @@ ingredients:
   ikura:
     status: incomplete
     source: Œufs de saumon préparés ; valeur nutritionnelle variable selon le produit.
+  oeufs-de-truite:
+    status: incomplete
+    source: Œufs de truite préparés ; valeur nutritionnelle variable selon le produit.
+  oeufs-de-poisson:
+    status: incomplete
+    source: Œufs de poisson préparés ; valeur nutritionnelle variable selon le produit.
   shiitake:
     status: incomplete
     source: Champignon shiitaké frais ; valeur nutritionnelle à compléter depuis CIQUAL.
