@@ -86,8 +86,9 @@ Toute recette importée ou adaptée dans CookiGram doit se conformer aux décisi
 
 5. **Traçabilité stricte des ingrédients par étape (`step.ingredients`)** :
    - En Mode Cuisine, CookiGram isole et affiche la carte « Ingrédients pour cette étape » directement au-dessus de chaque action.
-   - **RÈGLE ABSOLUE : Chaque ingrédient incorporé à une étape DOIT être formellement balisé `@ingrédient{quantité}`** dans la ligne d'action ou de sous-étape (`- `).
-   - Ne jamais mentionner un ingrédient uniquement en texte brut sans balise (ex: *« Verser l'huile dans la poêle »* est interdit ; écrire *« Faire chauffer l'@huile d'olive{1 c. à soupe} dans une #poêle{}. »*).
+   - **RÈGLE : Chaque ingrédient d'entrée incorporé à une étape DOIT être formellement balisé `@ingrédient{quantité}`** dans la ligne d'action ou de sous-étape (`- `).
+   - **Exception — produits intermédiaires** : un bouillon, jus, sauce ou autre préparation produit/récupéré pendant la recette à partir d'ingrédients déjà déclarés se référence en prose lorsqu'il est réutilisé et ne doit pas créer un nouveau `@ingrédient{}`. La règle normative complète est dans [CookGram Gram profile](references/cookgram-gram-profile.md).
+   - Hors de cette exception, ne jamais mentionner un ingrédient d'entrée uniquement en texte brut sans balise (ex: *« Verser l'huile dans la poêle »* est interdit ; écrire *« Faire chauffer l'@huile d'olive{1 c. à soupe} dans une #poêle{}. »*).
 
 6. **Zéro ingrédient fantôme ou quantité vide pour la nutrition CIQUAL** :
    - Ne jamais laisser de crochet vide `@eau{}` ou de matière grasse non quantifiée `@huile{}`.
