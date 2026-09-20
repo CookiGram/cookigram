@@ -2959,3 +2959,18 @@ ingredients:
     aliases:
     - tobiko
     category: Poissons et fruits de mer
+  ikura:
+    name: Ikura
+    aliases:
+    - ikura
+    - œufs de saumon
+    - oeufs de saumon
+    category: Poissons et fruits de mer
+  shiitake:
+    name: Shiitaké
+    aliases:
+    - shiitaké
+    - shiitakés
+    - shiitakes
+    - shiitake
+    category: Légumes et aromates

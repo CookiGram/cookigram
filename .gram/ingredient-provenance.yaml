@@ -991,6 +991,12 @@ ingredients:
   tobiko:
     status: incomplete
     source: Œufs de poisson préparés ; valeur nutritionnelle variable selon le produit.
+  ikura:
+    status: incomplete
+    source: Œufs de saumon préparés ; valeur nutritionnelle variable selon le produit.
+  shiitake:
+    status: incomplete
+    source: Champignon shiitaké frais ; valeur nutritionnelle à compléter depuis CIQUAL.
 
 sources:
   ciqual:
