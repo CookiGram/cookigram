@@ -1,0 +1,50 @@
+---
+title: Onigiri saumon grillé & sésame
+date_published: 2026-09-20
+date_modified: 2026-09-20
+portions: 6
+prep_time: 25 min
+total_time: 60 min
+spiciness: 0
+description: "Onigiri de riz japonais tiède, cœur de saumon grillé émietté et sésame blanc, façonnés en triangles moelleux."
+tags: [onigiri, riz, saumon, japonais, bento]
+source: https://www.justonecookbook.com/onigiri-rice-balls/
+author: Namiko Hirasawa Chen
+required_equipment:
+  - Casserole avec couvercle
+  - Poêle
+  - Grand saladier ou plat
+  - Moule à onigiri ou film alimentaire
+scaling:
+  enabled: false
+  reason: La quantité de riz et la taille des portions sont calibrées pour six pièces façonnées à la main.
+image: images/onigiri-saumon-grille-sesame.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, recadrée et optimisée en WebP.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-20"
+  prompt_file: image-prompts/onigiri-saumon-grille-sesame.md
+---
+
+[Cuire le riz]
+- Rincer le @riz à sushi{270 g} dans une #passoire fine{} jusqu'à ce que l'eau soit presque claire.
+- Laisser le riz s'égoutter ~{10 min}, puis le mettre dans une #casserole{} avec l'@eau{300 g}.
+- Couvrir, porter à ébullition puis cuire à feu très doux ~{13 min} ; l'eau doit être absorbée.
+- Couper le feu et laisser reposer à couvert ~{10 min}.
+
+[Préparer le saumon]
+- Déposer le @saumon frais{180 g} dans une #poêle{} chaude et le cuire jusqu'à ce que sa chair soit opaque et se détache facilement, environ ~{10 min}.
+- Retirer la peau et les arêtes, puis émietter le saumon encore tiède avec une fourchette.
+- Mélanger le saumon avec les @graines de sésame{12 g} sans ajouter de vinaigre ni d'assaisonnement humide.
+
+[Façonner les onigiri]
+- Étaler le riz chaud dans un #grand saladier{} et le laisser tiédir jusqu'à pouvoir le manipuler sans se brûler.
+- Prélever environ 75 g de riz, creuser un puits et déposer environ 18 g de saumon au centre.
+- Refermer avec le riz, humidifier les mains et presser doucement pour former un triangle compact ; répéter pour les 6 pièces.
+- Envelopper chaque onigiri avec un morceau de @nori{2 feuilles, découpées en 3} juste avant de servir pour préserver son croustillant.

@@ -251,6 +251,106 @@ static/images/sheet-pan-chou-fleur-pois-chiches-tahini.jpg:
   sha256: 0de7ca2c8173352282c5177d3a443b081003a88444e80069fc3eba2271e0d657
   attribution: CookiGram
 
+static/images/onigiri-saumon-grille-sesame.webp:
+  recipe: onigiri-saumon-grille-sesame
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-20'
+  prompt: |-
+    # Prompt d’illustration — Onigiri saumon grillé & sésame
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 CookiGram recipe illustration
+    Primary request: An original warm contemporary culinary illustration of six Japanese onigiri with a salmon and white sesame filling.
+    Scene/backdrop: bright uncluttered home kitchen tabletop with a simple ceramic plate and subtle Japanese bento atmosphere.
+    Subject: triangular onigiri made from glossy short-grain rice, one cut open to reveal flaky grilled salmon and white sesame, small nori strips ready to wrap, no excess sauce.
+    Style/medium: polished CookiGram manga-inspired food illustration, fine ink contours, hand-painted watercolor texture, soft cel shading, believable appetizing materials, original generic style.
+    Composition/framing: landscape 16:9, onigiri centered and large, safe crop margins, no people or hands.
+    Lighting/mood: soft warm daylight, clean inviting meal-prep mood.
+    Constraints: no text, logos, brand marks, watermarks, packaging, photorealism or clutter.
+  sha256: 30cca776dde0213a662fec698ab8e294988c97fea20eb9b7d4477fa26e41c7a5
+  attribution: CookiGram
+
+static/images/onigiri-tuna-mayo-japonais.webp:
+  recipe: onigiri-tuna-mayo-japonais
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-20'
+  prompt: |-
+    # Prompt d’illustration — Onigiri tuna mayo japonais
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 CookiGram recipe illustration
+    Primary request: An original warm contemporary culinary illustration of six Japanese onigiri with a tuna mayonnaise filling.
+    Scene/backdrop: bright uncluttered home kitchen tabletop with a ceramic plate and subtle bento atmosphere.
+    Subject: triangular onigiri made from glossy short-grain rice, one cut open to reveal a compact creamy tuna-mayo filling, a few nori strips and a small bowl of drained tuna nearby; no runny sauce.
+    Style/medium: polished CookiGram manga-inspired food illustration, fine ink contours, hand-painted watercolor texture, soft cel shading, believable appetizing materials, original generic style.
+    Composition/framing: landscape 16:9, onigiri centered and large, safe crop margins, no people or hands.
+    Lighting/mood: soft warm daylight, clean inviting meal-prep mood.
+    Constraints: no text, logos, brand marks, watermarks, packaging, photorealism or clutter.
+  sha256: 1ee1190fd715b20a479127450168d65b306d70563e686b96ed9f039dbc80fe2e
+  attribution: CookiGram
+
+static/images/onigiri-poulet-miso-gingembre.webp:
+  recipe: onigiri-poulet-miso-gingembre
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-20'
+  prompt: |-
+    # Prompt d’illustration — Onigiri poulet miso-gingembre
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 CookiGram recipe illustration
+    Primary request: An original warm contemporary culinary illustration of six Japanese onigiri with a cooked chicken miso-ginger filling.
+    Scene/backdrop: bright uncluttered home kitchen tabletop, ceramic plate and subtle Japanese bento atmosphere.
+    Subject: triangular onigiri made from glossy short-grain rice, one cut open to reveal a dark glossy but nearly dry minced chicken filling seasoned with miso and ginger; small ginger and miso accents, no runny sauce.
+    Style/medium: polished CookiGram manga-inspired food illustration, fine ink contours, hand-painted watercolor texture, soft cel shading, believable appetizing materials, original generic style.
+    Composition/framing: landscape 16:9, onigiri centered and large, safe crop margins, no people or hands.
+    Lighting/mood: soft warm daylight, savory inviting meal-prep mood.
+    Constraints: no text, logos, brand marks, watermarks, packaging, photorealism or clutter.
+  sha256: d2c082b9f70c2f9e685180bffd8cd99b8ccabd886832ffc215eb6f30e7fd5b05
+  attribution: CookiGram
+
+static/images/onigiri-kombu-sesame.webp:
+  recipe: onigiri-kombu-sesame
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-20'
+  prompt: |-
+    # Prompt d’illustration — Onigiri kombu & sésame
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 CookiGram recipe illustration
+    Primary request: An original warm contemporary culinary illustration of six vegetarian Japanese onigiri with a kombu tsukudani and white sesame filling.
+    Scene/backdrop: bright uncluttered home kitchen tabletop, ceramic plate and subtle Japanese bento atmosphere.
+    Subject: triangular onigiri made from glossy short-grain rice, one cut open to reveal thin dark glossy simmered kombu strips with sesame; a small bowl of reduced kombu nearby, visibly no pool of sauce.
+    Style/medium: polished CookiGram manga-inspired food illustration, fine ink contours, hand-painted watercolor texture, soft cel shading, believable appetizing materials, original generic style.
+    Composition/framing: landscape 16:9, onigiri centered and large, safe crop margins, no people or hands.
+    Lighting/mood: soft warm daylight, umami-rich and inviting meal-prep mood.
+    Constraints: no text, logos, brand marks, watermarks, packaging, photorealism or clutter.
+  sha256: 359a79ee7fd38af9855138df51521a5c0492c197a56488ab4f5f30617bf2afca
+  attribution: CookiGram
+
+static/images/onigiri-umeboshi-shiso-sesame.webp:
+  recipe: onigiri-umeboshi-shiso-sesame
+  origin: generated
+  generator: image_gen
+  generated_at: '2026-09-20'
+  prompt: |-
+    # Prompt d’illustration — Onigiri umeboshi, shiso & sésame
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 CookiGram recipe illustration
+    Primary request: An original warm contemporary culinary illustration of six Japanese umeboshi, shiso and sesame mazé-onigiri.
+    Scene/backdrop: bright uncluttered home kitchen tabletop, ceramic plate and subtle Japanese bento atmosphere.
+    Subject: triangular onigiri made from glossy short-grain rice visibly mixed with finely chopped red umeboshi, green shiso and white sesame; one cut open to show the colorful mixed rice, no central filling and no vinegar dressing.
+    Style/medium: polished CookiGram manga-inspired food illustration, fine ink contours, hand-painted watercolor texture, soft cel shading, believable appetizing materials, original generic style.
+    Composition/framing: landscape 16:9, onigiri centered and large, safe crop margins, no people or hands.
+    Lighting/mood: soft warm daylight, fresh tangy inviting meal-prep mood.
+    Constraints: no text, logos, brand marks, watermarks, packaging, photorealism or clutter.
+  sha256: deb916923f30f3c7ff6a4d271bd00d1b77a7a415e43302cc3b0027fcd0f1c342
+  attribution: CookiGram
+
 static/images/hachis-parmentier.webp:
   recipe: hachis-parmentier
   origin: generated

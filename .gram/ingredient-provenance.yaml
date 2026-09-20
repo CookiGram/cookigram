@@ -967,6 +967,21 @@ ingredients:
   pate-brisee:
     status: incomplete
     source: Préparation boulangère ; composition variable selon la recette.
+  kombu-seche:
+    status: incomplete
+    source: Algue séchée générique ; valeur nutritionnelle à vérifier contre CIQUAL.
+  mirin:
+    status: incomplete
+    source: Condiment japonais ; composition variable selon la formulation.
+  nori:
+    status: incomplete
+    source: Feuille d'algue séchée générique ; valeur nutritionnelle à vérifier contre CIQUAL.
+  shiso:
+    status: incomplete
+    source: Herbe fraîche japonaise ; valeur nutritionnelle à vérifier contre CIQUAL.
+  umeboshi:
+    status: incomplete
+    source: Prune japonaise salée et acidifiée ; composition variable selon la préparation.
 
 sources:
   ciqual:
