@@ -146,7 +146,8 @@ image_generation:
 [deglaze-pot | Faire suer les légumes et déglacer]
 - Dans la cuve encore chaude, ajouter les @échalotes{4 pièces, épluchées et coupées en deux}, les @carottes{3 pièces, épluchées et en biseaux} et les @gousses d'ail{4 pièces, écrasées}.
 - Faire suer ~{3 min} en remuant.
-- Ajouter le @concentré de tomates{2 c. à soupe} et mélanger ~{1 min}.
+- Ajouter le @concentré de tomates{2 c. à soupe}.
+- Mélanger ~{1 min}.
 - Verser le @vin rouge{250 g} pour déglacer. Gratter énergiquement le fond de la cuve avec une #cuillère en bois{} pour dissoudre tous les sucs caramélisés et prévenir l'alerte BURN.
 - Ajouter le @bouillon de bœuf{250 g}, le @thym{3 branches}, le @laurier{2 feuilles}, le @sel{1.5 c. à café} et le @poivre{1 c. à café}.
 
@@ -157,7 +158,8 @@ image_generation:
 
 [natural-release | Décompression naturelle et repos]
 - Laisser la pression descendre naturellement pendant ~{15 min} sans toucher la soupape pour éviter le dessèchement de la viande.
-- Tourner ensuite la soupape sur **Venting** pour libérer la vapeur résiduelle, puis ouvrir le couvercle.
+- Tourner la soupape sur **Venting** pour libérer la vapeur résiduelle.
+- Ouvrir le couvercle.
 - Transférer délicatement les morceaux de bœuf confits dans un plat creux à l'aide d'une #pince de cuisine{}.
 
 [reduce-sauce | Réduire et napper la sauce]
