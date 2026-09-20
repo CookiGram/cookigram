@@ -30,22 +30,25 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration temporaire
 image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
   prompt_file: image-prompts/sushi-cake-double-saumon.md
 ---
 
 [Cuire et assaisonner le riz]
-- Cuire le @riz-sushi{3 tasses} selon les indications de son paquet dans une #casserole{}.
+- Cuire le @riz à sushi{3 tasses} selon les indications de son paquet dans une #casserole{}.
 - Mélanger le @vinaigre de cidre{1 c. à soupe} et le @sucre glace{1 c. à soupe}, puis incorporer au riz chaud.
 - Étaler le riz dans un #grand plat{} et le laisser refroidir à température ambiante.
 
 [Préparer le saumon cru]
 - Tailler le @saumon frais{300 g, qualité sashimi} en petits dés dans un #saladier{}.
-- Mélanger avec la @mayonnaise{2 c. à soupe}, le @piment{1 c. à soupe}, le @graines de sésame{1 c. à soupe} et l'@huile de sésame{quelques gouttes}.
+- Mélanger avec la @mayonnaise{2 c. à soupe}, le @piment rouge{1 c. à soupe}, le @graines de sésame{1 c. à soupe} et l'@huile de sésame{quelques gouttes}.
 - Couvrir et garder au réfrigérateur; le poisson doit rester bien froid.
 
 [Cuire le saumon teriyaki]
 - Chauffer l'@huile d'olive{1 c. à soupe} dans une #poêle{} et cuire le @saumon frais{300 g, en morceaux} jusqu'à coloration et chair opaque.
-- Ajouter la @sauce soja{1/2 tasse} et le @sucre{1/4 tasse}; réduire jusqu'à ce que la sauce enrobe le poisson.
+- Ajouter la @sauce soja salée{1/2 tasse} et le @sucre{1/4 tasse}; réduire jusqu'à ce que la sauce enrobe le poisson.
 - Émietter le saumon cuit dans la poêle, puis le laisser refroidir complètement.
 
 [Préparer les garnitures]

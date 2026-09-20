@@ -33,11 +33,14 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration temporaire
 image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
   prompt_file: image-prompts/sushi-cake-thon-mayonnaise-avocat.md
 ---
 
 [Cuire le riz]
-- Rincer le @riz-sushi{350 g} plusieurs fois dans une #passoire{} jusqu'à ce que l'eau soit presque claire.
+- Rincer le @riz à sushi{350 g} plusieurs fois dans une #passoire{} jusqu'à ce que l'eau soit presque claire.
 - Cuire le riz avec l'@eau{350 g} dans une #casserole{} couverte; maintenir ~{10 min} hors du feu après cuisson sans ouvrir.
 
 [Assaisonner le riz]

@@ -30,16 +30,19 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration temporaire
 image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
   prompt_file: image-prompts/sushi-cake-thon-epice-crabe-saumon.md
 ---
 
 [Cuire le riz violet]
-- Rincer le @riz-sushi{200 g} jusqu'à eau claire, puis cuire avec l'@eau{360 g} et le @chou rouge{90 g, émincé} dans une #casserole{}.
+- Rincer le @riz à sushi{200 g} jusqu'à eau claire, puis cuire avec l'@eau{360 g} et le @chou rouge{90 g, émincé} dans une #casserole{}.
 - Cuire à feu doux ~{15 min}; les grains doivent être tendres et le liquide absorbé.
 - Mélanger le @vinaigre de riz{30 ml}, le @sucre{2 c. à café} et le @sel{1/2 c. à café}; incorporer au riz puis refroidir.
 
 [Cuire le riz orange]
-- Rincer le @riz-sushi{100 g}, le cuire avec l'@eau{180 g} et la @pitaya rouge{90 g, réduite en purée}.
+- Rincer le @riz à sushi{100 g}, le cuire avec l'@eau{180 g} et la @pitaya rouge{90 g, réduite en purée}.
 - Cuire à feu doux ~{15 min}; les grains doivent être tendres.
 - Mélanger le @vinaigre de riz{15 ml}, le @sucre{1 c. à café} et le @sel{1/4 c. à café}; incorporer puis refroidir.
 

@@ -30,6 +30,9 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration temporaire
 image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
   prompt_file: image-prompts/sushi-cake-philadelphia.md
 ---
 
@@ -43,14 +46,14 @@ image_generation:
 
 [Poser le saumon]
 - Couvrir le fond du moule avec le @saumon fumé{200 g, en tranches}; aucune zone ne doit rester vide.
-- Ajouter le @riz-sushi{2 tasses, cuit et refroidi} et le tasser doucement avec le dos d'une cuillère.
+- Ajouter le @riz à sushi{2 tasses, cuit et refroidi} et le tasser doucement avec le dos d'une cuillère.
 
 [Former le cœur du cake]
 - Poser le @nori{1 feuille} sur le riz.
 - Étaler le @fromage frais Philadelphia{100 g} sur le nori, puis répartir le @concombre{la julienne} et l'@avocat{les lamelles}.
 
 [Fermer et raffermir]
-- Couvrir avec le @nori{1 feuille} restant puis ajouter le @riz-sushi{2 tasses, cuit et refroidi} restant.
+- Couvrir avec le @nori{1 feuille} restant puis ajouter le @riz à sushi{2 tasses, cuit et refroidi} restant.
 - Presser légèrement, couvrir et réfrigérer ~{30 min}; le cake doit être ferme au toucher.
 
 [Démouler et servir]

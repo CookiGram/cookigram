@@ -30,12 +30,15 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration temporaire
 image_generation:
+  provider: placeholder
+  model: official-placeholder
+  generated_at: "2026-09-20"
   prompt_file: image-prompts/sushi-cake-saumon-daurade-avocat.md
 ---
 
 [Préparer le riz]
-- Cuire le @riz-sushi{225 g} avec l'@eau{240 g} dans une #casserole{}.
-- Mélanger le @vinaigre de riz{30 ml}, le @miel{1 c. à soupe}, le @sel{2/3 c. à café} et la @sauce soja{1 c. à soupe}, puis incorporer au riz chaud.
+- Cuire le @riz à sushi{225 g} avec l'@eau{240 g} dans une #casserole{}.
+- Mélanger le @vinaigre de riz{30 ml}, le @miel{1 c. à soupe}, le @sel{2/3 c. à café} et la @sauce soja salée{1 c. à soupe}, puis incorporer au riz chaud.
 - Étaler et laisser tiédir; le riz doit être assez frais pour ne pas réchauffer le poisson.
 
 [Préparer l'omelette]

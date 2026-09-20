@@ -2916,3 +2916,46 @@ ingredients:
     - myrtilles fraîches
     - myrtilles surgelées
     category: Fruits et légumes
+  chou-rouge:
+    name: Chou rouge
+    aliases:
+    - chou rouge
+    category: Légumes et aromates
+  crabe:
+    name: Crabe
+    aliases:
+    - crabe
+    - chair de crabe
+    category: Poissons et fruits de mer
+  daurade:
+    name: Daurade
+    aliases:
+    - daurade
+    category: Poissons et fruits de mer
+  mangue:
+    name: Mangue
+    aliases:
+    - mangue
+    category: Fruits
+  nori:
+    name: Nori
+    aliases:
+    - nori
+    - feuille de nori
+    category: Condiments
+  pitaya-rouge:
+    name: Pitaya rouge
+    aliases:
+    - pitaya rouge
+    - fruit du dragon rouge
+    category: Fruits
+  sriracha:
+    name: Sriracha
+    aliases:
+    - sriracha
+    category: Condiments
+  tobiko:
+    name: Tobiko
+    aliases:
+    - tobiko
+    category: Poissons et fruits de mer

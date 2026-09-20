@@ -967,6 +967,30 @@ ingredients:
   pate-brisee:
     status: incomplete
     source: Préparation boulangère ; composition variable selon la recette.
+  chou-rouge:
+    status: incomplete
+    source: Légume générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  crabe:
+    status: incomplete
+    source: Produit de la mer ; valeur nutritionnelle variable selon crabe frais ou préparation.
+  daurade:
+    status: incomplete
+    source: Poisson générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  mangue:
+    status: incomplete
+    source: Fruit générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  nori:
+    status: incomplete
+    source: Algue séchée ; valeur nutritionnelle variable selon le produit.
+  pitaya-rouge:
+    status: incomplete
+    source: Fruit générique ; valeur nutritionnelle à compléter depuis CIQUAL.
+  sriracha:
+    status: incomplete
+    source: Sauce préparée ; valeur nutritionnelle variable selon la marque.
+  tobiko:
+    status: incomplete
+    source: Œufs de poisson préparés ; valeur nutritionnelle variable selon le produit.
 
 sources:
   ciqual:
