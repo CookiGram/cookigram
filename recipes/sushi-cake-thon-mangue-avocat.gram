@@ -10,7 +10,7 @@ description: "Sushi cake frais de thon cru, mangue, avocat et concombre, relevé
 tags: [sushi, thon, mangue, avocat, tartare, froid]
 source: https://www.epicetoutlacuisinededany.fr/sushi-cake-au-thon-mangue-et-avocat/
 author: Dany
-required_equipment: [Casserole, Quatre cercles de dressage, Saladier, Planche à découper]
+required_equipment: [Casserole, Cercles de dressage (1 par portion), Saladier, Planche à découper]
 scaling:
   enabled: true
   min_portions: 2

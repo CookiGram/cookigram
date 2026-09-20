@@ -4,8 +4,7 @@ date_modified: 2026-09-20
 title: Sushi cake au saumon fumé et shiitakés
 portions: 1
 prep_time: 30 min
-total_time: 45 min
-timing_note: Estimation éditoriale incluant la cuisson et le refroidissement du riz ; la source ne détaille pas le temps de cuisson du riz.
+total_time: 30 min
 spiciness: 1
 description: "Sushi cake individuel au saumon fumé, avocat, shiitakés laqués et légumes décoratifs croquants."
 tags: [sushi, saumon-fume, shiitake, avocat, japonais, froid]
@@ -42,8 +41,8 @@ image_generation:
 - Mélanger l'@œuf{1}, le @lait demi-écrémé{1 c. à soupe}, la @farine de pomme de terre{1 c. à café}, le @sucre{2 pincées} et le @sel{1 pincée}.
 - Huiler la #poêle{} avec l'@huile végétale{1 c. à café}, cuire la préparation en couche fine des deux côtés, puis la refroidir et la tailler en lanières.
 
-[Cuire le riz]
-- Cuire le @riz à sushi{200 g} avec l'@eau{300 ml} dans une #casserole{} couverte pendant ~{20 min}; les grains doivent être tendres puis refroidis avant le montage.
+[Préparer le riz]
+- Utiliser le @riz à sushi{200 g, cuit et refroidi} comme indiqué par la source ; les grains doivent rester séparés pour le montage.
 
 [Laquer les shiitakés]
 - Retirer les pieds des @shiitakés{5 pièces} et les émincer finement.
