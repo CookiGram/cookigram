@@ -1,13 +1,13 @@
 ---
 date_published: 2026-09-20
 date_modified: 2026-09-20
-title: Sushi cake façon Philadelphia
+title: Sushi cake façon Philadelphia à la Sriracha Mayo
 portions: 6
 prep_time: 20 min
 total_time: 1 h 05 min
 spiciness: 1
-description: "Cake de sushi frais aux couches de saumon fumé, riz, nori, cream cheese, concombre et avocat croquant."
-tags: [sushi, philadelphia, saumon-fumé, avocat, sans-cuisson]
+description: "Cake de sushi frais sans cuisson au saumon fumé, cream cheese, avocat, concombre et Sriracha Mayo relevée."
+tags: [sushi, philadelphia, saumon-fumé, avocat, sriracha-mayo, sans-cuisson]
 source: https://ca.lkk.com/en/recipes/salmon-sushi-cake-recipe
 author: Lee Kum Kee
 required_equipment:
@@ -22,10 +22,6 @@ flavors:
   notes: [fumé, crémeux, frais]
   harmony: "Le saumon fumé et le fromage frais sont allégés par l'avocat et le concombre croquant."
   tips: "Pressez sans écraser le riz afin de garder des couches nettes au démoulage."
-conservation:
-  fridge_days: 1
-  freezable: false
-  reheat: "Ne pas réchauffer; conserver couvert et servir froid."
 image: images/sushi-cake-philadelphia.webp
 image_credit:
   author: CookiGram
@@ -58,8 +54,8 @@ image_generation:
 
 [Fermer et raffermir]
 - Couvrir avec le @nori{1 feuille} restant puis ajouter le @riz à sushi{2 tasses, cuit et refroidi} restant.
-- Presser légèrement, couvrir et réfrigérer ~{30 min}; le cake doit être ferme au toucher.
+- Presser légèrement, couvrir et réfrigérer ~{30 min}; ce froid est le minimum indiqué par la source pour raffermir le cake.
 
 [Démouler et servir]
 - Passer un couteau sur les bords, retourner le moule sur un plat et retirer le film.
-- Parsemer les @graines de sésame{1 c. à soupe} juste avant de servir.
+- Parsemer les @graines de sésame{1 c. à soupe} et arroser de @sriracha mayo{selon le goût} juste avant de servir.

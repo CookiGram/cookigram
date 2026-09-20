@@ -22,10 +22,6 @@ flavors:
   notes: [crémeux, pimenté, iodé]
   harmony: "La mayonnaise pimentée lie le thon et le crabe, tandis que l'avocat adoucit le saumon cru."
   tips: "Ajoutez la mayonnaise et la sauce teriyaki au dernier moment si le cake attend au froid."
-conservation:
-  fridge_days: 0
-  freezable: false
-  reheat: "Ne pas réchauffer; servir très frais et immédiatement."
 image: images/sushi-cake-thon-epice-crabe-saumon.webp
 image_credit:
   author: CookiGram
@@ -59,12 +55,26 @@ image_generation:
 - Effilocher le @crabe{200 g, chair ou surimi} entre les doigts.
 - Ajouter la @mayonnaise{80 g}, la @sriracha{2 c. à café} et l'@huile de sésame{1 c. à café}; mélanger puis réserver au froid.
 
-[Assembler les couches]
-- Chemiser le #moule à charnière{} avec le film alimentaire et tasser la moitié du riz violet.
-- Étaler la farce de @crabe{toute la préparation}, couvrir avec le @nori{1 feuille}, puis tasser le riz orange.
-- Poser l'@avocat{1 gros, 280 g de chair, en lamelles}, le @nori{1 feuille}, la farce de @thon{toute la préparation}, le reste du riz violet et le @nori{1 feuille}.
+[Former la base violette]
+- Chemiser le #moule à charnière{} de film alimentaire en laissant dépasser les bords.
+- Tasser la moitié du @riz à sushi{200 g, violet} au fond du moule; la surface doit être plane.
+
+[Ajouter le crabe]
+- Étaler la farce de @crabe{toute la préparation} sur le riz; la couche doit rester régulière.
+- Couvrir avec le @nori{1 feuille}; la feuille doit recouvrir la garniture.
+
+[Former la couche orange]
+- Tasser le @riz à sushi{100 g, orange} sur le nori; la surface doit être plane.
+
+[Ajouter l'avocat et le thon]
+- Poser l'@avocat{1 gros, 280 g de chair, en lamelles} sur le riz orange.
+- Couvrir avec le @nori{1 feuille}, puis étaler la farce de @thon{toute la préparation}.
+
+[Fermer le cake]
+- Tasser le reste du @riz à sushi{200 g, violet} sur le thon; la couche doit être compacte.
+- Couvrir avec le @nori{1 feuille}; la feuille doit fermer le montage.
 
 [Refroidir et décorer]
 - Rabattre le film sur le dessus, presser légèrement et réfrigérer ~{45 min}; le cake doit se tenir à la coupe.
-- Démouler et couvrir avec le @saumon frais{270 g, qualité sashimi, en tranches}.
+- Démouler et couvrir avec le @saumon frais{270 g, qualité sashimi, en tranches}; le poisson doit rester bien froid.
 - Parsemer le @tobiko{1 c. à soupe} et les @graines de sésame{1/2 c. à café}; décorer avec la @mayonnaise{2 c. à soupe} et la @sauce soja sucrée{2 c. à soupe}, puis servir aussitôt.

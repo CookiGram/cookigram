@@ -10,10 +10,12 @@ description: "Sushi cake sans poisson cru au thon-mayonnaise, avocat citronné, 
 tags: [sushi, thon, avocat, sans-poisson-cru, rapide]
 source: https://www.lespetitsplaisirsdedoro.fr/2021/05/sushi-cake-thon-avocat-cookeo.html
 author: Doro
+appliances:
+  cookeo: [Cookeo]
 required_equipment:
   - Moule carré ou moule tablette
   - Film alimentaire
-  - Casserole avec couvercle
+  - Moulinex Cookeo
 scaling:
   enabled: true
   min_portions: 4
@@ -25,10 +27,6 @@ flavors:
   notes: [crémeux, croustillant, acidulé]
   harmony: "Le thon-mayonnaise apporte le moelleux, l'avocat la fraîcheur et les échalotes le croquant."
   tips: "Citronnez l'avocat juste avant le montage pour garder une couleur nette."
-conservation:
-  fridge_days: 1
-  freezable: false
-  reheat: "Ne pas réchauffer; garder couvert au réfrigérateur."
 image: images/sushi-cake-thon-mayonnaise-avocat.webp
 image_credit:
   author: CookiGram
@@ -43,9 +41,11 @@ image_generation:
   prompt_file: image-prompts/sushi-cake-thon-mayonnaise-avocat.md
 ---
 
-[Cuire le riz]
+[Cuire le riz au Cookeo]
 - Rincer le @riz à sushi{350 g} plusieurs fois dans une #passoire{} jusqu'à ce que l'eau soit presque claire.
-- Cuire le riz avec l'@eau{350 g} dans une #casserole{} couverte; maintenir ~{10 min} hors du feu après cuisson sans ouvrir.
+- Mettre le riz rincé et l'@eau{350 ml} dans la cuve du #cookeo{}.
+- Lancer la cuisson sous pression pendant ~{3 min}; le riz doit rester couvert par l'eau avant le départ.
+- Laisser le Cookeo en maintien au chaud pendant ~{10 min} sans ouvrir; cette attente est nécessaire à la méthode source.
 
 [Assaisonner le riz]
 - Chauffer sans bouillir le @vinaigre de riz{40 ml}, le @sucre{10 g} et le @sel{1/2 c. à café} dans une petite #casserole{}.
@@ -61,9 +61,12 @@ image_generation:
 
 [Monter le cake]
 - Répartir les @échalotes frites{20 g} au fond du #moule carré{} chemisé de film alimentaire.
-- Tasser la moitié du riz puis couvrir avec le @nori{2 feuilles}.
-- Étaler le @thon{toute la préparation} et l'@avocat{les lamelles}; couvrir avec le reste du riz et presser doucement.
+- Tasser la moitié du @riz à sushi{la moitié, assaisonné} et vérifier que la couche est plane.
+- Couvrir avec le @nori{2 feuilles}; les feuilles doivent recouvrir le riz.
+- Étaler le @thon{toute la préparation} sur le nori.
+- Poser l'@avocat{les lamelles} sur le thon.
+- Couvrir avec le reste du @riz à sushi{la moitié restante, assaisonné} et presser doucement.
 
 [Raffermir et servir]
-- Filmer le dessus et réfrigérer ~{20 min}; le cake doit se découper sans s'effondrer.
+- Filmer le dessus et placer au frais jusqu'au moment de déguster; le cake doit être ferme au toucher.
 - Retourner sur un plat, retirer le film et servir immédiatement.
