@@ -1036,6 +1036,9 @@ ingredients:
   sriracha-mayo:
     status: incomplete
     source: Sauce préparée avec mayonnaise et sriracha ; proportions selon la recette source.
+  gingembre-marine:
+    status: incomplete
+    source: Condiment de gingembre mariné ; composition variable selon le produit.
   sauce-teriyaki:
     status: incomplete
     source: Sauce préparée dans la recette avec sauce soja, mirin et sucre roux.

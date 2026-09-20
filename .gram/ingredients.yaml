@@ -3046,6 +3046,12 @@ ingredients:
     - sriracha mayo
     - mayonnaise sriracha
     category: épicerie salée
+  gingembre-marine:
+    name: Gingembre mariné
+    aliases:
+    - gingembre mariné
+    - gari
+    category: épicerie salée
   sauce-teriyaki:
     name: Sauce teriyaki
     aliases:

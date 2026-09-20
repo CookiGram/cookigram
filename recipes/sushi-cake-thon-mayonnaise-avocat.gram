@@ -17,11 +17,8 @@ required_equipment:
   - Film alimentaire
   - Moulinex Cookeo
 scaling:
-  enabled: true
-  min_portions: 4
-  max_portions: 8
-  step: 2
-  note: Le temps de cuisson du riz reste celui de la recette; adaptez seulement le moule et le refroidissement.
+  enabled: false
+  reason: La source Cookeo calibre le riz, la cuve et le moule pour huit parts ; aucune réduction sûre du temps sous pression n'est démontrée.
 flavors:
   pairing: [thon, mayonnaise, avocat, échalotes frites]
   notes: [crémeux, croustillant, acidulé]
