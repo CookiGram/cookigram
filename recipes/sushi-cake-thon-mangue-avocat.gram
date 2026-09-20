@@ -4,7 +4,7 @@ date_modified: 2026-09-20
 title: Sushi cake de thon, mangue et avocat
 portions: 4
 prep_time: 20 min
-total_time: 24 h 35 min
+total_time: 35 min
 spiciness: 0
 description: "Sushi cake frais de thon cru, mangue, avocat et concombre, relevé de ponzu et de sauce soja sucrée."
 tags: [sushi, thon, mangue, avocat, tartare, froid]
@@ -44,7 +44,7 @@ image_generation:
 - Congeler le @thon{400 g, très frais} la veille, puis le réserver au réfrigérateur le matin de la préparation comme l'indique la source.
 
 [Cuire le riz]
-- Cuire le @riz à sushi{200 g} dans l'@eau{1 l, bouillante et salée}.
+- Cuire le @riz à sushi{200 g} dans de l'eau bouillante salée.
 - Égoutter, laisser tiédir, puis mélanger avec le @vinaigre de riz{2 c. à soupe}, la @mayonnaise{1 c. à soupe} et le @poivre moulu{1/4 c. à café}.
 
 [Assaisonner le thon]
@@ -60,7 +60,7 @@ image_generation:
 - Arroser de @jus de citron{1 c. à soupe} et réserver au froid.
 
 [Former les cakes]
-- Placer quatre #cercles de dressage{} et répartir le @riz à sushi{200 g, assaisonné} en première couche ; tasser.
+- Placer quatre #cercles de dressage{} et répartir le @riz à sushi{préparé et assaisonné} en première couche ; tasser.
 - Ajouter le @thon{400 g, assaisonné}, puis le mélange @avocat{1 pièce} et @concombre{1 petit}, et terminer avec la @mangue{1 pièce} et l'@échalote{1 pièce}.
 
 [Décercler et servir]
