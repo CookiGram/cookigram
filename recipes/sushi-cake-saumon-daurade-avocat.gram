@@ -1,0 +1,63 @@
+---
+title: Sushi cake saumon, daurade et avocat
+portions: 4
+prep_time: 30 min
+total_time: 50 min
+spiciness: 0
+description: "Sushi cake japonais en couches de saumon et daurade crus, avocat, riz vinaigré et omelette fine dorée."
+tags: [sushi, saumon, daurade, avocat, cru, japonais]
+source: https://www.toshin.co.jp/fish_recipe/pdf/recipe110.pdf
+author: 渡部 和泉
+required_equipment:
+  - Moule rond de 15 cm
+  - Film alimentaire
+  - Poêle
+scaling:
+  enabled: false
+  reason: Le moule rond de 15 cm et les couches sont calibrés pour un cake familial.
+flavors:
+  pairing: [saumon, daurade, avocat, riz vinaigré]
+  notes: [iodé, frais, doux]
+  harmony: "La daurade délicate équilibre le gras du saumon et de l'avocat sur le riz acidulé."
+  tips: "Utilisez exclusivement des poissons vendus pour être consommés crus et gardez-les au froid jusqu'au service."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "Ne pas réchauffer; servir immédiatement après le montage."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sushi-cake-saumon-daurade-avocat.md
+---
+
+[Préparer le riz]
+- Cuire le @riz-sushi{225 g} avec l'@eau{240 g} dans une #casserole{}.
+- Mélanger le @vinaigre de riz{30 ml}, le @miel{1 c. à soupe}, le @sel{2/3 c. à café} et la @sauce soja{1 c. à soupe}, puis incorporer au riz chaud.
+- Étaler et laisser tiédir; le riz doit être assez frais pour ne pas réchauffer le poisson.
+
+[Préparer l'omelette]
+- Battre les @œufs{2} avec le @sel{1 pincée}.
+- Chauffer l'@huile d'olive{1 c. à café} dans une #poêle{} et cuire une omelette fine.
+- Refroidir puis tailler l'omelette en lanières.
+
+[Préparer les poissons]
+- Tailler le @saumon frais{1 pavé, qualité sashimi} en 6 fines tranches et les rouler en petite fleur.
+- Tailler le reste du @saumon frais{1 pavé, qualité sashimi} en dés de 1 cm.
+- Tailler la @daurade{1 filet, qualité sashimi} en dés de 1 cm; réserver les poissons séparément au froid.
+
+[Préparer l'avocat]
+- Couper l'@avocat{1} en deux; tailler une moitié en lamelles et l'autre en dés.
+- Arroser l'@avocat{la préparation} avec le @jus de citron{1 c. à café} pour limiter le noircissement.
+
+[Tasser les premiers étages]
+- Chemiser le #moule rond{} de film alimentaire et tasser la moitié du riz.
+- Répartir l'@avocat{les dés}, le @saumon frais{les dés} et la @daurade{les dés}; garder les poissons bien froids.
+- Ajouter le reste du riz et presser légèrement pour obtenir une base stable.
+
+[Démouler et décorer]
+- Retourner le cake sur un plat et retirer le film alimentaire.
+- Poser l'@avocat{les lamelles} autour du dessus, puis la fleur de @saumon frais{les tranches roulées} et les @œufs{les lanières} au centre.
+- Servir aussitôt; ne pas conserver ce montage contenant du poisson cru.

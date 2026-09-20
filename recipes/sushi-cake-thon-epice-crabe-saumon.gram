@@ -1,0 +1,63 @@
+---
+title: Sushi cake thon épicé, crabe et saumon
+portions: 8
+prep_time: 45 min
+total_time: 1 h 30 min
+spiciness: 2
+description: "Sushi cake coloré à trois garnitures, thon relevé, crabe crémeux, avocat et saumon sashimi sur riz vinaigré."
+tags: [sushi, thon, crabe, saumon, avocat, épicé]
+source: https://www.notquitenigella.com/sushi-cake/
+author: Lorraine Elliott
+required_equipment:
+  - Moule à charnière rond de 20 cm
+  - Film alimentaire
+  - Petite casserole
+scaling:
+  enabled: false
+  reason: Les trois couches et le moule de 20 cm sont calibrés pour 8 à 10 parts.
+flavors:
+  pairing: [thon, crabe, avocat, saumon]
+  notes: [crémeux, pimenté, iodé]
+  harmony: "La mayonnaise pimentée lie le thon et le crabe, tandis que l'avocat adoucit le saumon cru."
+  tips: "Ajoutez la mayonnaise et la sauce teriyaki au dernier moment si le cake attend au froid."
+conservation:
+  fridge_days: 0
+  freezable: false
+  reheat: "Ne pas réchauffer; servir très frais et immédiatement."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sushi-cake-thon-epice-crabe-saumon.md
+---
+
+[Cuire le riz violet]
+- Rincer le @riz-sushi{200 g} jusqu'à eau claire, puis cuire avec l'@eau{360 g} et le @chou rouge{90 g, émincé} dans une #casserole{}.
+- Cuire à feu doux ~{15 min}; les grains doivent être tendres et le liquide absorbé.
+- Mélanger le @vinaigre de riz{30 ml}, le @sucre{2 c. à café} et le @sel{1/2 c. à café}; incorporer au riz puis refroidir.
+
+[Cuire le riz orange]
+- Rincer le @riz-sushi{100 g}, le cuire avec l'@eau{180 g} et la @pitaya rouge{90 g, réduite en purée}.
+- Cuire à feu doux ~{15 min}; les grains doivent être tendres.
+- Mélanger le @vinaigre de riz{15 ml}, le @sucre{1 c. à café} et le @sel{1/4 c. à café}; incorporer puis refroidir.
+
+[Préparer le thon épicé]
+- Émietter le @thon{200 g, égoutté} dans un #saladier{}.
+- Ajouter la @mayonnaise{80 g}, la @sriracha{2 c. à soupe}, la @ciboulette{2 c. à soupe, ciselée} et le @jus de citron{1 c. à café}.
+- Mélanger; la farce doit être liée mais encore texturée, puis réserver au froid.
+
+[Préparer le crabe]
+- Effilocher le @crabe{200 g, chair ou surimi} entre les doigts.
+- Ajouter la @mayonnaise{80 g}, la @sriracha{2 c. à café} et l'@huile de sésame{1 c. à café}; mélanger puis réserver au froid.
+
+[Assembler les couches]
+- Chemiser le #moule à charnière{} avec le film alimentaire et tasser la moitié du riz violet.
+- Étaler la farce de @crabe{toute la préparation}, couvrir avec le @nori{1 feuille}, puis tasser le riz orange.
+- Poser l'@avocat{1 gros, 280 g de chair, en lamelles}, le @nori{1 feuille}, la farce de @thon{toute la préparation}, le reste du riz violet et le @nori{1 feuille}.
+
+[Refroidir et décorer]
+- Rabattre le film sur le dessus, presser légèrement et réfrigérer ~{45 min}; le cake doit se tenir à la coupe.
+- Démouler et couvrir avec le @saumon frais{270 g, qualité sashimi, en tranches}.
+- Parsemer le @tobiko{1 c. à soupe} et les @graines de sésame{1/2 c. à café}; décorer avec la @mayonnaise{2 c. à soupe} et la @sauce soja sucrée{2 c. à soupe}, puis servir aussitôt.

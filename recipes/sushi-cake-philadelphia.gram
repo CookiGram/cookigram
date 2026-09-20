@@ -1,0 +1,58 @@
+---
+title: Sushi cake façon Philadelphia
+portions: 6
+prep_time: 20 min
+total_time: 1 h 05 min
+spiciness: 1
+description: "Cake de sushi frais aux couches de saumon fumé, riz, nori, cream cheese, concombre et avocat croquant."
+tags: [sushi, philadelphia, saumon-fumé, avocat, sans-cuisson]
+source: https://ca.lkk.com/en/recipes/salmon-sushi-cake-recipe
+author: Lee Kum Kee
+required_equipment:
+  - Plat rectangulaire ou moule à cake
+  - Film alimentaire
+  - Couteau bien aiguisé
+scaling:
+  enabled: false
+  reason: Le volume du plat et les couches sont calibrés pour 6 parts.
+flavors:
+  pairing: [saumon fumé, fromage frais Philadelphia, avocat, sésame]
+  notes: [fumé, crémeux, frais]
+  harmony: "Le saumon fumé et le fromage frais sont allégés par l'avocat et le concombre croquant."
+  tips: "Pressez sans écraser le riz afin de garder des couches nettes au démoulage."
+conservation:
+  fridge_days: 1
+  freezable: false
+  reheat: "Ne pas réchauffer; conserver couvert et servir froid."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/sushi-cake-philadelphia.md
+---
+
+[Préparer le moule]
+- Chemiser le #plat rectangulaire{} de film alimentaire, en laissant dépasser les bords pour le démoulage.
+- Huiler très légèrement avec l'@huile de sésame{1 c. à café} afin que le cake se retourne sans accrocher.
+
+[Préparer les garnitures]
+- Tailler le @concombre{1/2, en julienne} et l'@avocat{1, en fines lamelles}.
+- Ramollir le @fromage frais Philadelphia{100 g} dans un #bol{} pour pouvoir l'étaler régulièrement.
+
+[Poser le saumon]
+- Couvrir le fond du moule avec le @saumon fumé{200 g, en tranches}; aucune zone ne doit rester vide.
+- Ajouter le @riz-sushi{2 tasses, cuit et refroidi} et le tasser doucement avec le dos d'une cuillère.
+
+[Former le cœur du cake]
+- Poser le @nori{1 feuille} sur le riz.
+- Étaler le @fromage frais Philadelphia{100 g} sur le nori, puis répartir le @concombre{la julienne} et l'@avocat{les lamelles}.
+
+[Fermer et raffermir]
+- Couvrir avec le @nori{1 feuille} restant puis ajouter le @riz-sushi{2 tasses, cuit et refroidi} restant.
+- Presser légèrement, couvrir et réfrigérer ~{30 min}; le cake doit être ferme au toucher.
+
+[Démouler et servir]
+- Passer un couteau sur les bords, retourner le moule sur un plat et retirer le film.
+- Parsemer les @graines de sésame{1 c. à soupe} juste avant de servir.
