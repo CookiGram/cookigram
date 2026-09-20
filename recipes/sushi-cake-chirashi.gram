@@ -21,14 +21,16 @@ conservation:
   fridge_days: 0
   freezable: false
   reheat: "À consommer immédiatement, surtout avec le poisson cru."
-image: images/placeholder-recipe.jpg
+image: images/sushi-cake-chirashi.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
 image_generation:
-  provider: placeholder
-  model: official-placeholder
+  provider: OpenAI
+  model: ChatGPT image generation
   generated_at: "2026-09-20"
   prompt_file: image-prompts/sushi-cake-chirashi.md
 ---

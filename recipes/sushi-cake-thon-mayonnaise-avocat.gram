@@ -27,14 +27,16 @@ conservation:
   fridge_days: 1
   freezable: false
   reheat: "Ne pas réchauffer; garder couvert au réfrigérateur."
-image: images/placeholder-recipe.jpg
+image: images/sushi-cake-thon-mayonnaise-avocat.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour la fiche recette.
 image_generation:
-  provider: placeholder
-  model: official-placeholder
+  provider: OpenAI
+  model: ChatGPT image generation
   generated_at: "2026-09-20"
   prompt_file: image-prompts/sushi-cake-thon-mayonnaise-avocat.md
 ---
