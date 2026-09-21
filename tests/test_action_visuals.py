@@ -49,16 +49,12 @@ class ActionVisualsContractTests(unittest.TestCase):
         finally:
             INSTANCE_ACTION_MAPPING.pop(fake_token, None)
 
-    def test_no_cookigram_visual_path_in_core(self):
-        # Verify that Core cooking_actions module does not import or hardcode CookiGram instance paths
-        import generator.cooking_actions as core_ca
-
-        # Core defines ASSET_ROOT and COOKING_ACTIONS, but has zero CookiGram-specific image paths
-        self.assertFalse(hasattr(core_ca, "INSTANCE_ACTION_MAPPING"))
-        source = Path(core_ca.__file__).read_text(encoding="utf-8")
-        self.assertNotIn("atomic-actions", source)
-        self.assertNotIn("cut.webp", source)
-        self.assertNotIn("CookiGram", source)
+    def test_instance_visual_mapping_stays_local_to_public_catalogue(self):
+        source = (ROOT / "scripts/action_visuals.py").read_text(encoding="utf-8")
+        self.assertIn("INSTANCE_ACTION_MAPPING", source)
+        self.assertIn("images/atomic-actions/cut.webp", source)
+        self.assertNotIn("import generator.", source)
+        self.assertNotIn("from generator.", source)
 
     def test_all_10_pilot_assets_exist_and_meet_budget(self):
         for token, rel_path in INSTANCE_ACTION_MAPPING.items():
