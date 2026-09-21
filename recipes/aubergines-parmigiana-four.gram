@@ -20,6 +20,9 @@ scaling:
   max_portions: 6
   step: 2
   note: Utiliser un plat plus grand au-delà de 4 portions et conserver des couches fines.
+meal:
+  completeness: complete
+  role: main
 flavors:
   pairing: [aubergine, tomate, mozzarella, parmesan]
   notes: [fondant, gratiné, acidulé, herbacé]

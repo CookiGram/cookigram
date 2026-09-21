@@ -29,6 +29,10 @@ required_equipment:
   - Planche à découper
 scaling:
   enabled: true
+meal:
+  completeness: partial
+  role: main
+  needs: [starch]
 image: images/saumon-a-la-toscane.jpg
 image_credit:
   author: CookiGram

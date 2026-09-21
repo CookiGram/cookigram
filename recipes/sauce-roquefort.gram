@@ -14,6 +14,9 @@ appliances:
 scaling:
   enabled: false
   reason: La quantité de sauce est calibrée pour quatre portions.
+meal:
+  completeness: component
+  role: sauce
 spiciness: 0
 image: images/sauce-roquefort.jpg
 image_credit:
