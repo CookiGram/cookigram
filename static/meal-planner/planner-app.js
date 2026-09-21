@@ -1,6 +1,7 @@
 import { addPlacement, loadPlanning, MOMENTS, removePlacement, savePlanning } from "./planner-state.js";
 import { resolveInitialWeekStart, startOfLocalDay, toLocalISODate } from "./planner-state.js";
 import { buildCalendarExport } from "./calendar-export.js";
+import { summarizeDayNutrition } from "./planner-nutrition.js";
 
 const SELECTION_KEY = "cookigram:recipe-selection";
 const WEEK_KEY = "cookigram:meal-planning-week:v1";
@@ -97,6 +98,18 @@ const renderSlot = (date, moment) => {
     <div class="planner-slot-items">${items.length ? items.map(renderPlacedRecipe).join("") : `<span class="planner-slot-empty" aria-hidden="true"></span>`}</div>
   </div>`;
 };
+const formatCalories = value => new Intl.NumberFormat("fr-FR").format(value);
+const renderDayNutrition = date => {
+  const summary = summarizeDayNutrition(
+    MOMENTS.map(moment => ({ moment, items: slotItems(date, moment) })),
+    recipeFor,
+  );
+  if (!summary) return "";
+  const details = summary.entries
+    .map(entry => `<li><span>${esc(entry.moment)} · ${esc(entry.title)}</span><strong>${formatCalories(entry.calories)} kcal</strong></li>`)
+    .join("");
+  return `<details class="planner-day-nutrition"><summary aria-label="Environ ${formatCalories(summary.total)} kilocalories par portion">≈ ${formatCalories(summary.total)} kcal</summary><div class="planner-day-nutrition-detail"><span>Estimation par portion</span><ul>${details}</ul></div></details>`;
+};
 
 const render = () => {
   refreshWindowForToday();
@@ -115,7 +128,7 @@ const render = () => {
   const today = iso(new Date());
   document.querySelector("#planner-week").innerHTML = datesForWeek.map((date, index) => {
     const label = dayLabel(index);
-    return `<section class="planner-day${date === today ? " planner-day-current" : ""}" aria-labelledby="day-${date}"><h3 id="day-${date}"><span class="planner-day-name">${label.day}</span><span class="planner-day-date">${label.date}</span>${date === today ? "<span class=\"planner-today\">Aujourd’hui</span>" : ""}</h3>${MOMENTS.map(moment => renderSlot(date, moment)).join("")}</section>`;
+    return `<section class="planner-day${date === today ? " planner-day-current" : ""}" aria-labelledby="day-${date}"><h3 id="day-${date}"><span class="planner-day-name">${label.day}</span><span class="planner-day-date">${label.date}</span>${date === today ? "<span class=\"planner-today\">Aujourd’hui</span>" : ""}</h3>${MOMENTS.map(moment => renderSlot(date, moment)).join("")}${renderDayNutrition(date)}</section>`;
   }).join("");
   bindEvents();
   if (focusSlug) document.querySelector(`[data-planner-recipe="${CSS.escape(focusSlug)}"]`)?.scrollIntoView({ block: "center" });

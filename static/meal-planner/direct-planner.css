@@ -3,8 +3,8 @@
 }
 
 /* Synchronise the header, Midi and Soir tracks across every day column. */
-.planner-board { grid-template-rows: auto repeat(2, minmax(118px, auto)); }
-.planner-day { display: grid; grid-template-rows: subgrid; grid-row: span 3; }
+.planner-board { grid-template-rows: auto repeat(2, minmax(118px, auto)) auto; }
+.planner-day { display: grid; grid-template-rows: subgrid; grid-row: span 4; }
 
 .planner-all-placed {
   margin: 0 0 12px;
@@ -81,6 +81,32 @@
   min-height: 44px;
   align-items: center;
 }
+
+.planner-day-nutrition {
+  align-self: start;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+.planner-day-nutrition summary {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 650;
+  list-style: none;
+}
+
+.planner-day-nutrition summary::-webkit-details-marker { display: none; }
+.planner-day-nutrition summary::before { content: "＋"; margin-right: 4px; color: var(--orange); }
+.planner-day-nutrition[open] summary::before { content: "−"; }
+.planner-day-nutrition-detail { padding: 8px 4px 0; }
+.planner-day-nutrition-detail ul { display: grid; gap: 4px; margin: 5px 0 0; padding: 0; list-style: none; }
+.planner-day-nutrition-detail li { display: flex; justify-content: space-between; gap: 8px; }
 
 .planner-slot .planner-recipe-placed {
   position: relative;
