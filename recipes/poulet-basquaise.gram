@@ -23,6 +23,10 @@ scaling:
   max_portions: 6
   step: 2
   note: Choisir des cuisses fermières coupées en deux (haut de cuisse et pilon).
+meal:
+  completeness: partial
+  role: main
+  needs: [starch]
 flavors:
   pairing: [riz blanc de Camargue, pommes vapeur, vin rouge d'Irouléguy]
   notes: [doux, poivré, fruité, mijoté, ensoleillé]
