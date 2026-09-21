@@ -137,10 +137,11 @@ def _image_findings(root: Path, refs: dict[str, list[str]]) -> list[Finding]:
             ))
 
     # placeholder-recipe.jpg is an intentional shared fallback, not a recipe
-    # asset. All other files in this directory must be referenced by a recipe.
+    # asset. atomic-actions/ contains atomic action illustrations audited separately.
+    # All other files in this directory must be referenced by a recipe.
     image_dir = root / "static" / "images"
     for path in sorted(image_dir.rglob("*")) if image_dir.is_dir() else []:
-        if not path.is_file():
+        if not path.is_file() or path.is_relative_to(image_dir / "atomic-actions"):
             continue
         asset = path.relative_to(root).as_posix()
         if asset not in refs and path.name != "placeholder-recipe.jpg":
