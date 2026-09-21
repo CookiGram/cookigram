@@ -16,8 +16,8 @@ jobs:
     name: Validation du contrat public (< 15s)
     runs-on: ubuntu-latest
     env:
-      CONTRACT_VERSION: "1.0.0"
-      CONTRACT_SHA: b567e88acdcee69302c926caa6f5222508b7a051
+      CONTRACT_VERSION: "1.1.0"
+      CONTRACT_SHA: ad0a53107de370e8dc3118f780f85b6cbabc4425
       CONTENT_SHA: ${{ github.sha }}
     permissions:
       contents: read
@@ -33,12 +33,12 @@ jobs:
 
       - name: Vérifier la provenance du contrat public
         run: |
-          actual="$(git ls-remote https://github.com/CookiGram/cookigram-contract.git "refs/tags/v${CONTRACT_VERSION}^{}" | cut -f1)"
+          actual="$(git ls-remote https://github.com/CookiGram/cookigram-contract.git | awk -v sha="$CONTRACT_SHA" '$1 == sha { print $1; exit }')"
           test "${actual}" = "${CONTRACT_SHA}"
 
       - name: Installer les dépendances de validation publiques
         run: |
-          python -m pip install "git+https://github.com/CookiGram/cookigram-contract.git@v${CONTRACT_VERSION}"
+          python -m pip install "git+https://github.com/CookiGram/cookigram-contract.git@${CONTRACT_SHA}"
           python -m pip install "Pillow>=10,<13"
 
       - name: Vérifier les pins et produire le rapport JSON
@@ -67,7 +67,7 @@ jobs:
       actions: write
     env:
       CONTENT_SHA: ${{ github.sha }}
-      CONTRACT_VERSION: "1.0.0"
+      CONTRACT_VERSION: "1.1.0"
     steps:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@v4
@@ -87,7 +87,7 @@ jobs:
           from pathlib import Path
 
           data = json.loads(Path(".builder.json").read_text(encoding="utf-8"))
-          for key in ("release", "artifact", "sha256", "core_sha"):
+          for key in ("release", "artifact", "sha256", "core_sha", "contract_version", "contract_source_sha", "contract_artifact", "contract_sha256"):
               value = data.get(key)
               if not isinstance(value, str) or not value.strip():
                   raise SystemExit(f"Invalid .builder.json field: {key}")
@@ -117,16 +117,42 @@ jobs:
           printf '%s  %s\n' "$BUILDER_SHA256" "$builder_path" | sha256sum --check --status
           echo "SHA256 verification: PASS"
 
+      - name: Extract and verify Core + Contract bundle
+        env:
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/builder"
+          tar -xzf "$RUNNER_TEMP/$BUILDER_ARTIFACT" -C "$RUNNER_TEMP/builder"
+          (cd "$RUNNER_TEMP/builder" && sha256sum --check SHA256SUMS)
+          python - "$RUNNER_TEMP/builder/manifest.json" "${{ steps.builder.outputs.core_sha }}" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          assert data["core"]["source_sha"] == sys.argv[2]
+          assert data["contract"]["identity"] == "cookigram-contract"
+          assert data["contract"]["version"] == "1.1.0"
+          assert len(data["contract"]["source_sha"]) == 40
+          assert len(data["contract"]["sha256"]) == 64
+          print(json.dumps(data, indent=2))
+          PY
+
       - name: Install pinned builder
         env:
           BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
         run: |
           python -m pip install --upgrade pip
-          pip install "Jinja2>=3.1,<4" "PyYAML>=6,<7" "$RUNNER_TEMP/$BUILDER_ARTIFACT"
+          pip install "Jinja2>=3.1,<4" "PyYAML>=6,<7"
+          pip install --no-index --no-deps "$RUNNER_TEMP/builder"/cookigram_core-*.whl "$RUNNER_TEMP/builder"/cookigram_contract-*.whl
 
       - name: Build qualified static site once
         env:
           COOKIGRAM_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
+          COOKIGRAM_CONTRACT_SHA: ${{ steps.builder.outputs.contract_source_sha }}
+          COOKIGRAM_CONTRACT_ARTIFACT: ${{ steps.builder.outputs.contract_artifact }}
+          COOKIGRAM_CONTRACT_SHA256: ${{ steps.builder.outputs.contract_sha256 }}
         run: python -m generator.build --content-dir . --output _site
 
       - name: Verify generated site and write qualification provenance
@@ -151,6 +177,9 @@ jobs:
               "core_sha": os.environ["BUILDER_CORE_SHA"],
               "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
               "contract_version": os.environ["CONTRACT_VERSION"],
+              "contract_source_sha": os.environ["COOKIGRAM_CONTRACT_SHA"],
+              "contract_artifact": os.environ["COOKIGRAM_CONTRACT_ARTIFACT"],
+              "contract_sha256": os.environ["COOKIGRAM_CONTRACT_SHA256"],
               "builder_release": os.environ["BUILDER_RELEASE"],
               "builder_artifact": os.environ["BUILDER_ARTIFACT"],
               "builder_sha256": os.environ["BUILDER_SHA256"],
