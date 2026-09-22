@@ -137,6 +137,34 @@ jobs:
           pip install "Jinja2>=3.1,<4" "PyYAML>=6,<7"
           pip install --no-index --no-deps "$RUNNER_TEMP/builder"/cookigram_core-*.whl "$RUNNER_TEMP/builder"/cookigram_contract-*.whl
 
+      - name: Strict atomic check on changed recipes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          # Gate #359 : seul le périmètre modifié est exigé strict — les
+          # warnings historiques hors périmètre ne bloquent jamais la chaîne.
+          head="${{ github.sha }}"
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            base="$PR_BASE"
+          elif [[ -n "$PUSH_BEFORE" && "$PUSH_BEFORE" != "0000000000000000000000000000000000000000" ]]; then
+            base="$PUSH_BEFORE"
+          else
+            base="main"
+          fi
+          listing="$(gh api "repos/${GITHUB_REPOSITORY}/compare/${base}...${head}" --jq '[.files[] | select(.filename | startswith("recipes/") and endswith(".gram")) | select(.status != "removed") | .filename] | join(" ")')"
+          if [[ -z "$listing" ]]; then
+            echo "No recipes changed; strict-atomic gate vacuous."
+            exit 0
+          fi
+          # shellcheck disable=SC2206
+          changed=($listing)
+          printf 'Strict-atomic scope (%d): %s\n' "${#changed[@]}" "${changed[*]}"
+          python -m generator.recipe_check --strict-atomic --root . "${changed[@]}"
+
       - name: Build qualified static site once
         env:
           COOKIGRAM_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
