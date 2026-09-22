@@ -3,6 +3,7 @@ title: Filet mignon façon blanquette
 date_published: 2026-09-01
 date_modified: 2026-09-01
 description: "Médaillons de filet mignon ultra-tendres mijotés aux carottes, poireaux et champignons dans une sauce crème liée."
+nutrition_profile: balanced
 portions: 4
 prep_time: 15 min
 total_time: 45 min
@@ -53,7 +54,8 @@ image_generation:
 [Épaissir le bouillon en sauce]
 - Retirer le Varoma et jeter les feuilles de laurier.
 - Transvaser la viande, les poireaux, les carottes et les champignons dans un plat chaud.
-- Conserver 300 g de bouillon dans le bol, puis ajouter la @farine{35 g} et le @beurre doux{35 g, en morceaux}.
+- Conserver 300 g de bouillon dans le bol.
+- Ajouter la @farine{35 g} et le @beurre doux{35 g, en morceaux}.
 - Poser le couvercle avec le gobelet doseur.
 - Cuire ~{5 min} à ^{90 C} et vitesse 4.
 
