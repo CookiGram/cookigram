@@ -103,6 +103,20 @@ class ActionVisualsContractTests(unittest.TestCase):
         errors = [i for i in issues if i.get("severity") == "error"]
         self.assertEqual(errors, [], f"Audit reported errors: {errors}")
 
+    def test_all_20_svg_wrappers_exist_and_are_non_empty(self):
+        # The SVG wrappers are shipped Core-bridge fallbacks; a missing
+        # wrapper used to leave the whole suite green (proven by mutation
+        # on peel.svg, issue #416).
+        wrappers = ROOT / "static/illustrations/cooking-actions/v1"
+        self.assertTrue(wrappers.is_dir(), f"SVG wrapper dir {wrappers} must exist")
+        on_disk = {p.name for p in wrappers.glob("*.svg")}
+        expected = {f"{token}.svg" for token in INSTANCE_ACTION_MAPPING}
+        self.assertEqual(on_disk, expected, "SVG wrappers must match mapping 1:1")
+        for token in INSTANCE_ACTION_MAPPING:
+            wrapper = wrappers / f"{token}.svg"
+            self.assertTrue(wrapper.is_file(), f"SVG wrapper {wrapper} must exist")
+            self.assertGreater(wrapper.stat().st_size, 0, f"SVG wrapper {token} must not be empty")
+
 
 if __name__ == "__main__":
     unittest.main()
