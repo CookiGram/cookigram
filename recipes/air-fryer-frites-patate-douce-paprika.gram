@@ -22,8 +22,11 @@ image_generation: {prompt_file: image-prompts/air-fryer-frites-patate-douce-papr
 scaling: {enabled: true, min: 2, max: 4, step: 1}
 ---
 [Assaisonner]
-- Couper les @patates douces{2 pièces} en bâtonnets de 1/2 cm et les mélanger avec l'@huile d'olive{1 c. à café}.
+- Couper les @patates douces{2 pièces} en bâtonnets de 1/2 cm.
+- Mélanger les bâtonnets avec l'@huile d'olive{1 c. à café}.
 - Ajouter le @paprika fumé{1 c. à café}, les @herbes de Provence{1/2 c. à café}, le @sel{1/2 c. à café} et le @poivre moulu{1/2 c. à café}.
 [Cuire]
 - Cuire en plusieurs fournées dans le #panier air fryer{} à ^{180 C} ~{15 min} par fournée, en secouant à mi-cuisson.
-- Réunir les fournées et réchauffer ~{2 min} avant de servir.
+- Réunir les fournées.
+- Réchauffer ~{2 min}.
+- Servir.
