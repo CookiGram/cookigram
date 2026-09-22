@@ -37,7 +37,7 @@
 ## ✅ Dernières Livraisons Clôturées
 
 * **Issue #102 / PR #104** : Simplification sobre des mentions d'illustration (« Illustration originale CookiGram ») et documentation de la séparation stricte entre provenance technique et attribution publique — *Fusionné dans `main`*.
-* **PR #89** : Pack 2 d'icônes d'ustensiles (planche, plat à gratin, thermomix, moule, panier vapeur, économe) et couverture à 100% de `required_equipment` sur les 46 recettes — *Fusionné dans `main`*.
+* **PR #89** : Pack 2 d'icônes d'ustensiles (planche, plat à gratin, thermomix, moule, panier vapeur, économe) et `required_equipment` renseigné sur 123 des 199 recettes (couverture partielle) — *Fusionné dans `main`*.
 * **Issue #80 / PR #81** : Étape 0 « Mise en place du plan de travail » en Mode Cuisine — *Fusionné dans `main`*.
 * **Issue #78 / PR #79** : Persistance de la progression en Mode Cuisine (minuteurs wall-clock, sticky bar contextuelle, cases à cocher ingrédients) — *Fusionné dans `main`*.
 * **PR #76** : Import de 2 nouvelles recettes desserts (Cheesecake japonais & Flan aux œufs) — *Fusionné dans `main`*.
@@ -50,5 +50,5 @@
 
 1. **Claim obligatoire** dans `.agents/claims.json` avant toute ligne de code.
 2. **Interdiction d'inventer des fonctionnalités** sans issue portant le label `potential-dev-work`.
-3. **Tests ciblés pendant le dev** (`node --test tests/frontend/<mon_test>.test.js` ou `pytest tests/<mon_test>.py`). Ne lancer la suite globale qu'avant le push final.
+3. **Tests ciblés pendant le dev** (`node --test tests/<mon_test>.test.mjs static/meal-planner/planner-state.test.js`). Ne lancer la suite globale qu'avant le push final.
 4. **Commit & push systématique** avec working tree 100% propre.
