@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_version": "1.0.0",
+  "instance": "CookiGram",
+  "updated_at": "2026-09-21T21:40:00+02:00",
+  "style_framework": {
+    "aesthetic": "Modern warm editorial culinary illustration (gouache / soft cel-shading)",
+    "background_palette": [
+      "#FFF9F0",
+      "#F7EFE2",
+      "#EFE5D5"
+    ],
+    "accent_palette": [
+      "#E07A5F",
+      "#819B88",
+      "#3D405B",
+      "#F2CC8F"
+    ],
+    "framing": "Three-quarter 45-degree angle or intimate eye-level close-up, high silhouette contrast",
+    "target_aspect_ratio": "3:2",
+    "target_responsive_sizes": {
+      "desktop_cook_mode": "300x150px",
+      "mobile_cook_mode": "260x130px",
+      "catalog_preview": "120x80px"
+    },
+    "human_presence": "Forearms and hands only showing active culinary gestures (no faces, no full bodies)",
+    "prohibitions": [
+      "No photorealism or micro-textures",
+      "No child-like cartoon or heavy chibi anime style",
+      "No functional UI overlays (no digital timers, clock faces, temperature degrees, arrows, badge icons)",
+      "No text, watermark, typography, branding or logos",
+      "No background room clutter, walls, or kitchen appliance brand logos"
+    ]
+  },
+  "items": [
+    {
+      "action_id": "cut",
+      "action_label": "Couper / Émincer",
+      "canonical_token": "cut",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/cut.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 30448,
+      "file_size_kb": 29.7,
+      "sha256": "05edd785d7b020ab2c97347ea7e33f28618625dfbdf6f12f6878145bf6230b68",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of cutting vegetables on a wooden cutting board, hands holding a chef knife slicing carrots, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "chop",
+        "slice",
+        "dice",
+        "mince",
+        "julienne"
+      ],
+      "justification": "Archetypal cutting board and chef knife gesture. Clear silhouette and immediately recognizable at small sizes without needing separate micro-variants for dice vs slice."
+    },
+    {
+      "action_id": "rinse",
+      "action_label": "Rincer / Égoutter",
+      "canonical_token": "rinse",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/rinse.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 25728,
+      "file_size_kb": 25.1,
+      "sha256": "2ba9fb6f1005987e60d413f59ce4727ffd34330b36507c2e6e07afafff5957f2",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of rinsing fresh ingredients in a stainless steel colander, hands holding the colander under a gentle stream of clear water, splashing droplets, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "drain",
+        "wash",
+        "strain"
+      ],
+      "justification": "Clear stainless steel colander with running water stream. The water dynamics and colander silhouette instantly communicate cleaning/draining."
+    },
+    {
+      "action_id": "mix",
+      "action_label": "Mélanger à la cuillère",
+      "canonical_token": "mix",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/mix.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 19586,
+      "file_size_kb": 19.1,
+      "sha256": "60f627aa945fa3b0bb6ac3c3744d0544e04abacf2c41fe065a8238dcb97955f4",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of gently stirring ingredients in a ceramic mixing bowl, hands holding a pale wooden spoon stirring a colorful salad or mixture, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "stir",
+        "combine",
+        "toss"
+      ],
+      "justification": "Gentle circular stirring with a pale wooden spoon in a ceramic bowl. Contrasts strongly with aggressive whisking or electric blending."
+    },
+    {
+      "action_id": "whisk",
+      "action_label": "Fouetter / Émulsionner",
+      "canonical_token": "whisk",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/whisk.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 38052,
+      "file_size_kb": 37.2,
+      "sha256": "9b848eeaaa9d970cf3abacb5d789bc3b91e7cb77f9abdc2d7339a986ae1a01bd",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of vigorously whisking eggs or cream in a stoneware mixing bowl, hands holding a stainless steel balloon wire whisk creating gentle foam, dynamic circular motion, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "beat",
+        "emulsify",
+        "froth"
+      ],
+      "justification": "Wire balloon whisk creating light froth in a bowl. Distinct from spoon mixing to signal aeration, beating, and emulsification."
+    },
+    {
+      "action_id": "pour",
+      "action_label": "Verser / Arroser",
+      "canonical_token": "pour",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/pour.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 14198,
+      "file_size_kb": 13.9,
+      "sha256": "4c88f5fa7565194cdeb6bcbcaec11dd987a23fba8e751322b8975383e2b1e864",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of pouring olive oil or broth from a glass cruet bottle into a ceramic pan, hands tipping the bottle, golden liquid stream pouring smoothly, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "drizzle",
+        "add_liquid",
+        "deglaze"
+      ],
+      "justification": "Diagonal liquid stream pouring from a cruet/pitcher into a pan. Creates an unmistakable dynamic diagonal gesture recognizable even at 80px width."
+    },
+    {
+      "action_id": "saute",
+      "action_label": "Saisir / Faire revenir",
+      "canonical_token": "saute",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/saute.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 25966,
+      "file_size_kb": 25.4,
+      "sha256": "f430b7f6d27c4c00217e0b1c34f228c968153749da7f7b66494765da2a37bba6",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of sauteing diced onions and colorful vegetables in a skillet on a cooktop, hands holding a wooden spatula tossing food, golden searing, gentle wisps of steam, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "sear",
+        "brown",
+        "fry"
+      ],
+      "justification": "Open frying pan with wooden spatula tossing sizzling ingredients. Distinguishes active dry-heat/oil pan cooking from covered liquid simmering."
+    },
+    {
+      "action_id": "simmer",
+      "action_label": "Mijoter / Cuire à feu doux",
+      "canonical_token": "simmer",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/simmer.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 20358,
+      "file_size_kb": 19.9,
+      "sha256": "189c8e634787a644907bbc5db9b3bb2c51b535700dc93039e107fee8bf4be158",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of a simmering stew in a heavy enameled cast iron Dutch oven with an ajar lid, gentle tiny bubbles on the surface, soft warm steam rising, hands adjusting the lid with a cloth, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "stew",
+        "braise",
+        "reduce"
+      ],
+      "justification": "Enamelled cocotte/Dutch oven with ajar lid and soft steam. Conveys long, gentle wet-heat cooking without violent rolling bubbles."
+    },
+    {
+      "action_id": "knead",
+      "action_label": "Pétrir la pâte",
+      "canonical_token": "knead",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/knead.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 36482,
+      "file_size_kb": 35.6,
+      "sha256": "804fb18e3c9b02e73826820d2f78f022ad5f34c864719f7e8b5e02715c73541c",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of kneading smooth bread dough on a lightly floured wooden countertop, two hands pressing and folding a round golden dough ball, dust of white flour, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "fold_dough",
+        "shape_dough",
+        "punch_down"
+      ],
+      "justification": "Bimanual pressing gesture on round dough with light flour dusting on wood. High emotional resonance and immediately distinct from stirring or cutting."
+    },
+    {
+      "action_id": "rest",
+      "action_label": "Laisser reposer / Refroidir",
+      "canonical_token": "rest",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/rest.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 64364,
+      "file_size_kb": 62.9,
+      "sha256": "0cd387d2593d2436d61247d1947ff5fe335bd9f81f2ffd6f58eb16bcfc4b4272",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of freshly baked bread or cooked food resting on a metal wire cooling rack with a draped linen towel, stillness, warm peaceful kitchen atmosphere, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, no human hands, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, hands, action, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "cool",
+        "stand",
+        "settle"
+      ],
+      "justification": "Deliberate absence of active hands. Wire cooling rack and folded linen towel evoke calm, relaxation, and resting time."
+    },
+    {
+      "action_id": "serve",
+      "action_label": "Dresser / Servir",
+      "canonical_token": "serve",
+      "status": "pilot_approved",
+      "asset_path": "images/atomic-actions/serve.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 54758,
+      "file_size_kb": 53.5,
+      "sha256": "e9b055c2868075d86d486c9f98ed0fdd11bc012294f977895eeb00f4eb570488",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of serving food onto a ceramic dinner plate, hands holding a polished serving spoon transferring cooked food into a warm stoneware bowl or plate, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "plate",
+        "garnish_final",
+        "dish_out"
+      ],
+      "justification": "Transferring food onto a dining plate with a serving spoon. Denotes the culmination of cooking and plating ready for consumption."
+    }
+  ]
+}
