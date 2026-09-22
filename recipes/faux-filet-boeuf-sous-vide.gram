@@ -51,11 +51,13 @@ variants:
       prep-and-bag: |
         [prep-pan | Assaisonner les pièces de viande]
         - Sortir le @faux-filet{2 pièces, env. 250 g chacune et 3 cm d'épaisseur} du réfrigérateur ~{20 min} avant la cuisson pour détendre les fibres musculaires.
-        - Éponger la viande avec du #papier absorbant{}, puis assaisonner généreusement chaque face avec le @sel{1 c. à café} et le @poivre{0.5 c. à café, du moulin}.
+        - Éponger la viande avec du #papier absorbant{}.
+        - Assaisonner généreusement chaque face avec le @sel{1 c. à café} et le @poivre{0.5 c. à café, du moulin}.
       sous-vide-waterbath: |
         [sear-pan-traditional | Saisir et arroser au beurre moussant]
         - Faire chauffer l'@huile d'olive{1 c. à soupe} dans une #poêle en fonte{} à feu très vif jusqu'à ce qu'elle soit légèrement fumante.
-        - Déposer les faux-filets et saisir ~{2 min} sans les bouger pour développer une croûte bien dorée.
+        - Déposer les faux-filets.
+        - Saisir ~{2 min} sans les bouger pour développer une croûte bien dorée.
         - Retourner la viande à l'aide d'une #pince de cuisine{}, ajouter le @beurre doux{40 g}, les @gousses d'ail{3 pièces, écrasées en chemise} et le @thym{4 brins, frais}.
         - Pencher la poêle et arroser continuellement la viande avec le beurre moussant pendant ~{2 min} pour nourrir les fibres et parfumer la chair.
         - Débarrasser sur une assiette tiède, parsemer de @fleur de sel{2 pincées} et couvrir d'une feuille de papier aluminium pendant ~{8 min} de repos afin que la température et les sucs s'harmonisent.
