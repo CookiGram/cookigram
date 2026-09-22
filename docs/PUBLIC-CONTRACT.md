@@ -56,3 +56,10 @@ avec `git ls-remote`. `.core-version` est comparé au checkout local de Core
 dans les jobs privés. Si `CORE_SSH_KEY` est absent, la vérification distante de
 Core est explicitement ignorée : ce cas est attendu pour une PR depuis un fork
 et ne désactive aucun contrôle public.
+
+## Frontière Catalogue / Contract / Core
+
+La séparation des responsabilités entre le catalogue, le contrat et le moteur
+— cartographie CI, écarts et chemin self-hosting tiers — est décrite dans
+[`CATALOGUE-CONTRACT-CORE.md`](CATALOGUE-CONTRACT-CORE.md)
+(référence [`cookigram-core#318`](https://github.com/CookiGram/cookigram-core/issues/318)).

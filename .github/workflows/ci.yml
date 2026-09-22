@@ -167,7 +167,7 @@ jobs:
           name: cookigram-pages-${{ github.sha }}
           path: _site
           include-hidden-files: true
-          retention-days: 14
+          retention-days: 5
 
   private-integration:
     name: Intégration Core privée (push de confiance uniquement)
