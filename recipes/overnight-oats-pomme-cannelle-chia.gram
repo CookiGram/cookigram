@@ -7,6 +7,7 @@ prep_time: 5 min
 total_time: 6 h 05 min
 spiciness: 0
 description: "Overnight oats crémeux au yaourt grec, pomme râpée et cannelle, épaissi doucement par les graines de chia."
+nutrition_profile: vitality
 tags: [petit-déjeuner, sans cuisson, overnight oats, avoine, pomme, cannelle, chia]
 source: https://lecoupdegrace.ca/recette/gruau-overnight-a-la-pomme-et-a-la-cannelle/
 author: Le Coup de Grâce
@@ -54,4 +55,5 @@ image_generation:
 - Fermer le bocal et réfrigérer au moins ~{6 h} ; la préparation doit être épaisse et l'avoine correctement hydratée.
 
 [Servir]
-- Mélanger une dernière fois, puis parsemer les @noix{10 g, concassées, facultatif} juste avant de manger froid.
+- Mélanger une dernière fois.
+- Parsemer les @noix{10 g, concassées, facultatif} au moment de manger froid.
