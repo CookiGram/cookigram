@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -108,6 +109,26 @@ def test_pages_provenance_uses_the_checked_out_content_sha() -> None:
     provenance = next(step for step in build["steps"] if step.get("name") == "Verify qualified artifact provenance")
     assert 'provenance = json.loads(Path("_site/provenance.json")' in provenance["run"]
     assert '"qualifying_ci_run_id"' in provenance["run"]
+
+
+def test_qualified_contract_version_matches_builder(tmp_path, monkeypatch) -> None:
+    root = _repo(tmp_path)
+    monkeypatch.delenv("CORE_SSH_KEY", raising=False)
+    monkeypatch.delenv("CONTENT_SHA", raising=False)
+
+    nominal = check_pins.check(root, remote=False)
+
+    assert not any(item.code == "qualified-contract-mismatch" for item in nominal.findings)
+
+    builder_path = root / ".builder.json"
+    config = json.loads(builder_path.read_text(encoding="utf-8"))
+    config["contract_version"] = "9.9.9"
+    builder_path.write_text(json.dumps(config), encoding="utf-8")
+
+    drifted = check_pins.check(root, remote=False)
+
+    assert drifted.exit_code == 1
+    assert any(item.code == "qualified-contract-mismatch" and item.status == "error" for item in drifted.findings)
 
 
 def test_sync_dispatches_pages_with_validated_sha_and_ci_run() -> None:

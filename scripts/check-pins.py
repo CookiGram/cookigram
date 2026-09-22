@@ -94,6 +94,8 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
     ci = data.get(WORKFLOWS[0], {})
     pages = data.get(WORKFLOWS[1], {})
     ci_env = ci.get("jobs", {}).get("recipe-check", {}).get("env", {})
+    qualified_env = ci.get("jobs", {}).get("qualified-pages-artifact", {}).get("env", {})
+    qualified_version = qualified_env.get("CONTRACT_VERSION") if isinstance(qualified_env, dict) else None
     version = ci_env.get("CONTRACT_VERSION")
     contract_sha = ci_env.get("CONTRACT_SHA")
     if not isinstance(version, str) or not VERSION_RE.fullmatch(version):
@@ -126,6 +128,7 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
     if pages and "CONTRACT_VERSION:" in str(pages):
         findings.append(Finding("duplicate-contract-pin", "error", "La version du contrat est définie hors du job public CI."))
     builder = root / BUILDER_CONFIG
+    builder_contract_version: str | None = None
     if builder.is_file():
         try:
             config = json.loads(builder.read_text(encoding="utf-8"))
@@ -145,6 +148,15 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
                     findings.append(Finding("invalid-builder-config", "error", f"{BUILDER_CONFIG} contient une valeur Contract vide pour `{key}`."))
             if isinstance(config.get("contract_sha256"), str) and not re.fullmatch(r"[0-9a-f]{64}", config["contract_sha256"]):
                 findings.append(Finding("invalid-builder-contract-sha256", "error", f"{BUILDER_CONFIG}.contract_sha256 doit être un SHA256 hexadécimal."))
+            if isinstance(config.get("contract_version"), str) and config["contract_version"].strip():
+                builder_contract_version = config["contract_version"]
+    if isinstance(qualified_version, str) and VERSION_RE.fullmatch(qualified_version):
+        if builder_contract_version is not None and builder_contract_version != qualified_version:
+            findings.append(Finding("qualified-contract-mismatch", "error", f"La version qualifiée du contrat ({qualified_version}) ne correspond pas à {BUILDER_CONFIG} contract_version ({builder_contract_version}).", {"qualified": qualified_version, "builder": builder_contract_version}))
+    elif isinstance(qualified_version, str):
+        findings.append(Finding("qualified-contract-mismatch", "error", "qualified-pages-artifact.CONTRACT_VERSION doit être une version semver simple."))
+    else:
+        findings.append(Finding("qualified-contract-unpinned", "info", "Aucune CONTRACT_VERSION qualifiée définie par le job qualified-pages-artifact."))
     return version, contract_sha
 
 
