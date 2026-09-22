@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 # Instance-owned visual mapping: canonical token -> relative asset path
 INSTANCE_ACTION_MAPPING: dict[str, str] = {
+    # Lot Pilote (validé)
     "cut": "images/atomic-actions/cut.webp",
     "rinse": "images/atomic-actions/rinse.webp",
     "mix": "images/atomic-actions/mix.webp",
@@ -31,10 +32,19 @@ INSTANCE_ACTION_MAPPING: dict[str, str] = {
     "knead": "images/atomic-actions/knead.webp",
     "rest": "images/atomic-actions/rest.webp",
     "serve": "images/atomic-actions/serve.webp",
+    # Lot P1 (validé)
+    "oven": "images/atomic-actions/oven.webp",
+    "boil": "images/atomic-actions/boil.webp",
+    "assemble": "images/atomic-actions/assemble.webp",
+    "steam": "images/atomic-actions/steam.webp",
+    "season": "images/atomic-actions/season.webp",
+    "air_fry": "images/atomic-actions/air_fry.webp",
+    "blend": "images/atomic-actions/blend.webp",
 }
 
 # Semantic mutualization aliases: secondary/fine-grained gestures mapped to archetypes
 MUTUALIZED_ALIASES: dict[str, str] = {
+    # Lot Pilote aliases
     "chop": "cut",
     "slice": "cut",
     "dice": "cut",
@@ -67,6 +77,43 @@ MUTUALIZED_ALIASES: dict[str, str] = {
     "plate": "serve",
     "garnish_final": "serve",
     "dish_out": "serve",
+    # Lot P1 aliases
+    "preheat": "oven",
+    "bake": "oven",
+    "roast": "oven",
+    "broil": "oven",
+    "gratin": "oven",
+    "baking": "oven",
+    "in_oven": "oven",
+    "rolling_boil": "boil",
+    "blanch": "boil",
+    "poach": "boil",
+    "pasta_boil": "boil",
+    "water_cook": "boil",
+    "layer": "assemble",
+    "garnish_intermediate": "assemble",
+    "spread_layer": "assemble",
+    "mount": "assemble",
+    "stuff": "assemble",
+    "fill": "assemble",
+    "varoma": "steam",
+    "bamboo_steam": "steam",
+    "steam_cook": "steam",
+    "steamer": "steam",
+    "salt": "season",
+    "pepper": "season",
+    "spice": "season",
+    "sprinkle": "season",
+    "coat": "season",
+    "marinate_season": "season",
+    "crisp_air_fry": "air_fry",
+    "airfryer_basket": "air_fry",
+    "shake_basket": "air_fry",
+    "puree": "blend",
+    "crush_food": "blend",
+    "immersion_blend": "blend",
+    "liquidize": "blend",
+    "smoothie_blend": "blend",
 }
 
 
