@@ -91,6 +91,22 @@ def test_data_json_merges_into_event(tmp_path: Path) -> None:
     assert (last["pr"], last["ci"]) == (431, "pass")
 
 
+def test_close_pass_refuses_unresolved_ko(tmp_path: Path) -> None:
+    assert _run(["--ledger-dir", str(tmp_path), "init", "--run-id", "run-1"]) == 0
+    assert _run(["--ledger-dir", str(tmp_path), "log", "--run-id", "run-1", "--phase", "p1", "--status", "ok"]) == 0
+    assert _run(["--ledger-dir", str(tmp_path), "log", "--run-id", "run-1", "--phase", "p2", "--status", "ko"]) == 0
+    assert _run(["--ledger-dir", str(tmp_path), "close", "--run-id", "run-1", "--result", "pass"]) == 2
+    assert [item["type"] for item in _events(tmp_path)] == ["run_started", "event", "event"]
+    assert _run(["--ledger-dir", str(tmp_path), "close", "--run-id", "run-1", "--result", "fail"]) == 0
+
+
+def test_close_pass_after_retry_fix(tmp_path: Path) -> None:
+    assert _run(["--ledger-dir", str(tmp_path), "init", "--run-id", "run-1"]) == 0
+    assert _run(["--ledger-dir", str(tmp_path), "log", "--run-id", "run-1", "--phase", "p", "--status", "ko"]) == 0
+    assert _run(["--ledger-dir", str(tmp_path), "log", "--run-id", "run-1", "--phase", "p", "--status", "ok"]) == 0
+    assert _run(["--ledger-dir", str(tmp_path), "close", "--run-id", "run-1", "--result", "pass"]) == 0
+
+
 def test_run_id_shape_is_enforced(tmp_path: Path) -> None:
     for bad in ("", "-x", "../x", "a" * 129):
         assert _run(["--ledger-dir", str(tmp_path), "init", "--run-id", bad]) == 2
