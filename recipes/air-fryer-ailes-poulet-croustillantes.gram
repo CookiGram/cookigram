@@ -7,6 +7,7 @@ prep_time: 5 min
 total_time: 40 min
 spiciness: 1
 description: "Ailes de poulet dorées et croustillantes à l’air fryer, relevées d’ail et d’épices pour un partage convivial."
+nutrition_profile: pleasure
 tags: [air-fryer, poulet, apéritif]
 source: https://www.bbcgoodfood.com/recipes/air-fried-chicken-wings/
 author: Anna Glover
@@ -24,5 +25,6 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 - Séparer les @ailes de poulet{1 kg} aux articulations et les éponger.
 - Mélanger avec l'@huile d'olive{1 c. à soupe}, le @sel{1 c. à café}, le @poivre moulu{1/2 c. à café} et l'@ail en poudre{1 c. à café}.
 [Cuire]
-- Disposer les ailes dans le #panier air fryer{} et cuire à ^{200 C} ~{35 min}, en les retournant à mi-cuisson.
+- Disposer les ailes dans le #panier air fryer{}.
+- Cuire à ^{200 C} ~{35 min}, en les retournant à mi-cuisson.
 - La peau doit être gonflée, dorée et croustillante; prolonger de 5 min si nécessaire.

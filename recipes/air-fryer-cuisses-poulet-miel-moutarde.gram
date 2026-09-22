@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 35 min
 spiciness: 0
 description: "Cuisses de poulet juteuses, enrobées d’une laque miel-moutarde et rôties à l’air fryer jusqu’à peau dorée."
+nutrition_profile: balanced
 tags: [air-fryer, poulet, miel, moutarde]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-roast-chicken
 author: Samuel Goldsmith
@@ -24,5 +25,7 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 - Mélanger le @miel{30 g}, la @moutarde de Dijon{30 g}, l'@huile d'olive{1 c. à soupe} et le @paprika{1 c. à café}.
 - Enrober les @cuisses de poulet{800 g} avec la moitié de la préparation.
 [Cuire]
-- Déposer les cuisses dans le #panier air fryer{} et cuire à ^{180 C} ~{25 min}.
-- Badigeonner avec le reste de la laque, puis cuire à ^{200 C} ~{5 min}; atteindre ^{74 C à cœur}.
+- Déposer les cuisses dans le #panier air fryer{}.
+- Cuire à ^{180 C} ~{25 min}.
+- Badigeonner avec le reste de la laque.
+- Cuire à ^{200 C} ~{5 min}; atteindre ^{74 C à cœur}.
