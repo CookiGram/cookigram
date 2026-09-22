@@ -3,26 +3,35 @@
 ## Contrat utilisé par la CI
 
 La CI installe le paquet public [`cookigram-contract`](https://github.com/PierreCsn/cookigram-contract)
-directement depuis GitHub, à la référence immuable `v1.0.0`.
+directement depuis GitHub, au commit immuable `ad0a53107de370e8dc3118f780f85b6cbabc4425`.
 
 ```text
-CONTRACT_VERSION=1.0.0
-CONTRACT_REF=v1.0.0
-CONTRACT_SHA=b567e88acdcee69302c926caa6f5222508b7a051
+CONTRACT_VERSION=1.1.0
+CONTRACT_REF=ad0a53107de370e8dc3118f780f85b6cbabc4425
+CONTRACT_SHA=ad0a53107de370e8dc3118f780f85b6cbabc4425
 CLI=python -m cookigram_contract validate .
 ```
 
-Le job vérifie d'abord que le tag annoté `v1.0.0` résout vers
-`b567e88acdcee69302c926caa6f5222508b7a051`, puis installe cette référence et
+Le job vérifie d'abord que le dépôt contient le commit
+`ad0a53107de370e8dc3118f780f85b6cbabc4425`, puis installe cette référence et
 valide le corpus complet, y compris `recipes/`, `.gram/ingredients.yaml` et
 `.gram/ingredient-provenance.yaml`. Le parser et le schéma ne sont pas copiés
 dans ce dépôt.
+
+## Builder qualifié
+
+Le job Pages ne résout pas le Contract depuis Git. Il télécharge le tarball
+Core qualifié épinglé par `.builder.json`, vérifie son SHA256 puis vérifie le
+`manifest.json` et `SHA256SUMS` internes. Le tarball contient les wheels Core
+et Contract; les deux packages CookiGram sont installés localement avec
+`--no-index --no-deps`. La provenance du site conserve le SHA source et le
+SHA256 du Contract effectivement utilisé.
 
 ## Chemins de validation
 
 | Contexte | Validation | Secret privé |
 | --- | --- | --- |
-| PR, y compris depuis un fork | `cookigram-contract` v1.0.0 et audit des illustrations | Non |
+| PR, y compris depuis un fork | `cookigram-contract` v1.1.0 et audit des illustrations | Non |
 | Push de confiance / exécution hors PR | `cookigram-core` épinglé par `.core-version`, `recipe_check` et build | Oui |
 
 Le workflow ne transmet donc jamais `CORE_SSH_KEY` à une exécution de PR.

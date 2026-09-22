@@ -58,12 +58,12 @@ def test_contract_remote_sha_is_checked(tmp_path, monkeypatch) -> None:
 
     def fake_runner(*args, **kwargs):
         calls.append(args)
-        return subprocess.CompletedProcess(args, 0, "b567e88acdcee69302c926caa6f5222508b7a051\tref\n", "")
+        return subprocess.CompletedProcess(args, 0, "ad0a53107de370e8dc3118f780f85b6cbabc4425\tref\n", "")
 
     report = check_pins.check(root, runner=fake_runner)
 
     assert report.exit_code == 0
-    assert calls == [("git", "ls-remote", check_pins.CONTRACT_REPO, "refs/tags/v1.0.0^{}")]
+    assert calls == [("git", "ls-remote", check_pins.CONTRACT_REPO)]
 
 
 def test_contract_remote_sha_mismatch_is_explicit(tmp_path, monkeypatch) -> None:
