@@ -54,7 +54,7 @@ jobs:
         run: python scripts/lint-public-content.py --check --warn-only --require-editorial-dates --json
 
       - name: Tester le Planner en fuseau Europe/Paris (export iCalendar, fenêtre glissante, état local)
-        run: TZ=Europe/Paris node --test tests/calendar-export.test.mjs tests/planner-week-window.test.mjs static/meal-planner/planner-state.test.js
+        run: TZ=Europe/Paris node --test tests/calendar-export.test.mjs tests/planner-week-window.test.mjs tests/planner-nutrition.test.mjs static/meal-planner/planner-state.test.js
 
       - name: Tester les contrats UX statiques
         run: python -m pytest tests -q
