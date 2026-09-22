@@ -30,6 +30,7 @@ test("exports only the displayed week and keeps UID stable across snapshots", ()
   const later = buildCalendarExport({ ...input, exportedAt: new Date("2026-09-08T10:00:00Z") });
   const uid = input.selection.map(recipe => `${recipe.slug}-2026-09-0${recipe.slug === "porc-au-caramel" ? "8" : "9"}`);
   assert.match(later, new RegExp(`UID:${uid[0]}-soir@cookigram`));
+  assert.match(later, /UID:riz-blanc-2026-09-09-midi@cookigram/);
   assert.doesNotMatch(later, /DTSTART;VALUE=DATE:20260910/);
   assert.match(later, /DTSTAMP:20260908T100000Z/);
 });

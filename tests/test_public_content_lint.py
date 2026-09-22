@@ -20,8 +20,10 @@ class PublicContentLintTests(unittest.TestCase):
         self.assertEqual(result["files"], 199)
         self.assertEqual(result["summary"]["errors"], 0)
         self.assertEqual(result["summary"]["warnings"], 0)
-        self.assertEqual(json.dumps(result, ensure_ascii=False), json.dumps(LINTER.run(ROOT, warn_only=True), ensure_ascii=False))
-        self.assertTrue(all(not item["path"].startswith("/") for item in result["findings"]))
+        self.assertEqual(
+            json.dumps(result, ensure_ascii=False),
+            json.dumps(LINTER.run(ROOT, warn_only=True, require_editorial_dates=True), ensure_ascii=False),
+        )
 
 
     def test_duplicate_yaml_key_is_a_blocking_error(self) -> None:
@@ -38,6 +40,8 @@ class PublicContentLintTests(unittest.TestCase):
         result = LINTER.run(ROOT / "tests/fixtures/public-content-lint/invalid")
         rules = {item["rule"] for item in result["findings"]}
         self.assertTrue({"tags", "date-format"} <= rules)
+        self.assertTrue(result["findings"])
+        self.assertTrue(all(not item["path"].startswith("/") for item in result["findings"]))
 
     def test_editorial_dates_are_required_for_the_production_corpus(self) -> None:
         result = LINTER.run(ROOT / "tests/fixtures/public-content-lint/invalid", require_editorial_dates=True)

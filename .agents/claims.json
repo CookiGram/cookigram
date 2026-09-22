@@ -15,6 +15,16 @@
       "claimed_at": "2026-09-22T02:45:00+02:00",
       "last_heartbeat": "2026-09-22T03:00:00+02:00",
       "status": "in_progress"
+    },
+    "414": {
+      "issue": 414,
+      "title": "[Tests] Durcir UID 2e événement calendrier + déterminisme lint (audit post-#411)",
+      "agent": "Muse-rose-algol",
+      "workspace": "/home/pierrecsn/Work/cookigram",
+      "branch": "fix/issue-414-test-holes-uid-lint",
+      "claimed_at": "2026-09-22T04:30:00+02:00",
+      "last_heartbeat": "2026-09-22T04:30:00+02:00",
+      "status": "in_progress"
     }
   },
   "completed_claims": [
