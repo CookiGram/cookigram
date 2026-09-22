@@ -23,5 +23,6 @@ scaling: {enabled: true, min: 2, max: 4, step: 1}
 - Enrober les @filets de poulet{600 g} avec l'@huile végétale{1/2 c. à soupe}.
 - Mélanger le @sel{1 c. à café}, le @paprika fumé{1 c. à café}, l'@ail en poudre{1 c. à café}, les @herbes de Provence{2 c. à café} et le @poivre moulu{1/2 c. à café}; rouler le poulet dedans.
 [Cuire]
-- Déposer le poulet en une seule couche dans le #panier air fryer{} et cuire à ^{180 C} ~{18 min}, en retournant à mi-cuisson.
+- Déposer le poulet en une seule couche dans le #panier air fryer{}.
+- Cuire à ^{180 C} ~{18 min}, en retournant à mi-cuisson.
 - Vérifier ^{70 C à cœur} : le jus doit être clair et la chair opaque.
