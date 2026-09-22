@@ -84,7 +84,8 @@ variants:
       cook-pasta: |
         [pasta-sauteuse | Cuisson par absorption à couvert]
         - Dans la #sauteuse{}, après avoir caramélisé les oignons au beurre et déglacé au vin blanc, verser la totalité du @bouillon de bœuf{720 g} chaud.
-        - Porter à vive ébullition, puis ajouter les @penne{350 g}.
+        - Porter à vive ébullition.
+        - Ajouter les @penne{350 g}.
         - Baisser à feu moyen, couvrir et laisser cuire pendant ~{11 min} en remuant 2 ou 3 fois pour que les pâtes boivent le bouillon parfumé.
 ---
 
