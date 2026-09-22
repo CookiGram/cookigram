@@ -157,3 +157,36 @@ ne les recouvre pas.
    place, sans affaiblir `qualified-pages-artifact` ni `pages.yml`.
 4. Coordonner la bascule `contract_version` 1.0.0 → 1.1.0 avec #298 (provenance
    du builder = version réellement embarquée).
+
+## Décisions arrêtées (revue de maintenabilité, 2026-09-22)
+
+Réutilise les issues existantes, sans doublon : #400, #404, #414, #391,
+#393, #396, `cookigram-core#298`, `cookigram-core#318`.
+
+* **D1 — source unique de provenance.** Le SHA fait foi, la version est
+  décorative : `contract_source_sha` (SHA embarqué par le builder) est
+  l'unique fait fonctionnel — résolution, manifeste, sync,
+  `provenance.json`, vérification Pages. `contract_version` reste une
+  étiquette informative lue depuis le bundle, jamais résolue ni comparée
+  comme preuve. Soudure exigée : `CONTRACT_SHA == manifest.contract.source_sha`
+  dans `ci.yml` et `sync-core-pin.yml`. Nommage canonique :
+  `contract_source_sha` (pas de second champ `contract_sha`) ; #404 se
+  résout en constatant cette couverture. Séquencement : après le bundle
+  Core #298/#359 puis rebase de #400.
+* **D2 — preuve source × corpus hors push.** La preuve « tel Core source
+  construit tel catalogue » est conservée mais sort du push catalogue :
+  domicile `compat-catalog.yml` côté Core (suites 1–2 ci-dessus), fréquence
+  hebdo + post-release + changement de Contract ; `private-integration`
+  reconvertie ou supprimée une fois (2) en place (suite 3), sans affaiblir
+  `qualified-pages-artifact` ni `pages.yml`. Le robot `sync-core-pin` est
+  conservé (E5) ; en régime multi-agents, aucun second writer sur
+  `.core-version` / `.builder.json` / `automation/core-pin`.
+* **D3 — gate unique conservé, oracles partitionnés.** Le gate « corpus
+  publiable » reste unique pour l'expérience contributeur ; l'oracle des
+  surfaces générées et la QA à runners hétérogènes se partitionnent par
+  frontière : le contenu n'oracle pas le rendu moteur (relève #391/#318),
+  dureté des tests suivie en #414, visuels d'instance en #393/#396. Aucune
+  nouvelle issue : chaque versant a déjà son porteur.
+* **Non-décisions assumées.** URL remote historique (hygiène, résout
+  identique aujourd'hui) ; snapshots et `prototype/` sandbox (couverts par
+  #414) ; bascule d'étiquette 1.0.0 → 1.1.0 coordonnée avec #298 (suite 4).
