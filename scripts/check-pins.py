@@ -160,6 +160,35 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
     return version, contract_sha
 
 
+def verify_bundle_manifest(data: Any, *, core_sha: str, contract_source_sha: str) -> list[Finding]:
+    """Soudure D1 (#404) : le pin Contract du builder et le contrat embarqué.
+
+    `contract_version` reste une étiquette informative et n'est jamais comparée
+    comme preuve ; seule l'égalité du SHA source fait foi. La bascule coordonnée
+    de l'étiquette 1.0.0 → 1.1.0 est une suite différée (doctrine, avec Core #298).
+    """
+    findings: list[Finding] = []
+    if not isinstance(data, dict):
+        return [Finding("manifest-not-mapping", "error", "Le manifest du bundle ne contient pas un mapping JSON.")]
+    core = data.get("core")
+    if not isinstance(core, dict) or core.get("source_sha") != core_sha:
+        actual = core.get("source_sha") if isinstance(core, dict) else None
+        findings.append(Finding("manifest-core-mismatch", "error", "Le Core embarqué ne correspond pas au pin du builder.", {"expected": core_sha, "actual": actual}))
+    contract = data.get("contract")
+    if not isinstance(contract, dict) or contract.get("identity") != "cookigram-contract":
+        findings.append(Finding("manifest-contract-identity-mismatch", "error", "Le manifest n'embarque pas le contrat cookigram-contract."))
+    else:
+        source_sha = contract.get("source_sha")
+        if not isinstance(source_sha, str) or not SHA_RE.fullmatch(source_sha):
+            findings.append(Finding("manifest-invalid-contract-sha", "error", "Le manifest n'expose pas un contract_source_sha hexadécimal de 40 caractères."))
+        elif source_sha != contract_source_sha:
+            findings.append(Finding("manifest-contract-sha-mismatch", "error", "Le contrat embarqué ne correspond pas au pin Contract du builder.", {"expected": contract_source_sha, "actual": source_sha}))
+        wheel_sha = contract.get("sha256")
+        if not isinstance(wheel_sha, str) or not re.fullmatch(r"[0-9a-f]{64}", wheel_sha):
+            findings.append(Finding("manifest-invalid-contract-sha256", "error", "Le manifest n'expose pas un contract_sha256 hexadécimal de 64 caractères."))
+    return findings
+
+
 def _git_sha(root: Path, args: tuple[str, ...], findings: list[Finding], code: str) -> str | None:
     result = _run("git", *args, cwd=root)
     value = result.stdout.strip()
@@ -228,6 +257,22 @@ def _markdown(report: Report) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _main_manifest(manifest_path: Path, core_sha: str, contract_source_sha: str) -> int:
+    try:
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"Manifest illisible : {manifest_path}: {exc}")
+        return 1
+    findings = verify_bundle_manifest(data, core_sha=core_sha, contract_source_sha=contract_source_sha)
+    for finding in findings:
+        print(f"[{finding.status}] {finding.code}: {finding.message}")
+    if any(item.status == "error" for item in findings):
+        print("Bundle manifest: FAIL")
+        return 1
+    print("Bundle manifest: PASS")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -235,7 +280,12 @@ def main(argv: list[str] | None = None) -> int:
     output.add_argument("--json", action="store_true", help="rapport JSON")
     output.add_argument("--markdown", action="store_true", help="rapport Markdown")
     parser.add_argument("--no-remote", action="store_true", help="ne pas interroger les références publiques distantes")
+    parser.add_argument("--check-manifest", type=Path, default=None, help="vérifier manifest.json du bundle builder contre les pins (soudure D1)")
+    parser.add_argument("--core-sha", default="", help="pin Core attendu pour --check-manifest")
+    parser.add_argument("--contract-source-sha", default="", help="pin Contract attendu pour --check-manifest")
     args = parser.parse_args(argv)
+    if args.check_manifest is not None:
+        return _main_manifest(args.check_manifest, args.core_sha, args.contract_source_sha)
     try:
         report = check(args.root.resolve(), remote=not args.no_remote)
     except OSError as exc:

@@ -125,19 +125,9 @@ jobs:
           mkdir -p "$RUNNER_TEMP/builder"
           tar -xzf "$RUNNER_TEMP/$BUILDER_ARTIFACT" -C "$RUNNER_TEMP/builder"
           (cd "$RUNNER_TEMP/builder" && sha256sum --check SHA256SUMS)
-          python - "$RUNNER_TEMP/builder/manifest.json" "${{ steps.builder.outputs.core_sha }}" <<'PY'
-          import json
-          import sys
-          from pathlib import Path
-
-          data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          assert data["core"]["source_sha"] == sys.argv[2]
-          assert data["contract"]["identity"] == "cookigram-contract"
-          assert data["contract"]["version"] == "1.1.0"
-          assert len(data["contract"]["source_sha"]) == 40
-          assert len(data["contract"]["sha256"]) == 64
-          print(json.dumps(data, indent=2))
-          PY
+          # Soudure D1 (#404) : le pin Contract du builder et le contrat embarqué
+          # ne peuvent plus diverger silencieusement.
+          python scripts/check-pins.py --check-manifest "$RUNNER_TEMP/builder/manifest.json" --core-sha "${{ steps.builder.outputs.core_sha }}" --contract-source-sha "${{ steps.builder.outputs.contract_source_sha }}"
 
       - name: Install pinned builder
         env:

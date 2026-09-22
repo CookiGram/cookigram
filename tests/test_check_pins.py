@@ -136,3 +136,116 @@ def test_sync_dispatches_pages_with_validated_sha_and_ci_run() -> None:
     assert "gh workflow run pages.yml" in workflow
     assert "--field content_sha='${{ steps.candidate.outputs.sha }}'" in workflow
     assert "--field ci_run_id='${{ steps.main_ci.outputs.run_id }}'" in workflow
+
+
+def _pinned_builder() -> dict:
+    return json.loads((ROOT / ".builder.json").read_text(encoding="utf-8"))
+
+
+def _pinned_manifest() -> dict:
+    config = _pinned_builder()
+    return {
+        "core": {"source_sha": config["core_sha"]},
+        "contract": {
+            "identity": "cookigram-contract",
+            "version": config["contract_version"],
+            "source_sha": config["contract_source_sha"],
+            "sha256": config["contract_sha256"],
+        },
+    }
+
+
+def _ci_soudure_wired(workflow_text: str) -> bool:
+    try:
+        workflow = yaml.safe_load(workflow_text)
+    except yaml.YAMLError:
+        return False
+    if not isinstance(workflow, dict):
+        return False
+    steps = workflow.get("jobs", {}).get("qualified-pages-artifact", {}).get("steps", [])
+    extract = next(
+        (
+            step
+            for step in steps
+            if isinstance(step, dict) and step.get("name") == "Extract and verify Core + Contract bundle"
+        ),
+        None,
+    )
+    if extract is None:
+        return False
+    run = extract.get("run", "")
+    return (
+        "--check-manifest" in run
+        and "--contract-source-sha" in run
+        and "steps.builder.outputs.contract_source_sha" in run
+    )
+
+
+def test_manifest_soudure_nominale_passe_avec_pins_reels() -> None:
+    config = _pinned_builder()
+
+    findings = check_pins.verify_bundle_manifest(
+        _pinned_manifest(),
+        core_sha=config["core_sha"],
+        contract_source_sha=config["contract_source_sha"],
+    )
+
+    assert [item for item in findings if item.status == "error"] == []
+
+
+def test_manifest_soudure_contrat_divergent_invalide() -> None:
+    config = _pinned_builder()
+    manifest = _pinned_manifest()
+    manifest["contract"]["source_sha"] = "f" * 40
+
+    findings = check_pins.verify_bundle_manifest(
+        manifest,
+        core_sha=config["core_sha"],
+        contract_source_sha=config["contract_source_sha"],
+    )
+
+    assert any(item.code == "manifest-contract-sha-mismatch" and item.status == "error" for item in findings)
+
+
+def test_manifest_contrat_malforme_invalide() -> None:
+    config = _pinned_builder()
+    manifest = _pinned_manifest()
+    manifest["contract"]["source_sha"] = "ad0a531"
+
+    findings = check_pins.verify_bundle_manifest(
+        manifest,
+        core_sha=config["core_sha"],
+        contract_source_sha=config["contract_source_sha"],
+    )
+
+    assert any(item.code == "manifest-invalid-contract-sha" and item.status == "error" for item in findings)
+
+
+def test_manifest_core_divergent_invalide() -> None:
+    config = _pinned_builder()
+    manifest = _pinned_manifest()
+    manifest["core"]["source_sha"] = "0" * 40
+
+    findings = check_pins.verify_bundle_manifest(
+        manifest,
+        core_sha=config["core_sha"],
+        contract_source_sha=config["contract_source_sha"],
+    )
+
+    assert any(item.code == "manifest-core-mismatch" and item.status == "error" for item in findings)
+
+
+def test_ci_soudure_nominale() -> None:
+    text = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+
+    assert _ci_soudure_wired(text)
+
+
+def test_ci_soudure_absente_invalide() -> None:
+    text = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+    workflow = yaml.safe_load(text)
+    steps = workflow["jobs"]["qualified-pages-artifact"]["steps"]
+    extract = next(step for step in steps if step.get("name") == "Extract and verify Core + Contract bundle")
+    extract["run"] = "python scripts/check-pins.py --json"
+
+    assert not _ci_soudure_wired(yaml.safe_dump(workflow))
