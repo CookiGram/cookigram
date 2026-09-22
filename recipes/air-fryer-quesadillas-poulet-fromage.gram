@@ -23,5 +23,6 @@ scaling: {enabled: true, min: 2, max: 4, step: 1}
 - Mélanger le @filet de poulet{300 g, cuit et effiloché}, le @paprika{1 c. à café}, le @cumin{1/2 c. à café} et le @sel{1/2 c. à café}.
 - Répartir le poulet et le @fromage râpé{150 g} sur les @tortillas de blé{4 pièces}; plier en deux.
 [Cuire]
-- Déposer les quesadillas dans le #panier air fryer{} et cuire à ^{190 C} ~{8 min}, en retournant à mi-cuisson.
+- Déposer les quesadillas dans le #panier air fryer{}.
+- Cuire à ^{190 C} ~{8 min}, en retournant à mi-cuisson.
 - Le fromage doit être fondu et les tortillas dorées; couper en triangles.
