@@ -39,7 +39,8 @@ image_generation:
 
 [Cuire et assaisonner le riz]
 - Cuire le @riz à sushi{3 tasses} selon les indications de son paquet dans une #casserole{}.
-- Mélanger le @vinaigre de cidre{1 c. à soupe}, le @sucre glace{1 c. à soupe} et le @mirin{1 c. à café}, puis incorporer au riz chaud.
+- Mélanger le @vinaigre de cidre{1 c. à soupe}, le @sucre glace{1 c. à soupe} et le @mirin{1 c. à café}.
+- Incorporer au riz chaud.
 - Étaler le riz dans un #grand plat{} et le laisser refroidir à température ambiante.
 
 [Préparer le saumon cru]
@@ -50,12 +51,15 @@ image_generation:
 [Cuire le saumon teriyaki]
 - Chauffer l'@huile d'olive{1 c. à soupe} dans une #poêle{} et cuire le @saumon frais{300 g, en morceaux} jusqu'à coloration et chair opaque.
 - Ajouter la @sauce soja salée{1/2 tasse}, le @mirin{1 c. à soupe} et le @sucre{1/4 tasse}; réduire jusqu'à ce que la sauce enrobe le poisson.
-- Émietter le saumon cuit dans la poêle, puis le laisser refroidir complètement.
+- Émietter le saumon cuit dans la poêle.
+- Le laisser refroidir complètement.
 
 [Préparer les garnitures]
 - Mélanger le @maïs{1/2 tasse}, le @beurre doux{1 noix} et la @mayonnaise{1/4 tasse} dans un #bol{}.
-- Battre l'@œuf{1} avec le @lait{1 c. à soupe} et le @sucre{1 c. à soupe}; cuire une omelette très fine dans une #poêle{}.
-- Refroidir l'omelette puis la tailler en fines lanières.
+- Battre l'@œuf{1} avec le @lait{1 c. à soupe} et le @sucre{1 c. à soupe}.
+- Cuire une omelette très fine dans une #poêle{}.
+- Refroidir l'omelette.
+- La tailler en fines lanières.
 
 [Monter les étages]
 - Chemiser le #moule à gâteau{} de film alimentaire et tasser un premier tiers du @riz à sushi{préparé} au fond.
@@ -67,6 +71,7 @@ image_generation:
 - Terminer avec le reste du @riz à sushi{préparé} et le @nori{1 feuille}; presser doucement pour solidariser les couches.
 
 [Démouler et finir]
-- Retourner le moule sur un plat, retirer le film, puis répartir le mélange de @maïs{la préparation} sur le dessus.
+- Retourner le moule sur un plat et retirer le film.
+- Répartir le mélange de @maïs{la préparation} sur le dessus.
 - Décorer avec l'@œuf{les lanières} et le @saumon frais{10 tranches, qualité sashimi} roulé en fleur.
 - Ajouter le @nori{1 feuille, émincée} et servir immédiatement, sans laisser le poisson cru à température ambiante.
