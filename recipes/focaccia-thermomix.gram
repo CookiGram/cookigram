@@ -6,6 +6,7 @@ portions: 12
 prep_time: 15 min
 total_time: 3 h
 description: Focaccia moelleuse à l'huile d'olive, garnie de tomates cerises, de romarin frais et de gros sel.
+nutrition_profile: balanced
 tags: [pain, focaccia, thermomix, italien, tomate, romarin]
 source: https://cookidoo.fr/recipes/recipe/fr-FR/r80558
 author: Vorwerk Home & Co. KmG
@@ -42,7 +43,8 @@ image_generation:
 
 [Pétrir la pâte au Thermomix]
 - Mettre la @farine{500 g}, le @sucre{1 c. à café, facultatif}, la @levure boulangère{20 g de levure fraîche, ou 1 1/2 c. à café de levure sèche instantanée}, l'@huile d'olive{30 g}, l'@eau{350 g, tiède} et le @sel{1 c. à café} dans le #bol Thermomix{}.
-- Mélanger ~{20 s} à vitesse 6, puis pétrir ~{2 min} en mode pétrin.
+- Mélanger ~{20 s} à vitesse 6.
+- Pétrir ~{2 min} en mode pétrin.
 
 [Faire lever la pâte]
 - Transvaser la pâte, qui est collante, dans le saladier préparé.
