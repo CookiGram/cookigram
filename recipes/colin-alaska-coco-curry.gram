@@ -48,7 +48,8 @@ image_generation:
 
 [Cuire le poisson]
 - Déposer les @filets de poisson{4 pièces, colin d'Alaska surgelé} dans la poêle.
-- Cuire ~{4 min}, puis retourner délicatement les filets.
+- Cuire ~{4 min}.
+- Retourner délicatement les filets.
 
 [Former la sauce]
 - Verser le @lait de coco{200 ml} autour du poisson.
