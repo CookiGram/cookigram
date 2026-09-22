@@ -208,6 +208,10 @@ jobs:
         id: core-ref
         run: echo "sha=$(cat .core-version | tr -d '[:space:]')" >> $GITHUB_OUTPUT
 
+      - name: Read pinned Contract source SHA
+        id: contract-ref
+        run: python -c "import json; print('sha=' + json.load(open('.builder.json'))['contract_source_sha'])" >> $GITHUB_OUTPUT
+
       - name: Checkout CookiGram Core Engine (Private)
         if: ${{ env.HAVE_CORE_KEY == 'true' }}
         uses: actions/checkout@v4
@@ -221,6 +225,10 @@ jobs:
         if: ${{ env.HAVE_CORE_KEY == 'true' }}
         run: |
           python -m pip install --upgrade pip
+          # cookigram-contract==1.1.0 n'est publié sur aucun index : le
+          # pré-installer depuis le SHA sourcé pinné satisfait l'exigence
+          # du Core sans résolution réseau flottante (chemin dev explicite).
+          pip install "git+https://github.com/CookiGram/cookigram-contract.git@${{ steps.contract-ref.outputs.sha }}"
           pip install -e ./core
           python scripts/check-pins.py --markdown --no-remote
           python -m generator.recipe_check --root .
