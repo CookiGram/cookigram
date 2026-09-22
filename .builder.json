@@ -1,6 +1,10 @@
 {
-  "release": "core-9c34566",
-  "artifact": "cookigram_core-0.1.0-py3-none-any.whl",
-  "sha256": "11a548b3fa2ffc26dfda42bcb86f52093f8407c8f75b008db3a36149915b2fb6",
-  "core_sha": "9c34566c1f075eb1a002b3fa9530dd713290845c"
+  "release": "core-528beec",
+  "artifact": "cookigram-builder-528beec.tar.gz",
+  "sha256": "b8d27c336e1ac35e86526dbac31cec79d6ad6c07a828c502776002fbd3615d2a",
+  "core_sha": "528beec78fc8081363ae17ba5b644504c24c283f",
+  "contract_version": "1.1.0",
+  "contract_source_sha": "ad0a53107de370e8dc3118f780f85b6cbabc4425",
+  "contract_artifact": "cookigram_contract-1.1.0-py3-none-any.whl",
+  "contract_sha256": "3be58d47be3b884195289c1bac1f5cb10d95da5221ab59f9550d131c2375018a"
 }

@@ -62,37 +62,62 @@ jobs:
 
           path, expected_release, dispatched_core = sys.argv[1:]
           data = json.loads(Path(path).read_text(encoding="utf-8"))
-          required = ("core_sha", "artifact", "sha256", "release", "contract_version")
+          required = ("core_sha", "artifact", "sha256", "release", "contract_version", "contract_source_sha", "contract_artifact", "contract_sha256")
           for key in required:
               if not isinstance(data.get(key), str) or not data[key].strip():
                   raise SystemExit(f"invalid builder provenance field: {key}")
           if data["release"] != expected_release:
               raise SystemExit("builder provenance release mismatch")
-          if data["contract_version"] != "1.0.0":
+          if data["contract_version"] != "1.1.0":
               raise SystemExit("builder provenance contract version mismatch")
           if not re.fullmatch(r"[0-9a-f]{40}", data["core_sha"]):
               raise SystemExit("builder provenance core_sha is invalid")
           if dispatched_core and data["core_sha"] != dispatched_core:
               raise SystemExit("repository_dispatch core_sha does not match provenance")
-          if not data["artifact"].endswith(".whl"):
-              raise SystemExit("builder provenance artifact is not a wheel")
-          if not re.fullmatch(r"[0-9a-f]{64}", data["sha256"]):
+          if not data["artifact"].endswith(".tar.gz"):
+              raise SystemExit("builder provenance artifact is not a bundle")
+          if not re.fullmatch(r"[0-9a-f]{64}", data["sha256"]) or not re.fullmatch(r"[0-9a-f]{64}", data["contract_sha256"]):
               raise SystemExit("builder provenance sha256 is invalid")
+          if not re.fullmatch(r"[0-9a-f]{40}", data["contract_source_sha"]):
+              raise SystemExit("builder provenance contract source SHA is invalid")
           print(data["core_sha"])
           print(data["artifact"])
           print(data["sha256"])
+          print(data["contract_version"])
+          print(data["contract_source_sha"])
+          print(data["contract_artifact"])
+          print(data["contract_sha256"])
           PY
 
           mapfile -t values < "$work/values"
           core_sha="${values[0]}"
           artifact="${values[1]}"
           sha256="${values[2]}"
+          contract_version="${values[3]}"
+          contract_source_sha="${values[4]}"
+          contract_artifact="${values[5]}"
+          contract_sha256="${values[6]}"
 
           gh release download "$release" \
             --repo "$GITHUB_REPOSITORY" \
             --pattern "$artifact" \
             --dir "$work"
           printf '%s  %s\n' "$sha256" "$work/$artifact" | sha256sum --check --status
+          mkdir -p "$work/extracted"
+          tar -xzf "$work/$artifact" -C "$work/extracted"
+          (cd "$work/extracted" && sha256sum --check SHA256SUMS)
+          python - "$work/extracted/manifest.json" "$core_sha" "$contract_source_sha" "$contract_sha256" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          manifest = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          assert manifest["core"]["source_sha"] == sys.argv[2]
+          assert manifest["contract"]["source_sha"] == sys.argv[3]
+          assert manifest["contract"]["sha256"] == sys.argv[4]
+          assert manifest["contract"]["version"] == "1.1.0"
+          print("bundle manifest and internal SHA256SUMS: PASS")
+          PY
 
           pinned="$(tr -d '[:space:]' < .core-version)"
           current_builder="$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
@@ -105,6 +130,10 @@ jobs:
           echo "core_sha=$core_sha" >> "$GITHUB_OUTPUT"
           echo "artifact=$artifact" >> "$GITHUB_OUTPUT"
           echo "sha256=$sha256" >> "$GITHUB_OUTPUT"
+          echo "contract_version=$contract_version" >> "$GITHUB_OUTPUT"
+          echo "contract_source_sha=$contract_source_sha" >> "$GITHUB_OUTPUT"
+          echo "contract_artifact=$contract_artifact" >> "$GITHUB_OUTPUT"
+          echo "contract_sha256=$contract_sha256" >> "$GITHUB_OUTPUT"
           echo "changed=$changed" >> "$GITHUB_OUTPUT"
           echo "Verified public builder $release for Core $core_sha."
 
@@ -128,6 +157,10 @@ jobs:
               "artifact": "${{ steps.builder.outputs.artifact }}",
               "sha256": "${{ steps.builder.outputs.sha256 }}",
               "core_sha": "${{ steps.builder.outputs.core_sha }}",
+              "contract_version": "${{ steps.builder.outputs.contract_version }}",
+              "contract_source_sha": "${{ steps.builder.outputs.contract_source_sha }}",
+              "contract_artifact": "${{ steps.builder.outputs.contract_artifact }}",
+              "contract_sha256": "${{ steps.builder.outputs.contract_sha256 }}",
           }
           Path(".builder.json").write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
           PY
