@@ -123,7 +123,7 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
             if "core-version" not in text:
                 findings.append(Finding("core-pin-not-read", "error", f"{relative} ne lit pas .core-version."))
 
-    if pages and "CONTRACT_VERSION" in str(pages):
+    if pages and "CONTRACT_VERSION:" in str(pages):
         findings.append(Finding("duplicate-contract-pin", "error", "La version du contrat est définie hors du job public CI."))
     builder = root / BUILDER_CONFIG
     if builder.is_file():
@@ -140,6 +140,11 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
                 findings.append(Finding("invalid-builder-sha256", "error", f"{BUILDER_CONFIG}.sha256 doit être un SHA256 hexadécimal."))
             if isinstance(config.get("core_sha"), str) and config.get("core_sha") != core_pin:
                 findings.append(Finding("builder-core-mismatch", "error", "Le builder public ne correspond pas à .core-version.", {"builder": config.get("core_sha"), "core_pin": core_pin}))
+            for key in ("contract_version", "contract_source_sha", "contract_artifact", "contract_sha256"):
+                if key in config and (not isinstance(config[key], str) or not config[key].strip()):
+                    findings.append(Finding("invalid-builder-config", "error", f"{BUILDER_CONFIG} contient une valeur Contract vide pour `{key}`."))
+            if isinstance(config.get("contract_sha256"), str) and not re.fullmatch(r"[0-9a-f]{64}", config["contract_sha256"]):
+                findings.append(Finding("invalid-builder-contract-sha256", "error", f"{BUILDER_CONFIG}.contract_sha256 doit être un SHA256 hexadécimal."))
     return version, contract_sha
 
 
@@ -152,14 +157,18 @@ def _git_sha(root: Path, args: tuple[str, ...], findings: list[Finding], code: s
     return value
 
 
-def _remote_sha(repo: str, ref: str, runner: Runner, findings: list[Finding], code: str) -> str | None:
-    result = runner("git", "ls-remote", repo, ref)
+def _remote_sha(repo: str, ref: str, runner: Runner, findings: list[Finding], code: str, expected: str | None = None) -> str | None:
+    result = runner("git", "ls-remote", repo, ref) if ref else runner("git", "ls-remote", repo)
     if result.returncode:
         findings.append(Finding(code, "error", result.stderr.strip() or f"Référence distante introuvable: {ref}"))
         return None
-    value = result.stdout.split()[0] if result.stdout.split() else ""
+    values = result.stdout.split()
+    value = values[0] if values and ref else next(
+        (item for item in values[::2] if item == expected),
+        next((item for item in values[::2] if SHA_RE.fullmatch(item)), ""),
+    )
     if not SHA_RE.fullmatch(value):
-        findings.append(Finding(code, "error", f"Réponse distante invalide pour {ref}."))
+        findings.append(Finding(code, "error", f"Réponse distante invalide pour {ref or repo}."))
         return None
     return value
 

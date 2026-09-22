@@ -45,7 +45,7 @@ jobs:
           from pathlib import Path
 
           data = json.loads(Path(".builder.json").read_text(encoding="utf-8"))
-          for key in ("release", "artifact", "sha256", "core_sha"):
+          for key in ("release", "artifact", "sha256", "core_sha", "contract_version", "contract_source_sha", "contract_artifact", "contract_sha256"):
               value = data.get(key)
               if not isinstance(value, str) or not value.strip():
                   raise SystemExit(f"Invalid .builder.json field: {key}")
@@ -115,6 +115,10 @@ jobs:
           EXPECTED_BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
           EXPECTED_BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
           EXPECTED_BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
+          EXPECTED_CONTRACT_VERSION: ${{ steps.builder.outputs.contract_version }}
+          EXPECTED_CONTRACT_SOURCE_SHA: ${{ steps.builder.outputs.contract_source_sha }}
+          EXPECTED_CONTRACT_ARTIFACT: ${{ steps.builder.outputs.contract_artifact }}
+          EXPECTED_CONTRACT_SHA256: ${{ steps.builder.outputs.contract_sha256 }}
           EXPECTED_CI_RUN_ID: ${{ env.CI_RUN_ID }}
         run: |
           python - <<'PY'
@@ -126,7 +130,10 @@ jobs:
           expected = {
               "content_sha": os.environ["EXPECTED_CONTENT_SHA"],
               "core_sha": os.environ["EXPECTED_CORE_SHA"],
-              "contract_version": "1.0.0",
+              "contract_version": os.environ["EXPECTED_CONTRACT_VERSION"],
+              "contract_source_sha": os.environ["EXPECTED_CONTRACT_SOURCE_SHA"],
+              "contract_artifact": os.environ["EXPECTED_CONTRACT_ARTIFACT"],
+              "contract_sha256": os.environ["EXPECTED_CONTRACT_SHA256"],
               "builder_release": os.environ["EXPECTED_BUILDER_RELEASE"],
               "builder_artifact": os.environ["EXPECTED_BUILDER_ARTIFACT"],
               "builder_sha256": os.environ["EXPECTED_BUILDER_SHA256"],
