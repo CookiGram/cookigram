@@ -30,6 +30,7 @@ def _repo(tmp_path: Path) -> Path:
 def test_fork_report_passes_without_private_core(tmp_path, monkeypatch) -> None:
     root = _repo(tmp_path)
     monkeypatch.delenv("CORE_SSH_KEY", raising=False)
+    monkeypatch.delenv("CONTENT_SHA", raising=False)
 
     report = check_pins.check(root, remote=False)
 
@@ -52,6 +53,7 @@ def test_content_pin_mismatch_is_explicit(tmp_path, monkeypatch) -> None:
 def test_contract_remote_sha_is_checked(tmp_path, monkeypatch) -> None:
     root = _repo(tmp_path)
     monkeypatch.delenv("CORE_SSH_KEY", raising=False)
+    monkeypatch.delenv("CONTENT_SHA", raising=False)
     calls = []
 
     def fake_runner(*args, **kwargs):
@@ -67,6 +69,7 @@ def test_contract_remote_sha_is_checked(tmp_path, monkeypatch) -> None:
 def test_contract_remote_sha_mismatch_is_explicit(tmp_path, monkeypatch) -> None:
     root = _repo(tmp_path)
     monkeypatch.delenv("CORE_SSH_KEY", raising=False)
+    monkeypatch.delenv("CONTENT_SHA", raising=False)
 
     def fake_runner(*args, **kwargs):
         return subprocess.CompletedProcess(args, 0, "0" * 40 + "\tref\n", "")
