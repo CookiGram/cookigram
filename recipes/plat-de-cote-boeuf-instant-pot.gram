@@ -43,14 +43,17 @@ variants:
     replace:
       sear-meat: |
         [sear-meat-cookeo | Dorer le bœuf en mode Dorer]
-        - Sélectionner le mode **Dorer** sur le #cookeo{} et verser l'@huile d'olive{2 c. à soupe}.
+        - Sélectionner le mode **Dorer** sur le #cookeo{}.
+        - Verser l'@huile d'olive{2 c. à soupe}.
         - Dès la fin du préchauffage, saisir les morceaux de @plat de côte de bœuf{2000 g, décongelés, en tronçons avec os} en 2 ou 3 tournées sans surcharger la cuve, pendant ~{8 min} au total à l'aide d'une #cuillère en bois{} ou spatule silicone pour préserver le revêtement.
         - Réserver la viande dorée sur une assiette.
       deglaze-pot: |
         [deglaze-cookeo | Faire suer les légumes et déglacer]
-        - Toujours en mode Dorer, ajouter les @échalotes{4 pièces, épluchées et coupées en deux}, les @carottes{3 pièces, épluchées et en biseaux} et les @gousses d'ail{4 pièces, écrasées}. Faire suer ~{3 min}.
+        - Ajouter les @échalotes{4 pièces, épluchées et coupées en deux}, les @carottes{3 pièces, épluchées et en biseaux} et les @gousses d'ail{4 pièces, écrasées} (mode Dorer toujours actif).
+        - Faire suer ~{3 min}.
         - Ajouter le @concentré de tomates{2 c. à soupe} et remuer ~{1 min}.
-        - Verser le @vin rouge{250 g} pour déglacer, puis incorporer le @bouillon de bœuf{250 g}, le @thym{3 branches}, les feuilles de @laurier{2 feuilles}, le @sel{1.5 c. à café} et le @poivre{1 c. à café}.
+        - Verser le @vin rouge{250 g} pour déglacer.
+        - Incorporer le @bouillon de bœuf{250 g}, le @thym{3 branches}, les feuilles de @laurier{2 feuilles}, le @sel{1.5 c. à café} et le @poivre{1 c. à café}.
       pressure-cook: |
         [pressure-cook-cookeo | Cuisson sous pression (Mode Express)]
         - Remettre les morceaux de plat de côte et leur jus réservé dans la cuve.
@@ -76,7 +79,8 @@ variants:
       sear-meat: |
         [sear-meat-cocotte | Dorer le bœuf dans la cocotte en fonte]
         - Faire chauffer l'@huile d'olive{2 c. à soupe} dans une grande #cocotte en fonte{} à feu vif.
-        - Déposer les morceaux de @plat de côte de bœuf{2000 g, décongelés, en tronçons avec os} en deux fournées et les faire dorer généreusement sur chaque face pendant ~{10 min} pour développer une croûte bien caramélisée sans faire bouillir la viande.
+        - Déposer les morceaux de @plat de côte de bœuf{2000 g, décongelés, en tronçons avec os} en deux fournées.
+        - Les faire dorer généreusement sur chaque face pendant ~{10 min} pour développer une croûte bien caramélisée sans faire bouillir la viande.
         - Réserver la viande dorée sur une assiette.
       deglaze-pot: |
         [deglaze-cocotte | Faire suer la garniture et déglacer]
@@ -88,7 +92,8 @@ variants:
         [simmer-cocotte | Mijoter longuement à couvert]
         - Replacer les morceaux de plat de côte et leur jus dans la cocotte.
         - Poser le couvercle de la cocotte et baisser sur feu très doux (ou enfourner la cocotte fermée au four à ^{150 C}).
-        - Laisser mijoter doucement pendant ~{2 h 45 min} sans remuer violemment (la viande devient fondante et se détache de l'os). Arroser la viande avec le jus toutes les 45 minutes et ajouter un demi-verre d'eau ou de bouillon si le niveau baisse trop.
+        - Laisser mijoter doucement pendant ~{2 h 45 min} sans remuer violemment (la viande devient fondante et se détache de l'os).
+        - Arroser la viande avec le jus toutes les 45 minutes et ajouter un demi-verre d'eau ou de bouillon si le niveau baisse trop.
       natural-release: |
         [rest-meat-cocotte | Repos de la viande]
         - Retirer le couvercle et laisser reposer la cocotte hors du feu ~{10 min} pour détendre les chairs.
