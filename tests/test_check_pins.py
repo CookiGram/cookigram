@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -239,6 +240,61 @@ def test_ci_soudure_nominale() -> None:
     text = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
 
     assert _ci_soudure_wired(text)
+
+
+def _private_contract_preinstalled(workflow_text: str) -> bool:
+    try:
+        workflow = yaml.safe_load(workflow_text)
+    except yaml.YAMLError:
+        return False
+    if not isinstance(workflow, dict):
+        return False
+    steps = workflow.get("jobs", {}).get("private-integration", {}).get("steps", [])
+    validation = next(
+        (
+            step
+            for step in steps
+            if isinstance(step, dict) and step.get("name") == "Validation avec CookiGram Core"
+        ),
+        None,
+    )
+    if validation is None:
+        return False
+    run = validation.get("run", "")
+    marker = "pip install -e ./core"
+    if marker not in run:
+        return False
+    head = run.split(marker)[0]
+    if "cookigram-contract" not in head:
+        return False
+    if re.search(r"git\+https://\S+@[0-9a-f]{40}", head) is not None:
+        return True
+    if "steps.contract-ref.outputs.sha" not in head:
+        return False
+    contract_ref = next(
+        (step for step in steps if isinstance(step, dict) and step.get("id") == "contract-ref"),
+        None,
+    )
+    if contract_ref is None:
+        return False
+    source = contract_ref.get("run", "")
+    return ".builder.json" in source and "contract_source_sha" in source
+
+
+def test_private_contract_preinstall_nominal() -> None:
+    text = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+
+    assert _private_contract_preinstalled(text)
+
+
+def test_private_contract_preinstall_absent_invalide() -> None:
+    text = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+    workflow = yaml.safe_load(text)
+    steps = workflow["jobs"]["private-integration"]["steps"]
+    validation = next(step for step in steps if step.get("name") == "Validation avec CookiGram Core")
+    validation["run"] = "python -m pip install --upgrade pip\npip install -e ./core"
+
+    assert not _private_contract_preinstalled(yaml.safe_dump(workflow))
 
 
 def test_ci_soudure_absente_invalide() -> None:
