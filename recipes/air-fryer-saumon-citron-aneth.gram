@@ -21,7 +21,9 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Assaisonner]
 - Mélanger le @sel{1 c. à café}, le @poivre moulu{1 c. à café}, les @herbes de Provence{1 c. à café} et l'@ail en poudre{1 c. à café}.
-- Huiler les @pavés de saumon{4 pièces, 130 g chacun} avec l'@huile d'olive{1/2 c. à soupe}, puis les enrober d'épices.
+- Huiler les @pavés de saumon{4 pièces, 130 g chacun} avec l'@huile d'olive{1/2 c. à soupe}.
+- Les enrober d'épices.
 [Cuire]
-- Déposer le saumon dans le #panier air fryer{} et cuire à ^{180 C} ~{8 min}.
+- Déposer le saumon dans le #panier air fryer{}.
+- Cuire à ^{180 C} ~{8 min}.
 - Ajouter le @jus de citron{1/2 citron} et l'@aneth{1 c. à soupe}; prolonger si le centre n'est pas opaque.
