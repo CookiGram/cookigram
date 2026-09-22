@@ -39,7 +39,7 @@ jobs:
       - name: Installer les dépendances de validation publiques
         run: |
           python -m pip install "git+https://github.com/CookiGram/cookigram-contract.git@v${CONTRACT_VERSION}"
-          python -m pip install "Pillow>=10,<13"
+          python -m pip install "Pillow>=10,<13" "pytest>=8,<9"
 
       - name: Vérifier les pins et produire le rapport JSON
         run: python scripts/check-pins.py --json
@@ -57,7 +57,7 @@ jobs:
         run: TZ=Europe/Paris node --test tests/calendar-export.test.mjs tests/planner-week-window.test.mjs static/meal-planner/planner-state.test.js
 
       - name: Tester les contrats UX statiques
-        run: python -m unittest discover -s tests -v
+        run: python -m pytest tests -q
 
   qualified-pages-artifact:
     name: Build qualified Pages artifact
