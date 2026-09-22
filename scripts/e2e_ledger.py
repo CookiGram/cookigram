@@ -179,12 +179,29 @@ def cmd_log(args: argparse.Namespace) -> int:
     return 0
 
 
+def _phase_last_status(events: list[dict]) -> dict[str, str]:
+    last: dict[str, str] = {}
+    for item in events:
+        if item.get("type") == "event" and "phase" in item:
+            last[item["phase"]] = item.get("status", "")
+    return last
+
+
 def cmd_close(args: argparse.Namespace) -> int:
     ledger_dir = resolve_ledger_dir(getattr(args, "ledger_dir", None))
     path = resolve_ledger_file(ledger_dir, args.run_id)
     if not path.exists():
         print(f"no ledger for run {args.run_id!r}: run init first", file=sys.stderr)
         return 2
+    if args.result == "pass":
+        failing = sorted(phase for phase, status in _phase_last_status(read_events(path)).items() if status == "ko")
+        if failing:
+            print(
+                f"cannot close pass with failing phase(s): {', '.join(failing)}"
+                " (log a fix or close --result fail)",
+                file=sys.stderr,
+            )
+            return 2
     payload = append_event(
         path,
         {

@@ -28,7 +28,9 @@ python scripts/e2e_ledger.py show --run-id 2026-09-22-smoke
 ```
 
 `init` refuse d'écraser un ledger existant sauf `--force`. `log` et `close`
-échouent (code 2) si le run n'a pas été initialisé. `--data-json` doit être un
+échouent (code 2) si le run n'a pas été initialisé. `close --result pass`
+refuse (code 2) tant qu'une phase reste en `ko` : reloguer la phase corrigée
+ou clore en `fail`. `--data-json` doit être un
 objet JSON. `--ledger-dir` redirige l'écriture (pratique pour les tests :
 `--ledger-dir /tmp/e2e-runs-test`) ; par défaut `docs/e2e-runs/`.
 
