@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Émulsion soyeuse au beurre doux, jaunes d'œufs et réduction d'échalotes à l'estragon frais, inratable à 80°C."
+nutrition_profile: pleasure
 tags: [sauce, thermomix, bistrot, gastronomie, bœuf, classique]
 source: https://cookidoo.fr
 author: Pierre Cousin
@@ -50,11 +51,12 @@ image_generation:
 [reduce-vinegar | Réduire le vin blanc et le vinaigre]
 - Ajouter le @vin blanc sec{50 g}, le @vinaigre de vin blanc{30 g}, le @sel{0.5 c. à café} et le @poivre{2 pincées}.
 - Cuire ~{5 min} à ^{Varoma} (ou 120°C sur TM5/TM6/TM7), vitesse 1 sans le gobelet doseur pour concentrer l'essence aromatique par évaporation.
-- Laisser tiédir le bol ~{5 min} afin que la température redescende sous 60°C avant d'incorporer les œufs pour éviter toute coagulation prématurée.
+- Laisser tiédir le bol ~{5 min}, jusqu'à redescendre sous 60 °C pour éviter toute coagulation prématurée.
 
 [emulsify-bearnaise | Monter l'émulsion au fouet à 80°C]
 - Insérer le #fouet{} sur les couteaux dans le bol.
 - Ajouter les @jaunes d'œufs{4 pièces, à température ambiante}.
 - Émulsionner ~{3 min} à ^{80 C}, vitesse 3.
-- Régler ensuite ~{4 min} à ^{80 C}, vitesse 3, et incorporer le @beurre doux{180 g, coupé en dés et mou} progressivement par l'orifice du couvercle, morceau par morceau.
+- Régler ~{4 min} à ^{80 C}, vitesse 3.
+- Incorporer le @beurre doux{180 g, coupé en dés et mou} progressivement par l'orifice du couvercle, morceau par morceau.
 - Retirer le fouet, verser la sauce onctueuse dans une #saucière{} tiédie et servir immédiatement avec une belle pièce de bœuf grillée.
