@@ -34,6 +34,24 @@ sur les pushes/exécutions de confiance; elle ne peut donc pas faire échouer
 les forks. L'audit des illustrations reste public et bloquant pour toutes les
 PR.
 
+## Pipeline qualifié (Contract 1.1.0)
+
+Le job `qualified-pages-artifact` (`ci.yml:70`) construit le site avec le
+builder public pinné par `.builder.json`, sous `CONTRACT_VERSION=1.1.0`.
+
+`.builder.json` contient 8 clés : `release`, `artifact`, `sha256`, `core_sha`,
+`contract_version`, `contract_source_sha`, `contract_artifact`,
+`contract_sha256`. Le contrat embarqué est la version `1.1.0` à
+`contract_source_sha=ad0a53107de370e8dc3118f780f85b6cbabc4425`.
+
+Le job écrit `_site/provenance.json` avec `contract_source_sha` (nommage
+canonique, D1) et les autres pins. `pages.yml` vérifie `provenance.json`
+avant déploiement, sans rebuild.
+
+La bascule d'étiquette de `recipe-check` (1.0.0 → 1.1.0) reste séquencée et
+en attente. Détail dans
+[`CATALOGUE-CONTRACT-CORE.md`](CATALOGUE-CONTRACT-CORE.md) (D1, suite 4).
+
 ## Contrôle déterministe des pins
 
 [`scripts/check-pins.py`](../scripts/check-pins.py) vérifie les références
