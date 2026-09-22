@@ -52,16 +52,21 @@ variants:
     replace:
       sear-sausage: |
         [sear-cookeo | Dorer la saucisse et les aromates]
-        - Activer le mode **Dorer** sur le #cookeo{} et verser l'@huile d'olive{15 g, ~1 c. à soupe}.
-        - Déposer les rondelles de @saucisse fumée{400 g, ~14 oz, en rondelles de 1 cm}. Laisser dorer ~{4 min} avec une spatule silicone.
-        - Ajouter l'@oignon{120 g, ~1 pièce en dés}, le @poivron vert{150 g, ~1 pièce en dés}, les @branches de céleri{80 g, ~2 branches en dés} et l'@ail{10 g, ~3 gousses hachées}. Faire suer ~{3 min}.
-        - Saupoudrer les @épices cajun{10 g, ~1 c. à soupe bombée}, le @sel{3 g} et le @poivre noir{2 g} et mélanger ~{1 min}.
+        - Activer le mode **Dorer** sur le #cookeo{}.
+        - Verser l'@huile d'olive{15 g, ~1 c. à soupe}.
+        - Déposer les rondelles de @saucisse fumée{400 g, ~14 oz, en rondelles de 1 cm}.
+        - Laisser dorer ~{4 min} avec une spatule silicone.
+        - Ajouter l'@oignon{120 g, ~1 pièce en dés}, le @poivron vert{150 g, ~1 pièce en dés}, les @branches de céleri{80 g, ~2 branches en dés} et l'@ail{10 g, ~3 gousses hachées}.
+        - Faire suer ~{3 min}.
+        - Saupoudrer les @épices cajun{10 g, ~1 c. à soupe bombée}, le @sel{3 g} et le @poivre noir{2 g}.
+        - Mélanger ~{1 min}.
       cook-rice: |
         [rice-cookeo | Cuisson sous pression express du riz]
         - Verser le @bouillon de volaille{420 g, ~1.75 cups} et gratter le fond pour décoller tous les sucs caramélisés.
         - Verser le @riz{300 g, ~1.5 cups, rincé et égoutté} et les @tomates concassées{200 g, ~1/2 boîte} par-dessus. Aplatir délicatement sans mélanger jusqu'au fond.
         - Fermer le couvercle et lancer la **Cuisson sous pression** pendant ~{6 min}.
-        - Laisser reposer cuve fermée ~{8 min} avant de relâcher la vapeur restante.
+        - Laisser reposer cuve fermée ~{8 min}.
+        - Relâcher la vapeur restante.
         - Égrainer le riz à la fourchette et servir immédiatement.
 - id: cocotte-fonte
   name: Cocotte traditionnelle (Sans robot)
@@ -80,7 +85,8 @@ variants:
         - Dans la #cocotte en fonte{}, après avoir fait revenir la saucisse, les aromates et les épices, verser le @riz{300 g} rincé et remuer ~{2 min} pour nacrer le grain dans les sucs.
         - Ajouter le @bouillon de volaille{500 g, ~2 cups, volume adapté à la casserole} et les @tomates concassées{200 g}.
         - Porter à ébullition, couvrir hermétiquement, baisser le feu au minimum et laisser cuire sans ouvrir pendant ~{18 min}.
-        - Couper le feu et laisser reposer ~{5 min} à couvert avant d'égrainer.
+        - Couper le feu et laisser reposer ~{5 min} à couvert.
+        - Égrainer.
 ---
 
 [prep-trinity | Découper la saucisse et la sainte trinité cajun]

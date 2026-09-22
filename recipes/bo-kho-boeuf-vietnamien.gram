@@ -52,17 +52,21 @@ variants:
     replace:
       sear-beef: |
         [sear-cookeo | Dorer la garniture aromatique et le bœuf]
-        - Sélectionner le mode **Dorer** sur le #cookeo{} et verser l'@huile de tournesol{15 g, ~1 c. à soupe}.
-        - Ajouter l'@ail{12 g, ~4 gousses hachées}, le @gingembre{15 g, ~1 c. à soupe râpé}, la @citronnelle{3 pièces, tiges écrasées et coupées en 3}, la @badiane{3 pièces, étoiles} et la @cannelle{1 pièce, bâton}. Faire suer ~{2 min} pour exhaler les parfums.
+        - Sélectionner le mode **Dorer** sur le #cookeo{}.
+        - Verser l'@huile de tournesol{15 g, ~1 c. à soupe}.
+        - Ajouter l'@ail{12 g, ~4 gousses hachées}, le @gingembre{15 g, ~1 c. à soupe râpé}, la @citronnelle{3 pièces, tiges écrasées et coupées en 3}, la @badiane{3 pièces, étoiles} et la @cannelle{1 pièce, bâton}.
+        - Faire suer ~{2 min} pour exhaler les parfums.
         - Ajouter le @concentré de tomates{30 g, ~2 c. à soupe} et remuer ~{1 min}.
-        - Ajouter les morceaux de @paleron de bœuf{1000 g, ~2.2 lbs, en cubes de 4 cm} et les saisir ~{6 min} en remuant à la spatule silicone.
+        - Ajouter les morceaux de @paleron de bœuf{1000 g, ~2.2 lbs, en cubes de 4 cm}.
+        - Les saisir ~{6 min} en remuant à la spatule silicone.
       pressure-cook: |
         [pressure-cookeo | Cuisson sous pression parfumée]
         - Verser la @sauce nuoc-mâm{45 g, ~3 c. à soupe}, la @sauce soja claire{15 g, ~1 c. à soupe}, le @sucre de canne{15 g, ~1 c. à soupe} et le @bouillon de bœuf{500 g, ~2 cups}.
         - Bien décoller les sucs au fond de la cuve avec la spatule.
         - Ajouter les @carottes{400 g, ~4 pièces, en rondelles biseautées de 2 cm}.
         - Fermer le couvercle et lancer le mode **Cuisson sous pression** pendant ~{35 min}.
-        - Laisser décompresser naturellement pendant ~{10 min} avant d'ouvrir le couvercle.
+        - Laisser décompresser naturellement pendant ~{10 min}.
+        - Ouvrir le couvercle.
 - id: cocotte-fonte
   name: Cocotte en fonte traditionnelle (Sans robot)
   description: Mijotage doux à feu très doux pendant 2 h 45 pour un bouillon infusé lentement dans les règles de l'art.
@@ -85,13 +89,16 @@ variants:
         [simmer-cocotte | Long mijotage à couvert]
         - Mouiller avec la @sauce nuoc-mâm{45 g}, la @sauce soja claire{15 g}, le @sucre de canne{15 g} et le @bouillon de bœuf{750 g, ~3 cups, volume majoré pour le mijotage ouvert}.
         - Gratter consciencieusement les sucs au fond de la cocotte à la #cuillère en bois{}.
-        - Porter à frémissement, puis couvrir hermétiquement et baisser le feu au minimum pour laisser mijoter doucement pendant ~{2 h 00}.
-        - Ajouter ensuite les @carottes{400 g} et poursuivre le mijotage à couvert pendant ~{45 min} jusqu'à ce que la viande et les carottes soient fondantes.
+        - Porter à frémissement.
+        - Couvrir hermétiquement et baisser le feu au minimum pour laisser mijoter doucement pendant ~{2 h 00}.
+        - Ajouter les @carottes{400 g}.
+        - Poursuivre le mijotage à couvert pendant ~{45 min} jusqu'à ce que la viande et les carottes soient fondantes.
 ---
 
 [prep-aromates | Préparer et réveiller la garniture aromatique]
 - Sur une #planche à découper{}, émincer les @gousses d'ail{12 g, ~4 gousses} et râper le @gingembre{15 g, ~1 c. à soupe frais}.
-- Prendre les tiges de @citronnelle{3 pièces}, écraser fermement la partie bulbeuse blanche à l'aide d'un rouleau à pâtisserie ou du plat du #couteau de chef{}, puis les couper en tronçons de 6 cm.
+- Prendre les tiges de @citronnelle{3 pièces}, écraser fermement la partie bulbeuse blanche à l'aide d'un rouleau à pâtisserie ou du plat du #couteau de chef{}.
+- Les couper en tronçons de 6 cm.
 - Éplucher les @carottes{400 g, ~4 pièces} et les tailler en gros biseaux réguliers de 2 cm d'épaisseur.
 - Découper le @paleron de bœuf{1000 g, ~2.2 lbs} en cubes généreux de 4 cm.
 
