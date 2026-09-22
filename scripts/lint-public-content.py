@@ -16,6 +16,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 TRANSITIONAL_RULES = {"title-length", "description-length"}
+NUTRITION_PROFILES = frozenset({"vitality", "balanced", "pleasure"})
 DATE_KEY = re.compile(r"(?:^date$|_date$|_at$)", re.IGNORECASE)
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?)?$")
 
@@ -135,6 +136,10 @@ def lint_recipe(
         add("tags", "tags doit contenir uniquement des chaînes non vides")
     elif len({tag.strip().casefold() for tag in tags}) != len(tags):
         add("tags", "tags contient un doublon")
+
+    profile = data.get("nutrition_profile")
+    if "nutrition_profile" in data and (not isinstance(profile, str) or profile not in NUTRITION_PROFILES):
+        add("nutrition-profile", "nutrition_profile doit être vitality, balanced ou pleasure")
 
     image = data.get("image")
     if not isinstance(image, str) or not image.strip():

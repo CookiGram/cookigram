@@ -43,6 +43,11 @@ class PublicContentLintTests(unittest.TestCase):
         result = LINTER.run(ROOT / "tests/fixtures/public-content-lint/invalid", require_editorial_dates=True)
         self.assertTrue(any(item["rule"] == "required-field" for item in result["findings"]))
 
+    def test_invalid_nutrition_profile_is_a_blocking_error(self) -> None:
+        result = LINTER.run(ROOT / "tests/fixtures/public-content-lint/nutrition-invalid")
+        self.assertEqual(result["summary"]["errors"], 1)
+        self.assertEqual(result["findings"][0]["rule"], "nutrition-profile")
+
     def test_image_paths_and_seo_thresholds_are_deterministic(self) -> None:
         fixture = ROOT / "tests/fixtures/public-content-lint/invalid"
         result = LINTER.run(fixture)
