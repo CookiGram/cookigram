@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "contract_version": "1.0.0",
   "instance": "CookiGram",
-  "updated_at": "2026-09-21T21:55:00+02:00",
+  "updated_at": "2026-09-21T22:15:00+02:00",
   "style_framework": {
     "aesthetic": "Modern warm editorial culinary illustration (gouache / soft cel-shading)",
     "background_palette": [
@@ -457,6 +457,86 @@
         "smoothie_blend"
       ],
       "justification": "Hand holding an immersion stick blender pureeing soup in a pot. Unambiguous mechanical blending gesture, distinct from manual stirring."
+    },
+    {
+      "action_id": "grate",
+      "action_label": "Râper / Zester",
+      "canonical_token": "grate",
+      "status": "p2_approved",
+      "asset_path": "images/atomic-actions/grate.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 52428,
+      "file_size_kb": 51.2,
+      "sha256": "ad4cc0f56a4e54fa0525ef15c06c0fefff14b0ed3138e4d50af464361d983b84",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of hands grating parmesan cheese with a stainless steel microplane grater over a wooden bowl, delicate cheese shavings falling, a yellow lemon with fresh zest nearby, clean culinary composition, warm cream background, terracotta linen accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "zest",
+        "microplane",
+        "shred_cheese",
+        "grater",
+        "zester",
+        "finely_grate"
+      ],
+      "justification": "Hands using a microplane grater over a wooden bowl with falling shreds and fresh citrus zest. Instantly recognizable grating gesture, distinct from chopping or slicing."
+    },
+    {
+      "action_id": "roll_out",
+      "action_label": "Abaisser / Étaler la pâte",
+      "canonical_token": "roll_out",
+      "status": "p2_approved",
+      "asset_path": "images/atomic-actions/roll_out.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 60418,
+      "file_size_kb": 59.0,
+      "sha256": "e7372ef240dfddb9b383548427451566ee75e164d0d43285adb3826114d04790",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of hands using a wooden rolling pin to roll out pastry dough into a smooth round sheet on a lightly floured countertop, delicate dusting of flour, clean culinary composition, warm cream background, sage green linen towel accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "roll_dough",
+        "flatten_dough",
+        "rolling_pin",
+        "roll_flat",
+        "sheet_dough",
+        "abaisser"
+      ],
+      "justification": "Hands holding a rolling pin rolling dough flat on a floured board. Clear pastry archetype distinct from manual kneading."
+    },
+    {
+      "action_id": "peel",
+      "action_label": "Éplucher / Peler",
+      "canonical_token": "peel",
+      "status": "p2_approved",
+      "asset_path": "images/atomic-actions/peel.webp",
+      "model_name": "Imagen 3",
+      "model_version": "imagegeneration@006",
+      "generation_date": "2026-09-21",
+      "aspect_ratio": "3:2",
+      "dimensions": "900x600",
+      "file_size_bytes": 44772,
+      "file_size_kb": 43.7,
+      "sha256": "c602eb0c910bca04c4cfb400f4cc68f474ee10e27fbec2916b185353dedcea43",
+      "contract_version": "1.0.0",
+      "prompt": "Modern editorial culinary illustration of hands holding a wooden-handled Y-peeler peeling a fresh carrot, thin curl of carrot peel coming off onto a wooden cutting board, clean culinary composition, warm cream background, terracotta linen napkin accent, gentle gouache textures, soft organic lighting, simple harmonious color palette, high contrast silhouette for mobile readability, non-photorealistic, quiet kitchen atmosphere, no face, no text, no watermark, no digital UI icons.",
+      "negative_prompt": "photorealism, 3d render, photograph, cartoon, anime chibi, faces, full body, text, letters, watermarks, timer, clock, digital icons, kitchen chaos, blurry",
+      "mutualized_tokens": [
+        "vegetable_peel",
+        "skin_vegetables",
+        "econome",
+        "pare",
+        "peeling"
+      ],
+      "justification": "Hands peeling a carrot with an économe/peeler with ribbon peel curls. Unmistakable peeling prep gesture distinct from knife chopping."
     }
   ]
 }

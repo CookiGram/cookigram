@@ -40,6 +40,10 @@ INSTANCE_ACTION_MAPPING: dict[str, str] = {
     "season": "images/atomic-actions/season.webp",
     "air_fry": "images/atomic-actions/air_fry.webp",
     "blend": "images/atomic-actions/blend.webp",
+    # Lot P2 (validé)
+    "grate": "images/atomic-actions/grate.webp",
+    "roll_out": "images/atomic-actions/roll_out.webp",
+    "peel": "images/atomic-actions/peel.webp",
 }
 
 # Semantic mutualization aliases: secondary/fine-grained gestures mapped to archetypes
@@ -114,6 +118,24 @@ MUTUALIZED_ALIASES: dict[str, str] = {
     "immersion_blend": "blend",
     "liquidize": "blend",
     "smoothie_blend": "blend",
+    # Lot P2 aliases
+    "zest": "grate",
+    "microplane": "grate",
+    "shred_cheese": "grate",
+    "grater": "grate",
+    "zester": "grate",
+    "finely_grate": "grate",
+    "roll_dough": "roll_out",
+    "flatten_dough": "roll_out",
+    "rolling_pin": "roll_out",
+    "roll_flat": "roll_out",
+    "sheet_dough": "roll_out",
+    "abaisser": "roll_out",
+    "vegetable_peel": "peel",
+    "skin_vegetables": "peel",
+    "econome": "peel",
+    "pare": "peel",
+    "peeling": "peel",
 }
 
 

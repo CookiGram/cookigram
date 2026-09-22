@@ -34,6 +34,10 @@ class ActionVisualsContractTests(unittest.TestCase):
         self.assertEqual(resolve_action_asset("season", root=ROOT), "images/atomic-actions/season.webp")
         self.assertEqual(resolve_action_asset("air_fry", root=ROOT), "images/atomic-actions/air_fry.webp")
         self.assertEqual(resolve_action_asset("blend", root=ROOT), "images/atomic-actions/blend.webp")
+        # Lot P2
+        self.assertEqual(resolve_action_asset("grate", root=ROOT), "images/atomic-actions/grate.webp")
+        self.assertEqual(resolve_action_asset("roll_out", root=ROOT), "images/atomic-actions/roll_out.webp")
+        self.assertEqual(resolve_action_asset("peel", root=ROOT), "images/atomic-actions/peel.webp")
 
     def test_mutualized_aliases_resolve_to_canonical_assets(self):
         self.assertEqual(resolve_canonical_token("chop"), "cut")
@@ -54,6 +58,16 @@ class ActionVisualsContractTests(unittest.TestCase):
         self.assertEqual(resolve_action_asset("preheat", root=ROOT), "images/atomic-actions/oven.webp")
         self.assertEqual(resolve_action_asset("varoma", root=ROOT), "images/atomic-actions/steam.webp")
         self.assertEqual(resolve_action_asset("puree", root=ROOT), "images/atomic-actions/blend.webp")
+        # P2 aliases
+        self.assertEqual(resolve_canonical_token("zest"), "grate")
+        self.assertEqual(resolve_canonical_token("microplane"), "grate")
+        self.assertEqual(resolve_canonical_token("roll_dough"), "roll_out")
+        self.assertEqual(resolve_canonical_token("rolling_pin"), "roll_out")
+        self.assertEqual(resolve_canonical_token("vegetable_peel"), "peel")
+        self.assertEqual(resolve_canonical_token("econome"), "peel")
+        self.assertEqual(resolve_action_asset("zest", root=ROOT), "images/atomic-actions/grate.webp")
+        self.assertEqual(resolve_action_asset("rolling_pin", root=ROOT), "images/atomic-actions/roll_out.webp")
+        self.assertEqual(resolve_action_asset("econome", root=ROOT), "images/atomic-actions/peel.webp")
 
     def test_unknown_token_uses_fallback(self):
         self.assertEqual(resolve_action_asset("unknown_gesture", root=ROOT), "")
@@ -76,8 +90,8 @@ class ActionVisualsContractTests(unittest.TestCase):
         self.assertNotIn("import generator.", source)
         self.assertNotIn("from generator.", source)
 
-    def test_all_17_assets_exist_and_meet_budget(self):
-        self.assertEqual(len(INSTANCE_ACTION_MAPPING), 17)
+    def test_all_20_assets_exist_and_meet_budget(self):
+        self.assertEqual(len(INSTANCE_ACTION_MAPPING), 20)
         for token, rel_path in INSTANCE_ACTION_MAPPING.items():
             asset_file = ROOT / "static" / rel_path
             self.assertTrue(asset_file.is_file(), f"Asset {asset_file} must exist")
