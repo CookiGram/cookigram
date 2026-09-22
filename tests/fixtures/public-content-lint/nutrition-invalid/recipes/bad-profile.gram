@@ -1,0 +1,8 @@
+---
+title: Recette pilote au profil nutritionnel invalide
+description: Une description de test suffisamment longue pour le frontmatter de démonstration.
+nutrition_profile: gourmand
+portions: 2
+tags: [test]
+image: images/test.jpg
+---
