@@ -54,9 +54,11 @@ variants:
     replace:
       sear-beef: |
         [sear-cookeo | Saisir le bœuf en mode Dorer]
-        - Sélectionner le mode **Dorer** sur le #cookeo{} et verser l'@huile d'olive{15 g, ~1 c. à soupe}.
+        - Sélectionner le mode **Dorer** sur le #cookeo{}.
+        - Verser l'@huile d'olive{15 g, ~1 c. à soupe}.
         - Déposer les cubes de @paleron de bœuf{1400 g, ~3 lbs, découpé en cubes de 5 cm} et les assaisonner de @sel{10 g, ~2 c. à café} et de @poivre noir{3 g, ~1 c. à café}.
-        - Faire dorer la viande par petites tournées pendant ~{8 min} au total à l'aide d'une spatule silicone pour ne pas rayer la cuve. Réserver dans un #saladier{}.
+        - Faire dorer la viande par petites tournées pendant ~{8 min} au total à l'aide d'une spatule silicone pour ne pas rayer la cuve.
+        - Réserver dans un #saladier{}.
       cook-pressure: |
         [pressure-cookeo | Cuisson express sous pression]
         - Dans la cuve encore chaude, verser la marinade mixée avec le @bouillon de bœuf{240 g, ~1 cup}, le @vinaigre de cidre{30 g, ~2 c. à soupe}, le @jus de citron vert{60 g, ~1/4 cup}, l'@oignon{150 g, ~1 gros oignon émincé}, l'@ail{15 g, ~5 gousses hachées}, le @piment chipotle{30 g, ~2 c. à soupe avec sauce adobo}, le @cumin{8 g, ~1 c. à soupe}, l'@origan{4 g, ~1 c. à soupe}, les @clous de girofle{1 g, ~1/4 c. à café} et les feuilles de @laurier{2 pièces}.
@@ -68,7 +70,8 @@ variants:
         - Laisser le Cookeo évacuer sa vapeur naturellement pendant ~{10 min}.
         - Retirer les feuilles de @laurier{2 pièces}.
         - Sortir la viande dans un grand plat creux et l'effilocher à l'aide de deux fourchettes.
-        - Réactiver le mode **Dorer** ~{5 min} pour faire réduire le jus restant en cuve jusqu'à consistance nappante, puis arroser le bœuf effiloché.
+        - Réactiver le mode **Dorer** ~{5 min} pour faire réduire le jus restant en cuve jusqu'à consistance nappante.
+        - Arroser le bœuf effiloché.
 - id: cocotte-fonte
   name: Cocotte en fonte traditionnelle (Sans robot)
   description: Braisage doux à l'étouffée au four à 150°C pendant 3 h 15 pour une texture confite d'anthologie.
@@ -87,10 +90,13 @@ variants:
         - Préchauffer le #four{} à 150°C (chaleur tournante).
         - Faire chauffer l'@huile d'olive{15 g, ~1 c. à soupe} dans une #cocotte en fonte{} sur feu vif.
         - Saler et poivrer les cubes de @paleron de bœuf{1400 g, ~3 lbs} avec le @sel{10 g} et le @poivre noir{3 g}.
-        - Saisir les morceaux sur toutes leurs faces pendant ~{10 min} pour développer de puissants arômes de Maillard. Réserver sur une assiette.
+        - Saisir les morceaux sur toutes leurs faces pendant ~{10 min} pour développer de puissants arômes de Maillard.
+        - Réserver sur une assiette.
       cook-pressure: |
         [braise-cocotte | Braisage doux au four à l'étouffée]
-        - Baisser le feu sous la cocotte, ajouter l'@oignon{150 g, haché} et l'@ail{15 g, haché} et faire suer ~{3 min}.
+        - Baisser le feu sous la cocotte.
+        - Ajouter l'@oignon{150 g, haché} et l'@ail{15 g, haché}.
+        - Faire suer ~{3 min}.
         - Déglacer avec le @vinaigre de cidre{30 g} et le @jus de citron vert{60 g} en raclant vigoureusement le fond de la cocotte à la #cuillère en bois{}.
         - Ajouter le @bouillon de bœuf{400 g, ~1.7 cup, volume augmenté pour compenser l'évaporation}, le @piment chipotle{30 g}, le @cumin{8 g}, l'@origan{4 g}, les @clous de girofle{1 g} et les feuilles de @laurier{2 pièces}.
         - Remettre la viande, couvrir hermétiquement avec le couvercle de la cocotte et enfourner à 150°C pendant ~{3 h 15}.
@@ -99,7 +105,8 @@ variants:
         - Sortir la cocotte du four. La viande doit s'écraser sans résistance sous une simple pression.
         - Retirer les feuilles de @laurier{2 pièces}.
         - Effilocher le bœuf dans la cocotte ou sur un plat de service creux.
-        - Si le jus est trop liquide, faire réduire la cocotte sur feu moyen vif ~{6 min} avant de napper généreusement.
+        - Si le jus est trop liquide, faire réduire la cocotte sur feu moyen vif ~{6 min}.
+        - Napper généreusement le bœuf.
 ---
 
 [sear-beef | Saisir les cubes de bœuf en mode Sauté]
