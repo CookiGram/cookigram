@@ -212,6 +212,10 @@ jobs:
           PY
 
       - name: Upload exactly the qualified Pages artifact
+        # Stockage (#482) : les PR construisent et valident _site ci-dessus
+        # sans le conserver — seul un push qualifié sur main (ou un
+        # workflow_dispatch sur main) publie l'artefact consommé par Pages.
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: cookigram-pages-${{ github.sha }}

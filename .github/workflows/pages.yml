@@ -16,7 +16,9 @@ on:
     branches: [main]
 permissions:
   contents: read
-  actions: read
+  # actions: write (#482) : suppression best-effort de l'artefact qualifié
+  # après déploiement réussi — le transit CI → Pages ne doit rien conserver.
+  actions: write
   pages: write
   id-token: write
 concurrency:
@@ -156,6 +158,45 @@ jobs:
       - id: deployment
         name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
+      - name: Delete consumed qualified artifact
+        # Hygiène de stockage (#482) : l'artefact _site complet ne sert qu'au
+        # transit CI → Pages. Une fois déployé, il est supprimé pour ne pas
+        # peser sur le quota Actions (retention-days: 1 reste le filet).
+        # Best-effort : un échec ici ne doit jamais invalider un déploiement.
+        if: success()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CI_RUN_ID: ${{ env.CI_RUN_ID }}
+          CONTENT_SHA: ${{ env.CONTENT_SHA }}
+        run: |
+          set -uo pipefail
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${CI_RUN_ID}/artifacts" --paginate > "$RUNNER_TEMP/ci-artifacts.json"
+          python - "$RUNNER_TEMP/ci-artifacts.json" <<'PY'
+          import json
+          import os
+          import subprocess
+          import sys
+
+          data = json.loads(open(sys.argv[1], encoding="utf-8").read())
+          name = f"cookigram-pages-{os.environ['CONTENT_SHA']}"
+          repo = os.environ["GITHUB_REPOSITORY"]
+          deleted = 0
+          for artifact in data.get("artifacts", []):
+              if artifact.get("name") != name or artifact.get("expired", False):
+                  continue
+              proc = subprocess.run(
+                  ["gh", "api", "-X", "DELETE", f"repos/{repo}/actions/artifacts/{artifact['id']}"],
+                  capture_output=True,
+                  text=True,
+              )
+              if proc.returncode == 0:
+                  deleted += 1
+              else:
+                  print(f"keep {name} ({artifact['id']}): {proc.stderr.strip()}")
+          print(f"consumed artifact cleanup: deleted={deleted} name={name}")
+          PY
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
