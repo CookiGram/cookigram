@@ -1,0 +1,26 @@
+# Instance identity — CookiGram (#391)
+#
+# Canonical source for the instance identity consumed by the Core builder
+# (generator/instance.py, contract docs/INSTANCE_IDENTITY.md in
+# cookigram-core). Only identity fields live here: no navigation, no
+# business URLs beyond the canonical site URL, no content, no PWA
+# behavior, no functional settings.
+#
+# Effective build behavior is unchanged: every value below reproduces what
+# the builder previously defaulted to, except illustrations.style which now
+# names the real instance visual profile (assets/visual-profile/cookigram-v1.yaml).
+site:
+  name: CookiGram
+  tagline: "Le carnet de recettes guidées et hors ligne."
+  url: "https://cookigram.github.io/cookigram"
+
+branding:
+  logo: "static/icons/icon.svg"
+  favicon: "static/icons/icon.svg"
+
+theme:
+  default: "light"
+  available: ["light", "dark", "halloween", "christmas"]
+
+illustrations:
+  style: "cookigram-v1"
