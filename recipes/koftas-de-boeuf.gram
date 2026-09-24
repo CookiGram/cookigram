@@ -1,0 +1,59 @@
+---
+title: Koftas de bœuf à la menthe et au cumin
+portions: 4
+prep_time: 30 min
+total_time: 40 min
+spiciness: 2
+description: Koftas de bœuf grillées, parfumées à la menthe et aux épices, avec une croûte dorée et un cœur juteux.
+tags: [plat, boeuf, cuisine-du-monde, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r148130
+author: Cookidoo
+scaling:
+  enabled: false
+  reason: Les proportions et la chauffe à la poêle sont données pour quatre portions.
+flavors:
+  pairing: [bœuf, menthe, cumin, piment]
+  notes: [grillé, herbacé, chaleureux]
+  harmony: La menthe fraîche allège la viande grillée tandis que le cumin et les épices apportent une chaleur aromatique.
+  tips: Servir avec du yaourt nature ou une sauce tzatziki.
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Brochettes en bois
+  - Poêle antiadhésive
+image: images/koftas-de-boeuf.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  generated_at: "2026-09-24"
+  prompt_file: image-prompts/koftas-de-boeuf.md
+---
+
+## Koftas de bœuf à la menthe et au cumin
+
+[Préparer la base aromatique] Réunir les aromates et les épices dans le #bol Thermomix{}.
+- Ajouter l'@ail{2 gousses} épluché, le @piment rouge{1 petit piment sec}, la @menthe fraîche{5 feuilles lavées}, le @cumin{1 pincée}, le @laurier{1 pincée} et le @mélange d'épices pour kofta{½ c. à café}.
+- Fermer le bol et hacher ~{10 s} à vitesse 8, puis rabattre vers le fond avec la #spatule{}.
+
+[Mélanger la viande] Associer la viande à l'assaisonnement sans la réduire en purée.
+- Ajouter la @viande hachée{600 g} de bœuf et le @sel{1 pincée}.
+- Mélanger ~{20 s} en sens inverse à vitesse 4.
+
+[Façonner] Former huit koftas régulières.
+- Répartir la préparation en huit portions et rouler chacune en cylindre avec les mains légèrement humides.
+- Enfoncer une #brochette en bois{} dans chaque cylindre.
+
+[Huiler] Enduire la viande d'huile.
+- Badigeonner les koftas avec l'@huile d'olive{20 g}.
+
+[Chauffer la poêle] Faire chauffer une #poêle antiadhésive{} à feu moyen.
+
+[Griller] Cuire les koftas au moins ~{3 min} par face, en prolongeant si besoin jusqu'à ce qu'elles soient dorées et cuites à cœur.
+
+[Servir] Servir aussitôt, avec du yaourt grec ou une sauce tzatziki.

@@ -1,0 +1,59 @@
+---
+title: Colombo de légumes à la mangue
+portions: 4
+prep_time: 20 min
+total_time: 1 h 05 min
+spiciness: 1
+description: Légumes fondants mijotés dans le lait de coco, relevés par la mangue, le citron vert et les épices colombo.
+tags: [plat, vegetarien, vegan, antillais, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r762156
+author: Fabrice Veigas
+scaling:
+  enabled: false
+  reason: Les temps de cuisson et la capacité du bol sont donnés pour quatre portions.
+flavors:
+  pairing: [mangue, lait de coco, citron vert, coriandre]
+  notes: [crémeux, fruité, acidulé]
+  harmony: Le lait de coco adoucit les épices, tandis que la mangue et le citron vert apportent une touche fruitée et vive.
+  tips: Retirer le piment entier avant de servir et proposer du riz blanc en accompagnement.
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+image: images/colombo-de-legumes-a-la-mangue.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  generated_at: "2026-09-24"
+  prompt_file: image-prompts/colombo-de-legumes-a-la-mangue.md
+---
+
+## Colombo de légumes à la mangue
+
+[Préparer les aromates] Réunir les aromates dans le #bol Thermomix{}.
+- Ajouter l'@oignon{1}, l'@ail{2 gousses} et le @gingembre{1 cm} pelés.
+- Fermer le bol et hacher ~{10 s} à vitesse 4.
+
+[Cuire la base] Racler les parois avec la #spatule{} et faire revenir les aromates ~{3 min} à ^{100 C}, en sens inverse à vitesse cuillère.
+- Ajouter l'@huile d'olive{1 c. à soupe}.
+
+[Mijoter les légumes] Ajouter les légumes et les épices, puis cuire ~{20 min} à ^{100 C}, en sens inverse à vitesse 1, sans le gobelet doseur.
+- Incorporer la @courgette{250 g} et l'@aubergine{200 g} en cubes, le @poivron{1 rouge} en dés et les @pommes de terre{200 g} en cubes.
+- Ajouter l'@huile d'olive{2 c. à soupe}, les @épices à colombo{½ c. à café} et le @piment rouge{1 petit piment oiseau entier}.
+
+[Ajouter les fruits et le bouillon] Incorporer les ingrédients de la sauce.
+- Ajouter les @tomates concassées{400 g}, le @bouillon de légumes{50 g}, la @mangue{1 en dés}, le @jus de citron vert{3 c. à café} et le @lait de coco{150 g}.
+
+[Terminer le mijotage] Cuire ~{20 min} à ^{90 C}, en sens inverse à vitesse 1, jusqu'à ce que les légumes soient tendres et la sauce nappante.
+
+[Retirer le piment] Ôter le piment entier avant le service.
+
+[Finaliser] Ajouter la coriandre fraîche au dernier moment.
+- Ajouter la @coriandre fraîche{4 brins} juste avant de servir.
+
+[Servir] Servir chaud.
