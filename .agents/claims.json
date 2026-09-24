@@ -5,19 +5,7 @@
     "max_heartbeat_age_minutes": 15,
     "require_approved_label": "potential-dev-work"
   },
-  "active_claims": {
-    "491": {
-      "issue": 491,
-      "title": "Ajouter un lot de recettes Cookidoo variées compatibles TM31",
-      "agent": "Codex",
-      "workspace": "/home/pierrecsn/Work/worktrees/cookigram-491",
-      "branch": "feat/issue-491-international-tm31",
-      "claimed_at": "2026-09-24T20:32:27+02:00",
-      "last_heartbeat": "2026-09-24T21:14:00+02:00",
-      "status": "pr_open",
-      "pr": 494
-    }
-  },
+  "active_claims": {},
   "completed_claims": [
     {
       "issue": 435,
@@ -185,6 +173,20 @@
       "merged_at": "2026-09-22T02:30:53Z",
       "reconciled_by": "Muse-rose-algol",
       "reconciliation": "satisfied by PRs #436, #437, #438"
+    },
+    {
+      "issue": 491,
+      "title": "Ajouter un lot de recettes Cookidoo variées compatibles TM31",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Work/worktrees/cookigram-491",
+      "branch": "feat/issue-491-international-tm31",
+      "claimed_at": "2026-09-24T20:32:27+02:00",
+      "last_heartbeat": "2026-09-24T21:14:00+02:00",
+      "status": "merged",
+      "pr": 494,
+      "merged_at": "2026-09-24T19:26:10Z",
+      "reconciled_by": "Codex",
+      "reconciliation": "satisfied by PR #494; issue #491 remains open for the six 120 C references excluded from this scope"
     }
   ]
 }
