@@ -1,0 +1,68 @@
+---
+title: Poulet korma au safran et aux raisins
+date_published: 2026-09-24
+portions: 4
+prep_time: 15 min
+total_time: 50 min
+spiciness: 1
+nutrition_profile: balanced
+description: Poulet tendre dans une sauce crémeuse au safran, curry vert et raisins secs, fini aux amandes et oignons frits.
+tags: [poulet, korma, curry, safran, thermomix]
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r257627
+author: Olivier Ploton
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Poêle
+scaling:
+  enabled: false
+  reason: La quantité de sauce et de poulet est prévue pour quatre portions.
+flavors:
+  pairing: [poulet, curry vert, crème, safran]
+  notes: [crémeux, doux, épicé]
+  harmony: Le safran et la crème adoucissent les épices du curry tandis que les raisins apportent une note fruitée.
+  tips: Servir avec du riz basmati nature, comme le suggère la source.
+image: images/poulet-korma-safran-raisins.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: "2026-09-24"
+  prompt_file: image-prompts/poulet-korma-safran-raisins.md
+---
+
+## Poulet korma au safran et aux raisins
+
+[Infuser le safran]
+- Verser la @crème fraîche liquide{100 g, entière} dans le #bol Thermomix{}.
+- Chauffer ~{4 min} à ^{60 C} et vitesse 1.
+- Ajouter le @safran{1 dose} dans le bol.
+- Transvaser la crème au safran dans un petit bol et réserver.
+
+[Faire revenir les aromates à la poêle]
+- Réunir les @oignons{200 g, en quartiers}, les @gousses d'ail{3, coupées en deux} et le @gingembre frais{1,5 cm, pelé et en quartiers} dans une #poêle{}.
+- Ajouter la @cardamome{3 pincées, en poudre}, le @beurre doux{40 g} et la @pâte de curry vert{40 g, variante korma de préférence}.
+- Faire revenir à feu moyen ~{15 min}, en remuant régulièrement, jusqu'à ce que les oignons soient fondants et que les épices dégagent leur parfum.
+- Transvaser les aromates dans le bol Thermomix non lavé.
+
+[Mixer la sauce]
+- Ajouter le @yaourt grec{250 g} dans le bol.
+- Mixer ~{40 s} à vitesse 6.
+
+[Cuire le poulet]
+- Ajouter les @filets de poulet{700 g, blanc en cubes de 3 cm}, les @raisins secs{50 g} et le @sel{au goût}.
+- Cuire ~{16 min} à ^{100 C}, en sens inverse et vitesse cuillère, sans le gobelet doseur.
+
+[Finir le korma]
+- Verser la crème au safran réservée dans le bol.
+- Mélanger ~{1 min} à vitesse 2.
+- Parsemer les @amandes effilées{30 g} et les @oignons frits{30 g, déshydratés} au moment de servir.

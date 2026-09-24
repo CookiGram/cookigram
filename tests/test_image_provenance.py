@@ -20,8 +20,12 @@ class ImageProvenanceTests(unittest.TestCase):
         self.assertEqual(findings, [])
 
         manifest = yaml.safe_load((ROOT / AUDIT.PROVENANCE_MANIFEST).read_text(encoding="utf-8"))
-        self.assertEqual(len(manifest), 38)
-        self.assertEqual({record["recipe"] for record in manifest.values()}, {
+        self.assertEqual(len(manifest), 62)
+        self.assertEqual({
+            record.get("recipe") or record.get("subject", {}).get("recipe")
+            for record in manifest.values()
+            if record.get("recipe") or record.get("subject", {}).get("recipe")
+        }, {
             "air-fryer-pommes-terre-romarin",
             "air-fryer-poulet-paprika-herbes",
             "air-fryer-quesadillas-poulet-fromage",
@@ -60,6 +64,30 @@ class ImageProvenanceTests(unittest.TestCase):
             "onigiri-poulet-miso-gingembre",
             "onigiri-kombu-sesame",
             "onigiri-umeboshi-shiso-sesame",
+            "acras-de-morue",
+            "aioli-citron-capres",
+            "bretzels-maison",
+            "calzone-aux-legumes",
+            "cannelloni-epinards-ricotta-citron",
+            "cheese-naan-indien",
+            "chutney-mangue-pomme",
+            "colombo-de-legumes-a-la-mangue",
+            "crackers-aux-graines",
+            "fougasse-au-levain",
+            "gnocchi-romaine-miel-noix-gorgonzola",
+            "guacamole-classique",
+            "houmous-classique",
+            "koftas-de-boeuf",
+            "mayonnaise-aux-herbes",
+            "moussaka-de-lentilles",
+            "pain-de-mie-maison",
+            "polenta-poireau-bleu-auvergne",
+            "poulet-korma-safran-raisins",
+            "sauce-tomate-herbes",
+            "tapenade-noire",
+            "tempura-de-legumes",
+            "tortillas-de-ble-maison",
+            "tzatziki-grec",
         })
 
     def test_temporary_credit_is_rejected(self):

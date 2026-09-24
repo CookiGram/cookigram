@@ -1,0 +1,92 @@
+---
+title: Bretzels maison au bain alcalin
+date_published: 2026-09-24
+portions: 12
+prep_time: 30 min
+total_time: 1 h 55 min
+spiciness: 0
+description: Bretzels bruns et souples, à la croûte brillante, façonnés après une pousse lente puis pochés avant le four.
+nutrition_profile: balanced
+tags:
+- boulangerie
+- pain
+- thermomix
+- four
+- bretzel
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-Fr/r595302
+author: Isabelle Guerre (Larousse)
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Casserole et écumoire
+- Four et plaque de cuisson
+scaling:
+  enabled: false
+  reason: Le bain de bicarbonate, la surface de plaque et le nombre de fournées dépendent de la quantité façonnée.
+image: images/bretzels-maison.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/bretzels-maison.md
+---
+
+## Bretzels maison au bain alcalin
+
+[Activer la levure]
+- Verser l'@eau{150 g} et le @lait demi-écrémé{150 g} dans le bol du Thermomix.
+- Ajouter la @levure boulangère{2 sachets, sèche}.
+- Chauffer ~{2 min} à ^{37 C}, vitesse 2.
+
+[Pétrir la pâte]
+- Ajouter la @farine{500 g} et le @sel{10 g}.
+- Pétrir en mode pétrin ~{3 min}.
+- Ajouter le @beurre doux{35 g, mou}.
+- Pétrir en mode pétrin ~{3 min}, jusqu'à incorporation complète.
+
+[Laisser pousser]
+- Transvaser la pâte dans un saladier.
+- Couvrir le saladier de film alimentaire.
+- Laisser lever ~{1 h} à température ambiante.
+
+[Préparer le bain]
+- Verser l'@eau{1000 g}, le @sel{2 c. à café} et le @bicarbonate de sodium{100 g} dans une casserole.
+- Porter le bain à ébullition.
+
+[Façonner les bretzels]
+- Préchauffer le #four{} à ^{200 C}.
+- Diviser la pâte en 12 portions égales.
+- Rouler chaque portion en un boudin plus épais au centre et effilé aux extrémités.
+- Croiser deux fois les extrémités.
+- Pincer les deux bouts sur la partie supérieure du bretzel.
+
+[Pocher les bretzels]
+- Plonger les bretzels dans le bain bouillant ~{30 s} chacun.
+- Retourner chaque bretzel à mi-cuisson.
+- Retirer chaque bretzel avec une écumoire.
+- Déposer les bretzels sur une plaque couverte de #papier sulfurisé{} légèrement farinée.
+
+[Finir les bretzels]
+- Badigeonner les bretzels avec l'@œuf{1, battu}.
+- Parsemer de @sel{quelques grains de gros sel}.
+
+[Cuire les bretzels]
+- Cuire ~{15 min} à ^{200 C}, jusqu'à ce que les bretzels soient brun-doré.

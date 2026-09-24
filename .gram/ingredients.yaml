@@ -1018,8 +1018,9 @@ ingredients:
   poire:
     name: Poire
     aliases:
+    - poires
     - poire
-    category: Fruits
+    category: Fruits et légumes
   figue:
     name: Figue
     aliases:
@@ -1034,7 +1035,7 @@ ingredients:
     name: Nduja
     aliases:
     - nduja
-    - 'nduja'
+    - nduja
     category: Charcuterie
   riz-a-risotto:
     aliases:
@@ -1061,12 +1062,10 @@ ingredients:
       fat: 0.9
       protein: 8.5
   riz-brun:
-    aliases:
-    - riz-brun
-    - riz brun
-    - riz complet
-    category: Céréales et féculents
     name: Riz brun
+    aliases:
+    - riz brun
+    category: Céréales et féculents
   riz-sauvage:
     aliases:
     - riz-sauvage
@@ -2078,6 +2077,8 @@ ingredients:
   jaune-d-oeuf:
     name: Jaunes d'œufs
     aliases:
+    - jaune d'œuf
+    - jaune d’œuf
     - jaunes d'œufs
     - jaune d'oeuf
     - jaunes d'oeufs
@@ -2362,8 +2363,7 @@ ingredients:
   sauce-worcestershire:
     name: Sauce Worcestershire
     aliases:
-    - sauce worcestershire
-    - sauce anglaise
+    - sauce Worcestershire
     category: Condiments et assaisonnements
   salade-romaine:
     name: Salade romaine
@@ -2407,11 +2407,8 @@ ingredients:
   pois-chiches:
     name: Pois chiches
     aliases:
-    - pois chiches en conserve
-    - pois chiches égouttés
-    - pois chiches cuits
-    - pois chiches en boîte
-    category: Fruits, légumes, légumineuses et oléagineux
+    - pois chiches
+    category: Légumineuses
   thon:
     name: Thon au naturel
     aliases:
@@ -2754,79 +2751,82 @@ ingredients:
     category: Fruits à coque et graines
   betterave:
     name: Betterave
-    aliases: [betterave, betteraves]
+    aliases:
+    - betterave
+    - betteraves
     category: Légumes et aromates
-  noix:
-    name: Noix
-    aliases: [noix]
-    category: Fruits à coque et graines
-  poire:
-    name: Poire
-    aliases: [poires, poire]
-    category: Fruits et légumes
   onglet-de-boeuf:
     name: Onglet de bœuf
-    aliases: [onglet de boeuf, onglet de bœuf]
+    aliases:
+    - onglet de boeuf
+    - onglet de bœuf
     category: Boucherie et volailles
   sambal-oelek:
     name: Sambal oelek
-    aliases: [sambal oelek]
+    aliases:
+    - sambal oelek
     category: Condiments et assaisonnements
   ailes-de-poulet:
     name: Ailes de poulet
-    aliases: [ailes de poulet]
+    aliases:
+    - ailes de poulet
     category: Boucherie et volailles
   patate-douce:
     name: Patate douce
-    aliases: [patate douce, patates douces]
+    aliases:
+    - patate douce
+    - patates douces
     category: Légumes et aromates
   tofu-ferme:
     name: Tofu ferme
-    aliases: [tofu ferme, tofu extra-ferme]
+    aliases:
+    - tofu ferme
+    - tofu extra-ferme
     category: Produits végétaux
   tortillas-de-ble:
     name: Tortillas de blé
-    aliases: [tortillas de blé, tortilla de blé]
+    aliases:
+    - tortillas de blé
+    - tortilla de blé
     category: Produits céréaliers
   orge-perle:
     name: Orge perlé
-    aliases: [orge perlé, orge perlée]
+    aliases:
+    - orge perlé
+    - orge perlée
     category: Céréales et féculents
-  sauce-worcestershire:
-    name: Sauce Worcestershire
-    aliases: [sauce Worcestershire]
-    category: Condiments et assaisonnements
   viande-de-boeuf-a-mijoter:
     name: Viande de bœuf à mijoter
-    aliases: [viande de boeuf à mijoter]
+    aliases:
+    - viande de boeuf à mijoter
     category: Boucherie et volailles
-  pois-chiches:
-    name: Pois chiches
-    aliases: [pois chiches]
-    category: Légumineuses
   orzo:
     name: Orzo
-    aliases: [orzo, pâtes orzo]
+    aliases:
+    - orzo
+    - pâtes orzo
     category: Céréales et féculents
   clous-de-girofle:
     name: Clous de girofle
-    aliases: [clous de girofle]
+    aliases:
+    - clous de girofle
     category: Épices et condiments
   legumes-surgeles:
     name: Légumes surgelés
-    aliases: [légumes surgelés]
+    aliases:
+    - légumes surgelés
     category: Légumes et aromates
   paprika-fume:
     name: Paprika fumé
-    aliases: [paprika-fume, paprika fumé]
+    aliases:
+    - paprika-fume
+    - paprika fumé
     category: Épices et condiments
-  riz-brun:
-    name: Riz brun
-    aliases: [riz brun]
-    category: Céréales et féculents
   haricots-blancs:
     name: Haricots blancs
-    aliases: [haricots-blancs, haricots blancs]
+    aliases:
+    - haricots-blancs
+    - haricots blancs
     category: Légumineuses
   herbes-italiennes:
     name: Herbes italiennes
@@ -3096,105 +3096,274 @@ ingredients:
     category: Condiments et assaisonnements
   agneau-hache:
     name: Agneau haché
-    aliases: [agneau haché, viande d'agneau hachée]
+    aliases:
+    - agneau haché
+    - viande d'agneau hachée
     category: Viandes
   boeuf-hache:
     name: Bœuf haché
-    aliases: [bœuf haché, viande de bœuf hachée]
+    aliases:
+    - bœuf haché
+    - viande de bœuf hachée
     category: Viandes
   cacahuetes-grillees:
     name: Cacahuètes grillées
-    aliases: [cacahuètes grillées, cacahuètes torréfiées]
+    aliases:
+    - cacahuètes grillées
+    - cacahuètes torréfiées
     category: Fruits à coque et graines
   chou-blanc:
     name: Chou blanc
-    aliases: [chou blanc, chou blanc émincé]
+    aliases:
+    - chou blanc
+    - chou blanc émincé
     category: Légumes et aromates
   dashi-en-poudre:
     name: Dashi en poudre
-    aliases: [dashi en poudre, poudre de dashi]
+    aliases:
+    - dashi en poudre
+    - poudre de dashi
     category: Condiments et assaisonnements
   farine-avec-levure-incorporee:
     name: Farine avec levure incorporée
-    aliases: [farine avec levure incorporée, self-raising flour]
+    aliases:
+    - farine avec levure incorporée
+    - self-raising flour
     category: Produits céréaliers
   farine-de-mais-precuite:
     name: Farine de maïs précuite
-    aliases: [farine de maïs précuite, masarepa]
+    aliases:
+    - farine de maïs précuite
+    - masarepa
     category: Produits céréaliers
   farine-de-riz:
     name: Farine de riz
-    aliases: [farine de riz, rice flour]
+    aliases:
+    - farine de riz
+    - rice flour
     category: Produits céréaliers
   fromage-cottage:
     name: Fromage cottage
-    aliases: [fromage cottage, cottage cheese]
+    aliases:
+    - fromage cottage
+    - cottage cheese
     category: Produits laitiers
   gochujang:
     name: Gochujang
-    aliases: [gochujang, pâte de piment coréenne]
+    aliases:
+    - gochujang
+    - pâte de piment coréenne
     category: Condiments et assaisonnements
   ketchup:
     name: Ketchup
-    aliases: [ketchup]
+    aliases:
+    - ketchup
     category: Condiments et assaisonnements
   kimchi:
     name: Kimchi
-    aliases: [kimchi]
+    aliases:
+    - kimchi
     category: Condiments et assaisonnements
   nouilles-de-riz:
     name: Nouilles de riz
-    aliases: [nouilles de riz, rice noodles]
+    aliases:
+    - nouilles de riz
+    - rice noodles
     category: Pâtes et préparations
   paprika-fort:
     name: Paprika fort
-    aliases: [paprika fort, paprika piquant]
+    aliases:
+    - paprika fort
+    - paprika piquant
     category: Herbes et épices
   piment-doux-marine:
     name: Piment doux mariné
-    aliases: [piment doux mariné]
+    aliases:
+    - piment doux mariné
     category: Condiments et assaisonnements
   pousses-de-soja:
     name: Pousses de soja
-    aliases: [pousses de soja, pousses de haricot mungo, bean sprouts]
+    aliases:
+    - pousses de soja
+    - pousses de haricot mungo
+    - bean sprouts
     category: Légumes et aromates
   piment-rouge-seche:
     name: Piment rouge séché
-    aliases: [piment rouge séché, piment rouge sec]
+    aliases:
+    - piment rouge séché
+    - piment rouge sec
     category: Herbes et épices
   pate-de-crevettes:
     name: Pâte de crevettes
-    aliases: [pâte de crevettes, shrimp paste]
+    aliases:
+    - pâte de crevettes
+    - shrimp paste
     category: Condiments et assaisonnements
   pate-de-tamarin:
     name: Pâte de tamarin
-    aliases: [pâte de tamarin, tamarind paste]
+    aliases:
+    - pâte de tamarin
+    - tamarind paste
     category: Condiments et assaisonnements
   poisson-blanc:
     name: Filets de poisson blanc
-    aliases: [poisson blanc, filets de poisson blanc]
+    aliases:
+    - poisson blanc
+    - filets de poisson blanc
     category: Poissons et fruits de mer
   riz-rond:
     name: Riz rond
-    aliases: [riz rond, riz à grain rond]
+    aliases:
+    - riz rond
+    - riz à grain rond
     category: Féculents et céréales
   sauce-huitre:
     name: Sauce huître
-    aliases: [sauce huître, sauce aux huîtres, oyster sauce]
+    aliases:
+    - sauce huître
+    - sauce aux huîtres
+    - oyster sauce
     category: Condiments et assaisonnements
   saucisse-chinoise:
     name: Saucisse chinoise
-    aliases: [saucisse chinoise, Chinese sausage, lup chong]
+    aliases:
+    - saucisse chinoise
+    - Chinese sausage
+    - lup chong
     category: Viandes
   sucre-de-palme:
     name: Sucre de palme
-    aliases: [sucre de palme, palm sugar]
+    aliases:
+    - sucre de palme
+    - palm sugar
     category: Produits sucrés
   oeufs-de-caille:
     name: Œufs de caille
-    aliases: [œufs de caille, oeufs de caille, quail eggs]
+    aliases:
+    - œufs de caille
+    - oeufs de caille
+    - quail eggs
     category: Crèmerie et oeufs
   flocons-de-bonite:
     name: Flocons de bonite séchée
-    aliases: [bonite séchée, bonite séché, flocons de bonite, bonito flakes]
+    aliases:
+    - bonite séchée
+    - bonite séché
+    - flocons de bonite
+    - bonito flakes
     category: Poissons et fruits de mer
+  menthe-fraiche:
+    name: Menthe fraîche
+    aliases:
+    - menthe fraîche
+    - feuilles de menthe fraîche
+    category: Herbes et épices
+  melange-epices-kofta:
+    name: Mélange d'épices pour kofta
+    aliases:
+    - mélange d'épices pour kofta
+    - épices pour kofta
+    category: Herbes et épices
+  epices-a-colombo:
+    name: Épices à colombo
+    aliases:
+    - épices à colombo
+    category: Herbes et épices
+  bouillon-dashi:
+    name: Bouillon dashi
+    aliases:
+    - bouillon dashi
+    - dashi
+    category: Condiments et assaisonnements
+  sake:
+    name: Saké
+    aliases:
+    - saké
+    - sake
+    category: Boissons et alcools
+  glacons:
+    name: Glaçons
+    aliases:
+    - glaçons
+    - glace en cubes
+    category: Boissons et liquides
+  radis-blanc:
+    name: Radis blanc
+    aliases:
+    - radis blanc
+    - daikon
+    category: Légumes et aromates
+  morue-salee:
+    name: Morue salée
+    aliases:
+    - morue salée
+    - morue dessalée
+    category: Poissons et fruits de mer
+  cives:
+    name: Cives
+    aliases:
+    - cive
+    - cives
+    - ciboule antillaise
+    category: Légumes et aromates
+  citron-vert-non-traite:
+    name: Citron vert non traité
+    aliases:
+    - citron vert non traité
+    - citron vert (zeste)
+    category: Fruits
+  piment-antillais:
+    name: Piment antillais
+    aliases:
+    - piment antillais
+    - piment rouge antillais
+    category: Légumes et aromates
+  cannelloni:
+    name: Cannelloni secs
+    aliases:
+    - cannelloni
+    - cannellonis
+    - tubes de cannelloni
+    category: Féculents et céréales
+  semoule-de-ble:
+    name: Semoule de blé
+    aliases:
+    - semoule de blé
+    - semoule fine de blé
+    - semolino
+    category: Féculents et céréales
+  polenta:
+    name: Polenta
+    aliases:
+    - polenta
+    - semoule de maïs
+    category: Féculents et céréales
+  bleu-d-auvergne:
+    name: Bleu d'Auvergne
+    aliases:
+    - bleu d'Auvergne
+    - bleu d’auvergne
+    category: Fromages
+  yaourt-nature:
+    name: Yaourt nature
+    aliases:
+    - yaourt nature
+    - yaourt
+    category: Produits laitiers
+  levain-de-ble:
+    name: Levain de blé
+    aliases:
+    - levain de blé
+    - levain
+    category: Boulangerie
+  piment-frais:
+    name: Piment frais
+    aliases:
+    - piment frais
+    category: Légumes et aromates
+  safran:
+    name: Safran
+    aliases:
+    - safran
+    category: Herbes et épices

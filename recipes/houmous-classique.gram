@@ -1,0 +1,64 @@
+---
+title: Houmous classique
+date_published: 2026-09-24
+portions: 4
+prep_time: 5 min
+total_time: 10 min
+description: Houmous velouté aux pois chiches, citron et sésame, relevé de paprika et de Cayenne, à servir frais.
+nutrition_profile: vitality
+tags:
+- houmous
+- dip
+- pois-chiches
+- thermomix
+- apéritif
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r906452
+author: Vorwerk Home & Co. KmG
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+scaling:
+  enabled: false
+  reason: La texture a été calibrée pour quatre portions.
+meal:
+  completeness: component
+  role: dip
+spiciness: 1
+image: images/houmous-classique.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/houmous-classique.md
+---
+
+[Hacher l'ail]
+- Mettre l'@ail{1 gousse} dans le #bol Thermomix{}.
+- Hacher ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
+
+[Mixer le houmous]
+- Ajouter les @pois chiches{130 g, égouttés} et l'@huile de sésame{20 g}.
+- Ajouter l'@huile d'olive{20 g} et le @jus de citron{25 g}.
+- Ajouter le @sel{1/2 c. à café}, le @paprika{1/2 c. à café} et le @piment de Cayenne{1 pincée}.
+- Mixer ~{1 min} à vitesse 6 jusqu'à obtenir une pâte lisse.
+- Racler les parois, mixer quelques secondes si des morceaux restent visibles.
+- Servir frais avec du pain ou des crudités.

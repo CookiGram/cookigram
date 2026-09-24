@@ -1,0 +1,60 @@
+---
+title: Tapenade noire
+date_published: 2026-09-24
+portions: 1
+prep_time: 10 min
+total_time: 10 min
+description: Tapenade noire dense et saline aux olives, câpres et anchois, relevée d'ail et liée à l'huile d'olive.
+nutrition_profile: vitality
+tags:
+- tapenade
+- olives
+- dip
+- thermomix
+- apéritif
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r589777
+author: Isabelle Guerre
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+scaling:
+  enabled: false
+  reason: La recette donne un bocal.
+meal:
+  completeness: component
+  role: dip
+spiciness: 0
+image: images/tapenade-noire.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/tapenade-noire.md
+---
+
+[Mixer les ingrédients]
+- Mettre les @olives noires{250 g, dénoyautées}, l'@ail{3 gousses} et les @câpres{2 c. à soupe} dans le #bol Thermomix{}.
+- Ajouter les @filets d'anchois{4, à l'huile}.
+- Mixer ~{20 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
+- Ajouter l'@huile d'olive{15 g} et le @poivre moulu{au goût}.
+- Mixer ~{10 s} à vitesse 5 jusqu'à obtenir une pâte homogène.
+- Transvaser dans un bocal et servir.

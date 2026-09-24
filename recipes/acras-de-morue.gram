@@ -1,0 +1,64 @@
+---
+title: Acras de morue
+date_published: 2026-09-24
+portions: 30
+prep_time: 30 min
+total_time: 24 h
+spiciness: 2
+description: Acras antillais dorés et croustillants, à la morue, au citron vert et au piment, servis chauds dès la friture.
+tags:
+- entrée
+- antillais
+- morue
+- friture
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr/r594482
+author: Isabelle Guerre
+appliances:
+  thermomix:
+  - TM31
+source_appliances:
+  thermomix:
+  - TM31
+scaling:
+  enabled: false
+  reason: La pâte donne 30 pièces ; toute adaptation du rendement et des fournées n'est pas vérifiée.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/acras-de-morue.md
+image: images/acras-de-morue.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+nutrition_profile: pleasure
+---
+
+## Acras de morue
+
+[Dessaler la morue]
+- Plonger la @morue salée{300 g} dans un grand volume d'eau froide.
+- Laisser dessaler ~{24 h} en changeant l'eau 2 à 3 fois.
+- Égoutter soigneusement la morue.
+
+[Préparer la pâte]
+- Effeuiller la morue dessalée et retirer les arêtes éventuelles.
+- Hacher les @cives{4 tiges, parties vertes seulement}, la @coriandre fraîche{4 brins} et l'@ail{3 gousses}.
+- Prélever 3 bandes de zeste sur le @citron vert non traité{1 pièce}.
+- Ajouter le zeste, le @piment antillais{1/2 pièce} épépiné et du @poivre moulu{selon goût}.
+- Incorporer la @farine{200 g}, le @lait demi-écrémé{250 g} et la @levure chimique{1 c. à café}.
+- Mélanger jusqu'à obtenir une pâte homogène et épaisse.
+- Incorporer la morue effeuillée sans la réduire en purée.
+
+[Laisser reposer]
+- Couvrir la pâte et la placer au frais ~{1 h}.
+
+[Frire les acras]
+- Faire chauffer une @huile végétale{quantité suffisante pour immerger les acras} dans une friteuse ou une casserole profonde à ^{170 C}.
+- Prélever des petites portions de pâte et les déposer avec précaution dans l'huile chaude.
+- Frire en plusieurs fournées jusqu'à ce que les acras soient uniformément dorés et cuits à cœur.
+- Égoutter sur du papier absorbant et servir chaud.

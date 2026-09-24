@@ -3,25 +3,27 @@ ingredients:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
   noix:
-    source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
-    status: incomplete
+    source: ANSES-CIQUAL
+    status: verified
   extrait-de-vanille:
-    source: Arôme alimentaire ; valeur nutritionnelle variable selon le produit.
+    source: Arôme utilisé dans la recette Cookidoo.
     status: incomplete
   fromage-frais-philadelphia:
-    source: Produit de marque ; valeurs nutritionnelles à vérifier sur l'étiquette.
+    source: Ingrédient de marque, valeurs nutritionnelles à documenter.
     status: incomplete
   poire:
-    source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
-    status: incomplete
+    source: ANSES-CIQUAL
+    status: verified
   onglet-de-boeuf:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
   flocons-d-avoine:
-    source: Ingrédient générique ajouté pour le work-item CookiGram/cookigram-core#333 ; valeur nutritionnelle à compléter depuis CIQUAL.
+    source: Ingrédient générique ajouté pour le work-item CookiGram/cookigram-core#333
+      ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
   graines-de-chia:
-    source: Ingrédient générique ajouté pour le work-item CookiGram/cookigram-core#333 ; valeur nutritionnelle à compléter depuis CIQUAL.
+    source: Ingrédient générique ajouté pour le work-item CookiGram/cookigram-core#333
+      ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
   myrtilles:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
@@ -45,14 +47,16 @@ ingredients:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
   sauce-worcestershire:
-    source: Produit préparé ; valeurs nutritionnelles variables selon la marque.
-    status: incomplete
+    status: manual
+    source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
+      chiches, pâtes)
   viande-de-boeuf-a-mijoter:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
   pois-chiches:
-    source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
-    status: incomplete
+    status: manual
+    source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
+      chiches, pâtes)
   orzo:
     source: Produit céréalier ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
@@ -66,8 +70,8 @@ ingredients:
     source: Épice préparée ; valeurs nutritionnelles variables selon le produit.
     status: incomplete
   riz-brun:
-    source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
-    status: incomplete
+    source: ANSES-CIQUAL, catégorie riz complet (fiche nutritionnelle à compléter)
+    status: pending
   haricots-blancs:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
@@ -191,9 +195,6 @@ ingredients:
     status: verified
   eau-de-fleur-d-oranger:
     source: Donnée non nutritionnelle, utilisée comme arôme facultatif.
-    status: incomplete
-  fromage-frais-philadelphia:
-    source: Ingrédient de marque, valeurs nutritionnelles à documenter.
     status: incomplete
   fromage-frais:
     source: Produit laitier ; valeurs nutritionnelles variables selon le produit.
@@ -396,13 +397,7 @@ ingredients:
   artichaut:
     source: ANSES-CIQUAL, cœur d'artichaut
     status: incomplete
-  poire:
-    source: ANSES-CIQUAL
-    status: verified
   figue:
-    source: ANSES-CIQUAL
-    status: verified
-  noix:
     source: ANSES-CIQUAL
     status: verified
   nduja:
@@ -420,14 +415,12 @@ ingredients:
     sources:
     - ciqual
     status: verified
-  riz-brun:
-    source: ANSES-CIQUAL, catégorie riz complet (fiche nutritionnelle à compléter)
-    status: pending
   riz-sauvage:
     source: ANSES-CIQUAL, catégorie riz sauvage (fiche nutritionnelle à compléter)
     status: pending
   riz-sushi:
-    source: ANSES-CIQUAL, catégorie riz blanc à grain court (fiche nutritionnelle à compléter)
+    source: ANSES-CIQUAL, catégorie riz blanc à grain court (fiche nutritionnelle
+      à compléter)
     status: pending
   romarin:
     source: ANSES-CIQUAL
@@ -479,9 +472,6 @@ ingredients:
     status: incomplete
   comte:
     source: Fromage AOP ; valeurs nutritionnelles à documenter.
-    status: incomplete
-  extrait-de-vanille:
-    source: Arôme utilisé dans la recette Cookidoo.
     status: incomplete
   farine-d-epeautre:
     source: Farine de céréale ; valeurs nutritionnelles à documenter.
@@ -795,10 +785,6 @@ ingredients:
     status: manual
     source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
       chiches, pâtes)
-  sauce-worcestershire:
-    status: manual
-    source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
-      chiches, pâtes)
   salade-romaine:
     status: manual
     source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
@@ -820,10 +806,6 @@ ingredients:
     source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
       chiches, pâtes)
   vinaigre-de-vin:
-    status: manual
-    source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
-      chiches, pâtes)
-  pois-chiches:
     status: manual
     source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
       chiches, pâtes)
@@ -927,16 +909,19 @@ ingredients:
     source: ANSES-CIQUAL 21013
   yaourt-grec:
     status: incomplete
-    source: Valeur nutritionnelle à vérifier contre CIQUAL pour un yaourt grec nature générique.
+    source: Valeur nutritionnelle à vérifier contre CIQUAL pour un yaourt grec nature
+      générique.
   mayonnaise:
     status: incomplete
-    source: Valeur nutritionnelle dépendante de la formulation ; à vérifier contre CIQUAL ou l'étiquette.
+    source: Valeur nutritionnelle dépendante de la formulation ; à vérifier contre
+      CIQUAL ou l'étiquette.
   ciboulette:
     status: incomplete
     source: Valeur nutritionnelle à vérifier contre CIQUAL pour de la ciboulette fraîche.
   beurre-de-cacahuete:
     status: incomplete
-    source: Valeur nutritionnelle à vérifier contre CIQUAL pour un beurre de cacahuète nature.
+    source: Valeur nutritionnelle à vérifier contre CIQUAL pour un beurre de cacahuète
+      nature.
   herbes-italiennes:
     status: incomplete
     source: Mélange d'herbes séchées ; valeur nutritionnelle générique.
@@ -945,13 +930,15 @@ ingredients:
     source: Légume frais générique ; valeur nutritionnelle à compléter depuis CIQUAL.
   saucisse-de-toulouse:
     status: incomplete
-    source: Charcuterie fraîche de porc ; valeur nutritionnelle à compléter depuis CIQUAL.
+    source: Charcuterie fraîche de porc ; valeur nutritionnelle à compléter depuis
+      CIQUAL.
   cardamome:
     status: incomplete
     source: Épice générique ; valeur nutritionnelle à compléter depuis CIQUAL.
   gnocchi:
     status: incomplete
-    source: Pâtes fraîches de pomme de terre ; valeur nutritionnelle à compléter depuis CIQUAL.
+    source: Pâtes fraîches de pomme de terre ; valeur nutritionnelle à compléter depuis
+      CIQUAL.
   flocons-de-piment:
     status: incomplete
     source: Piment séché concassé ; valeur nutritionnelle générique.
@@ -960,10 +947,12 @@ ingredients:
     source: Condiment déshydraté ; valeur nutritionnelle générique.
   halloumi:
     status: incomplete
-    source: Fromage traditionnel de Chypre ; valeur nutritionnelle à compléter depuis CIQUAL.
+    source: Fromage traditionnel de Chypre ; valeur nutritionnelle à compléter depuis
+      CIQUAL.
   zaatar:
     status: incomplete
-    source: Mélange d'épices du Levant (thym, sésame, sumac) ; valeur nutritionnelle générique.
+    source: Mélange d'épices du Levant (thym, sésame, sumac) ; valeur nutritionnelle
+      générique.
   pate-brisee:
     status: incomplete
     source: Préparation boulangère ; composition variable selon la recette.
@@ -972,7 +961,8 @@ ingredients:
     source: Légume générique ; valeur nutritionnelle à compléter depuis CIQUAL.
   crabe:
     status: incomplete
-    source: Produit de la mer ; valeur nutritionnelle variable selon crabe frais ou préparation.
+    source: Produit de la mer ; valeur nutritionnelle variable selon crabe frais ou
+      préparation.
   daurade:
     status: incomplete
     source: Poisson générique ; valeur nutritionnelle à compléter depuis CIQUAL.
@@ -1005,7 +995,8 @@ ingredients:
     source: Champignon shiitaké frais ; valeur nutritionnelle à compléter depuis CIQUAL.
   chirashi-sushi-mix:
     status: incomplete
-    source: Mélange d'assaisonnement pour chirashi ; composition variable selon la marque.
+    source: Mélange d'assaisonnement pour chirashi ; composition variable selon la
+      marque.
   sakura-denbu:
     status: incomplete
     source: Flocons de poisson assaisonnés ; composition variable selon le produit.
@@ -1032,7 +1023,8 @@ ingredients:
     source: Condiment japonais ; composition variable selon le produit.
   shichimi:
     status: incomplete
-    source: Mélange japonais de piments et d'épices ; composition variable selon le produit.
+    source: Mélange japonais de piments et d'épices ; composition variable selon le
+      produit.
   flocons-d-algue:
     status: incomplete
     source: Flocons d'algue assaisonnés ; composition variable selon le produit.
@@ -1041,7 +1033,8 @@ ingredients:
     source: Mayonnaise japonaise ; composition variable selon la marque.
   sriracha-mayo:
     status: incomplete
-    source: Sauce préparée avec mayonnaise et sriracha ; proportions selon la recette source.
+    source: Sauce préparée avec mayonnaise et sriracha ; proportions selon la recette
+      source.
   gingembre-marine:
     status: incomplete
     source: Condiment de gingembre mariné ; composition variable selon le produit.
@@ -1062,10 +1055,12 @@ ingredients:
     source: Prune japonaise salée et acidifiée ; composition variable selon la préparation.
   agneau-hache:
     status: incomplete
-    source: Viande générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon le morceau.
+    source: Viande générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon
+      le morceau.
   boeuf-hache:
     status: incomplete
-    source: Viande générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon le taux de matière grasse.
+    source: Viande générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon
+      le taux de matière grasse.
   cacahuetes-grillees:
     status: incomplete
     source: Produit grillé ; valeurs nutritionnelles à vérifier selon le produit.
@@ -1098,13 +1093,15 @@ ingredients:
     source: Sauce préparée ; composition variable selon la marque.
   kimchi:
     status: incomplete
-    source: Légumes fermentés préparés ; composition variable selon la recette ou la marque.
+    source: Légumes fermentés préparés ; composition variable selon la recette ou
+      la marque.
   nouilles-de-riz:
     status: incomplete
     source: Produit céréalier ; valeurs nutritionnelles à vérifier selon le produit.
   oeufs-de-caille:
     status: incomplete
-    source: Œufs de caille ; valeurs nutritionnelles génériques à compléter depuis CIQUAL.
+    source: Œufs de caille ; valeurs nutritionnelles génériques à compléter depuis
+      CIQUAL.
   paprika-fort:
     status: incomplete
     source: Épice générique ; contribution nutritionnelle faible.
@@ -1122,7 +1119,8 @@ ingredients:
     source: Épice générique ; contribution nutritionnelle faible.
   poisson-blanc:
     status: incomplete
-    source: Poisson générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon l'espèce.
+    source: Poisson générique ; valeurs nutritionnelles à compléter depuis CIQUAL
+      selon l'espèce.
   pousses-de-soja:
     status: incomplete
     source: Légume germé ; valeurs nutritionnelles à vérifier selon le produit désigné.
@@ -1138,7 +1136,75 @@ ingredients:
   sucre-de-palme:
     status: incomplete
     source: Sucre de palme ; valeurs nutritionnelles à vérifier selon le produit.
-
+  menthe-fraiche:
+    status: incomplete
+    source: Nouvelle clé canonique pour les recettes Cookidoo de l'issue
+  melange-epices-kofta:
+    status: incomplete
+    source: Mélange variable selon la composition de la source ; aucune donnée physique
+      ou nutritionnelle ajoutée.
+  epices-a-colombo:
+    status: incomplete
+    source: Mélange variable selon la composition de la source ; aucune donnée physique
+      ou nutritionnelle ajoutée.
+  bouillon-dashi:
+    status: incomplete
+    source: Bouillon variable selon la préparation ; aucune donnée physique ou nutritionnelle
+      ajoutée.
+  sake:
+    status: incomplete
+    source: Produit variable selon la marque ; aucune donnée physique ou nutritionnelle
+      ajoutée.
+  glacons:
+    status: incomplete
+    source: Eau congelée ; aucune donnée physique ou nutritionnelle ajoutée.
+  radis-blanc:
+    status: incomplete
+    source: Légume générique daikon ; aucune donnée physique ou nutritionnelle ajoutée.
+  morue-salee:
+    status: incomplete
+    source: Produit salé/dessalé dont la composition varie ; aucune donnée physique
+      ou nutritionnelle ajoutée.
+  cives:
+    status: incomplete
+    source: Légume aromatique générique ; aucune donnée physique ou nutritionnelle
+      ajoutée.
+  citron-vert-non-traite:
+    status: incomplete
+    source: Fruit destiné notamment au zeste ; aucune donnée physique ou nutritionnelle
+      ajoutée.
+  piment-antillais:
+    status: incomplete
+    source: Variété de piment ; aucune donnée physique ou nutritionnelle ajoutée.
+  cannelloni:
+    status: incomplete
+    source: Pâtes sèches génériques ; aucune donnée physique ou nutritionnelle ajoutée.
+  semoule-de-ble:
+    status: incomplete
+    source: Céréale générique ; aucune donnée physique ou nutritionnelle ajoutée.
+  polenta:
+    status: incomplete
+    source: Produit céréalier variable ; aucune donnée physique ou nutritionnelle
+      ajoutée.
+  bleu-d-auvergne:
+    status: incomplete
+    source: Fromage générique ; aucune donnée physique ou nutritionnelle ajoutée.
+  yaourt-nature:
+    status: incomplete
+    source: Produit laitier variable selon la marque ; aucune donnée physique ou nutritionnelle
+      ajoutée.
+  levain-de-ble:
+    status: incomplete
+    source: Levain de composition et d'hydratation variables ; aucune donnée physique
+      ou nutritionnelle ajoutée.
+  piment-frais:
+    status: incomplete
+    source: Piment générique sans variété/couleur précisée par la source ; aucune
+      donnée physique ou nutritionnelle ajoutée.
+  safran:
+    status: incomplete
+    source: Épice indiquée par dose dans la source ; aucune donnée physique ou nutritionnelle
+      ajoutée.
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES

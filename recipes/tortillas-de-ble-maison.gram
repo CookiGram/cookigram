@@ -1,0 +1,82 @@
+---
+title: Tortillas de blé maison à la poêle
+date_published: 2026-09-24
+portions: 16
+prep_time: 55 min
+total_time: 1 h 10 min
+spiciness: 0
+description: Galettes de blé souples et légèrement dorées, pétries au Thermomix puis cuites rapidement à la poêle sèche.
+nutrition_profile: balanced
+tags:
+- boulangerie
+- tortilla
+- thermomix
+- poêle
+- mexicain
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r115278
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Poêle épaisse d'environ 26 cm
+- Rouleau à pâtisserie
+scaling:
+  enabled: true
+  min_portions: 8
+  max_portions: 32
+  step: 8
+  note: Le temps de cuisson par galette ne change pas et les galettes cuisent en plusieurs fournées.
+image: images/tortillas-de-ble-maison.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/tortillas-de-ble-maison.md
+---
+
+## Tortillas de blé maison à la poêle
+
+[Mélanger les ingrédients secs]
+- Verser la @farine{500 g}, le @sel{1 c. à café} et la @levure chimique{1 c. à café} dans le bol du Thermomix.
+- Mélanger ~{10 s} à vitesse 3.
+
+[Pétrir la pâte]
+- Ajouter l'@huile d'olive{80 g} et l'@eau{250 g, tiède}.
+- Pétrir en mode pétrin ~{2 min}.
+
+[Laisser reposer la pâte]
+- Transvaser la pâte sur un tapis de pétrissage ou un plan fariné.
+- Former une boule.
+- Couvrir d'un linge.
+- Laisser reposer ~{15 min} à température ambiante.
+
+[Abaisser les tortillas]
+- Diviser la pâte en 16 portions égales.
+- Abaisser chaque portion en disque d'environ 25 cm sur un plan fariné.
+- Ajouter un peu de @farine{farinage} si la pâte colle.
+
+[Cuire les tortillas]
+- Chauffer une #poêle{} épaisse à feu moyen-vif.
+- Cuire chaque tortilla ~{1 min} sur la première face, jusqu'à ce que des bulles apparaissent et que la pâte commence à dorer.
+- Retourner la tortilla.
+- Cuire ~{30 s} sur l'autre face, prolonger jusqu'à 1 min si nécessaire, jusqu'à ce qu'elle soit tachetée.
+- Empiler les tortillas cuites dans un plat.
+- Couvrir le plat pour garder les tortillas chaudes.

@@ -1,0 +1,115 @@
+---
+title: Moussaka de lentilles
+date_published: 2026-09-24
+portions: 4
+prep_time: 25 min
+total_time: 2 h
+spiciness: 0
+nutrition_profile: balanced
+description: Moussaka végétarienne en couches d'aubergines fondantes, lentilles corail parfumées et béchamel gratinée.
+tags:
+- moussaka
+- lentilles corail
+- aubergine
+- gratin
+- four
+- végétarien
+- thermomix
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r904833
+author: Cookidoo
+image: images/moussaka-de-lentilles.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/moussaka-de-lentilles.md
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Varoma
+- Casserole
+- Plat à gratin
+- Four
+scaling:
+  enabled: false
+  reason: Le volume du Varoma, du bol et du plat est calibré pour 4 portions.
+flavors:
+  pairing:
+  - lentilles corail
+  - aubergine
+  - tomate
+  - origan
+  notes:
+  - fondant
+  - tomaté
+  - gratiné
+  harmony: Les lentilles aux épices et à la tomate contrastent avec les aubergines tendres et la béchamel douce.
+  tips: Laisser des interstices dans le Varoma pour que la vapeur circule librement.
+---
+
+[Faire tremper les lentilles]
+- Mettre les @lentilles corail{130 g} dans un récipient avec l'@eau{330 g}.
+- Laisser tremper ~{1 h}.
+- Égoutter les lentilles.
+
+[Préparer les aubergines et le parmesan]
+- Couper les @aubergines{270 g, en tranches d'environ 1 cm}.
+- Répartir les tranches dans le #Varoma{} et sur son plateau sans obstruer les ouvertures.
+- Mettre le @parmesan{80 g, en morceaux} dans le bol Thermomix.
+- Râper ~{10 s} à vitesse 10.
+- Transférer le parmesan dans un récipient et réserver.
+
+[Préparer la base tomate]
+- Mettre les @oignons{130 g, en quartiers}, les @gousses d'ail{2} et le @poivron rouge{120 g, en morceaux} dans le bol.
+- Hacher ~{5 s} à vitesse 5.
+- Transférer les légumes hachés dans une #casserole{}.
+- Ajouter l'@huile d'olive{20 g} dans la casserole.
+- Faire revenir à feu moyen ~{260 s}, jusqu'à ce que les oignons soient tendres.
+- Remettre les légumes dans le bol.
+- Ajouter la @tomate{400 g, pelée en conserve avec son jus} dans le bol.
+- Mixer ~{3 s} à vitesse 5.
+- Verser le @vin rouge{120 g} dans le bol.
+- Ajouter l'@origan{1 c. à soupe} et le @gingembre en poudre{1 c. à café}.
+- Ajouter le @sel{2 c. à café} et le @poivre moulu{1/2 c. à café}.
+- Installer le Varoma.
+- Cuire ~{1170 s} à ^{Varoma}, en sens inverse et vitesse 1.
+- Retirer le Varoma.
+- Réserver les aubergines cuites.
+
+[Cuire les lentilles dans la sauce]
+- Ajouter les lentilles égouttées dans le bol.
+- Cuire ~{5 min} à ^{100 C}, en sens inverse et vitesse 2.
+- Beurrer un #plat à gratin{} avec un peu de @beurre doux{pour le plat}.
+- Étaler les aubergines dans le plat.
+- Répartir la sauce aux lentilles sur les aubergines.
+
+[Préparer la béchamel]
+- Mettre le @beurre doux{20 g}, le @lait{270 g} et la @farine{20 g} dans le bol rincé.
+- Cuire ~{8 min} à ^{100 C} et vitesse 4.
+- Ajouter le @parmesan{40 g, râpé et réservé}.
+- Ajouter le @sel{2 pincées} et le @poivre blanc moulu{2 pincées}.
+- Mélanger ~{5 s} à vitesse 4.
+
+[Gratiner la moussaka]
+- Préchauffer le #four{} à ^{200 C}.
+- Napper la sauce aux lentilles avec la béchamel.
+- Parsemer le @parmesan{40 g restants}.
+- Enfourner ~{30 min} à ^{200 C}, jusqu'à ce que la surface soit dorée et gratinée.
