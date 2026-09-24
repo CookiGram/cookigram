@@ -6,33 +6,55 @@ total_time: 40 min
 spiciness: 2
 description: Koftas de bœuf grillées, parfumées à la menthe et aux épices, avec une croûte dorée et un cœur juteux.
 nutrition_profile: balanced
-tags: [plat, boeuf, cuisine-du-monde, thermomix]
+tags:
+- plat
+- boeuf
+- cuisine-du-monde
+- thermomix
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r148130
 author: Cookidoo
 scaling:
   enabled: false
   reason: Les proportions et la chauffe à la poêle sont données pour quatre portions.
 flavors:
-  pairing: [bœuf, menthe, cumin, piment]
-  notes: [grillé, herbacé, chaleureux]
+  pairing:
+  - bœuf
+  - menthe
+  - cumin
+  - piment
+  notes:
+  - grillé
+  - herbacé
+  - chaleureux
   harmony: La menthe fraîche allège la viande grillée tandis que le cumin et les épices apportent une chaleur aromatique.
   tips: Servir avec du yaourt nature ou une sauce tzatziki.
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Brochettes en bois
-  - Poêle antiadhésive
+- Thermomix TM31, TM5, TM6 ou TM7
+- Brochettes en bois
+- Poêle antiadhésive
 image: images/koftas-de-boeuf.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration générée par IA pour CookiGram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
   provider: OpenAI image generation
-  generated_at: "2026-09-24"
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/koftas-de-boeuf.md
 ---
 

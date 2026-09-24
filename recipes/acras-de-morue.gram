@@ -2,22 +2,38 @@
 title: Acras de morue
 portions: 30
 prep_time: 30 min
-total_time: 25 h 30 min
+total_time: 24 h
 spiciness: 2
-description: "Acras antillais dorés et croustillants, à la morue, au citron vert et au piment, servis chauds dès la friture."
-tags: [entrée, antillais, morue, friture]
+description: Acras antillais dorés et croustillants, à la morue, au citron vert et au piment, servis chauds dès la friture.
+tags:
+- entrée
+- antillais
+- morue
+- friture
 source: https://cookidoo.fr/recipes/recipe/fr/r594482
 author: Isabelle Guerre
 appliances:
-  thermomix: [TM31]
+  thermomix:
+  - TM31
 source_appliances:
-  thermomix: [TM31]
+  thermomix:
+  - TM31
 scaling:
   enabled: false
-  reason: "La pâte donne 30 pièces ; toute adaptation du rendement et des fournées n'est pas vérifiée."
+  reason: La pâte donne 30 pièces ; toute adaptation du rendement et des fournées n'est pas vérifiée.
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/acras-de-morue.md
-image: images/placeholder-recipe.jpg
+image: images/acras-de-morue.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+nutrition_profile: pleasure
 ---
 
 ## Acras de morue

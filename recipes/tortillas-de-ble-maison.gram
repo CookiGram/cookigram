@@ -5,36 +5,49 @@ portions: 16
 prep_time: 55 min
 total_time: 1 h 10 min
 spiciness: 0
-description: "Galettes de blé souples et légèrement dorées, pétries au Thermomix puis cuites rapidement à la poêle sèche."
+description: Galettes de blé souples et légèrement dorées, pétries au Thermomix puis cuites rapidement à la poêle sèche.
 nutrition_profile: balanced
-tags: [boulangerie, tortilla, thermomix, poêle, mexicain]
+tags:
+- boulangerie
+- tortilla
+- thermomix
+- poêle
+- mexicain
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r115278
 author: Cookidoo
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Poêle épaisse d'environ 26 cm
-  - Rouleau à pâtisserie
+- Thermomix TM31, TM5, TM6 ou TM7
+- Poêle épaisse d'environ 26 cm
+- Rouleau à pâtisserie
 scaling:
   enabled: true
   min_portions: 8
   max_portions: 32
   step: 8
-  note: "Le temps de cuisson par galette ne change pas et les galettes cuisent en plusieurs fournées."
+  note: Le temps de cuisson par galette ne change pas et les galettes cuisent en plusieurs fournées.
 image: images/tortillas-de-ble-maison.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
-  license_url: https://openai.com/policies/terms-of-use
-  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/tortillas-de-ble-maison.md
 ---
 

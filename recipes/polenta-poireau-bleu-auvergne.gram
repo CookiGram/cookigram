@@ -6,31 +6,57 @@ total_time: 25 min
 spiciness: 0
 nutrition_profile: balanced
 description: Polenta crémeuse au bouillon, mêlée de poireau fondant et de bleu d'Auvergne, à servir aussitôt bien chaude.
-tags: [polenta, poireau, bleu d'Auvergne, accompagnement, thermomix, végétarien]
+tags:
+- polenta
+- poireau
+- bleu d'Auvergne
+- accompagnement
+- thermomix
+- végétarien
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r808469
 author: Isabelle Guerre
-image: images/placeholder-recipe.jpg
+image: images/polenta-poireau-bleu-auvergne.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/polenta-poireau-bleu-auvergne.md
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Casserole
+- Thermomix TM31, TM5, TM6 ou TM7
+- Casserole
 scaling:
   enabled: false
-  reason: "Quantités calibrées pour le bol Thermomix et un service immédiat à 4 portions."
+  reason: Quantités calibrées pour le bol Thermomix et un service immédiat à 4 portions.
 flavors:
-  pairing: [poireau, polenta, bleu d'Auvergne, crème]
-  notes: [crémeux, doux, corsé]
-  harmony: "Le poireau doux équilibre le caractère salé du bleu dans la polenta crémeuse."
-  tips: "Servir dès la fin de la cuisson, avant que la polenta ne se raffermisse."
+  pairing:
+  - poireau
+  - polenta
+  - bleu d'Auvergne
+  - crème
+  notes:
+  - crémeux
+  - doux
+  - corsé
+  harmony: Le poireau doux équilibre le caractère salé du bleu dans la polenta crémeuse.
+  tips: Servir dès la fin de la cuisson, avant que la polenta ne se raffermisse.
 ---
 
 [Cuire le poireau dans le bouillon]

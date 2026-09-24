@@ -6,14 +6,28 @@ prep_time: 5 min
 total_time: 5 min
 description: Avocat mûr, coriandre, citron et piment se mêlent dans ce guacamole frais, souple et acidulé à partager.
 nutrition_profile: vitality
-tags: [guacamole, avocat, dip, thermomix, apéritif]
+tags:
+- guacamole
+- avocat
+- dip
+- thermomix
+- apéritif
 source: https://cookidoo.fr/recipes/recipe/fr-FR/r75130
-author: Vorwerk Home & Co. KmG
+author: Cookidoo
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
-required_equipment: ["Thermomix TM31, TM5, TM6 ou TM7"]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
 scaling:
   enabled: false
   reason: La texture a été calibrée pour six portions.
@@ -25,13 +39,13 @@ image: images/guacamole-classique.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration générée par IA pour CookiGram
+  license: Illustration générée pour CookiGram
   license_url: https://openai.com/policies/terms-of-use/
-  modifications: Illustration générée et préparée pour le catalogue CookiGram.
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/guacamole-classique.md
 ---
 
@@ -40,7 +54,7 @@ image_generation:
 - Hacher ~{3 s} à vitesse 5.
 
 [Hacher les aromates]
-- Ajouter l'@oignon{100 g, coupé en deux}, le @piment rouge{1 pièce, épépiné} et l'@ail{1 gousse}.
+- Ajouter l'@oignon{100 g, coupé en deux}, le @piment frais{1 pièce, moyennement piquant et épépiné} et l'@ail{1 gousse}.
 - Hacher ~{5 s} à vitesse 5.
 - Racler les parois avec la #spatule{}.
 

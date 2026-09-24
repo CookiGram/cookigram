@@ -5,35 +5,49 @@ portions: 3
 prep_time: 30 min
 total_time: 14 h 30 min
 spiciness: 0
-description: "Fougasses au levain à la croûte dorée et à la mie alvéolée, longuement fermentées puis cuites avec vapeur au four."
+description: Fougasses au levain à la croûte dorée et à la mie alvéolée, longuement fermentées puis cuites avec vapeur au
+  four.
 nutrition_profile: balanced
-tags: [boulangerie, pain, thermomix, levain, four]
+tags:
+- boulangerie
+- pain
+- thermomix
+- levain
+- four
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r712244
 author: Cookidoo
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Bocal d'environ 500 g
-  - Four et deux plaques de cuisson
-  - Grille de refroidissement
-  - Seringue de cuisine
+- Thermomix TM31, TM5, TM6 ou TM7
+- Bocal d'environ 500 g
+- Four et deux plaques de cuisson
+- Grille de refroidissement
+- Seringue de cuisine
 scaling:
   enabled: false
-  reason: "Le levain, les temps de fermentation et la capacité du four déterminent ce lot de trois pains."
+  reason: Le levain, les temps de fermentation et la capacité du four déterminent ce lot de trois pains.
 image: images/fougasse-au-levain.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
-  license_url: https://openai.com/policies/terms-of-use
-  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/fougasse-au-levain.md
 ---
 

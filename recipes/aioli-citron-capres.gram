@@ -6,14 +6,28 @@ prep_time: 10 min
 total_time: 15 min
 description: Aïoli citronné, dense et onctueux, où les câpres apportent une pointe saline à l'ail et à la moutarde.
 nutrition_profile: pleasure
-tags: [aïoli, citron, câpres, sauce, thermomix]
+tags:
+- aïoli
+- citron
+- câpres
+- sauce
+- thermomix
 source: https://cookidoo.fr/recipes/recipe/fr/r71960
-author: Vorwerk Home & Co. KmG
+author: Cookidoo
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
-required_equipment: ["Thermomix TM31, TM5, TM6 ou TM7"]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
 scaling:
   enabled: false
   reason: La quantité d'émulsion est calibrée pour environ 300 g.
@@ -25,13 +39,13 @@ image: images/aioli-citron-capres.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration générée par IA pour CookiGram
+  license: Illustration générée pour CookiGram
   license_url: https://openai.com/policies/terms-of-use/
-  modifications: Illustration générée et préparée pour le catalogue CookiGram.
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/aioli-citron-capres.md
 ---
 

@@ -6,31 +6,54 @@ total_time: 1 h 05 min
 spiciness: 1
 description: Légumes fondants mijotés dans le lait de coco, relevés par la mangue, le citron vert et les épices colombo.
 nutrition_profile: vitality
-tags: [plat, vegetarien, vegan, antillais, thermomix]
+tags:
+- plat
+- vegetarien
+- vegan
+- antillais
+- thermomix
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r762156
 author: Fabrice Veigas
 scaling:
   enabled: false
   reason: Les temps de cuisson et la capacité du bol sont donnés pour quatre portions.
 flavors:
-  pairing: [mangue, lait de coco, citron vert, coriandre]
-  notes: [crémeux, fruité, acidulé]
+  pairing:
+  - mangue
+  - lait de coco
+  - citron vert
+  - coriandre
+  notes:
+  - crémeux
+  - fruité
+  - acidulé
   harmony: Le lait de coco adoucit les épices, tandis que la mangue et le citron vert apportent une touche fruitée et vive.
   tips: Retirer le piment entier avant de servir et proposer du riz blanc en accompagnement.
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
+- Thermomix TM31, TM5, TM6 ou TM7
 image: images/colombo-de-legumes-a-la-mangue.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration générée par IA pour CookiGram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
   provider: OpenAI image generation
-  generated_at: "2026-09-24"
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/colombo-de-legumes-a-la-mangue.md
 ---
 

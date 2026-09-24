@@ -5,38 +5,63 @@ prep_time: 20 min
 total_time: 25 min
 spiciness: 0
 description: Légumes enrobés d'une pâte légère et croustillante, servis avec une sauce salée au dashi et au saké.
-tags: [légumes, friture, cuisine-japonaise, thermomix]
+tags:
+- légumes
+- friture
+- cuisine-japonaise
+- thermomix
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r122299
 author: Cookidoo
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Casserole profonde pour friture
-  - Papier absorbant
+- Thermomix TM31, TM5, TM6 ou TM7
+- Casserole profonde pour friture
+- Papier absorbant
 scaling:
   enabled: false
   reason: La friture se fait par fournées et le volume de pâte est calibré pour six portions.
 flavors:
-  pairing: [courgette, aubergine, sauce soja, gingembre]
-  notes: [croustillant, salé, végétal]
+  pairing:
+  - courgette
+  - aubergine
+  - sauce soja salée
+  - gingembre
+  notes:
+  - croustillant
+  - salé
+  - végétal
   harmony: La pâte légère et les légumes dorés s'équilibrent avec la sauce umami et le radis frais.
   tips: Utiliser la pâte dès qu'elle est mélangée et la garder bien froide.
-image: images/placeholder-recipe.jpg
+image: images/tempura-de-legumes.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/tempura-de-legumes.md
+nutrition_profile: pleasure
 ---
 
 ## Tempura de légumes et sauce au dashi
 
 [Mélanger la sauce]
-- Verser la @sauce soja{100 g} dans un bol.
+- Verser la @sauce soja salée{100 g} dans un bol.
 - Ajouter le @bouillon dashi{30 g}.
 - Ajouter le @saké{30 g}.
 - Mélanger à la spatule jusqu'à homogénéité.
@@ -44,7 +69,7 @@ image_generation:
 
 [Chauffer l'huile]
 - Verser l'@huile végétale{quantité suffisante pour frire} dans une casserole profonde.
-- Chauffer l'huile pour la friture.
+- Chauffer l'huile jusqu'à ce qu'une goutte de pâte grésille à la surface.
 
 [Refroidir l'eau]
 - Mettre l'@eau{150 g} très froide et les @glaçons{50 g} dans le #bol Thermomix{}.
@@ -66,7 +91,7 @@ image_generation:
 - Préparer les @pois gourmands{6} et les @asperges vertes{6}.
 - Préparer les @carottes{6 petites}.
 - Couper l'@oignon{1, en tranches de 5 mm}.
-- Râper le @radis blanc (daikon){200 g} et le @gingembre frais{petit morceau} pour l'accompagnement.
+- Râper le @radis blanc{200 g, daikon} et le @gingembre frais{petit morceau} pour l'accompagnement.
 
 [Frire les légumes]
 - Tremper une petite fournée de légumes dans la pâte pour les enrober.

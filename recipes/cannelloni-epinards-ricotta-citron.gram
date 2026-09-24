@@ -6,33 +6,60 @@ total_time: 1 h 15 min
 spiciness: 0
 nutrition_profile: balanced
 description: Cannelloni tendres aux épinards et à la ricotta, relevés de citron, menthe fraîche et tomate gratinée.
-tags: [cannelloni, épinards, ricotta, citron, four, végétarien, thermomix]
+tags:
+- cannelloni
+- épinards
+- ricotta
+- citron
+- four
+- végétarien
+- thermomix
 source: https://cookidoo.fr/recipes/recipe/fr-Fr/r703158
 author: Bérengère Abraham
-image: images/placeholder-recipe.jpg
+image: images/cannelloni-epinards-ricotta-citron.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/cannelloni-epinards-ricotta-citron.md
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Poêle
-  - Plat à gratin
-  - Four
+- Thermomix TM31, TM5, TM6 ou TM7
+- Poêle
+- Plat à gratin
+- Four
 scaling:
   enabled: false
-  reason: "Quantités et volume du plat calibrés pour 4 portions, sans essai d'une autre échelle."
+  reason: Quantités et volume du plat calibrés pour 4 portions, sans essai d'une autre échelle.
 flavors:
-  pairing: [épinards, ricotta, citron, menthe]
-  notes: [crémeux, citronné, herbacé]
-  harmony: "Le citron réveille la douceur de la ricotta et des épinards, avec une note fraîche de menthe."
-  tips: "Égoutter soigneusement les épinards cuits avant de garnir les tubes."
+  pairing:
+  - épinards
+  - ricotta
+  - citron
+  - menthe
+  notes:
+  - crémeux
+  - citronné
+  - herbacé
+  harmony: Le citron réveille la douceur de la ricotta et des épinards, avec une note fraîche de menthe.
+  tips: Égoutter soigneusement les épinards cuits avant de garnir les tubes.
 ---
 
 [Préparer la première moitié d'oignon]
@@ -61,7 +88,9 @@ flavors:
 [Garnir et cuire]
 - Préchauffer le #four{} à ^{180 C}.
 - Étaler une partie de la sauce au fond d'un #plat à gratin{}.
-- Garnir les @cannelloni{16 tubes} de farce et les aligner dans le plat.
+- Garnir les @cannelloni{16 tubes} avec la farce.
+- Aligner les cannelloni garnis dans le plat.
 - Verser l'@eau{4 c. à soupe} sur les cannelloni.
-- Couvrir avec le reste de sauce et parsemer le @parmesan{75 g, râpé}.
+- Couvrir avec le reste de sauce.
+- Parsemer le @parmesan{75 g, râpé}.
 - Enfourner ~{30 min} à ^{180 C}, jusqu'à ce que les pâtes soient tendres.

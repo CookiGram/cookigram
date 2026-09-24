@@ -6,14 +6,30 @@ prep_time: 10 min
 total_time: 55 min
 description: Sauce de tomates longuement réduite et parfumée au thym et au romarin, souple et généreuse pour les pâtes.
 nutrition_profile: vitality
-tags: [sauce-tomate, tomate, thermomix, végétalien, condiment]
+tags:
+- sauce-tomate
+- tomate
+- thermomix
+- végétalien
+- condiment
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r766060
 author: Fabrice Besse
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
-required_equipment: ["Thermomix TM31, TM5, TM6 ou TM7"]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Poêle
+- Varoma
 scaling:
   enabled: false
   reason: La réduction est calibrée pour environ deux bocaux.
@@ -25,13 +41,13 @@ image: images/sauce-tomate-herbes.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration générée par IA pour CookiGram
+  license: Illustration générée pour CookiGram
   license_url: https://openai.com/policies/terms-of-use/
-  modifications: Illustration générée et préparée pour le catalogue CookiGram.
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/sauce-tomate-herbes.md
 ---
 

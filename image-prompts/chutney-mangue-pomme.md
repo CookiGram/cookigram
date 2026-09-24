@@ -1,3 +1,3 @@
 # Chutney de mangue et pomme
 
-Illustration originale 16:9 dans le style manga culinaire CookiGram. Petit pot ouvert de chutney doré avec morceaux visibles de mangue et pomme fondantes, graines de moutarde et oignon translucide. Quelques cubes de fruits frais et pain ou fromage en accompagnement, ambiance lumineuse et généreuse. Sans texte, logo ou imitation de photo de recette.
+Illustration culinaire originale paysage 16:9, style manga chaleureux CookiGram. Montrer uniquement un petit bol de chutney doré à la mangue et à la pomme, avec morceaux fondants visibles, graines de moutarde et oignon translucide. Texture compotée et brillante, cadrage rapproché, lumière douce. Aucun accompagnement ni ingrédient supplémentaire, sans texte, logo, marque ou imitation de photographie existante.

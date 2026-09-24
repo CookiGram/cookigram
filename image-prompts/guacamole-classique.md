@@ -1,3 +1,3 @@
 # Guacamole classique
 
-Illustration 16:9 originale dans le style manga culinaire chaleureux CookiGram. Bol de guacamole vert tendre encore un peu grumeleux, parsemé de coriandre et accompagné de tortillas croustillantes, avocat mûr, citron vert et piment frais en arrière-plan. Lumière vive, composition conviviale, sans texte, logo ou imitation d'une photo de recette.
+Illustration culinaire originale paysage 16:9 dans le style manga chaleureux CookiGram. Montrer uniquement un bol de guacamole vert tendre, encore légèrement grumeleux, avec de petits morceaux visibles d'avocat et quelques feuilles de coriandre incorporées. Texture fraîche et souple, cadrage rapproché et lumière naturelle vive. Aucun accompagnement ni ingrédient supplémentaire, sans texte, logo, marque ou imitation de photographie existante.

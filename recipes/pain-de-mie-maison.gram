@@ -5,34 +5,47 @@ portions: 24
 prep_time: 15 min
 total_time: 3 h
 spiciness: 0
-description: "Pain de mie à la mie tendre et régulière, légèrement sucré, pétri au Thermomix puis cuit en moule à pain."
+description: Pain de mie à la mie tendre et régulière, légèrement sucré, pétri au Thermomix puis cuit en moule à pain.
 nutrition_profile: balanced
-tags: [boulangerie, pain, thermomix, four, petit-déjeuner]
+tags:
+- boulangerie
+- pain
+- thermomix
+- four
+- petit-déjeuner
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r449929
 author: Cookidoo
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Moule à pain d'environ 30 × 12 × 10 cm
-  - Four
-  - Grille de refroidissement
+- Thermomix TM31, TM5, TM6 ou TM7
+- Moule à pain d'environ 30 × 12 × 10 cm
+- Four
+- Grille de refroidissement
 scaling:
   enabled: false
-  reason: "La forme et la capacité du moule ainsi que les temps de pousse et de cuisson sont calibrés pour 24 tranches."
+  reason: La forme et la capacité du moule ainsi que les temps de pousse et de cuisson sont calibrés pour 24 tranches.
 image: images/pain-de-mie-maison.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
-  license_url: https://openai.com/policies/terms-of-use
-  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/pain-de-mie-maison.md
 ---
 

@@ -6,34 +6,62 @@ total_time: 1 h
 spiciness: 0
 nutrition_profile: pleasure
 description: Disques de semoule dorés au four, nappés de gorgonzola fondant, de miel citronné et de noix croquantes.
-tags: [gnocchi, semoule, gorgonzola, miel, noix, four, végétarien, thermomix]
+tags:
+- gnocchi
+- semoule
+- gorgonzola
+- miel
+- noix
+- four
+- végétarien
+- thermomix
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r687853
 author: Cookidoo
-image: images/placeholder-recipe.jpg
+image: images/gnocchi-romaine-miel-noix-gorgonzola.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/gnocchi-alla-romana-miel-noix-gorgonzola.md
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Fouet papillon
-  - Plaque et papier cuisson
-  - Plat à gratin
-  - Four
+- Thermomix TM31, TM5, TM6 ou TM7
+- Fouet papillon
+- Plaque et papier cuisson
+- Plat à gratin
+- Four
 scaling:
   enabled: false
-  reason: "La capacité du bol et les dimensions du plat sont prévues pour 6 portions."
+  reason: La capacité du bol et les dimensions du plat sont prévues pour 6 portions.
 flavors:
-  pairing: [semoule, gorgonzola, miel, noix]
-  notes: [gratiné, crémeux, doux-salé]
-  harmony: "Le miel adoucit le bleu corsé et les noix apportent du croquant aux gnocchi moelleux."
-  tips: "Laisser les gnocchi tiédir 10 minutes avant de les servir avec le miel et les noix."
+  pairing:
+  - semoule
+  - gorgonzola
+  - miel
+  - noix
+  notes:
+  - gratiné
+  - crémeux
+  - doux-salé
+  harmony: Le miel adoucit le bleu corsé et les noix apportent du croquant aux gnocchi moelleux.
+  tips: Laisser les gnocchi tiédir 10 minutes avant de les servir avec le miel et les noix.
 ---
 
 [Râper le parmesan]

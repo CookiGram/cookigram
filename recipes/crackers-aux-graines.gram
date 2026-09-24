@@ -5,36 +5,49 @@ portions: 30
 prep_time: 10 min
 total_time: 35 min
 spiciness: 0
-description: "Crackers fins et croustillants mêlant graines variées et huile d'olive, façonnés au rouleau puis dorés au four."
+description: Crackers fins et croustillants mêlant graines variées et huile d'olive, façonnés au rouleau puis dorés au four.
 nutrition_profile: balanced
-tags: [boulangerie, crackers, apéritif, thermomix, graines]
+tags:
+- boulangerie
+- crackers
+- apéritif
+- thermomix
+- graines
 source: https://cookidoo.fr/recipes/recipe/fr-FR/r419258
 author: Fabrice Besse (Larousse)
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Four et plaque de cuisson
-  - Rouleau à pâtisserie
+- Thermomix TM31, TM5, TM6 ou TM7
+- Four et plaque de cuisson
+- Rouleau à pâtisserie
 scaling:
   enabled: true
   min_portions: 15
   max_portions: 30
   step: 15
-  note: "Le temps de cuisson par plaque reste le même ; répartir la pâte sur plusieurs plaques si nécessaire."
+  note: Le temps de cuisson par plaque reste le même ; répartir la pâte sur plusieurs plaques si nécessaire.
 image: images/crackers-aux-graines.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
-  license_url: https://openai.com/policies/terms-of-use
-  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/crackers-aux-graines.md
 ---
 

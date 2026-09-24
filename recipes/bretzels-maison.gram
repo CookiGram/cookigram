@@ -5,33 +5,46 @@ portions: 12
 prep_time: 30 min
 total_time: 1 h 55 min
 spiciness: 0
-description: "Bretzels bruns et souples, à la croûte brillante, façonnés après une pousse lente puis pochés avant le four."
+description: Bretzels bruns et souples, à la croûte brillante, façonnés après une pousse lente puis pochés avant le four.
 nutrition_profile: balanced
-tags: [boulangerie, pain, thermomix, four, bretzel]
+tags:
+- boulangerie
+- pain
+- thermomix
+- four
+- bretzel
 source: https://cookidoo.fr/recipes/recipe/fr-Fr/r595302
 author: Isabelle Guerre (Larousse)
 appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 source_appliances:
-  thermomix: [TM31, TM5, TM6, TM7]
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
-  - Casserole et écumoire
-  - Four et plaque de cuisson
+- Thermomix TM31, TM5, TM6 ou TM7
+- Casserole et écumoire
+- Four et plaque de cuisson
 scaling:
   enabled: false
-  reason: "Le bain de bicarbonate, la surface de plaque et le nombre de fournées dépendent de la quantité façonnée."
+  reason: Le bain de bicarbonate, la surface de plaque et le nombre de fournées dépendent de la quantité façonnée.
 image: images/bretzels-maison.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
-  license_url: https://openai.com/policies/terms-of-use
-  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
 image_generation:
-  provider: OpenAI
-  model: ChatGPT image generation
-  generated_at: "2026-09-24"
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
   prompt_file: image-prompts/bretzels-maison.md
 ---
 
