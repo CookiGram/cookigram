@@ -1,0 +1,53 @@
+---
+title: Polenta au poireau et au bleu d'Auvergne
+portions: 4
+prep_time: 10 min
+total_time: 25 min
+spiciness: 0
+nutrition_profile: balanced
+description: Polenta crémeuse au bouillon, mêlée de poireau fondant et de bleu d'Auvergne, à servir aussitôt bien chaude.
+tags: [polenta, poireau, bleu d'Auvergne, accompagnement, thermomix, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r808469
+author: Isabelle Guerre
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/polenta-poireau-bleu-auvergne.md
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Casserole
+scaling:
+  enabled: false
+  reason: "Quantités calibrées pour le bol Thermomix et un service immédiat à 4 portions."
+flavors:
+  pairing: [poireau, polenta, bleu d'Auvergne, crème]
+  notes: [crémeux, doux, corsé]
+  harmony: "Le poireau doux équilibre le caractère salé du bleu dans la polenta crémeuse."
+  tips: "Servir dès la fin de la cuisson, avant que la polenta ne se raffermisse."
+---
+
+[Cuire le poireau dans le bouillon]
+- Porter l'@eau{1000 g} à frémissement dans une #casserole{} avec le @sel{au goût} et le @cube de bouillon de volaille{1}.
+- Ajouter le @poireau{1, en rondelles de 0,5 cm}.
+- Cuire à feu moyen jusqu'à ce que le poireau soit tendre.
+- Prélever et réserver 3 c. à soupe de rondelles de poireau.
+- Transférer le bouillon et le poireau dans le #bol Thermomix{}.
+
+[Cuire la polenta]
+- Installer le #fouet papillon{} dans le bol.
+- Ajouter la @polenta{220 g}.
+- Mélanger ~{30 s} à ^{90 C}, en sens inverse et vitesse 3.
+- Cuire ~{270 s} à ^{90 C}, en sens inverse et vitesse 2 jusqu'à ce que la polenta soit épaisse et crémeuse.
+- Retirer le fouet papillon.
+
+[Finir et servir]
+- Ajouter le @bleu d'Auvergne{100 g, en morceaux} et la @crème fraîche{100 g}.
+- Mélanger ~{20 s} à vitesse 3.
+- Servir aussitôt avec les poireaux réservés, le @poivre moulu{au goût} et quelques copeaux de bleu.
