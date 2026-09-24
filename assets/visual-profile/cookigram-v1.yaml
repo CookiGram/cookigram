@@ -1,0 +1,41 @@
+# Instance visual profile — CookiGram (#391, #396)
+#
+# This file is the single source of visual direction for generated CookiGram
+# imagery. It lives in the instance, never in Core. The deterministic
+# compiler scripts/compile-image-prompt.py renders prompts from this profile
+# plus the canonical subject only: same subject + same revision = same prompt.
+# Image generation itself stays stochastic; a reproducible prompt is not a
+# reproducible image.
+name: cookigram
+revision: 1
+
+use_case: illustration-story
+
+subjects:
+  recipe:
+    asset_type: horizontal 16:9 hero illustration for a responsive recipe website
+    framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures
+  cooking_action:
+    asset_type: horizontal 16:9 illustration for guided cooking steps
+    framing: landscape 16:9, close three-quarter view on the gesture and utensil, no human figures
+
+scene: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+
+style_medium: >-
+  polished contemporary manga food illustration, elegant fine ink contours,
+  hand-painted watercolour and soft cel shading, appetizing but believable
+  food textures, a distinctive original CookiGram visual identity; generic
+  manga aesthetic, not imitating any named artist, studio, series or existing
+  artwork. Semi-realistic food with manga illustration rendering, not
+  photorealism and not a comic scene.
+
+lighting: Warm natural kitchen light, welcoming and homely.
+
+constraints: >-
+  Visually faithful to the given culinary facts only; fully original
+  composition, not based on any existing photograph; garnish, vessel and
+  utensil only when supported by the facts; suitable as a website illustration.
+
+avoid: >-
+  Text, letters, logos, brand marks, watermarks, product packaging, people,
+  hands, faces, characters, third-party image imitation and photorealism.
