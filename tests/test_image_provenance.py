@@ -77,6 +77,78 @@ class ImageProvenanceTests(unittest.TestCase):
             statuses = {finding.status for finding in AUDIT.audit(root)}
             self.assertIn("temporary-credit", statuses)
 
+    def _action_root(self, directory: str, record: dict) -> Path:
+        import hashlib
+
+        root = Path(directory)
+        (root / "recipes").mkdir()
+        (root / "static/illustrations/cooking-actions/v1").mkdir(parents=True)
+        asset = root / "static/illustrations/cooking-actions/v1/cut-board.webp"
+        asset.write_bytes(b"action")
+        digest = hashlib.sha256(b"action").hexdigest()
+        manifest = {"static/illustrations/cooking-actions/v1/cut-board.webp": {"sha256": digest, **record}}
+        (root / "assets/provenance").mkdir(parents=True)
+        (root / "assets/provenance/images.yaml").write_text(yaml.safe_dump(manifest), encoding="utf-8")
+        return root
+
+    def _new_style_record(self, **overrides) -> dict:
+        record = {
+            "origin": "generated",
+            "subject": {"type": "cooking_action", "action": "cut", "context": "board"},
+            "generation": {
+                "tool": "agy",
+                "provider": "google",
+                "model": "unknown",
+                "batch": "cooking-actions-v1-pilot-01",
+                "visual_profile": {"name": "cookigram", "revision": 1},
+            },
+            "generated_at": "2026-09-20",
+            "prompt": "manga culinary illustration, cut on board",
+            "attribution": "CookiGram",
+        }
+        record.update(overrides)
+        return record
+
+    def test_cooking_action_subject_with_full_generation_passes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._action_root(directory, self._new_style_record())
+            self.assertEqual(AUDIT.audit(root), [])
+
+    def test_generation_block_requires_tool_and_batch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            record = self._new_style_record()
+            record["generation"] = {"provider": "google", "model": "unknown",
+                                    "visual_profile": {"name": "cookigram", "revision": 1}}
+            root = self._action_root(directory, record)
+            codes = {finding.prompt_file for finding in AUDIT.audit(root)}
+            self.assertIn("incomplete-generation", codes)
+
+    def test_unknown_model_is_explicit_and_accepted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._action_root(directory, self._new_style_record())
+            findings = AUDIT.audit(root)
+            self.assertNotIn("incomplete-generation", {finding.prompt_file for finding in findings})
+
+    def test_recipe_subject_form_is_accepted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            import hashlib
+
+            from PIL import Image as PILImage
+
+            root = Path(directory)
+            (root / "recipes").mkdir()
+            (root / "static/images").mkdir(parents=True)
+            (root / "recipes/soup.gram").write_text("---\ntitle: Soup\nimage: images/soup.png\n---\n", encoding="utf-8")
+            PILImage.new("RGB", (4, 4)).save(root / "static/images/soup.png")
+            digest = hashlib.sha256((root / "static/images/soup.png").read_bytes()).hexdigest()
+            manifest = {"static/images/soup.png": {
+                "origin": "generated", "subject": {"type": "recipe", "recipe": "soup"},
+                "generator": "image_gen", "generated_at": "2026-09-20",
+                "prompt": "soup", "sha256": digest, "attribution": "CookiGram"}}
+            (root / "assets/provenance").mkdir(parents=True)
+            (root / "assets/provenance/images.yaml").write_text(yaml.safe_dump(manifest), encoding="utf-8")
+            self.assertEqual(AUDIT.audit(root), [])
+
     def test_nested_corrupt_missing_and_orphan_images_are_audited(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

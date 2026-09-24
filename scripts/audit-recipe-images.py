@@ -68,6 +68,54 @@ def _manifest(root: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
+def _subject_recipe(record: dict[str, Any]) -> str | None:
+    """Resolve the recipe slug for a manifest record.
+
+    New-style records declare ``subject: {type: recipe, recipe: <slug>}``;
+    historical records carry a top-level ``recipe`` key. Returns None when
+    the record is not a recipe subject (e.g. a shared cooking_action).
+    """
+    subject = record.get("subject")
+    if isinstance(subject, dict):
+        if subject.get("type") == "recipe":
+            recipe = subject.get("recipe")
+            return recipe if isinstance(recipe, str) else None
+        return None
+    recipe = record.get("recipe")
+    return recipe if isinstance(recipe, str) else None
+
+
+def _check_generation_block(asset: str, record: dict[str, Any]) -> list[Finding]:
+    """Validate the explicit generation provenance (#393).
+
+    Only applies when the record carries a ``generation:`` mapping, which is
+    the explicit migration boundary: historical records without it keep the
+    legacy ``generator`` string and are never reinterpreted.
+    """
+    findings: list[Finding] = []
+    generation = record.get("generation")
+    if not isinstance(generation, dict):
+        return findings
+    for key in ("tool", "batch"):
+        if not isinstance(generation.get(key), str) or not generation[key].strip():
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-generation", "manifest", f"generation.{key} absent pour {asset}"))
+    # Model policy (#393): the model id is recorded only when the tool
+    # reliably reports it; otherwise the explicit sentinel "unknown" is
+    # required so a guess can never pass as factual provenance.
+    for key in ("provider", "model"):
+        if not isinstance(generation.get(key), str) or not generation[key].strip():
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-generation", "manifest", f"generation.{key} absent pour {asset}"))
+    profile = generation.get("visual_profile", record.get("visual_profile"))
+    if not isinstance(profile, dict):
+        findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-visual-profile", "manifest", f"visual_profile absent pour {asset}"))
+    else:
+        if not isinstance(profile.get("name"), str) or not profile["name"].strip():
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-visual-profile", "manifest", f"visual_profile.name absent pour {asset}"))
+        if not isinstance(profile.get("revision"), int) or profile["revision"] < 1:
+            findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-visual-profile", "manifest", f"visual_profile.revision invalide pour {asset}"))
+    return findings
+
+
 def _manifest_findings(root: Path, manifest: dict[str, Any]) -> list[Finding]:
     findings: list[Finding] = []
     mapped_recipes: dict[str, str] = {}
@@ -82,17 +130,33 @@ def _manifest_findings(root: Path, manifest: dict[str, Any]) -> list[Finding]:
         expected_hash = record.get("sha256")
         if not isinstance(expected_hash, str) or expected_hash != _sha256(asset_path):
             findings.append(Finding(PROVENANCE_MANIFEST, None, "provenance-hash", "manifest", f"SHA-256 incorrect: {asset}"))
-        recipe = record.get("recipe")
-        if not isinstance(recipe, str) or not recipe.strip():
+        subject = record.get("subject")
+        if isinstance(subject, dict):
+            subject_type = subject.get("type")
+            if subject_type == "cooking_action":
+                for key in ("action", "context"):
+                    if not isinstance(subject.get(key), str) or not subject[key].strip():
+                        findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-subject", "manifest", f"subject.{key} absent pour {asset}"))
+            elif subject_type != "recipe":
+                findings.append(Finding(PROVENANCE_MANIFEST, None, "invalid-subject", "manifest", f"subject.type inconnu pour {asset}"))
+        recipe = _subject_recipe(record)
+        if recipe is not None:
+            if not recipe.strip():
+                findings.append(Finding(PROVENANCE_MANIFEST, None, "provenance-recipe", "manifest", f"recipe absente: {asset}"))
+            elif recipe in mapped_recipes:
+                findings.append(Finding(PROVENANCE_MANIFEST, None, "duplicate-provenance-recipe", "manifest", f"recipe mappée deux fois: {recipe}"))
+            else:
+                mapped_recipes[recipe] = asset
+                recipe_path = root / "recipes" / f"{recipe}.gram"
+                if not recipe_path.is_file():
+                    findings.append(Finding(PROVENANCE_MANIFEST, None, "unknown-provenance-recipe", "manifest", f"recipe introuvable: {recipe}"))
+        elif not isinstance(subject, dict):
             findings.append(Finding(PROVENANCE_MANIFEST, None, "provenance-recipe", "manifest", f"recipe absente: {asset}"))
-        elif recipe in mapped_recipes:
-            findings.append(Finding(PROVENANCE_MANIFEST, None, "duplicate-provenance-recipe", "manifest", f"recipe mappée deux fois: {recipe}"))
-        else:
-            mapped_recipes[recipe] = asset
-            recipe_path = root / "recipes" / f"{recipe}.gram"
-            if not recipe_path.is_file():
-                findings.append(Finding(PROVENANCE_MANIFEST, None, "unknown-provenance-recipe", "manifest", f"recipe introuvable: {recipe}"))
-        for key in ("origin", "generator", "prompt", "attribution"):
+        findings.extend(_check_generation_block(asset, record))
+        required_keys = ("origin", "prompt", "attribution")
+        if "generation" not in record:
+            required_keys = (*required_keys, "generator")
+        for key in required_keys:
             if not isinstance(record.get(key), str) or not record[key].strip():
                 findings.append(Finding(PROVENANCE_MANIFEST, None, "incomplete-provenance", "manifest", f"{key} absent pour {asset}"))
         generated_at = record.get("generated_at")
@@ -220,7 +284,7 @@ def audit(root: Path) -> list[Finding]:
                         message="illustration générée sans entrée de provenance",
                     )
                 )
-            elif record.get("recipe") != recipe_path.stem:
+            elif _subject_recipe(record) != recipe_path.stem:
                 findings.append(
                     Finding(
                         recipe=recipe_path.relative_to(root).as_posix(),
