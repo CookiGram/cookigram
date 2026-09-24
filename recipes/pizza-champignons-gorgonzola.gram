@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 1
 description: "Les champignons rôtis, le gorgonzola et le thym composent une pizza boisée, crémeuse et pleine d’umami."
+nutrition_profile: pleasure
 tags: [pizza, champignons, gorgonzola, végétarien]
 source: https://ooni.com/blogs/recipes/wild-mushroom-pizza-with-gorgonzola-thyme-and-pancetta
 author: Gill Meller

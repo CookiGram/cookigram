@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Une pizza estivale sucrée-salée avec figues, jambon cru, chèvre et roquette ajoutée au dernier moment."
+nutrition_profile: pleasure
 tags: [pizza, figue, jambon cru, chèvre]
 source: https://ooni.com/blogs/recipes/pizza-fig-prosciutto
 author: Ooni HQ

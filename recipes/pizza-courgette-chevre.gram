@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Une pizza blanche fraîche et crémeuse, garnie de courgette, chèvre, huile d’olive et herbes de Provence."
+nutrition_profile: balanced
 tags: [pizza, courgette, chèvre, végétarien]
 source: https://ooni.com/blogs/recipes/pizza-zucchini-goat-cheese
 author: Ooni HQ

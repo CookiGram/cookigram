@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Une pizza tomate garnie de mozzarella avant cuisson puis de burrata et de jambon cru après le passage au four."
+nutrition_profile: pleasure
 tags: [pizza, burrata, jambon cru, italien]
 source: https://ooni.com/blogs/recipes/burrata-pizza
 author: Ooni HQ
