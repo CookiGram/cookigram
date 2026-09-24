@@ -1,0 +1,45 @@
+---
+title: Gyoza vapeur et dorés
+portions: 4
+prep_time: 40 min
+total_time: 1 h
+spiciness: 1
+description: Raviolis japonais au porc et au chou, d’abord cuits à la vapeur puis dorés à la poêle avec une sauce vive.
+nutrition_profile: balanced
+tags: [plat, japonais, raviolis, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r755872
+author: Cookidoo
+image: images/gyoza.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/gyoza.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, Varoma, poêle, rouleau à pâtisserie]
+scaling: {enabled: false, reason: "Les 32 pièces demandent plusieurs fournées au Varoma et un façonnage calibré."}
+flavors: {pairing: [porc, chou, gingembre, sauce soja], notes: [savoureux, acidulé, épicé], harmony: "Le porc et le chou restent juteux sous une pâte tendre, relevés par le gingembre et le vinaigre."}
+---
+[Pétrir la pâte]
+- Réunir la @farine{60 g} de type 00, la @farine{120 g} de type 0, l’@eau{100 g} chaude non bouillante et l’@huile de sésame{20 g}; pétrir ~{2 min}.
+- Former une boule, couvrir et laisser reposer.
+[Mélanger la sauce]
+- Hacher le @gingembre{1 morceau} ~{3 s} à vitesse 7.
+- Ajouter le @vinaigre de riz{50 g}, la @sauce soja salée{50 g}, l’@oignon nouveau{1} émincé, l’@huile de sésame{1 c. à café} et le @piment rouge{2 pincées}.
+- Mélanger ~{10 s} en sens inverse, vitesse 3.
+- Réserver la sauce.
+[Préparer la farce]
+- Verser l’@eau{300 g} dans le bol.
+- Placer le @chou blanc{100 g} en morceaux dans le #panier cuisson{} et cuire ~{5 min} à ^{Varoma}, vitesse 1.
+- Hacher le @gingembre{1 à 2 cm}, l’@ail{1/2 gousse}, la @ciboulette{5 brins}, l’@oignon nouveau{3} et le chou égoutté ~{3 s} à vitesse 7.
+- Racler les parois du bol.
+- Hacher de nouveau ~{3 s} à vitesse 7.
+- Ajouter le @haché de porc{300 g}, le @sel{1 pincée}, le @poivre blanc{1 pincée}, l’@huile de sésame{1 c. à café}, la @sauce soja salée{2 c. à café}, le @vinaigre de riz{2 c. à café} et la @farine de riz{2 c. à café}.
+- Mélanger ~{8 s} en sens inverse, vitesse 4.
+[Façonner]
+- Diviser en 32 disques, déposer 1 à 1 1/2 c. à café de farce au centre et sceller les bords humides en petits plis.
+[Cuire et dorer]
+- Verser l’@eau{500 g} dans le bol.
+- Huiler le Varoma et y disposer les gyoza espacés.
+- Cuire ~{15 min} à ^{Varoma}, vitesse 1, en deux fournées; la farce doit être cuite.
+- Dorer les raviolis par lots dans l’@huile de sésame{2 c. à soupe} chaude à la #poêle{} ~{2 min} par face.
+[Servir]
+- Accompagner de la sauce réservée.

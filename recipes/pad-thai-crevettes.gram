@@ -1,0 +1,46 @@
+---
+title: Pad thaï aux crevettes
+portions: 4
+prep_time: 25 min
+total_time: 30 min
+spiciness: 1
+description: Nouilles de riz enrobées d’une sauce acidulée au tamarin, avec crevettes vapeur, omelette fine et cacahuètes.
+nutrition_profile: balanced
+tags: [plat, thaïlandais, crevettes, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r146843
+author: Cookidoo
+image: images/pad-thai-crevettes.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/pad-thai-crevettes.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, Varoma, grand saladier]
+scaling: {enabled: false, reason: "La cuisson vapeur se fait en deux passages et le volume des nouilles ne se multiplie pas simplement."}
+flavors: {pairing: [crevettes, tamarin, citron vert, cacahuètes], notes: [acidulé, salé, croquant], harmony: "Le tamarin et le citron vert réveillent les crevettes tandis que les cacahuètes apportent du croquant."}
+---
+[Préparer les nouilles]
+- Réhydrater les @nouilles de riz{200 g} selon leur emballage dans de l’eau bouillante, égoutter et garder au chaud.
+[Préparer les garnitures]
+- Hacher les @cacahuètes grillées{80 g} ~{10 s} à vitesse 4.
+- Réserver les cacahuètes concassées.
+- Hacher l’@ail{2 gousses}, le @piment rouge séché{1 petit} et la @coriandre fraîche{6 brins} ~{3 s} à vitesse 7.
+- Ajouter l’@huile d'olive{20 g}.
+- Chauffer ~{1 min} à ^{100 C}, vitesse 1.
+- Transférer la moitié du mélange aromatique dans le plat Varoma.
+[Assaisonner]
+- Ajouter la @sauce de poisson{1 1/2 c. à soupe}, le @jus de citron vert{40 g}, la @pâte de tamarin{1 c. à soupe}, la @sauce soja salée{2 c. à soupe}, la @pâte de crevettes{1/4 c. à café} et le @sucre de palme{3 c. à café}.
+- Mixer ~{10 s} à vitesse 5.
+- Verser la sauce sur les nouilles.
+- Mélanger les nouilles pour les enrober.
+[Cuire l’omelette et les crevettes]
+- Battre les @œufs{2} ~{3 s} à vitesse 5.
+- Verser les œufs sur le plateau Varoma chemisé de papier cuisson humide et bien essoré.
+- Verser l’@eau{500 g} dans le bol.
+- Poser les @crevettes{350 g} dans le plat Varoma avec le reste d’herbes.
+- Cuire ~{6 min} à ^{Varoma}, vitesse 1.
+- Vérifier les crevettes et poursuivre la vapeur jusqu’à cuisson complète; l’omelette doit être prise.
+[Assembler]
+- Émincer l’omelette.
+- Ajouter l’omelette et les crevettes aux nouilles.
+- Mélanger le tout.
+- Parsemer de @pousses de soja{70 g}, @ciboulette{10 brins}, @échalotes frites{3 c. à soupe} et cacahuètes réservées.

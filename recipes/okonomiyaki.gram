@@ -1,0 +1,36 @@
+---
+title: Okonomiyaki japonais
+portions: 4
+prep_time: 20 min
+total_time: 30 min
+spiciness: 0
+description: Galettes japonaises au chou fondant et au porc doré, nappées d’une sauce aigre-douce au soja.
+nutrition_profile: balanced
+tags: [plat, japonais, chou, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r748163
+author: Cookidoo
+image: images/okonomiyaki.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/okonomiyaki.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, poêle antiadhésive]
+scaling: {enabled: false, reason: "Le volume des galettes et la chauffe à la poêle sont calibrés pour quatre portions."}
+flavors: {pairing: [chou, porc, sauce soja, gingembre mariné], notes: [umami, doux, acidulé], harmony: "Le chou moelleux et le porc grillé s’équilibrent avec une sauce douce et salée."}
+---
+[Préparer la sauce]
+- Réunir le @miel{20 g}, la @sauce soja salée{30 g}, le @ketchup{60 g} et la @sauce Worcestershire{40 g} dans le #bol Thermomix{}.
+- Cuire ~{8 min} à ^{100 C}, vitesse 1.
+- Réserver la sauce.
+[Préparer la pâte]
+- Hacher l’@oignon nouveau{2 pièces} ~{2 s} à vitesse 5.
+- Ajouter l’@eau{200 g}, le @dashi en poudre{1 c. à café}, les @œufs{4}, la @farine{160 g}, le @sel{1/4 c. à café} et le @sucre{1/4 c. à café}.
+- Mélanger ~{5 s} à vitesse 4.
+- Ajouter le @chou blanc{400 g} finement émincé et le @gingembre mariné{40 g}.
+- Mélanger ~{30 s} en sens inverse, vitesse 3.
+[Cuire les galettes]
+- Chauffer l’@huile de sésame{1 c. à café} dans une #poêle{} à feu moyen.
+- Répartir la @poitrine de porc{120 g} en fines tranches sur les galettes.
+- Cuire les galettes environ 3 min par face jusqu’à coloration et tenue.
+[Servir]
+- Napper de sauce et ajouter la @mayonnaise japonaise{au goût}, les @flocons de bonite{au goût} et la @ciboulette{au goût}.
