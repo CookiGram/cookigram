@@ -1,0 +1,83 @@
+---
+title: Fougasse au levain de blé
+date_published: 2026-09-24
+portions: 3
+prep_time: 30 min
+total_time: 14 h 30 min
+spiciness: 0
+description: "Fougasses au levain à la croûte dorée et à la mie alvéolée, longuement fermentées puis cuites avec vapeur au four."
+nutrition_profile: balanced
+tags: [boulangerie, pain, thermomix, levain, four]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r712244
+author: Cookidoo
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Bocal d'environ 500 g
+  - Four et deux plaques de cuisson
+  - Grille de refroidissement
+  - Seringue de cuisine
+scaling:
+  enabled: false
+  reason: "Le levain, les temps de fermentation et la capacité du four déterminent ce lot de trois pains."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/fougasse-au-levain.md
+---
+
+## Fougasse au levain de blé
+
+[Nourrir le levain]
+- Chauffer l'@eau{150 g} dans le bol du Thermomix ~{2 min} à ^{37 C}, vitesse 1.
+- Verser l'eau tiède dans un bocal d'environ 500 g.
+- Ajouter le @levain de blé{20 g} et la @farine{150 g}.
+- Mélanger soigneusement.
+- Poser le couvercle sans fermer hermétiquement.
+- Laisser fermenter ~{12 h} dans un endroit proche de ^{24 C}.
+
+[Préparer le bac]
+- Huiler un bac d'environ 30 × 20 × 8 cm avec l'@huile d'olive{5 g}.
+
+[Mélanger la pâte]
+- Mettre l'@eau{200 g, froide} et le levain préparé dans le bol du Thermomix.
+- Ajouter la @farine{400 g} et la @levure boulangère{1 g, fraîche}.
+- Mélanger ~{10 s} à vitesse 4.
+
+[Pétrir la pâte]
+- Ajouter l'@huile d'olive{15 g} et le @sel{10 g}.
+- Laisser reposer dans le bol ~{15 min}.
+- Pétrir en mode pétrin ~{5 min}.
+
+[Faire fermenter et replier]
+- Transvaser la pâte dans le bac huilé.
+- Couvrir le bac de #film alimentaire{}.
+- Laisser reposer ~{90 min}.
+- Replier les bords de la pâte vers le centre toutes les 30 minutes avec les mains humides.
+
+[Préparer la cuisson]
+- Couvrir une planche plate de #papier sulfurisé{}.
+- Fariner légèrement le plan de travail.
+- Diviser la pâte en 3 portions rectangulaires.
+- Replier chaque portion vers son centre pour former une fougasse.
+- Entailler chaque fougasse de deux incisions parallèles.
+- Déposer les fougasses sur le papier.
+- Saupoudrer les fougasses de farine.
+- Couvrir sans serrer avec du film alimentaire.
+- Laisser reposer ~{30 min}.
+- Préchauffer le #four{} à ^{250 C} avec une plaque dans la partie centrale.
+- Placer une plaque métallique dans le bas du four pendant le préchauffage.
+
+[Créer la vapeur]
+- Ajouter rapidement l'@eau{50 g} dans la plaque métallique du bas à l'aide d'une #seringue de cuisine{}, juste avant d'enfourner.
+
+[Cuire les fougasses]
+- Enfourner les fougasses sur la plaque chaude.
+- Cuire ~{16 min} à ^{250 C}, jusqu'à ce que la croûte soit bien dorée.
+- Déposer les fougasses sur une grille et laisser tiédir.

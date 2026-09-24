@@ -1,0 +1,69 @@
+---
+title: Pain de mie maison moelleux
+date_published: 2026-09-24
+portions: 24
+prep_time: 15 min
+total_time: 3 h
+spiciness: 0
+description: "Pain de mie à la mie tendre et régulière, légèrement sucré, pétri au Thermomix puis cuit en moule à pain."
+nutrition_profile: balanced
+tags: [boulangerie, pain, thermomix, four, petit-déjeuner]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r449929
+author: Cookidoo
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Moule à pain d'environ 30 × 12 × 10 cm
+  - Four
+  - Grille de refroidissement
+scaling:
+  enabled: false
+  reason: "La forme et la capacité du moule ainsi que les temps de pousse et de cuisson sont calibrés pour 24 tranches."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/pain-de-mie-maison.md
+---
+
+## Pain de mie maison moelleux
+
+[Graisser le moule]
+- Répartir le @beurre doux{10 g} sur le fond et les parois du moule à pain.
+
+[Tiédir le mélange]
+- Verser l'@eau{240 g}, la @levure boulangère{4 g, sèche} et le @sucre roux{30 g} dans le bol du Thermomix.
+- Ajouter le @beurre doux{20 g} restant.
+- Chauffer ~{1 min} à ^{37 C}, vitesse 2.
+
+[Pétrir la pâte]
+- Ajouter la @farine{500 g} et le @sel{1 c. à café}.
+- Pétrir en mode pétrin ~{3 min}, jusqu'à obtenir une pâte souple.
+
+[Laisser pousser la pâte]
+- Transvaser la pâte dans un saladier.
+- Couvrir d'un linge humide.
+- Laisser lever ~{1 h} au chaud, jusqu'au doublement du volume.
+
+[Façonner le pain]
+- Diviser la pâte en 3 portions égales.
+- Bouler chaque portion.
+- Déposer les boules côte à côte dans le moule préparé.
+- Couvrir d'un linge humide.
+- Laisser lever ~{1 h} au chaud, jusqu'à ce que la pâte double de volume.
+
+[Préchauffer le four]
+- Préchauffer le #four{} à ^{180 C} pendant la seconde pousse.
+
+[Cuire le pain]
+- Enfourner le moule.
+- Cuire ~{30 min} à ^{180 C}, jusqu'à ce que le dessus soit doré.
+
+[Refroidir le pain]
+- Démouler le pain.
+- Déposer le pain sur une #grille{} jusqu'à complet refroidissement.
