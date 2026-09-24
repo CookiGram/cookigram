@@ -21,12 +21,17 @@ meal:
   completeness: component
   role: sauce
 spiciness: 0
-image: images/placeholder-recipe.jpg
+image: images/sauce-tomate-herbes.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée et préparée pour le catalogue CookiGram.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-24"
   prompt_file: image-prompts/sauce-tomate-herbes.md
 ---
 
