@@ -13,8 +13,8 @@
       "workspace": "/home/pierrecsn/Work/cookigram",
       "branch": "feat/issue-492-cookidoo-wave",
       "claimed_at": "2026-09-24T20:42:00+02:00",
-      "last_heartbeat": "2026-09-24T21:41:00+02:00",
-      "status": "in_progress",
+      "last_heartbeat": "2026-09-24T21:50:00+02:00",
+      "status": "pr_open",
       "lane_assignments": {
         "A": "tempura de légumes only; the other seven candidates overlap the live #491 claim",
         "B": "kofta, chicken korma and colombo de légumes; pastilla and lahmacun overlap #491",
@@ -22,7 +22,8 @@
         "D": "cannelloni, gnocchi alla romana, calzone, moussaka de lentilles, polenta only; arancini and pierogi overlap #491",
         "E": "all eight sauce/dip candidates; recipes and prompts only, lead reconciles ingredients",
         "F": "all six bread/accompaniment candidates; recipes and prompts only, lead reconciles ingredients"
-      }
+      },
+      "pr": 501
     }
   },
   "completed_claims": [
