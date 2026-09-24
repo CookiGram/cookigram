@@ -75,9 +75,10 @@ image_generation:
 - Placer une plaque métallique dans le bas du four pendant le préchauffage.
 
 [Créer la vapeur]
-- Ajouter rapidement l'@eau{50 g} dans la plaque métallique du bas à l'aide d'une #seringue de cuisine{}, juste avant d'enfourner.
+- Ajouter rapidement l'@eau{50 g} dans la plaque métallique du bas à l'aide d'une #seringue de cuisine{}.
 
 [Cuire les fougasses]
-- Enfourner les fougasses sur la plaque chaude.
+- Enfourner immédiatement les fougasses sur la plaque chaude.
 - Cuire ~{16 min} à ^{250 C}, jusqu'à ce que la croûte soit bien dorée.
-- Déposer les fougasses sur une grille et laisser tiédir.
+- Déposer les fougasses sur une grille.
+- Laisser tiédir.
