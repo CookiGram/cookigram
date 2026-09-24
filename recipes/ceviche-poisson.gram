@@ -1,0 +1,33 @@
+---
+date_published: 2026-09-24
+date_modified: 2026-09-24
+title: Ceviche de poisson blanc
+portions: 4
+prep_time: 25 min
+total_time: 3 h 25 min
+spiciness: 0
+description: Dés de poisson mariné au citron vert, mêlés à la tomate, l’oignon rouge, l’avocat et la coriandre fraîche.
+nutrition_profile: vitality
+tags: [entrée, latino-américain, poisson, cru, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r652416
+author: Cookidoo
+image: images/ceviche-poisson.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/ceviche-poisson.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, Varoma pour égoutter]
+scaling: {enabled: false, reason: "La marinade doit recouvrir le poisson et son acidité n’augmente pas de façon linéaire avec le volume."}
+flavors: {pairing: [poisson blanc, citron vert, tomate, coriandre], notes: [acidulé, frais, herbacé], harmony: "Le citron vif et la coriandre équilibrent l’avocat mûr et l’huile d’olive."}
+---
+[Mariner le poisson]
+- Couper les @filets de poisson{500 g} blanc en dés d’environ 1 cm.
+- Mélanger avec le @sel{1 c. à café} et le @jus de citron vert{200 g}.
+- Couvrir et laisser mariner au réfrigérateur ~{3 h}; remuer de temps en temps.
+- Utiliser du poisson d’élevage ou du poisson déjà congelé à l’achat pour cette préparation crue.
+- Décongeler le poisson congelé au réfrigérateur.
+[Préparer la garniture]
+- Hacher la @tomate{210 g} épépinée, l’@oignon rouge{100 g}, l’@huile d'olive{150 g}, l’@origan{1 c. à café}, le @sel{1/2 c. à café} et la @coriandre fraîche{15 g} ~{4 s} à vitesse 5.
+[Assembler]
+- Égoutter le poisson mariné dans le Varoma.
+- Mélanger avec les légumes hachés et l’@avocat{1} en dés; servir frais.

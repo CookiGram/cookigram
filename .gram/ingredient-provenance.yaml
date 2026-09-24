@@ -1060,6 +1060,84 @@ ingredients:
   umeboshi:
     status: incomplete
     source: Prune japonaise salée et acidifiée ; composition variable selon la préparation.
+  agneau-hache:
+    status: incomplete
+    source: Viande générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon le morceau.
+  boeuf-hache:
+    status: incomplete
+    source: Viande générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon le taux de matière grasse.
+  cacahuetes-grillees:
+    status: incomplete
+    source: Produit grillé ; valeurs nutritionnelles à vérifier selon le produit.
+  chou-blanc:
+    status: incomplete
+    source: Légume générique ; valeurs nutritionnelles à compléter depuis CIQUAL.
+  dashi-en-poudre:
+    status: incomplete
+    source: Bouillon japonais préparé ; composition variable selon la marque.
+  farine-avec-levure-incorporee:
+    status: incomplete
+    source: Farine préparée ; valeurs à vérifier selon le mélange du fabricant.
+  farine-de-mais-precuite:
+    status: incomplete
+    source: Farine de maïs précuite ; valeurs à vérifier selon le produit.
+  farine-de-riz:
+    status: incomplete
+    source: Farine de riz générique ; valeurs nutritionnelles à compléter depuis CIQUAL.
+  flocons-de-bonite:
+    status: incomplete
+    source: Poisson séché préparé ; valeurs à vérifier selon le produit.
+  fromage-cottage:
+    status: incomplete
+    source: Produit laitier ; valeurs nutritionnelles à vérifier selon la marque.
+  gochujang:
+    status: incomplete
+    source: Pâte fermentée coréenne ; composition variable selon la marque.
+  ketchup:
+    status: incomplete
+    source: Sauce préparée ; composition variable selon la marque.
+  kimchi:
+    status: incomplete
+    source: Légumes fermentés préparés ; composition variable selon la recette ou la marque.
+  nouilles-de-riz:
+    status: incomplete
+    source: Produit céréalier ; valeurs nutritionnelles à vérifier selon le produit.
+  oeufs-de-caille:
+    status: incomplete
+    source: Œufs de caille ; valeurs nutritionnelles génériques à compléter depuis CIQUAL.
+  paprika-fort:
+    status: incomplete
+    source: Épice générique ; contribution nutritionnelle faible.
+  pate-de-crevettes:
+    status: incomplete
+    source: Condiment préparé ; composition variable selon la marque.
+  pate-de-tamarin:
+    status: incomplete
+    source: Condiment préparé ; composition variable selon le produit.
+  piment-doux-marine:
+    status: incomplete
+    source: Piment mariné préparé ; composition variable selon le produit.
+  piment-rouge-seche:
+    status: incomplete
+    source: Épice générique ; contribution nutritionnelle faible.
+  poisson-blanc:
+    status: incomplete
+    source: Poisson générique ; valeurs nutritionnelles à compléter depuis CIQUAL selon l'espèce.
+  pousses-de-soja:
+    status: incomplete
+    source: Légume germé ; valeurs nutritionnelles à vérifier selon le produit désigné.
+  riz-rond:
+    status: incomplete
+    source: Riz blanc générique ; valeurs nutritionnelles à compléter depuis CIQUAL.
+  sauce-huitre:
+    status: incomplete
+    source: Sauce préparée ; composition variable selon la marque.
+  saucisse-chinoise:
+    status: incomplete
+    source: Saucisse préparée ; composition variable selon la marque.
+  sucre-de-palme:
+    status: incomplete
+    source: Sucre de palme ; valeurs nutritionnelles à vérifier selon le produit.
 
 sources:
   ciqual:

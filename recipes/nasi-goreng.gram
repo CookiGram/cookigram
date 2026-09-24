@@ -1,0 +1,41 @@
+---
+date_published: 2026-09-24
+date_modified: 2026-09-24
+title: Nasi goreng au poulet
+portions: 6
+prep_time: 30 min
+total_time: 40 min
+spiciness: 2
+description: Riz indonésien au lait de coco et légumes vapeur, mêlé au poulet sauté et servi avec un œuf au plat.
+nutrition_profile: balanced
+tags: [plat, indonésien, riz, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r246748
+author: Cookidoo
+image: images/nasi-goreng.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/nasi-goreng.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, panier cuisson, Varoma, grande poêle]
+scaling: {enabled: false, reason: "Le riz et les légumes cuisent ensemble dans les accessoires et le poulet se saisit par lots à la poêle."}
+flavors: {pairing: [riz, poulet, lait de coco, sauce de poisson], notes: [savoureux, épicé, doux], harmony: "Le riz au coco adoucit les condiments salés et le piment."}
+---
+[Assaisonner le poulet]
+- Enrober le @poulet{400 à 500 g} en lanières avec la @sauce soja salée{1 1/2 c. à soupe}, la @sauce de poisson{1 c. à soupe} et la @fécule de maïs{50 g}; réserver.
+[Hacher les aromates]
+- Hacher l’@ail{2 gousses}, le @gingembre{2 cm}, le @curcuma{1/4 c. à café} et le @piment rouge{1 à 2} ~{3 s} à vitesse 7.
+[Préparer les légumes]
+- Ajouter le @poivron rouge{1}, la @carotte{2}, le @céleri{2 branches} et le @chou blanc{200 g}.
+- Hacher ~{5 s} à vitesse 5.
+- Répartir les légumes dans le Varoma.
+[Cuire le riz]
+- Rincer le @riz jasmin{300 g} dans le panier cuisson.
+- Verser l’@eau{500 g} et le @lait de coco{400 g} dans le bol.
+- Cuire le riz ~{7 min} à ^{100 C}, vitesse 4.
+- Poser le Varoma et poursuivre ~{9 min} à ^{Varoma}, vitesse 2 jusqu’à cuisson du riz et des légumes.
+[Cuire le poulet et les œufs]
+- Saisir le poulet dans l’@huile végétale{1 c. à soupe} à la #poêle{} ~{10 min} en le retournant, jusqu’à cuisson complète.
+- Cuire les @œufs{6} au plat avec l’@huile végétale{2 c. à café} dans la même poêle.
+[Mélanger et servir]
+- Mélanger le riz et les légumes avec le @piment en poudre{1/2 à 1 c. à café}, la @sauce soja salée{1 c. à soupe}, la @sauce de poisson{2 c. à soupe} et l’@oignon nouveau{2} en fines rondelles.
+- Servir avec le poulet et un œuf par portion.

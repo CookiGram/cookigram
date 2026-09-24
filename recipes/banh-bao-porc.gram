@@ -1,0 +1,51 @@
+---
+date_published: 2026-09-24
+date_modified: 2026-09-24
+title: Bánh bao au porc
+portions: 12
+prep_time: 40 min
+total_time: 2 h 45 min
+spiciness: 0
+description: Brioches vietnamiennes moelleuses, farcies au porc assaisonné et à l’œuf de caille, cuites au Varoma.
+nutrition_profile: balanced
+tags: [plat, vietnamien, vapeur, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r138003
+author: Cookidoo
+image: images/banh-bao-porc.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/banh-bao-porc.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, Varoma, rouleau à pâtisserie]
+scaling: {enabled: false, reason: "Les pousses de pâte et la cuisson vapeur se font en deux fournées au Varoma."}
+flavors: {pairing: [porc, shiitaké, ciboule, sauce huître], notes: [moelleux, savoureux, doux], harmony: "La brioche légèrement sucrée équilibre le porc umami et la ciboule."}
+---
+[Faire lever la pâte]
+- Réunir le @lait{200 g}, la @levure boulangère{2 c. à café} et le @sucre{20 g}; chauffer ~{3 min} à ^{37 C}, vitesse 1.
+- Ajouter la @farine avec levure incorporée{350 g}, la @levure chimique{1 c. à café} et l’@huile végétale{30 g}.
+- Mélanger ~{6 s} à vitesse 6.
+- Pétrir ~{4 min}.
+- Former une boule.
+- Laisser pousser ~{1 h}, jusqu’à ce qu’elle double de volume.
+[Cuire les œufs]
+- Faire bouillir l’@eau{1000 g} dans le bol ~{8 min} à ^{100 C}, vitesse 1.
+- Cuire les @œufs de caille{12} dans le panier cuisson ~{3 min} à ^{100 C}, vitesse 3.
+- Refroidir les œufs dans de l’eau froide ~{15 min}.
+- Écaler les œufs.
+[Préparer la farce]
+- Réhydrater les champignons séchés dans de l’eau bouillante ~{10 min}; égoutter.
+- Hacher l’@oignon nouveau{2} (partie blanche), la @ciboulette{20 brins}, la @saucisse chinoise{2} en tronçons et les @shiitaké{10 g} séchés réhydratés ~{7 s} à vitesse 7.
+- Ajouter le @haché de porc{500 g}, le @vinaigre de riz{2 c. à café}, la @sauce huître{2 c. à soupe}, le @sel{1/4 c. à café} et le @poivre{1/4 c. à café}.
+- Mélanger ~{20 s} en sens inverse, vitesse 3.
+- Former 12 boulettes de farce autour des œufs de caille.
+- Verser l’@eau{1000 g} dans le bol.
+- Cuire les boulettes au Varoma ~{15 min} à ^{Varoma}, vitesse 1.
+- Réserver les boulettes.
+[Façonner les brioches]
+- Dégazer la pâte et la diviser en 12 boules; abaisser chacune en disque.
+- Enfermer une boulette dans chaque disque en pinçant les bords.
+- Déposer chaque bun sur un carré de papier cuisson.
+- Laisser pousser ~{20 min}.
+[Cuire à la vapeur]
+- Chauffer l’@eau{1000 g} dans le bol ~{8 min} à ^{Varoma}, vitesse 1.
+- Cuire les brioches espacées dans le Varoma ~{12 min} à ^{Varoma}, vitesse 1, en deux fournées; la pâte doit être gonflée et cuite.

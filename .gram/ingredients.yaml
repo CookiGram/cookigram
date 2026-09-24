@@ -3094,3 +3094,107 @@ ingredients:
     - prune umeboshi
     - prunes umeboshi
     category: Condiments et assaisonnements
+  agneau-hache:
+    name: Agneau haché
+    aliases: [agneau haché, viande d'agneau hachée]
+    category: Viandes
+  boeuf-hache:
+    name: Bœuf haché
+    aliases: [bœuf haché, viande de bœuf hachée]
+    category: Viandes
+  cacahuetes-grillees:
+    name: Cacahuètes grillées
+    aliases: [cacahuètes grillées, cacahuètes torréfiées]
+    category: Fruits à coque et graines
+  chou-blanc:
+    name: Chou blanc
+    aliases: [chou blanc, chou blanc émincé]
+    category: Légumes et aromates
+  dashi-en-poudre:
+    name: Dashi en poudre
+    aliases: [dashi en poudre, poudre de dashi]
+    category: Condiments et assaisonnements
+  farine-avec-levure-incorporee:
+    name: Farine avec levure incorporée
+    aliases: [farine avec levure incorporée, self-raising flour]
+    category: Produits céréaliers
+  farine-de-mais-precuite:
+    name: Farine de maïs précuite
+    aliases: [farine de maïs précuite, masarepa]
+    category: Produits céréaliers
+  farine-de-riz:
+    name: Farine de riz
+    aliases: [farine de riz, rice flour]
+    category: Produits céréaliers
+  fromage-cottage:
+    name: Fromage cottage
+    aliases: [fromage cottage, cottage cheese]
+    category: Produits laitiers
+  gochujang:
+    name: Gochujang
+    aliases: [gochujang, pâte de piment coréenne]
+    category: Condiments et assaisonnements
+  ketchup:
+    name: Ketchup
+    aliases: [ketchup]
+    category: Condiments et assaisonnements
+  kimchi:
+    name: Kimchi
+    aliases: [kimchi]
+    category: Condiments et assaisonnements
+  nouilles-de-riz:
+    name: Nouilles de riz
+    aliases: [nouilles de riz, rice noodles]
+    category: Pâtes et préparations
+  paprika-fort:
+    name: Paprika fort
+    aliases: [paprika fort, paprika piquant]
+    category: Herbes et épices
+  piment-doux-marine:
+    name: Piment doux mariné
+    aliases: [piment doux mariné]
+    category: Condiments et assaisonnements
+  pousses-de-soja:
+    name: Pousses de soja
+    aliases: [pousses de soja, pousses de haricot mungo, bean sprouts]
+    category: Légumes et aromates
+  piment-rouge-seche:
+    name: Piment rouge séché
+    aliases: [piment rouge séché, piment rouge sec]
+    category: Herbes et épices
+  pate-de-crevettes:
+    name: Pâte de crevettes
+    aliases: [pâte de crevettes, shrimp paste]
+    category: Condiments et assaisonnements
+  pate-de-tamarin:
+    name: Pâte de tamarin
+    aliases: [pâte de tamarin, tamarind paste]
+    category: Condiments et assaisonnements
+  poisson-blanc:
+    name: Filets de poisson blanc
+    aliases: [poisson blanc, filets de poisson blanc]
+    category: Poissons et fruits de mer
+  riz-rond:
+    name: Riz rond
+    aliases: [riz rond, riz à grain rond]
+    category: Féculents et céréales
+  sauce-huitre:
+    name: Sauce huître
+    aliases: [sauce huître, sauce aux huîtres, oyster sauce]
+    category: Condiments et assaisonnements
+  saucisse-chinoise:
+    name: Saucisse chinoise
+    aliases: [saucisse chinoise, Chinese sausage, lup chong]
+    category: Viandes
+  sucre-de-palme:
+    name: Sucre de palme
+    aliases: [sucre de palme, palm sugar]
+    category: Produits sucrés
+  oeufs-de-caille:
+    name: Œufs de caille
+    aliases: [œufs de caille, oeufs de caille, quail eggs]
+    category: Crèmerie et oeufs
+  flocons-de-bonite:
+    name: Flocons de bonite séchée
+    aliases: [bonite séchée, bonite séché, flocons de bonite, bonito flakes]
+    category: Poissons et fruits de mer

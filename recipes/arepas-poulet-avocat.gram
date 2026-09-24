@@ -1,0 +1,39 @@
+---
+date_published: 2026-09-24
+date_modified: 2026-09-24
+title: Arepas au poulet et à l’avocat
+portions: 8
+prep_time: 25 min
+total_time: 1 h
+spiciness: 0
+description: Galettes de maïs dorées, garnies d’une salade crémeuse de poulet effiloché, avocat et cheddar.
+nutrition_profile: balanced
+tags: [plat, venezuelien, poulet, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r124320
+author: Cookidoo
+image: images/arepas-poulet-avocat.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/arepas-poulet-avocat.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, panier cuisson, four, poêle]
+scaling: {enabled: false, reason: "Les galettes sont façonnées individuellement et finissent de cuire au four en une seule plaque."}
+flavors: {pairing: [maïs, poulet, avocat, cheddar], notes: [doux, crémeux, doré], harmony: "La galette toastée enveloppe une garniture fraîche et onctueuse."}
+---
+[Préparer la pâte]
+- Mélanger la @farine de maïs précuite{230 g}, l’@eau{380 g} et le @sel{1 c. à café} ~{20 s} à vitesse 6.
+- Transférer la pâte dans un saladier et couvrir.
+[Cuire le poulet]
+- Mettre l’@eau{1000 g}, la @carotte{1}, la @pomme de terre{1}, le @poireau{1 morceau}, la @coriandre fraîche{3 brins}, le @cube de bouillon de volaille{1} et l’@huile d'olive{30 g} dans le bol.
+- Cuire le @poulet{300 à 350 g} en morceaux dans le panier cuisson ~{20 min} à ^{Varoma}, vitesse 1.
+- Effilocher le poulet ~{4 s} en sens inverse, vitesse 4; réserver.
+[Mélanger la garniture]
+- Hacher l’@oignon rouge{50 g} ~{3 s} à vitesse 5.
+- Couper l’@avocat{1} en dés.
+- Ajouter l’avocat au poulet avec l’oignon, la @mayonnaise{2 à 3 c. à soupe}, le @sel{1 pincée} et le @poivre{1 pincée}.
+[Cuire les galettes]
+- Diviser la pâte en huit portions et façonner des disques de 9 cm.
+- Dorer les arepas sur les deux faces dans une #poêle{} à feu moyen.
+- Enfourner à ^{200 C} ~{15 min}; ouvrir chaque galette sans la séparer.
+[Garnir]
+- Répartir la garniture et le @cheddar{70 à 80 g} râpé dans les arepas chaudes.

@@ -1,0 +1,42 @@
+---
+date_published: 2026-09-24
+date_modified: 2026-09-24
+title: Pierogi ruskie au fromage frais
+portions: 50
+prep_time: 1 h 30 min
+total_time: 2 h 30 min
+spiciness: 0
+description: Raviolis polonais farcis de pommes de terre, fromage frais et oignon, pochés puis servis au beurre.
+nutrition_profile: balanced
+tags: [plat, polonais, raviolis, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r693290
+author: Cookidoo
+image: images/pierogi-ruskie.webp
+image_credit: {author: CookiGram, source: https://github.com/PierreCsn/cookigram, license: Illustration générée par IA pour CookiGram, license_url: https://openai.com/policies/terms-of-use}
+image_generation: {provider: OpenAI, generated_at: "2026-09-24", prompt_file: image-prompts/pierogi-ruskie.md}
+appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+source_appliances: {thermomix: [TM31, TM5, TM6, TM7]}
+required_equipment: [Thermomix TM31 ou plus récent, Varoma, grande casserole, rouleau à pâtisserie]
+scaling: {enabled: false, reason: "La farce et le façonnage d’environ 50 pièces sont calibrés et longs à ajuster."}
+flavors: {pairing: [pomme de terre, fromage frais, oignon, beurre], notes: [doux, crémeux, doré], harmony: "La farce douce et acidulée est relevée par l’oignon fondu et le beurre."}
+---
+[Cuire les pommes de terre]
+- Verser l’@eau{500 g} dans le bol et placer les @pommes de terre{600 g} en morceaux de 3 cm dans le Varoma.
+- Cuire ~{25 min} à ^{Varoma}, vitesse 1.
+- Laisser refroidir complètement au réfrigérateur ~{15 min}.
+[Préparer la farce]
+- Hacher l’@oignon{150 g} en quartiers ~{5 s} à vitesse 5.
+- Ajouter le @beurre{50 g}.
+- Faire revenir ~{4 min} à ^{Varoma}, vitesse 1.
+- Réserver l’oignon fondu.
+- Écraser les pommes de terre avec la @ricotta{250 g}, le @fromage cottage{250 g} et l’oignon fondu.
+- Réserver la farce au frais.
+[Pétrir la pâte]
+- Ajouter l’@eau{250 g} chaude et l’@œuf{1} à la @farine{560 g}.
+- Pétrir ~{2 min}.
+- Abaisser la pâte et découper environ 50 disques.
+[Façonner et pocher]
+- Garnir chaque disque de farce, humidifier un bord et pincer pour fermer en demi-lune.
+- Pocher par lots dans une grande casserole d’eau frémissante ~{4 min}; ils sont cuits lorsqu’ils remontent.
+[Servir]
+- Faire fondre le @beurre{120 g} avec l’@oignon{180 g} en dés à la #poêle{} jusqu’à blondissement et napper les pierogi.
