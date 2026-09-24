@@ -5,8 +5,9 @@
     "max_heartbeat_age_minutes": 15,
     "require_approved_label": "potential-dev-work"
   },
-  "active_claims": {
-    "435": {
+  "active_claims": {},
+  "completed_claims": [
+    {
       "issue": 435,
       "title": "[DOCS] TODO.md : snapshot d audit périmé",
       "agent": "muse-cobalt-annular",
@@ -14,10 +15,12 @@
       "branch": "docs/issue-435-todo-audit-note",
       "claimed_at": "2026-09-24T09:15:00+02:00",
       "last_heartbeat": "2026-09-24T09:25:00+02:00",
-      "status": "pr_open"
-    }
-  },
-  "completed_claims": [
+      "status": "merged",
+      "pr": 488,
+      "merged_at": "2026-09-24T15:26:11Z",
+      "reconciled_by": "Merge-Lead",
+      "reconciliation": "satisfied by PR #488"
+    },
     {
       "issue": 394,
       "title": "[CATALOGUE] Généraliser nutrition_profile sur le corpus actuel — slice 1 (socle + pilote)",
