@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 2
 description: "Une pizza vegan douce et relevée, inspirée d’Ooni, avec courge, nduja végétale, olives et sauce tomate."
+nutrition_profile: balanced
 tags: [pizza, vegan, courge, nduja, épicé]
 source: https://ooni.com/blogs/recipes/vegetarian-nduja-squash-pizza
 author: Julian Guy

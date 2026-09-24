@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Une Marinara sans fromage, très parfumée, où la tomate, l’ail, l’origan et l’huile brillent au feu vif."
+nutrition_profile: balanced
 tags: [pizza, napolitaine, vegan, classique]
 source: https://ooni.com/blogs/recipes/avpn-standard-pizza-marinara
 author: Kelsey Small

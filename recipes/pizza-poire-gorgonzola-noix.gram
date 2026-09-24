@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 1
 description: "Une pizza blanche sucrée-salée où la poire fondante, le gorgonzola et les noix se répondent à merveille."
+nutrition_profile: pleasure
 tags: [pizza, poire, gorgonzola, noix, végétarien]
 source: https://ooni.com/blogs/recipes/pizza-pear-gorgonzola
 author: Ooni HQ

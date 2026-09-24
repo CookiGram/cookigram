@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Une pizza fine et savoureuse, finie hors du four avec jambon cru, roquette et copeaux de parmesan fondants."
+nutrition_profile: pleasure
 tags: [pizza, jambon cru, roquette, parmesan]
 source: https://ooni.com/blogs/recipes/pizza-prosciutto-arugula
 author: Ooni HQ

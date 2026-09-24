@@ -7,6 +7,7 @@ prep_time: 10 min
 total_time: 20 min
 spiciness: 0
 description: "Une pizza marine et salée au thon, mozzarella, câpres et olives, relevée d’un peu d’oignon rouge croquant."
+nutrition_profile: balanced
 tags: [pizza, thon, câpres, poisson]
 source: https://ooni.com/blogs/recipes/pizza-tuna
 author: Ooni HQ
