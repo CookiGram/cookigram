@@ -1,0 +1,55 @@
+---
+title: Tzatziki grec
+date_published: 2026-09-24
+portions: 1
+prep_time: 10 min
+total_time: 40 min
+description: Concombre frais égoutté, yaourt grec et herbes fraîches composent ce tzatziki onctueux et parfumé à servir froid.
+nutrition_profile: vitality
+tags: [tzatziki, concombre, dip, thermomix, Grèce]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r586466
+author: Isabelle Guerre
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment: ["Thermomix TM31, TM5, TM6 ou TM7"]
+scaling:
+  enabled: false
+  reason: Les proportions de concombre et de yaourt sont prévues pour un bocal.
+meal:
+  completeness: component
+  role: dip
+spiciness: 0
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/tzatziki-grec.md
+---
+
+[Hacher le concombre]
+- Couper le @concombre{1 pièce} en tronçons d'environ 3 cm.
+- Mettre les morceaux dans le #bol Thermomix{}.
+- Mixer ~{5 s} à vitesse 5.
+- Transvaser dans une passoire.
+- Saler avec le @sel{au goût}.
+- Laisser dégorger ~{30 min} au-dessus d'un récipient.
+
+[Hacher les aromates]
+- Mettre l'@ail{1 gousse} et le @persil frais{1 bouquet} dans le bol rincé.
+- Donner une impulsion turbo de ~{1 s}.
+- Racler les parois avec la #spatule{}.
+
+[Assembler le tzatziki]
+- Ajouter le @yaourt grec{150 g} et le @poivre moulu{au goût}.
+- Ajouter le @sel{au goût} si nécessaire.
+- Mélanger ~{10 s} à vitesse 3.
+- Presser le concombre pour en extraire l'eau.
+- Ajouter le concombre égoutté au bol.
+- Mélanger ~{10 s} à vitesse 3.
+
+[Conserver au frais]
+- Réserver au réfrigérateur jusqu'au moment de servir.
