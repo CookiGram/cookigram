@@ -12,7 +12,18 @@
 
 Dernier audit : 3 septembre 2026.
 
-## État du projet au moment de l'audit
+> Actualisation (24 septembre 2026, #435) : la section « État du projet au
+> moment de l'audit » ci-dessous est le snapshot archivé du 3 septembre 2026,
+> conservé sans réécriture. État vérifiable à cette date : 199 recettes
+> `.gram` dans `recipes/`, 314 entrées dans `.gram/ingredients.yaml`,
+> 17 fichiers `tests/test_*.py` plus 4 tests Node via `node --test` (sans
+> seuil de couverture), CI sans Ruff/Biome/Playwright (validation via
+> `cookigram_contract`, `pytest`, `node --test`, audit images et lint
+> contenu), `static/app.js` et `static/sw.js` supprimés (JS éclaté par
+> fonctionnalité dans `static/meal-planner/`, `static/selection/` et
+> `static/info/`), aucune branche `legacy/codex-pre-gemini` dans ce dépôt.
+
+## État du projet au moment de l'audit (snapshot 3 sept. 2026 — archivé)
 
 
 - 43 fichiers de recettes `.gram` et 170 entrées dans la base d'ingrédients.

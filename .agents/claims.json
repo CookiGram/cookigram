@@ -15,6 +15,16 @@
       "claimed_at": "2026-09-22T02:45:00+02:00",
       "last_heartbeat": "2026-09-22T03:00:00+02:00",
       "status": "in_progress"
+    },
+    "435": {
+      "issue": 435,
+      "title": "[DOCS] TODO.md : snapshot d audit périmé",
+      "agent": "muse-cobalt-annular",
+      "workspace": "/home/pierrecsn/Work/cookigram",
+      "branch": "docs/issue-435-todo-audit-note",
+      "claimed_at": "2026-09-24T09:15:00+02:00",
+      "last_heartbeat": "2026-09-24T09:15:00+02:00",
+      "status": "in_progress"
     }
   },
   "completed_claims": [
