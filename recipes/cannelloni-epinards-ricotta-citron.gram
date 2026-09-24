@@ -1,0 +1,67 @@
+---
+title: Cannelloni aux épinards, ricotta et citron
+portions: 4
+prep_time: 20 min
+total_time: 1 h 15 min
+spiciness: 0
+nutrition_profile: balanced
+description: Cannelloni tendres aux épinards et à la ricotta, relevés de citron, menthe fraîche et tomate gratinée.
+tags: [cannelloni, épinards, ricotta, citron, four, végétarien, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-Fr/r703158
+author: Bérengère Abraham
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/cannelloni-epinards-ricotta-citron.md
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Poêle
+  - Plat à gratin
+  - Four
+scaling:
+  enabled: false
+  reason: "Quantités et volume du plat calibrés pour 4 portions, sans essai d'une autre échelle."
+flavors:
+  pairing: [épinards, ricotta, citron, menthe]
+  notes: [crémeux, citronné, herbacé]
+  harmony: "Le citron réveille la douceur de la ricotta et des épinards, avec une note fraîche de menthe."
+  tips: "Égoutter soigneusement les épinards cuits avant de garnir les tubes."
+---
+
+[Préparer la première moitié d'oignon]
+- Hacher 50 g d'@oignon{50 g, en quartiers} dans le #bol Thermomix{} ~{5 s} à vitesse 5.
+- Transférer l'oignon dans une #poêle{}.
+- Faire suer l'oignon avec la moitié de l'@huile d'olive{1 c. à soupe} à feu moyen jusqu'à ce qu'il soit translucide.
+- Remettre l'oignon dans le #bol Thermomix{} avec les @épinards{500 g, frais et hachés}.
+- Cuire ~{7 min} à ^{100 C}, en sens inverse et vitesse cuillère, jusqu'à ce que les feuilles soient tombées.
+- Égoutter soigneusement les épinards cuits.
+
+[Mélanger la farce]
+- Remettre les épinards dans le bol avec la @ricotta{250 g} et l'@œuf{1}.
+- Ajouter le zeste finement râpé du @citron{1} et la @menthe fraîche{15 feuilles, hachées}.
+- Saler avec le @sel{au goût} et ajouter le @poivre moulu{au goût}.
+- Mélanger ~{25 s} à vitesse 3.
+- Réserver la farce.
+- Rincer et sécher le bol.
+
+[Préparer la sauce tomate]
+- Hacher dans le bol les 50 g d'@oignon{50 g, en quartiers restants} et la @gousse d'ail{1} ~{5 s} à vitesse 5.
+- Transférer l'oignon et l'ail dans la poêle.
+- Faire suer le mélange avec le reste d'@huile d'olive{1 c. à soupe} à feu moyen jusqu'à ce qu'il soit translucide.
+- Remettre l'oignon et l'ail dans le bol avec les @tomates concassées{200 g} et les @tomates{200 g, en quartiers}.
+- Cuire ~{15 min} à ^{100 C} et vitesse 2 jusqu'à ce que la sauce épaississe.
+
+[Garnir et cuire]
+- Préchauffer le #four{} à ^{180 C}.
+- Étaler une partie de la sauce au fond d'un #plat à gratin{}.
+- Garnir les @cannelloni{16 tubes} de farce et les aligner dans le plat.
+- Verser l'@eau{4 c. à soupe} sur les cannelloni.
+- Couvrir avec le reste de sauce et parsemer le @parmesan{75 g, râpé}.
+- Enfourner ~{30 min} à ^{180 C}, jusqu'à ce que les pâtes soient tendres.

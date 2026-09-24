@@ -1,0 +1,67 @@
+---
+title: Gnocchi alla romana au miel, noix et gorgonzola
+portions: 6
+prep_time: 20 min
+total_time: 1 h
+spiciness: 0
+nutrition_profile: pleasure
+description: Disques de semoule dorés au four, nappés de gorgonzola fondant, de miel citronné et de noix croquantes.
+tags: [gnocchi, semoule, gorgonzola, miel, noix, four, végétarien, thermomix]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r687853
+author: Cookidoo
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+image_generation:
+  prompt_file: image-prompts/gnocchi-alla-romana-miel-noix-gorgonzola.md
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Fouet papillon
+  - Plaque et papier cuisson
+  - Plat à gratin
+  - Four
+scaling:
+  enabled: false
+  reason: "La capacité du bol et les dimensions du plat sont prévues pour 6 portions."
+flavors:
+  pairing: [semoule, gorgonzola, miel, noix]
+  notes: [gratiné, crémeux, doux-salé]
+  harmony: "Le miel adoucit le bleu corsé et les noix apportent du croquant aux gnocchi moelleux."
+  tips: "Laisser les gnocchi tiédir 10 minutes avant de les servir avec le miel et les noix."
+---
+
+[Râper le parmesan]
+- Mettre le @parmesan{70 g, en morceaux} dans le #bol Thermomix{}.
+- Râper ~{10 s} à vitesse 10.
+- Transférer le parmesan dans un bol et réserver.
+
+[Cuire la semoule]
+- Verser le @lait{1000 g} dans le bol avec le @sel{5 g}, la @noix de muscade{1 pincée} et le @beurre doux{20 g}.
+- Chauffer ~{12 min} à ^{95 C} et vitesse 3.
+- Ajouter le parmesan réservé, la @semoule de blé{250 g} et les @jaunes d'œufs{2}.
+- Mélanger ~{1 min} à vitesse 4 en raclant la pâte à la spatule si nécessaire.
+- Cuire ~{8 min} à ^{90 C} et vitesse 2 jusqu'à l'obtention d'une pâte épaisse.
+- Étaler la pâte sur du papier cuisson sur environ 1 cm d'épaisseur et laisser refroidir complètement.
+
+[Former et dorer les gnocchi]
+- Préchauffer le #four{} à ^{180 C} et beurrer un #plat à gratin{} avec un peu de @beurre doux{pour le plat}.
+- Découper des disques de pâte d'environ 5 cm et les disposer en les faisant légèrement se chevaucher.
+- Enfourner ~{10 min} à ^{180 C} pour faire dorer les disques.
+
+[Préparer la sauce au gorgonzola]
+- Mettre le @gorgonzola{200 g, en morceaux} et l'@eau{50 g} dans le bol rincé.
+- Cuire ~{5 min} à ^{80 C} et vitesse 2 jusqu'à ce que le fromage fonde.
+- Émulsionner ~{20 s} à vitesse 5.
+- Sortir le plat du four et napper les gnocchi de sauce au gorgonzola.
+- Enfourner encore ~{10 min} à ^{180 C}, en prolongeant de 5 min si la sauce n'est pas gratinée.
+- Laisser tiédir ~{10 min}.
+- Mélanger le @miel{30 g} et le @citron{1 c. à café de jus} dans un petit bol.
+- Hacher grossièrement les @noix{30 g, cerneaux hachés}.
+- Parsemer les noix hachées sur les gnocchi.
+- Verser un filet de miel citronné au moment du service.
