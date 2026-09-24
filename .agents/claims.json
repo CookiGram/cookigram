@@ -6,7 +6,19 @@
     "require_approved_label": "potential-dev-work"
   },
   "active_claims": {
-    "394": {
+    "435": {
+      "issue": 435,
+      "title": "[DOCS] TODO.md : snapshot d audit périmé",
+      "agent": "muse-cobalt-annular",
+      "workspace": "/home/pierrecsn/Work/cookigram",
+      "branch": "docs/issue-435-todo-audit-note",
+      "claimed_at": "2026-09-24T09:15:00+02:00",
+      "last_heartbeat": "2026-09-24T09:25:00+02:00",
+      "status": "pr_open"
+    }
+  },
+  "completed_claims": [
+    {
       "issue": 394,
       "title": "[CATALOGUE] Généraliser nutrition_profile sur le corpus actuel — slice 1 (socle + pilote)",
       "agent": "Muse-rose-algol",
@@ -14,10 +26,10 @@
       "branch": "feat/issue-394-nutrition-profile-slice1",
       "claimed_at": "2026-09-22T02:45:00+02:00",
       "last_heartbeat": "2026-09-22T03:00:00+02:00",
-      "status": "in_progress"
-    }
-  },
-  "completed_claims": [
+      "status": "stale-superseded",
+      "reconciled_by": "Muse Code (session forest-culmination)",
+      "reconciliation": "heartbeat expire (>54h, max 15min); campagne 394 reprise par slices (32 branches feat/issue-394-*, lot pizza-sushi merge PR #484); branche slice1 conservee sans PR, a reprendre ou solder par le owner"
+    },
     {
       "issue": 160,
       "pr": 161,
