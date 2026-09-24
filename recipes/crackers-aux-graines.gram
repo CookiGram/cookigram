@@ -24,12 +24,17 @@ scaling:
   max_portions: 30
   step: 15
   note: "Le temps de cuisson par plaque reste le même ; répartir la pâte sur plusieurs plaques si nécessaire."
-image: images/placeholder-recipe.jpg
+image: images/crackers-aux-graines.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-24"
   prompt_file: image-prompts/crackers-aux-graines.md
 ---
 

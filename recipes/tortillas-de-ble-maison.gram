@@ -24,12 +24,17 @@ scaling:
   max_portions: 32
   step: 8
   note: "Le temps de cuisson par galette ne change pas et les galettes cuisent en plusieurs fournées."
-image: images/placeholder-recipe.jpg
+image: images/tortillas-de-ble-maison.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-24"
   prompt_file: image-prompts/tortillas-de-ble-maison.md
 ---
 

@@ -22,12 +22,17 @@ required_equipment:
 scaling:
   enabled: false
   reason: "La forme et la capacité du moule ainsi que les temps de pousse et de cuisson sont calibrés pour 24 tranches."
-image: images/placeholder-recipe.jpg
+image: images/pain-de-mie-maison.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-24"
   prompt_file: image-prompts/pain-de-mie-maison.md
 ---
 

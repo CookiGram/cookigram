@@ -21,12 +21,17 @@ required_equipment:
 scaling:
   enabled: false
   reason: "Les naans cuisent par fournées à la poêle et le fromage doit rester réparti dans huit pâtons."
-image: images/placeholder-recipe.jpg
+image: images/cheese-naan-indien.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-24"
   prompt_file: image-prompts/cheese-naan-indien.md
 ---
 

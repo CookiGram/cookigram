@@ -23,12 +23,17 @@ required_equipment:
 scaling:
   enabled: false
   reason: "Le levain, les temps de fermentation et la capacité du four déterminent ce lot de trois pains."
-image: images/placeholder-recipe.jpg
+image: images/fougasse-au-levain.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-24"
   prompt_file: image-prompts/fougasse-au-levain.md
 ---
 

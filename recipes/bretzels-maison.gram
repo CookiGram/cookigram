@@ -21,12 +21,17 @@ required_equipment:
 scaling:
   enabled: false
   reason: "Le bain de bicarbonate, la surface de plaque et le nombre de fournées dépendent de la quantité façonnée."
-image: images/placeholder-recipe.jpg
+image: images/bretzels-maison.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration originale générée pour CookiGram et recadrée au format 1280 × 720.
 image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-09-24"
   prompt_file: image-prompts/bretzels-maison.md
 ---
 
