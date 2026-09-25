@@ -9,21 +9,21 @@
     "493": {
       "issue": 493,
       "title": "Ajouter 36 fondamentaux : bases, apéritifs, chutneys indiens et raita",
-      "agent": "Muse Code (session pine-zosma)",
+      "agent": "Muse Code (session bold-nadir, reprise post-crash pine-zosma)",
       "role": "lead + recipe owner (Muse) ; Codex = image worker only",
       "workspace": "/home/pierrecsn/Work/cookigram",
       "branch": "feat/issue-493-fondamentaux",
       "claimed_at": "2026-09-24T20:30:17Z",
-      "last_heartbeat": "2026-09-25T12:40:00Z",
+      "last_heartbeat": "2026-09-25T16:25:48Z",
       "status": "in_progress",
       "lane_assignments": {
-        "A1": "COMPLET (7/7) : pizza, brisee, sablee, choux (casserole+robot), crepes, pancakes, gaufres — stand_mixer [standard], sources Thermomix adaptees documentees ; COMMIT LOCAL UNIQUEMENT, PR #503 distante inchangee",
+        "A1": "COMPLET (7/7) : pizza, brisee, sablee, choux (casserole+robot), crepes, pancakes, gaufres — stand_mixer [standard], sources Thermomix adaptees documentees ; POUSSE (origin/feat == 877d2fe, PR #503 = 79 fichiers dont A1, body PR perime — 36 fiches reelles)",
         "A2": "COMPLET (9/9) : + mayonnaise (r67172 TM31 froid) ; hollandaise autonome r54152 (TM31 declare, base documentee)",
         "A3": "bouillon-legumes, bouillon-volaille, fond-brun (checkpoint-1, geles) + puree-pommes-de-terre (capture w4W r4394, draftee, 10/10 CLEAN avec le lot)",
         "B1": "5 draftees (gougeres, sables, cannele, rillettes, caviar)",
         "B2": "COMPLET (5/5) : + mimosa (oeufs Varoma 15 min source, ecart 120C documente)",
         "C": "5 chutneys + raita (captures w4W r140381/r134622/r132144/r132143/r141754/r132139, tous badges TM31, draftees, 10/10 CLEAN ; tadka coco 120C adapte poele, documente en tips)",
-        "IMG-Codex": "TENTATIVES 2026-09-24T20:5xZ: brief bouillon-legumes compris et scope respecte (zero ecriture hors scope) ; echec livraison: sandbox codex exec en quota (ecriture puis lecture shell impossibles) ; AUCUN asset recu ; images A3 en attente d'un canal d'execution sain | 2026-09-24T21:0xZ: canal gemini teste HS (client deprecated, migration Antigravity) ; AUCUN canal image sain disponible cote Muse",
+        "IMG-Codex": "TENTATIVES 2026-09-24T20:5xZ: brief bouillon-legumes compris et scope respecte (zero ecriture hors scope) ; echec livraison: sandbox codex exec en quota (ecriture puis lecture shell impossibles) ; AUCUN asset recu ; images A3 en attente d'un canal d'execution sain | 2026-09-24T21:0xZ: canal gemini teste HS (client deprecated, migration Antigravity) ; AUCUN canal image sain disponible cote Muse | 2026-09-25T13:0xZ VAGUE-1 dispatch w4W (idle, pas de claim concurrent): 7 sauces (mayonnaise, hollandaise, bechamel, pesto, beurre-blanc, caramel, ganache) | VAGUE-2 livree pre-crash (volaille, fond-brun, 2 cremes, pizza, brisee, sablee) + bouillon-legumes/choux (canal prouve) ; 2026-09-25T16:2xZ reprise post-crash bold-nadir : 16/16 integres (sha256 OK, 1280x720 VP8, provenance+image_generation), 20 assets jamais livres en reliquat (B1x5, B2x5, A1x3, puree, Cx6)",
         "BLOCAGE-METHODE": "Cookidoo expose ingrédients/quantités/badges sans login mais les pas-a-pas (vitesses/temps/ordre) exigent un compte ; Muse sans Chrome connecte ne peut rediger que les adaptations mandatees a execution non-robot (bouillons cocotte, ancrage total source) ; toute fiche a execution Thermomix fidele (puree, chutneys, raita, A2, B1, B2) requiert capture methode via session Chrome connectee | 2026-09-24T21:0xZ: tentative navigateur connecte (copie profil Chromium 882M + Playwright system-chromium-153) : chromium frais OK reseau, mais tout lancement avec profil copie crash (renderer/context, x4 configs) ; capture pas-a-pas authentifiee impossible depuis ce runtime",
         "CAPTURE-Codex-w4W": "TERMINEE 7/7 : donnees fideles en panneau, zero ecriture depot, scope respecte",
         "CAPTURE2-Codex-w4W": "A2 (8, mayonnaise exclue) + B1/B2 (10) : 18 URLs, dispatch w4W ; capture fidele uniquement, zero ecriture depot",
@@ -34,7 +34,7 @@
         "MAYO-MULTIMETHOD": "DECISION OWNER: pot en 2e variante de sauce-mayonnaise (6927381 reutilise, auteur PierreCsn lui-meme, pas de tiers) ; variants thermomix(default)+mixeur-plongeant valides Core ; fiche separee + prompt + webp orphelin supprimes"
       },
       "protocol": "Muse redige .gram + prompts sur la branche ; par recette figee, brief image -> Codex (codex exec) -> verification Muse -> integration -> gates ; .gram/ingredients.yaml et provenance reconciles par le lead ; aucun merge sans autorisation humaine",
-      "collisions": "PR #498 (docs equipment + test_equipment_model_495, zero recouvrement fichiers) ; PR #502 (site-config + test_instance_identity, zero recouvrement) ; aucun claim actif concurrent",
+      "collisions": "PR #498 MERGEE 2026-09-25T11:14Z (plus de collision) ; PR #502 typo #391 zero recouvrement ; aucun claim actif concurrent ; Herdr 16:2xZ : w4W disparu, w4X Muse idle parque (1 turn), w4Z shell idle, zero worker actif, zero token manage — aucun relaunch, aucun nettoyage requis",
       "pr": 503,
       "checkpoints": [
         {
@@ -153,6 +153,22 @@
             "corrections": "desc x1, 3 cles + 3 provenances, 7 prompts"
           },
           "validations": "7/7 LOCAL-CLEAN ; Core recipe_check : seules erreurs = images ; build complet vert (36 fiches) ; 3 pages lues"
+        },
+        {
+          "id": "IMG-waves12-checkpoint-7",
+          "at": "2026-09-25T16:30:00Z",
+          "by": "Muse Code (session bold-nadir, reprise post-crash pine-zosma)",
+          "recovered": "travail pre-crash non-committe : 14 integrations (gram image_generation + provenance) + 16 webp ; crash avant integration bouillon-de-legumes + pate-a-choux (fichiers presents, provenance+frontmatter absents)",
+          "completed": "2 integrations manquantes redigees au meme modele (batch issue-493-img-wave-2, sha256 des fichiers reels, prompt == image-prompts/*.md verifie)",
+          "frozen": [
+            "16 webp 1280x720 VP8 (wave-1 : 7 sauces ; wave-2 : volaille, fond-brun, 2 cremes, pizza, brisee, sablee, legumes, choux)",
+            "16 entrees assets/provenance/images.yaml (sha256 OK, visual_profile manga culinary r1)",
+            "16 blocs image_generation (provider OpenAI image generation, model unknown, generated_at 2026-09-25)"
+          ],
+          "preserved": "contenu recettes intouche hors image_generation (diff = +3 lignes/frontmatter par fiche) ; checkpoints 1-6 et leurs geles inchanges",
+          "validations": "YAML OK (.gram + provenance) ; audit residuel = exactement les 20 missing-image attendus (B1x5, B2x5, A1x3 crepes/gaufres/pancakes, puree, Cx6), zero missing-provenance sur les 16 ; Core recipe_check 36/36 : 16 CONFORME, 20 erreur image-only, zero defaut contenu (Core checkout local divergent — indicatif, gate faisant foi = CI PR)",
+          "reliquat": "20 assets jamais livres (prompts prets) ; conformite visuelle style manga a controle humain ; PR #503 body perime (29/A1-exclue) a reactualiser ; commit+push en attente d'autorisation humaine",
+          "not_started": "#499, #500 bloques jusqu'a stabilisation/integration #493 (instruction reprise)"
         }
       ]
     }
