@@ -86,6 +86,6 @@ def test_manifest_seed_matches_identity() -> None:
 
 def test_no_general_site_config_sprawl() -> None:
     config = _config()
-    allowed = {"site", "branding", "theme", "illustrations", "typography"}
+    allowed = {"site", "branding", "theme", "illustrations"}
     assert set(config) <= allowed, f"site-config.yaml must stay identity-only: {set(config) - allowed}"
     assert set(config.get("site", {})) <= {"name", "tagline", "url"}, "site section must stay identity-only"
