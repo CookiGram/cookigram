@@ -1,0 +1,55 @@
+{
+  "corpus_chunks": 209,
+  "index_ms": 40.0,
+  "tokens_before_full_context": 44456,
+  "index_bytes_proxy": 894716,
+  "note_tokens": "heuristique len/4 ; latences search in-memory (borne basse vs Qdrant reseau)",
+  "tasks": [
+    {
+      "id": "T1-herdr-naming",
+      "gold": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "retrieved": [
+        "docs/E2E-WORK-ITEM.md",
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "recall_gold": 1.0,
+      "latency_ms": 4.83,
+      "tokens_before": 44456,
+      "tokens_after": 359,
+      "token_ratio": 0.0081
+    },
+    {
+      "id": "T2-artifact-storage",
+      "gold": [
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "retrieved": [
+        "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md",
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "recall_gold": 1.0,
+      "latency_ms": 4.87,
+      "tokens_before": 44456,
+      "tokens_after": 657,
+      "token_ratio": 0.0148
+    },
+    {
+      "id": "T3-catalogue-contract",
+      "gold": [
+        "docs/CATALOGUE-CONTRACT-CORE.md"
+      ],
+      "retrieved": [
+        "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+        "docs/CATALOGUE-CONTRACT-CORE.md",
+        "docs/PUBLIC-CONTRACT.md"
+      ],
+      "recall_gold": 1.0,
+      "latency_ms": 4.86,
+      "tokens_before": 44456,
+      "tokens_after": 434,
+      "token_ratio": 0.0098
+    }
+  ]
+}
