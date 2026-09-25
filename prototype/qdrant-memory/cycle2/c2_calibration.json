@@ -1,0 +1,906 @@
+{
+  "cycle": 2,
+  "phase": "dev-calibration",
+  "collections": {
+    "sec": "agent_memory_c2",
+    "fact": "agent_memory_fact_c2"
+  },
+  "corpora": {
+    "section_chunks": 209,
+    "section_sha": "dc89e7a7a0a66f9f",
+    "fact_chunks": 881,
+    "fact_sha": "f198b30c9193d78d",
+    "tokens_full": 44456,
+    "index_sec": {
+      "embed_ms": 5532.6,
+      "upsert_ms": 83.5
+    },
+    "index_fact": {
+      "embed_ms": 22697.9,
+      "upsert_ms": 329.0
+    }
+  },
+  "retrieval_dev": {
+    "lexical": {
+      "success_answer_rate": 0.444,
+      "rank1": 0.778,
+      "recall_at3": 0.722
+    },
+    "dense_sec": {
+      "success_answer_rate": 0.333,
+      "rank1": 0.556,
+      "recall_at3": 0.611
+    },
+    "dense_fact": {
+      "success_answer_rate": 0.444,
+      "rank1": 0.556,
+      "recall_at3": 0.722
+    }
+  },
+  "grid_fact": [
+    {
+      "tau": 0.3,
+      "delta": 0.01,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.3,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.3,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.3,
+      "delta": 0.05,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.01,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.05,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.01,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.05,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.01,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.05,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.01,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.05,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.01,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.05,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.01,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.02,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.03,
+      "decision_lenient": 0.571
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.05,
+      "decision_lenient": 0.571
+    }
+  ],
+  "grid_sec": [
+    {
+      "tau": 0.3,
+      "delta": 0.01,
+      "decision_lenient": 0.5
+    },
+    {
+      "tau": 0.3,
+      "delta": 0.02,
+      "decision_lenient": 0.571
+    },
+    {
+      "tau": 0.3,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.3,
+      "delta": 0.05,
+      "decision_lenient": 0.357
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.01,
+      "decision_lenient": 0.5
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.02,
+      "decision_lenient": 0.571
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.03,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.35,
+      "delta": 0.05,
+      "decision_lenient": 0.357
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.01,
+      "decision_lenient": 0.571
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.02,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.03,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.4,
+      "delta": 0.05,
+      "decision_lenient": 0.429
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.01,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.03,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.45,
+      "delta": 0.05,
+      "decision_lenient": 0.5
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.01,
+      "decision_lenient": 0.643
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.03,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.5,
+      "delta": 0.05,
+      "decision_lenient": 0.571
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.01,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.02,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.03,
+      "decision_lenient": 0.786
+    },
+    {
+      "tau": 0.55,
+      "delta": 0.05,
+      "decision_lenient": 0.571
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.01,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.02,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.03,
+      "decision_lenient": 0.714
+    },
+    {
+      "tau": 0.6,
+      "delta": 0.05,
+      "decision_lenient": 0.571
+    }
+  ],
+  "chosen": {
+    "tau": 0.55,
+    "delta": 0.01,
+    "decision_lenient": 0.786,
+    "rule": "Bras primaire : dense-fact+politique. Grille tau={0.30..0.60 pas 0.05} x delta={0.01,0.02,0.03,0.05}. Choisir le point maximisant la decision_lenient accuracy sur les 14 items dev (bras fact) ; egalite -> tau superieur puis delta superieur (preference abstention : un faux positif memoire trompe l'agent, un faux negatif se replie). Bras sec : meme point (secondaire). Grille complete + marges publiees dans c2_calibration.json."
+  },
+  "items": [
+    {
+      "id": "D2-D1",
+      "kind": "direct",
+      "expected": "answer",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 6.35
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.4723,
+          0.4279,
+          0.4186
+        ],
+        "margin": 0.0444,
+        "latency_ms": 12.59
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.5661,
+          0.5069,
+          0.4723
+        ],
+        "margin": 0.0592,
+        "latency_ms": 11.43
+      }
+    },
+    {
+      "id": "D2-D2",
+      "kind": "direct",
+      "expected": "answer",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 8.21
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.608,
+          0.6049,
+          0.5341
+        ],
+        "margin": 0.0031,
+        "latency_ms": 9.59
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6615,
+          0.6465,
+          0.6024
+        ],
+        "margin": 0.015,
+        "latency_ms": 11.38
+      }
+    },
+    {
+      "id": "D2-D3",
+      "kind": "direct",
+      "expected": "answer",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 8.54
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.7827,
+          0.7395,
+          0.7037
+        ],
+        "margin": 0.0432,
+        "latency_ms": 12.08
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.7643,
+          0.7395,
+          0.7193
+        ],
+        "margin": 0.0248,
+        "latency_ms": 14.96
+      }
+    },
+    {
+      "id": "D2-P1",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "latency_ms": 9.26
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.5428,
+          0.5195,
+          0.474
+        ],
+        "margin": 0.0233,
+        "latency_ms": 9.89
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6074,
+          0.5878,
+          0.5248
+        ],
+        "margin": 0.0196,
+        "latency_ms": 9.83
+      }
+    },
+    {
+      "id": "D2-P2",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 9.32
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6915,
+          0.6423,
+          0.6127
+        ],
+        "margin": 0.0492,
+        "latency_ms": 8.95
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.7061,
+          0.6545,
+          0.6425
+        ],
+        "margin": 0.0516,
+        "latency_ms": 6.97
+      }
+    },
+    {
+      "id": "D2-H1",
+      "kind": "hard",
+      "expected": "answer",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 7.16
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6614,
+          0.6576,
+          0.6006
+        ],
+        "margin": 0.0038,
+        "latency_ms": 13.37
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6614,
+          0.6576,
+          0.6006
+        ],
+        "margin": 0.0038,
+        "latency_ms": 12.64
+      }
+    },
+    {
+      "id": "D2-H2",
+      "kind": "hard",
+      "expected": "answer",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "latency_ms": 6.37
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "scores": [
+          0.58,
+          0.5323,
+          0.4795
+        ],
+        "margin": 0.0477,
+        "latency_ms": 10.52
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "scores": [
+          0.58,
+          0.4687,
+          0.4549
+        ],
+        "margin": 0.1113,
+        "latency_ms": 13.91
+      }
+    },
+    {
+      "id": "D2-C1",
+      "kind": "claim",
+      "expected": "answer",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "latency_ms": 8.8
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.6293,
+          0.6222,
+          0.5665
+        ],
+        "margin": 0.0071,
+        "latency_ms": 8.62
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.6346,
+          0.6213,
+          0.6142
+        ],
+        "margin": 0.0133,
+        "latency_ms": 11.37
+      }
+    },
+    {
+      "id": "D2-C2",
+      "kind": "claim",
+      "expected": "answer",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 8.21
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.4973,
+          0.4933,
+          0.4868
+        ],
+        "margin": 0.004,
+        "latency_ms": 9.21
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.5558,
+          0.5558,
+          0.5535
+        ],
+        "margin": 0.0,
+        "latency_ms": 9.62
+      }
+    },
+    {
+      "id": "D2-N1",
+      "kind": "negative-ood",
+      "expected": "abstain",
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "latency_ms": 8.43
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.5284,
+          0.5156,
+          0.4184
+        ],
+        "margin": 0.0128,
+        "latency_ms": 8.31
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.5714,
+          0.5284,
+          0.5256
+        ],
+        "margin": 0.043,
+        "latency_ms": 9.09
+      }
+    },
+    {
+      "id": "D2-N2",
+      "kind": "negative-ood",
+      "expected": "abstain",
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "latency_ms": 7.93
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.1475,
+          0.139,
+          0.1379
+        ],
+        "margin": 0.0085,
+        "latency_ms": 12.03
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.1974,
+          0.1683,
+          0.1656
+        ],
+        "margin": 0.0291,
+        "latency_ms": 9.05
+      }
+    },
+    {
+      "id": "D2-N3",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "latency_ms": 8.72
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.3934,
+          0.3315,
+          0.3202
+        ],
+        "margin": 0.0619,
+        "latency_ms": 10.95
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.3913,
+          0.3901,
+          0.3669
+        ],
+        "margin": 0.0012,
+        "latency_ms": 14.97
+      }
+    },
+    {
+      "id": "D2-N4",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "latency_ms": 8.23
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.4013,
+          0.3502,
+          0.3502
+        ],
+        "margin": 0.0511,
+        "latency_ms": 6.9
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.4013,
+          0.4013,
+          0.3958
+        ],
+        "margin": 0.0,
+        "latency_ms": 6.55
+      }
+    },
+    {
+      "id": "D2-N5",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "latency_ms": 8.11
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.4858,
+          0.4328,
+          0.4174
+        ],
+        "margin": 0.053,
+        "latency_ms": 5.99
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "scores": [
+          0.5182,
+          0.5115,
+          0.495
+        ],
+        "margin": 0.0067,
+        "latency_ms": 7.24
+      }
+    }
+  ]
+}
