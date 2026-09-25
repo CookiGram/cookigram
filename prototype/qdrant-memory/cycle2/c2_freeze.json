@@ -1,0 +1,49 @@
+{
+  "cycle": 2,
+  "phase": "freeze-pre-holdout",
+  "frozen_at": "2026-09-26T00:57:07+02:00",
+  "scope": "DEV ONLY (c2_calibration.json, 14 items). Holdout inexistant a ce stade.",
+  "point": {
+    "tau": 0.55,
+    "delta": 0.01,
+    "primary_arm": "dense_fact+policy (B2)",
+    "secondary_arm": "dense_sec+policy, meme point (A2)",
+    "dev_decision_lenient_fact": 0.786,
+    "rule": "Bras primaire : dense-fact+politique. Grille tau={0.30..0.60 pas 0.05} x delta={0.01,0.02,0.03,0.05}. Choisir le point maximisant la decision_lenient accuracy sur les 14 items dev (bras fact) ; egalite -> tau superieur puis delta superieur (preference abstention : un faux positif memoire trompe l'agent, un faux negatif se replie). Bras sec : meme point (secondaire). Grille complete + marges publiees dans c2_calibration.json."
+  },
+  "policy": "policy.decide(scores, tau, delta) fige ; aucun retuning apres lecture du holdout.",
+  "metrics": "success answer/abstain (cycle 1, comparabilite) + retrieval rank-1/recall@3 + decision stricte/indulgente.",
+  "top_k": 3,
+  "collections": {
+    "sec": "agent_memory_c2",
+    "fact": "agent_memory_fact_c2"
+  },
+  "code_shas": {
+    "c2_dev.json": "56b37957f5977fd4",
+    "c2_calibrate.py": "a75c690bab7e37d1",
+    "c2_measure.py": "2a3640c2bbf75bf1"
+  },
+  "c1_modules_reused_unmodified": [
+    "store.py",
+    "corpus_manifest.py",
+    "chunk_facts.py",
+    "dense_qdrant.py",
+    "policy.py",
+    "retrieval_metrics.py"
+  ],
+  "corpora": {
+    "section_chunks": 209,
+    "section_sha": "dc89e7a7a0a66f9f",
+    "fact_chunks": 881,
+    "fact_sha": "f198b30c9193d78d",
+    "tokens_full": 44456,
+    "index_sec": {
+      "embed_ms": 5532.6,
+      "upsert_ms": 83.5
+    },
+    "index_fact": {
+      "embed_ms": 22697.9,
+      "upsert_ms": 329.0
+    }
+  }
+}

@@ -19,7 +19,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 C1 = HERE.parent  # modules cycle 1 reutilises sans modification
-ROOT = HERE.parent.parent
+ROOT = HERE.parent.parent.parent  # racine worktree (cycle2 est un niveau plus bas)
 sys.path.insert(0, str(C1))
 
 from chunk_facts import build_fact_corpus  # noqa: E402
@@ -63,6 +63,8 @@ def main() -> dict:
     dq_fact = DenseQdrant(collection=COL_FACT)
     idx_fact = index_corpus(dq_fact, fact_corpus)
     time.sleep(1)
+    assert len(sec_corpus) == 209, len(sec_corpus)  # pin environnement a5e7daa
+    assert len(fact_corpus) == 881, len(fact_corpus)
     assert dq_sec.info()["points"] == len(sec_corpus)
     assert dq_fact.info()["points"] == len(fact_corpus)
 
