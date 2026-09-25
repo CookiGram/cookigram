@@ -14,7 +14,7 @@
       "workspace": "/home/pierrecsn/Work/cookigram",
       "branch": "feat/issue-493-fondamentaux",
       "claimed_at": "2026-09-24T20:30:17Z",
-      "last_heartbeat": "2026-09-25T16:25:48Z",
+      "last_heartbeat": "2026-09-25T16:50:36Z",
       "status": "in_progress",
       "lane_assignments": {
         "A1": "COMPLET (7/7) : pizza, brisee, sablee, choux (casserole+robot), crepes, pancakes, gaufres — stand_mixer [standard], sources Thermomix adaptees documentees ; POUSSE (origin/feat == 877d2fe, PR #503 = 79 fichiers dont A1, body PR perime — 36 fiches reelles)",
@@ -34,7 +34,7 @@
         "MAYO-MULTIMETHOD": "DECISION OWNER: pot en 2e variante de sauce-mayonnaise (6927381 reutilise, auteur PierreCsn lui-meme, pas de tiers) ; variants thermomix(default)+mixeur-plongeant valides Core ; fiche separee + prompt + webp orphelin supprimes"
       },
       "protocol": "Muse redige .gram + prompts sur la branche ; par recette figee, brief image -> Codex (codex exec) -> verification Muse -> integration -> gates ; .gram/ingredients.yaml et provenance reconciles par le lead ; aucun merge sans autorisation humaine",
-      "collisions": "PR #498 MERGEE 2026-09-25T11:14Z (plus de collision) ; PR #502 typo #391 zero recouvrement ; aucun claim actif concurrent ; Herdr 16:2xZ : w4W disparu, w4X Muse idle parque (1 turn), w4Z shell idle, zero worker actif, zero token manage — aucun relaunch, aucun nettoyage requis",
+      "collisions": "PR #498 MERGEE et fusionnee dans main (ca63ba1) ; #503 mergee sur main, pollution #502 expulsee (site-config.yaml + test_instance_identity.py restaures a main) ; #502 (3269b6b) intouchee ; aucun claim concurrent",
       "pr": 503,
       "checkpoints": [
         {
@@ -169,6 +169,18 @@
           "validations": "YAML OK (.gram + provenance) ; audit residuel = exactement les 20 missing-image attendus (B1x5, B2x5, A1x3 crepes/gaufres/pancakes, puree, Cx6), zero missing-provenance sur les 16 ; Core recipe_check 36/36 : 16 CONFORME, 20 erreur image-only, zero defaut contenu (Core checkout local divergent — indicatif, gate faisant foi = CI PR)",
           "reliquat": "20 assets jamais livres (prompts prets) ; conformite visuelle style manga a controle humain ; PR #503 body perime (29/A1-exclue) a reactualiser ; commit+push en attente d'autorisation humaine",
           "not_started": "#499, #500 bloques jusqu'a stabilisation/integration #493 (instruction reprise)"
+        },
+        {
+          "id": "reconcile-main-checkpoint-8",
+          "at": "2026-09-25T16:50:36Z",
+          "by": "Muse Code (session bold-nadir)",
+          "base": "merge origin/main ca63ba1 (#498 equipment v2, Core pin 5440a24) sans conflit ; historique preserve (pas de rebase, shas checkpoints 1-7 valides)",
+          "depollution": "site-config.yaml + tests/test_instance_identity.py (byte-identiques a #502, herites du commit de base 3269b6b) restaures a main ; diff #503 borne au scope #493",
+          "scope": "36 gram + 36 prompts + 16 webp + ingredients/provenance + claims + 2 docs derives #493 (conserves, zero collision)",
+          "fixes": "mayo description 165->144 (lint) ; choux conjonction 'avant d\\'' scindee (strict-atomic) ; re-pins honnetes : equipment (TM112, stand_mixer7), lint files 233->269",
+          "stand_mixer": "7/7 declarent [standard], cle canonique equipment-v2 ; Core 5440a24 valide appliances structurellement (pas de whitelist) ; subset-build vert + 4 pages A1 imagees verifiees (titres uniques, steps, webp)",
+          "validations": "yaml OK ; pins pass ; pytest 135/136 (seul echec = image-provenance borne aux 20) ; recipe_check strict-atomic 16/36 CONFORME + 20 image-only ; full corpus 269 : 20 image-only, zero defaut contenu",
+          "reliquat": "20 assets webp + 20 provenances (non generables honnetement sans fichiers) ; verdict propose READY_FOR_IMAGE_LANE"
         }
       ]
     }
