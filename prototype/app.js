@@ -4,6 +4,7 @@
  */
 
 import { getCurrentDinner, moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal } from "./planner-state.js";
+import { DEFAULT_USER_EQUIPMENT, EQUIPMENT_LABELS, PRESSURE_COOKER_MODEL_LABELS, getMissingEquipment, migrateUserEquipment, pressureCapsOf, togglePressureCookerCap, togglePressureCookerFamily } from "./equipment.js";
 
 const STORAGE_KEY = "cookigram:meal-plan:v3";
 
@@ -38,7 +39,7 @@ const RECIPES = {
     timeTotal: "55 min",
     timeActive: "15 min",
     appliance: "Four",
-    requiredEquipment: ["oven"],
+    requiredEquipment: ["four"],
     dishes: "1 poêle allant au four",
     category: "mijoté",
     description: "Lamelles croustillantes et cœur fondant au beurre noisette clarifié.",
@@ -116,7 +117,7 @@ const RECIPES = {
     timeTotal: "45 min (+ pousse)",
     timeActive: "20 min",
     appliance: "Four",
-    requiredEquipment: ["oven"],
+    requiredEquipment: ["four"],
     dishes: "1 moule à gâteau",
     category: "douceur",
     description: "Mie filante incomparable sans beurre, montée à la crème fraîche épaisse.",
@@ -135,7 +136,7 @@ const RECIPES = {
     timeTotal: "45 min (+ pousse)",
     timeActive: "10 min",
     appliance: "Thermomix & Four",
-    requiredEquipment: ["thermomix", "oven"],
+    requiredEquipment: ["thermomix", "four"],
     dishes: "Bol Thermomix, 1 plaque four",
     category: "douceur",
     description: "Pâte pétrie au robot TM, dorée au four à l'huile d'olive et gros sel.",
@@ -358,19 +359,9 @@ const RECIPES = {
   }
 };
 
-// EQUIPMENT DEFINITIONS & HELPERS
-const EQUIPMENT_LABELS = {
-  stovetop: "Plaques & Poêles",
-  oven: "Four",
-  thermomix: "Thermomix",
-  sous_vide: "Sous-vide",
-  pressure_cooker: "Cocotte minute"
-};
-
-function getMissingEquipment(recipe, userEquipment = (state && state.userEquipment)) {
-  if (!recipe || !recipe.requiredEquipment || !userEquipment) return [];
-  return recipe.requiredEquipment.filter(eq => !userEquipment[eq]);
-}
+// Profil matériel et filtrage : contrat equipment v2 (voir equipment.js).
+// getMissingEquipment normalise les alias (oven → four, instant_pot/cookeo →
+// pressure_cooker), applique l'OR blender/mixeur et n'ignore que les ustensiles.
 
 // HELPERS FOR DATES
 const DAY_NAMES_FR = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
@@ -423,13 +414,7 @@ function createDefaultState(startDate = new Date()) {
   return {
     currentStep: 1,
     startShoppingDate: startDate.toISOString(),
-    userEquipment: {
-      stovetop: true,
-      oven: true,
-      thermomix: false,
-      sous_vide: false,
-      pressure_cooker: false
-    },
+    userEquipment: { ...DEFAULT_USER_EQUIPMENT },
     selectedKiffIds: ["porc-au-caramel"],
     selectedKiffSlots: {
       "porc-au-caramel": { dayIndex: 5, period: "dinner" }
@@ -454,15 +439,7 @@ function loadState() {
         state.weekPlan.forEach(day => ["lunch", "dinner"].forEach(period => {
           if (day[period]?.type === "recipe") day[period].portions = normalizePortions(day[period].portions);
         }));
-        if (!state.userEquipment) {
-          state.userEquipment = {
-            stovetop: true,
-            oven: true,
-            thermomix: false,
-            sous_vide: false,
-            pressure_cooker: false
-          };
-        }
+        state.userEquipment = migrateUserEquipment(state.userEquipment);
         return;
       }
     }
@@ -566,9 +543,19 @@ function bindEquipmentChips() {
   if (!container) return;
   const chips = container.querySelectorAll(".equip-chip");
 
+  const pressureActive = () => pressureCapsOf(state.userEquipment).length > 0;
+  const repaintPressureChips = () => {
+    container.querySelectorAll('[data-equip="pressure_cooker"]').forEach(other => {
+      const otherCap = other.dataset.cap || null;
+      other.classList.toggle("active", otherCap ? pressureCapsOf(state.userEquipment).includes(otherCap) : pressureActive());
+    });
+  };
+
   chips.forEach(chip => {
     const equip = chip.dataset.equip;
-    if (state.userEquipment && state.userEquipment[equip]) {
+    const cap = chip.dataset.cap || null;
+    const isPressureFamily = equip === "pressure_cooker" && !cap;
+    if (cap ? pressureCapsOf(state.userEquipment).includes(cap) : (isPressureFamily ? pressureActive() : (state.userEquipment && state.userEquipment[equip]))) {
       chip.classList.add("active");
     } else {
       chip.classList.remove("active");
@@ -579,12 +566,28 @@ function bindEquipmentChips() {
         showToast("🍳 Les plaques et poêles sont la base indispensable de toute cuisine !");
         return;
       }
-      const isNowActive = !state.userEquipment[equip];
-      state.userEquipment[equip] = isNowActive;
-      chip.classList.toggle("active", isNowActive);
+      let isNowActive;
+      if (cap && equip === "pressure_cooker") {
+        const next = togglePressureCookerCap(state.userEquipment.pressure_cooker, cap);
+        state.userEquipment.pressure_cooker = next;
+        isNowActive = next !== false && pressureCapsOf(state.userEquipment).includes(cap);
+      } else if (isPressureFamily) {
+        const next = togglePressureCookerFamily(state.userEquipment.pressure_cooker);
+        state.userEquipment.pressure_cooker = next;
+        isNowActive = next !== false;
+      } else {
+        isNowActive = !state.userEquipment[equip];
+        state.userEquipment[equip] = isNowActive;
+      }
+      // Repaint all pressure chips: family ownership is capability-based.
+      if (equip === "pressure_cooker") {
+        repaintPressureChips();
+      } else {
+        chip.classList.toggle("active", isNowActive);
+      }
       saveState();
 
-      const label = EQUIPMENT_LABELS[equip] || equip;
+      const label = cap ? (PRESSURE_COOKER_MODEL_LABELS[cap] || cap) : (EQUIPMENT_LABELS[equip] || equip);
       if (isNowActive) {
         showToast(`✓ ${label} activé : les recettes correspondantes sont débloquées !`);
       } else {
