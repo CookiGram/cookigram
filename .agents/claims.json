@@ -14,7 +14,7 @@
       "workspace": "/home/pierrecsn/Work/cookigram",
       "branch": "feat/issue-493-fondamentaux",
       "claimed_at": "2026-09-24T20:30:17Z",
-      "last_heartbeat": "2026-09-25T11:31:04Z",
+      "last_heartbeat": "2026-09-25T12:40:00Z",
       "status": "in_progress",
       "lane_assignments": {
         "A1": "COMPLET (7/7) : pizza, brisee, sablee, choux (casserole+robot), crepes, pancakes, gaufres — stand_mixer [standard], sources Thermomix adaptees documentees ; COMMIT LOCAL UNIQUEMENT, PR #503 distante inchangee",
@@ -30,7 +30,8 @@
         "CAPTURE3-Codex-w4W": "mayonnaise r67172 (badges+methode) + hollandaise autonome a trouver (r447496 composee ecartee comme source) ; dispatch w4W ; en attente",
         "IMG-prep": "CANAL PROUVE via Herdr-Codex w4W : bouillon-de-legumes.webp livre 1280x720 WebP 218724 o (RIFF verifie, conversion 1672x941->crop 16:9) ; provider OpenAI, modele non indique ; conformite style a control visuel humain ; integration (manifeste+image_generation) NON faite (recettes intouchees)",
         "MAYO-EXTERNE": "w4V/s8 Codex 'Traiter #491' actif (13h) : mayonnaise-pot mixeur-plongeant + validations ; dispatcher introuvable (board/fichiers/peers) — suspect owner direct ; NE RIEN toucher, arbitrage owner requis",
-        "CI503": "fail = uniquement images/provenance (attendu, documente PR) ; zero defaut contenu ; re-pin mineral-dwarf au merge ; branche a jour avant merge (interdit sans ordre)"
+        "CI503": "fail = uniquement images/provenance (attendu, documente PR) ; zero defaut contenu ; re-pin mineral-dwarf au merge ; branche a jour avant merge (interdit sans ordre)",
+        "MAYO-MULTIMETHOD": "DECISION OWNER: pot en 2e variante de sauce-mayonnaise (6927381 reutilise, auteur PierreCsn lui-meme, pas de tiers) ; variants thermomix(default)+mixeur-plongeant valides Core ; fiche separee + prompt + webp orphelin supprimes"
       },
       "protocol": "Muse redige .gram + prompts sur la branche ; par recette figee, brief image -> Codex (codex exec) -> verification Muse -> integration -> gates ; .gram/ingredients.yaml et provenance reconciles par le lead ; aucun merge sans autorisation humaine",
       "collisions": "PR #498 (docs equipment + test_equipment_model_495, zero recouvrement fichiers) ; PR #502 (site-config + test_instance_identity, zero recouvrement) ; aucun claim actif concurrent",

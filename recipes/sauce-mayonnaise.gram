@@ -6,7 +6,7 @@ portions: 4
 prep_time: 5 min
 total_time: 10 min
 spiciness: 0
-description: "Mayonnaise ferme montée au fouet, jaunes d'œufs et moutarde, versée en mince filet pour une émulsion stable."
+description: "Mayonnaise ferme aux jaunes d'œufs et à la moutarde. Méthode Thermomix au fouet par défaut ; variante au mixeur plongeant montée directement dans un pot de 500 ml."
 nutrition_profile: pleasure
 tags: [mayonnaise, sauce, thermomix, base, froid]
 source: https://cookidoo.fr/recipes/recipe/fr-FR/r67172
@@ -37,11 +37,46 @@ flavors:
   pairing: [œufs durs, crudités, poisson froid, salades]
   notes: [ferme, onctueux, relevé]
   harmony: "La moutarde et le vinaigre tendent la richesse des jaunes pour une émulsion ferme et relevée."
-  tips: "Base autonome distincte de la mayonnaise aux herbes : ici nature, à assaisonner selon l'usage. La source propose le jus de citron en alternative au vinaigre."
+  tips: "Base autonome distincte de la mayonnaise aux herbes : ici nature, à assaisonner selon l'usage. La source propose le jus de citron en alternative au vinaigre. Variante sans Thermomix : montée au mixeur plongeant directement dans un pot droit de 500 ml (rendement d'environ 400 ml) ; œuf cru : conserver à 4 °C maximum, consommer sous 24 heures, déconseillé aux femmes enceintes."
 conservation:
   fridge_days: 2
   freezable: false
   reheat: "À servir froide ; ne pas réchauffer."
+variants:
+- id: thermomix
+  name: Thermomix (Fouet, filet d'huile)
+  default: true
+  description: "Méthode de référence Cookidoo r67172 : émulsion au fouet, huile versée en mince filet sur le couvercle."
+- id: mixeur-plongeant
+  name: Mixeur plongeant — pot 500 ml
+  description: "Seconde méthode sans Thermomix, adaptée de Christine Gallary (TheKitchn, contenu repris du commit 6927381) : montée directement dans un pot droit de 500 ml, rendement d'environ 400 ml soit quatre cinquièmes du pot. Préparation à l'œuf cru : réfrigérer immédiatement à 4 °C maximum et consommer sous 24 heures."
+  prep_time: 5 min
+  total_time: 5 min
+  appliances: {}
+  equipment:
+    remove: [fouet]
+    add: ["Pot droit de 500 ml, assez étroit pour que sa paroi reste juste au-delà de la tête du mixeur"]
+  steps:
+    replace:
+      emulsion: |
+        [mettre-pot | Mettre les ingrédients dans le pot]
+        - Poser le pot de 500 ml sur une balance et tarer.
+        - Verser directement dans le pot l'@œuf{67 g, entier pasteurisé ; équivalent redimensionné de 1⅓ gros œuf américain}.
+        - Ajouter le @jus de citron{13 ml} et la @moutarde de Dijon{7 ml}.
+        - Ajouter le @sel{⅔ c. à café}.
+        - Verser l'@huile végétale{320 ml, neutre} sur les ingrédients sans remuer.
+      repos: |
+        [monter-emulsion | Monter l'émulsion]
+        - Introduire la tête du #mixeur plongeant{} verticalement jusqu'au fond du pot.
+        - Démarrer le mixeur à sa vitesse la plus basse et le maintenir immobile jusqu'à ce qu'une mayonnaise opaque se forme au fond.
+        - Remonter lentement le mixeur en l'inclinant pour incorporer l'huile restante ; arrêter dès que l'émulsion est épaisse et qu'aucune huile libre ne reste visible.
+    after:
+      repos:
+      - |
+        [fermer-conserver | Fermer et conserver]
+        - Fermer le pot.
+        - Placer immédiatement le pot au réfrigérateur à 4 °C maximum.
+        - Consommer la préparation d'œuf cru dans les 24 heures.
 image: images/sauce-mayonnaise.webp
 image_credit:
   author: CookiGram
@@ -50,13 +85,13 @@ image_credit:
 image_generation:
   prompt_file: image-prompts/sauce-mayonnaise.md
 ---
-[Émulsion]
+[emulsion | Émulsion]
 - Poser un récipient à bec verseur sur le couvercle du bol.
 - Peser l'@huile de tournesol{200 g} dedans et réserver.
 - Insérer le #fouet{} dans le bol.
 - Mettre les @jaunes d'œufs{2}, la @moutarde de Dijon{1 à 2 c. à café, selon le goût}, le @vinaigre de vin{1 c. à soupe, rouge}, le @sel{1 pincée} et le @poivre{1 pincée moulue} dans le bol.
 - Fouetter ~{2 min} à vitesse 4 en versant lentement l'huile sur le couvercle : elle coule en mince filet sur le fouet en marche et la mayonnaise est ferme.
 
-[Repos]
+[repos | Repos]
 - Retirer le fouet.
 - Réfrigérer jusqu'au moment de servir.
