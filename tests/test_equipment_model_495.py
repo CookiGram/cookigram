@@ -80,8 +80,10 @@ UTENSILS_OUT = frozenset({
 })
 
 # Expected origin/main corpus inventory (Lane A audit, re-verified here).
+# thermomix re-pinned 63 -> 87 after the #492 wave (24 new TM31 hits,
+# verified one by one against the merged corpus; all other counts unchanged).
 EXPECTED_KEY_COUNTS = {
-    "thermomix": 63,
+    "thermomix": 87,
     "four": 21,
     "pizza_oven": 20,
     "instant_pot": 7,
