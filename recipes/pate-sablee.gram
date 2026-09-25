@@ -1,0 +1,60 @@
+---
+title: Pâte sablée au robot pâtissier
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 12
+prep_time: 25 min
+total_time: 1 h 25 min
+spiciness: 0
+description: "Pâte sablée fondante au beurre demi-sel, sucrée juste, reposée au frais pour des découpes bien nettes."
+nutrition_profile: pleasure
+tags: [pâte sablée, robot pâtissier, base, biscuits, tarte]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r144542
+author: Cookidoo
+appliances:
+  stand_mixer:
+  - standard
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Robot pâtissier
+- Feuille
+scaling:
+  enabled: true
+  min_portions: 6
+  max_portions: 24
+  step: 6
+  note: Le repos au frais d'une heure reste incompressible ; fariner le plan en grande quantité.
+flavors:
+  pairing: [tarte aux fruits, sablés, confiture, chocolat]
+  notes: [fondant, sucré, beurré]
+  harmony: "Le beurre demi-sel relève la douceur sucrée pour un sablé fondant au goût franc."
+  tips: "Exécution robot pâtissier adaptée d'une référence Thermomix : sablage puis liaison à la feuille."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Laisser revenir à température avant usage ; ne pas réchauffer."
+image: images/pate-sablee.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/pate-sablee.md
+---
+[Sablage]
+- Mettre la @farine de blé{250 g}, le @beurre demi-sel{140 g, en morceaux} et le @sucre en poudre{100 g} dans la cuve du #robot pâtissier{}.
+- Sabler à la #feuille{} jusqu'à obtenir une texture de sable fin.
+- Ajouter l'@œuf{1}.
+- Mélanger jusqu'à agglomération : la pâte forme une boule homogène.
+
+[Repos]
+- Aplatir légèrement la pâte et la filmer.
+- Laisser reposer au frais ~{1 h} : la pâte est ferme et se découpe nettement.

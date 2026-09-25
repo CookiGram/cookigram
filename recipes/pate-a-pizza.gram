@@ -1,0 +1,66 @@
+---
+title: Pâte à pizza au robot pâtissier
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 4
+prep_time: 5 min
+total_time: 1 h 10 min
+spiciness: 0
+description: "Pâte à pizza souple au robot pâtissier, levure fraîche et huile d'olive, levée une heure pour une mie alvéolée."
+nutrition_profile: balanced
+tags: [pâte à pizza, robot pâtissier, base, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r357283
+author: Cookidoo
+appliances:
+  stand_mixer:
+  - standard
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Robot pâtissier
+- Crochet pétrisseur
+- Saladier
+- Torchons propres
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Garder les proportions eau-farine-levure ; pétrir en une seule fournée adaptée à la cuve.
+flavors:
+  pairing: [tomate, mozzarella, basilic, huile d'olive]
+  notes: [souple, alvéolé, méditerranéen]
+  harmony: "L'huile d'olive et la pousse lente donnent une pâte souple à la mie alvéolée."
+  tips: "Exécution robot pâtissier adaptée d'une référence Thermomix : pétrissage au crochet jusqu'à décollement, durées calées sur le total source."
+conservation:
+  fridge_days: 2
+  freezable: true
+  reheat: "Laisser revenir à température avant façonnage ; ne pas réchauffer."
+image: images/pate-a-pizza.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/pate-a-pizza.md
+---
+[Délayage]
+- Verser l'@eau{220 g, à température ambiante} dans la cuve du #robot pâtissier{}.
+- Ajouter le @sucre{1 c. à café en poudre, optionnel} et la @levure boulangère{20 g fraîche, émiettée}.
+- Mélanger pour dissoudre la levure.
+
+[Pétrissage]
+- Ajouter la @farine de blé{400 g}, l'@huile d'olive{30 g, extra vierge} et le @sel{1 c. à café}.
+- Pétrir au #crochet pétrisseur{} jusqu'à obtenir une pâte lisse et élastique qui se décolle des parois.
+
+[Pousse]
+- Huiler légèrement un #saladier{} et y déposer la pâte.
+- Couvrir d'un torchon et laisser lever ~{1 h} : la pâte a doublé de volume.
+- Façonner en une grande pizza rectangulaire ou 4 pizzas rondes selon l'usage.

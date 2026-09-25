@@ -1,0 +1,63 @@
+---
+title: Pâte à choux au robot pâtissier
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 20 min
+total_time: 2 h
+spiciness: 0
+description: "Pâte à choux à la panade desséchée en casserole, œufs incorporés à la feuille pour un ruban lisse et tenu."
+nutrition_profile: pleasure
+tags: [pâte à choux, robot pâtissier, base, four]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r828290
+author: Cookidoo
+appliances:
+  stand_mixer:
+  - standard
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Robot pâtissier
+- Feuille
+- Casserole
+- Poche à douille
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Incorporer les œufs un à un quelle que soit la quantité ; la pâte doit former le ruban.
+flavors:
+  pairing: [éclairs, profiteroles, gougères, crème pâtissière]
+  notes: [soufflé, doré, neutre]
+  harmony: "La panade bien desséchée donne des choux qui soufflent sans retomber."
+  tips: "Exécution mixte adaptée d'une référence Thermomix : panade en casserole, incorporation des œufs à la feuille."
+conservation:
+  fridge_days: 1
+  freezable: true
+  reheat: "À pocher et cuire de préférence aussitôt ; ne pas réchauffer la pâte crue."
+image: images/pate-a-choux.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/pate-a-choux.md
+---
+[Panade]
+- Porter à ébullition l'@eau{220 g}, le @beurre{120 g, en morceaux}, le @sel{1 pincée} et le @sucre{15 g, optionnel} en #casserole{}.
+- Ajouter la @farine de blé{170 g} hors du feu.
+- Dessécher sur feu moyen en remuant : la pâte forme une boule qui se détache et un voile blanc nappe le fond.
+- Transvaser dans la cuve du #robot pâtissier{}.
+- Laisser tiédir ~{10 min}.
+
+[Incorporation]
+- Incorporer les @œufs{4} un à un à la #feuille{} : chaque œuf est absorbé en mélangeant.
+- Lisser jusqu'au ruban : la pâte retombe en nappe souple et brillante.
+- Pocher aussitôt selon l'usage.

@@ -1,0 +1,62 @@
+---
+title: Chutney aux cacahuètes et tomate
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 4
+prep_time: 10 min
+total_time: 10 min
+spiciness: 2
+description: "Chutney rustique aux cacahuètes grillées, tomate fraîche et coriandre, mixé épais pour tartiner ou tremper."
+nutrition_profile: pleasure
+tags: [chutney, cacahuète, tomate, thermomix, inde, condiment, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r132143
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Mixer en une seule fournée pour garder une texture épaisse et homogène.
+flavors:
+  pairing: [cacahuète, tomate, coriandre, tamarin]
+  notes: [rustique, grillé, acidulé]
+  harmony: "Le grillé des cacahuètes et la fraîcheur de la tomate encadrent l'acidité douce du tamarin."
+  tips: "Les cacahuètes grillées non salées peuvent être remplacées par des crues, goût plus doux."
+conservation:
+  fridge_days: 5
+  freezable: false
+  reheat: "À servir frais ou à température ; ne pas réchauffer."
+image: images/chutney-cacahuetes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/chutney-cacahuetes.md
+---
+[Mise en place]
+- Épépiner et couper les @tomates{200 g fraîches, en quartiers}.
+- Parer et couper le @piment vert{1 long frais, environ 15 g, en deux}.
+- Effeuiller la @coriandre fraîche{20 brins, environ 20 g de feuilles seules}.
+
+[Mixage]
+- Mettre dans le bol les tomates, les @cacahuètes{90 g grillées non salées}, la coriandre, le piment, la @pâte de tamarin{10 g}, la @pâte d'ail{0,25 c. à café}, le @sel{1 c. à café marin}, le @sucre roux{1 c. à café, facultatif} et la @noix de coco{30 g râpée}.
+- Mixer ~{10 s} à vitesse 10 : le chutney est épais et homogène.
+- Transférer dans un bol et servir.

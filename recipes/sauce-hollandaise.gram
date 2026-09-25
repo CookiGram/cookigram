@@ -1,0 +1,67 @@
+---
+title: Sauce hollandaise
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 4
+prep_time: 15 min
+total_time: 25 min
+spiciness: 0
+description: "Sauce hollandaise soyeuse au beurre fondu versé en filet, citronnée juste, pour asperges et poissons pochés."
+nutrition_profile: pleasure
+tags: [hollandaise, sauce, thermomix, base]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r54152
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Fouet
+- Saucière
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Verser toujours le beurre en mince filet, surtout en grande quantité où l'émulsion est plus fragile.
+flavors:
+  pairing: [asperges, saumon poché, œufs Bénédicte, sole]
+  notes: [soyeux, beurré, citronné]
+  harmony: "Le citron tend la richesse du beurre pour une hollandaise soyeuse qui nappe sans lourdeur."
+  tips: "Source autonome substituée au composant de plat r447496, dont le jus de cuisson indisponible seul aurait exigé d'inventer. TM31 déclaré par adaptation documentée : 70 °C, fouet et vitesses standard."
+conservation:
+  fridge_days: 1
+  freezable: false
+  reheat: "Ne pas réchauffer : servir sans tarder."
+image: images/sauce-hollandaise.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/sauce-hollandaise.md
+---
+[Fonte]
+- Faire fondre le @beurre doux{250 g, en morceaux} dans le bol ~{4 min} à ^{70 C} et vitesse 2.
+- Transvaser dans un récipient et réserver.
+
+[Base]
+- Insérer le #fouet{} dans le bol.
+- Mettre l'@eau{50 g}, le @jus de citron{1 c. à soupe}, les @jaunes d'œufs{3}, le @sel{0,5 c. à café} et le @poivre{1 pincée moulue} dans le bol.
+- Chauffer ~{2 min} à ^{70 C} et vitesse 4.
+
+[Émulsion]
+- Émulsionner ~{4 min} à ^{70 C} et vitesse 4 en versant lentement le beurre fondu sur le couvercle : il coule en mince filet sur le fouet en marche et la sauce est soyeuse.
+- Retirer le fouet.
+- Transvaser en saucière et servir sans tarder.

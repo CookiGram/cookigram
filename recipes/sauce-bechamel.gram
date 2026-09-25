@@ -1,0 +1,64 @@
+---
+title: Sauce béchamel
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 3 min
+total_time: 15 min
+spiciness: 0
+description: "Sauce béchamel lisse et nappante au beurre fondant, liée à la farine et parfumée à la muscade fraîche."
+nutrition_profile: pleasure
+tags: [béchamel, sauce, thermomix, base, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r4398
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Garder les proportions beurre-farine-lait ; ne pas dépasser la jauge du bol.
+flavors:
+  pairing: [muscade, poivre, lait, gratin]
+  notes: [lisse, lacté, nappant]
+  harmony: "La muscade fraîche relève la douceur lactée sans troubler le lisse de la liaison."
+  tips: "Servir immédiatement : la béchamel fige en refroidissant."
+conservation:
+  fridge_days: 2
+  freezable: false
+  reheat: "Réchauffer doucement en fouettant avec un trait de lait pour retrouver le lisse."
+image: images/sauce-bechamel.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/sauce-bechamel.md
+---
+[Fondation]
+- Faire fondre le @beurre{40 g} dans le bol ~{3 min} à ^{100 C} et vitesse 1.
+
+[Liaison]
+- Ajouter la @farine de blé{40 g}.
+- Faire revenir ~{3 min} à ^{100 C} et vitesse 1 : le roux est blond et mousseux.
+
+[Cuisson]
+- Ajouter le @lait{500 g}, le @sel{0,5 c. à café}, le @poivre{2 pincées} et la @noix de muscade{2 pincées}.
+- Cuire ~{6 min} à ^{90 C} et vitesse 4 : la sauce est lisse et nappe la cuillère.
+- Servir immédiatement.

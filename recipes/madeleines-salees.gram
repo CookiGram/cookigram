@@ -1,0 +1,79 @@
+---
+title: Madeleines salées chorizo et légumes
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 15 min
+total_time: 45 min
+spiciness: 1
+description: "Madeleines moelleuses au parmesan et aux amandes, garnies de chorizo et de légumes vapeur pour l'apéritif."
+nutrition_profile: pleasure
+tags: [madeleines, apéritif, thermomix, chorizo, four]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r623419
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Varoma
+- Panier cuisson
+- Four
+- Plaque à madeleines
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Compter 18 pièces pour 6 portions ; remplir les empreintes aux trois quarts.
+flavors:
+  pairing: [chorizo, parmesan, courgette, poivron]
+  notes: [moelleux, doré, fumé]
+  harmony: "Le chorizo fumé et les légumes vapeur allègent la pâte riche au parmesan."
+  tips: "TM31 déclaré par adaptation documentée : vapeur Varoma et vitesses standard, aucun mode exclusif."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Réchauffer 4 min au four à 180 °C pour retrouver le moelleux."
+image: images/madeleines-salees.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/madeleines-salees.md
+---
+[Garniture]
+- Peser le @chorizo{50 g, en cubes de 1 cm} dans un récipient posé sur le couvercle du bol.
+- Réserver le chorizo.
+- Mettre l'@eau{500 g} dans le bol.
+- Insérer le #panier cuisson{} avec la @courgette{50 g, en cubes de 1 cm} et le @poivron rouge{50 g, en cubes de 1 cm}.
+- Cuire à la vapeur ~{12 min} à ^{Varoma} et vitesse 1 : les légumes sont tendres.
+- Retirer le panier.
+- Verser les légumes avec le chorizo réservé.
+- Vider le bol.
+
+[Pâte]
+- Hacher le @parmesan{80 g, en morceaux} et les @amandes{80 g, décortiquées} ~{10 s} à vitesse 10.
+- Racler les parois.
+- Ajouter les @œufs{3}, la @farine de blé{80 g}, la @levure chimique{2 c. à café}, l'@huile d'olive{30 g} et le @sel{1 pincée}.
+- Mixer ~{30 s} à vitesse 4 : la pâte est homogène.
+
+[Cuisson]
+- Préchauffer le #four{} à ^{200 C}.
+- Beurrer une plaque à madeleines.
+- Remplir les empreintes aux trois quarts.
+- Garnir chacune d'1 c. à café du mélange réservé.
+- Cuire ~{10 min} à ^{200 C} : les bords sont dorés.
+- Démouler et laisser refroidir sur une grille.

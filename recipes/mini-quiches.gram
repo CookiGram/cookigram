@@ -1,0 +1,80 @@
+---
+title: Mini quiches bacon et thon
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 8
+prep_time: 10 min
+total_time: 1 h
+spiciness: 0
+description: "Mini quiches dorées en deux garnitures gourmandes, bacon-poireau et thon-olives, sur fond brisé au beurre."
+nutrition_profile: pleasure
+tags: [quiche, apéritif, thermomix, four]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r62794
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Four
+- Moules à mini quiches
+- Petite poêle
+scaling:
+  enabled: true
+  min_portions: 4
+  max_portions: 12
+  step: 4
+  note: Compter 24 mini quiches pour 8 portions ; garnir les moules juste avant le four.
+flavors:
+  pairing: [bacon, thon, crème, salade verte]
+  notes: [doré, fondant, salé]
+  harmony: "Les deux garnitures partagent le même fond brisé beurré pour un plateau apéritif varié."
+  tips: "Les revenus source à 120 °C sont adaptés à la poêle, incompatible TM31 ; durées équivalentes."
+conservation:
+  fridge_days: 2
+  freezable: true
+  reheat: "Réchauffer 8 min au four à 180 °C pour retrouver le fondant."
+image: images/mini-quiches.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/mini-quiches.md
+---
+[Pâte]
+- Préchauffer le #four{} à ^{180 C}.
+- Mettre la @farine de blé{400 g}, le @beurre{170 g}, l'@eau{80 g}, le @sel{1 c. à café} et le @sucre en poudre{1 c. à café} dans le bol.
+- Mélanger ~{15 s} à vitesse 6 : la pâte est homogène.
+- Foncer les #moules à mini quiches{} et réserver au frais.
+
+[Garniture bacon]
+- Hacher la moitié de l'@oignon{200 g au total} avec la moitié de l'@huile d'olive{60 g au total} ~{5 s} à vitesse 5.
+- Ajouter le @poireau{100 g, en rondelles}, les @champignons{100 g frais, en quartiers} et le @bacon{100 g, en dés} dans une petite #poêle{}.
+- Faire revenir ~{7 min} à feu moyen : le tout est tendre et légèrement doré.
+- Répartir dans la moitié des moules.
+
+[Garniture thon]
+- Hacher le reste d'oignon avec le reste d'huile et le @persil{5 brins} ~{5 s} à vitesse 5.
+- Faire revenir ~{5 min} à feu moyen dans la poêle.
+- Ajouter les @olives vertes{100 g, dénoyautées en rondelles} et le @thon{160 g, en conserve et égoutté}.
+- Cuire ~{3 min} à feu doux : le mélange est chaud et lié.
+- Répartir dans les autres moules.
+
+[Appareil]
+- Battre les @œufs{4} avec le @sel{1 pincée}, le @poivre{1 pincée} et la @crème{200 g} ~{3 s} à vitesse 4.
+- Répartir dans les moules.
+- Cuire ~{20 min} à ^{180 C} jusqu'à coloration dorée.
+- Servir chaud ou froid.

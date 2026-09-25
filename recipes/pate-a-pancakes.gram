@@ -1,0 +1,71 @@
+---
+title: Pâte à pancakes au robot pâtissier
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 12
+prep_time: 15 min
+total_time: 1 h 20 min
+spiciness: 0
+description: "Pâte à pancakes épaisse à la levure chimique, reposée puis cuite en petits tas dorés au sirop d'érable."
+nutrition_profile: pleasure
+tags: [pâte à pancakes, robot pâtissier, base, poêle]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r348143
+author: Cookidoo
+appliances:
+  stand_mixer:
+  - standard
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Robot pâtissier
+- Fouet
+- Casserole
+- Poêle
+scaling:
+  enabled: true
+  min_portions: 6
+  max_portions: 24
+  step: 6
+  note: Le repos reste incompressible ; compter 12 pancakes pour 12 portions.
+flavors:
+  pairing: [sirop d'érable, fruits frais, yaourt, beurre]
+  notes: [épais, moelleux, doré]
+  harmony: "La levure chimique et le repos donnent des pancakes épais et moelleux qui absorbent le sirop."
+  tips: "Exécution robot pâtissier adaptée d'une référence Thermomix : beurre fondu en casserole, liaison au fouet."
+conservation:
+  fridge_days: 2
+  freezable: true
+  reheat: "Réchauffer au grille-pain ou à la poêle sèche."
+image: images/pate-a-pancakes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/pate-a-pancakes.md
+---
+[Liaison]
+- Faire fondre le @beurre{75 g} en #casserole{} à feu doux.
+- Mettre le @lait{300 g}, le @sucre en poudre{30 g} et les @œufs{2} dans la cuve du #robot pâtissier{}.
+- Ajouter le beurre fondu.
+- Fouetter ~{50 s} au #fouet{} : le mélange est homogène.
+- Ajouter la @farine de blé{250 g}, la @levure chimique{1 c. à café} et le @sel{1 pincée}.
+- Fouetter ~{30 s} : la pâte est lisse et épaisse.
+- Racler les parois.
+- Fouetter encore ~{30 s}.
+
+[Repos]
+- Laisser reposer ~{30 min} : des bulles parsèment la surface.
+
+[Cuisson]
+- Chauffer une #poêle{} légèrement beurrée sur feu moyen.
+- Verser des petits tas de pâte.
+- Cuire jusqu'à ce que des bulles éclatent en surface.
+- Retourner et cuire l'autre face : le pancake est doré et gonflé.
+- Servir chaud avec du @sirop d'érable{au service}.

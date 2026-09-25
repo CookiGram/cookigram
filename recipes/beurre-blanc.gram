@@ -1,0 +1,67 @@
+---
+title: Beurre blanc
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 5 min
+total_time: 20 min
+spiciness: 0
+description: "Beurre blanc soyeux à la réduction d'échalotes, monté au beurre demi-sel froid pour napper les poissons."
+nutrition_profile: pleasure
+tags: [beurre blanc, sauce, thermomix, poisson]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r102695
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Spatule
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Garder le beurre bien froid jusqu'au montage ; la réduction ne se divise pas en petite quantité.
+flavors:
+  pairing: [échalote, vin blanc, poisson, citron]
+  notes: [soyeux, acidulé, beurré]
+  harmony: "La réduction vinaigrée concentre l'échalote et tend la richesse du beurre demi-sel."
+  tips: "Servir immédiatement : le beurre blanc ne supporte ni l'attente ni le réchauffage brutal."
+conservation:
+  fridge_days: 1
+  freezable: false
+  reheat: "Ne pas réchauffer : servir aussitôt monté."
+image: images/beurre-blanc.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/beurre-blanc.md
+---
+[Hachage]
+- Hacher les @échalotes{60 g, coupées en deux} ~{5 s} à vitesse 5.
+- Racler les parois à la #spatule{}.
+
+[Réduction]
+- Ajouter le @vinaigre de vin blanc{25 g} et le @vin blanc sec{60 g, à température ambiante}.
+- Chauffer ~{330 s} à ^{100 C} et vitesse 2 : le liquide a nettement diminué.
+
+[Montage]
+- Ajouter le @beurre demi-sel{250 g, froid en dés}.
+- Chauffer ~{5 min} à ^{60 C} et vitesse 2.
+- Mixer ~{20 s} à vitesse 4 : la sauce est soyeuse et homogène.
+- Servir immédiatement avec du poisson.

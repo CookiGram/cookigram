@@ -1,0 +1,73 @@
+---
+title: Fond brun de viande à la cocotte
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 4
+prep_time: 10 min
+total_time: 2 h 40 min
+spiciness: 0
+description: "Fond ambré aux os colorés et à la garniture rôtie, réduit doucement en cocotte jusqu'à napper la cuillère."
+nutrition_profile: vitality
+tags: [fond, viande, cocotte, faitout, base, jus]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r538468
+author: Cookidoo
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Grande cocotte en fonte ou faitout
+- Écumoire
+- Chinois ou passoire fine
+- Couteau de chef
+- Planche à découper
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 2
+  note: Garder les os immergés ; ajuster l'eau sans dépasser les trois quarts de la cocotte.
+flavors:
+  pairing: [carotte, oignon, thym, laurier]
+  notes: [ambré, profond, nappant]
+  harmony: "La coloration des os et de la garniture donne un fond ambré au goût profond de viande rôtie."
+  tips: "Fiche adaptée en cocotte depuis une référence Thermomix : coloration saisie puis long mijotage, durées calées sur le total source."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Porter à frémissement ; réduire à découvert si le fond manque de corps."
+image: images/fond-brun-de-viande.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/fond-brun-de-viande.md
+---
+[Mise en place]
+- Tailler les @carottes{200 g, en morceaux}, l'@oignon{80 g, en moitié} et le @céleri-rave{1 demi-branche, en morceaux}.
+
+[Coloration]
+- Saisir les @os{300 à 500 g, agneau, poulet ou veau} dans une grande #cocotte en fonte{} sur feu vif.
+- Retourner les morceaux jusqu'à belle coloration ambrée sur toutes les faces.
+- Ajouter la garniture, le @thym{1 branche fraîche} et le @laurier{1 feuille}.
+- Faire suer ~{15 min} en remuant : la garniture est légèrement colorée.
+
+[Mouillement]
+- Verser l'@eau{1800 g} froide pour décoller tous les sucs.
+- Porter à franche ébullition.
+- Écumer soigneusement à l'#écumoire{} : le liquide doit rester limpide.
+
+[Mijotage]
+- Baisser au frémissement et couvrir.
+- Laisser mijoter ~{2 h 15} : le liquide est ambré et nappe la cuillère.
+
+[Filtration]
+- Passer au #chinois{} sans fouler : le fond est limpide.
+- Saler légèrement si besoin.
+- Réserver au frais ou congeler en portions.

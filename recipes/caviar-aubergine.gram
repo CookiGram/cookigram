@@ -1,0 +1,82 @@
+---
+title: Caviar d'aubergine moutabel
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 4
+prep_time: 10 min
+total_time: 55 min
+spiciness: 0
+description: "Caviar fondant à l'aubergine rôtie et au tahini maison, citronné et servi froid avec crudités croquantes."
+nutrition_profile: vitality
+tags: [aubergine, apéritif, thermomix, tahini, froid, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r106874
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Four
+- Plaque de four
+- Papier cuisson
+- Petite poêle
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Le temps de rôti dépend de la taille de l'aubergine, pas des portions.
+flavors:
+  pairing: [aubergine, sésame, citron, menthe]
+  notes: [fondant, fumé, citronné]
+  harmony: "Le tahini maison et le rôti au four donnent un caviar fondant au goût fumé adouci par le citron."
+  tips: "L'étape source à 120 °C est adaptée à la poêle, incompatible TM31 ; durées équivalentes."
+conservation:
+  fridge_days: 3
+  freezable: false
+  reheat: "À servir froid ; ne pas réchauffer."
+image: images/caviar-aubergine.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/caviar-aubergine.md
+---
+[Tahini]
+- Torréfier les @graines de sésame blanc{300 g} à sec dans une petite #poêle{} ~{5 min} en remuant : elles sont dorées et odorantes.
+- Mettre le sésame torréfié et l'@huile de sésame{50 g} dans le bol.
+- Mixer ~{30 s} à vitesse 7.
+- Racler les parois.
+- Mixer de nouveau ~{30 s} à vitesse 10.
+- Racler les parois.
+- Mélanger ~{8 min} à vitesse 2,5 : le tahini est lisse et brillant.
+- Transvaser et réserver le tahini.
+
+[Rôti]
+- Préchauffer le #four{} à ^{130 C} et préparer une plaque couverte de papier cuisson.
+- Piquer l'@aubergine{500 g, 1 belle} plusieurs fois avec une fourchette.
+- Cuire ~{30 min} à ^{130 C} en la retournant à mi-cuisson : la chair est tendre.
+- Laisser refroidir un peu.
+- Retirer la peau et réserver la chair.
+
+[Caviar]
+- Hacher la @menthe fraîche{5 feuilles} et le @persil frais{1 bouquet, équeuté} ~{5 s} à vitesse 7.
+- Racler les parois.
+- Mixer encore ~{5 s} à vitesse 5.
+- Ajouter la chair d'aubergine, le @yaourt nature{2 c. à soupe}, l'@huile d'olive{3 c. à soupe}, le @jus de citron{1 demi-citron jaune}, 2 c. à soupe du tahini réservé, l'@ail{1 gousse} et le @sel{2 pincées, à ajuster}.
+- Mixer ~{30 s} à vitesse 5 : le caviar est fondant et homogène.
+- Transvaser et garder au frais.
+- Servir froid avec la @tomate{40 g, en dés} et le @poivron vert{80 g, en dés}.

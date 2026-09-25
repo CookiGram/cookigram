@@ -1205,6 +1205,90 @@ ingredients:
     status: incomplete
     source: Épice indiquée par dose dans la source ; aucune donnée physique ou nutritionnelle
       ajoutée.
+  carcasse-de-poulet:
+    status: incomplete
+    source: Carcasse d'un petit poulet cuit indiquée par la source Cookidoo (r474300) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  os:
+    status: incomplete
+    source: Os d'agneau, de poulet ou de veau indiqués par la source Cookidoo (r538468) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  dattes:
+    status: incomplete
+    source: Dattes dénoyautées indiquées par la source Cookidoo (r140381) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  piment-cachemire:
+    status: incomplete
+    source: Piment du Cachemire en poudre indiqué par les sources Cookidoo (r140381, r132139) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  chaat-masala:
+    status: incomplete
+    source: Mélange d'épices indiqué par la source Cookidoo (r140381) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  noix-de-coco:
+    status: incomplete
+    source: Chair de noix de coco fraîche et coco râpée indiquées par les sources Cookidoo
+      (r132144, r132143) ; aucune donnée physique ou nutritionnelle ajoutée.
+  farine-de-pois-chiches:
+    status: incomplete
+    source: Besan indiqué par la source Cookidoo (r132144) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  cacahuetes:
+    status: incomplete
+    source: Cacahuètes crues ou grillées non salées indiquées par les sources Cookidoo
+      (r132144, r132143) ; aucune donnée physique ou nutritionnelle ajoutée.
+  pate-d-ail:
+    status: incomplete
+    source: Pâte d'ail indiquée par les sources Cookidoo (r132144, r132143) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  moutarde-noire:
+    status: incomplete
+    source: Graines de moutarde noire indiquées par la source Cookidoo (r132144) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  feuilles-de-curry:
+    status: incomplete
+    source: Feuilles de curry fraîches indiquées par la source Cookidoo (r132144) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  sucre-vanille:
+    status: incomplete
+    source: Sucre vanillé indiqué par la source Cookidoo (r795874) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  bacon:
+    status: incomplete
+    source: Bacon en dés indiqué par la source Cookidoo (r62794) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  champignons:
+    status: incomplete
+    source: Champignons de Paris frais indiqués par les sources Cookidoo (r62794, r27554) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  creme:
+    status: incomplete
+    source: Crème indiquée par la source Cookidoo (r62794) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  amandes:
+    status: incomplete
+    source: Amandes émondées ou décortiquées indiquées par les sources Cookidoo
+      (r27554, r623419) ; aucune donnée physique ou nutritionnelle ajoutée.
+  fenugrec:
+    status: incomplete
+    source: Feuilles de fenugrec séchées indiquées par la source Cookidoo (r110091) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  huile-de-friture:
+    status: incomplete
+    source: Huile de friture en quantité suffisante indiquée par la source Cookidoo
+      (r110091) ; aucune donnée physique ou nutritionnelle ajoutée.
+  sucre-en-grains:
+    status: incomplete
+    source: Sucre en grains indiqué par la source Cookidoo (r20400) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  huile-d-arachide:
+    status: incomplete
+    source: Huile d'arachide pour la cuisson indiquée par la source Cookidoo (r20400) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  sirop-d-erable:
+    status: incomplete
+    source: Sirop d'érable pour servir indiqué par la source Cookidoo (r348143) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES

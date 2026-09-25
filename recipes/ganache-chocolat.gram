@@ -1,0 +1,66 @@
+---
+title: Ganache au chocolat noir
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 5 min
+total_time: 20 min
+spiciness: 0
+description: "Ganache brillante au chocolat noir fondu à la crème chaude, à laisser tiédir pour une tenue parfaite."
+nutrition_profile: pleasure
+tags: [ganache, chocolat, thermomix, base, dessert]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r817179
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Spatule
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Garder le ratio chocolat-crème ; la fonte à 50 °C ne change pas avec les portions.
+flavors:
+  pairing: [chocolat noir, crème, framboise, café]
+  notes: [brillant, intense, fondant]
+  harmony: "La fonte douce à 50 °C préserve l'éclat du chocolat sans le ternir."
+  tips: "TM31 déclaré par adaptation documentée : fonte 50 °C et vitesses standard, aucun mode exclusif."
+conservation:
+  fridge_days: 5
+  freezable: false
+  reheat: "Réchauffer très doucement si besoin ; à glacer de préférence tiède."
+image: images/ganache-chocolat.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/ganache-chocolat.md
+---
+[Râpage]
+- Détailler le @chocolat noir{150 g, en morceaux} dans le bol.
+- Râper ~{15 s} à vitesse 8.
+- Racler les parois à la #spatule{}.
+
+[Fonte]
+- Ajouter la @crème liquide{120 g, 30 à 40 % de matière grasse}.
+- Faire fondre ~{2 min} à ^{50 C} et vitesse 3 : la ganache est brillante et homogène.
+- Laisser tiédir et épaissir avant utilisation.
+
+[Finition optionnelle]
+- Une fois complètement refroidie, insérer le #fouet{}.
+- Fouetter ~{1 min} à vitesse 3 : la ganache est plus mousseuse.

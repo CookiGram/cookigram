@@ -82,14 +82,19 @@ UTENSILS_OUT = frozenset({
 # Expected origin/main corpus inventory (Lane A audit, re-verified here).
 # thermomix re-pinned 63 -> 87 after the #492 wave (24 new TM31 hits,
 # verified one by one against the merged corpus; all other counts unchanged).
+# #493 wave: thermomix 87 -> 112 (+25: 8 A2 + 1 puree + 5 B1 + 5 B2 + 6 C,
+# all TM31-declared; 3 bouillons/fond + caramel carry no appliances block,
+# matching main-corpus stovetop practice), stand_mixer 0 -> 7 (A1 pates,
+# [standard]); all other counts unchanged.
 EXPECTED_KEY_COUNTS = {
-    "thermomix": 87,
+    "thermomix": 112,
     "four": 21,
     "pizza_oven": 20,
     "instant_pot": 7,
     "sous_vide": 6,
     "rice_cooker": 1,
     "cookeo": 1,
+    "stand_mixer": 7,
 }
 
 BRAND_TOKENS = (

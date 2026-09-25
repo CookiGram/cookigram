@@ -1,0 +1,58 @@
+---
+title: Caramel au beurre salé à la casserole
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 5 min
+total_time: 15 min
+spiciness: 0
+description: "Caramel blond au beurre demi-sel fondu, allongé à la crème liquide, à verser tiède sur glaces et desserts."
+nutrition_profile: pleasure
+tags: [caramel, beurre salé, casserole, base, dessert]
+source: https://cookidoo.fr/recipes/recipe/fr/r115813
+author: Cookidoo
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Casserole à fond épais
+- Cuillère en bois
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Utiliser une casserole large en grande quantité pour une caramélisation régulière.
+flavors:
+  pairing: [glace vanille, pomme, crêpe]
+  notes: [blond, beurré, fondant]
+  harmony: "Le beurre demi-sel fondu dans le sucre blond tient l'équilibre entre douceur caramélisée et pointe salée."
+  tips: "Composant issu d'une page glace : seule la séquence casserole est reprise, exécution 100 % traditionnelle."
+conservation:
+  fridge_days: 14
+  freezable: false
+  reheat: "Réchauffer doucement pour retrouver la fluidité."
+image: images/caramel-beurre-sale.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/caramel-beurre-sale.md
+---
+[Caramélisation]
+- Chauffer le @sucre en poudre{200 g} à feu vif dans une #casserole{} à fond épais.
+- Laisser colorer sans remuer jusqu'à obtenir une couleur blonde.
+
+[Liaison]
+- Ajouter le @beurre demi-sel{100 g, en morceaux} en prenant garde aux projections.
+- Mélanger à la #cuillère en bois{} jusqu'à ce que le mélange soit lisse.
+- Ajouter la @crème liquide{50 g, 30 % de matière grasse minimum}.
+- Mélanger de nouveau : le caramel est homogène et brillant.
+- Transvaser et réserver.

@@ -1,0 +1,68 @@
+---
+title: Pâte à crêpes au robot pâtissier
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 10
+prep_time: 45 min
+total_time: 1 h 15 min
+spiciness: 0
+description: "Pâte à crêpes fluide sans grumeaux, beurre fondu incorporé au fouet, reposée avant cuisson à la crêpière."
+nutrition_profile: pleasure
+tags: [pâte à crêpes, robot pâtissier, base, crêpière]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r35102
+author: Cookidoo
+appliances:
+  stand_mixer:
+  - standard
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Robot pâtissier
+- Fouet
+- Casserole
+- Crêpière ou grande poêle
+scaling:
+  enabled: true
+  min_portions: 5
+  max_portions: 20
+  step: 5
+  note: Le repos de 30 min reste incompressible ; compter 10 crêpes pour 10 portions.
+flavors:
+  pairing: [sucre, confiture, citron, pâte à tartiner]
+  notes: [fin, souple, doré]
+  harmony: "Le beurre fondu incorporé au fouet donne des crêpes souples aux bords légèrement croustillants."
+  tips: "Exécution robot pâtissier adaptée d'une référence Thermomix : beurre fondu en casserole, liaison au fouet."
+conservation:
+  fridge_days: 2
+  freezable: true
+  reheat: "Réchauffer quelques secondes à la crêpière ; empiler sous torchon pour garder le moelleux."
+image: images/pate-a-crepes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/pate-a-crepes.md
+---
+[Liaison]
+- Faire fondre le @beurre doux{50 g} en #casserole{} à feu doux.
+- Mettre le @lait{600 g}, la @farine de blé{250 g}, les @œufs{4} et le @sel{1 pincée} dans la cuve du #robot pâtissier{}.
+- Ajouter le beurre fondu.
+- Fouetter ~{20 s} au #fouet{} : la pâte est fluide et sans grumeaux.
+
+[Repos]
+- Laisser reposer ~{30 min} à température : la farine s'hydrate et les bulles retombent.
+
+[Cuisson]
+- Chauffer la #crêpière{} légèrement beurrée sur feu moyen.
+- Verser une louche et répartir en inclinant.
+- Cuire jusqu'à ce que les bords dorent et se décollent.
+- Retourner et cuire l'autre face : la crêpe est dorée des deux côtés.
+- Empiler sous torchon et recommencer jusqu'à épuisement.

@@ -1,0 +1,64 @@
+---
+title: Purée de pommes de terre
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 4
+prep_time: 8 min
+total_time: 30 min
+spiciness: 0
+description: "Purée soyeuse aux pommes de terre fondantes, liée au lait chaud, au beurre et au parmesan fraîchement râpé."
+nutrition_profile: pleasure
+tags: [purée, pommes de terre, thermomix, base, accompagnement, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r4394
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Fouet
+- Spatule
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 2
+  note: Ne pas dépasser la jauge maximale du bol ; le temps de cuisson ne se réduit pas en petite quantité.
+flavors:
+  pairing: [parmesan, beurre, muscade, crème]
+  notes: [soyeux, lacté, réconfortant]
+  harmony: "Le parmesan fraîchement râpé relève la douceur lactée sans alourdir la texture soyeuse."
+  tips: "Servir aussitôt : la purée se raffermit vite en refroidissant."
+conservation:
+  fridge_days: 2
+  freezable: true
+  reheat: "Réchauffer doucement avec un trait de lait en fouettant pour retrouver le soyeux."
+image: images/puree-pommes-de-terre.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/puree-pommes-de-terre.md
+---
+[Mise en place]
+- Éplucher et couper les @pommes de terre{1000 g, en morceaux}.
+
+[Cuisson]
+- Insérer le #fouet{} dans le bol.
+- Mettre les pommes de terre dans le bol, verser le @lait{350 g} et saler de @sel{selon le goût}.
+- Cuire ~{25 min} à ^{100 C} et vitesse 1 : les pommes de terre sont fondantes.
+
+[Liaison]
+- Ajouter le @beurre{30 g} et le @parmesan{30 g, râpé}.
+- Fouetter ~{30 s} à vitesse 3 : la purée est lisse et homogène.
+- Retirer le fouet et servir chaud.

@@ -1,0 +1,67 @@
+---
+title: Crème anglaise à la vanille
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 4
+prep_time: 5 min
+total_time: 10 min
+spiciness: 0
+description: "Crème anglaise fluide à la gousse de vanille, cuite à 80 °C en sens inverse pour napper sans trancher."
+nutrition_profile: pleasure
+tags: [crème anglaise, vanille, thermomix, base, dessert]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r54143
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Fouet
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Surveiller la nappe en fin de cuisson, surtout en petite quantité qui épaissit plus vite.
+flavors:
+  pairing: [vanille, lait, chocolat, fruits rouges]
+  notes: [fluide, vanillé, délicat]
+  harmony: "La cuisson douce à 80 °C en sens inverse préserve le fondant sans faire trancher les jaunes."
+  tips: "TM31 déclaré par adaptation documentée : 80 °C, sens inverse et fouet, tous supportés par le TM31."
+conservation:
+  fridge_days: 2
+  freezable: false
+  reheat: "À servir tiède ou froide ; ne jamais porter à ébullition."
+image: images/creme-anglaise-vanille.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/creme-anglaise-vanille.md
+---
+[Mise en place]
+- Fendre la @gousse de vanille{1 demie} dans la longueur.
+- En prélever les graines.
+
+[Cuisson]
+- Insérer le #fouet{} dans le bol.
+- Mettre dans le bol les @jaunes d'œufs{4}, le @sucre en poudre{50 g} et le @lait{300 g}.
+- Ajouter les graines et la gousse de vanille.
+- Chauffer ~{9 min} à ^{80 C}, en sens inverse et vitesse 2 : la crème nappe la cuillère.
+
+[Finition]
+- Retirer le fouet.
+- Transvaser la crème et ôter la gousse de vanille.
+- Servir tiède ou froid.

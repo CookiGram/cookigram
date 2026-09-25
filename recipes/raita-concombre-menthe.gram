@@ -1,0 +1,89 @@
+---
+title: Raita concombre-menthe
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 8
+prep_time: 10 min
+total_time: 30 min
+spiciness: 1
+description: "Yaourt grec onctueux au concombre essoré, menthe fraîche et cumin torréfié, relevé d'une pointe de piment."
+nutrition_profile: vitality
+tags: [raita, concombre, yaourt, thermomix, inde, condiment, végétarien, froid]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r132139
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Panier cuisson
+- Papier absorbant ou torchon propre
+scaling:
+  enabled: true
+  min_portions: 4
+  max_portions: 12
+  step: 4
+  note: L'égouttage de 20 min reste incompressible quelle que soit la quantité.
+flavors:
+  pairing: [concombre, menthe, cumin, citron]
+  notes: [frais, onctueux, acidulé]
+  harmony: "Le cumin torréfié et la menthe fraîche réveillent la douceur onctueuse du yaourt grec."
+  tips: "Bien essorer le concombre : c'est le secret d'une raita épaisse qui ne rend pas d'eau."
+conservation:
+  fridge_days: 2
+  freezable: false
+  reheat: "À servir frais ; ne pas réchauffer."
+image: images/raita-concombre-menthe.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/raita-concombre-menthe.md
+---
+[Mise en place]
+- Couper les @concombre{2 libanais, en deux dans la longueur}.
+- Les épépiner si souhaité.
+- Les couper en trois.
+- Effeuiller la @menthe fraîche{2 brins, environ 20 g de feuilles seules}.
+
+[Hachage]
+- Mettre le concombre dans le bol.
+- Hacher ~{5 s} à vitesse 6.
+- Saler d'une partie du @sel{1 c. à café au total}.
+- Transférer dans le #panier cuisson{}.
+- Laisser égoutter ~{20 min}.
+- Rincer le concombre.
+- Sécher le bol.
+
+[Essorage]
+- Rincer et égoutter le concombre.
+- L'envelopper dans du papier absorbant et le presser pour retirer l'excès de liquide.
+- Réserver le concombre essoré.
+
+[Torréfaction]
+- Mettre le @cumin{1 c. à café de graines} dans le bol.
+- Torréfier ~{2 min} à ^{90 C} et vitesse 1 : les graines sont odorantes.
+- Laisser refroidir dans le bol ~{5 min}.
+
+[Assemblage]
+- Ajouter la menthe.
+- Hacher ~{10 s} à vitesse 7.
+- Ajouter le @yaourt grec{400 g, nature} et le @citron{1 c. à café de jus, facultatif}.
+- Mélanger ~{15 s} à vitesse 4 : la préparation est onctueuse.
+- Ajouter le reste de sel au goût, le @poivre moulu{1 à 2 pincées} et le @piment du Cachemire{1 quart de c. à café en poudre}.
+- Ajouter le concombre réservé.
+- Mélanger ~{10 s} à vitesse 2.
+- Servir immédiatement ou réfrigérer en contenant hermétique.

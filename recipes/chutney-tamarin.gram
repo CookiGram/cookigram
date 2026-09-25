@@ -1,0 +1,65 @@
+---
+title: Chutney de tamarin
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 4
+prep_time: 5 min
+total_time: 5 min
+spiciness: 2
+description: "Condiment cru acidulé à la pâte de tamarin, coriandre fraîche et piment vert, mixé fin pour accompagner currys."
+nutrition_profile: pleasure
+tags: [chutney, tamarin, thermomix, inde, condiment, cru, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r134622
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Spatule
+- Contenant hermétique stérilisé
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Mixer en une seule fournée pour garder une texture fine et homogène.
+flavors:
+  pairing: [tamarin, coriandre, piment vert, cumin]
+  notes: [acidulé, vif, herbacé]
+  harmony: "L'acidité franche du tamarin est adoucie par le sucre roux et relevée par le piment vert frais."
+  tips: "Racler soigneusement les parois entre les deux mixages pour une texture parfaitement lisse."
+conservation:
+  fridge_days: 7
+  freezable: false
+  reheat: "À servir frais ; ne pas réchauffer."
+image: images/chutney-tamarin.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/chutney-tamarin.md
+---
+[Mise en place]
+- Parer et couper les @piments verts{2 longs frais, en trois}.
+- Effeuiller la @coriandre fraîche{15 brins, environ 30 g de feuilles et tiges}.
+
+[Mixage]
+- Mettre dans le bol la @pâte de tamarin{300 g}, le @sucre roux{1 c. à soupe}, la coriandre, les piments, le @citron{2 c. à café de jus}, l'@huile d'olive{1 c. à café}, le @cumin{1,5 c. à café de graines} et le @gingembre moulu{0,75 c. à café}.
+- Mixer ~{1 min} à vitesse 5.
+- Racler les parois à la #spatule{}.
+- Mixer encore ~{1 min} à vitesse 5 : le chutney est lisse et homogène.
+- Transférer en contenant hermétique stérilisé et réfrigérer jusqu'au service.

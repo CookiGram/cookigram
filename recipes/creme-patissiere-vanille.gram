@@ -1,0 +1,63 @@
+---
+title: Crème pâtissière à la vanille
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 3
+prep_time: 10 min
+total_time: 15 min
+spiciness: 0
+description: "Crème pâtissière lisse à la vanille, cuite doucement au lait frais, à filmer au contact avant usage."
+nutrition_profile: pleasure
+tags: [crème pâtissière, vanille, thermomix, base, dessert]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r795874
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Spatule
+- Film alimentaire
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 1
+  note: Garder les proportions lait-farine-œufs ; fouetter plus longtemps en grande quantité.
+flavors:
+  pairing: [vanille, lait, fruits, tarte]
+  notes: [lisse, vanillé, doux]
+  harmony: "La vanille infuse pendant la cuisson douce et parfume sans dominer la rondeur lactée."
+  tips: "TM31 déclaré par adaptation documentée : cuisson 90 °C et vitesses standard, aucun mode exclusif."
+conservation:
+  fridge_days: 2
+  freezable: false
+  reheat: "À servir froide ; ne pas réchauffer."
+image: images/creme-patissiere-vanille.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/creme-patissiere-vanille.md
+---
+[Cuisson]
+- Mettre dans le bol le @lait{250 g}, la @farine de blé{25 g}, l'@œuf{1 entier}, le @jaune d'œuf{1}, le @sucre vanille{5 g} et le @sucre en poudre{35 g}.
+- Cuire ~{6 min} à ^{90 C} et vitesse 4 : la crème est épaisse et nappante.
+- Mixer ~{5 s} à vitesse 9 : la crème est parfaitement lisse.
+
+[Repos]
+- Transvaser la crème.
+- Filmer au contact pour éviter la formation d'une croûte.
+- Laisser refroidir avant usage.

@@ -1,0 +1,69 @@
+---
+title: Rillettes de thon aux herbes
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 10 min
+total_time: 15 min
+spiciness: 0
+description: "Rillettes fraîches au thon émietté, échalotes croquantes et ciboulette, liées au fromage frais et aux câpres."
+nutrition_profile: balanced
+tags: [rillettes, thon, apéritif, thermomix, froid]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r586121
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Spatule
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Garder une texture homogène mais pas lisse, quelle que soit la quantité.
+flavors:
+  pairing: [thon, citron, ciboulette, pain grillé]
+  notes: [frais, iodé, crémeux]
+  harmony: "Le zeste de citron et les câpres au vinaigre réveillent la rondeur du thon et du fromage frais."
+  tips: "Mixer peu de temps : des rillettes trop lisses perdent leur mâche."
+conservation:
+  fridge_days: 2
+  freezable: false
+  reheat: "À servir frais ; ne pas réchauffer."
+image: images/rillettes-thon-herbes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/rillettes-thon-herbes.md
+---
+[Hachage]
+- Mettre les @échalotes{2, en morceaux}, la @ciboulette{1 botte fraîche, en tronçons de 3 cm} et le @zeste de citron{1 bande, jaune non traité} dans le bol.
+- Lancer le mode Turbo ~{1 s}, deux fois de suite.
+- Racler les parois à la #spatule{}.
+
+[Liaison]
+- Ajouter les @thon{280 g, en miettes au naturel et égouttées}, la @moutarde de Dijon{1 c. à café} et le @fromage frais{150 g, à tartiner}.
+- Saler et poivrer selon le goût.
+- Mélanger ~{10 s} à vitesse 3 : la préparation est homogène mais pas trop lisse.
+- Racler les parois.
+
+[Finition]
+- Ajouter les @câpres{1 c. à soupe, au vinaigre}.
+- Mélanger ~{10 s} à vitesse 3.
+- Garder au frais jusqu'au service.

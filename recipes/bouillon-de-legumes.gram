@@ -1,0 +1,72 @@
+---
+title: Bouillon de légumes à la cocotte
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 6
+prep_time: 20 min
+total_time: 1 h 20 min
+spiciness: 0
+description: "Bouillon limpide aux légumes du marché, gingembre frais et bouquet d'herbes, mijoté doucement en cocotte."
+nutrition_profile: vitality
+tags: [bouillon, légumes, cocotte, faitout, base, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r763933
+author: Cookidoo
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Grande cocotte ou faitout
+- Écumoire
+- Chinois ou passoire fine
+- Couteau de chef
+- Planche à découper
+scaling:
+  enabled: true
+  min_portions: 4
+  max_portions: 8
+  step: 2
+  note: Ne pas remplir le faitout au-delà des trois quarts pour garder un frémissement régulier.
+flavors:
+  pairing: [carotte, poireau, fenouil, gingembre]
+  notes: [limpide, végétal, réconfortant]
+  harmony: "Le gingembre frais et le bouquet d'herbes parfument sans couvrir la douceur de la carotte et du poireau."
+  tips: "Fiche adaptée en cocotte depuis une référence Thermomix : proportions et total source conservés, cuisson longue à couvert."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Porter à frémissement sans forte ébullition pour garder un bouillon limpide."
+image: images/bouillon-de-legumes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/bouillon-de-legumes.md
+---
+[Mise en place]
+- Tailler l'@oignon{1, en quartiers}, l'@ail{1 gousse}, les @carottes{150 g, en morceaux, avec leurs épluchures} et le @fenouil{100 g, en morceaux}.
+- Émincer le @poireau{200 g de vert, en morceaux} et détailler le @gingembre frais{10 g, en lamelles}.
+
+[Marmite]
+- Déposer tous les légumes dans une grande #cocotte{} avec le @bouquet garni{1}, le @laurier{1 feuille} et le @clou de girofle{1}.
+- Verser l'@eau{1200 g} froide à hauteur.
+- Assaisonner de @sel{selon le goût} et de @poivre{selon le goût}.
+
+[Ébullition]
+- Porter à franche ébullition sur feu vif.
+- Écumer soigneusement la surface à l'#écumoire{} : le liquide doit rester limpide.
+
+[Mijotage]
+- Baisser au frémissement et couvrir.
+- Laisser mijoter ~{1 h} : les légumes ont cédé leurs sucs et le bouillon est limpide et parfumé.
+
+[Filtration]
+- Passer au #chinois{} sans fouler les légumes : le bouillon est translucide.
+- Rectifier l'assaisonnement en sel et en poivre.
+- Servir aussitôt ou réserver au frais.

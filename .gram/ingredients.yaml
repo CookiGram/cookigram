@@ -37,6 +37,14 @@ ingredients:
       carbs: 5.4
       fat: 55.8
       protein: 21.9
+  amandes:
+    name: Amandes
+    aliases:
+    - amande
+    - amandes
+    - amandes émondées
+    - amandes décortiquées
+    category: Fruits à coque et graines
   aubergine:
     name: Aubergine
     aliases:
@@ -148,6 +156,13 @@ ingredients:
       carbs: 56.1
       fat: 1.2
       protein: 4.0
+  carcasse-de-poulet:
+    name: Carcasse de poulet cuit
+    aliases:
+    - carcasse de poulet
+    - carcasse de poulet cuit
+    - carcasse d'un petit poulet cuit
+    category: Boucherie et volailles
   carotte:
     name: Carottes
     aliases:
@@ -249,6 +264,11 @@ ingredients:
       fat: 0.3
       protein: 1.2
     piece_weight: 200.0
+  creme:
+    name: Crème
+    aliases:
+    - crème
+    category: Produits laitiers et matières grasses
   creme-fraiche-epaisse:
     name: Crème fraîche épaisse
     aliases:
@@ -615,6 +635,29 @@ ingredients:
       fat: 100.0
       protein: 0.0
     density: 0.92
+  sucre-en-grains:
+    name: Sucre en grains
+    aliases:
+    - sucre en grains
+    - sucre perlé
+    - sucre en perles
+    category: Condiments
+  huile-d-arachide:
+    name: Huile d'arachide
+    aliases:
+    - huile d'arachide
+    - huile de cacahuète
+    category: Matières grasses
+  sirop-d-erable:
+    name: Sirop d'érable
+    aliases:
+    - sirop d'érable
+    category: Condiments
+  huile-de-friture:
+    name: Huile de friture
+    aliases:
+    - huile de friture
+    category: Matières grasses
   jus-de-citron-vert:
     name: Jus de citron vert
     aliases:
@@ -770,6 +813,12 @@ ingredients:
       fat: 11.0
       protein: 7.0
     density: 1.05
+  moutarde-noire:
+    name: Moutarde noire
+    aliases:
+    - moutarde noire
+    - graines de moutarde noire
+    category: Condiments et assaisonnements
   noix-de-muscade:
     name: Noix de muscade
     aliases:
@@ -812,6 +861,14 @@ ingredients:
       protein: 1.0
     conversions:
       piece: 4.0
+  os:
+    name: Os à fond
+    aliases:
+    - os
+    - os d'agneau
+    - os de poulet
+    - os de veau
+    category: Boucherie et volailles
   paleron-de-boeuf:
     name: Paleron de boeuf
     aliases:
@@ -986,6 +1043,12 @@ ingredients:
     - pate-a-pizza
     - pâtons de pizza
     category: Produits céréaliers
+  pate-d-ail:
+    name: Pâte d'ail
+    aliases:
+    - pâte d'ail
+    - pate d'ail
+    category: Condiments et assaisonnements
   gorgonzola:
     name: Gorgonzola
     aliases:
@@ -1154,6 +1217,7 @@ ingredients:
     - gros sel
     - fleur de sel
     - sel fin
+    - sel marin
     category: Condiments
     name: Sel
     nutrition:
@@ -1173,6 +1237,12 @@ ingredients:
       carbs: 100.0
       fat: 0.0
       protein: 0.0
+  sucre-vanille:
+    name: Sucre vanillé
+    aliases:
+    - sucre vanillé
+    - sucre vanille
+    category: Condiments
   sucre-roux:
     name: Sucre roux
     aliases:
@@ -1262,6 +1332,12 @@ ingredients:
     aliases:
     - farine d'épeautre
     category: Féculents et céréales
+  farine-de-pois-chiches:
+    name: Farine de pois chiches
+    aliases:
+    - farine de pois chiches
+    - besan
+    category: Féculents et céréales
   graines-variees:
     name: Graines variées
     aliases:
@@ -1307,6 +1383,13 @@ ingredients:
     name: Noix de pécan
     aliases:
     - noix de pécan
+    category: Fruits à coque et graines
+  noix-de-coco:
+    name: Noix de coco
+    aliases:
+    - noix de coco
+    - coco
+    - chair de noix de coco fraîche
     category: Fruits à coque et graines
   noisette:
     name: Noisettes
@@ -1430,6 +1513,13 @@ ingredients:
       protein: 2.4
       carbs: 4.9
       fat: 0.9
+  champignons:
+    name: Champignons de Paris
+    aliases:
+    - champignon
+    - champignons
+    - champignons de Paris frais
+    category: Légumes et aromates
   chapelure:
     name: Chapelure
     aliases:
@@ -1440,6 +1530,11 @@ ingredients:
       protein: 12.0
       carbs: 72.0
       fat: 2.0
+  chaat-masala:
+    name: Chaat masala
+    aliases:
+    - chaat masala
+    category: Condiments et assaisonnements
   citron:
     name: Citron
     aliases:
@@ -1846,6 +1941,12 @@ ingredients:
       carbs: 3.9
       fat: 0.1
     piece_weight: 20.0
+  bacon:
+    name: Bacon
+    aliases:
+    - bacon
+    - bacon en dés
+    category: Boucherie et volailles
   banane:
     name: Banane
     aliases:
@@ -1989,6 +2090,19 @@ ingredients:
       carbs: 7.3
       fat: 0.2
     piece_weight: 200.0
+  feuilles-de-curry:
+    name: Feuilles de curry
+    aliases:
+    - feuilles de curry
+    - feuille de curry
+    - feuilles de curry fraîches
+    category: Herbes et épices
+  fenugrec:
+    name: Fenugrec
+    aliases:
+    - fenugrec
+    - feuilles de fenugrec séchées
+    category: Herbes et épices
   feuilles-de-lasagne:
     name: Feuilles de lasagne
     aliases:
@@ -2175,6 +2289,13 @@ ingredients:
       carbs: 8.8
       fat: 0.4
     piece_weight: 15.0
+  piment-cachemire:
+    name: Piment du Cachemire
+    aliases:
+    - piment du Cachemire
+    - piment cachemire
+    - piment du Cachemire en poudre
+    category: Herbes et épices
   pois-gourmands:
     name: Pois gourmands
     aliases:
@@ -3106,6 +3227,13 @@ ingredients:
     - bœuf haché
     - viande de bœuf hachée
     category: Viandes
+  cacahuetes:
+    name: Cacahuètes
+    aliases:
+    - cacahuète
+    - cacahuètes
+    - cacahuètes crues
+    category: Fruits à coque et graines
   cacahuetes-grillees:
     name: Cacahuètes grillées
     aliases:
@@ -3118,6 +3246,13 @@ ingredients:
     - chou blanc
     - chou blanc émincé
     category: Légumes et aromates
+  dattes:
+    name: Dattes
+    aliases:
+    - datte
+    - dattes
+    - dattes dénoyautées
+    category: Fruits
   dashi-en-poudre:
     name: Dashi en poudre
     aliases:
