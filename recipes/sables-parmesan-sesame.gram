@@ -1,0 +1,67 @@
+---
+title: Sablés parmesan et sésame
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 5 min
+total_time: 25 min
+spiciness: 0
+description: "Sablés friables au parmesan et au thym frais, en rondelles dorées parsemées de sésame pour l'apéritif."
+nutrition_profile: pleasure
+tags: [sablés, apéritif, thermomix, parmesan, four]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r555020
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Four
+- Plaque de four
+- Papier cuisson
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Garder des boudins de 3 cm pour une cuisson régulière d'environ 30 pièces.
+flavors:
+  pairing: [parmesan, thym, vin blanc, olives]
+  notes: [friable, doré, salé]
+  harmony: "Le thym frais et le sésame grillé relèvent le fondant salé du parmesan."
+  tips: "Trancher des rondelles de 5 mm bien régulières pour une dorure homogène."
+conservation:
+  fridge_days: 7
+  freezable: true
+  reheat: "À servir à température ; passer 3 min au four pour raviver le croustillant."
+image: images/sables-parmesan-sesame.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/sables-parmesan-sesame.md
+---
+[Pâte]
+- Préchauffer le #four{} à ^{200 C}.
+- Mettre dans le bol le @parmesan{100 g, râpé}, la @farine de blé{180 g}, le @beurre demi-sel{120 g, froid en morceaux}, les @jaunes d'œufs{2} et le @thym{2 branches effeuillées}.
+- Mixer ~{15 s} à vitesse 6 : la pâte est homogène et friable.
+
+[Façonnage]
+- Diviser la pâte en deux sur un plan fariné.
+- Rouler chaque moitié en boudin d'environ 3 cm de diamètre.
+- Couper des tranches d'environ 5 mm.
+- Les placer sur une plaque couverte de papier cuisson.
+- Parsemer des @graines de sésame{2 c. à soupe}.
+
+[Cuisson]
+- Cuire ~{12 min} à ^{200 C} jusqu'à ce que les sablés soient dorés.

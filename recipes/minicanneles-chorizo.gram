@@ -1,0 +1,73 @@
+---
+title: Minicannelés au chorizo
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 10
+prep_time: 15 min
+total_time: 12 h
+spiciness: 1
+description: "Minicannelés caramélisés au chorizo doux et au parmesan, reposés une nuit pour un cœur fondant et tenu."
+nutrition_profile: pleasure
+tags: [cannelés, apéritif, thermomix, chorizo, four]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r416444
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Four
+- Moules à minicannelés
+scaling:
+  enabled: true
+  min_portions: 5
+  max_portions: 20
+  step: 5
+  note: Le repos d'une nuit au frais reste incompressible ; compter environ 50 pièces pour 10 portions.
+flavors:
+  pairing: [chorizo, parmesan, vin rouge, salade]
+  notes: [caramélisé, fondant, épicé]
+  harmony: "Le chorizo doux fumé et le parmesan donnent un cannelé apéritif au cœur fondant et à la croûte caramélisée."
+  tips: "Remplir les moules aux trois quarts seulement : la pâte gonfle à la cuisson."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Réchauffer 5 min au four à 200 °C pour retrouver le caramélisé."
+image: images/minicanneles-chorizo.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/minicanneles-chorizo.md
+---
+[Appareil]
+- Râper le @parmesan{50 g, en morceaux} ~{10 s} à vitesse 10.
+- Transvaser et réserver.
+- Mettre le @lait{500 g} et le @beurre demi-sel{50 g} dans le bol.
+- Chauffer ~{5 min} à ^{98 C} et vitesse 1.
+- Transvaser et réserver le mélange lait-beurre.
+- Mettre les @œufs{2}, les @jaunes d'œufs{2}, la @farine de blé{150 g} et le parmesan râpé dans le bol.
+- Mixer ~{20 s} à vitesse 4.
+- Ajouter le mélange lait-beurre réservé.
+- Mélanger ~{20 s} à vitesse 4.
+- Ajouter le @chorizo doux{110 g, en petits morceaux}.
+- Mélanger ~{20 s}, en sens inverse et vitesse 4.
+- Transvaser et réserver une nuit au frais.
+
+[Cuisson]
+- Le jour même, préchauffer le #four{} à ^{220 C}.
+- Remplir environ 50 #moules à minicannelés{} aux trois quarts.
+- Cuire ~{10 min} à ^{220 C}.
+- Baisser à ^{180 C} et poursuivre ~{35 min} : les cannelés sont caramélisés.
+- Laisser tiédir.
+- Démouler délicatement.

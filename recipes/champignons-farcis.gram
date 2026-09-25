@@ -1,0 +1,82 @@
+---
+title: Champignons farcis vapeur
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 4
+prep_time: 20 min
+total_time: 55 min
+spiciness: 0
+description: "Chapeaux de Paris farcis d'une duxelles aux amandes douces, cuits à la vapeur douce et gratinés au four."
+nutrition_profile: balanced
+tags: [champignons, apéritif, thermomix, vapeur, four]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r27554
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Varoma
+- Petite poêle
+- Four
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 2
+  note: Disposer les chapeaux sans les chevaucher ; cuire en deux fournées si nécessaire.
+flavors:
+  pairing: [champignon, amande, persil, ail]
+  notes: [fondant, boisé, gratiné]
+  harmony: "La duxelles aux amandes reste moelleuse sous le gratiné grâce à la cuisson vapeur."
+  tips: "La cuisson source à 120 °C est adaptée à la poêle, incompatible TM31 ; le Varoma reste à la vapeur."
+conservation:
+  fridge_days: 2
+  freezable: false
+  reheat: "Réchauffer 10 min au four à 180 °C."
+image: images/champignons-farcis.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/champignons-farcis.md
+---
+[Préparation]
+- Brosser et nettoyer les @champignons{700 g de Paris frais}.
+- Séparer les pieds et les chapeaux.
+- Réserver les chapeaux.
+
+[Poudre]
+- Moudre les @amandes{40 g, émondées non salées} ~{10 s} à vitesse 8.
+- Transvaser et réserver la poudre d'amandes.
+
+[Duxelles]
+- Hacher le @beurre{20 g}, 20 g d'@huile d'olive{30 g au total} et les @échalotes{60 g} ~{10 s} à vitesse 4.
+- Transvaser le hachis dans une petite #poêle{}.
+- Ajouter les pieds réservés, l'@ail{1 gousse}, l'@œuf{1}, le @persil frais{10 g, équeuté}, la @noix de muscade{1 pincée fraîchement râpée}, le @sel{1 c. à café rase, à ajuster} et le @poivre{1 à 2 pincées, à ajuster}.
+- Cuire ~{10 min} à feu moyen en remuant : la duxelles est sèche et parfumée.
+- Mixer la duxelles ~{10 s} à vitesse 6.
+- Huiler légèrement le plateau vapeur avec le reste d'huile et le placer dans le #Varoma{}.
+- Farcir les chapeaux de duxelles.
+- Saupoudrer de poudre d'amandes.
+- Les placer sur le plateau, lamelles vers le haut, jusqu'à épuisement de la farce.
+- Rincer le bol.
+
+[Vapeur]
+- Mettre l'@eau{400 g} dans le bol.
+- Installer l'ensemble Varoma.
+- Cuire à la vapeur ~{25 min} à ^{Varoma} et vitesse 1 : les champignons sont tendres.
+
+[Gratin optionnel]
+- Gratiner ~{5 min} au #four{} à ^{210 C} : le dessus est doré.
+- Servir chaud.

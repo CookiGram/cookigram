@@ -1,0 +1,69 @@
+---
+title: Onion bhaji à la friteuse
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 6
+prep_time: 40 min
+total_time: 45 min
+spiciness: 2
+description: "Beignets d'oignons enrobés de pâte épicée au besan, frits à 190 °C pour un croustillant doré et aéré."
+nutrition_profile: pleasure
+tags: [bhaji, apéritif, thermomix, inde, friture, épicé]
+source: https://cookidoo.fr/recipes/recipe/fr/r110091
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Friteuse ou casserole profonde
+- Écumoire
+- Papier absorbant
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 12
+  step: 2
+  note: Frire par petites fournées ; le repos de 10 min reste incompressible.
+flavors:
+  pairing: [oignon, cumin, citron, chutney]
+  notes: [croustillant, épicé, doré]
+  harmony: "Le garam masala et le fenugrec parfument la pâte qui croustille autour de l'oignon fondant."
+  tips: "L'huile de friture n'est pas chiffrée par la source : prévoir de quoi immerger les beignets."
+conservation:
+  fridge_days: 1
+  freezable: false
+  reheat: "Repasser 5 min au four à 200 °C ; à servir de préférence aussitôt frits."
+image: images/onion-bhaji.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/onion-bhaji.md
+---
+[Pâte]
+- Mettre la @farine de pois chiches{85 g}, le @yaourt nature{50 g}, l'@œuf{1 gros}, le @garam masala{1 c. à soupe}, le @fenugrec{1 c. à soupe de feuilles séchées}, le @jus de citron{1 c. à soupe}, le @cumin moulu{1 c. à café}, le @sel marin{1 c. à café fin}, le @piment du Cachemire{1 c. à café en poudre} et l'@eau{35 g} dans le bol.
+- Mélanger ~{10 s} à vitesse 4.
+- Racler les parois.
+- Ajouter les @oignons{300 g, gros finement tranchés à 2 mm}.
+- Mélanger ~{10 s}, en sens inverse et vitesse 2.
+- Racler et remuer à la spatule : chaque lamelle est enrobée.
+- Laisser reposer ~{10 min}.
+- Pendant ce temps, chauffer l'@huile de friture{en quantité suffisante pour immerger} à ^{190 C} en friteuse ou casserole profonde.
+
+[Friture]
+- Remuer le mélange reposé.
+- Déposer doucement dans l'huile des amas de la taille d'une c. à soupe, à l'aide de deux cuillères longues.
+- Frire par lots ~{4 min} à ^{190 C} en retournant : les bhaji sont dorés uniformément.
+- Égoutter sur du papier absorbant.
+- Servir aussitôt.

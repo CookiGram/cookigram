@@ -37,6 +37,14 @@ ingredients:
       carbs: 5.4
       fat: 55.8
       protein: 21.9
+  amandes:
+    name: Amandes
+    aliases:
+    - amande
+    - amandes
+    - amandes émondées
+    - amandes décortiquées
+    category: Fruits à coque et graines
   aubergine:
     name: Aubergine
     aliases:
@@ -256,6 +264,11 @@ ingredients:
       fat: 0.3
       protein: 1.2
     piece_weight: 200.0
+  creme:
+    name: Crème
+    aliases:
+    - crème
+    category: Produits laitiers et matières grasses
   creme-fraiche-epaisse:
     name: Crème fraîche épaisse
     aliases:
@@ -622,6 +635,11 @@ ingredients:
       fat: 100.0
       protein: 0.0
     density: 0.92
+  huile-de-friture:
+    name: Huile de friture
+    aliases:
+    - huile de friture
+    category: Matières grasses
   jus-de-citron-vert:
     name: Jus de citron vert
     aliases:
@@ -1181,6 +1199,7 @@ ingredients:
     - gros sel
     - fleur de sel
     - sel fin
+    - sel marin
     category: Condiments
     name: Sel
     nutrition:
@@ -1200,6 +1219,12 @@ ingredients:
       carbs: 100.0
       fat: 0.0
       protein: 0.0
+  sucre-vanille:
+    name: Sucre vanillé
+    aliases:
+    - sucre vanillé
+    - sucre vanille
+    category: Condiments
   sucre-roux:
     name: Sucre roux
     aliases:
@@ -1470,6 +1495,13 @@ ingredients:
       protein: 2.4
       carbs: 4.9
       fat: 0.9
+  champignons:
+    name: Champignons de Paris
+    aliases:
+    - champignon
+    - champignons
+    - champignons de Paris frais
+    category: Légumes et aromates
   chapelure:
     name: Chapelure
     aliases:
@@ -1891,6 +1923,12 @@ ingredients:
       carbs: 3.9
       fat: 0.1
     piece_weight: 20.0
+  bacon:
+    name: Bacon
+    aliases:
+    - bacon
+    - bacon en dés
+    category: Boucherie et volailles
   banane:
     name: Banane
     aliases:
@@ -2040,6 +2078,12 @@ ingredients:
     - feuilles de curry
     - feuille de curry
     - feuilles de curry fraîches
+    category: Herbes et épices
+  fenugrec:
+    name: Fenugrec
+    aliases:
+    - fenugrec
+    - feuilles de fenugrec séchées
     category: Herbes et épices
   feuilles-de-lasagne:
     name: Feuilles de lasagne

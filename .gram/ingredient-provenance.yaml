@@ -1249,6 +1249,34 @@ ingredients:
     status: incomplete
     source: Feuilles de curry fraîches indiquées par la source Cookidoo (r132144) ;
       aucune donnée physique ou nutritionnelle ajoutée.
+  sucre-vanille:
+    status: incomplete
+    source: Sucre vanillé indiqué par la source Cookidoo (r795874) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  bacon:
+    status: incomplete
+    source: Bacon en dés indiqué par la source Cookidoo (r62794) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  champignons:
+    status: incomplete
+    source: Champignons de Paris frais indiqués par les sources Cookidoo (r62794, r27554) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  creme:
+    status: incomplete
+    source: Crème indiquée par la source Cookidoo (r62794) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  amandes:
+    status: incomplete
+    source: Amandes émondées ou décortiquées indiquées par les sources Cookidoo
+      (r27554, r623419) ; aucune donnée physique ou nutritionnelle ajoutée.
+  fenugrec:
+    status: incomplete
+    source: Feuilles de fenugrec séchées indiquées par la source Cookidoo (r110091) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  huile-de-friture:
+    status: incomplete
+    source: Huile de friture en quantité suffisante indiquée par la source Cookidoo
+      (r110091) ; aucune donnée physique ou nutritionnelle ajoutée.
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES
