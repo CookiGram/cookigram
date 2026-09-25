@@ -1,0 +1,41 @@
+{
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "dim": 384,
+  "scales": {
+    "scale_1k": {
+      "n": 1000,
+      "vectors": "real-embed",
+      "embed_ms": 26235.5,
+      "upsert_ms": 277.9,
+      "reindex_ms": 27642.0,
+      "disk_bytes": 3928064,
+      "rss_mb": 627.6,
+      "latency_ms_p50": 1.38,
+      "latency_ms_p95": 2.08
+    },
+    "scale_10k": {
+      "n": 10000,
+      "vectors": "real-embed",
+      "embed_ms": 276133.5,
+      "upsert_ms": 2998.3,
+      "reindex_ms": 290089.6,
+      "disk_bytes": 37322752,
+      "rss_mb": 898.7,
+      "latency_ms_p50": 1.54,
+      "latency_ms_p95": 1.85
+    },
+    "scale_100k": {
+      "n": 100000,
+      "vectors": "RANDOM-PROXY",
+      "embed_ms": null,
+      "upsert_ms": 37389.0,
+      "reindex_ms": 51478.7,
+      "disk_bytes": 554258432,
+      "rss_mb": 1239.6,
+      "latency_ms_p50": 2.11,
+      "latency_ms_p95": 10.94
+    }
+  },
+  "embed_chunks_per_s": 36.2,
+  "note": "100k = proxy vecteurs aleatoires (serveur seul) ; cout embedding 100k projete depuis le debit mesure ; payload synth minimal (pas de _text)."
+}
