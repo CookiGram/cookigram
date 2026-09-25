@@ -111,4 +111,82 @@ par rerun (scores à 4 décimales, courbe et politique inchangés).
   contexte dilué). **Bon doc ≠ bon chunk.** Erratum gate 4 : les
   publications gate 3 annonçaient 1/4 par erreur de report — le JSON
   faisait foi (voir commentaire correctif sur #508).
-- `test_gate3.py` : 6/6 OK (MMR, politique, schémas, ancres dans l'or).
+- `test_gate3.py` : 6/6 OK au gate 3 (MMR, politique, schémas, ancres dans l'or).
+
+## 7. Gate 4 — freeze dev + UNE mesure holdout + preuve scale (2026-09-26)
+
+Point figé sur dev (`dev_freeze.json`, pré-holdout) : τ=0.40, δ=0.03
+(politique publiée, testée telle quelle), γ=0.70 (bras cluster,
+hypothèse négative : dev sans séparation, inter-sim pièges >
+réponses). Contrat `work_id=None` = nul/absent des deux côtés (F3,
+`test_filters_dense.py`). Métriques séparées (`retrieval_metrics.py`) :
+rank-1 + recall@3 (retrieval) vs correction conditionnelle (décision).
+
+`ablation_results.json` (8 items v2, sections×faits × politique×cluster,
+zéro retuning, négatifs conservés) :
+- Retrieval : faits recall@3 **0.7** > lexical 0.5 > sections dense **0.3**
+  (rank-1 : 0.4 partout). **Le dense-sections ne généralise pas**
+  (dev 0.75 → holdout 0.3) ; le chunking domine le choix de méthode.
+- Succès : D (faits+cluster) 5/8, B (faits+politique) 4/8,
+  A=C (sections) 3/8. Décision indulgente : D 0.875, B 0.75, A=C 0.625.
+- La politique sur-abstient (H-A : s1=0.387, retrieval correct) et
+  fuit avec confiance côté sections (H-B, H-N3 : marge 0.055/0.089).
+- γ ne change qu'1 décision/8 (H-D : inter=0.701, marge 0.001) :
+  signal inutile en l'état — résultat négatif conservé.
+- Trappes H-N2 et OOD H-N1 abstenu(e)s par les 4 cellules ; H-C
+  (paraphrase) gagnée par les seuls faits ; H-E montre la limite
+  inverse (faits sans ancre). Tokens : 44 456 → 9–999.
+
+`scale_results.json` (**provenance séparée**, run lane voisin adopté,
+script commis non modifié) : 1k/10k embeddings réels (36.2 chunks/s,
+re-index ≈ embed+upsert), 100k proxy aléatoire serveur seul ;
+disque 3.9/37/554 Mo, latences **serveur seul** p50 ~1.4–2.1 ms
+(vecteurs pré-calculés, hors embedding — non comparable au gate 2
+bout-en-bout), RSS = processus serveur total. Projection 100k
+réels : ~46 min CPU one-shot + payloads `_text` non mesurés.
+
+## 8. Gate 4 — mesure holdout (run unique, 2026-09-26)
+
+Figés **avant** mesure (`6a3e9d0`, aucune mesure holdout à ce stade) :
+`holdout.json` v2 (8 items, ancre H-D durcie unknown vers forme exacte),
+`dev_freeze.json` (τ=0.40, δ=0.03, γ=0.70 + sensibilité, dev uniquement),
+`policy.py` (GAMMA=0.70, bras hypothétique négatif : dev sans séparation),
+contrat F3 `None` (parité `store`/`dense_qdrant`, `test_filters_dense.py`).
+Mesure unique, aucun retuning post-hoc :
+
+```bash
+FASTEMBED_CACHE_PATH=/home/pierrecsn/.cache/opencode-bun-tmp/fastembed_cache \
+QDRANT_DATA_DIR=/home/pierrecsn/.cache/qdrant-508-exp/data \
+/home/pierrecsn/.cache/qdrant-508-exp/venv/bin/python prototype/qdrant-memory/ablation.py
+# → ablation_results.json (sec=209 chunks / fact=881 chunks, top_k=3)
+```
+
+Succès answer = ≥1 gold path top-3 ET ≥1 ancre dans le contexte ;
+succès abstain = 0 chunk injecté. Résultat brut (`ablation_results.json`) :
+
+| Méthode | succès answer (5) | succès global (8) | rank-1 | recall@3 | décision stricte/indulgente |
+|---|---|---|---|---|---|
+| lexical sec (réf) | 3/5 | — | 0.40 | 0.50 | — |
+| dense brut sec | 2/5 | — | 0.40 | 0.30 | — |
+| dense brut fact | 3/5 | — | 0.40 | 0.70 | — |
+| A sec+politique | — | 3/8 | 0.40 | 0.30 | 0.50 / 0.625 |
+| B fact+politique | — | 4/8 | 0.40 | 0.70 | 0.625 / 0.75 |
+| C sec+cluster | — | 3/8 | 0.40 | 0.30 | 0.50 / 0.625 |
+| D fact+cluster | — | **5/8** | 0.40 | 0.70 | **0.75 / 0.875** |
+
+Item par item (A/B/C/D) : H-A 0/0/0/0 (retrieval parfait partout, politique
+abstient à tort : s1=0.387<τ, marge 0.009) ; H-B 0/0/0/0 sauf B/D abstention
+lucide (retrieval 0.0 partout, sec répond à tort) ; H-C B=D=1 (seul le fact
+récupère) ; H-D D=1 seul (cluster inter=0.701 ≥ 0.70 — bascule à 0.001,
+fragile) ; H-E A=C=1, B=D=0 (top-3 fact 100 % mono-doc `MEAL_PLANNING_NUTRITION.md`
+sans `kiffs` ni `benefits_from` dans le contexte : rappel partiel 0.5
+mais ancre perdue — même dilution que A4 gate 3) ;
+H-N1 1 partout (s1<τ) ; H-N2 1 partout (marge/cluster — piège dev capté) ;
+H-N3 B=D=1, A=C=0 (**fuite sec** : s1=0.486 marge=0.089, le fact sauve).
+
+Limites : n=8, aucune puissance statistique ; γ=0.70 ne fait basculer qu'un
+item au seuil près ; H-E strict/indulgent divergent (multi-gold partiel) ;
+aucune mesure qualité à l'échelle. F3 (crash contrat `None` dense) résolu :
+`test_filters_dense.py` 5/5 + parité stdlib. Tests : `test_store` 8/8,
+`test_gate3` 9/9, YAML public OK. Verdict : voir handoff sur #508 —
+pas une décision d'architecture.

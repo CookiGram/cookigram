@@ -1,0 +1,1007 @@
+{
+  "holdout_frozen": "holdout.json v2 (ancre H-D durcie pre-mesure)",
+  "dev_freeze": "dev_freeze.json (point tau/delta/gamma fige sur dev)",
+  "top_k": 3,
+  "summary": {
+    "lexical_sec": {
+      "success_answer_rate": 0.6,
+      "rank1": 0.4,
+      "recall_at3": 0.5
+    },
+    "dense_raw_sec": {
+      "success_answer_rate": 0.4,
+      "rank1": 0.4,
+      "recall_at3": 0.3
+    },
+    "dense_raw_fact": {
+      "success_answer_rate": 0.6,
+      "rank1": 0.4,
+      "recall_at3": 0.7
+    },
+    "A_sec_policy": {
+      "success_rate": 0.375,
+      "rank1": 0.4,
+      "recall_at3": 0.3,
+      "decision_strict": 0.5,
+      "decision_lenient": 0.625
+    },
+    "B_fact_policy": {
+      "success_rate": 0.5,
+      "rank1": 0.4,
+      "recall_at3": 0.7,
+      "decision_strict": 0.625,
+      "decision_lenient": 0.75
+    },
+    "C_sec_cluster": {
+      "success_rate": 0.375,
+      "rank1": 0.4,
+      "recall_at3": 0.3,
+      "decision_strict": 0.5,
+      "decision_lenient": 0.625
+    },
+    "D_fact_cluster": {
+      "success_rate": 0.625,
+      "rank1": 0.4,
+      "recall_at3": 0.7,
+      "decision_strict": 0.75,
+      "decision_lenient": 0.875
+    }
+  },
+  "policy": {
+    "tau": 0.4,
+    "delta": 0.03,
+    "gamma": 0.7,
+    "gamma_note": "dev: aucune separation (grappes reponse {D1:0.587,H2:0.733} vs pieges {N2:0.706,N4:0.824}, meilleur 2/4 = hasard) ; 0.70 fige pour tester l'hypothese negative"
+  },
+  "corpora": {
+    "section_chunks": 209,
+    "fact_chunks": 881,
+    "index_sec": {
+      "embed_ms": 5914.8,
+      "upsert_ms": 85.9
+    },
+    "index_fact": {
+      "embed_ms": 25109.3,
+      "upsert_ms": 334.0
+    }
+  },
+  "footprint": {
+    "disk_sec_bytes": 2412544,
+    "disk_fact_bytes": 4747264,
+    "rss_mb": 391.5
+  },
+  "tasks": [
+    {
+      "id": "H-A-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 531,
+        "chunks": 3,
+        "paths": [
+          "docs/E2E-LEDGER.md",
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/E2E-LEDGER.md"
+        ],
+        "latency_ms": 7.84
+      },
+      "dense_raw_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 434,
+        "chunks": 3,
+        "paths": [
+          "docs/E2E-LEDGER.md",
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/PUBLIC-CONTENT-LINT.md"
+        ],
+        "latency_ms": 10.11
+      },
+      "dense_raw_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 277,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/E2E-LEDGER.md"
+        ],
+        "latency_ms": 16.52
+      },
+      "A_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.387 < tau=0.4",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": []
+      },
+      "B_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.009 < delta=0.03",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": []
+      },
+      "C_sec_cluster": {
+        "decision": "abstain",
+        "reason": "s1=0.387 < tau=0.4",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": []
+      },
+      "D_fact_cluster": {
+        "decision": "abstain",
+        "reason": "vraie indecision inter=0.475<gamma=0.7",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": []
+      }
+    },
+    {
+      "id": "H-B-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 642,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/E2E-WORK-ITEM.md",
+          "docs/PUBLIC-CONTRACT.md"
+        ],
+        "latency_ms": 9.03
+      },
+      "dense_raw_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 840,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 17.59
+      },
+      "dense_raw_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 292,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-recipe.md",
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 10.66
+      },
+      "A_sec_policy": {
+        "decision": "answer",
+        "reason": "s1=0.521 marge=0.055",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 840,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-recipe.md"
+        ]
+      },
+      "B_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.018 < delta=0.03",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": []
+      },
+      "C_sec_cluster": {
+        "decision": "answer",
+        "reason": "s1=0.521 marge=0.055",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 840,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-recipe.md"
+        ]
+      },
+      "D_fact_cluster": {
+        "decision": "abstain",
+        "reason": "vraie indecision inter=0.527<gamma=0.7",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": []
+      }
+    },
+    {
+      "id": "H-C-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 999,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-recipe.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 13.67
+      },
+      "dense_raw_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 670,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/E2E-WORK-ITEM.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ],
+        "latency_ms": 9.12
+      },
+      "dense_raw_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 311,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ],
+        "latency_ms": 13.1
+      },
+      "A_sec_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.002 < delta=0.03",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 21,
+        "chunks": 0,
+        "paths": []
+      },
+      "B_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.500 marge=0.036",
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 311,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ]
+      },
+      "C_sec_cluster": {
+        "decision": "abstain",
+        "reason": "vraie indecision inter=0.497<gamma=0.7",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 21,
+        "chunks": 0,
+        "paths": []
+      },
+      "D_fact_cluster": {
+        "decision": "answer",
+        "reason": "s1=0.500 marge=0.036",
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 311,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ]
+      }
+    },
+    {
+      "id": "H-D-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 931,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/MEAL-COMPOSITION-V1.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 10.89
+      },
+      "dense_raw_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 900,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-cooking.md",
+          "docs/review-169-recipe.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 28.37
+      },
+      "dense_raw_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 267,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md",
+          "docs/MEAL-COMPOSITION-V1.md"
+        ],
+        "latency_ms": 18.94
+      },
+      "A_sec_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.016 < delta=0.03",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": []
+      },
+      "B_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.015 < delta=0.03",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": []
+      },
+      "C_sec_cluster": {
+        "decision": "abstain",
+        "reason": "vraie indecision inter=0.591<gamma=0.7",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": []
+      },
+      "D_fact_cluster": {
+        "decision": "answer",
+        "reason": "grappe corroborante inter=0.701>=gamma=0.7",
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 267,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md",
+          "docs/MEAL-COMPOSITION-V1.md"
+        ]
+      }
+    },
+    {
+      "id": "H-E-hard",
+      "kind": "hard",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "tokens": 776,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/nutrition-profile-issue-136.md"
+        ],
+        "latency_ms": 10.99
+      },
+      "dense_raw_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "tokens": 795,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 10.1
+      },
+      "dense_raw_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "tokens": 209,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 10.31
+      },
+      "A_sec_policy": {
+        "decision": "answer",
+        "reason": "s1=0.722 marge=0.053",
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": true,
+        "tokens": 795,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/review-169-design.md"
+        ]
+      },
+      "B_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.751 marge=0.041",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": true,
+        "tokens": 209,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ]
+      },
+      "C_sec_cluster": {
+        "decision": "answer",
+        "reason": "s1=0.722 marge=0.053",
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": true,
+        "tokens": 795,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/review-169-design.md"
+        ]
+      },
+      "D_fact_cluster": {
+        "decision": "answer",
+        "reason": "s1=0.751 marge=0.041",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 0.5
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": true,
+        "tokens": 209,
+        "chunks": 3,
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ]
+      }
+    },
+    {
+      "id": "H-N1-ood",
+      "kind": "negative-ood",
+      "expected": "abstain",
+      "tokens_full": 44456,
+      "full": {
+        "success": null,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 993,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-recipe.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 11.13
+      },
+      "dense_raw_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 395,
+        "chunks": 3,
+        "paths": [
+          "docs/work-items/391-lot-icons.md",
+          "docs/work-items/391-lot-ui-icons.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md"
+        ],
+        "latency_ms": 10.17
+      },
+      "dense_raw_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 84,
+        "chunks": 3,
+        "paths": [
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+          "docs/review-169-cooking.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md"
+        ],
+        "latency_ms": 45.62
+      },
+      "A_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.148 < tau=0.4",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 9,
+        "chunks": 0,
+        "paths": []
+      },
+      "B_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.178 < tau=0.4",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 9,
+        "chunks": 0,
+        "paths": []
+      },
+      "C_sec_cluster": {
+        "decision": "abstain",
+        "reason": "s1=0.148 < tau=0.4",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 9,
+        "chunks": 0,
+        "paths": []
+      },
+      "D_fact_cluster": {
+        "decision": "abstain",
+        "reason": "s1=0.178 < tau=0.4",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 9,
+        "chunks": 0,
+        "paths": []
+      }
+    },
+    {
+      "id": "H-N2-trap",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "tokens_full": 44456,
+      "full": {
+        "success": null,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 853,
+        "chunks": 3,
+        "paths": [
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 11.56
+      },
+      "dense_raw_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 565,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-recipe.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 7.82
+      },
+      "dense_raw_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 235,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-recipe.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 10.78
+      },
+      "A_sec_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.019 < delta=0.03",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": []
+      },
+      "B_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.007 < delta=0.03",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": []
+      },
+      "C_sec_cluster": {
+        "decision": "abstain",
+        "reason": "vraie indecision inter=0.655<gamma=0.7",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": []
+      },
+      "D_fact_cluster": {
+        "decision": "abstain",
+        "reason": "vraie indecision inter=0.606<gamma=0.7",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": []
+      }
+    },
+    {
+      "id": "H-N3-trap",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "tokens_full": 44456,
+      "full": {
+        "success": null,
+        "tokens": 44456
+      },
+      "lexical_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 366,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-cooking.md",
+          "docs/E2E-LEAD-PROTOCOL.md"
+        ],
+        "latency_ms": 11.41
+      },
+      "dense_raw_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 618,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ],
+        "latency_ms": 8.35
+      },
+      "dense_raw_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 220,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ],
+        "latency_ms": 7.95
+      },
+      "A_sec_policy": {
+        "decision": "answer",
+        "reason": "s1=0.486 marge=0.089",
+        "success": false,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 618,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ]
+      },
+      "B_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.012 < delta=0.03",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 15,
+        "chunks": 0,
+        "paths": []
+      },
+      "C_sec_cluster": {
+        "decision": "answer",
+        "reason": "s1=0.486 marge=0.089",
+        "success": false,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 618,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ]
+      },
+      "D_fact_cluster": {
+        "decision": "abstain",
+        "reason": "vraie indecision inter=0.589<gamma=0.7",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 15,
+        "chunks": 0,
+        "paths": []
+      }
+    }
+  ]
+}
