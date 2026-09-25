@@ -1,0 +1,465 @@
+{
+  "qdrant_version": "1.19.1",
+  "model": "paraphrase-multilingual-MiniLM-L12-v2",
+  "corpus_chunks": 209,
+  "tokens_full_context": 44456,
+  "lexical": {
+    "index_ms": 41.7,
+    "index_bytes": 1184581
+  },
+  "dense": {
+    "embed_all_ms": 5407.8,
+    "index_ms": 111.1,
+    "info": {
+      "points": 209,
+      "indexed_vectors": 0,
+      "status": "green"
+    },
+    "disk_bytes_du": 1949696,
+    "disk_bytes_apparent": 764427848,
+    "rss_mb": 69.2
+  },
+  "note": "tokens=heuristique len/4 ; latences mesurees, HTTP local vs in-memory ; seuils analyses a posteriori (TAUS)",
+  "tasks": [
+    {
+      "id": "T1-orig",
+      "kind": "original",
+      "query": "Comment nommer un workspace Herdr depuis le travail durable assigne ?",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/E2E-WORK-ITEM.md"
+        ],
+        "scores": [
+          0.3186,
+          0.2374,
+          0.2285
+        ],
+        "recall_at3": 1.0,
+        "tokens": 359,
+        "latency_ms": 7.27
+      },
+      "dense": {
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ],
+        "scores": [
+          0.6437,
+          0.4948,
+          0.4517
+        ],
+        "recall_at3": 1.0,
+        "tokens": 447,
+        "latency_ms": 32.12,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    },
+    {
+      "id": "T2-orig",
+      "kind": "original",
+      "query": "Que conserve la CI comme artefacts _site sur main et apres Pages ?",
+      "golds": [
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md",
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "scores": [
+          0.2694,
+          0.2694,
+          0.2641
+        ],
+        "recall_at3": 1.0,
+        "tokens": 657,
+        "latency_ms": 8.56
+      },
+      "dense": {
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "scores": [
+          0.6843,
+          0.6134,
+          0.5297
+        ],
+        "recall_at3": 1.0,
+        "tokens": 221,
+        "latency_ms": 11.63,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    },
+    {
+      "id": "T3-orig",
+      "kind": "original",
+      "query": "Quelle est la frontiere de contrat catalogue entre Core et instance ?",
+      "golds": [
+        "docs/CATALOGUE-CONTRACT-CORE.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md"
+        ],
+        "scores": [
+          0.4136,
+          0.3636,
+          0.3605
+        ],
+        "recall_at3": 1.0,
+        "tokens": 434,
+        "latency_ms": 8.43
+      },
+      "dense": {
+        "paths": [
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md",
+          "docs/work-items/391-lot-typography.md"
+        ],
+        "scores": [
+          0.7304,
+          0.6017,
+          0.5802
+        ],
+        "recall_at3": 1.0,
+        "tokens": 280,
+        "latency_ms": 10.18,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    },
+    {
+      "id": "P1-para",
+      "kind": "paraphrase",
+      "query": "Comment un operateur comprend-il l'activite de chaque agent sans ouvrir son panneau ?",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/review-169-design.md"
+        ],
+        "scores": [
+          0.3053,
+          0.2903,
+          0.2865
+        ],
+        "recall_at3": 0.0,
+        "tokens": 827,
+        "latency_ms": 9.88
+      },
+      "dense": {
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/E2E-WORK-ITEM.md",
+          "docs/E2E-LEAD-PROTOCOL.md"
+        ],
+        "scores": [
+          0.5221,
+          0.458,
+          0.4131
+        ],
+        "recall_at3": 1.0,
+        "tokens": 347,
+        "latency_ms": 11.54,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    },
+    {
+      "id": "P2-para",
+      "kind": "paraphrase",
+      "query": "Apres publication du site, quels fichiers de construction sont gardes ou supprimes ?",
+      "golds": [
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/IMAGE-PROVENANCE.md"
+        ],
+        "scores": [
+          0.2871,
+          0.2674,
+          0.2595
+        ],
+        "recall_at3": 1.0,
+        "tokens": 388,
+        "latency_ms": 10.0
+      },
+      "dense": {
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "scores": [
+          0.5636,
+          0.5238,
+          0.4858
+        ],
+        "recall_at3": 1.0,
+        "tokens": 226,
+        "latency_ms": 10.36,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    },
+    {
+      "id": "P3-para",
+      "kind": "paraphrase",
+      "query": "Ou s'arrete le moteur partage et ou commence la personnalisation d'un deploiement ?",
+      "golds": [
+        "docs/CATALOGUE-CONTRACT-CORE.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md"
+        ],
+        "scores": [
+          0.353,
+          0.3354,
+          0.3271
+        ],
+        "recall_at3": 0.0,
+        "tokens": 1085,
+        "latency_ms": 10.12
+      },
+      "dense": {
+        "paths": [
+          "docs/work-items/391-lot-icons.md",
+          "docs/E2E-LEAD-PROTOCOL.md",
+          "docs/PUBLIC-CONTRACT.md"
+        ],
+        "scores": [
+          0.3106,
+          0.3054,
+          0.2942
+        ],
+        "recall_at3": 0.0,
+        "tokens": 210,
+        "latency_ms": 11.45,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": true,
+          "0.5": true
+        }
+      }
+    },
+    {
+      "id": "H1-hard",
+      "kind": "hard",
+      "query": "Comment sont decrites les images et illustrations, et qui en garde la trace ?",
+      "golds": [
+        "docs/IMAGE-PROVENANCE.md",
+        "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+        "docs/INSTANCE-IDENTITY.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+          "docs/nutrition-profile-issue-136.md",
+          "docs/review-169-cooking.md"
+        ],
+        "scores": [
+          0.2725,
+          0.27,
+          0.2699
+        ],
+        "recall_at3": 0.33,
+        "tokens": 895,
+        "latency_ms": 9.88
+      },
+      "dense": {
+        "paths": [
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/IMAGE-PROVENANCE.md"
+        ],
+        "scores": [
+          0.6062,
+          0.5315,
+          0.5272
+        ],
+        "recall_at3": 0.33,
+        "tokens": 288,
+        "latency_ms": 8.42,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    },
+    {
+      "id": "H2-hard",
+      "kind": "hard",
+      "query": "Quelles regles encadrent les appareils, leurs reglages et leur ajout au catalogue ?",
+      "golds": [
+        "docs/equipment-contract-495.md",
+        "docs/equipment-audit-495.md",
+        "docs/equipment-add-appliance.md"
+      ],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/E2E-LEAD-PROTOCOL.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md"
+        ],
+        "scores": [
+          0.2371,
+          0.2119,
+          0.2086
+        ],
+        "recall_at3": 0.0,
+        "tokens": 627,
+        "latency_ms": 9.97
+      },
+      "dense": {
+        "paths": [
+          "docs/equipment-audit-495.md",
+          "docs/equipment-audit-495.md",
+          "docs/equipment-contract-495.md"
+        ],
+        "scores": [
+          0.5681,
+          0.5389,
+          0.5379
+        ],
+        "recall_at3": 0.67,
+        "tokens": 615,
+        "latency_ms": 10.69,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    },
+    {
+      "id": "N1-neg",
+      "kind": "negative",
+      "query": "Quel est le tarif de l'offre Qdrant Cloud ?",
+      "golds": [],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-recipe.md",
+          "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md"
+        ],
+        "scores": [
+          0.3035,
+          0.2993,
+          0.2961
+        ],
+        "recall_at3": null,
+        "tokens": 767,
+        "latency_ms": 10.18
+      },
+      "dense": {
+        "paths": [
+          "docs/equipment-audit-495.md",
+          "docs/equipment-contract-495.md",
+          "docs/nutrition-profile-issue-136.md"
+        ],
+        "scores": [
+          0.2661,
+          0.2273,
+          0.2273
+        ],
+        "recall_at3": null,
+        "tokens": 623,
+        "latency_ms": 7.53,
+        "abstains_at": {
+          "0.3": true,
+          "0.4": true,
+          "0.5": true
+        }
+      }
+    },
+    {
+      "id": "N2-neg",
+      "kind": "negative",
+      "query": "Comment brancher Qdrant dans le service cookigram-mcp ?",
+      "golds": [],
+      "tokens_full": 44456,
+      "lex": {
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "scores": [
+          0.2641,
+          0.2311,
+          0.2305
+        ],
+        "recall_at3": null,
+        "tokens": 503,
+        "latency_ms": 9.6
+      },
+      "dense": {
+        "paths": [
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md"
+        ],
+        "scores": [
+          0.5181,
+          0.5041,
+          0.5005
+        ],
+        "recall_at3": null,
+        "tokens": 728,
+        "latency_ms": 8.27,
+        "abstains_at": {
+          "0.3": false,
+          "0.4": false,
+          "0.5": false
+        }
+      }
+    }
+  ]
+}

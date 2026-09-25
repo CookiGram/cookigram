@@ -84,4 +84,11 @@ def build_corpus(root: Path) -> list[dict]:
                                      "sha": "summary"}})
         except (OSError, ValueError):
             pass
+    # Unicite des ids : les sections longues decoupees partagent (path, section).
+    seen_ids: dict[str, int] = {}
+    for d in docs:
+        n = seen_ids.get(d["id"], 0)
+        seen_ids[d["id"]] = n + 1
+        if n:
+            d["id"] = f"{d['id']}#p{n}"
     return docs

@@ -1,8 +1,8 @@
 {
   "corpus_chunks": 209,
-  "index_ms": 40.0,
+  "index_ms": 43.4,
   "tokens_before_full_context": 44456,
-  "index_bytes_proxy": 894716,
+  "index_bytes_proxy": 1184581,
   "note_tokens": "heuristique len/4 ; latences search in-memory (borne basse vs Qdrant reseau)",
   "tasks": [
     {
@@ -15,7 +15,7 @@
         "docs/HERDR-WORKSPACE-NAMING.md"
       ],
       "recall_gold": 1.0,
-      "latency_ms": 4.83,
+      "latency_ms": 6.3,
       "tokens_before": 44456,
       "tokens_after": 359,
       "token_ratio": 0.0081
@@ -30,7 +30,7 @@
         "docs/CI-ARTIFACT-STORAGE.md"
       ],
       "recall_gold": 1.0,
-      "latency_ms": 4.87,
+      "latency_ms": 6.51,
       "tokens_before": 44456,
       "tokens_after": 657,
       "token_ratio": 0.0148
@@ -46,7 +46,7 @@
         "docs/PUBLIC-CONTRACT.md"
       ],
       "recall_gold": 1.0,
-      "latency_ms": 4.86,
+      "latency_ms": 6.12,
       "tokens_before": 44456,
       "tokens_after": 434,
       "token_ratio": 0.0098

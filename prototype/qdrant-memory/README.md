@@ -57,3 +57,30 @@ annule 100 % du chantier. Rien d'autre n'est touché.
 | `benchmark.py` | 3 tâches représentatives, mesures avant/après |
 | `benchmark_results.json` | résultats durables du dernier run (à régénérer) |
 | `test_store.py` | tests `unittest`, zéro dépendance |
+| `dense_qdrant.py` | **gate 2** : adaptateur Qdrant réel (requiert le venv expérimental, jamais le produit) |
+| `benchmark_3way.py` | **gate 2** : plein vs lexical vs dense, 10 tâches (originales + paraphrases + hard + négatives) |
+| `benchmark_3way_results.json` | résultats durables du gate 2 |
+
+## 5. Gate 2 — Qdrant réel + dense local (2026-09-25)
+
+Infra jetable, hors repo : binaire Qdrant 1.19.1 sur `127.0.0.1:6333`
+(télémétrie off, data sous `/home/pierrecsn/.cache/qdrant-508-exp/data`,
+supprimable), venv expérimental (`qdrant-client` + `fastembed`,
+modèle `paraphrase-multilingual-MiniLM-L12-v2`, 384 dim, CPU/ONNX).
+Aucun Cloud, aucune intégration produit, aucun hook de ré-index.
+
+```bash
+# serveur (data jetable) :
+QDRANT__STORAGE__STORAGE_PATH=/home/pierrecsn/.cache/qdrant-508-exp/data \
+QDRANT__SERVICE__HOST=127.0.0.1 QDRANT__TELEMETRY_DISABLED=true qdrant
+# benchmark (venv expérimental) :
+QDRANT_DATA_DIR=/home/pierrecsn/.cache/qdrant-508-exp/data \
+  /home/pierrecsn/.cache/qdrant-508-exp/venv/bin/python prototype/qdrant-memory/benchmark_3way.py
+```
+
+Résultat : recall@3 moyen (8 requêtes avec réponse) lexical **0.54** vs
+dense **0.75** ; contexte 44 456 tok → 210–1 100 tok dans les deux cas ;
+latence ~10 ms ; collection 209 pts ≈ **2 Mo disque, ~70 Mo RSS**.
+Échecs documentés dans `benchmark_3way_results.json` (P3 manquée des deux
+côtés, N2 sans abstention même à τ=0.5, top-k mono-doc sans diversification).
+Verdict : voir handoff sur #508 — pas une décision d'architecture.
