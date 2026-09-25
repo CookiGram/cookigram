@@ -14,19 +14,20 @@
       "workspace": "/home/pierrecsn/Work/cookigram",
       "branch": "feat/issue-493-fondamentaux",
       "claimed_at": "2026-09-24T20:30:17Z",
-      "last_heartbeat": "2026-09-25T06:41:07Z",
+      "last_heartbeat": "2026-09-25T11:04:56Z",
       "status": "in_progress",
       "lane_assignments": {
         "A1": "7 pates stand_mixer (pizza, brisee, sablee, choux, crepes, pancakes, gaufres) — BLOCKED: stand_mixer absent du Core (generator/docs) et du contrat catalogue, aucune issue Core existante ; contournement interdit ; requiert work-item/PR Core borne",
-        "A2": "7 draftees (bechamel, beurre-blanc, pesto, creme-pat, creme-anglaise, ganache, caramel) ; hollandaise HELD (autorite : jus de cuisson) ; mayonnaise exclue (non tranchee)",
+        "A2": "COMPLET (9/9) : + mayonnaise (r67172 TM31 froid) ; hollandaise autonome r54152 (TM31 declare, base documentee)",
         "A3": "bouillon-legumes, bouillon-volaille, fond-brun (checkpoint-1, geles) + puree-pommes-de-terre (capture w4W r4394, draftee, 10/10 CLEAN avec le lot)",
         "B1": "5 draftees (gougeres, sables, cannele, rillettes, caviar)",
-        "B2": "4 draftees (quiches, champignons, madeleines, bhaji) ; mimosa HELD (autorite : oeufs 120C)",
+        "B2": "COMPLET (5/5) : + mimosa (oeufs Varoma 15 min source, ecart 120C documente)",
         "C": "5 chutneys + raita (captures w4W r140381/r134622/r132144/r132143/r141754/r132139, tous badges TM31, draftees, 10/10 CLEAN ; tadka coco 120C adapte poele, documente en tips)",
         "IMG-Codex": "TENTATIVES 2026-09-24T20:5xZ: brief bouillon-legumes compris et scope respecte (zero ecriture hors scope) ; echec livraison: sandbox codex exec en quota (ecriture puis lecture shell impossibles) ; AUCUN asset recu ; images A3 en attente d'un canal d'execution sain | 2026-09-24T21:0xZ: canal gemini teste HS (client deprecated, migration Antigravity) ; AUCUN canal image sain disponible cote Muse",
         "BLOCAGE-METHODE": "Cookidoo expose ingrédients/quantités/badges sans login mais les pas-a-pas (vitesses/temps/ordre) exigent un compte ; Muse sans Chrome connecte ne peut rediger que les adaptations mandatees a execution non-robot (bouillons cocotte, ancrage total source) ; toute fiche a execution Thermomix fidele (puree, chutneys, raita, A2, B1, B2) requiert capture methode via session Chrome connectee | 2026-09-24T21:0xZ: tentative navigateur connecte (copie profil Chromium 882M + Playwright system-chromium-153) : chromium frais OK reseau, mais tout lancement avec profil copie crash (renderer/context, x4 configs) ; capture pas-a-pas authentifiee impossible depuis ce runtime",
         "CAPTURE-Codex-w4W": "TERMINEE 7/7 : donnees fideles en panneau, zero ecriture depot, scope respecte",
-        "CAPTURE2-Codex-w4W": "A2 (8, mayonnaise exclue) + B1/B2 (10) : 18 URLs, dispatch w4W ; capture fidele uniquement, zero ecriture depot"
+        "CAPTURE2-Codex-w4W": "A2 (8, mayonnaise exclue) + B1/B2 (10) : 18 URLs, dispatch w4W ; capture fidele uniquement, zero ecriture depot",
+        "CAPTURE3-Codex-w4W": "mayonnaise r67172 (badges+methode) + hollandaise autonome a trouver (r447496 composee ecartee comme source) ; dispatch w4W ; en attente"
       },
       "protocol": "Muse redige .gram + prompts sur la branche ; par recette figee, brief image -> Codex (codex exec) -> verification Muse -> integration -> gates ; .gram/ingredients.yaml et provenance reconciles par le lead ; aucun merge sans autorisation humaine",
       "collisions": "PR #498 (docs equipment + test_equipment_model_495, zero recouvrement fichiers) ; PR #502 (site-config + test_instance_identity, zero recouvrement) ; aucun claim actif concurrent",
@@ -114,6 +115,22 @@
             "corrections": "desc x3, conj x1, retags ~20, 8 cles + 1 alias, 7 provenances, 16 prompts, 2 titres, compta oignon/huile, transfert duxelles, timers 330s/90s, 2 scories prose"
           },
           "validations": "16/16 LOCAL-CLEAN ; Core recipe_check : seules erreurs = images manquantes ; build complet vert ; 4 pages lues au rendu (titres uniques, steps, timers, TM31, sources)"
+        },
+        {
+          "id": "stop-items-checkpoint-5",
+          "at": "2026-09-25T11:04:56Z",
+          "by": "Muse Code (session pine-zosma)",
+          "frozen": [
+            "recipes/sauce-mayonnaise.gram",
+            "recipes/sauce-hollandaise.gram",
+            "recipes/oeufs-mimosa.gram"
+          ],
+          "decisions": [
+            "hollandaise: source autonome r54152, aucun substitut invente",
+            "mimosa: Varoma 15 min source, ecart marque",
+            "mayonnaise: TM31 froid, base autonome vs herbes documentee"
+          ],
+          "validations": "3/3 LOCAL-CLEAN ; Core recipe_check : seules erreurs = images ; build vert ; 3 pages lues (titres dedup, contenus, TM31, sources)"
         }
       ]
     }
