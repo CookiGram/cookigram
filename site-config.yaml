@@ -24,3 +24,11 @@ theme:
 
 illustrations:
   style: "cookigram-v1"
+
+# Explicit instance choice (#391) : les trois piles système ci-dessous
+# reproduisent le rendu effectif actuel ; toute police non listée par le
+# contrat Core (pas de webfonts) est rejetée au build.
+typography:
+  sans: "system-sans"
+  serif: "system-serif"
+  mono: "system-mono"
