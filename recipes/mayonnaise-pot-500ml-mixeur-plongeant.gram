@@ -1,0 +1,66 @@
+---
+title: Mayonnaise au mixeur plongeant (pot 500 ml)
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 13
+prep_time: 5 min
+total_time: 5 min
+description: "Mayonnaise douce montée directement dans un pot de 500 ml au mixeur plongeant, pour un rendement d’environ 400 ml."
+nutrition_profile: pleasure
+tags: [mayonnaise, sauce, condiment, froid]
+source: https://www.thekitchn.com/how-to-make-mayonnaise-recipe-23770779
+author: Christine Gallary
+scaling:
+  enabled: false
+  reason: "Les quantités visent environ 400 ml dans un pot de 500 ml, avec une marge nécessaire au mixage."
+meal:
+  completeness: component
+  role: sauce
+spiciness: 0
+flavors:
+  pairing: [crudités, sandwichs, poissons froids, salades]
+  notes: [douce, crémeuse, légèrement citronnée]
+  harmony: "Le citron équilibre l’huile neutre et la petite dose de Dijon laisse la mayonnaise polyvalente."
+  tips: "Les quantités sont redimensionnées pour un pot de 500 ml ; le mixage exige un diamètre intérieur juste supérieur à la tête du mixeur. Par précaution, ne pas servir cette préparation d’œuf cru aux femmes enceintes."
+required_equipment:
+- Mixeur plongeant
+- Pot droit de 500 ml, assez étroit pour que sa paroi reste juste au-delà de la tête du mixeur
+conservation:
+  fridge_days: 1
+  freezable: false
+  reheat: "Ne pas réchauffer ; conserver au froid et consommer dans les 24 heures après préparation."
+  storage_note: "Préparation à l’œuf non cuit : réfrigérer immédiatement à 4 °C maximum et consommer sous 24 heures. Ne pas servir aux femmes enceintes."
+  guidance_sources:
+  - https://agriculture.gouv.fr/alimentation-les-bons-gestes-de-lete
+  - https://agriculture.gouv.fr/quest-ce-que-les-salmonelles
+  - https://www.anses.fr/fr/system/files/NUT2017SA0141.pdf
+image: images/mayonnaise-pot-500ml-mixeur-plongeant.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale cadrée au format 16:9 et optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
+  prompt_file: image-prompts/mayonnaise-pot-500ml-mixeur-plongeant.md
+---
+
+[Mettre les ingrédients dans le pot]
+- Poser le pot de 500 ml sur une balance et tarer.
+- Verser directement dans le pot l’@œuf{67 g, entier pasteurisé ; équivalent redimensionné de 1⅓ gros œuf américain}.
+- Ajouter le @jus de citron{13 ml} et la @moutarde de Dijon{7 ml}.
+- Ajouter le @sel{⅔ c. à café}.
+- Verser l’@huile végétale{320 ml, neutre} sur les ingrédients sans remuer.
+
+[Monter l’émulsion]
+- Introduire la tête du #mixeur plongeant{} verticalement jusqu’au fond du pot.
+- Démarrer le mixeur à sa vitesse la plus basse et le maintenir immobile jusqu’à ce qu’une mayonnaise opaque se forme au fond.
+- Remonter lentement le mixeur en l’inclinant pour incorporer l’huile restante ; arrêter dès que l’émulsion est épaisse et qu’aucune huile libre ne reste visible.
+
+[Fermer et conserver]
+- Fermer le pot.
+- Placer immédiatement le pot au réfrigérateur à 4 °C maximum.
+- Consommer la préparation d’œuf cru dans les 24 heures.
