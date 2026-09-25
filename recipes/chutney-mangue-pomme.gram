@@ -1,0 +1,71 @@
+---
+title: Chutney de mangue et pomme
+date_published: 2026-09-24
+portions: 4
+prep_time: 5 min
+total_time: 20 min
+description: Chutney doux-acidulé de mangue et pomme, avec oignon fondant et graines de moutarde pour accompagner les plats
+  salés.
+nutrition_profile: balanced
+tags:
+- chutney
+- mangue
+- condiment
+- thermomix
+- sucré-salé
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-Fr/r588711
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Poêle
+scaling:
+  enabled: false
+  reason: La recette est calibrée pour quatre portions.
+meal:
+  completeness: component
+  role: condiment
+spiciness: 0
+image: images/chutney-mangue-pomme.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/chutney-mangue-pomme.md
+---
+
+[Hacher l'oignon]
+- Mettre l'@oignon{130 g, en quartiers} dans le #bol Thermomix{}.
+- Hacher ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
+
+[Faire revenir]
+- Transvaser l'oignon haché dans une #poêle{}.
+- Ajouter l'@huile d'olive{25 g} et les @graines de moutarde{1 pincée}.
+- Faire revenir à feu moyen ~{5 min}, jusqu'à ce que l'oignon devienne translucide et que la moutarde soit odorante.
+
+[Cuire le chutney]
+- Remettre l'oignon revenu dans le bol du Thermomix.
+- Ajouter la @pomme{100 g, pelée et en dés de 2 cm} et la @mangue{150 g, en dés de 2 cm}.
+- Ajouter le @sucre{15 g}, le @vinaigre de vin blanc{10 g} et le @sel{1 pincée}.
+- Cuire ~{8 min} à ^{100 C}, sens inverse, vitesse cuillère.
+- Vérifier que les fruits sont tendres et que le jus a épaissi; prolonger brièvement si nécessaire.
+- Servir tiède ou froid avec un plat salé.

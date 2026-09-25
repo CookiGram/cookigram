@@ -1,0 +1,110 @@
+---
+title: Calzone aux légumes
+date_published: 2026-09-24
+portions: 6
+prep_time: 30 min
+total_time: 40 min
+spiciness: 0
+nutrition_profile: balanced
+description: Calzones dorées et moelleuses, garnies de brocoli, carotte, champignons, maïs et mozzarella fondante.
+tags:
+- calzone
+- légumes
+- mozzarella
+- pâte levée
+- four
+- végétarien
+- thermomix
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r146352
+author: Cookidoo
+image: images/calzone-aux-legumes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/calzone-legumes.md
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Varoma
+- Poêle
+- Plaque de cuisson
+- Four
+scaling:
+  enabled: false
+  reason: La capacité du Varoma et le façonnage des six calzones sont prévus pour la quantité source.
+flavors:
+  pairing:
+  - brocoli
+  - champignons
+  - tomate
+  - mozzarella
+  notes:
+  - moelleux
+  - végétal
+  - gratiné
+  harmony: La mozzarella fondante relie les légumes doux dans une pâte dorée au four.
+  tips: Laisser la garniture refroidir avant de fermer les disques de pâte.
+---
+
+[Cuire le brocoli à la vapeur]
+- Verser l'@eau{500 g} dans le #bol Thermomix{}.
+- Répartir le @brocoli{150 g, en fleurettes} dans le #Varoma{}.
+- Installer le Varoma.
+- Cuire ~{10 min} à ^{Varoma} et vitesse 2.
+- Retirer le Varoma.
+- Vider l'eau du bol.
+
+[Préparer la garniture]
+- Mettre l'@oignon{50 g}, la @gousse d'ail{1} et la @carotte{80 g} dans le bol.
+- Ajouter la @tomate{150 g} dans le bol.
+- Hacher ~{4 s} à vitesse 5.
+- Transférer les légumes hachés dans une #poêle{}.
+- Ajouter l'@huile d'olive{30 g} dans la poêle.
+- Ajouter les @champignons de Paris{100 g, en quartiers} et le @cube de bouillon de légumes{1, pour 0,5 l}.
+- Faire suer à feu moyen jusqu'à ce que les légumes soient tendres et que le liquide se soit évaporé.
+- Remettre les légumes dans le bol avec le brocoli cuit.
+- Cuire ~{3 min} à ^{100 C}, en sens inverse et vitesse cuillère.
+- Ajouter l'@origan{1 c. à soupe, séché} et le @maïs{80 g}.
+- Mélanger à la spatule.
+- Réserver la garniture.
+
+[Préparer la pâte]
+- Verser l'@eau{220 g} dans le bol avec le @sel{1 c. à café} et le @sucre{1 c. à café}.
+- Ajouter l'@huile d'olive{30 g} et la @levure boulangère{25 g, fraîche}.
+- Chauffer ~{90 s} à ^{37 C} et vitesse 1.
+- Ajouter la @farine{420 g}.
+- Pétrir ~{2 min} en mode pétrin.
+- Sortir la pâte du bol.
+- Former une boule avec la pâte.
+- Laisser lever la pâte dans un endroit tiède jusqu'à ce qu'elle double de volume.
+
+[Façonner les calzones]
+- Diviser la pâte en 6 morceaux d'environ 100 g.
+- Abaisser chaque morceau en un disque d'environ 20 cm.
+- Préchauffer le #four{} à ^{200 C}.
+- Répartir la @mozzarella{100 g, en tranches} et la garniture sur les disques.
+- Replier chaque disque en demi-lune.
+- Pincer les bords pour les souder.
+- Déposer les calzones sur une plaque légèrement farinée.
+- Badigeonner chaque calzone avec le @jaunes d'œufs{1}.
+- Enfourner ~{15 min} à ^{200 C}, jusqu'à ce que les calzones soient bien dorées.
+- Laisser tiédir.

@@ -1,0 +1,67 @@
+---
+title: Mayonnaise aux herbes fraîches
+date_published: 2026-09-24
+portions: 6
+prep_time: 10 min
+total_time: 15 min
+description: Mayonnaise ferme et onctueuse aux herbes fraîches hachées, mêlant aneth, ciboulette, persil et estragon.
+nutrition_profile: pleasure
+tags:
+- mayonnaise
+- herbes
+- sauce
+- thermomix
+- condiment
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-Fr/r26736
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+scaling:
+  enabled: false
+  reason: La mayonnaise est calibrée pour six portions.
+meal:
+  completeness: component
+  role: sauce
+spiciness: 0
+image: images/mayonnaise-aux-herbes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/mayonnaise-aux-herbes.md
+---
+
+[Hacher les herbes]
+- Mettre l'@aneth{1/2 bouquet} et la @ciboulette{6 brins} dans le #bol Thermomix{}.
+- Ajouter le @persil frais{1/2 bouquet} et l'@estragon{1/2 bouquet}.
+- Hacher ~{5 s} à vitesse 7.
+- Racler les parois avec la #spatule{}.
+
+[Démarrer l'émulsion]
+- Ajouter les @jaunes d'œufs{2} et la @moutarde de Dijon{1 c. à soupe}.
+- Assaisonner avec le @sel{3 pincées} et le @poivre moulu{1 pincée}.
+- Mélanger ~{5 s} à vitesse 4.
+
+[Monter la mayonnaise]
+- Installer le #gobelet doseur{} sur le couvercle.
+- Verser lentement l'@huile végétale{120 g} sur le couvercle pendant ~{5 min} à vitesse 4; le filet doit s'écouler régulièrement dans le bol.
+- Réserver au réfrigérateur jusqu'au service.

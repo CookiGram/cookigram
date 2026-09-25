@@ -1,0 +1,82 @@
+---
+title: Cheese naan indien à la poêle
+date_published: 2026-09-24
+portions: 8
+prep_time: 15 min
+total_time: 2 h 40 min
+spiciness: 0
+description: Naans dorés à la poêle, garnis de fromage fondant et d'une pâte souple au yaourt, levée au chaud avant cuisson.
+nutrition_profile: balanced
+tags:
+- boulangerie
+- pain
+- thermomix
+- indien
+- fromage
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r780408
+author: Fabrice Besse (Larousse)
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Poêle
+- Rouleau à pâtisserie
+scaling:
+  enabled: false
+  reason: Les naans cuisent par fournées à la poêle et le fromage doit rester réparti dans huit pâtons.
+image: images/cheese-naan-indien.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/cheese-naan-indien.md
+---
+
+## Cheese naan indien à la poêle
+
+[Faire fondre le beurre]
+- Mettre le @beurre doux{40 g} dans le bol du Thermomix.
+- Faire fondre ~{2 min} à ^{70 C}, vitesse 1.
+
+[Pétrir la pâte]
+- Ajouter le @lait demi-écrémé{130 g} et la @levure boulangère{3 g, sèche}.
+- Ajouter la @farine{320 g}, le @yaourt nature{1 pot} et le @sel{2 pincées}.
+- Verser l'@huile d'olive{1 c. à soupe}.
+- Pétrir en mode pétrin ~{5 min}, jusqu'à obtenir une pâte homogène.
+
+[Laisser lever]
+- Transvaser la pâte dans un saladier légèrement fariné.
+- Couvrir d'un linge.
+- Laisser lever ~{2 h} au tiède, jusqu'au doublement du volume.
+
+[Diviser la pâte]
+- Diviser la pâte en 8 portions égales.
+- Bouler chaque portion.
+
+[Garnir les naans]
+- Abaisser chaque boule en ovale sur un plan de travail fariné.
+- Déposer 2 portions de @La Vache qui rit{16 portions au total} sur une moitié de chaque ovale.
+- Replier l'ovale sur lui-même.
+- Sceller les bords au rouleau.
+
+[Cuire les naans]
+- Chauffer une #poêle{} à feu moyen, sans matière grasse.
+- Cuire les naans par deux ~{2 min} sur chaque face, jusqu'à ce que la pâte soit tachetée de brun et le fromage fondu.
+- Servir chaud le jour même.

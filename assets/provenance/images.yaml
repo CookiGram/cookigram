@@ -540,3 +540,693 @@ static/images/sushi-cake-vegetarien.webp:
     Illustration-story CookiGram originale, paysage 16:9 : mini sushi cake végétarien démoulé sur planche claire, trois couches de riz vinaigré, concombre et radis croquants, avocat en dés assaisonné, omelette ronde et sauce claire en filet. Montrer un rendu frais et compact. Vue trois-quarts à 45 degrés, contours fins, aquarelle et cel shading doux, textures crédibles, espace négatif pour une hero image. Aucun texte, logo, marque, filigrane, personne ou emballage.
   sha256: a79d50687e782b4e9d64b08d820be68f9fc7fca182d4980a501beddb890d5454
   attribution: CookiGram
+
+static/images/tempura-de-legumes.webp:
+  subject:
+    type: recipe
+    recipe: tempura-de-legumes
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Tempura de légumes
+
+
+    Illustration culinaire originale au format paysage 16:9, style manga culinaire chaleureux de CookiGram. Sur une assiette
+    japonaise sobre, présenter des tempura de courgette, aubergine, poivrons, pois gourmands, asperges et carottes : enrobage
+    fin, doré clair et croustillant, légumes reconnaissables. À côté, une petite coupelle de sauce soja au dashi, du daikon
+    blanc râpé et un peu de gingembre. Lumière douce, couleurs naturelles, cadrage appétissant et lisible, sans texte, sans
+    logo, sans marque, sans appareil visible.'
+  sha256: ff906065fa9fef8b6d9ddd7e2c06cf749524cf1a0314c74e126603771ef0fb07
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-a
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/koftas-de-boeuf.webp:
+  subject:
+    type: recipe
+    recipe: koftas-de-boeuf
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Koftas de bœuf à la menthe et au cumin
+
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of Koftas de bœuf à la menthe et au cumin from this written
+    recipe, independently of any existing image. Scene/backdrop: softly suggested, uncluttered home-kitchen tabletop. Subject:
+    eight cylindrical beef koftas, grilled golden-brown with fine char marks, on wooden skewers and a pale ceramic plate;
+    fresh mint leaves nearby and a small bowl of plain Greek yogurt as a supported accompaniment. Style/medium: polished contemporary
+    manga food illustration with fine ink contours, hand-painted watercolour and soft cel shading; believable appetizing textures
+    and an original CookiGram visual identity, without imitating any artist, studio or series. Composition/framing: landscape
+    16:9, three-quarter view around 45 degrees, centred dish with safe margins for mobile crops, no people. Lighting/mood:
+    warm natural kitchen light. Palette: toasted brown, mint green and cream. Constraints: faithful to the recipe, fully original.
+    Avoid text, logos, watermarks, packaging, characters, faces and photorealism.'
+  sha256: 459997689f54e3326a0e47949b6497b47f0b9f75165fdadb763f3b07457fbf0c
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-b
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/colombo-de-legumes-a-la-mangue.webp:
+  subject:
+    type: recipe
+    recipe: colombo-de-legumes-a-la-mangue
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Colombo de légumes à la mangue
+
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of Colombo de légumes à la mangue from this written recipe,
+    independently of any existing image. Scene/backdrop: softly suggested, uncluttered home-kitchen tabletop. Subject: one
+    rustic bowl of vegetarian colombo with visible tender courgette, aubergine, potato, red pepper and mango pieces in a golden
+    coconut-milk sauce, finished with the recipe''s fresh coriander; a lime wedge may sit beside the bowl. Do not show a whole
+    chili. Style/medium: polished contemporary manga food illustration with fine ink contours, hand-painted watercolour and
+    soft cel shading; believable appetizing textures and an original CookiGram visual identity, without imitating any artist,
+    studio or series. Composition/framing: landscape 16:9, three-quarter view around 45 degrees, centred bowl with safe margins
+    for mobile crops, no people. Lighting/mood: warm natural kitchen light. Palette: curry gold, coconut cream, red pepper
+    and coriander green. Constraints: faithful to the recipe, fully original. Avoid text, logos, watermarks, packaging, characters,
+    faces and photorealism.'
+  sha256: ceda757ae4418ace6c36f0d7055c57008d8d3709b97239a45331d158fe8952a9
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-b
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/acras-de-morue.webp:
+  subject:
+    type: recipe
+    recipe: acras-de-morue
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Acras de morue
+
+
+    Illustration culinaire originale au format paysage 16:9, dans le style manga culinaire chaleureux validé pour CookiGram.
+    Une assiette simple présente une douzaine de petits acras antillais irréguliers, bien dorés et croustillants, avec quelques
+    morceaux de morue et des herbes visibles dans la pâte. Ajouter à côté un quartier de citron vert et une petite touche
+    de piment rouge. Lumière chaude, composition appétissante et lisible, décor discret de cuisine caribéenne. Aucun texte,
+    logo, emballage ou personne. Ne pas ajouter de sauce ni d''ingrédient absent de la recette.
+
+
+    Source de la recette : https://cookidoo.fr/recipes/recipe/fr/r594482'
+  sha256: 27d327ba513c4f4c2bd32fbace61fda5f9cf0cfd461524ff35c23fc75dcf9204
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-c
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/cannelloni-epinards-ricotta-citron.webp:
+  subject:
+    type: recipe
+    recipe: cannelloni-epinards-ricotta-citron
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Cannelloni aux épinards, ricotta et citron
+
+
+    Illustration culinaire originale au format paysage 16:9, 1280 × 720, dans le style manga culinaire CookiGram : un plat
+    rectangulaire de cannelloni dorés, nappés de tomate, avec une farce vert tendre visible dans un tube coupé, copeaux de
+    parmesan, quelques feuilles de menthe et un soupçon de zeste de citron. Lumière chaleureuse, composition appétissante
+    et précise, table sobre. Aucun texte, logo, filigrane, emballage ni personnage.'
+  sha256: cd3f3a83f27310fb4d976bda6eec4aabae79e5b1b40289c7a6b753305e84946c
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-d
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/gnocchi-romaine-miel-noix-gorgonzola.webp:
+  subject:
+    type: recipe
+    recipe: gnocchi-romaine-miel-noix-gorgonzola
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Gnocchi alla romana au miel, noix et gorgonzola
+
+
+    Illustration culinaire originale au format paysage 16:9, 1280 × 720, dans le style manga culinaire CookiGram : disques
+    de semoule dorés au four, disposés en rosace dans un plat, avec gorgonzola fondant, filet de miel ambré et éclats de noix.
+    Montrer une texture moelleuse au centre et une fine croûte gratinée. Lumière chaleureuse, table sobre. Aucun texte, logo,
+    filigrane, emballage ni personnage.'
+  sha256: 84a32b63038a2da10982e184bc2c0315819edb7af2710b846b683c0a892c7678
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-d
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/calzone-aux-legumes.webp:
+  subject:
+    type: recipe
+    recipe: calzone-aux-legumes
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Calzone aux légumes
+
+
+    Illustration culinaire originale au format paysage 16:9, 1280 × 720, dans le style manga culinaire CookiGram : calzone
+    maison bien dorée, ouverte en coupe pour révéler brocoli, carotte, champignons, tomate et mozzarella fondante. Une deuxième
+    calzone entière en arrière-plan, quelques miettes et farine sur le plan de travail, lumière chaleureuse, rendu précis
+    et gourmand. Aucun texte, logo, filigrane, emballage ni personnage.'
+  sha256: 02bc1ec8942eeeca58bdf9c88dbc436736e42d787f9ba39cb70fb365e3de7de5
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-d
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/moussaka-de-lentilles.webp:
+  subject:
+    type: recipe
+    recipe: moussaka-de-lentilles
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Moussaka de lentilles
+
+
+    Illustration culinaire originale au format paysage 16:9, 1280 × 720, dans le style manga culinaire CookiGram : part nette
+    de moussaka végétarienne en couches visibles d''aubergine, sauce épaisse aux lentilles corail et béchamel gratinée, dans
+    un plat de cuisson. Quelques lentilles et herbes discrètes autour, lumière chaude, texture fondante sous une surface dorée.
+    Aucun texte, logo, filigrane, emballage ni personnage.'
+  sha256: 500bb42357979da58602a3801429aadbe5c005db95cd24aef568fcca1f82eb4c
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-d
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/polenta-poireau-bleu-auvergne.webp:
+  subject:
+    type: recipe
+    recipe: polenta-poireau-bleu-auvergne
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Polenta au poireau et au bleu d''Auvergne
+
+
+    Illustration culinaire originale au format paysage 16:9, 1280 × 720, dans le style manga culinaire CookiGram : polenta
+    crémeuse jaune pâle avec rubans de poireau fondants, morceaux de bleu d''Auvergne légèrement fondus et quelques copeaux
+    de fromage sur le dessus. Servir fumante dans une assiette creuse rustique, lumière douce et chaude, mise en scène simple
+    et appétissante. Aucun texte, logo, filigrane, emballage ni personnage.'
+  sha256: d36a38729162cd133c9f65229a4f0ff2accc392fbbd23458060998270d616869
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-d
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/houmous-classique.webp:
+  subject:
+    type: recipe
+    recipe: houmous-classique
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Houmous classique
+
+
+    Illustration culinaire originale au format paysage 16:9, style manga culinaire chaleureux et détaillé CookiGram. Un bol
+    de houmous ivoire très lisse, marbré d''un filet d''huile d''olive et d''une pincée de paprika, entouré de pois chiches
+    et de quartiers de pain pita. Lumière douce, table méditerranéenne simple, cadrage appétissant. Aucun texte, logo, emballage
+    ou copie de photographie de recette.'
+  sha256: 6a1d429a5380655d72e64831873eece8faf929ac4c266b3e7adb5f44f4640ebc
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/tapenade-noire.webp:
+  subject:
+    type: recipe
+    recipe: tapenade-noire
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Tapenade noire
+
+
+    Illustration culinaire originale au format paysage 16:9, style manga culinaire chaleureux CookiGram. Un seul petit bol
+    de tapenade noire dense et brillante, composé d''olives finement broyées avec quelques câpres visibles; gousses d''ail,
+    anchois et pain grillé en décor. Lumière méditerranéenne, texture rustique appétissante. Sans texte, logo ou copie d''une
+    photographie source.'
+  sha256: 8e7713d6b34e63be461df0dc412311bf3d678f6a65c5bcf4b2e455dc408623a4
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/tzatziki-grec.webp:
+  subject:
+    type: recipe
+    recipe: tzatziki-grec
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Tzatziki grec
+
+
+    Illustration culinaire originale paysage 16:9, style manga chaleureux CookiGram. Montrer uniquement un bol de tzatziki
+    épais avec des filaments de concombre égoutté et du persil finement haché visibles dans le yaourt blanc. Texture fraîche
+    et crémeuse, composition épurée sur une table claire, lumière naturelle estivale. Aucun pain, huile ou autre accompagnement,
+    sans texte, logo, marque ni reprise de photographie source.'
+  sha256: 136884d802930050981c05865c845cdf7a4b43409462ed48dca8d51204413436
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/guacamole-classique.webp:
+  subject:
+    type: recipe
+    recipe: guacamole-classique
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Guacamole classique
+
+
+    Illustration culinaire originale paysage 16:9 dans le style manga chaleureux CookiGram. Montrer uniquement un bol de guacamole
+    vert tendre, encore légèrement grumeleux, avec de petits morceaux visibles d''avocat et quelques feuilles de coriandre
+    incorporées. Texture fraîche et souple, cadrage rapproché et lumière naturelle vive. Aucun accompagnement ni ingrédient
+    supplémentaire, sans texte, logo, marque ou imitation de photographie existante.'
+  sha256: 1243e4d80b9e9cb694d3bea1839217db43641d3571cc84e49bccfea750138618
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/mayonnaise-aux-herbes.webp:
+  subject:
+    type: recipe
+    recipe: mayonnaise-aux-herbes
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Mayonnaise aux herbes fraîches
+
+
+    Illustration originale au format paysage 16:9, style manga culinaire CookiGram. Une mayonnaise vert pâle, épaisse et brillante,
+    dans un bol de céramique; ciboulette, aneth, persil et estragon frais disposés autour. Cuillère laissant voir une texture
+    soyeuse, lumière naturelle, décor simple. Sans texte, logo ni reprise de photographie.'
+  sha256: 20358626cb8f0dc241482632ed9b267edcac5770c136d129aef8888353bfeec0
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/chutney-mangue-pomme.webp:
+  subject:
+    type: recipe
+    recipe: chutney-mangue-pomme
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Chutney de mangue et pomme
+
+
+    Illustration culinaire originale paysage 16:9, style manga chaleureux CookiGram. Montrer uniquement un petit bol de chutney
+    doré à la mangue et à la pomme, avec morceaux fondants visibles, graines de moutarde et oignon translucide. Texture compotée
+    et brillante, cadrage rapproché, lumière douce. Aucun accompagnement ni ingrédient supplémentaire, sans texte, logo, marque
+    ou imitation de photographie existante.'
+  sha256: 20c2a50162c1fca5cdb8f24a74f3e5d80755953090992c8fe8479c4b39bd5363
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/aioli-citron-capres.webp:
+  subject:
+    type: recipe
+    recipe: aioli-citron-capres
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Aïoli au citron et aux câpres
+
+
+    Illustration originale paysage 16:9, dans le style manga culinaire CookiGram. Un petit bol d''aïoli jaune pâle, épais
+    et brillant, avec quelques câpres et zestes de citron sur le dessus; citron frais, gousses d''ail et légumes vapeur en
+    décor. Composition nette, lumière douce, sans texte, logo ou reproduction d''image source.'
+  sha256: 79edc7c8c20c245a8ad55a9a7e9f608e9c2c0770af0b37f5384b44bcbefe01cf
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/sauce-tomate-herbes.webp:
+  subject:
+    type: recipe
+    recipe: sauce-tomate-herbes
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Sauce tomate aux herbes
+
+
+    Illustration originale au format paysage 16:9, style manga culinaire chaleureux CookiGram. Sauce tomate rouge profonde
+    et réduite dans un bol rustique, texture souple avec herbes visibles de thym et romarin, tomates mûres fraîches à côté.
+    Lumière de fin d''été, rendu appétissant et naturel. Sans texte, logo, pot de marque ou copie de photo de recette.'
+  sha256: 24059d5907327a01399d53f087756d3816dc4ecb634fa4026a05a56033b9a57a
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-e
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/pain-de-mie-maison.webp:
+  subject:
+    type: recipe
+    recipe: pain-de-mie-maison
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Pain de mie maison moelleux
+
+
+    - Usage : illustration horizontale de la fiche CookiGram.
+
+    - Source culinaire : https://cookidoo.fr/recipes/recipe/fr-fr/r449929
+
+
+    ## Prompt final
+
+
+    ```text
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of homemade soft sandwich bread based only on this written
+    dish description, not on any existing photograph. Scene/backdrop: simple warm home-kitchen tabletop, softly suggested
+    and uncluttered. Subject: one golden sandwich loaf baked in a rectangular tin beside two thick, neatly cut slices showing
+    a fine, tender, evenly baked crumb; simple unadorned slices with no garnish. Style/medium: polished contemporary manga
+    food illustration, elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing believable
+    food textures, distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist,
+    studio, series or existing artwork. Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish
+    centred with safe crop margins for mobile and desktop cards, no human figures. Lighting/mood: warm late-afternoon kitchen
+    light, welcoming and homely. Colour palette: honey gold crust, cream crumb, soft warm wood. Constraints: visually faithful
+    to a plain lightly sweetened loaf, fully original composition, suitable as a website recipe illustration. Avoid text,
+    letters, logos, brand marks, watermarks, packaging, characters, faces, third-party image imitation, photorealism.
+
+    ```'
+  sha256: 1eede87ab232eff7257f7d0386d1d4123ae1c4ca93be67734915eaf041e2bc74
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-f
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/bretzels-maison.webp:
+  subject:
+    type: recipe
+    recipe: bretzels-maison
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Bretzels maison au bain alcalin
+
+
+    - Usage : illustration horizontale de la fiche CookiGram.
+
+    - Source culinaire : https://cookidoo.fr/recipes/recipe/fr-Fr/r595302
+
+
+    ## Prompt final
+
+
+    ```text
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of homemade pretzels based only on this recipe description,
+    not on any existing photograph. Scene/backdrop: simple warm home-kitchen tabletop, softly suggested and uncluttered. Subject:
+    a small group of plump twisted pretzels with a deep glossy golden-brown crust, a few coarse salt crystals, and soft pale
+    crumb visible in one broken piece; no dip or extra garnish. Style/medium: polished contemporary manga food illustration,
+    elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing believable food textures,
+    distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series
+    or existing artwork. Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, pretzels centred with
+    safe crop margins for mobile and desktop cards, no human figures. Lighting/mood: warm natural bakery light, welcoming
+    and homely. Colour palette: rich amber crust, cream crumb, muted warm wood. Constraints: visually faithful to baked salted
+    pretzels, fully original composition, suitable as a website recipe illustration. Avoid text, letters, logos, brand marks,
+    watermarks, packaging, characters, faces, third-party image imitation, photorealism.
+
+    ```'
+  sha256: a27a1fc140e7d1dc1575a72465e37abe7b6763771d4a52c11ae59b079d341d1e
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-f
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/cheese-naan-indien.webp:
+  subject:
+    type: recipe
+    recipe: cheese-naan-indien
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Cheese naan indien à la poêle
+
+
+    - Usage : illustration horizontale de la fiche CookiGram.
+
+    - Source culinaire : https://cookidoo.fr/recipes/recipe/fr-fr/r780408
+
+
+    ## Prompt final
+
+
+    ```text
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of Indian cheese naan based only on this written recipe,
+    not on any existing photograph. Scene/backdrop: simple warm home-kitchen tabletop, softly suggested and uncluttered. Subject:
+    two oval naans with browned blistered spots from a dry skillet, one opened to show a modest soft cheese filling inside
+    the folded bread; no herbs, dip or extra garnish. Style/medium: polished contemporary manga food illustration, elegant
+    fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing believable food textures, distinctive
+    original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing
+    artwork. Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, naan centred with safe crop margins
+    for mobile and desktop cards, no human figures. Lighting/mood: warm natural kitchen light, welcoming and homely. Colour
+    palette: toasted wheat gold, cream cheese, warm wood. Constraints: visually faithful to stuffed pan-cooked naan, fully
+    original composition, suitable as a website recipe illustration. Avoid text, letters, logos, brand marks, watermarks,
+    packaging, characters, faces, third-party image imitation, photorealism.
+
+    ```'
+  sha256: 96d3816f712f582f7725adb4c9cf135d734a1bc4baa58573f42307b669a2303b
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-f
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/tortillas-de-ble-maison.webp:
+  subject:
+    type: recipe
+    recipe: tortillas-de-ble-maison
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Tortillas de blé maison à la poêle
+
+
+    - Usage : illustration horizontale de la fiche CookiGram.
+
+    - Source culinaire : https://cookidoo.fr/recipes/recipe/fr-fr/r115278
+
+
+    ## Prompt final
+
+
+    ```text
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of homemade wheat tortillas based only on this written
+    recipe, not on any existing photograph. Scene/backdrop: simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a tidy stack of thin, round, flexible wheat tortillas with delicate toasted freckles; one tortilla is gently
+    folded to show its pliable texture; no filling, dip or garnish. Style/medium: polished contemporary manga food illustration,
+    elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing believable food textures,
+    distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series
+    or existing artwork. Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, stack centred with safe
+    crop margins for mobile and desktop cards, no human figures. Lighting/mood: warm natural kitchen light, welcoming and
+    homely. Colour palette: pale wheat gold, toasted brown freckles, warm wood. Constraints: visually faithful to plain pan-cooked
+    tortillas, fully original composition, suitable as a website recipe illustration. Avoid text, letters, logos, brand marks,
+    watermarks, packaging, characters, faces, third-party image imitation, photorealism.
+
+    ```'
+  sha256: 6af8f59d8fb87a5d5dd53323bf27e1025ee4aa48a1850104e0b9e9c84f44305e
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-f
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/crackers-aux-graines.webp:
+  subject:
+    type: recipe
+    recipe: crackers-aux-graines
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Crackers maison aux graines
+
+
+    - Usage : illustration horizontale de la fiche CookiGram.
+
+    - Source culinaire : https://cookidoo.fr/recipes/recipe/fr-FR/r419258
+
+
+    ## Prompt final
+
+
+    ```text
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of homemade mixed-seed crackers based only on this recipe,
+    not on any existing photograph. Scene/backdrop: simple warm home-kitchen tabletop, softly suggested and uncluttered. Subject:
+    a neat pile of thin rectangular golden crackers, lightly irregular at the edges and visibly studded with sunflower, flax,
+    sesame and pumpkin seeds; a few simple crumbs nearby, no dip or extra garnish. Style/medium: polished contemporary manga
+    food illustration, elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing believable
+    food textures, distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist,
+    studio, series or existing artwork. Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, crackers
+    centred with safe crop margins for mobile and desktop cards, no human figures. Lighting/mood: warm natural kitchen light,
+    welcoming and homely. Colour palette: baked wheat gold, cream, earthy seed tones, warm wood. Constraints: visually faithful
+    to thin crisp seed crackers, fully original composition, suitable as a website recipe illustration. Avoid text, letters,
+    logos, brand marks, watermarks, packaging, characters, faces, third-party image imitation, photorealism.
+
+    ```'
+  sha256: 55e6271436aa4c558a017f656fb1b21064b1a441548c06782560cae7b30d30e9
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-f
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/fougasse-au-levain.webp:
+  subject:
+    type: recipe
+    recipe: fougasse-au-levain
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Fougasse au levain de blé
+
+
+    - Usage : illustration horizontale de la fiche CookiGram.
+
+    - Source culinaire : https://cookidoo.fr/recipes/recipe/fr-fr/r712244
+
+
+    ## Prompt final
+
+
+    ```text
+
+    Use case: illustration-story. Asset type: horizontal 16:9 hero illustration for a responsive recipe website. Primary request:
+    Create an entirely original manga-inspired culinary illustration of three wheat-sourdough fougasses based only on this
+    written recipe, not on any existing photograph. Scene/backdrop: simple warm home-kitchen tabletop, softly suggested and
+    uncluttered. Subject: three rustic elongated flat loaves with the recognizable open leaf-like slashes, flour-dusted golden
+    crust and an airy pale interior visible in one torn piece; no herbs, olives or extra garnish. Style/medium: polished contemporary
+    manga food illustration, elegant fine ink contours, hand-painted watercolour texture and soft cel shading, appetizing
+    believable food textures, distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named
+    artist, studio, series or existing artwork. Composition/framing: landscape 16:9, three-quarter view at about 45 degrees,
+    fougasses centred with safe crop margins for mobile and desktop cards, no human figures. Lighting/mood: warm natural bakery
+    light, welcoming and homely. Colour palette: flour white, golden wheat crust, warm wood. Constraints: visually faithful
+    to plain sourdough fougasse, fully original composition, suitable as a website recipe illustration. Avoid text, letters,
+    logos, brand marks, watermarks, packaging, characters, faces, third-party image imitation, photorealism.
+
+    ```'
+  sha256: 49f950320b6fe29746fe9407eb00bd11536ada102b44919ad077446dc139c650
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-f
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+
+static/images/poulet-korma-safran-raisins.webp:
+  subject:
+    type: recipe
+    recipe: poulet-korma-safran-raisins
+  origin: generated
+  generated_at: '2026-09-24'
+  prompt: '# Poulet korma au safran et aux raisins
+
+
+    Illustration culinaire originale paysage 16:9, dans le style manga chaleureux de CookiGram. Présenter un plat de poulet
+    korma crémeux et doré, avec morceaux de blanc de poulet, raisins secs et sauce au safran visibles. Terminer uniquement
+    avec les amandes effilées et les oignons frits présents dans la recette. Cadrage appétissant, lumière douce, textures
+    de sauce et de poulet lisibles. Aucun accompagnement ajouté, sans texte, logo, marque, emballage ni imitation de photographie
+    existante.'
+  sha256: 97cc16977d3c74eca93223e31faeb0e3f2b6094f13f4b8a4f2810424bf35cd17
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-492-lane-b
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1

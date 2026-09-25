@@ -1,0 +1,65 @@
+---
+title: Guacamole classique
+date_published: 2026-09-24
+portions: 6
+prep_time: 5 min
+total_time: 5 min
+description: Avocat mûr, coriandre, citron et piment se mêlent dans ce guacamole frais, souple et acidulé à partager.
+nutrition_profile: vitality
+tags:
+- guacamole
+- avocat
+- dip
+- thermomix
+- apéritif
+date_modified: 2026-09-24
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r75130
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+scaling:
+  enabled: false
+  reason: La texture a été calibrée pour six portions.
+meal:
+  completeness: component
+  role: dip
+spiciness: 2
+image: images/guacamole-classique.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée, puis optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-24'
+  prompt_file: image-prompts/guacamole-classique.md
+---
+
+[Hacher la coriandre]
+- Mettre la @coriandre fraîche{5 brins, feuilles équeutées} dans le #bol Thermomix{}.
+- Hacher ~{3 s} à vitesse 5.
+
+[Hacher les aromates]
+- Ajouter l'@oignon{100 g, coupé en deux}, le @piment frais{1 pièce, moyennement piquant et épépiné} et l'@ail{1 gousse}.
+- Hacher ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
+
+[Mixer l'avocat]
+- Ajouter l'@avocat{450 g, chair mûre}, le @jus de citron{50 g} et le @sel{1 c. à café}.
+- Mixer ~{10 s} à vitesse 4 jusqu'à une texture encore légèrement grumeleuse.
+- Transvaser dans un bol et servir.

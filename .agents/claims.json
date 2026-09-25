@@ -187,6 +187,28 @@
       "merged_at": "2026-09-24T19:26:10Z",
       "reconciled_by": "Codex",
       "reconciliation": "satisfied by PR #494; issue #491 remains open for the six 120 C references excluded from this scope"
+    },
+    {
+      "issue": 492,
+      "title": "Vague 40 recettes Cookidoo variées compatibles TM31",
+      "agent": "Codex-Bandleader",
+      "workspace": "/home/pierrecsn/Work/cookigram",
+      "branch": "feat/issue-492-cookidoo-wave",
+      "claimed_at": "2026-09-24T20:42:00+02:00",
+      "last_heartbeat": "2026-09-24T20:21:16Z",
+      "status": "merged",
+      "lane_assignments": {
+        "A": "tempura de légumes only; the other seven candidates overlap the live #491 claim",
+        "B": "kofta, chicken korma and colombo de légumes; pastilla and lahmacun overlap #491",
+        "C": "acras de morue only; all other candidates overlap #491",
+        "D": "cannelloni, gnocchi alla romana, calzone, moussaka de lentilles, polenta only; arancini and pierogi overlap #491",
+        "E": "all eight sauce/dip candidates; recipes and prompts only, lead reconciles ingredients",
+        "F": "all six bread/accompaniment candidates; recipes and prompts only, lead reconciles ingredients"
+      },
+      "pr": 501,
+      "merged_at": "2026-09-24T20:21:16Z",
+      "reconciled_by": "Muse Code (session pine-zosma)",
+      "reconciliation": "satisfied by PR #501 (24 recipes, lanes A-F); issue #492 closed"
     }
   ]
 }
