@@ -1710,6 +1710,216 @@ static/images/pate-a-choux.webp:
     visual_profile:
       name: CookiGram manga culinary
       revision: 1
+static/images/caviar-aubergine.webp:
+  subject:
+    type: recipe
+    recipe: caviar-aubergine
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Caviar d'aubergine moutabel
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Caviar d'aubergine moutabel" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a bowl of smoky pale aubergine caviar swirled with tahini, topped with diced tomato and green pepper, a roasted aubergine half and mint sprigs beside it.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: pale beige caviar, red tomato, green pepper and mint, dark roasted skin.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: c009746d4be6e2c3aa2107378cc8422ae2968dc6d6b9ec6aab657ed540fa42f2
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/champignons-farcis.webp:
+  subject:
+    type: recipe
+    recipe: champignons-farcis
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Champignons farcis vapeur
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Champignons farcis vapeur" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: steamed stuffed mushroom caps filled with herbed duxelles and topped with ground almonds, arranged in a bamboo steamer basket with gentle steam rising, parsley sprigs scattered.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: cream mushroom caps, brown duxelles, green parsley.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 3697ba8617d0fbdf5fef7305a4a57d3dc62fcd2639e672a984439adc2e3c16c4
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/chutney-cacahuetes.webp:
+  subject:
+    type: recipe
+    recipe: chutney-cacahuetes
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Chutney aux cacahuètes et tomate
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Chutney aux cacahuètes et tomate" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a rustic bowl of thick orange-red peanut chutney with visible texture, roasted peanuts, tomato wedges and fresh coriander sprigs scattered around, a drizzle of oil glistening on top.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: warm orange-red chutney, golden peanuts, red tomato, green coriander.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 7ad2b0efb1c99b73b657be891a8dbf8460948910048abcb7697a30995c15295b
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/chutney-coco.webp:
+  subject:
+    type: recipe
+    recipe: chutney-coco
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Chutney frais à la noix de coco
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Chutney frais à la noix de coco" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a bowl of creamy pale coconut chutney topped with a glistening golden tadka of crackled black mustard seeds, cumin seeds and crisp curry leaves; half a fresh coconut and scattered peanuts beside the bowl.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: creamy white chutney, golden tadka oil, green curry leaves, brown coconut shell.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 3d853a6b1d14f64aa4253bae1e3d05ef9a84b4a3cc3945de570a6d58e2998ae6
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/chutney-coriandre-piment.webp:
+  subject:
+    type: recipe
+    recipe: chutney-coriandre-piment
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Chutney coriandre-piment au Thermomix
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Chutney coriandre-piment au Thermomix" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a small bowl of vivid green coriander-chilli chutney with a smooth swirled surface, whole green chillies, fresh coriander roots and a lemon half beside the bowl.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: vivid green chutney and chillies, yellow lemon, white ceramic bowl.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: c18b51ff285739130f4433c311cbdba15e02ed4efbfc3a47580cc34b17c6fd2c
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/chutney-dattes-tamarin.webp:
+  subject:
+    type: recipe
+    recipe: chutney-dattes-tamarin
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Chutney dattes-tamarin au Thermomix
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Chutney dattes-tamarin au Thermomix" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a small glass jar of thick dark amber date-and-tamarind chutney with its lid beside it, glossy sticky texture visible at the rim, a few whole dates, cinnamon sticks and cardamom pods arranged nearby.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: deep amber chutney, dark brown dates, warm cinnamon tones, clear glass.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 7963bbeefb1329abb33f8349183664f10cbe7c64c246b5818db8fee5398b0841
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/chutney-tamarin.webp:
+  subject:
+    type: recipe
+    recipe: chutney-tamarin
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Chutney de tamarin au Thermomix
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Chutney de tamarin au Thermomix" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a small bowl of smooth dark reddish-brown tamarind chutney with a glossy swirl on top, fresh coriander sprigs, a green chilli and tamarind pods beside the bowl.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: deep reddish-brown chutney, fresh green coriander and chilli, brown tamarind pods.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 211130f403ee7a1b87cfc36781ee1eeed39c5aff695ad09029a553eac37e814f
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
 static/images/gougeres-fromage.webp:
   subject:
     type: recipe
@@ -1730,11 +1940,41 @@ static/images/gougeres-fromage.webp:
     Colour palette: golden puffs, pale gruyère flecks, cream platter.
     Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
     Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
-  sha256: 07cdff5edf75d489d2c084c6f5d104ef1001aceb3b353936d38052e101f92fea
+  sha256: 25780167b7f305b72b1d52fddfb07f8f23851212f99848a3c3f4db9ed7f58ff5
   attribution: CookiGram
   generation:
     tool: image_gen
-    batch: issue-493-img-b1
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/madeleines-salees.webp:
+  subject:
+    type: recipe
+    recipe: madeleines-salees
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Madeleines salées chorizo et légumes
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Madeleines salées chorizo et légumes" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: golden savoury madeleines with their classic shell shape and bump, studded with red chorizo cubes and green courgette pieces, arranged on a wire rack.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: golden madeleines, red chorizo, green courgette.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 32884a4481cd08a0d3df77790b506d1ed1d2a7621637e8ae4fdbc44a22b55e4b
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
     provider: OpenAI
     model: unknown
     visual_profile:
@@ -1760,11 +2000,251 @@ static/images/minicanneles-chorizo.webp:
     Colour palette: deep amber crusts, red chorizo pieces, copper mould.
     Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
     Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
-  sha256: 2ec520e65cea10df4f47f42415d86969fa37b4bf296321b594ddedbd0f4484de
+  sha256: 06312adf586a054de8a9a9fc5ad6a7f684e659ef27160a0b91701abb3c168e42
   attribution: CookiGram
   generation:
     tool: image_gen
-    batch: issue-493-img-b1
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/mini-quiches.webp:
+  subject:
+    type: recipe
+    recipe: mini-quiches
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Mini quiches bacon et thon
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Mini quiches bacon et thon" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a platter of small golden mini quiches with two visible fillings, bacon-and-leek and tuna-and-olive, flaky butter crusts, one cut open to show the creamy centre.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: golden crusts, creamy yellow centres, red-brown bacon, dark olives.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 5861223686894fddded858984194fdc925d05a01d693006a4ea5fe327b1da060
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/oeufs-mimosa.webp:
+  subject:
+    type: recipe
+    recipe: oeufs-mimosa
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Œufs mimosa au Varoma
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Œufs mimosa au Varoma" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: halved hard-boiled eggs filled with creamy mimosa yolk mixture and dusted with sieved yolk, arranged directly on a warm wooden table.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: white egg whites, golden yolk filling, warm wood table.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 2cfbbbdcbd01835b9f71797b86345645db30ea2f630f6e1cf6e0d9946df8c201
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/onion-bhaji.webp:
+  subject:
+    type: recipe
+    recipe: onion-bhaji
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Onion bhaji à la friteuse
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Onion bhaji à la friteuse" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a pile of crisp golden onion bhajis with lacy spiced edges, onion strands visible, served on plain paper.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: deep golden fritters, amber onion strands, warm paper.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 0aba232c58225f6f60a43787a65066d3b41137ed7ddc7b38ec84220050ef847c
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/pate-a-crepes.webp:
+  subject:
+    type: recipe
+    recipe: pate-a-crepes
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Pâte à crêpes au robot pâtissier
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Pâte à crêpes au robot pâtissier" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a jug of fluid crepe batter being poured in a thin stream onto a hot round griddle, with a stack of golden folded crepes beside it.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: cream batter, golden crepes, dark griddle.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 07dfb129f5c07339b38b68188d32e389414146be6f93b3d76668b5ee37ddbd37
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/pate-a-gaufres.webp:
+  subject:
+    type: recipe
+    recipe: pate-a-gaufres
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Pâte à gaufres au robot pâtissier
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Pâte à gaufres au robot pâtissier" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: crisp golden waffles with deep grids studded with caramelised pearl sugar, steam rising, a waffle iron and vanilla pods beside them.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: golden waffles, amber sugar pearls, dark iron.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 9ecdd95e2ae92f07da3c505356b75f76b1dd646080a205514edca08d461bd8b1
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/pate-a-pancakes.webp:
+  subject:
+    type: recipe
+    recipe: pate-a-pancakes
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Pâte à pancakes au robot pâtissier
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Pâte à pancakes au robot pâtissier" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a tall stack of thick golden pancakes with maple syrup dripping down the sides, a pat of melting butter on top.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: golden pancakes, amber syrup, pale butter.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: d4170948817b6256b367a52d45adfe7cb344b7ec71d7893616652a9f7be48f64
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/puree-pommes-de-terre.webp:
+  subject:
+    type: recipe
+    recipe: puree-pommes-de-terre
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Purée de pommes de terre au Thermomix
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Purée de pommes de terre au Thermomix" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a generous swirl of silky smooth mashed potatoes in a wide bowl, soft peaks holding their shape, a melting knob of butter and a light snowfall of grated parmesan on top, gentle steam rising.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: creamy ivory mash, golden butter, pale parmesan, cream ceramic bowl.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: e5bacc15227f298d7ef9cf9d5fe9a19856538cdac481ada117472e1db57d73cd
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/raita-concombre-menthe.webp:
+  subject:
+    type: recipe
+    recipe: raita-concombre-menthe
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Raita concombre-menthe au Thermomix
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Raita concombre-menthe au Thermomix" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a bowl of thick creamy white raita dotted with green cucumber pieces and fresh mint leaves, a pinch of Kashmiri chilli powder dusted on top, a small dish of toasted cumin seeds beside it.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: white yoghurt, fresh green cucumber and mint, warm brown cumin, red chilli dust.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 09632cad21151ad1a5e537ddac987465cf663b57c23362a5acb6344e0c38c395
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
     provider: OpenAI
     model: unknown
     visual_profile:
@@ -1790,11 +2270,41 @@ static/images/rillettes-thon-herbes.webp:
     Colour palette: cream rillettes, green chives and capers, golden toast.
     Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
     Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
-  sha256: e0225c5eb3a6e9b3b7bd06eae09f2e8cf5946e2ef6bd487896b257fe332a7e2d
+  sha256: 229f2d1133359ce61209c8bb796f9a1b56b6f80e85fe9e6a70d8acc12a56ce60
   attribution: CookiGram
   generation:
     tool: image_gen
-    batch: issue-493-img-b1
+    batch: issue-493-img-wave-3
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/sables-parmesan-sesame.webp:
+  subject:
+    type: recipe
+    recipe: sables-parmesan-sesame
+  origin: generated
+  generated_at: '2026-09-25'
+  prompt: |-
+    # Sablés parmesan et sésame
+
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of "Sablés parmesan et sésame" based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: a stack of golden round parmesan shortbread biscuits studded with sesame seeds and thyme flecks, crumbs showing the crumbly texture, a small bowl of grated parmesan behind.
+    Style/medium: polished contemporary manga food illustration, elegant fine ink contours, hand-painted watercolour and soft cel shading, appetizing but believable food textures, a distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards, no human figures.
+    Lighting/mood: warm late-afternoon kitchen light, welcoming and homely.
+    Colour palette: golden biscuits, pale parmesan, green thyme flecks.
+    Constraints: visually faithful to the recipe; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, product packaging, characters, faces, third-party image imitation, photorealism.
+  sha256: 010d3b34b9d16f9aa5985bcb8e16eeac008cdeaceaa9a013d4339e9344668151
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: issue-493-img-wave-3
     provider: OpenAI
     model: unknown
     visual_profile:

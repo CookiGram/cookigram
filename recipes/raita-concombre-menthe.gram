@@ -48,6 +48,9 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
   prompt_file: image-prompts/raita-concombre-menthe.md
 ---
 [Mise en place]
@@ -57,7 +60,8 @@ image_generation:
 - Effeuiller la @menthe fraîche{2 brins, environ 20 g de feuilles seules}.
 
 [Hachage]
-- Mettre le concombre dans le bol et hacher ~{5 s} à vitesse 6.
+- Mettre le concombre dans le bol.
+- Hacher ~{5 s} à vitesse 6.
 - Saler d'une partie du @sel{1 c. à café au total}.
 - Transférer dans le #panier cuisson{}.
 - Laisser égoutter ~{20 min}.
@@ -75,9 +79,11 @@ image_generation:
 - Laisser refroidir dans le bol ~{5 min}.
 
 [Assemblage]
-- Ajouter la menthe et hacher ~{10 s} à vitesse 7.
+- Ajouter la menthe.
+- Hacher ~{10 s} à vitesse 7.
 - Ajouter le @yaourt grec{400 g, nature} et le @citron{1 c. à café de jus, facultatif}.
 - Mélanger ~{15 s} à vitesse 4 : la préparation est onctueuse.
 - Ajouter le reste de sel au goût, le @poivre moulu{1 à 2 pincées} et le @piment du Cachemire{1 quart de c. à café en poudre}.
-- Ajouter le concombre réservé et mélanger ~{10 s} à vitesse 2.
+- Ajouter le concombre réservé.
+- Mélanger ~{10 s} à vitesse 2.
 - Servir immédiatement ou réfrigérer en contenant hermétique.

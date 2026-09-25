@@ -20,7 +20,7 @@ class ImageProvenanceTests(unittest.TestCase):
         self.assertEqual(findings, [])
 
         manifest = yaml.safe_load((ROOT / AUDIT.PROVENANCE_MANIFEST).read_text(encoding="utf-8"))
-        self.assertEqual(len(manifest), 62)
+        self.assertEqual(len(manifest), 98)  # 62 + 36 (#493 wave)
         self.assertEqual({
             record.get("recipe") or record.get("subject", {}).get("recipe")
             for record in manifest.values()
@@ -88,6 +88,43 @@ class ImageProvenanceTests(unittest.TestCase):
             "tempura-de-legumes",
             "tortillas-de-ble-maison",
             "tzatziki-grec",
+            # #493 wave (36)
+            "beurre-blanc",
+            "bouillon-de-legumes",
+            "bouillon-de-volaille",
+            "caramel-beurre-sale",
+            "caviar-aubergine",
+            "champignons-farcis",
+            "chutney-cacahuetes",
+            "chutney-coco",
+            "chutney-coriandre-piment",
+            "chutney-dattes-tamarin",
+            "chutney-tamarin",
+            "creme-anglaise-vanille",
+            "creme-patissiere-vanille",
+            "fond-brun-de-viande",
+            "ganache-chocolat",
+            "gougeres-fromage",
+            "madeleines-salees",
+            "minicanneles-chorizo",
+            "mini-quiches",
+            "oeufs-mimosa",
+            "onion-bhaji",
+            "pate-a-choux",
+            "pate-a-crepes",
+            "pate-a-gaufres",
+            "pate-a-pancakes",
+            "pate-a-pizza",
+            "pate-brisee",
+            "pate-sablee",
+            "pesto-basilic",
+            "puree-pommes-de-terre",
+            "raita-concombre-menthe",
+            "rillettes-thon-herbes",
+            "sables-parmesan-sesame",
+            "sauce-bechamel",
+            "sauce-hollandaise",
+            "sauce-mayonnaise",
         })
 
     def test_temporary_credit_is_rejected(self):

@@ -14,7 +14,7 @@
       "workspace": "/home/pierrecsn/Work/cookigram",
       "branch": "feat/issue-493-fondamentaux",
       "claimed_at": "2026-09-24T20:30:17Z",
-      "last_heartbeat": "2026-09-25T16:50:36Z",
+      "last_heartbeat": "2026-09-25T18:13:08Z",
       "status": "in_progress",
       "lane_assignments": {
         "A1": "COMPLET (7/7) : pizza, brisee, sablee, choux (casserole+robot), crepes, pancakes, gaufres — stand_mixer [standard], sources Thermomix adaptees documentees ; POUSSE (origin/feat == 877d2fe, PR #503 = 79 fichiers dont A1, body PR perime — 36 fiches reelles)",
@@ -31,7 +31,9 @@
         "IMG-prep": "CANAL PROUVE via Herdr-Codex w4W : bouillon-de-legumes.webp livre 1280x720 WebP 218724 o (RIFF verifie, conversion 1672x941->crop 16:9) ; provider OpenAI, modele non indique ; conformite style a control visuel humain ; integration (manifeste+image_generation) NON faite (recettes intouchees)",
         "MAYO-EXTERNE": "w4V/s8 Codex 'Traiter #491' actif (13h) : mayonnaise-pot mixeur-plongeant + validations ; dispatcher introuvable (board/fichiers/peers) — suspect owner direct ; NE RIEN toucher, arbitrage owner requis",
         "CI503": "fail = uniquement images/provenance (attendu, documente PR) ; zero defaut contenu ; re-pin mineral-dwarf au merge ; branche a jour avant merge (interdit sans ordre)",
-        "MAYO-MULTIMETHOD": "DECISION OWNER: pot en 2e variante de sauce-mayonnaise (6927381 reutilise, auteur PierreCsn lui-meme, pas de tiers) ; variants thermomix(default)+mixeur-plongeant valides Core ; fiche separee + prompt + webp orphelin supprimes"
+        "MAYO-MULTIMETHOD": "DECISION OWNER: pot en 2e variante de sauce-mayonnaise (6927381 reutilise, auteur PierreCsn lui-meme, pas de tiers) ; variants thermomix(default)+mixeur-plongeant valides Core ; fiche separee + prompt + webp orphelin supprimes",
+        "IMG-wave3": "FERMEE 20/20 (2026-09-25T18:1xZ, bold-nadir) : canal codex-exec repare (TMPDIR sur /home + quota discipline + sortie native image_gen) ; 20 webp 1280x720 VP8 revus 1-par-1 (4 regenerations garniture : gougeres/canneles/rillettes/pancakes/bhaji->v2 ; 3 prompts recorriges recette-faithful : bhaji/mimosa/pancakes) ; 20 provenances wave-3 sha256 OK ; qualification visuelle HUMAINE des 36 restant due (revue agent != qualif humaine)",
+        "INCIDENT-b7cbc34": "2026-09-25T19:11+02:00 : run codex-exec a COMMIT+PUSH b7cbc34 sur la branche malgre scope staging-only (3 webp v1 a defaut thym + provenance batch non-standard, sans frontmatter provider). Revert prepare en worktree (non-committe, decision humaine requise). Lecon : futurs runs codex avec cwd hors repo."
       },
       "protocol": "Muse redige .gram + prompts sur la branche ; par recette figee, brief image -> Codex (codex exec) -> verification Muse -> integration -> gates ; .gram/ingredients.yaml et provenance reconciles par le lead ; aucun merge sans autorisation humaine",
       "collisions": "PR #498 MERGEE et fusionnee dans main (ca63ba1) ; #503 mergee sur main, pollution #502 expulsee (site-config.yaml + test_instance_identity.py restaures a main) ; #502 (3269b6b) intouchee ; aucun claim concurrent",
@@ -181,6 +183,21 @@
           "stand_mixer": "7/7 declarent [standard], cle canonique equipment-v2 ; Core 5440a24 valide appliances structurellement (pas de whitelist) ; subset-build vert + 4 pages A1 imagees verifiees (titres uniques, steps, webp)",
           "validations": "yaml OK ; pins pass ; pytest 135/136 (seul echec = image-provenance borne aux 20) ; recipe_check strict-atomic 16/36 CONFORME + 20 image-only ; full corpus 269 : 20 image-only, zero defaut contenu",
           "reliquat": "20 assets webp + 20 provenances (non generables honnetement sans fichiers) ; verdict propose READY_FOR_IMAGE_LANE"
+        },
+        {
+          "id": "IMG-wave3-checkpoint-9",
+          "at": "2026-09-25T18:13:08Z",
+          "by": "Muse Code (session bold-nadir)",
+          "closed": "lane images : 20/20 webp + 20/20 provenances reelles (sha256 des fichiers, prompt==promptfile) ; 36/36 recettes imagees",
+          "prompt_fixes_image_lane": "bhaji (chutney/citron/coriandre retires), mimosa (lit de salade retire), pancakes (baies retirees) — prompts realignes sur recettes, recettes intouchees",
+          "recipe_splits_gate_driven": "mimosa +1 puce, raita +3 puces (scissions ATOMIC_MULTIPLE_ACTION_VERBS, faits culinaires identiques) — reveles par strict-atomic une fois les images presentes ; hors scope image-lane strict, signale pour arbitrage",
+          "test_pin": "test_image_provenance 62->98 + set 36 slugs (direct consequence assets, pattern #492)",
+          "validations": "audit 0 anomalie ; pytest 136/136 ; recipe_check strict-atomic 36/36 CONFORME ; full corpus 269/269 ; build complet vert (269 pages, spot-check 5) — Core pin 5440a24",
+          "pending_human": [
+            "autoriser revert b7cbc34 + commit integration + push (ordres proposes en handoff)",
+            "qualification visuelle humaine 36/36 (16 anciennes + 20 nouvelles)",
+            "hygiene quota disque (thread_history 1.7G, sessions 2.7G, non-miens)"
+          ]
         }
       ]
     }

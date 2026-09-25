@@ -47,6 +47,9 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
   prompt_file: image-prompts/oeufs-mimosa.md
 ---
 [Cuisson vapeur]
@@ -63,4 +66,5 @@ image_generation:
 - Ajouter au reste 2 c. à soupe de mayonnaise maison (voir la fiche Sauce mayonnaise).
 - Mélanger ~{2 s} à vitesse 2.
 - Garnir les blancs du mélange.
-- Parsemer du jaune réservé et réserver au frais jusqu'au service.
+- Parsemer du jaune réservé.
+- Réserver au frais jusqu'au service.

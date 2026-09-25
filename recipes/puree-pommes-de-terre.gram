@@ -45,6 +45,9 @@ image_credit:
   source: https://github.com/PierreCsn/cookigram
   license: Illustration générée pour CookiGram
 image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-09-25'
   prompt_file: image-prompts/puree-pommes-de-terre.md
 ---
 [Mise en place]
