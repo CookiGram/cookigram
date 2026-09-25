@@ -1,0 +1,71 @@
+---
+title: Pâte à gaufres au robot pâtissier
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 10
+prep_time: 5 min
+total_time: 3 h
+spiciness: 0
+description: "Pâte à gaufres levée à la levure fraîche, enrichie au beurre fondu, poussée lentement pour un cœur filant."
+nutrition_profile: pleasure
+tags: [pâte à gaufres, robot pâtissier, base, gaufrier]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r20400
+author: Cookidoo
+appliances:
+  stand_mixer:
+  - standard
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Robot pâtissier
+- Crochet pétrisseur
+- Saladier
+- Torchons propres
+- Gaufrier
+scaling:
+  enabled: true
+  min_portions: 5
+  max_portions: 20
+  step: 5
+  note: Les deux pousses restent incompressibles ; le total de 3 h les englobe.
+flavors:
+  pairing: [sucre glace, fruits frais, chocolat chaud, chantilly]
+  notes: [filant, doré, vanillé]
+  harmony: "La double pousse et le sucre en grains donnent des gaufres au cœur filant et aux éclats caramélisés."
+  tips: "Exécution robot pâtissier adaptée d'une référence Thermomix : dissolution à l'eau tiède, pétrissage au crochet."
+conservation:
+  fridge_days: 2
+  freezable: true
+  reheat: "Réchauffer au grille-pain pour retrouver le croustillant."
+image: images/pate-a-gaufres.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/pate-a-gaufres.md
+---
+[Délayage]
+- Verser l'@eau{200 g, tiède} dans la cuve du #robot pâtissier{}.
+- Délayer la @levure boulangère{20 g fraîche}.
+
+[Pétrissage]
+- Ajouter la @farine de blé{400 g}, le @beurre doux{125 g, fondu}, le @sucre glace{25 g}, les @œufs{2}, le @sel{1 c. à café rase} et l'@extrait-de-vanille{1 c. à soupe}.
+- Pétrir au #crochet pétrisseur{} jusqu'à obtenir une pâte lisse qui se décolle des parois.
+
+[Première pousse]
+- Couvrir d'un torchon et laisser doubler de volume dans un endroit tiède.
+
+[Apprêt]
+- Incorporer le @sucre en grains{120 g} à la pâte dégazée.
+- Couvrir et laisser pousser de nouveau jusqu'à ce que la pâte regonfle nettement.
+
+[Cuisson]
+- Chauffer le #gaufrier{} légèrement huilé à l'@huile d'arachide{}.
+- Déposer des boules de pâte et refermer.
+- Cuire jusqu'à coloration dorée et caramélisée.
+- Saupoudrer d'un peu de sucre glace à la sortie.

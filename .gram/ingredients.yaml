@@ -635,6 +635,24 @@ ingredients:
       fat: 100.0
       protein: 0.0
     density: 0.92
+  sucre-en-grains:
+    name: Sucre en grains
+    aliases:
+    - sucre en grains
+    - sucre perlé
+    - sucre en perles
+    category: Condiments
+  huile-d-arachide:
+    name: Huile d'arachide
+    aliases:
+    - huile d'arachide
+    - huile de cacahuète
+    category: Matières grasses
+  sirop-d-erable:
+    name: Sirop d'érable
+    aliases:
+    - sirop d'érable
+    category: Condiments
   huile-de-friture:
     name: Huile de friture
     aliases:

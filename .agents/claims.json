@@ -14,10 +14,10 @@
       "workspace": "/home/pierrecsn/Work/cookigram",
       "branch": "feat/issue-493-fondamentaux",
       "claimed_at": "2026-09-24T20:30:17Z",
-      "last_heartbeat": "2026-09-25T11:04:56Z",
+      "last_heartbeat": "2026-09-25T11:31:04Z",
       "status": "in_progress",
       "lane_assignments": {
-        "A1": "7 pates stand_mixer (pizza, brisee, sablee, choux, crepes, pancakes, gaufres) — BLOCKED: stand_mixer absent du Core (generator/docs) et du contrat catalogue, aucune issue Core existante ; contournement interdit ; requiert work-item/PR Core borne",
+        "A1": "COMPLET (7/7) : pizza, brisee, sablee, choux (casserole+robot), crepes, pancakes, gaufres — stand_mixer [standard], sources Thermomix adaptees documentees ; COMMIT LOCAL UNIQUEMENT, PR #503 distante inchangee",
         "A2": "COMPLET (9/9) : + mayonnaise (r67172 TM31 froid) ; hollandaise autonome r54152 (TM31 declare, base documentee)",
         "A3": "bouillon-legumes, bouillon-volaille, fond-brun (checkpoint-1, geles) + puree-pommes-de-terre (capture w4W r4394, draftee, 10/10 CLEAN avec le lot)",
         "B1": "5 draftees (gougeres, sables, cannele, rillettes, caviar)",
@@ -27,11 +27,14 @@
         "BLOCAGE-METHODE": "Cookidoo expose ingrédients/quantités/badges sans login mais les pas-a-pas (vitesses/temps/ordre) exigent un compte ; Muse sans Chrome connecte ne peut rediger que les adaptations mandatees a execution non-robot (bouillons cocotte, ancrage total source) ; toute fiche a execution Thermomix fidele (puree, chutneys, raita, A2, B1, B2) requiert capture methode via session Chrome connectee | 2026-09-24T21:0xZ: tentative navigateur connecte (copie profil Chromium 882M + Playwright system-chromium-153) : chromium frais OK reseau, mais tout lancement avec profil copie crash (renderer/context, x4 configs) ; capture pas-a-pas authentifiee impossible depuis ce runtime",
         "CAPTURE-Codex-w4W": "TERMINEE 7/7 : donnees fideles en panneau, zero ecriture depot, scope respecte",
         "CAPTURE2-Codex-w4W": "A2 (8, mayonnaise exclue) + B1/B2 (10) : 18 URLs, dispatch w4W ; capture fidele uniquement, zero ecriture depot",
-        "CAPTURE3-Codex-w4W": "mayonnaise r67172 (badges+methode) + hollandaise autonome a trouver (r447496 composee ecartee comme source) ; dispatch w4W ; en attente"
+        "CAPTURE3-Codex-w4W": "mayonnaise r67172 (badges+methode) + hollandaise autonome a trouver (r447496 composee ecartee comme source) ; dispatch w4W ; en attente",
+        "IMG-prep": "CANAL PROUVE via Herdr-Codex w4W : bouillon-de-legumes.webp livre 1280x720 WebP 218724 o (RIFF verifie, conversion 1672x941->crop 16:9) ; provider OpenAI, modele non indique ; conformite style a control visuel humain ; integration (manifeste+image_generation) NON faite (recettes intouchees)",
+        "MAYO-EXTERNE": "w4V/s8 Codex 'Traiter #491' actif (13h) : mayonnaise-pot mixeur-plongeant + validations ; dispatcher introuvable (board/fichiers/peers) — suspect owner direct ; NE RIEN toucher, arbitrage owner requis",
+        "CI503": "fail = uniquement images/provenance (attendu, documente PR) ; zero defaut contenu ; re-pin mineral-dwarf au merge ; branche a jour avant merge (interdit sans ordre)"
       },
       "protocol": "Muse redige .gram + prompts sur la branche ; par recette figee, brief image -> Codex (codex exec) -> verification Muse -> integration -> gates ; .gram/ingredients.yaml et provenance reconciles par le lead ; aucun merge sans autorisation humaine",
       "collisions": "PR #498 (docs equipment + test_equipment_model_495, zero recouvrement fichiers) ; PR #502 (site-config + test_instance_identity, zero recouvrement) ; aucun claim actif concurrent",
-      "pr": null,
+      "pr": 503,
       "checkpoints": [
         {
           "id": "A3-bouillons-checkpoint-1",
@@ -131,6 +134,24 @@
             "mayonnaise: TM31 froid, base autonome vs herbes documentee"
           ],
           "validations": "3/3 LOCAL-CLEAN ; Core recipe_check : seules erreurs = images ; build vert ; 3 pages lues (titres dedup, contenus, TM31, sources)"
+        },
+        {
+          "id": "A1-lot-checkpoint-6",
+          "at": "2026-09-25T11:31:04Z",
+          "by": "Muse Code (session pine-zosma)",
+          "frozen": [
+            "7 pates A1"
+          ],
+          "sources": [
+            "captures w4W 7 URLs ; stand_mixer exprime (crochet/feuille/fouet), jamais de thermomix detourne ; choux panade casserole"
+          ],
+          "metrics": {
+            "first_CLEAN_defects": "1 fichier (brisee desc 99), tags OK du premier coup",
+            "real_gate_only": "aucun (images exclues)",
+            "build_render_only": "aucun (titres sans suffixe appareil, rendu verifie)",
+            "corrections": "desc x1, 3 cles + 3 provenances, 7 prompts"
+          },
+          "validations": "7/7 LOCAL-CLEAN ; Core recipe_check : seules erreurs = images ; build complet vert (36 fiches) ; 3 pages lues"
         }
       ]
     }

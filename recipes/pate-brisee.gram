@@ -1,0 +1,53 @@
+---
+title: Pâte brisée au robot pâtissier
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 4
+prep_time: 5 min
+total_time: 5 min
+spiciness: 0
+description: "Pâte brisée bien friable au beurre doux froid, sablée à la feuille sans la chauffer pour un fonçage net."
+nutrition_profile: pleasure
+tags: [pâte brisée, robot pâtissier, base, tarte]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r54209
+author: Cookidoo
+appliances:
+  stand_mixer:
+  - standard
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Robot pâtissier
+- Feuille
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Garder le beurre bien froid ; travailler vite quelle que soit la quantité.
+flavors:
+  pairing: [tarte aux fruits, quiche, légumes rôtis, crème]
+  notes: [friable, beurré, neutre]
+  harmony: "Le beurre froid travaillé vite donne une pâte friable au goût franc de beurre."
+  tips: "Exécution robot pâtissier adaptée d'une référence Thermomix : sablage à la feuille, durées équivalentes."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Laisser revenir à température avant fonçage ; ne pas réchauffer."
+image: images/pate-brisee.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/pate-brisee.md
+---
+[Sablage]
+- Mettre la @farine de blé{150 g}, le @beurre doux{75 g, froid en morceaux} et le @sel{0,5 c. à café} dans la cuve du #robot pâtissier{}.
+- Sabler à la #feuille{} jusqu'à obtenir une texture de sable grossier.
+- Ajouter l'@eau{50 g}.
+- Agglomérer sans surtravailler : la pâte forme une boule homogène.
+- Filmer et réserver au frais avant fonçage.

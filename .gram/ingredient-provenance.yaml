@@ -1277,6 +1277,18 @@ ingredients:
     status: incomplete
     source: Huile de friture en quantité suffisante indiquée par la source Cookidoo
       (r110091) ; aucune donnée physique ou nutritionnelle ajoutée.
+  sucre-en-grains:
+    status: incomplete
+    source: Sucre en grains indiqué par la source Cookidoo (r20400) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  huile-d-arachide:
+    status: incomplete
+    source: Huile d'arachide pour la cuisson indiquée par la source Cookidoo (r20400) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
+  sirop-d-erable:
+    status: incomplete
+    source: Sirop d'érable pour servir indiqué par la source Cookidoo (r348143) ;
+      aucune donnée physique ou nutritionnelle ajoutée.
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES
