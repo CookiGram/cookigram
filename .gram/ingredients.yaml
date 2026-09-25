@@ -148,6 +148,13 @@ ingredients:
       carbs: 56.1
       fat: 1.2
       protein: 4.0
+  carcasse-de-poulet:
+    name: Carcasse de poulet cuit
+    aliases:
+    - carcasse de poulet
+    - carcasse de poulet cuit
+    - carcasse d'un petit poulet cuit
+    category: Boucherie et volailles
   carotte:
     name: Carottes
     aliases:
@@ -770,6 +777,12 @@ ingredients:
       fat: 11.0
       protein: 7.0
     density: 1.05
+  moutarde-noire:
+    name: Moutarde noire
+    aliases:
+    - moutarde noire
+    - graines de moutarde noire
+    category: Condiments et assaisonnements
   noix-de-muscade:
     name: Noix de muscade
     aliases:
@@ -812,6 +825,14 @@ ingredients:
       protein: 1.0
     conversions:
       piece: 4.0
+  os:
+    name: Os à fond
+    aliases:
+    - os
+    - os d'agneau
+    - os de poulet
+    - os de veau
+    category: Boucherie et volailles
   paleron-de-boeuf:
     name: Paleron de boeuf
     aliases:
@@ -986,6 +1007,12 @@ ingredients:
     - pate-a-pizza
     - pâtons de pizza
     category: Produits céréaliers
+  pate-d-ail:
+    name: Pâte d'ail
+    aliases:
+    - pâte d'ail
+    - pate d'ail
+    category: Condiments et assaisonnements
   gorgonzola:
     name: Gorgonzola
     aliases:
@@ -1262,6 +1289,12 @@ ingredients:
     aliases:
     - farine d'épeautre
     category: Féculents et céréales
+  farine-de-pois-chiches:
+    name: Farine de pois chiches
+    aliases:
+    - farine de pois chiches
+    - besan
+    category: Féculents et céréales
   graines-variees:
     name: Graines variées
     aliases:
@@ -1307,6 +1340,13 @@ ingredients:
     name: Noix de pécan
     aliases:
     - noix de pécan
+    category: Fruits à coque et graines
+  noix-de-coco:
+    name: Noix de coco
+    aliases:
+    - noix de coco
+    - coco
+    - chair de noix de coco fraîche
     category: Fruits à coque et graines
   noisette:
     name: Noisettes
@@ -1440,6 +1480,11 @@ ingredients:
       protein: 12.0
       carbs: 72.0
       fat: 2.0
+  chaat-masala:
+    name: Chaat masala
+    aliases:
+    - chaat masala
+    category: Condiments et assaisonnements
   citron:
     name: Citron
     aliases:
@@ -1989,6 +2034,13 @@ ingredients:
       carbs: 7.3
       fat: 0.2
     piece_weight: 200.0
+  feuilles-de-curry:
+    name: Feuilles de curry
+    aliases:
+    - feuilles de curry
+    - feuille de curry
+    - feuilles de curry fraîches
+    category: Herbes et épices
   feuilles-de-lasagne:
     name: Feuilles de lasagne
     aliases:
@@ -2175,6 +2227,13 @@ ingredients:
       carbs: 8.8
       fat: 0.4
     piece_weight: 15.0
+  piment-cachemire:
+    name: Piment du Cachemire
+    aliases:
+    - piment du Cachemire
+    - piment cachemire
+    - piment du Cachemire en poudre
+    category: Herbes et épices
   pois-gourmands:
     name: Pois gourmands
     aliases:
@@ -3106,6 +3165,13 @@ ingredients:
     - bœuf haché
     - viande de bœuf hachée
     category: Viandes
+  cacahuetes:
+    name: Cacahuètes
+    aliases:
+    - cacahuète
+    - cacahuètes
+    - cacahuètes crues
+    category: Fruits à coque et graines
   cacahuetes-grillees:
     name: Cacahuètes grillées
     aliases:
@@ -3118,6 +3184,13 @@ ingredients:
     - chou blanc
     - chou blanc émincé
     category: Légumes et aromates
+  dattes:
+    name: Dattes
+    aliases:
+    - datte
+    - dattes
+    - dattes dénoyautées
+    category: Fruits
   dashi-en-poudre:
     name: Dashi en poudre
     aliases:

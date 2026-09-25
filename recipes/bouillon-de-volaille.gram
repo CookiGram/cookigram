@@ -1,0 +1,69 @@
+---
+title: Bouillon de volaille maison à la cocotte
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 4
+prep_time: 5 min
+total_time: 1 h 45 min
+spiciness: 0
+description: "Bouillon doré à la carcasse de poulet, thym frais et laurier, extrait lentement à la cocotte jusqu'à limpidité."
+nutrition_profile: vitality
+tags: [bouillon, volaille, cocotte, faitout, base]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r474300
+author: Cookidoo
+source_appliances:
+  thermomix:
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Cocotte ou faitout
+- Écumoire
+- Chinois ou passoire fine
+- Couteau de chef
+- Planche à découper
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 2
+  note: Garder la carcasse immergée ; ajuster l'eau sans dépasser les trois quarts du faitout.
+flavors:
+  pairing: [carotte, céleri, thym, laurier]
+  notes: [doré, limpide, réconfortant]
+  harmony: "La carcasse rôtie et le thym frais donnent un bouillon doré au goût franc de volaille."
+  tips: "Fiche adaptée en cocotte depuis une référence Thermomix sans TM31 : proportions et total source conservés."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Porter à frémissement sans forte ébullition pour garder un bouillon limpide."
+image: images/bouillon-de-volaille.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/bouillon-de-volaille.md
+---
+[Mise en place]
+- Concasser la @carcasse de poulet{1 petite carcasse cuite, en morceaux}.
+- Tailler l'@oignon{1 petit, en quartiers}, l'@ail{1 gousse}, la @carotte{1, en rondelles} et le @céleri{25 g, en tronçons de 2 cm}.
+- Émincer le @poireau{25 g de feuilles vertes, en morceaux}.
+
+[Marmite]
+- Déposer la carcasse et les légumes dans une #cocotte{} avec le @thym{2 brins frais}, le @laurier{1 feuille fraîche} et le @clou de girofle{1, optionnel}.
+- Verser l'@eau{850 g} froide à hauteur.
+- Ajouter le @sel{1 c. à café} et le @poivre{1 pincée moulue}.
+
+[Ébullition]
+- Porter à franche ébullition sur feu vif.
+- Écumer soigneusement la surface à l'#écumoire{} : le liquide doit rester limpide.
+
+[Mijotage]
+- Baisser au frémissement et couvrir.
+- Laisser mijoter ~{1 h 30} : la viande se détache des os et le bouillon est doré et parfumé.
+
+[Filtration]
+- Passer au #chinois{} sans fouler : le bouillon est translucide.
+- Rectifier l'assaisonnement en sel et en poivre.
+- Servir aussitôt ou réserver au frais.

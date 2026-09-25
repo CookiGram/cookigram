@@ -1,0 +1,66 @@
+---
+title: Chutney frais à la noix de coco
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 8
+prep_time: 5 min
+total_time: 10 min
+spiciness: 2
+description: "Chutney crémeux à la noix de coco fraîche et aux cacahuètes, couronné d'un tadka croustillant à la poêle."
+nutrition_profile: pleasure
+tags: [chutney, noix de coco, thermomix, inde, condiment, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r132144
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Petite poêle
+scaling:
+  enabled: true
+  min_portions: 4
+  max_portions: 12
+  step: 4
+  note: Le tadka se prépare par fournée constante, indépendamment des portions.
+flavors:
+  pairing: [noix de coco, cacahuète, curry, cumin]
+  notes: [crémeux, grillé, parfumé]
+  harmony: "Le tadka chaud aux épices torréfiées réveille la douceur crémeuse de la coco et de la cacahuète."
+  tips: "Le tadka source demande 120 °C au bol, incompatible TM31 : il est adapté à la petite poêle, durées équivalentes."
+conservation:
+  fridge_days: 3
+  freezable: false
+  reheat: "À servir frais ; ne pas réchauffer."
+image: images/chutney-coco.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/chutney-coco.md
+---
+[Mise en place]
+- Parer et couper les @piments verts{3 longs frais, en deux}.
+- Effeuiller la @coriandre fraîche{5 brins de tiges et feuilles}.
+
+[Mixage]
+- Mettre dans le bol la @noix de coco{115 g de chair fraîche}, la @farine de pois chiches{50 g}, les @cacahuètes{50 g crues non salées}, les piments, la @pâte d'ail{0,5 c. à café}, la coriandre et le @sel{0,5 c. à café}.
+- Mixer ~{1 min} à vitesse 8 : la pâte est homogène.
+
+[Tadka]
+- Chauffer le @ghee{1 c. à soupe} dans une petite #poêle{} sur feu moyen.
+- Ajouter la @moutarde noire{0,5 c. à café de graines} et le @cumin{1 c. à café de graines}.
+- Laisser crépiter ~{30 s} : les graines éclatent et embaument.
+- Ajouter les @feuilles de curry{15 fraîches} et poursuivre ~{30 s} : elles sont croustillantes.
+- Verser le tadka brûlant sur la pâte de coco.
+- Mélanger et servir.

@@ -1,0 +1,62 @@
+---
+title: Chutney coriandre-piment
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 4
+prep_time: 5 min
+total_time: 5 min
+spiciness: 3
+description: "Chutney vert intense à la coriandre entière et au piment frais, à l'huile d'olive, pour réveiller currys et grillades."
+nutrition_profile: pleasure
+tags: [chutney, coriandre, piment, thermomix, inde, condiment, cru, végétarien]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r141754
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Spatule
+- Contenant hermétique
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Mixer en une seule fournée ; la force du piment ne se dilue pas en petite quantité.
+flavors:
+  pairing: [coriandre, piment vert, citron, huile d'olive]
+  notes: [vert, intense, herbacé]
+  harmony: "La coriandre entière, racines comprises, donne une profondeur herbacée que le piment vert électrise."
+  tips: "Grattez les racines de coriandre à la cuillère avant de les mettre dans le bol."
+conservation:
+  fridge_days: 5
+  freezable: false
+  reheat: "À servir frais ; ne pas réchauffer."
+image: images/chutney-coriandre-piment.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/chutney-coriandre-piment.md
+---
+[Mise en place]
+- Couper la @coriandre fraîche{120 g de feuilles, tiges et racines, en trois} après avoir gratté les racines.
+- Parer et couper les @piments verts{3 longs frais, environ 50 g, en deux}.
+
+[Mixage]
+- Mettre dans le bol la coriandre, les piments, le @citron{20 g de jus, environ la moitié}, l'@huile d'olive{50 g} et le @sel{1 c. à café marin}.
+- Mixer ~{30 s} à vitesse 5.
+- Racler les parois à la #spatule{}.
+- Mixer ~{1 min} à vitesse 5 : le chutney est lisse et d'un vert intense.
+- Servir immédiatement ou réfrigérer en contenant hermétique.

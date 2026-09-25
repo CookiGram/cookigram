@@ -1,0 +1,69 @@
+---
+title: Chutney dattes-tamarin
+date_published: 2026-09-24
+date_modified: 2026-09-24
+portions: 4
+prep_time: 5 min
+total_time: 8 h 50 min
+spiciness: 2
+description: "Chutney confit aux dattes fondantes, tamarin acidulé et épices douces, mis en bocaux pour une longue garde."
+nutrition_profile: pleasure
+tags: [chutney, dattes, tamarin, thermomix, inde, condiment, conserve]
+source: https://cookidoo.fr/recipes/recipe/fr-fr/r140381
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Bocaux stérilisés hermétiques
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Le refroidissement de 8 h et la stérilisation des bocaux restent incompressibles.
+flavors:
+  pairing: [datte, tamarin, cannelle, cardamome]
+  notes: [confit, acidulé, épicé]
+  harmony: "Le fondant sucré des dattes est tendu par l'acidité du tamarin et le parfum chaud des épices."
+  tips: "Retourner les bocaux 10 min pour chasser l'air, puis laisser refroidir 8 h avant de ranger."
+conservation:
+  fridge_days: 30
+  freezable: false
+  reheat: "À servir à température ; ne pas réchauffer."
+image: images/chutney-dattes-tamarin.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/chutney-dattes-tamarin.md
+---
+[Mise en place]
+- Dénoyauter les @dattes{400 g}.
+- Casser les @cannelle{3 bâtons, en trois}.
+
+[Cuisson]
+- Mettre dans le bol les dattes, le @vinaigre blanc{100 g}, le @sel{2 c. à café}, l'@huile végétale{130 g}, la @pâte de tamarin{100 g}, le @piment du Cachemire{2 c. à café en poudre}, la cannelle, la @cardamome{10 g en gousses}, les @clous de girofle{10 g, entiers} et l'@eau{150 g}, en réservant le @chaat masala{10 g}.
+- Cuire ~{45 min} à ^{100 C} et vitesse 2 : les dattes sont totalement fondues.
+
+[Assaisonnement]
+- Ajouter le chaat masala.
+- Mélanger ~{30 s} à vitesse 3 : le chutney est homogène et nappant.
+
+[Mise en bocaux]
+- Verser dans des #bocaux stérilisés{} et fermer immédiatement.
+- Retourner les bocaux ~{10 min}.
+- Les remettre à l'endroit.
+- Laisser refroidir au moins ~{8 h}.
+- Ranger les bocaux refroidis.
