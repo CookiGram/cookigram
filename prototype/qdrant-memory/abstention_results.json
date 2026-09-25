@@ -1,0 +1,450 @@
+{
+  "index": {
+    "embed_ms": 5110.7,
+    "upsert_ms": 94.8
+  },
+  "tau_default": 0.4,
+  "delta": 0.03,
+  "curve": [
+    {
+      "tau": 0.0,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.0,
+      "accuracy": 0.625
+    },
+    {
+      "tau": 0.05,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.0,
+      "accuracy": 0.625
+    },
+    {
+      "tau": 0.1,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.0,
+      "accuracy": 0.625
+    },
+    {
+      "tau": 0.15,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.0,
+      "accuracy": 0.625
+    },
+    {
+      "tau": 0.2,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.0,
+      "accuracy": 0.625
+    },
+    {
+      "tau": 0.25,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.0,
+      "accuracy": 0.625
+    },
+    {
+      "tau": 0.3,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.2,
+      "accuracy": 0.688
+    },
+    {
+      "tau": 0.35,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.2,
+      "accuracy": 0.688
+    },
+    {
+      "tau": 0.4,
+      "answerable_recall": 0.909,
+      "negative_abstention": 0.6,
+      "accuracy": 0.812
+    },
+    {
+      "tau": 0.45,
+      "answerable_recall": 0.818,
+      "negative_abstention": 0.6,
+      "accuracy": 0.75
+    },
+    {
+      "tau": 0.5,
+      "answerable_recall": 0.727,
+      "negative_abstention": 0.6,
+      "accuracy": 0.688
+    },
+    {
+      "tau": 0.55,
+      "answerable_recall": 0.545,
+      "negative_abstention": 1.0,
+      "accuracy": 0.688
+    },
+    {
+      "tau": 0.6,
+      "answerable_recall": 0.364,
+      "negative_abstention": 1.0,
+      "accuracy": 0.562
+    },
+    {
+      "tau": 0.65,
+      "answerable_recall": 0.182,
+      "negative_abstention": 1.0,
+      "accuracy": 0.438
+    },
+    {
+      "tau": 0.7,
+      "answerable_recall": 0.091,
+      "negative_abstention": 1.0,
+      "accuracy": 0.375
+    },
+    {
+      "tau": 0.75,
+      "answerable_recall": 0.0,
+      "negative_abstention": 1.0,
+      "accuracy": 0.312
+    },
+    {
+      "tau": 0.8,
+      "answerable_recall": 0.0,
+      "negative_abstention": 1.0,
+      "accuracy": 0.312
+    }
+  ],
+  "policy": {
+    "rule": "abstain si s1<tau ou marge<delta sinon answer",
+    "answerable_recall": 0.727,
+    "negative_abstention": 1.0,
+    "accuracy": 0.812
+  },
+  "items": [
+    {
+      "id": "D1-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "scores": [
+        0.4971,
+        0.4876,
+        0.4802
+      ],
+      "paths": [
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "marge=0.010 < delta=0.03",
+      "latency_ms": 15.28
+    },
+    {
+      "id": "D2-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "scores": [
+        0.5174,
+        0.4619,
+        0.4417
+      ],
+      "paths": [
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/E2E-LEAD-PROTOCOL.md",
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.517 marge=0.055",
+      "latency_ms": 8.65
+    },
+    {
+      "id": "T1-orig",
+      "kind": "original",
+      "expected": "answer",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "scores": [
+        0.6437,
+        0.4948,
+        0.4517
+      ],
+      "paths": [
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.644 marge=0.149",
+      "latency_ms": 7.33
+    },
+    {
+      "id": "T2-orig",
+      "kind": "original",
+      "expected": "answer",
+      "golds": [
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "scores": [
+        0.6843,
+        0.6134,
+        0.5297
+      ],
+      "paths": [
+        "docs/CI-ARTIFACT-STORAGE.md",
+        "docs/CI-ARTIFACT-STORAGE.md",
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.684 marge=0.071",
+      "latency_ms": 8.07
+    },
+    {
+      "id": "T3-orig",
+      "kind": "original",
+      "expected": "answer",
+      "golds": [
+        "docs/CATALOGUE-CONTRACT-CORE.md"
+      ],
+      "scores": [
+        0.7304,
+        0.6017,
+        0.5802
+      ],
+      "paths": [
+        "docs/PUBLIC-CONTRACT.md",
+        "docs/CATALOGUE-CONTRACT-CORE.md",
+        "docs/work-items/391-lot-typography.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.730 marge=0.129",
+      "latency_ms": 7.22
+    },
+    {
+      "id": "P1-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "scores": [
+        0.5221,
+        0.458,
+        0.4131
+      ],
+      "paths": [
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/E2E-WORK-ITEM.md",
+        "docs/E2E-LEAD-PROTOCOL.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.522 marge=0.064",
+      "latency_ms": 7.69
+    },
+    {
+      "id": "P2-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "golds": [
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "scores": [
+        0.5636,
+        0.5238,
+        0.4858
+      ],
+      "paths": [
+        "docs/CI-ARTIFACT-STORAGE.md",
+        "docs/CI-ARTIFACT-STORAGE.md",
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.564 marge=0.040",
+      "latency_ms": 7.4
+    },
+    {
+      "id": "P3-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "golds": [
+        "docs/CATALOGUE-CONTRACT-CORE.md"
+      ],
+      "scores": [
+        0.3106,
+        0.3054,
+        0.2942
+      ],
+      "paths": [
+        "docs/work-items/391-lot-icons.md",
+        "docs/E2E-LEAD-PROTOCOL.md",
+        "docs/PUBLIC-CONTRACT.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "s1=0.311 < tau=0.4",
+      "latency_ms": 8.27
+    },
+    {
+      "id": "P4-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "scores": [
+        0.4253,
+        0.3836,
+        0.3737
+      ],
+      "paths": [
+        "docs/work-items/391-lot-icons.md",
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/E2E-LEAD-PROTOCOL.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.425 marge=0.042",
+      "latency_ms": 6.16
+    },
+    {
+      "id": "H1-hard",
+      "kind": "hard",
+      "expected": "answer",
+      "golds": [
+        "docs/IMAGE-PROVENANCE.md",
+        "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+        "docs/INSTANCE-IDENTITY.md"
+      ],
+      "scores": [
+        0.6062,
+        0.5315,
+        0.5272
+      ],
+      "paths": [
+        "docs/IMAGE-PROVENANCE.md",
+        "docs/IMAGE-PROVENANCE.md",
+        "docs/IMAGE-PROVENANCE.md"
+      ],
+      "policy": "answer",
+      "policy_reason": "s1=0.606 marge=0.075",
+      "latency_ms": 6.66
+    },
+    {
+      "id": "H2-hard",
+      "kind": "hard",
+      "expected": "answer",
+      "golds": [
+        "docs/equipment-contract-495.md",
+        "docs/equipment-audit-495.md",
+        "docs/equipment-add-appliance.md"
+      ],
+      "scores": [
+        0.5681,
+        0.5389,
+        0.5379
+      ],
+      "paths": [
+        "docs/equipment-audit-495.md",
+        "docs/equipment-audit-495.md",
+        "docs/equipment-contract-495.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "marge=0.029 < delta=0.03",
+      "latency_ms": 7.37
+    },
+    {
+      "id": "N1-neg",
+      "kind": "negative-ood",
+      "expected": "abstain",
+      "golds": [],
+      "scores": [
+        0.2661,
+        0.2273,
+        0.2273
+      ],
+      "paths": [
+        "docs/equipment-audit-495.md",
+        "docs/equipment-contract-495.md",
+        "docs/nutrition-profile-issue-136.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "s1=0.266 < tau=0.4",
+      "latency_ms": 5.79
+    },
+    {
+      "id": "N2-neg",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "golds": [],
+      "scores": [
+        0.5181,
+        0.5041,
+        0.5005
+      ],
+      "paths": [
+        "docs/review-169-cooking.md",
+        "docs/review-169-cooking.md",
+        "docs/review-169-cooking.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "marge=0.014 < delta=0.03",
+      "latency_ms": 6.13
+    },
+    {
+      "id": "N3-neg",
+      "kind": "negative-ood",
+      "expected": "abstain",
+      "golds": [],
+      "scores": [
+        0.3524,
+        0.3402,
+        0.3161
+      ],
+      "paths": [
+        "docs/MEAL_PLANNING_NUTRITION.md",
+        "docs/nutrition-profile-issue-136.md",
+        "docs/review-169-cooking.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "s1=0.352 < tau=0.4",
+      "latency_ms": 6.05
+    },
+    {
+      "id": "N4-neg",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "golds": [],
+      "scores": [
+        0.5388,
+        0.538,
+        0.5253
+      ],
+      "paths": [
+        "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md",
+        "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md",
+        "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "marge=0.001 < delta=0.03",
+      "latency_ms": 7.12
+    },
+    {
+      "id": "N5-neg",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "golds": [],
+      "scores": [
+        0.3987,
+        0.3838,
+        0.3807
+      ],
+      "paths": [
+        "docs/work-items/391-lot-ui-icons.md",
+        "docs/HERDR-WORKSPACE-NAMING.md",
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "policy": "abstain",
+      "policy_reason": "s1=0.399 < tau=0.4",
+      "latency_ms": 5.42
+    }
+  ]
+}

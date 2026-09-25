@@ -1,0 +1,114 @@
+{
+  "fetch_k": 20,
+  "lambda": 0.5,
+  "rows": [
+    {
+      "id": "T2-orig",
+      "golds": [
+        "docs/CI-ARTIFACT-STORAGE.md"
+      ],
+      "raw": {
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "recall": 1.0,
+        "distinct_docs": 1,
+        "latency_ms": 14.24
+      },
+      "mmr": {
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/work-items/391-lot-icons.md",
+          "docs/E2E-LEDGER.md"
+        ],
+        "recall": 1.0,
+        "distinct_docs": 3,
+        "latency_ms": 22.54
+      }
+    },
+    {
+      "id": "P1-para",
+      "golds": [
+        "docs/HERDR-WORKSPACE-NAMING.md"
+      ],
+      "raw": {
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/E2E-WORK-ITEM.md",
+          "docs/E2E-LEAD-PROTOCOL.md"
+        ],
+        "recall": 1.0,
+        "distinct_docs": 3,
+        "latency_ms": 8.59
+      },
+      "mmr": {
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/E2E-WORK-ITEM.md"
+        ],
+        "recall": 1.0,
+        "distinct_docs": 3,
+        "latency_ms": 20.27
+      }
+    },
+    {
+      "id": "H1-hard",
+      "golds": [
+        "docs/IMAGE-PROVENANCE.md",
+        "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+        "docs/INSTANCE-IDENTITY.md"
+      ],
+      "raw": {
+        "paths": [
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/IMAGE-PROVENANCE.md"
+        ],
+        "recall": 0.33,
+        "distinct_docs": 1,
+        "latency_ms": 10.21
+      },
+      "mmr": {
+        "paths": [
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/E2E-WORK-ITEM.md"
+        ],
+        "recall": 0.33,
+        "distinct_docs": 3,
+        "latency_ms": 23.15
+      }
+    },
+    {
+      "id": "H2-hard",
+      "golds": [
+        "docs/equipment-contract-495.md",
+        "docs/equipment-audit-495.md",
+        "docs/equipment-add-appliance.md"
+      ],
+      "raw": {
+        "paths": [
+          "docs/equipment-audit-495.md",
+          "docs/equipment-audit-495.md",
+          "docs/equipment-contract-495.md"
+        ],
+        "recall": 0.67,
+        "distinct_docs": 2,
+        "latency_ms": 10.72
+      },
+      "mmr": {
+        "paths": [
+          "docs/equipment-audit-495.md",
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/equipment-add-appliance.md"
+        ],
+        "recall": 0.67,
+        "distinct_docs": 3,
+        "latency_ms": 22.95
+      }
+    }
+  ]
+}

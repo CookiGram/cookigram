@@ -88,8 +88,48 @@ class DenseQdrant:
         return {"hits": hits,
                 "latency_ms": round((time.perf_counter() - t0) * 1000, 2)}
 
+    def search_mmr(self, query: str, top_k: int = 3, fetch_k: int = 20,
+                   lambda_: float = 0.5, filters: dict | None = None) -> dict:
+        """Dense + diversification MMR locale (fetch_k -> top_k)."""
+        from mmr import mmr_select
+        t0 = time.perf_counter()
+        res = self.client.query_points(
+            COLLECTION, query=self._vec(query), limit=fetch_k,
+            query_filter=self._filter(filters), with_vectors=True).points
+        cands = [{"id": str(p.id), "score": p.score, "vector": list(p.vector),
+                  "text": (p.payload or {}).get("_text", ""),
+                  "citation": {k: (p.payload or {}).get(k)
+                               for k in ("path", "section", "kind", "work_id")}}
+                 for p in res if p.vector is not None]
+        hits = mmr_select(self._vec(query), cands, top_k, lambda_)
+        for h in hits:
+            h["score"] = round(h["score"], 4)
+            del h["vector"]
+        return {"hits": hits, "fetch_k": fetch_k, "lambda": lambda_,
+                "latency_ms": round((time.perf_counter() - t0) * 1000, 2)}
+
     def info(self) -> dict:
         c = self.client.get_collection(COLLECTION)
         return {"points": c.points_count,
                 "indexed_vectors": getattr(c, "indexed_vectors_count", None),
                 "status": str(c.status)}
+
+
+def index_corpus(dq: "DenseQdrant", corpus: list[dict],
+                 batch: int = 64) -> dict:
+    """(Re)indexation derivee complete du corpus canonique. Jetable."""
+    from qdrant_client.models import PointStruct
+    dq.drop() if dq.client.collection_exists(COLLECTION) else None
+    dq.ensure_collection()
+    t0 = time.perf_counter()
+    vecs = list(dq.embedder.embed([d["text"] for d in corpus]))
+    embed_ms = round((time.perf_counter() - t0) * 1000, 1)
+    t0 = time.perf_counter()
+    for i in range(0, len(corpus), batch):
+        pts = [PointStruct(
+            id=str(uuid.uuid5(uuid.NAMESPACE_URL, d["id"])),
+            vector=v.tolist(), payload={**d["payload"], "_text": d["text"]})
+            for d, v in zip(corpus[i:i + batch], vecs[i:i + batch])]
+        dq.client.upsert(COLLECTION, pts)
+    return {"embed_ms": embed_ms,
+            "upsert_ms": round((time.perf_counter() - t0) * 1000, 1)}

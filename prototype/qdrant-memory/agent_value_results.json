@@ -1,0 +1,226 @@
+{
+  "top_k": 3,
+  "mmr": {
+    "fetch_k": 20,
+    "lambda": 0.5
+  },
+  "tasks": [
+    {
+      "id": "A1-direct",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456,
+        "chunks": 209
+      },
+      "lexical": {
+        "success": true,
+        "tokens": 359,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/E2E-WORK-ITEM.md"
+        ],
+        "latency_ms": 6.53
+      },
+      "dense": {
+        "success": false,
+        "tokens": 447,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/HERDR-WORKSPACE-NAMING.md"
+        ],
+        "latency_ms": 9.73
+      },
+      "dense_mmr_policy": {
+        "decision": "answer",
+        "reason": "s1=0.644 marge=0.149",
+        "success": false,
+        "tokens": 366,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/work-items/391-lot-icons.md",
+          "docs/E2E-LEAD-PROTOCOL.md"
+        ],
+        "latency_ms": 26.38
+      }
+    },
+    {
+      "id": "A2-para",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456,
+        "chunks": 209
+      },
+      "lexical": {
+        "success": false,
+        "tokens": 827,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 10.77
+      },
+      "dense": {
+        "success": false,
+        "tokens": 347,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/E2E-WORK-ITEM.md",
+          "docs/E2E-LEAD-PROTOCOL.md"
+        ],
+        "latency_ms": 8.52
+      },
+      "dense_mmr_policy": {
+        "decision": "answer",
+        "reason": "s1=0.522 marge=0.064",
+        "success": false,
+        "tokens": 377,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/E2E-WORK-ITEM.md"
+        ],
+        "latency_ms": 19.69
+      }
+    },
+    {
+      "id": "A3-hard",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456,
+        "chunks": 209
+      },
+      "lexical": {
+        "success": false,
+        "tokens": 627,
+        "chunks": 3,
+        "paths": [
+          "docs/E2E-LEAD-PROTOCOL.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md"
+        ],
+        "latency_ms": 8.53
+      },
+      "dense": {
+        "success": true,
+        "tokens": 615,
+        "chunks": 3,
+        "paths": [
+          "docs/equipment-audit-495.md",
+          "docs/equipment-audit-495.md",
+          "docs/equipment-contract-495.md"
+        ],
+        "latency_ms": 10.22
+      },
+      "dense_mmr_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.029 < delta=0.03",
+        "success": false,
+        "tokens": 20,
+        "chunks": 0,
+        "paths": [],
+        "latency_ms": 21.54
+      }
+    },
+    {
+      "id": "A4-orig",
+      "expected": "answer",
+      "tokens_full": 44456,
+      "full": {
+        "success": true,
+        "tokens": 44456,
+        "chunks": 209
+      },
+      "lexical": {
+        "success": true,
+        "tokens": 657,
+        "chunks": 3,
+        "paths": [
+          "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md",
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "latency_ms": 8.45
+      },
+      "dense": {
+        "success": true,
+        "tokens": 221,
+        "chunks": 3,
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "latency_ms": 7.98
+      },
+      "dense_mmr_policy": {
+        "decision": "answer",
+        "reason": "s1=0.684 marge=0.071",
+        "success": false,
+        "tokens": 244,
+        "chunks": 3,
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/work-items/391-lot-icons.md",
+          "docs/E2E-LEDGER.md"
+        ],
+        "latency_ms": 18.67
+      }
+    },
+    {
+      "id": "A5-trap",
+      "expected": "abstain",
+      "tokens_full": 44456,
+      "full": {
+        "success": null,
+        "tokens": 44456,
+        "chunks": 209
+      },
+      "lexical": {
+        "success": null,
+        "tokens": 503,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 8.42
+      },
+      "dense": {
+        "success": null,
+        "tokens": 728,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 6.92
+      },
+      "dense_mmr_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.014 < delta=0.03",
+        "success": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "latency_ms": 18.23
+      }
+    }
+  ]
+}

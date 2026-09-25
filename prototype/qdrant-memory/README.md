@@ -84,3 +84,21 @@ latence ~10 ms ; collection 209 pts ≈ **2 Mo disque, ~70 Mo RSS**.
 Échecs documentés dans `benchmark_3way_results.json` (P3 manquée des deux
 côtés, N2 sans abstention même à τ=0.5, top-k mono-doc sans diversification).
 Verdict : voir handoff sur #508 — pas une décision d'architecture.
+
+## 6. Gate cas réalistes/difficiles (après crash, reprise sur `a256e8c`)
+
+Reprise sans second lifecycle : résidu `abstention_*` revalidé à l'identique
+par rerun (scores à 4 décimales, courbe et politique inchangés).
+`scale_*.py` présents mais **non exécutés** (hors scope de ce gate).
+
+- `mmr.py` + `search_mmr` (fetch 20, λ=0.5) : diversifie réellement
+  (`mmr_results.json`) — H1/H2 ne gagnent pas en recall, H2 dilue la
+  précision (doc hors sujet injecté), rank-1 préservé sur 4/4 cas,
+  latence ×2 (~20 ms).
+- `policy.py` (τ=0.40 + marge δ=0.03, post-hoc) : `abstention_results.json`
+  — seuil seul insuffisant (N2/N4 fuient sous tout τ qui préserve le rappel),
+  marge capte les 5 négatifs mais abstient à tort H2/D1 (candidats groupés).
+- `agent_value.py` (`agent_tasks.json`, ancre exacte comme critère) :
+  `agent_value_results.json` — plein 4/4, lexical 2/4, dense 2/4,
+  dense+MMR+politique 1/4 + piège N2 abstenu. **Bon doc ≠ bon chunk.**
+- `test_gate3.py` : 6/6 OK (MMR, politique, schémas, ancres dans l'or).
