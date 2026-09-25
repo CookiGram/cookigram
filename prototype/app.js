@@ -4,7 +4,7 @@
  */
 
 import { getCurrentDinner, moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal } from "./planner-state.js";
-import { DEFAULT_USER_EQUIPMENT, EQUIPMENT_LABELS, getMissingEquipment, migrateUserEquipment } from "./equipment.js";
+import { DEFAULT_USER_EQUIPMENT, EQUIPMENT_LABELS, PRESSURE_COOKER_MODEL_LABELS, getMissingEquipment, migrateUserEquipment, pressureCapsOf, togglePressureCookerCap } from "./equipment.js";
 
 const STORAGE_KEY = "cookigram:meal-plan:v3";
 
@@ -545,7 +545,9 @@ function bindEquipmentChips() {
 
   chips.forEach(chip => {
     const equip = chip.dataset.equip;
-    if (state.userEquipment && state.userEquipment[equip]) {
+    const cap = chip.dataset.cap || null;
+    const isCapActive = (capability) => pressureCapsOf(state.userEquipment).includes(capability);
+    if (cap ? isCapActive(cap) : (state.userEquipment && state.userEquipment[equip])) {
       chip.classList.add("active");
     } else {
       chip.classList.remove("active");
@@ -556,12 +558,27 @@ function bindEquipmentChips() {
         showToast("🍳 Les plaques et poêles sont la base indispensable de toute cuisine !");
         return;
       }
-      const isNowActive = !state.userEquipment[equip];
-      state.userEquipment[equip] = isNowActive;
-      chip.classList.toggle("active", isNowActive);
+      let isNowActive;
+      if (cap && equip === "pressure_cooker") {
+        const next = togglePressureCookerCap(state.userEquipment.pressure_cooker, cap);
+        state.userEquipment.pressure_cooker = next;
+        isNowActive = next !== false && pressureCapsOf(state.userEquipment).includes(cap);
+      } else {
+        isNowActive = !state.userEquipment[equip];
+        state.userEquipment[equip] = isNowActive;
+      }
+      // Repaint all pressure chips: family ownership is capability-based.
+      if (equip === "pressure_cooker") {
+        container.querySelectorAll('[data-equip="pressure_cooker"]').forEach(other => {
+          const otherCap = other.dataset.cap || null;
+          other.classList.toggle("active", otherCap ? isCapActive(otherCap) : pressureCapsOf(state.userEquipment).length > 0);
+        });
+      } else {
+        chip.classList.toggle("active", isNowActive);
+      }
       saveState();
 
-      const label = EQUIPMENT_LABELS[equip] || equip;
+      const label = cap ? (PRESSURE_COOKER_MODEL_LABELS[cap] || cap) : (EQUIPMENT_LABELS[equip] || equip);
       if (isNowActive) {
         showToast(`✓ ${label} activé : les recettes correspondantes sont débloquées !`);
       } else {
