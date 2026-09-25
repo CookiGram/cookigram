@@ -26,6 +26,19 @@ class TestRetrievalContract(unittest.TestCase):
         res = self.col.search("mayonnaise", filters={"work_id": "487"})
         self.assertEqual(res["hits"], [])
 
+    def test_none_filter_matches_null_or_missing(self):
+        # Contrat F3 (gate 4) : None = nul ou absent, jamais ignore.
+        self.col.upsert("c", "workspace Herdr sans rattachement",
+                        {"project": "cookigram", "work_id": None,
+                         "kind": "doc", "path": "docs/Y.md",
+                         "section": "s", "updated_at": "git", "sha": "z"})
+        res = self.col.search("workspace Herdr", filters={"work_id": None})
+        self.assertEqual([h["id"] for h in res["hits"]], ["c"])
+
+    def test_none_in_list_rejected(self):
+        with self.assertRaises(ValueError):
+            self.col.search("workspace", filters={"work_id": ["487", None]})
+
     def test_citation_present(self):
         res = self.col.search("workspace Herdr")
         self.assertIn("path", res["hits"][0]["citation"])

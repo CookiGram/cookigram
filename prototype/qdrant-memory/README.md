@@ -60,6 +60,12 @@ annule 100 % du chantier. Rien d'autre n'est touché.
 | `dense_qdrant.py` | **gate 2** : adaptateur Qdrant réel (requiert le venv expérimental, jamais le produit) |
 | `benchmark_3way.py` | **gate 2** : plein vs lexical vs dense, 10 tâches (originales + paraphrases + hard + négatives) |
 | `benchmark_3way_results.json` | résultats durables du gate 2 |
+| `retrieval_metrics.py` | **gate 4** : retrieval (rank-1, recall@k) vs décision, pures stdlib |
+| `freeze_dev.py` → `dev_freeze.json` | **gate 4** : point (τ=0.40, δ=0.03, γ=0.70) figé sur dev + sensibilité, pré-holdout |
+| `holdout.json` (v2) | **gate 4** : 8 items aveugles, ancre H-D durcie pré-mesure |
+| `ablation.py` → `ablation_results.json` | **gate 4** : UNE mesure holdout (sections×faits × politique×cluster) |
+| `test_filters_dense.py` | **gate 4** : non-régression contrat `None` dense (F3, venv + serveur) |
+| `scale_gen.py` / `scale_bench.py` → `scale_results.json` | preuve d'échelle 1k/10k/100k, **séparée** du holdout |
 
 ## 5. Gate 2 — Qdrant réel + dense local (2026-09-25)
 
@@ -100,5 +106,9 @@ par rerun (scores à 4 décimales, courbe et politique inchangés).
   marge capte les 5 négatifs mais abstient à tort H2/D1 (candidats groupés).
 - `agent_value.py` (`agent_tasks.json`, ancre exacte comme critère) :
   `agent_value_results.json` — plein 4/4, lexical 2/4, dense 2/4,
-  dense+MMR+politique 1/4 + piège N2 abstenu. **Bon doc ≠ bon chunk.**
+  dense+MMR+politique **0/4** + piège A5 abstenu (A4 perd son ancre
+  `_site` après diversification MMR : rank-1 gold conservé mais
+  contexte dilué). **Bon doc ≠ bon chunk.** Erratum gate 4 : les
+  publications gate 3 annonçaient 1/4 par erreur de report — le JSON
+  faisait foi (voir commentaire correctif sur #508).
 - `test_gate3.py` : 6/6 OK (MMR, politique, schémas, ancres dans l'or).

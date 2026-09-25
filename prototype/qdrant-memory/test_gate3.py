@@ -6,6 +6,8 @@ from pathlib import Path
 
 from mmr import mmr_select
 from policy import decide
+from retrieval_metrics import (decision_correct, mean, retrieval_ok_lenient,
+                               retrieval_ok_strict, retrieval_scores)
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -45,6 +47,31 @@ class TestPolicy(unittest.TestCase):
     def test_seuil_seul_insuffisant(self):
         # N2 passe tout seuil qui preserve P3 (s1=0.31) : fait, pas regression.
         self.assertGreater(0.5181, 0.31)
+
+
+class TestMetrics(unittest.TestCase):
+    def test_retrieval_scores(self):
+        r = retrieval_scores(["a", "b", "c"], ["a"])
+        self.assertEqual((r["rank1"], r["recall_at3"]), (1, 1.0))
+        r = retrieval_scores(["x", "a", "y"], ["a", "b"])
+        self.assertEqual((r["rank1"], r["recall_at3"]), (0, 0.5))
+        r = retrieval_scores(["x"], [])
+        self.assertEqual((r["rank1"], r["recall_at3"]), (None, None))
+
+    def test_decision_ne_recompense_pas_reponse_sur_echec(self):
+        # P3-like : recuperation ratee + abstention = decision correcte.
+        self.assertTrue(decision_correct("answer", "abstain", False))
+        self.assertFalse(decision_correct("answer", "answer", False))
+        self.assertTrue(decision_correct("answer", "answer", True))
+        self.assertFalse(decision_correct("answer", "abstain", True))
+        self.assertTrue(decision_correct("abstain", "abstain", None))
+        self.assertFalse(decision_correct("abstain", "answer", None))
+
+    def test_strict_vs_lenient(self):
+        self.assertTrue(retrieval_ok_lenient(0.67))
+        self.assertFalse(retrieval_ok_strict(0.67))
+        self.assertTrue(retrieval_ok_strict(1.0))
+        self.assertIsNone(mean([]))
 
 
 class TestLabels(unittest.TestCase):

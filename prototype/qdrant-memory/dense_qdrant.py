@@ -13,13 +13,15 @@ import uuid
 
 MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 COLLECTION = "agent_memory"
+COLLECTION_FACT = "agent_memory_fact"
 URL = "http://127.0.0.1:6333"
 
 try:
     from fastembed import TextEmbedding
     from qdrant_client import QdrantClient
     from qdrant_client.models import (Distance, FieldCondition, Filter,
-                                      MatchAny, MatchValue, PayloadSchemaType,
+                                      IsNullCondition, MatchAny, MatchValue,
+                                      PayloadField, PayloadSchemaType,
                                       PointStruct, VectorParams)
 except ImportError as exc:  # pragma: no cover
     raise SystemExit(
@@ -28,10 +30,12 @@ except ImportError as exc:  # pragma: no cover
 
 
 class DenseQdrant:
-    def __init__(self, url: str = URL, model: str = MODEL) -> None:
+    def __init__(self, url: str = URL, model: str = MODEL,
+                 collection: str = COLLECTION) -> None:
         self.client = QdrantClient(url=url, timeout=60)
         self.embedder = TextEmbedding(model)
         self.dim = 384
+        self.collection = collection
 
     def version(self) -> str:
         import json
@@ -40,16 +44,17 @@ class DenseQdrant:
             return json.load(r).get("version", "?")
 
     def ensure_collection(self) -> None:
-        if not self.client.collection_exists(COLLECTION):
+        if not self.client.collection_exists(self.collection):
             self.client.create_collection(
-                COLLECTION,
+                self.collection,
                 vectors_config=VectorParams(size=self.dim, distance=Distance.COSINE))
             for key in ("project", "work_id", "kind"):
                 self.client.create_payload_index(
-                    COLLECTION, field_name=key, field_schema=PayloadSchemaType.KEYWORD)
+                    self.collection, field_name=key,
+                    field_schema=PayloadSchemaType.KEYWORD)
 
     def drop(self) -> None:
-        self.client.delete_collection(COLLECTION)
+        self.client.delete_collection(self.collection)
 
     def _vec(self, text: str) -> list[float]:
         return list(self.embedder.embed([text]))[0].tolist()
@@ -57,34 +62,51 @@ class DenseQdrant:
     def upsert(self, pid: str, text: str, payload: dict) -> None:
         full = dict(payload)
         full["_text"] = text  # payload = ce qui serait injecte (cout honnete)
-        self.client.upsert(COLLECTION, [PointStruct(
-            id=str(uuid.uuid5(uuid.NAMESPACE_URL, pid)),
+        self.client.upsert(self.collection, [PointStruct(
+            id=str(uuid.uuid5(uuid.NAMESPACE_URL, self.collection + pid)),
             vector=self._vec(text), payload=full)])
 
+    # Contrat filtres (gate 4, F3) — parite avec store.Collection._match :
+    #   valeur scalaire -> egalite (MatchValue) ;
+    #   liste/tuple/set -> appartenance (MatchAny) ;
+    #   None -> payload nul ou absent (IsNullCondition). Un filtre None
+    #   n'est JAMAIS ignore silencieusement ; pour ne pas contraindre,
+    #   omettre la cle. None dans une liste est refuse (ValueError).
     @staticmethod
     def _filter(filters: dict | None) -> Filter | None:
         if not filters:
             return None
         must = []
         for key, want in filters.items():
-            if isinstance(want, (list, tuple, set)):
+            if want is None:
+                must.append(IsNullCondition(is_null=PayloadField(key=key)))
+            elif isinstance(want, (list, tuple, set)):
+                if any(v is None for v in want):
+                    raise ValueError(
+                        f"filtre {key!r} : None interdit dans une liste "
+                        "( IsNull et MatchAny ne se combinent pas )")
                 must.append(FieldCondition(key=key, match=MatchAny(any=list(want))))
             else:
                 must.append(FieldCondition(key=key, match=MatchValue(value=want)))
         return Filter(must=must)
 
     def search(self, query: str, top_k: int = 3, filters: dict | None = None,
-               score_threshold: float = 0.0) -> dict:
+               score_threshold: float = 0.0,
+               with_vectors: bool = False) -> dict:
         t0 = time.perf_counter()
         res = self.client.query_points(
-            COLLECTION, query=self._vec(query), limit=top_k,
+            self.collection, query=self._vec(query), limit=top_k,
             query_filter=self._filter(filters),
-            score_threshold=score_threshold or None).points
+            score_threshold=score_threshold or None,
+            with_vectors=with_vectors).points
         hits = [{"id": str(p.id), "score": round(p.score, 4),
                  "text": (p.payload or {}).get("_text", ""),
                  "citation": {k: (p.payload or {}).get(k)
                               for k in ("path", "section", "kind", "work_id")}}
                 for p in res]
+        if with_vectors:
+            for h, p in zip(hits, res):
+                h["vector"] = list(p.vector) if p.vector is not None else []
         return {"hits": hits,
                 "latency_ms": round((time.perf_counter() - t0) * 1000, 2)}
 
@@ -94,7 +116,7 @@ class DenseQdrant:
         from mmr import mmr_select
         t0 = time.perf_counter()
         res = self.client.query_points(
-            COLLECTION, query=self._vec(query), limit=fetch_k,
+            self.collection, query=self._vec(query), limit=fetch_k,
             query_filter=self._filter(filters), with_vectors=True).points
         cands = [{"id": str(p.id), "score": p.score, "vector": list(p.vector),
                   "text": (p.payload or {}).get("_text", ""),
@@ -109,7 +131,7 @@ class DenseQdrant:
                 "latency_ms": round((time.perf_counter() - t0) * 1000, 2)}
 
     def info(self) -> dict:
-        c = self.client.get_collection(COLLECTION)
+        c = self.client.get_collection(self.collection)
         return {"points": c.points_count,
                 "indexed_vectors": getattr(c, "indexed_vectors_count", None),
                 "status": str(c.status)}
@@ -119,7 +141,7 @@ def index_corpus(dq: "DenseQdrant", corpus: list[dict],
                  batch: int = 64) -> dict:
     """(Re)indexation derivee complete du corpus canonique. Jetable."""
     from qdrant_client.models import PointStruct
-    dq.drop() if dq.client.collection_exists(COLLECTION) else None
+    dq.drop() if dq.client.collection_exists(dq.collection) else None
     dq.ensure_collection()
     t0 = time.perf_counter()
     vecs = list(dq.embedder.embed([d["text"] for d in corpus]))
@@ -127,9 +149,9 @@ def index_corpus(dq: "DenseQdrant", corpus: list[dict],
     t0 = time.perf_counter()
     for i in range(0, len(corpus), batch):
         pts = [PointStruct(
-            id=str(uuid.uuid5(uuid.NAMESPACE_URL, d["id"])),
+            id=str(uuid.uuid5(uuid.NAMESPACE_URL, dq.collection + d["id"])),
             vector=v.tolist(), payload={**d["payload"], "_text": d["text"]})
             for d, v in zip(corpus[i:i + batch], vecs[i:i + batch])]
-        dq.client.upsert(COLLECTION, pts)
+        dq.client.upsert(dq.collection, pts)
     return {"embed_ms": embed_ms,
             "upsert_ms": round((time.perf_counter() - t0) * 1000, 1)}

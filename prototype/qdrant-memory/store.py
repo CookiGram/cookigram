@@ -19,6 +19,9 @@ QDRANT_MAP (passage au reel, 1:1) :
                                                                            updated_at, sha})])
   Filtres {"k": v} / {"k": [..]}   ->  Filter(must=[FieldCondition(key=k,
                                                      match=MatchValue/Any(...))])
+  Filtre {"k": None} (nul/absent) ->  Filter(must=[IsNullCondition(...)])
+                                                     (jamais ignore ; None
+                                                     dans une liste = erreur)
   search(query, top_k, filters,     ->  client.search(..., search_params=...,
         min_score)                           score_threshold=min_score)
   + payload indexes Qdrant sur project / work_id / kind.
@@ -80,11 +83,14 @@ class Collection:
 
     @staticmethod
     def _match(payload: dict, filters: dict | None) -> bool:
+        # Parite dense (F3) : None seul = nul/absent ; None en liste = erreur.
         if not filters:
             return True
         for key, want in filters.items():
             got = payload.get(key)
             if isinstance(want, (list, tuple, set)):
+                if any(v is None for v in want):
+                    raise ValueError(f"filtre {key!r} : None interdit dans une liste")
                 if got not in want:
                     return False
             elif got != want:
