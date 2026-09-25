@@ -1,0 +1,62 @@
+---
+title: Sauce mayonnaise
+date_published: 2026-09-25
+date_modified: 2026-09-25
+portions: 4
+prep_time: 5 min
+total_time: 10 min
+spiciness: 0
+description: "Mayonnaise ferme montée au fouet, jaunes d'œufs et moutarde, versée en mince filet pour une émulsion stable."
+nutrition_profile: pleasure
+tags: [mayonnaise, sauce, thermomix, base, froid]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r67172
+author: Cookidoo
+appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+source_appliances:
+  thermomix:
+  - TM31
+  - TM5
+  - TM6
+  - TM7
+required_equipment:
+- Thermomix TM31, TM5, TM6 ou TM7
+- Fouet
+- Récipient à bec verseur
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 8
+  step: 2
+  note: Garder le ratio huile-jaunes ; verser toujours en mince filet, surtout en grande quantité.
+flavors:
+  pairing: [œufs durs, crudités, poisson froid, salades]
+  notes: [ferme, onctueux, relevé]
+  harmony: "La moutarde et le vinaigre tendent la richesse des jaunes pour une émulsion ferme et relevée."
+  tips: "Base autonome distincte de la mayonnaise aux herbes : ici nature, à assaisonner selon l'usage. La source propose le jus de citron en alternative au vinaigre."
+conservation:
+  fridge_days: 2
+  freezable: false
+  reheat: "À servir froide ; ne pas réchauffer."
+image: images/sauce-mayonnaise.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+image_generation:
+  prompt_file: image-prompts/sauce-mayonnaise.md
+---
+[Émulsion]
+- Poser un récipient à bec verseur sur le couvercle du bol.
+- Peser l'@huile de tournesol{200 g} dedans et réserver.
+- Insérer le #fouet{} dans le bol.
+- Mettre les @jaunes d'œufs{2}, la @moutarde de Dijon{1 à 2 c. à café, selon le goût}, le @vinaigre de vin{1 c. à soupe, rouge}, le @sel{1 pincée} et le @poivre{1 pincée moulue} dans le bol.
+- Fouetter ~{2 min} à vitesse 4 en versant lentement l'huile sur le couvercle : elle coule en mince filet sur le fouet en marche et la mayonnaise est ferme.
+
+[Repos]
+- Retirer le fouet.
+- Réfrigérer jusqu'au moment de servir.
