@@ -4,7 +4,7 @@
  */
 
 import { getCurrentDinner, moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal } from "./planner-state.js";
-import { DEFAULT_USER_EQUIPMENT, EQUIPMENT_LABELS, PRESSURE_COOKER_MODEL_LABELS, getMissingEquipment, migrateUserEquipment, pressureCapsOf, togglePressureCookerCap } from "./equipment.js";
+import { DEFAULT_USER_EQUIPMENT, EQUIPMENT_LABELS, PRESSURE_COOKER_MODEL_LABELS, getMissingEquipment, migrateUserEquipment, pressureCapsOf, togglePressureCookerCap, togglePressureCookerFamily } from "./equipment.js";
 
 const STORAGE_KEY = "cookigram:meal-plan:v3";
 
@@ -543,11 +543,19 @@ function bindEquipmentChips() {
   if (!container) return;
   const chips = container.querySelectorAll(".equip-chip");
 
+  const pressureActive = () => pressureCapsOf(state.userEquipment).length > 0;
+  const repaintPressureChips = () => {
+    container.querySelectorAll('[data-equip="pressure_cooker"]').forEach(other => {
+      const otherCap = other.dataset.cap || null;
+      other.classList.toggle("active", otherCap ? pressureCapsOf(state.userEquipment).includes(otherCap) : pressureActive());
+    });
+  };
+
   chips.forEach(chip => {
     const equip = chip.dataset.equip;
     const cap = chip.dataset.cap || null;
-    const isCapActive = (capability) => pressureCapsOf(state.userEquipment).includes(capability);
-    if (cap ? isCapActive(cap) : (state.userEquipment && state.userEquipment[equip])) {
+    const isPressureFamily = equip === "pressure_cooker" && !cap;
+    if (cap ? pressureCapsOf(state.userEquipment).includes(cap) : (isPressureFamily ? pressureActive() : (state.userEquipment && state.userEquipment[equip]))) {
       chip.classList.add("active");
     } else {
       chip.classList.remove("active");
@@ -563,16 +571,17 @@ function bindEquipmentChips() {
         const next = togglePressureCookerCap(state.userEquipment.pressure_cooker, cap);
         state.userEquipment.pressure_cooker = next;
         isNowActive = next !== false && pressureCapsOf(state.userEquipment).includes(cap);
+      } else if (isPressureFamily) {
+        const next = togglePressureCookerFamily(state.userEquipment.pressure_cooker);
+        state.userEquipment.pressure_cooker = next;
+        isNowActive = next !== false;
       } else {
         isNowActive = !state.userEquipment[equip];
         state.userEquipment[equip] = isNowActive;
       }
       // Repaint all pressure chips: family ownership is capability-based.
       if (equip === "pressure_cooker") {
-        container.querySelectorAll('[data-equip="pressure_cooker"]').forEach(other => {
-          const otherCap = other.dataset.cap || null;
-          other.classList.toggle("active", otherCap ? isCapActive(otherCap) : pressureCapsOf(state.userEquipment).length > 0);
-        });
+        repaintPressureChips();
       } else {
         chip.classList.toggle("active", isNowActive);
       }

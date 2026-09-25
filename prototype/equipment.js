@@ -137,6 +137,13 @@ export function togglePressureCookerCap(value, cap) {
   return ordered.length ? ordered : false;
 }
 
+// Family switch: owning any capability clears the whole family, owning none
+// selects the generic capability. The parent chip therefore always reflects
+// and toggles family ownership, never contradicting active refinements.
+export function togglePressureCookerFamily(value) {
+  return normalizePressureCookerCaps(value).length ? false : ["generic"];
+}
+
 // Union of pressure_cooker capabilities owned by a profile, folding legacy
 // `instant_pot` / `cookeo` keys into model capabilities (§4, §7).
 export function pressureCapsOf(userEquipment) {
@@ -284,19 +291,33 @@ export function getMissingEquipment(recipe, userEquipment) {
   const pushKeyed = (key, values) => {
     if (!keyed.some((entry) => entry.key === key)) keyed.push({ key, values });
   };
+  // A legacy `instant_pot` / `cookeo` requirement key keeps its model
+  // specificity: it reads as `pressure_cooker:[model]`, never as a generic
+  // family requirement (§4, §7).
+  const aliasModel = (token) => (token === "instant_pot" || token === "cookeo" ? token : null);
   for (const raw of required) {
     if (raw && typeof raw === "object" && !Array.isArray(raw)) {
-      const canonical = normalizeEquipmentKey(raw.key);
+      const token = normalizeToken(raw.key).replace(/-/g, "_");
+      const canonical = CANONICAL_SET.has(token) ? token : READ_ALIASES[token];
       const values = Array.isArray(raw.values)
         ? raw.values.map(normalizeRequirementValue).filter(Boolean)
         : null;
-      if (CANONICAL_SET.has(canonical)) pushKeyed(canonical, values);
+      if (canonical === "pressure_cooker" && !values && token !== "pressure_cooker") {
+        pushKeyed(canonical, [aliasModel(token)]);
+        continue;
+      }
+      if (canonical && CANONICAL_SET.has(canonical)) pushKeyed(canonical, values);
       else if (isUtensilToken(raw.key)) continue;
       else pushKeyed(String(raw.key), values);
       continue;
     }
-    const canonical = normalizeEquipmentKey(raw);
-    if (CANONICAL_SET.has(canonical)) pushKeyed(canonical, null);
+    const token = normalizeToken(raw).replace(/-/g, "_");
+    const canonical = CANONICAL_SET.has(token) ? token : READ_ALIASES[token];
+    if (canonical === "pressure_cooker" && token !== "pressure_cooker") {
+      pushKeyed(canonical, [token]);
+      continue;
+    }
+    if (canonical && CANONICAL_SET.has(canonical)) pushKeyed(canonical, null);
     else if (isUtensilToken(raw)) continue;
     else pushKeyed(String(raw), null);
   }

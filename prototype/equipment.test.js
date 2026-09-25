@@ -13,6 +13,7 @@ import {
   normalizePressureCookerCaps,
   pressureCapsOf,
   togglePressureCookerCap,
+  togglePressureCookerFamily,
 } from "./equipment.js";
 
 const FULL = Object.fromEntries(CANONICAL_KEYS.map((key) => [key, true]));
@@ -60,10 +61,49 @@ test("sémantique OR blender / immersion_blender", () => {
 test("famille hiérarchique pressure_cooker sans faux blocage", () => {
   assert.equal(normalizeEquipmentKey("instant_pot"), "pressure_cooker");
   assert.equal(normalizeEquipmentKey("cookeo"), "pressure_cooker");
-  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["instant_pot"] }, { pressure_cooker: true }), []);
-  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["cookeo"] }, { pressure_cooker: true }), []);
   assert.deepEqual(getMissingEquipment({ requiredEquipment: ["pressure_cooker"] }, { pressure_cooker: true }), []);
+  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["pressure_cooker"] }, { pressure_cooker: ["cookeo"] }), []);
   assert.ok(!isRecipeCompatible({ requiredEquipment: ["pressure_cooker"] }, { four: true }));
+});
+
+test("exigences legacy : spécificité du modèle préservée, tests croisés", () => {
+  const legacy = (key) => ({ requiredEquipment: [key] });
+  // Instant Pot requis : seul un Instant Pot satisfait, jamais un Cookeo ni le générique.
+  assert.deepEqual(getMissingEquipment(legacy("instant_pot"), { pressure_cooker: ["instant_pot"] }), []);
+  assert.deepEqual(getMissingEquipment(legacy("instant_pot"), { pressure_cooker: ["cookeo"] }), ["pressure_cooker"]);
+  assert.deepEqual(getMissingEquipment(legacy("instant_pot"), { pressure_cooker: true }), ["pressure_cooker"]);
+  assert.deepEqual(getMissingEquipment(legacy("instant_pot"), { pressure_cooker: ["generic"] }), ["pressure_cooker"]);
+  assert.ok(!isRecipeCompatible(legacy("instant_pot"), { pressure_cooker: ["cookeo"] }));
+  // Cookeo requis : symétrique, jamais un Instant Pot ni le générique.
+  assert.deepEqual(getMissingEquipment(legacy("cookeo"), { pressure_cooker: ["cookeo"] }), []);
+  assert.deepEqual(getMissingEquipment(legacy("cookeo"), { pressure_cooker: ["instant_pot"] }), ["pressure_cooker"]);
+  assert.deepEqual(getMissingEquipment(legacy("cookeo"), { pressure_cooker: true }), ["pressure_cooker"]);
+  assert.ok(!isRecipeCompatible(legacy("cookeo"), { pressure_cooker: ["instant_pot"] }));
+  // Forme objet sans valeurs : même lecture que la clé legacy nue.
+  assert.deepEqual(
+    getMissingEquipment({ requiredEquipment: [{ key: "cookeo" }] }, { pressure_cooker: ["instant_pot"] }),
+    ["pressure_cooker"],
+  );
+  assert.deepEqual(
+    getMissingEquipment({ requiredEquipment: [{ key: "instant_pot" }] }, { pressure_cooker: ["instant_pot"] }),
+    [],
+  );
+  // Forme canonique sans valeurs : exigence générique de famille, tout modèle suffit.
+  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["pressure_cooker"] }, { pressure_cooker: ["cookeo"] }), []);
+  assert.deepEqual(
+    getMissingEquipment({ requiredEquipment: [{ key: "pressure_cooker" }] }, { pressure_cooker: ["instant_pot"] }),
+    [],
+  );
+});
+
+test("chip parent pressure_cooker : bascule de famille cohérente", () => {
+  assert.deepEqual(togglePressureCookerFamily(false), ["generic"]);
+  assert.equal(togglePressureCookerFamily(["instant_pot"]), false);
+  assert.equal(togglePressureCookerFamily(["generic", "cookeo"]), false);
+  assert.equal(togglePressureCookerFamily(true), false);
+  // La famille suit les capacités : non vide = détenue, vide = éteinte.
+  assert.ok(isRecipeCompatible({ requiredEquipment: ["pressure_cooker"] }, { pressure_cooker: ["instant_pot"] }));
+  assert.ok(!isRecipeCompatible({ requiredEquipment: ["pressure_cooker"] }, { pressure_cooker: false }));
 });
 
 test("ustensiles ordinaires ne bloquent jamais", () => {
