@@ -1,0 +1,80 @@
+{
+ "cycle": "2b",
+ "phase": "freeze-pre-holdout",
+ "frozen_at": "2026-09-26T10:01:10+02:00",
+ "scope": "DEV ONLY (c2b_calibration.json, 34 items). Holdout inexistant a ce stade.",
+ "point": {
+  "tau": 0.6,
+  "delta": 0.05,
+  "primary_arm": "dense_fact+policy (B2)",
+  "secondary_arm": "dense_sec+policy, meme point (A2)",
+  "dev_decision_lenient_fact": 0.765,
+  "rule": "Bras primaire : dense-fact+politique. Grille tau={0.30..0.60 pas 0.05} x delta={0.01,0.02,0.03,0.05}. Choisir le point maximisant la decision_lenient accuracy sur le dev (bras fact) ; egalite -> tau superieur puis delta superieur (preference abstention). Bras sec : meme point (secondaire)."
+ },
+ "tie_break_applied": "Ex-aequo (0.60,0.02) vs (0.60,0.05) a 0.765 : delta superieur (0.05) par la regle pre-enregistree (preference abstention).",
+ "fragilities": "Dev : B2-B marge 0.0533 (~delta), B2-Y s1 0.6002 (~tau), B2-Z s1 0.6012 (~tau), B2-N6 piege s1 0.6016 (~tau, fuit si s1>=tau et marge>=delta).",
+ "policy": "policy.decide(scores, tau, delta) fige ; aucun retuning apres lecture du holdout.",
+ "metrics": "success answer/abstain + retrieval rank-1/recall@3 + decision stricte/indulgente (comparabilite protocole).",
+ "top_k": 3,
+ "collections": {
+  "sec": "agent_memory_c2b",
+  "fact": "agent_memory_fact_c2b"
+ },
+ "code_shas": {
+  "c2b_dev.json": "cc9da45bd3eaed91",
+  "c2b_calibrate.py": "fbe9c619ed456532",
+  "test_c2b_dev.py": "deec7a56923c536b",
+  "corpus2b.py": "8f6ab9f98e21967b"
+ },
+ "c1_modules_reused_unmodified": [
+  "store.py",
+  "corpus_manifest.py",
+  "chunk_facts.py",
+  "dense_qdrant.py",
+  "policy.py",
+  "retrieval_metrics.py"
+ ],
+ "corpora": {
+  "section_chunks": 350,
+  "section_sha": "72b391ca91fb2460",
+  "fact_chunks": 1912,
+  "fact_sha": "38431cd1458610eb",
+  "tokens_full": 72253,
+  "index_sec": {
+   "embed_ms": 8417.3,
+   "upsert_ms": 217.4
+  },
+  "index_fact": {
+   "embed_ms": 51061.8,
+   "upsert_ms": 1646.1
+  }
+ },
+ "retrieval_dev": {
+  "lexical": {
+   "success_answer_rate": 0.179,
+   "rank1": 0.179,
+   "recall_at3": 0.321
+  },
+  "dense_sec": {
+   "success_answer_rate": 0.357,
+   "rank1": 0.357,
+   "recall_at3": 0.571
+  },
+  "dense_fact": {
+   "success_answer_rate": 0.321,
+   "rank1": 0.179,
+   "recall_at3": 0.357
+  }
+ },
+ "dev_composition": {
+  "n": 34,
+  "kinds": {
+   "direct": 17,
+   "hard": 3,
+   "negative-ood": 2,
+   "negative-trap": 4,
+   "paraphrase": 8
+  },
+  "golds_distincts": 11
+ }
+}

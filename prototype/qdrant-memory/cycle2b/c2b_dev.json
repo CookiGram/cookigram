@@ -1,0 +1,393 @@
+{
+ "cycle": "2b",
+ "phase": "dev",
+ "version": 1,
+ "provenance": "C2B_DEV_CALIBRATION_GO. 34 items ecrits SANS retrieval (aucun Qdrant lance avant ecriture). Ancres = 28/30 du freeze (Matrice d'Attribution, Regle 24 reservees holdout). Regles : formulations inedites, golds liste fermee 18, zero banni, zero item gate4/cycle2. Succes answer : >=1 gold top-3 ET >=1 ancre ; abstain : 0 chunk.",
+ "success_criterion": "answer : >=1 gold path top-3 ET >=1 ancre dans le contexte ; abstain : 0 chunk injecte. Retrieval reporte separement (rank-1, recall@3).",
+ "items": [
+  {
+   "id": "B2-A-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Combien de piliers le manifeste CookiGram proclame-t-il ?",
+   "golds": [
+    "CHARTER.md"
+   ],
+   "anchors": [
+    "Six Piliers"
+   ]
+  },
+  {
+   "id": "B2-B-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Comment l'elagage du contexte est-il nomme dans les regles de frugalite ?",
+   "golds": [
+    ".agents/rules/token-frugality.md"
+   ],
+   "anchors": [
+    "Context Pruning"
+   ]
+  },
+  {
+   "id": "B2-C-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle section liste les controles executables avant de proposer une recette ?",
+   "golds": [
+    "CONTRIBUTING.md"
+   ],
+   "anchors": [
+    "Contrôles locaux réellement disponibles"
+   ]
+  },
+  {
+   "id": "B2-D-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Ou la contribution assistee par agent est-elle decrite ?",
+   "golds": [
+    "CONTRIBUTING.md"
+   ],
+   "anchors": [
+    "Contributions assistées par agent"
+   ]
+  },
+  {
+   "id": "B2-E-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle section impose les regles d'or aux developpeurs ?",
+   "golds": [
+    ".agents/STATUS.md"
+   ],
+   "anchors": [
+    "Règles d'Or Développeurs"
+   ]
+  },
+  {
+   "id": "B2-F-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Ou sont suivis les jalons de maturite du projet ?",
+   "golds": [
+    ".agents/STATUS.md"
+   ],
+   "anchors": [
+    "Jalons de Maturité"
+   ]
+  },
+  {
+   "id": "B2-G-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Ou retrouver les dernieres livraisons cloturees par les agents ?",
+   "golds": [
+    ".agents/STATUS.md"
+   ],
+   "anchors": [
+    "Dernières Livraisons"
+   ]
+  },
+  {
+   "id": "B2-H-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel principe impose le mobile d'abord en cuisine ?",
+   "golds": [
+    "PRODUCT_PRINCIPLES.md"
+   ],
+   "anchors": [
+    "Mobile first"
+   ]
+  },
+  {
+   "id": "B2-I-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Comment le projet nomme-t-il sa nutrition decomplexee ?",
+   "golds": [
+    "PRODUCT_PRINCIPLES.md"
+   ],
+   "anchors": [
+    "Nutrition positive"
+   ]
+  },
+  {
+   "id": "B2-J-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Qui conseille et qui orchestre selon les principes produit ?",
+   "golds": [
+    "PRODUCT_PRINCIPLES.md"
+   ],
+   "anchors": [
+    "spécialistes conseillent"
+   ]
+  },
+  {
+   "id": "B2-K-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Que vise le chantier prioritaire zero du plan d'action ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "P0 — Stabiliser"
+   ]
+  },
+  {
+   "id": "B2-L-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Que couvre le premier chantier P1 du plan d'action ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "P1 — Mettre en place"
+   ]
+  },
+  {
+   "id": "B2-M-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Que fiabilise le chantier P2 du plan d'action ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "P2 — Fiabiliser"
+   ]
+  },
+  {
+   "id": "B2-N-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Que recouvre le chantier P3 qualite produit ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "P3 — Qualité produit"
+   ]
+  },
+  {
+   "id": "B2-O-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "A quelle date remonte l'etat des lieux archive du projet ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "snapshot 3 sept"
+   ]
+  },
+  {
+   "id": "B2-P-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Ou le vocabulaire officiel est-il defini ?",
+   "golds": [
+    "README.md"
+   ],
+   "anchors": [
+    "Vocabulaire officiel"
+   ]
+  },
+  {
+   "id": "B2-Q-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle section separe le depot du moteur ?",
+   "golds": [
+    "README.md"
+   ],
+   "anchors": [
+    "Frontière avec le moteur"
+   ]
+  },
+  {
+   "id": "B2-R-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Par quelle entree la feuille de route commence-t-elle ?",
+   "golds": [
+    "README.md"
+   ],
+   "anchors": [
+    "Roadmap — Entrée"
+   ]
+  },
+  {
+   "id": "B2-S-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel mecanisme evite les conflits d'ecriture entre agents ?",
+   "golds": [
+    ".agents/rules/multi-agent-orchestration.md"
+   ],
+   "anchors": [
+    "Verrou Distribué"
+   ]
+  },
+  {
+   "id": "B2-T-hard",
+   "kind": "hard",
+   "expected": "answer",
+   "query": "Quels quotas et quels runtimes la cartographie recense-t-elle, et qui les attribue ?",
+   "golds": [
+    ".agents/rules/multi-agent-orchestration.md"
+   ],
+   "anchors": [
+    "Quotas & Runtimes"
+   ]
+  },
+  {
+   "id": "B2-U-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel delai de surveillance s'applique a un claim ?",
+   "golds": [
+    ".agents/rules/task-claiming.md"
+   ],
+   "anchors": [
+    "Watchdog de 15 minutes"
+   ]
+  },
+  {
+   "id": "B2-V-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Qu'est-il interdit de dupliquer entre developpeurs ?",
+   "golds": [
+    ".agents/rules/task-claiming.md"
+   ],
+   "anchors": [
+    "INTERDICTION DE DOUBLON"
+   ]
+  },
+  {
+   "id": "B2-W-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel principe de frugalite guide l'usage des tokens ?",
+   "golds": [
+    ".agents/rules/token-frugality.md"
+   ],
+   "anchors": [
+    "Frugalité Éclairée"
+   ]
+  },
+  {
+   "id": "B2-X-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Comment le tiering des modeles est-il nomme ?",
+   "golds": [
+    ".agents/rules/token-frugality.md"
+   ],
+   "anchors": [
+    "Model Tiering"
+   ]
+  },
+  {
+   "id": "B2-Y-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle taxonomie la regle d'execution impose-t-elle ?",
+   "golds": [
+    ".agents/rules/cooking-execution.md"
+   ],
+   "anchors": [
+    "Taxonomie Obligatoire"
+   ]
+  },
+  {
+   "id": "B2-Z-hard",
+   "kind": "hard",
+   "expected": "answer",
+   "query": "Quelle unite de travail et quelle regle numerotee cadrent l'execution ?",
+   "golds": [
+    ".agents/rules/cooking-execution.md"
+   ],
+   "anchors": [
+    "Unité de Travail"
+   ]
+  },
+  {
+   "id": "B2-AA-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Comment le repli tolerant est-il nomme pour les icones ?",
+   "golds": [
+    ".agents/rules/ingredient-icons.md"
+   ],
+   "anchors": [
+    "Graceful Degradation"
+   ]
+  },
+  {
+   "id": "B2-AB-hard",
+   "kind": "hard",
+   "expected": "answer",
+   "query": "Quelle section fixe la direction artistique et le style des icones ?",
+   "golds": [
+    ".agents/rules/ingredient-icons.md"
+   ],
+   "anchors": [
+    "Direction artistique"
+   ]
+  },
+  {
+   "id": "B2-N1-ood",
+   "kind": "negative-ood",
+   "expected": "abstain",
+   "query": "Quelle est la capitale de l'Australie ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "B2-N2-ood",
+   "kind": "negative-ood",
+   "expected": "abstain",
+   "query": "Qui a peint la Joconde ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "B2-N3-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Quel seuil tau la CI publique utilise-t-elle pour valider les recettes ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "B2-N4-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Quel chunking recommander pour indexer les claims Bandleader ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "B2-N5-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Quel gamma garantit la complementarite des candidats denses ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "B2-N6-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Faut-il modifier le Core depuis ce depot pour activer Qdrant ?",
+   "golds": [],
+   "anchors": []
+  }
+ ]
+}
