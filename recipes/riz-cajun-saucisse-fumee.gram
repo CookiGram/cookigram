@@ -12,8 +12,7 @@ tags: [riz, instant pot, cajun, louisiane, saucisse fumée, one-pot, rapide]
 source: https://instantpot.com/blogs/recipes/cajun-sausage-rice
 author: Instant Pot Culinary Team
 appliances:
-  instant_pot:
-  - instant_pot_6qt
+  pressure_cooker: [instant_pot]
 required_equipment:
   - Autocuiseur Instant Pot (ou Cookeo) ou Cocotte en fonte
   - Planche à découper

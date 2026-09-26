@@ -12,8 +12,7 @@ tags: [porc, instant pot, taïwanais, asiatique, réconfort, mijoté, œufs]
 source: https://instantpot.com/blogs/recipes/taiwanese-braised-pork-belly
 author: Instant Pot Culinary Team
 appliances:
-  instant_pot:
-  - instant_pot_6qt
+  pressure_cooker: [instant_pot]
 required_equipment:
   - Autocuiseur Instant Pot (ou Cookeo) ou Cocotte en fonte
   - Planche à découper

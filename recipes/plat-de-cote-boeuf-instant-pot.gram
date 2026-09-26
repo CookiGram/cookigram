@@ -12,8 +12,7 @@ tags: [bœuf, instant pot, mijoté, réconfort, vin-rouge, carotte]
 source: https://github.com/PierreCsn/cookigram
 author: Pierre Cousin
 appliances:
-  instant_pot:
-  - instant_pot_6qt
+  pressure_cooker: [instant_pot]
 required_equipment:
   - Autocuiseur (Instant Pot ou Cookeo) ou Cocotte en fonte
   - Pince de cuisine
@@ -109,8 +108,7 @@ variants:
   prep_time: 10 min
   total_time: 1 h 40 min
   appliances:
-    instant_pot:
-    - instant_pot_6qt
+    pressure_cooker: [instant_pot]
   steps:
     replace:
       sear-meat: |

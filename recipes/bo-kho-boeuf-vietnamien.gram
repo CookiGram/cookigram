@@ -12,8 +12,7 @@ tags: [bœuf, instant pot, vietnamien, ragoût, mijoté, citronnelle, carotte]
 source: https://instantpot.com/blogs/recipes/vietnamese-braised-beef-stew
 author: Instant Pot Culinary Team
 appliances:
-  instant_pot:
-  - instant_pot_6qt
+  pressure_cooker: [instant_pot]
 required_equipment:
   - Autocuiseur Instant Pot (ou Cookeo) ou Cocotte en fonte
   - Planche à découper

@@ -11,6 +11,8 @@ nutrition_profile: vitality
 tags: [air-fryer, poulet, rapide, familial]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-chicken-breasts
 author: Samuel Goldsmith
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-poulet-paprika-herbes.webp
 image_credit:
   author: CookiGram

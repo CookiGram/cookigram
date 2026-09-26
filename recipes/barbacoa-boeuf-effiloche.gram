@@ -12,8 +12,7 @@ tags: [bœuf, instant pot, mexicain, tacos, mijoté, pimenté]
 source: https://instantpot.com/blogs/recipes/barbacoa-beef
 author: Instant Pot Culinary Team
 appliances:
-  instant_pot:
-  - instant_pot_6qt
+  pressure_cooker: [instant_pot]
 required_equipment:
   - Autocuiseur Instant Pot (ou Cookeo) ou Cocotte en fonte
   - Mixeur plongeant ou blender

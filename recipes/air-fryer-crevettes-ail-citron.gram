@@ -11,6 +11,8 @@ nutrition_profile: vitality
 tags: [air-fryer, crevettes, citron, rapide]
 source: https://www.foodnetwork.com/recipes/orzo-risotto-recipe-1963863
 author: Michele Urvater
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-crevettes-ail-citron.webp
 image_credit:
   author: CookiGram

@@ -11,6 +11,8 @@ nutrition_profile: vitality
 tags: [air-fryer, tofu, végétarien, croustillant]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-popcorn-tofu-nuggets/
 author: Samuel Goldsmith
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-tofu-croustillant.webp
 image_credit:
   author: CookiGram

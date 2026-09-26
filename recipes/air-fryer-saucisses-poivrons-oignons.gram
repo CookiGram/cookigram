@@ -11,6 +11,8 @@ nutrition_profile: pleasure
 tags: [air-fryer, saucisse, poivron, rapide]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-recipes
 author: Good Food team
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-saucisses-poivrons-oignons.webp
 image_credit:
   author: CookiGram

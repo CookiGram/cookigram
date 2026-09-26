@@ -11,6 +11,8 @@ nutrition_profile: vitality
 tags: [air-fryer, chou-fleur, végétarien, épicé]
 source: https://www.bbcgoodfood.com/recipes/collection/vegetarian-air-fryer-recipes
 author: Good Food team
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-chou-fleur-croustillant.webp
 image_credit:
   author: CookiGram

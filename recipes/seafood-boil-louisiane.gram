@@ -12,8 +12,7 @@ tags: [fruits de mer, crevettes, instant pot, cajun, louisiane, express, convivi
 source: https://instantpot.com/blogs/recipes/spicy-garlic-seafood-boil
 author: Instant Pot Culinary Team
 appliances:
-  instant_pot:
-  - instant_pot_6qt
+  pressure_cooker: [instant_pot]
 required_equipment:
   - Autocuiseur Instant Pot (ou Faitout traditionnel)
   - Petite casserole (pour le beurre d'ail)

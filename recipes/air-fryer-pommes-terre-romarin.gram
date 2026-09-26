@@ -11,6 +11,8 @@ nutrition_profile: vitality
 tags: [air-fryer, pomme-de-terre, accompagnement, romarin]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-roast-potatoes
 author: Good Food team
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-pommes-terre-romarin.webp
 image_credit:
   author: CookiGram

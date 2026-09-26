@@ -11,6 +11,8 @@ nutrition_profile: vitality
 tags: [air-fryer, végétarien, pois-chiches, falafels]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-falafel
 author: Good Food team
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-falafels-pois-chiches.webp
 image_credit:
   author: CookiGram
