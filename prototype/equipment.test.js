@@ -473,3 +473,15 @@ test("tri-state : règle de non-rétroactivité (arbitrage PO 25/09/2026)", () =
 });
 
 
+
+test("riz-vapeur #389 : quatre variantes admissibles selon le profil", () => {
+  const recipe = { variants: [
+    { id: "casserole", requiredEquipment: ["stovetop"] },
+    { id: "thermomix", requiredEquipment: ["thermomix"] },
+    { id: "rice-cooker", requiredEquipment: ["rice_cooker"] },
+    { id: "autocuiseur", requiredEquipment: [{ key: "pressure_cooker", values: ["standard", "instant_pot", "cookeo"] }] },
+  ]};
+  assert.deepEqual(getAdmissibleVariants(recipe, {}).map(v => v.id).sort(), ["autocuiseur", "casserole", "rice-cooker", "thermomix"]);
+  assert.deepEqual(getAdmissibleVariants(recipe, { thermomix: "exclude" }).map(v => v.id).sort(), ["autocuiseur", "casserole", "rice-cooker"]);
+  assert.deepEqual(getAdmissibleVariants(recipe, { rice_cooker: "selected" }).map(v => v.id), ["rice-cooker"]);
+});

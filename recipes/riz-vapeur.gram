@@ -1,0 +1,104 @@
+---
+title: Riz vapeur
+date_published: 2026-09-26
+date_modified: 2026-09-26
+portions: 4
+prep_time: 5 min
+total_time: 25 min
+spiciness: 0
+description: "Un riz long blanc vapeur, tendre et régulier : quatre techniques validées — casserole, Thermomix, rice cooker et autocuiseur — dans une seule fiche."
+nutrition_profile: balanced
+tags: [riz, vapeur, accompagnement, bases]
+source: https://www.bbcgoodfood.com/howto/guide/how-make-sticky-rice
+author: Good Food team
+required_equipment:
+  - Passoire fine
+scaling:
+  enabled: true
+  min: 2
+  max: 6
+  step: 2
+meal:
+  completeness: component
+  role: starch
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration d'attente — visuel dédié à générer
+  license_url: https://policies.google.com/terms
+  modifications: Placeholder partagé en attendant l'illustration dédiée de la fiche canonique.
+variants:
+  - id: casserole
+    name: Casserole (absorption)
+    default: true
+    description: "Méthode fiable par absorption pour un riz léger et séparé."
+    prep_time: 5 min
+    total_time: 25 min
+  - id: thermomix
+    name: Thermomix (mode Rice Cooker)
+    description: "Cuisson automatisée au Thermomix pour un riz tendre et régulier sans surveillance."
+    prep_time: 5 min
+    total_time: 30 min
+    appliances:
+      thermomix: [TM5, TM6, TM7]
+    steps:
+      replace:
+        rincer-mesurer: |
+          [rincer-mesurer | Préparer la cuve]
+          - Verser l'@eau{910 g} dans le bol du #Thermomix{}.
+          - Rincer le @riz-long-blanc{355 g} dans le #panier cuisson{} jusqu'à ce que l'eau soit presque claire.
+        cuire-absorption: |
+          [cuire-absorption | Cuire en mode automatique]
+          - Placer le panier dans le bol et fermer avec le couvercle, sans utiliser le gobelet doseur.
+          - Lancer le **mode Rice Cooker**; laisser le Thermomix gérer la durée et la température.
+        egrainer-servir: |
+          [egrainer-servir | Égoutter et servir]
+          - Retirer le panier avec la spatule; laisser égoutter quelques instants.
+          - Égrainer le riz et servir dès qu'il est tendre et fumant.
+  - id: rice-cooker
+    name: Rice cooker (programme Riz blanc)
+    description: "La méthode la plus simple pour un riz régulier, dosage adapté au rice cooker."
+    prep_time: 5 min
+    total_time: 35 min
+    appliances:
+      rice_cooker: [standard]
+    steps:
+      replace:
+        rincer-mesurer: |
+          [rincer-mesurer | Rincer et doser]
+          - Rincer le @riz long blanc{300 g} dans une #passoire fine{} jusqu'à ce que l'eau soit presque claire.
+          - Mettre le riz dans la cuve du #rice cooker{} et ajouter l'@eau{375 g} ainsi que le @sel{3 g}.
+        cuire-absorption: |
+          [cuire-absorption | Lancer la cuisson]
+          - Fermer le couvercle et lancer le programme **Riz blanc**.
+          - Attendre la fin automatique du programme; les grains doivent être tendres et le liquide absorbé.
+        egrainer-servir: |
+          [egrainer-servir | Laisser reposer]
+          - Laisser le riz fermé en maintien au chaud ~{10 min}.
+          - Égrainer à la spatule à riz et servir.
+  - id: autocuiseur
+    name: Autocuiseur (vapeur sous pression)
+    description: "Cuisson vapeur sous pression pour un riz tendre ; Instant Pot et Cookeo acceptés sans variante distincte."
+    prep_time: 5 min
+    total_time: 20 min
+    appliances:
+      pressure_cooker: [standard, instant_pot, cookeo]
+    steps:
+      replace:
+        cuire-absorption: |
+          [cuire-absorption | Cuire sous pression]
+          - Verser le @riz-long-blanc{300 g} rincé et l'@eau{450 g} dans la cuve de l'#autocuiseur{} avec le @sel{3 g}.
+          - Fermer le couvercle et cuire sous pression (haute) ~{4 min}; grains tendres et eau absorbée.
+---
+
+[rincer-mesurer | Rincer et mesurer]
+- Rincer le @riz-long-blanc{300 g} dans une #passoire fine{} jusqu'à ce que l'eau soit presque claire, puis l'égoutter.
+- Verser le @riz-long-blanc{300 g} et l'@eau{600 g} dans la #casserole{} avec le @sel{4 g}.
+
+[cuire-absorption | Cuire par absorption]
+- Porter l'eau à frémissement, couvrir et cuire à feu très doux ~{10 min} sans soulever le couvercle.
+- Couper le feu et laisser reposer à couvert ~{10 min}; l'eau doit être absorbée et les grains tendres.
+
+[egrainer-servir | Égrainer et servir]
+- Égrainer le riz à la fourchette et servir dès que les grains sont tendres.
