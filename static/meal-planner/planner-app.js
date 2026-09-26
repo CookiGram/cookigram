@@ -1,6 +1,7 @@
 import { addPlacement, loadPlanning, MOMENTS, removePlacement, savePlanning } from "./planner-state.js";
 import { resolveInitialWeekStart, startOfLocalDay, toLocalISODate } from "./planner-state.js";
 import { buildCalendarExport } from "./calendar-export.js";
+import { formatPleasureShare, formatWeekCoverage, isNutritionProfile, NUTRITION_PROFILE_LABELS, summarizeWeekProfiles } from "./planner-nutrition.js";
 import { summarizeDayNutrition } from "./planner-nutrition.js";
 
 const SELECTION_KEY = "cookigram:recipe-selection";
@@ -99,6 +100,20 @@ const renderSlot = (date, moment) => {
   </div>`;
 };
 const formatCalories = value => new Intl.NumberFormat("fr-FR").format(value);
+const NUTRITION_FACET_HASH = profile => `#nutrition-${profile}`;
+const plannedItemsForWeek = datesForWeek => datesForWeek.flatMap(date => MOMENTS.flatMap(moment => slotItems(date, moment)));
+const EXPECTED_WEEK_MEALS = datesForWeek => datesForWeek.length * MOMENTS.length;
+const renderWeekProfiles = datesForWeek => {
+  const summary = summarizeWeekProfiles(plannedItemsForWeek(datesForWeek), recipeFor, EXPECTED_WEEK_MEALS(datesForWeek));
+  const share = summary.pleasureShare === null
+    ? "Aucun repas classé cette semaine."
+    : `${formatPleasureShare(summary.pleasureShare)} · Repère : environ 20 % plaisir`;
+  const rows = ["vitality", "balanced", "pleasure"].map(profile => {
+    const label = NUTRITION_PROFILE_LABELS[profile];
+    return `<li><a href="../${NUTRITION_FACET_HASH(profile)}" data-nutrition-week-filter="${profile}" aria-label="Choisir une recette ${label} pour la semaine" title="Choisir une recette ${label}"><span>${label}</span> <strong>${summary[profile]}</strong></a></li>`;
+  }).join("");
+  return `<section class="planner-panel planner-week-profiles" aria-labelledby="week-profiles-title"><h2 id="week-profiles-title">Repère nutrition de la semaine</h2><p class="nutrition-week-range">${esc(formatRange(datesForWeek.map(date => new Date(`${date}T12:00:00`))))}</p><ul class="nutrition-week-counts">${rows}</ul><p class="nutrition-week-share">${esc(share)}</p><p class="nutrition-week-coverage">${esc(formatWeekCoverage(summary.planned, summary.expected))}</p></section>`;
+};
 const renderDayNutrition = date => {
   const summary = summarizeDayNutrition(
     MOMENTS.map(moment => ({ moment, items: slotItems(date, moment) })),
@@ -120,6 +135,7 @@ const render = () => {
   document.querySelector("#planner-empty").hidden = selection.length > 0;
   document.querySelector("#planner-content").hidden = selection.length === 0;
   document.querySelector("#planner-week-title").textContent = formatRange(datesForWeek.map(date => new Date(`${date}T12:00:00`)));
+  document.querySelector("#planner-week-profiles").innerHTML = renderWeekProfiles(datesForWeek);
   document.querySelector("#planner-selection").innerHTML = pending.map(renderUnplannedRecipe).join("");
   const unplacedPanel = document.querySelector(".planner-unplaced");
   unplacedPanel.hidden = pending.length === 0;

@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { addPlacement, loadPlanning, movePlacement, removePlacement, resolveInitialWeekStart, startOfLocalDay, toLocalISODate } from "./planner-state.js";
+import { formatPleasureShare, formatWeekCoverage, isNutritionProfile, profileFor, summarizeWeekProfiles } from "./planner-nutrition.js";
 
 process.env.TZ ??= "Europe/Paris";
 
@@ -50,4 +51,23 @@ test("local midnight and ISO formatting never shift the day across timezones", (
   const untouched = new Date(2026, 8, 20, 15, 30);
   startOfLocalDay(untouched);
   assert.equal(untouched.getHours(), 15);
+});
+
+test("week profiles count only classified meals, balanced stays distinct (#509)", () => {
+  const recipeFor = item => ({ vitality: { nutrition_profile: "vitality" }, balanced: { nutrition_profile: "balanced" }, plain: {} })[item.slug] || {};
+  const summary = summarizeWeekProfiles([{ slug: "vitality" }, { slug: "balanced" }, { slug: "plain" }, { slug: "unknown" }], recipeFor, 14);
+  assert.deepEqual([summary.vitality, summary.balanced, summary.pleasure, summary.classified, summary.planned], [1, 1, 0, 2, 4]);
+});
+
+test("week profiles never invent null/unknown values and avoid division by zero (#509)", () => {
+  assert.equal(isNutritionProfile("healthy"), false);
+  assert.equal(isNutritionProfile(null), false);
+  assert.equal(profileFor({}), null);
+  assert.equal(profileFor({ nutrition_profile: "healthy" }), null);
+  const empty = summarizeWeekProfiles([], () => ({}), 14);
+  assert.equal(empty.pleasureShare, null);
+  assert.equal(formatPleasureShare(empty.pleasureShare), "");
+  assert.equal(formatPleasureShare(2 / 9), "22 % plaisir");
+  assert.equal(formatWeekCoverage(6, 14), "6 repas planifiés sur 14");
+  assert.equal(formatWeekCoverage(0, 14), "0 repas planifiés sur 14");
 });

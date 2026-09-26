@@ -108,6 +108,13 @@
 .planner-day-nutrition-detail ul { display: grid; gap: 4px; margin: 5px 0 0; padding: 0; list-style: none; }
 .planner-day-nutrition-detail li { display: flex; justify-content: space-between; gap: 8px; }
 
+/* CookiGram/cookigram#509 : repère nutrition hebdomadaire descriptif (jamais un score). */
+.planner-week-profiles { margin-top: 12px; }
+.nutrition-week-counts { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; padding: 0; list-style: none; }
+.nutrition-week-counts a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none; font-weight: 650; }
+.nutrition-week-counts a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.nutrition-week-share, .nutrition-week-coverage, .nutrition-week-range { color: var(--muted); font-size: .85rem; margin: 4px 0; }
+
 .planner-slot .planner-recipe-placed {
   position: relative;
   display: grid;
