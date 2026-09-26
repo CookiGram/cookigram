@@ -1,0 +1,1742 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "phase": "holdout-measure-unique",
+  "authorization": "GO_HOLDOUT_510",
+  "runs": 1,
+  "freeze_point": {
+    "tau": 0.6,
+    "delta": 0.03,
+    "dev_decision_lenient_fact": 0.905
+  },
+  "dev_n": 13,
+  "dev_neg_n": 8,
+  "holdout_n": 12,
+  "top_k": 3,
+  "observations": {
+    "summary": {
+      "lexical": {
+        "success_answer_rate": 0.333,
+        "rank1": 0.083,
+        "recall_at3": 0.333
+      },
+      "dense_sec": {
+        "success_answer_rate": 0.75,
+        "rank1": 0.5,
+        "recall_at3": 0.75
+      },
+      "dense_fact": {
+        "success_answer_rate": 0.25,
+        "rank1": 0.167,
+        "recall_at3": 0.333
+      },
+      "A2_sec_policy": {
+        "success_rate": 0.167,
+        "rank1": 0.5,
+        "recall_at3": 0.75,
+        "decision_strict": 0.417,
+        "decision_lenient": 0.417
+      },
+      "B2_fact_policy": {
+        "success_rate": 0.083,
+        "rank1": 0.167,
+        "recall_at3": 0.333,
+        "decision_strict": 0.25,
+        "decision_lenient": 0.25
+      }
+    }
+  },
+  "rules": {
+    "retrieval": "510_calibration.json params (geles, verifies par pins corpora)",
+    "policy": "policy.decide @ (0.6, 0.03), precedent c2b",
+    "cells": "A2=sec+politique, B2=fact+politique (510_freeze.json) ; lexical/sec/fact bruts",
+    "selection": "aucune selection sur le holdout ; configuration transmise par la regle DEV"
+  },
+  "verdicts": {
+    "note": "aucun seuil passe/echec pre-enregistre : verdicts = metriques mecaniques ci-dessous",
+    "A2_sec_policy": {
+      "success_rate": 0.167,
+      "rank1": 0.5,
+      "recall_at3": 0.75,
+      "decision_strict": 0.417,
+      "decision_lenient": 0.417
+    },
+    "B2_fact_policy": {
+      "success_rate": 0.083,
+      "rank1": 0.167,
+      "recall_at3": 0.333,
+      "decision_strict": 0.25,
+      "decision_lenient": 0.25
+    }
+  },
+  "incidents": "aucun incident instrumental ; mesure unique complete du premier run",
+  "conclusion_descriptive": {
+    "dev_retrieval": {
+      "lexical": {
+        "success_answer_rate": 0.692,
+        "rank1": 0.615,
+        "recall_at3": 0.692
+      },
+      "dense_sec": {
+        "success_answer_rate": 0.692,
+        "rank1": 0.615,
+        "recall_at3": 0.692
+      },
+      "dense_fact": {
+        "success_answer_rate": 0.308,
+        "rank1": 0.308,
+        "recall_at3": 0.692
+      }
+    },
+    "holdout_retrieval": {
+      "lexical": {
+        "success_answer_rate": 0.333,
+        "rank1": 0.083,
+        "recall_at3": 0.333
+      },
+      "dense_sec": {
+        "success_answer_rate": 0.75,
+        "rank1": 0.5,
+        "recall_at3": 0.75
+      },
+      "dense_fact": {
+        "success_answer_rate": 0.25,
+        "rank1": 0.167,
+        "recall_at3": 0.333
+      }
+    },
+    "holdout_cells": {
+      "A2_sec_policy": {
+        "success_rate": 0.167,
+        "rank1": 0.5,
+        "recall_at3": 0.75,
+        "decision_strict": 0.417,
+        "decision_lenient": 0.417
+      },
+      "B2_fact_policy": {
+        "success_rate": 0.083,
+        "rank1": 0.167,
+        "recall_at3": 0.333,
+        "decision_strict": 0.25,
+        "decision_lenient": 0.25
+      }
+    },
+    "note": "comparaison descriptive DEV vs holdout (question de replication) ; aucun seuil pre-enregistre ; aucune implication de tuning"
+  },
+  "corpora": {
+    "section_chunks": 44,
+    "section_sha": "1c55730fe6de78e9",
+    "fact_chunks": 414,
+    "fact_sha": "07eae33590c88b5a",
+    "index_sec": {
+      "embed_ms": 899.4,
+      "upsert_ms": 20.5
+    },
+    "index_fact": {
+      "embed_ms": 9294.6,
+      "upsert_ms": 126.4
+    }
+  },
+  "versions": {
+    "qdrant_server": "1.19.1",
+    "qdrant_client": "1.19.1",
+    "fastembed": "0.8.1"
+  },
+  "tasks": [
+    {
+      "id": "510-hold-001",
+      "anchor_id": "GEMINI.md::h2:1",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 903,
+        "chunks": 3,
+        "latency_ms": 1.4,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.3569
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.3329
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.3273
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 234,
+        "chunks": 3,
+        "latency_ms": 9.06,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.4459
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.4419
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "(intro)",
+            "score": 0.3642
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 71,
+        "chunks": 3,
+        "latency_ms": 9.18,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5017
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.492
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.4848
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.446 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 27,
+        "chunks": 0,
+        "latency_ms": 9.06,
+        "hits": [],
+        "margin": 0.004,
+        "s1": 0.4459
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.502 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 27,
+        "chunks": 0,
+        "latency_ms": 9.18,
+        "hits": [],
+        "margin": 0.0097,
+        "s1": 0.5017
+      }
+    },
+    {
+      "id": "510-hold-002",
+      "anchor_id": "GEMINI.md::h2:2",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 348,
+        "chunks": 3,
+        "latency_ms": 1.4,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.3536
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.3291
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "User value",
+            "score": 0.3062
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 475,
+        "chunks": 3,
+        "latency_ms": 6.48,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "User value",
+            "score": 0.5633
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.4211
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.4144
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 82,
+        "chunks": 3,
+        "latency_ms": 9.75,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "User value",
+            "score": 0.5633
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5457
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5415
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.563 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 20,
+        "chunks": 0,
+        "latency_ms": 6.48,
+        "hits": [],
+        "margin": 0.1422,
+        "s1": 0.5633
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.563 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 20,
+        "chunks": 0,
+        "latency_ms": 9.75,
+        "hits": [],
+        "margin": 0.0176,
+        "s1": 0.5633
+      }
+    },
+    {
+      "id": "510-hold-003",
+      "anchor_id": "GEMINI.md::h2:3",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 467,
+        "chunks": 3,
+        "latency_ms": 1.81,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.361
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.3536
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.3181
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 913,
+        "chunks": 3,
+        "latency_ms": 7.8,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.4262
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.41
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.3833
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 57,
+        "chunks": 3,
+        "latency_ms": 10.63,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6145
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5728
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5615
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.426 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 21,
+        "chunks": 0,
+        "latency_ms": 7.8,
+        "hits": [],
+        "margin": 0.0162,
+        "s1": 0.4262
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.615 marge=0.042",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 57,
+        "chunks": 3,
+        "latency_ms": 10.63,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6145
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5728
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5615
+          }
+        ],
+        "margin": 0.0417,
+        "s1": 0.6145
+      }
+    },
+    {
+      "id": "510-hold-004",
+      "anchor_id": "GEMINI.md::h2:4",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 891,
+        "chunks": 3,
+        "latency_ms": 1.36,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.2799
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.2711
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.2237
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 911,
+        "chunks": 3,
+        "latency_ms": 9.35,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.5202
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.4079
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.3622
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 75,
+        "chunks": 3,
+        "latency_ms": 6.46,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5338
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.5319
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.494
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.520 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 16,
+        "chunks": 0,
+        "latency_ms": 9.35,
+        "hits": [],
+        "margin": 0.1123,
+        "s1": 0.5202
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.534 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 16,
+        "chunks": 0,
+        "latency_ms": 6.46,
+        "hits": [],
+        "margin": 0.0019,
+        "s1": 0.5338
+      }
+    },
+    {
+      "id": "510-hold-005",
+      "anchor_id": "GEMINI.md::h2:5",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 175,
+        "chunks": 3,
+        "latency_ms": 2.15,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Implemented",
+            "score": 0.2828
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.2582
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.23
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 546,
+        "chunks": 3,
+        "latency_ms": 7.58,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.4737
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "(intro)",
+            "score": 0.4618
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.4608
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 139,
+        "chunks": 3,
+        "latency_ms": 9.44,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6541
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.5443
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5077
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.474 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "latency_ms": 7.58,
+        "hits": [],
+        "margin": 0.0119,
+        "s1": 0.4737
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.654 marge=0.110",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 139,
+        "chunks": 3,
+        "latency_ms": 9.44,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6541
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.5443
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5077
+          }
+        ],
+        "margin": 0.1098,
+        "s1": 0.6541
+      }
+    },
+    {
+      "id": "510-hold-006",
+      "anchor_id": "GEMINI.md::h2:6",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 775,
+        "chunks": 3,
+        "latency_ms": 1.44,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.2357
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.222
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.2036
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 675,
+        "chunks": 3,
+        "latency_ms": 8.06,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.5681
+          },
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.5473
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Verification",
+            "score": 0.5226
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 71,
+        "chunks": 3,
+        "latency_ms": 6.82,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6864
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6199
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6125
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.568 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 16,
+        "chunks": 0,
+        "latency_ms": 8.06,
+        "hits": [],
+        "margin": 0.0208,
+        "s1": 0.5681
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.686 marge=0.067",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 71,
+        "chunks": 3,
+        "latency_ms": 6.82,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6864
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6199
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6125
+          }
+        ],
+        "margin": 0.0665,
+        "s1": 0.6864
+      }
+    },
+    {
+      "id": "510-hold-007",
+      "anchor_id": "GEMINI.md::h2:7",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 538,
+        "chunks": 3,
+        "latency_ms": 1.36,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.2684
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.2582
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.1973
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 774,
+        "chunks": 3,
+        "latency_ms": 5.48,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5082
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "GitHub",
+            "score": 0.5055
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5015
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 29,
+        "chunks": 3,
+        "latency_ms": 8.93,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6219
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.602
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.5877
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.508 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 11,
+        "chunks": 0,
+        "latency_ms": 5.48,
+        "hits": [],
+        "margin": 0.0027,
+        "s1": 0.5082
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.020 < delta=0.03",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 11,
+        "chunks": 0,
+        "latency_ms": 8.93,
+        "hits": [],
+        "margin": 0.0199,
+        "s1": 0.6219
+      }
+    },
+    {
+      "id": "510-hold-008",
+      "anchor_id": "GEMINI.md::h2:8",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 244,
+        "chunks": 3,
+        "latency_ms": 1.45,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.2908
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.2582
+          },
+          {
+            "path": "README.en.md",
+            "section": "Images and licensing",
+            "score": 0.1992
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 775,
+        "chunks": 3,
+        "latency_ms": 8.22,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "GitHub",
+            "score": 0.5339
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.4787
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.478
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 36,
+        "chunks": 3,
+        "latency_ms": 10.46,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6446
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.5407
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5389
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.534 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 12,
+        "chunks": 0,
+        "latency_ms": 8.22,
+        "hits": [],
+        "margin": 0.0552,
+        "s1": 0.5339
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.645 marge=0.104",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 36,
+        "chunks": 3,
+        "latency_ms": 10.46,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6446
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.5407
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5389
+          }
+        ],
+        "margin": 0.1039,
+        "s1": 0.6446
+      }
+    },
+    {
+      "id": "510-hold-009",
+      "anchor_id": "GEMINI.md::h2:9",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 540,
+        "chunks": 3,
+        "latency_ms": 1.99,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.2582
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.23
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.1849
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 425,
+        "chunks": 3,
+        "latency_ms": 5.51,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.4839
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Remaining",
+            "score": 0.429
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.4263
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 56,
+        "chunks": 3,
+        "latency_ms": 7.19,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6614
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5546
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5014
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.484 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 13,
+        "chunks": 0,
+        "latency_ms": 5.51,
+        "hits": [],
+        "margin": 0.0549,
+        "s1": 0.4839
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.661 marge=0.107",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 56,
+        "chunks": 3,
+        "latency_ms": 7.19,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6614
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5546
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5014
+          }
+        ],
+        "margin": 0.1068,
+        "s1": 0.6614
+      }
+    },
+    {
+      "id": "510-hold-010",
+      "anchor_id": "GEMINI.md::h2:10",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 541,
+        "chunks": 3,
+        "latency_ms": 1.92,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.2684
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.2582
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.1915
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 554,
+        "chunks": 3,
+        "latency_ms": 5.14,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.5284
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.4811
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.4423
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 116,
+        "chunks": 3,
+        "latency_ms": 8.73,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6609
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.5495
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.541
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.528 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 12,
+        "chunks": 0,
+        "latency_ms": 5.14,
+        "hits": [],
+        "margin": 0.0473,
+        "s1": 0.5284
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.661 marge=0.111",
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 116,
+        "chunks": 3,
+        "latency_ms": 8.73,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.6609
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.5495
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.541
+          }
+        ],
+        "margin": 0.1114,
+        "s1": 0.6609
+      }
+    },
+    {
+      "id": "510-hold-011",
+      "anchor_id": ".agents/roles/README.md::h2:1",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 1045,
+        "chunks": 3,
+        "latency_ms": 2.09,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "CookiGram for users",
+            "score": 0.3309
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.3138
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.2958
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 844,
+        "chunks": 3,
+        "latency_ms": 7.57,
+        "hits": [
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Utilisation par les modèles et agents d'IA",
+            "score": 0.6057
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5603
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.5215
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 150,
+        "chunks": 3,
+        "latency_ms": 12.05,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.7009
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6138
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6114
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "answer",
+        "reason": "s1=0.606 marge=0.045",
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 844,
+        "chunks": 3,
+        "latency_ms": 7.57,
+        "hits": [
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Utilisation par les modèles et agents d'IA",
+            "score": 0.6057
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5603
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.5215
+          }
+        ],
+        "margin": 0.0454,
+        "s1": 0.6057
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.701 marge=0.087",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 150,
+        "chunks": 3,
+        "latency_ms": 12.05,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.7009
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6138
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6114
+          }
+        ],
+        "margin": 0.0871,
+        "s1": 0.7009
+      }
+    },
+    {
+      "id": "510-hold-012",
+      "anchor_id": ".agents/roles/README.md::h2:2",
+      "expected": "answer",
+      "tokens_full": 8548,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 1149,
+        "chunks": 3,
+        "latency_ms": 1.38,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.3341
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.2908
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.2751
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 506,
+        "chunks": 3,
+        "latency_ms": 5.6,
+        "hits": [
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.6082
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Utilisation par les modèles et agents d'IA",
+            "score": 0.5306
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "(intro)",
+            "score": 0.5255
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 164,
+        "chunks": 3,
+        "latency_ms": 6.03,
+        "hits": [
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.7148
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Spécialités de l'équipe multi-agents CookiGram",
+            "score": 0.6989
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.684
+          }
+        ]
+      },
+      "A2_sec_policy": {
+        "decision": "answer",
+        "reason": "s1=0.608 marge=0.078",
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 506,
+        "chunks": 3,
+        "latency_ms": 5.6,
+        "hits": [
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.6082
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Utilisation par les modèles et agents d'IA",
+            "score": 0.5306
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "(intro)",
+            "score": 0.5255
+          }
+        ],
+        "margin": 0.0776,
+        "s1": 0.6082
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.016 < delta=0.03",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 19,
+        "chunks": 0,
+        "latency_ms": 6.03,
+        "hits": [],
+        "margin": 0.0159,
+        "s1": 0.7148
+      }
+    }
+  ]
+}
