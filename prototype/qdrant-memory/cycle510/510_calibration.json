@@ -1,0 +1,1251 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "phase": "dev-calibration-retrieval-only",
+  "authorization": "GO_CALIBRATION_DEV_510",
+  "policy": "AUCUNE : ni tau, ni delta, ni abstention, ni grille, ni decision. Metriques retrieval seules.",
+  "params": {
+    "top_k": 3,
+    "filters": {
+      "project": "cookigram"
+    },
+    "lexical": "store.Collection TF-IDF hache deterministe (DIM 512), sur chunks sections",
+    "dense_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "dense_dim": 384,
+    "dense_distance": "COSINE",
+    "score_threshold": 0.0,
+    "collections": {
+      "sec": "agent_memory_510",
+      "fact": "agent_memory_fact_510"
+    },
+    "chunking": "corpus_manifest.chunk_markdown (##, CHUNK_MAX 1500) + chunk_facts.split_facts (FACT_MAX 400), texte construit '# {nom}\\n## {section}\\n{corps}'",
+    "gold_mapping": "localisateur de section <path>::<titre ##> ; succes = section gold dans top-3 ET evidence dans le contexte",
+    "corpus_docs": [
+      "AGENTS.md",
+      "README.en.md",
+      "GEMINI.md",
+      ".agents/roles/README.md"
+    ],
+    "base_commit": "d8584dc1ceb6a4ce96bfb91c58a3dc5874faedb5",
+    "versions": {
+      "qdrant_server": "1.19.1",
+      "qdrant_client": "1.19.1",
+      "fastembed": "0.8.1"
+    }
+  },
+  "corpora": {
+    "section_chunks": 44,
+    "section_sha": "1c55730fe6de78e9",
+    "fact_chunks": 414,
+    "fact_sha": "07eae33590c88b5a",
+    "index_sec": {
+      "embed_ms": 929.4,
+      "upsert_ms": 22.3
+    },
+    "index_fact": {
+      "embed_ms": 11821.5,
+      "upsert_ms": 132.1
+    }
+  },
+  "retrieval_dev": {
+    "lexical": {
+      "success_answer_rate": 0.692,
+      "rank1": 0.615,
+      "recall_at3": 0.692
+    },
+    "dense_sec": {
+      "success_answer_rate": 0.692,
+      "rank1": 0.615,
+      "recall_at3": 0.692
+    },
+    "dense_fact": {
+      "success_answer_rate": 0.308,
+      "rank1": 0.308,
+      "recall_at3": 0.692
+    }
+  },
+  "items": [
+    {
+      "id": "510-dev-001",
+      "anchor_id": "AGENTS.md::h2:1",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "latency_ms": 1.41,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.3929
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.3284
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.2846
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.5886,
+          0.5553,
+          0.5095
+        ],
+        "margin": 0.0333,
+        "latency_ms": 9.75,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.5886
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "(intro)",
+            "score": 0.5553
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.5095
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.5785,
+          0.5553,
+          0.5539
+        ],
+        "margin": 0.0232,
+        "latency_ms": 11.92,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.5785
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "(intro)",
+            "score": 0.5553
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.5539
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-003",
+      "anchor_id": "AGENTS.md::h2:3",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "latency_ms": 1.43,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Images and licensing",
+            "score": 0.3448
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Review",
+            "score": 0.3345
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.2647
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.59,
+          0.5682,
+          0.5584
+        ],
+        "margin": 0.0218,
+        "latency_ms": 6.09,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.59
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "Images",
+            "score": 0.5682
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5584
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.6463,
+          0.6429,
+          0.6036
+        ],
+        "margin": 0.0034,
+        "latency_ms": 11.74,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6463
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6429
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6036
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-004",
+      "anchor_id": "AGENTS.md::h2:4",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "latency_ms": 1.43,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.2881
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.2562
+          },
+          {
+            "path": "README.en.md",
+            "section": "CookiGram for users",
+            "score": 0.2365
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.3959,
+          0.3437,
+          0.3324
+        ],
+        "margin": 0.0522,
+        "latency_ms": 6.52,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.3959
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "(intro)",
+            "score": 0.3437
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.3324
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.7059,
+          0.5129,
+          0.4643
+        ],
+        "margin": 0.193,
+        "latency_ms": 17.02,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.7059
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "Validation réellement disponible",
+            "score": 0.5129
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.4643
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-005",
+      "anchor_id": "AGENTS.md::h2:5",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 1.89,
+        "hits": [
+          {
+            "path": "AGENTS.md",
+            "section": "Travail d’agent",
+            "score": 0.3253
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.301
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Approximate effort",
+            "score": 0.2721
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6485,
+          0.4826,
+          0.4768
+        ],
+        "margin": 0.1659,
+        "latency_ms": 8.08,
+        "hits": [
+          {
+            "path": "AGENTS.md",
+            "section": "Travail d’agent",
+            "score": 0.6485
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "(intro)",
+            "score": 0.4826
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Spécialités de l'équipe multi-agents CookiGram",
+            "score": 0.4768
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6485,
+          0.551,
+          0.5509
+        ],
+        "margin": 0.0975,
+        "latency_ms": 13.75,
+        "hits": [
+          {
+            "path": "AGENTS.md",
+            "section": "Travail d’agent",
+            "score": 0.6485
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "Périmètre",
+            "score": 0.551
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.5509
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-006",
+      "anchor_id": "README.en.md::h2:1",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 2.31,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "CookiGram for users",
+            "score": 0.3361
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.3063
+          },
+          {
+            "path": "README.en.md",
+            "section": "(intro)",
+            "score": 0.2925
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.534,
+          0.4943,
+          0.49
+        ],
+        "margin": 0.0397,
+        "latency_ms": 7.95,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.534
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.4943
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "(intro)",
+            "score": 0.49
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.5661,
+          0.5415,
+          0.5148
+        ],
+        "margin": 0.0246,
+        "latency_ms": 14.39,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5661
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5415
+          },
+          {
+            "path": "README.en.md",
+            "section": "CookiGram for users",
+            "score": 0.5148
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-007",
+      "anchor_id": "README.en.md::h2:2",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 1.88,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.2529
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.2008
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.2006
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.4555,
+          0.4435,
+          0.3533
+        ],
+        "margin": 0.012,
+        "latency_ms": 14.48,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.4555
+          },
+          {
+            "path": "README.en.md",
+            "section": "License",
+            "score": 0.4435
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.3533
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.5543,
+          0.5442,
+          0.5043
+        ],
+        "margin": 0.0101,
+        "latency_ms": 16.44,
+        "hits": [
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Spécialités de l'équipe multi-agents CookiGram",
+            "score": 0.5543
+          },
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.5442
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5043
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-008",
+      "anchor_id": "README.en.md::h2:3",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 2.2,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.2742
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.2288
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.1935
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.5606,
+          0.5188,
+          0.3679
+        ],
+        "margin": 0.0418,
+        "latency_ms": 11.43,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.5606
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.5188
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Spécialités de l'équipe multi-agents CookiGram",
+            "score": 0.3679
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.8411,
+          0.5855,
+          0.5516
+        ],
+        "margin": 0.2556,
+        "latency_ms": 8.66,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.8411
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.5855
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.5516
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-009",
+      "anchor_id": "README.en.md::h2:4",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 1.91,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.3858
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Implemented",
+            "score": 0.3657
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "Observation",
+            "score": 0.3339
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.5787,
+          0.487,
+          0.4853
+        ],
+        "margin": 0.0917,
+        "latency_ms": 42.0,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5787
+          },
+          {
+            "path": "README.en.md",
+            "section": "Recipe format",
+            "score": 0.487
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.4853
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.7062,
+          0.6511,
+          0.643
+        ],
+        "margin": 0.0551,
+        "latency_ms": 22.18,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.7062
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.6511
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.643
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-010",
+      "anchor_id": "README.en.md::h2:5",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 1.99,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.3583
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.3558
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.3045
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.7124,
+          0.4377,
+          0.4294
+        ],
+        "margin": 0.2747,
+        "latency_ms": 27.94,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.7124
+          },
+          {
+            "path": "README.en.md",
+            "section": "CookiGram for users",
+            "score": 0.4377
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.4294
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6315,
+          0.5619,
+          0.5409
+        ],
+        "margin": 0.0696,
+        "latency_ms": 24.1,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Available validation",
+            "score": 0.6315
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "Validation réellement disponible",
+            "score": 0.5619
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Spécialités de l'équipe multi-agents CookiGram",
+            "score": 0.5409
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-011",
+      "anchor_id": "README.en.md::h2:6",
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "latency_ms": 2.25,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.2882
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.2661
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.2642
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.5938,
+          0.5086,
+          0.5057
+        ],
+        "margin": 0.0852,
+        "latency_ms": 17.36,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Recipe format",
+            "score": 0.5938
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "Standard des recettes `.gram`",
+            "score": 0.5086
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5057
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "scores": [
+          0.6955,
+          0.6685,
+          0.6649
+        ],
+        "margin": 0.027,
+        "latency_ms": 21.29,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6955
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6685
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Spécialités de l'équipe multi-agents CookiGram",
+            "score": 0.6649
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-012",
+      "anchor_id": "README.en.md::h2:7",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 2.28,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Images and licensing",
+            "score": 0.4373
+          },
+          {
+            "path": "README.en.md",
+            "section": "License",
+            "score": 0.4115
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.3726
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6785,
+          0.5574,
+          0.534
+        ],
+        "margin": 0.1211,
+        "latency_ms": 14.98,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Images and licensing",
+            "score": 0.6785
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5574
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "Images",
+            "score": 0.534
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6785,
+          0.5452,
+          0.5434
+        ],
+        "margin": 0.1333,
+        "latency_ms": 44.13,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Images and licensing",
+            "score": 0.6785
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.5452
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.5434
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-013",
+      "anchor_id": "README.en.md::h2:8",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 2.28,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Related documents",
+            "score": 0.2963
+          },
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.2836
+          },
+          {
+            "path": "README.en.md",
+            "section": "CookiGram for users",
+            "score": 0.2705
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6313,
+          0.6276,
+          0.5929
+        ],
+        "margin": 0.0037,
+        "latency_ms": 11.07,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Related documents",
+            "score": 0.6313
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Profils d'Agents",
+            "score": 0.6276
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "Spécialités de l'équipe multi-agents CookiGram",
+            "score": 0.5929
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6087,
+          0.5939,
+          0.5664
+        ],
+        "margin": 0.0148,
+        "latency_ms": 13.97,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.6087
+          },
+          {
+            "path": "README.en.md",
+            "section": "Related documents",
+            "score": 0.5939
+          },
+          {
+            "path": ".agents/roles/README.md",
+            "section": "(intro)",
+            "score": 0.5664
+          }
+        ]
+      }
+    },
+    {
+      "id": "510-dev-014",
+      "anchor_id": "README.en.md::h2:9",
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "latency_ms": 2.34,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "License",
+            "score": 0.426
+          },
+          {
+            "path": "README.en.md",
+            "section": "Official CookiGram vocabulary",
+            "score": 0.2534
+          },
+          {
+            "path": "README.en.md",
+            "section": "This repository",
+            "score": 0.2429
+          }
+        ]
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.5877,
+          0.3644,
+          0.3387
+        ],
+        "margin": 0.2233,
+        "latency_ms": 12.05,
+        "hits": [
+          {
+            "path": "README.en.md",
+            "section": "License",
+            "score": 0.5877
+          },
+          {
+            "path": "README.en.md",
+            "section": "Boundary with the engine",
+            "score": 0.3644
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "(intro)",
+            "score": 0.3387
+          }
+        ]
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "scores": [
+          0.6352,
+          0.5877,
+          0.4172
+        ],
+        "margin": 0.0475,
+        "latency_ms": 10.01,
+        "hits": [
+          {
+            "path": "GEMINI.md",
+            "section": "(intro)",
+            "score": 0.6352
+          },
+          {
+            "path": "README.en.md",
+            "section": "License",
+            "score": 0.5877
+          },
+          {
+            "path": "AGENTS.md",
+            "section": "Validation réellement disponible",
+            "score": 0.4172
+          }
+        ]
+      }
+    }
+  ]
+}
