@@ -1,0 +1,73 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "phase": "dev-negatives-only",
+  "policy_amendment": "policy-amendment.md",
+  "expected": "abstain",
+  "slot_consumption": "none: no anchor, path, section, or evidence in any item",
+  "items": [
+    {
+      "id": "510-neg-001",
+      "kind": "ood",
+      "query": "Quelle est la capitale de l'Australie ?",
+      "rationale": "Geographie hors-domaine : les 4 documents de gouvernance ne mentionnent ni le pays ni la ville.",
+      "absent_terms": ["australie", "canberra"],
+      "proposition_key": "ood-australia-capital"
+    },
+    {
+      "id": "510-neg-002",
+      "kind": "ood",
+      "query": "Comment préparer un soufflé au fromage ?",
+      "rationale": "Cuisine concrete hors-domaine : le corpus decrit le depot de recettes, jamais une preparation ni cet ingredient.",
+      "absent_terms": ["soufflé", "souffle", "fromage"],
+      "proposition_key": "ood-cheese-souffle"
+    },
+    {
+      "id": "510-neg-003",
+      "kind": "ood",
+      "query": "Qui a peint la Joconde ?",
+      "rationale": "Art hors-domaine : ni l'oeuvre ni le peintre ne figurent dans la gouvernance du depot.",
+      "absent_terms": ["joconde", "vinci", "léonard", "leonard"],
+      "proposition_key": "ood-mona-lisa-painter"
+    },
+    {
+      "id": "510-neg-004",
+      "kind": "ood",
+      "query": "Qu'est-ce que la photosynthèse ?",
+      "rationale": "Biologie hors-domaine : aucun document ne traite du vivant ni de ses mecanismes.",
+      "absent_terms": ["photosynthèse", "photosynthese", "chlorophylle"],
+      "proposition_key": "ood-photosynthesis"
+    },
+    {
+      "id": "510-neg-005",
+      "kind": "ood",
+      "query": "Quel est le cours actuel du Bitcoin ?",
+      "rationale": "Crypto hors-domaine et temporellement instable : le corpus fige ne peut ni la definir ni la coter.",
+      "absent_terms": ["bitcoin", "cryptomonnaie", "btc"],
+      "proposition_key": "ood-bitcoin-price"
+    },
+    {
+      "id": "510-neg-006",
+      "kind": "ood",
+      "query": "Comment soigner une varicelle ?",
+      "rationale": "Medecine hors-domaine : aucune recommandation medicale dans les documents admissibles.",
+      "absent_terms": ["varicelle"],
+      "proposition_key": "ood-chickenpox-treatment"
+    },
+    {
+      "id": "510-neg-007",
+      "kind": "trap",
+      "query": "Quel est le budget annuel alloué aux illustrations de recettes ?",
+      "rationale": "Piege quasi-domaine : la documentation des images donne des chemins de stockage, jamais de montant ni de financement.",
+      "absent_terms": ["budget", "euros", "dollars", "alloué", "financement"],
+      "proposition_key": "trap-illustration-budget"
+    },
+    {
+      "id": "510-neg-008",
+      "kind": "trap",
+      "query": "Quand a lieu la prochaine réunion de synchronisation des agents ?",
+      "rationale": "Piege quasi-domaine : l'orchestration multi-agents est evoquee, mais aucune reunion ni synchronisation planifiee n'est enoncee.",
+      "absent_terms": ["réunion", "reunion", "synchronisation", "prochaine"],
+      "proposition_key": "trap-agent-sync-meeting"
+    }
+  ]
+}

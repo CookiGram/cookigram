@@ -1,0 +1,47 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "phase": "policy-preregistration-before-first-measure",
+  "authorization": "POLICY CALIBRATION DEV uniquement (ni holdout, ni changement retrieval, ni re-mesure des positifs)",
+  "policy_amendment": "policy-amendment.md",
+  "grid": {
+    "taus": [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6],
+    "deltas": [0.01, 0.02, 0.03, 0.05],
+    "n_configs": 28,
+    "precedent": "cycle2b/c2b_calibrate.py L38-39 (definition de grille, pas un resultat)"
+  },
+  "semantics": {
+    "module": "policy.decide(top_scores, tau, delta)",
+    "reference": "policy.py L58-68",
+    "rule": "abstain si aucun score ; abstain si s1 < tau ; abstain si marge s1-s2 < delta (s2=0.0 si un seul hit) ; sinon answer",
+    "tau": "pertinence absolue minimale du meilleur candidat",
+    "delta": "marge d'indecision minimale entre les deux meilleurs",
+    "module_defaults_unused": "TAU=0.40/DELTA=0.03 (gate 3 post-hoc) ne sont pas utilises ; chaque point est evalue explicitement",
+    "cluster_rule": "exclue (hors precedent c2b)"
+  },
+  "metrics": {
+    "per_item": "decision_correct stricte et indulgente (retrieval_metrics.py)",
+    "aggregates": ["decision_lenient", "decision_lenient_pos", "decision_lenient_neg", "decision_strict_diagnostic_non_selectif"],
+    "aggregation": "mean() sur 21 items (13 positifs expected=answer + 8 negatifs expected=abstain)",
+    "retrieval_positives": "lignes gelees de 510_calibration.json (scores denses + recall section-level), sans re-mesure",
+    "retrieval_negatives": "une mesure retrieval unique (3 bras, parametres geles), golds=[] donc retrieval None"
+  },
+  "selection": {
+    "primary_arm": "dense_fact",
+    "primary_precedent": "cycle2b/c2b_calibrate.py L155-163 'Bras primaire : dense-fact+politique', anterieur a toute mesure #510",
+    "secondary_arm": "dense_sec au meme point (reporte, non selectionne)",
+    "lexical": "retrieval-only, sans politique (precedent c2b : grille sur bras denses seuls)",
+    "key": "decision_lenient global sur dense_fact",
+    "tiebreaks": ["tau superieur (preference abstention)", "delta superieur (preference abstention)"],
+    "total_order": "les 28 paires (tau, delta) sont uniques : ordre total, aucune discretion post-observation",
+    "rule_precedent": "cycle2b/c2b_calibrate.py L134-135 max() et texte de regle L155-163",
+    "inter_arm_comparison": "interdite sur donnees ; roles fixes par precedent ; resultats DEV sans effet sur protocole ou roles"
+  },
+  "inputs": {
+    "positives": "510_calibration.json (13 lignes gelees, scores + recall)",
+    "negatives": "dev_negatives.json (8 items, premiere et unique mesure retrieval)",
+    "corpora_pins_verified_equal": {"section_sha": "1c55730fe6de78e9", "fact_sha": "07eae33590c88b5a", "section_chunks": 44, "fact_chunks": 414},
+    "retrieval_params": "identiques a 510_calibration.json (corpus, modele, chunking, top_k=3, filtre project=cookigram)"
+  },
+  "output": "510_policy_calibration.json (grilles completes fact+sec, 28+28 cellules, candidat mecanique, lignes negatifs, sans textes)",
+  "holdout": "non construit, non lu, non mesure dans cette phase"
+}
