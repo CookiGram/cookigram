@@ -1,0 +1,249 @@
+{
+ "cycle": "510",
+ "phase": "method-freeze-pre-dev",
+ "frozen_note": "Freeze methodologique ANCHOR_DISJOINT_GO. Aucun dev-set, aucune calibration, aucun holdout, aucune mesure. Prochains GO requis avant dev, calibration, freeze point, holdout, mesure.",
+ "date": "2026-09-26",
+ "base_commit": "d8584dc1ceb6a4ce96bfb91c58a3dc5874faedb5",
+ "parent_issue": 508,
+ "derogation": "GO Human Owner ANCHOR_DISJOINT_GO : derogation locale a #510 au contrat standing zero-gold-commun dev/holdout. Dev et holdout peuvent puiser dans les memes documents ; disjonction stricte sur les ANCRES (precedent methodologique : cycle2b #508, 8/11 docs partages, 0 ancre commune). Ne modifie ni le contrat standing global ni #508 (clos, fige).",
+ "question": "Pour un point calibre sur dev neuf, quelle part des echecs memoire-agent vient (1) du retrieval (gold absent du top-k), (2) de l extraction (gold present, span-reponse absent), (3) de la decision (span present mais abstention, ou span absent mais reponse) ?",
+ "metrics": "Etagees : P(gold au top-k) ; P(ancre | gold) ; P(decision correcte | etat ancre) ; succes global (gold+ancre / abstention lucide). Plus rank-1/recall@3 + decision stricte/indulgente (comparabilite #508). Reutiliser retrieval_metrics fige, sans modification.",
+ "corpus": "Les 18 chemins cycle2b UNIQUEMENT comme corpus documentaire (decision Human Owner). Indexation 18-seuls a implementer a l etape calibration (jamais l ancien corpus).",
+ "admissible_docs": [
+  "GEMINI.md",
+  "README.en.md",
+  ".agents/rules/git-workflow.md",
+  ".agents/rules/image-assets.md"
+ ],
+ "admissible_note": "Seuls docs des 18 jamais golds #508 (40 chemins consommes : 13 c1 + 8 c2dev + 5 c2holdout + 14 c2b). Les 14 autres sont interdits comme golds.",
+ "definitions": {
+  "gold": "chemin parmi les 4 admissibles, jamais gold #508.",
+  "anchor": "sous-chaine exacte : 1 occurrence sur les 18 concatenes, 0 dans l ancien corpus (docs/** + PDR-0010), presente dans son gold, disjointe des 75 ancres #508.",
+  "gold_anchor_pair": "paire (doc, ancre) ; chaque ancre du pool est assignee a exactement une phase (dev OU reserve)."
+ },
+ "split_rule": "Par doc, ancres triees alphabetiquement, assignees alternativement dev/reserve en commencant par dev. Aveugle (aucun retrieval execute, aucun score observe).",
+ "pool_n": 51,
+ "split": {
+  "dev": [
+   {
+    "gold": ".agents/rules/git-workflow.md",
+    "anchor": "Checklist de fin de travail obligatoire"
+   },
+   {
+    "gold": ".agents/rules/git-workflow.md",
+    "anchor": "working tree clean"
+   },
+   {
+    "gold": ".agents/rules/image-assets.md",
+    "anchor": "dont l’image est absente ou placeholder"
+   },
+   {
+    "gold": ".agents/rules/image-assets.md",
+    "anchor": "placeholder système"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "A desktop-only implementation is incomplete"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Continue unrelated work instead of making arbitrary assumptions"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Definition of Done"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Do not mentally substitute your own definition of done"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Do not pretend automated testing can validate subjective cooking experience"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Do not silently expand scope"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "GitHub issue ≠ automatically approved development task"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Is this refactoring necessary to safely implement the approved change?"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Leave the repository better, tested and synchronized"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Never assume your local checkout is current"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Never force push unless explicitly authorized"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Preserve practical WCAG 2.2 AA quality"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Stop conditions"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "actually inspect the rendered application"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "canonical Gram recipe"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "garlic clove → clove"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "prefer adding a regression test"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "tests pass when they were not run"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "Lemon roast chicken"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "Panier is intentionally kept"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "fully useful in self-service"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "no mandatory account"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "turns free-form intent into structured operations"
+   }
+  ],
+  "reserve": [
+   {
+    "gold": ".agents/rules/git-workflow.md",
+    "anchor": "Commit et Push systématiques"
+   },
+   {
+    "gold": ".agents/rules/image-assets.md",
+    "anchor": "issue d’asset visuel dédiée"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "AI-generated architectural complexity"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Cooking execution → Cooking Expert"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Do not implement only from the issue title"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Do not prematurely optimize invisible micro-performance"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Do not repeatedly apply random changes"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Every dependency creates maintenance cost"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Golden rules"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Keep the issue useful for Product Lead and specialist reviewers"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Multi-agent safety is more important than obtaining a perfectly clean working tree"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Never fake completion"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Never mark an issue complete solely because code was written"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "Priority selection"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "XS/S/M/L/XL"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "avoid CookiGram-specific syntax hacks"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "do not prematurely build a giant cooking engine"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "implement approved CookiGram work reliably"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "rewriting recipe semantics"
+   },
+   {
+    "gold": "GEMINI.md",
+    "anchor": "without inventing product direction"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "Panier is a deliberate exception"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "agent is the sous-chef"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "no central backend required"
+   },
+   {
+    "gold": "README.en.md",
+    "anchor": "no telemetry required"
+   }
+  ]
+ },
+ "split_counts": {
+  "dev": 27,
+  "reserve": 24
+ },
+ "rules": [
+  "dev : 1 item par ancre dev (direct/paraphrase) + abstains frais (trappes verifiees sans reponse sur les 18 + OOD), queries inedites (110 #508 + unicite interne), ids uniques prefixe A510-.",
+  "holdout (plus tard, nouveau GO) : ancres de reserve UNIQUEMENT + abstains frais ; zero ancre commune avec dev.",
+  "zero reutilisation : items, golds, ancres, queries, dev-sets, holdouts, resultats, seuils, decisions de #508.",
+  "ordre : dev -> (GO) calibration DEV ONLY (regle pre-enregistree) -> (GO) freeze point commis -> (GO) holdout -> (GO) mesure unique.",
+  "garde-fous code obligatoires (scripts futurs) : refus calibration si holdout present ; refus mesure sans freeze ; anti-ecrasement resultat ; pins corpus asserts pre-mesure.",
+  "locus statique (titre/section/corps/code/liste + taille section) enregistre par item answer pour analyse mecanistique post-hoc.",
+  "aucune decision architecture/produit dans ce chantier."
+ ]
+}
