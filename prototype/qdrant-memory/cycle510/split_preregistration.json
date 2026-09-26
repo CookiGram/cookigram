@@ -6,11 +6,11 @@
   "exception_scope": "local to #510; does not change standing methodology",
   "precedent": "#508 cycle2b method only; no cycle2b golds used as tuning data",
   "anchor_definition": "one atomic proposition with contiguous evidence in one H2 section; at most one gold per section",
-  "anchor_id": "sha256(cookigram-anchor-v1 + POSIX path + normalized heading path + stable proposition_key)",
+  "anchor_id": "POSIX path::h2:<1-based ordinal at preregistered base_commit>",
   "canonicalization": {
     "path": "repository-relative POSIX path, case-sensitive",
-    "heading_path": "Unicode NFC, casefold, collapse Unicode whitespace, strip edge punctuation",
-    "proposition_key": "stable semantic proposition identifier, assigned before question wording; phrasing and row IDs do not affect identity"
+    "heading_path": "retained as human-readable evidence locator",
+    "proposition_key": "stable semantic proposition identifier, assigned before question wording; NFC, casefold, collapse Unicode whitespace, strip edge punctuation; paraphrases keep the same key"
   },
   "documents": {
     "dev": [
@@ -23,6 +23,12 @@
     ]
   },
   "capacity": {"dev_structural_slots": 14, "holdout_reserve_structural_slots": 13},
+  "repair_FREEZE_REPAIR_GO": "AGENTS.md et .agents/roles/README.md ont ete des golds mesures du holdout c2b (H2-V, H2-W) : partage documentaire autorise, ancres interdites.",
+  "excluded_sections": ["AGENTS.md::h2:2", ".agents/roles/README.md::h2:3"],
+  "excluded_because": {"AGENTS.md::h2:2": "contient ancre H2-V 'Standard des recettes'", ".agents/roles/README.md::h2:3": "contient ancre H2-W 'Spécialités de l'équipe'"},
+  "usable_slots": {"dev": 13, "holdout_reserve": 12},
+  "forbidden_508_file": "forbidden_508.json",
+  "forbidden_508_n": 75,
   "split_rule": "whole-document allocation fixed before any dev gold is written; no section slot can move across sides",
   "anti_leakage": [
     "no holdout gold, question, answer, evidence, label, or proposition key may be read, inspected, generated, or used during dev construction/calibration",

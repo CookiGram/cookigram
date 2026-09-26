@@ -1,0 +1,241 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "phase": "dev-only",
+  "split_preregistration": "split_preregistration.json",
+  "items": [
+    {
+      "id": "510-dev-001",
+      "type": "repository-scope",
+      "anchor_type": "fact",
+      "question": "What does the public CookiGram repository contain, and where does the full engine live?",
+      "answer": "This repository contains the culinary Gram corpus, ingredient and provenance data, images, prompts, and documentation; the generation engine, full parser and validator, PWA, build, and application tests live in cookigram-core.",
+      "anchor": {
+        "path": "AGENTS.md",
+        "heading_path": [
+          "Directives du dépôt public de recettes CookiGram 🍳",
+          "Périmètre"
+        ],
+        "proposition_key": "public-content-versus-core-boundary",
+        "section_index": 1,
+        "anchor_id": "AGENTS.md::h2:1"
+      },
+      "evidence": "Ce dépôt contient uniquement le corpus culinaire Gram, les données d’ingrédients et de provenance, les images, les prompts et la documentation. Le moteur de génération, le parseur et validateur complet, la PWA, le build et les tests applicatifs résident dans `cookigram-core`."
+    },
+    {
+      "id": "510-dev-003",
+      "type": "asset-location-rule",
+      "anchor_type": "rule",
+      "question": "Where should the final recipe image and its prompt be stored?",
+      "answer": "Store the final image at static/images/<slug>.<ext> and its prompt at image-prompts/<slug>.md.",
+      "anchor": {
+        "path": "AGENTS.md",
+        "heading_path": [
+          "Directives du dépôt public de recettes CookiGram 🍳",
+          "Images"
+        ],
+        "proposition_key": "recipe-image-and-prompt-paths",
+        "section_index": 3,
+        "anchor_id": "AGENTS.md::h2:3"
+      },
+      "evidence": "Une image finale va dans `static/images/<slug>.<ext>` et son prompt dans `image-prompts/<slug>.md`."
+    },
+    {
+      "id": "510-dev-004",
+      "type": "available-gate",
+      "anchor_type": "workflow",
+      "question": "Which two public checks can be run from the repository root according to the French agent directives?",
+      "answer": "Parse all .gram YAML files with PyYAML, then run scripts/audit-recipe-images.py --check.",
+      "anchor": {
+        "path": "AGENTS.md",
+        "heading_path": [
+          "Directives du dépôt public de recettes CookiGram 🍳",
+          "Validation réellement disponible"
+        ],
+        "proposition_key": "public-local-checks-yaml-and-images",
+        "section_index": 4,
+        "anchor_id": "AGENTS.md::h2:4"
+      },
+      "evidence": "python -c \"import yaml, glob; [yaml.safe_load(open(f, encoding='utf-8')) for f in glob.glob('.gram/*.yaml')]\"\npython scripts/audit-recipe-images.py --check"
+    },
+    {
+      "id": "510-dev-005",
+      "type": "agent-import-rule",
+      "anchor_type": "rule",
+      "question": "What source details must an agent preserve when importing a recipe from the web?",
+      "answer": "Keep the source URL and author, and report uncertainties.",
+      "anchor": {
+        "path": "AGENTS.md",
+        "heading_path": [
+          "Directives du dépôt public de recettes CookiGram 🍳",
+          "Travail d’agent"
+        ],
+        "proposition_key": "web-import-source-attribution-and-uncertainty",
+        "section_index": 5,
+        "anchor_id": "AGENTS.md::h2:5"
+      },
+      "evidence": "Pour un import Web, suivre [`import-recipe-gram`](.agents/skills/import-recipe-gram/SKILL.md), conserver l’URL et l’auteur de la source et signaler les incertitudes."
+    },
+    {
+      "id": "510-dev-006",
+      "type": "product-principle",
+      "anchor_type": "fact",
+      "question": "What is the user-facing flow CookiGram aims to support?",
+      "answer": "Find or import a recipe, cook it, notice what should change, and return to a better version next time.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "CookiGram for users"
+        ],
+        "proposition_key": "user-recipe-improvement-loop",
+        "section_index": 1,
+        "anchor_id": "README.en.md::h2:1"
+      },
+      "evidence": "find / import a recipe\n        ↓\ncook it\n        ↓\nnotice what should change\n        ↓\ncome back to a better version next time"
+    },
+    {
+      "id": "510-dev-007",
+      "type": "repository-inventory",
+      "anchor_type": "fact",
+      "question": "Which types of content are listed as part of the public repository?",
+      "answer": "Structured Gram recipes, ingredient data and provenance, published illustrations, generation prompts and metadata, and editorial rules and agent skills.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "This repository"
+        ],
+        "proposition_key": "public-repository-content-inventory",
+        "section_index": 2,
+        "anchor_id": "README.en.md::h2:2"
+      },
+      "evidence": "`CookiGram/cookigram` is CookiGram’s public content repository. It contains:\n\n- structured [Gram](https://gram-lang.org/) recipes in [`recipes/`](recipes/);\n- the ingredient database and provenance in [`.gram/`](.gram/);\n- published illustrations in [`static/images/`](static/images/);\n- generation prompts and metadata in [`image-prompts/`](image-prompts/);\n- editorial rules and agent skills in [`AGENTS.md`](AGENTS.md) and [`.agents/`](.agents/)."
+    },
+    {
+      "id": "510-dev-008",
+      "type": "product-definition",
+      "anchor_type": "definition",
+      "question": "Which brand terms are intended to stay in French across all supported languages?",
+      "answer": "Cuisine, Grand Chef, Panier, and Menu.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "Official CookiGram vocabulary"
+        ],
+        "proposition_key": "international-french-brand-terms",
+        "section_index": 3,
+        "anchor_id": "README.en.md::h2:3"
+      },
+      "evidence": "The following brand terms are intended to be allowed to remain in French in every language: **Cuisine**, **Grand Chef**, **Panier**, and **Menu**."
+    },
+    {
+      "id": "510-dev-009",
+      "type": "architecture-boundary",
+      "anchor_type": "rule",
+      "question": "What should adding or updating a recipe change, and what should it not require?",
+      "answer": "It should evolve the Cuisine; it should not require a Core change, rebuild, or full engine qualification, though rebuilding the static site may still be necessary.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "Boundary with the engine"
+        ],
+        "proposition_key": "recipe-change-does-not-require-core-rebuild",
+        "section_index": 4,
+        "anchor_id": "README.en.md::h2:4"
+      },
+      "evidence": "Adding or updating a recipe should evolve **the Cuisine**, not require a Core\nchange, rebuild, or full engine qualification."
+    },
+    {
+      "id": "510-dev-010",
+      "type": "public-validation-policy",
+      "anchor_type": "workflow",
+      "question": "How does the README describe the public CI validation path when a PR has no Core secret?",
+      "answer": "It validates YAML syntax in .gram and checks image/prompt pairs with scripts/audit-recipe-images.py.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "Available validation"
+        ],
+        "proposition_key": "public-pr-validation-without-core-secret",
+        "section_index": 5,
+        "anchor_id": "README.en.md::h2:5"
+      },
+      "evidence": "for a public pull request or fork without the secret, it validates YAML syntax in [`.gram/`](.gram/) and checks image/prompt pairs with [`scripts/audit-recipe-images.py`](scripts/audit-recipe-images.py);"
+    },
+    {
+      "id": "510-dev-011",
+      "type": "recipe-format",
+      "anchor_type": "structure",
+      "question": "What kinds of content does the Gram recipe example put in its frontmatter?",
+      "answer": "It gives a title, portions, preparation and total times, spiciness, description, tags, source URL, and author.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "Recipe format"
+        ],
+        "proposition_key": "recipe-frontmatter-field-set",
+        "section_index": 6,
+        "anchor_id": "README.en.md::h2:6"
+      },
+      "evidence": "title: Lemon roast chicken\nportions: 4\nprep_time: 15 min\ntotal_time: 1 h 05 min\nspiciness: 0\ndescription: Golden chicken with a short lemon and garlic jus and crisp, deeply browned skin.\ntags: [chicken, oven, family]\nsource: https://example.com/lemon-chicken\nauthor: Recipe author"
+    },
+    {
+      "id": "510-dev-012",
+      "type": "asset-rights-policy",
+      "anchor_type": "rule",
+      "question": "Where are image credits and terms recorded when recipes use images or external sources?",
+      "answer": "Credits and terms are kept in the recipe frontmatter.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "Images and licensing"
+        ],
+        "proposition_key": "image-credits-and-terms-location",
+        "section_index": 7,
+        "anchor_id": "README.en.md::h2:7"
+      },
+      "evidence": "Credits and terms are kept in the recipe frontmatter."
+    },
+    {
+      "id": "510-dev-013",
+      "type": "documentation-navigation",
+      "anchor_type": "navigation",
+      "question": "Where does the README direct contributors to find the charter, product principles, and contribution guide?",
+      "answer": "The Charter is in CHARTER.md, product principles in PRODUCT_PRINCIPLES.md, and the contribution guide in CONTRIBUTING.md.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "Related documents"
+        ],
+        "proposition_key": "related-governance-document-paths",
+        "section_index": 8,
+        "anchor_id": "README.en.md::h2:8"
+      },
+      "evidence": "- [Charter](CHARTER.md) · [Product principles](PRODUCT_PRINCIPLES.md)\n- [Contribution guide](CONTRIBUTING.md)"
+    },
+    {
+      "id": "510-dev-014",
+      "type": "license-fact",
+      "anchor_type": "fact",
+      "question": "What license does the repository say it is released under?",
+      "answer": "The repository is released under the MIT License.",
+      "anchor": {
+        "path": "README.en.md",
+        "heading_path": [
+          "CookiGram 🍳",
+          "License"
+        ],
+        "proposition_key": "repository-mit-license",
+        "section_index": 9,
+        "anchor_id": "README.en.md::h2:9"
+      },
+      "evidence": "This repository is released under the [MIT License](LICENSE). Recipes, images, and external sources may have additional terms recorded in their metadata."
+    }
+  ]
+}

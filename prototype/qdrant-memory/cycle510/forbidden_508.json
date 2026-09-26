@@ -1,0 +1,542 @@
+{
+ "issue": "CookiGram/cookigram#510",
+ "phase": "forbidden-508-anchors",
+ "method": "ancres consommees/mesurees dans les items dev+holdout #508 (7 fichiers, dev+holdout, cycles 1/2/2b) ; occurrences verifiees dans les 4 docs admissibles au commit d8584dc.",
+ "n": 75,
+ "anchors": [
+  {
+   "anchor": "#492 Vague 40 recettes",
+   "sources_508": [
+    "c2_dev.json:D2-C2"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "#78 feat(cooking)",
+   "sources_508": [
+    "c2_dev.json:D2-C1"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "20 % Plaisir Assumé",
+   "sources_508": [
+    "c2_holdout.json:C2-C"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "30 vitality / 30 balanced / 29 pleasure",
+   "sources_508": [
+    "c2_dev.json:D2-P2"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Café, Digestif",
+   "sources_508": [
+    "c2b_holdout.json:H2-O-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Cartographie Réelle",
+   "sources_508": [
+    "c2b_holdout.json:H2-B-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Context Pruning",
+   "sources_508": [
+    "c2b_dev.json:B2-B-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Contributions assistées par agent",
+   "sources_508": [
+    "c2b_dev.json:B2-D-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Contrôles locaux",
+   "sources_508": [
+    "c2b_holdout.json:H2-H-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Contrôles locaux réellement disponibles",
+   "sources_508": [
+    "c2b_dev.json:B2-C-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Dernières Livraisons",
+   "sources_508": [
+    "c2b_dev.json:B2-G-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Direction artistique",
+   "sources_508": [
+    "c2b_dev.json:B2-AB-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Esprit Communautaire",
+   "sources_508": [
+    "c2b_holdout.json:H2-G-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Format d’une recette",
+   "sources_508": [
+    "c2b_holdout.json:H2-N-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Frontière avec",
+   "sources_508": [
+    "c2b_holdout.json:H2-M-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Frontière avec le moteur",
+   "sources_508": [
+    "c2b_dev.json:B2-Q-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Frugalité Éclairée",
+   "sources_508": [
+    "c2b_dev.json:B2-W-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Graceful Degradation",
+   "sources_508": [
+    "c2b_dev.json:B2-AA-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "INTERDICTION DE DOUBLON",
+   "sources_508": [
+    "c2b_dev.json:B2-V-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Identité visuelle",
+   "sources_508": [
+    "c2b_holdout.json:H2-K-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Jalons de Maturité",
+   "sources_508": [
+    "c2b_dev.json:B2-F-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Kitchen OS",
+   "sources_508": [
+    "c2b_holdout.json:H2-U-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Les Six Piliers du Manifeste",
+   "sources_508": [
+    "c2b_holdout.json:H2-E-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Licence Libre",
+   "sources_508": [
+    "c2b_holdout.json:H2-F-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Matrice d'Attribution",
+   "sources_508": [
+    "c2b_holdout.json:H2-A-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Mobile first",
+   "sources_508": [
+    "c2b_dev.json:B2-H-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Model Tiering",
+   "sources_508": [
+    "c2b_dev.json:B2-X-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Nutrition positive",
+   "sources_508": [
+    "c2b_dev.json:B2-I-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Ordre de traitement impératif",
+   "sources_508": [
+    "c2b_holdout.json:H2-Y-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "P0 — Stabiliser",
+   "sources_508": [
+    "c2b_dev.json:B2-K-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "P1 — Mettre en place",
+   "sources_508": [
+    "c2b_dev.json:B2-L-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "P2 — Fiabiliser",
+   "sources_508": [
+    "c2b_dev.json:B2-M-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "P3 — Qualité produit",
+   "sources_508": [
+    "c2b_dev.json:B2-N-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "PWA réellement utilisable",
+   "sources_508": [
+    "c2b_holdout.json:H2-R-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Principes non négociables",
+   "sources_508": [
+    "c2b_holdout.json:H2-X-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Pull request",
+   "sources_508": [
+    "c2b_holdout.json:H2-I-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Quotas & Runtimes",
+   "sources_508": [
+    "c2b_dev.json:B2-T-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Roadmap — Entrée",
+   "sources_508": [
+    "c2b_dev.json:B2-R-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Règle 24",
+   "sources_508": [
+    "c2b_holdout.json:H2-C-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Règle Absolue",
+   "sources_508": [
+    "c2b_holdout.json:H2-D-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Règles d'Or Développeurs",
+   "sources_508": [
+    "c2b_dev.json:B2-E-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Simplicité et frugalité",
+   "sources_508": [
+    "c2b_holdout.json:H2-J-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Six Piliers",
+   "sources_508": [
+    "c2b_dev.json:B2-A-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Spécialités de l'équipe",
+   "sources_508": [
+    "c2b_holdout.json:H2-W-para"
+   ],
+   "occurrences_4docs": [
+    ".agents/roles/README.md::h2:3"
+   ]
+  },
+  {
+   "anchor": "Standard des recettes",
+   "sources_508": [
+    "c2b_holdout.json:H2-V-direct"
+   ],
+   "occurrences_4docs": [
+    "AGENTS.md::h2:2"
+   ]
+  },
+  {
+   "anchor": "Taxonomie Obligatoire",
+   "sources_508": [
+    "c2b_dev.json:B2-Y-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Tâches en cours",
+   "sources_508": [
+    "c2b_holdout.json:H2-T-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Unité de Travail",
+   "sources_508": [
+    "c2b_dev.json:B2-Z-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Verrou Distribué",
+   "sources_508": [
+    "c2b_dev.json:B2-S-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Vocabulaire officiel",
+   "sources_508": [
+    "c2b_dev.json:B2-P-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "W002",
+   "sources_508": [
+    "holdout.json:H-B-direct",
+    "holdout.json:H-C-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "Watchdog de 15 minutes",
+   "sources_508": [
+    "c2b_dev.json:B2-U-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "_site",
+   "sources_508": [
+    "agent_tasks.json:A4-orig"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "`salad` n'est pas un rôle",
+   "sources_508": [
+    "c2_holdout.json:C2-E"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "aucun mécanisme `icons/ui`",
+   "sources_508": [
+    "c2_dev.json:D2-H1"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "aucune enveloppe `font-family`",
+   "sources_508": [
+    "c2_holdout.json:C2-A"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "b567e88acdcee69302c926caa6f5222508b7a051",
+   "sources_508": [
+    "c2_dev.json:D2-D1"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "benefits_from",
+   "sources_508": [
+    "holdout.json:H-E-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "champ redondant à supprimer",
+   "sources_508": [
+    "c2_dev.json:D2-D3"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "clous-de-girofle",
+   "sources_508": [
+    "c2_dev.json:D2-H1"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "contrat des recettes",
+   "sources_508": [
+    "c2b_holdout.json:H2-Q-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "dette frontend",
+   "sources_508": [
+    "c2b_holdout.json:H2-S-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "données déterministes",
+   "sources_508": [
+    "c2b_holdout.json:H2-L-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "e2e-runs",
+   "sources_508": [
+    "holdout.json:H-A-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "filet de sécurité",
+   "sources_508": [
+    "c2b_holdout.json:H2-P-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "fixture-manquante",
+   "sources_508": [
+    "c2_dev.json:D2-H2",
+    "c2_dev.json:D2-P1"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "grafana-cockpit",
+   "sources_508": [
+    "agent_tasks.json:A1-direct",
+    "agent_tasks.json:A2-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "kiffs",
+   "sources_508": [
+    "holdout.json:H-E-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "le cas qui tue `required: true`",
+   "sources_508": [
+    "c2_holdout.json:C2-D",
+    "c2_holdout.json:C2-E"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "og:site_name",
+   "sources_508": [
+    "c2_holdout.json:C2-B"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "pas de second writer",
+   "sources_508": [
+    "c2_dev.json:D2-D2",
+    "c2_dev.json:D2-H2"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "signifie `unknown`",
+   "sources_508": [
+    "holdout.json:H-D-direct"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "snapshot 3 sept",
+   "sources_508": [
+    "c2b_dev.json:B2-O-para"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "sous_vide",
+   "sources_508": [
+    "agent_tasks.json:A3-hard"
+   ],
+   "occurrences_4docs": []
+  },
+  {
+   "anchor": "spécialistes conseillent",
+   "sources_508": [
+    "c2b_dev.json:B2-J-para"
+   ],
+   "occurrences_4docs": []
+  }
+ ]
+}
