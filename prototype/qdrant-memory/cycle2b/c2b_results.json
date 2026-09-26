@@ -1,0 +1,2739 @@
+{
+  "cycle": "2b",
+  "phase": "holdout-measure-unique",
+  "freeze_point": {
+    "tau": 0.6,
+    "delta": 0.05,
+    "dev_decision_lenient_fact": 0.765
+  },
+  "dev_n": 34,
+  "holdout_n": 32,
+  "top_k": 3,
+  "summary": {
+    "lexical": {
+      "success_answer_rate": 0.08,
+      "rank1": 0.12,
+      "recall_at3": 0.2
+    },
+    "dense_sec": {
+      "success_answer_rate": 0.36,
+      "rank1": 0.28,
+      "recall_at3": 0.44
+    },
+    "dense_fact": {
+      "success_answer_rate": 0.32,
+      "rank1": 0.2,
+      "recall_at3": 0.44
+    },
+    "A2_sec_policy": {
+      "success_rate": 0.219,
+      "rank1": 0.28,
+      "recall_at3": 0.44,
+      "decision_strict": 0.656,
+      "decision_lenient": 0.656
+    },
+    "B2_fact_policy": {
+      "success_rate": 0.25,
+      "rank1": 0.2,
+      "recall_at3": 0.44,
+      "decision_strict": 0.594,
+      "decision_lenient": 0.594
+    }
+  },
+  "corpora": {
+    "section_chunks": 350,
+    "section_sha": "72b391ca91fb2460",
+    "fact_chunks": 1912,
+    "fact_sha": "38431cd1458610eb",
+    "index_sec": {
+      "embed_ms": 9524.0,
+      "upsert_ms": 162.6
+    },
+    "index_fact": {
+      "embed_ms": 50947.0,
+      "upsert_ms": 709.0
+    }
+  },
+  "tasks": [
+    {
+      "id": "H2-A-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 453,
+        "chunks": 3,
+        "paths": [
+          ".agents/roles/README.md",
+          "AGENTS.md",
+          "README.md"
+        ],
+        "latency_ms": 11.94
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 596,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/token-frugality.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md"
+        ],
+        "latency_ms": 10.51
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 70,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "README.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 37.27
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.488 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0247,
+        "s1": 0.4884
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.572 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0131,
+        "s1": 0.5723
+      }
+    },
+    {
+      "id": "H2-B-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 552,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/cooking-execution.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 14.32
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 320,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/token-frugality.md"
+        ],
+        "latency_ms": 15.31
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 81,
+        "chunks": 3,
+        "paths": [
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+          "README.md"
+        ],
+        "latency_ms": 24.08
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.531 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 16,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0144,
+        "s1": 0.5306
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.593 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 16,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0206,
+        "s1": 0.5934
+      }
+    },
+    {
+      "id": "H2-C-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 445,
+        "chunks": 3,
+        "paths": [
+          "docs/IMAGE-PROVENANCE.md",
+          ".agents/rules/cooking-execution.md",
+          ".agents/rules/cooking-execution.md"
+        ],
+        "latency_ms": 17.94
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 591,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/cooking-execution.md",
+          "docs/review-169-design.md",
+          ".agents/rules/multi-agent-orchestration.md"
+        ],
+        "latency_ms": 14.14
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 126,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/cooking-execution.md",
+          "docs/review-169-design.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 39.7
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.590 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 15,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0261,
+        "s1": 0.5902
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.682 marge=0.063",
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 126,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/cooking-execution.md",
+          "docs/review-169-design.md",
+          "GEMINI.md"
+        ],
+        "margin": 0.0634,
+        "s1": 0.6819
+      }
+    },
+    {
+      "id": "H2-D-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 460,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/cooking-execution.md",
+          ".agents/rules/git-workflow.md",
+          ".agents/rules/ingredient-icons.md"
+        ],
+        "latency_ms": 13.58
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 669,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/product-governance.md",
+          ".agents/rules/product-governance.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 9.13
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 89,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          ".agents/roles/README.md",
+          "PRODUCT_PRINCIPLES.md"
+        ],
+        "latency_ms": 11.11
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.427 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0161,
+        "s1": 0.4266
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.583 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0596,
+        "s1": 0.5826
+      }
+    },
+    {
+      "id": "H2-E-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 517,
+        "chunks": 3,
+        "paths": [
+          "CONTRIBUTING.md",
+          ".agents/rules/task-claiming.md",
+          "README.md"
+        ],
+        "latency_ms": 14.32
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 601,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          "CHARTER.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 18.38
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 87,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          "CHARTER.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 15.71
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.560 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 11,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0651,
+        "s1": 0.5601
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.048 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 11,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0485,
+        "s1": 0.6086
+      }
+    },
+    {
+      "id": "H2-F-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 381,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          "CHARTER.md",
+          "docs/E2E-WORK-ITEM.md"
+        ],
+        "latency_ms": 22.23
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 325,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          "docs/PUBLIC-CONTRACT.md",
+          "README.md"
+        ],
+        "latency_ms": 12.4
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 123,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "GEMINI.md",
+          "README.md"
+        ],
+        "latency_ms": 8.13
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.445 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0791,
+        "s1": 0.4454
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.506 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0425,
+        "s1": 0.5062
+      }
+    },
+    {
+      "id": "H2-G-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 948,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "docs/E2E-LEDGER.md",
+          "README.md"
+        ],
+        "latency_ms": 14.43
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 416,
+        "chunks": 3,
+        "paths": [
+          "PRODUCT_PRINCIPLES.md",
+          "docs/review-169-recipe.md",
+          "CHARTER.md"
+        ],
+        "latency_ms": 9.01
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 43,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "CHARTER.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 7.48
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.431 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0022,
+        "s1": 0.4309
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.539 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0188,
+        "s1": 0.5392
+      }
+    },
+    {
+      "id": "H2-H-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 540,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/token-frugality.md",
+          "README.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 13.43
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 697,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-design.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 13.08
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 61,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "CONTRIBUTING.md",
+          "README.en.md"
+        ],
+        "latency_ms": 27.82
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.417 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.011,
+        "s1": 0.4171
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.563 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.012,
+        "s1": 0.5628
+      }
+    },
+    {
+      "id": "H2-I-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 540,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/cooking-execution.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          "AGENTS.md"
+        ],
+        "latency_ms": 14.97
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 821,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          "CHARTER.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 7.75
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 74,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "README.md",
+          "README.md"
+        ],
+        "latency_ms": 7.32
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.564 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0126,
+        "s1": 0.5641
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.032 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0323,
+        "s1": 0.7042
+      }
+    },
+    {
+      "id": "H2-J-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 337,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          "docs/review-169-recipe.md",
+          "docs/nutrition-profile-issue-136.md"
+        ],
+        "latency_ms": 15.36
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 243,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          ".agents/rules/token-frugality.md",
+          ".agents/rules/token-frugality.md"
+        ],
+        "latency_ms": 7.67
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 71,
+        "chunks": 3,
+        "paths": [
+          "PRODUCT_PRINCIPLES.md",
+          "GEMINI.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 6.89
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.531 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 16,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0192,
+        "s1": 0.5308
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.011 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 16,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0114,
+        "s1": 0.6091
+      }
+    },
+    {
+      "id": "H2-K-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 350,
+        "chunks": 3,
+        "paths": [
+          "CHARTER.md",
+          "docs/review-169-design.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 16.38
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 438,
+        "chunks": 3,
+        "paths": [
+          "PRODUCT_PRINCIPLES.md",
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/IMAGE-PROVENANCE.md"
+        ],
+        "latency_ms": 10.58
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 66,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "PRODUCT_PRINCIPLES.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 22.94
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.016 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0156,
+        "s1": 0.6471
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.759 marge=0.084",
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 66,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "PRODUCT_PRINCIPLES.md",
+          "GEMINI.md"
+        ],
+        "margin": 0.0842,
+        "s1": 0.7595
+      }
+    },
+    {
+      "id": "H2-L-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 994,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "README.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 18.27
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 554,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/token-frugality.md",
+          "docs/MEAL_PLANNING_NUTRITION.md",
+          ".agents/rules/token-frugality.md"
+        ],
+        "latency_ms": 10.66
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 89,
+        "chunks": 3,
+        "paths": [
+          "PRODUCT_PRINCIPLES.md",
+          "docs/review-169-design.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 7.98
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.421 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0156,
+        "s1": 0.4209
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.524 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0202,
+        "s1": 0.5237
+      }
+    },
+    {
+      "id": "H2-M-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 998,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-cooking.md",
+          "docs/review-169-recipe.md",
+          "docs/MEAL-COMPOSITION-V1.md"
+        ],
+        "latency_ms": 18.97
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 600,
+        "chunks": 3,
+        "paths": [
+          ".agents/STATUS.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md",
+          "README.md"
+        ],
+        "latency_ms": 10.75
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 95,
+        "chunks": 3,
+        "paths": [
+          ".agents/STATUS.md",
+          "docs/review-169-cooking.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md"
+        ],
+        "latency_ms": 8.38
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.452 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.039,
+        "s1": 0.4518
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.490 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0141,
+        "s1": 0.4903
+      }
+    },
+    {
+      "id": "H2-N-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 784,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/token-frugality.md",
+          "CHARTER.md",
+          "docs/PUBLIC-CONTRACT.md"
+        ],
+        "latency_ms": 23.26
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 439,
+        "chunks": 3,
+        "paths": [
+          "docs/work-items/391-lot-typography.md",
+          "docs/PUBLIC-CONTRACT.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 19.15
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 74,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "docs/review-169-recipe.md",
+          "docs/CATALOGUE-CONTRACT-CORE.md"
+        ],
+        "latency_ms": 11.5
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.523 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0069,
+        "s1": 0.5232
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.565 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 13,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0043,
+        "s1": 0.5654
+      }
+    },
+    {
+      "id": "H2-O-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 551,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/nutrition-profile-issue-136.md",
+          ".agents/rules/token-frugality.md"
+        ],
+        "latency_ms": 11.89
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 817,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          ".agents/STATUS.md",
+          "README.md"
+        ],
+        "latency_ms": 8.87
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 37,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "GEMINI.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 7.78
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.429 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0349,
+        "s1": 0.4286
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.607 marge=0.090",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 37,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "GEMINI.md",
+          "docs/review-169-design.md"
+        ],
+        "margin": 0.0898,
+        "s1": 0.6072
+      }
+    },
+    {
+      "id": "H2-P-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 640,
+        "chunks": 3,
+        "paths": [
+          ".agents/STATUS.md",
+          "README.md",
+          "PRODUCT_PRINCIPLES.md"
+        ],
+        "latency_ms": 17.43
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 843,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 27.79
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 295,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "PRODUCT_PRINCIPLES.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md"
+        ],
+        "latency_ms": 14.66
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.422 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 11,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0418,
+        "s1": 0.4223
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.601 marge=0.082",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 295,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "PRODUCT_PRINCIPLES.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md"
+        ],
+        "margin": 0.0819,
+        "s1": 0.6005
+      }
+    },
+    {
+      "id": "H2-Q-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 743,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-recipe.md",
+          "docs/work-items/391-lot-header-brand.md",
+          "README.md"
+        ],
+        "latency_ms": 16.62
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 706,
+        "chunks": 3,
+        "paths": [
+          "docs/work-items/391-lot-typography.md",
+          "docs/review-169-recipe.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 21.16
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 100,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-recipe.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 19.84
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.553 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 11,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.025,
+        "s1": 0.5535
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.020 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 11,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0201,
+        "s1": 0.6392
+      }
+    },
+    {
+      "id": "H2-R-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 751,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          ".agents/rules/task-claiming.md",
+          "README.md"
+        ],
+        "latency_ms": 15.82
+      },
+      "dense_sec": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 592,
+        "chunks": 3,
+        "paths": [
+          "TODO.md",
+          "AGENTS.md",
+          "docs/review-169-design.md"
+        ],
+        "latency_ms": 15.6
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 124,
+        "chunks": 3,
+        "paths": [
+          "TODO.md",
+          "README.md",
+          "TODO.md"
+        ],
+        "latency_ms": 24.47
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.493 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 10,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.1061,
+        "s1": 0.4928
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.020 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 10,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0202,
+        "s1": 0.6279
+      }
+    },
+    {
+      "id": "H2-S-hard",
+      "kind": "hard",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 474,
+        "chunks": 3,
+        "paths": [
+          "docs/IMAGE-PROVENANCE.md",
+          "PRODUCT_PRINCIPLES.md",
+          "CONTRIBUTING.md"
+        ],
+        "latency_ms": 17.12
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 513,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          "docs/equipment-contract-495.md"
+        ],
+        "latency_ms": 17.42
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 55,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "TODO.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 9.26
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.422 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 19,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0076,
+        "s1": 0.4216
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.588 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 19,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0497,
+        "s1": 0.5877
+      }
+    },
+    {
+      "id": "H2-T-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 617,
+        "chunks": 3,
+        "paths": [
+          "TODO.md",
+          "README.en.md",
+          ".agents/roles/README.md"
+        ],
+        "latency_ms": 15.35
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 529,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md"
+        ],
+        "latency_ms": 7.88
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 74,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "README.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 10.62
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.430 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 11,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0069,
+        "s1": 0.4305
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.504 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 11,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0466,
+        "s1": 0.5038
+      }
+    },
+    {
+      "id": "H2-U-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 603,
+        "chunks": 3,
+        "paths": [
+          "PRODUCT_PRINCIPLES.md",
+          "docs/review-169-recipe.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "latency_ms": 20.4
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 737,
+        "chunks": 3,
+        "paths": [
+          "docs/IMAGE-PROVENANCE.md",
+          "docs/review-169-recipe.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 21.42
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 81,
+        "chunks": 3,
+        "paths": [
+          "CONTRIBUTING.md",
+          "TODO.md",
+          "docs/IMAGE-PROVENANCE.md"
+        ],
+        "latency_ms": 17.88
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.440 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0335,
+        "s1": 0.4395
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.541 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0038,
+        "s1": 0.5413
+      }
+    },
+    {
+      "id": "H2-V-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 735,
+        "chunks": 3,
+        "paths": [
+          "docs/CI-ARTIFACT-STORAGE.md",
+          "docs/review-169-recipe.md",
+          "CHARTER.md"
+        ],
+        "latency_ms": 22.88
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 467,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/product-governance.md",
+          ".agents/rules/multi-agent-orchestration.md"
+        ],
+        "latency_ms": 9.19
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 70,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "README.en.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 9.67
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.533 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0181,
+        "s1": 0.5333
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.033 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0327,
+        "s1": 0.6582
+      }
+    },
+    {
+      "id": "H2-W-para",
+      "kind": "paraphrase",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 1,
+          "recall_at3": 1.0
+        },
+        "tokens": 585,
+        "chunks": 3,
+        "paths": [
+          ".agents/roles/README.md",
+          "docs/review-169-recipe.md",
+          "docs/nutrition-profile-issue-136.md"
+        ],
+        "latency_ms": 14.42
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 236,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md"
+        ],
+        "latency_ms": 9.84
+      },
+      "dense_fact": {
+        "success": true,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 109,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/rules/multi-agent-orchestration.md",
+          ".agents/roles/README.md"
+        ],
+        "latency_ms": 10.45
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.541 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 15,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0058,
+        "s1": 0.5414
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.559 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 15,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0115,
+        "s1": 0.5591
+      }
+    },
+    {
+      "id": "H2-X-direct",
+      "kind": "direct",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 862,
+        "chunks": 3,
+        "paths": [
+          "docs/PUBLIC-CONTENT-LINT.md",
+          "docs/review-169-design.md",
+          "CONTRIBUTING.md"
+        ],
+        "latency_ms": 12.61
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 374,
+        "chunks": 3,
+        "paths": [
+          "PRODUCT_PRINCIPLES.md",
+          "PRODUCT_PRINCIPLES.md",
+          ".agents/rules/product-governance.md"
+        ],
+        "latency_ms": 7.55
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "tokens": 57,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "GEMINI.md",
+          ".agents/rules/product-governance.md"
+        ],
+        "latency_ms": 15.34
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.044 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0439,
+        "s1": 0.6085
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.042 < delta=0.05",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 1.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0421,
+        "s1": 0.8095
+      }
+    },
+    {
+      "id": "H2-Y-hard",
+      "kind": "hard",
+      "expected": "answer",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 873,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "docs/nutrition-profile-issue-136.md",
+          "AGENTS.md"
+        ],
+        "latency_ms": 16.4
+      },
+      "dense_sec": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 881,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-design.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 12.72
+      },
+      "dense_fact": {
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "tokens": 44,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "GEMINI.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 8.17
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.466 < tau=0.6",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 16,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0139,
+        "s1": 0.4656
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.602 marge=0.057",
+        "success": false,
+        "retrieval": {
+          "rank1": 0,
+          "recall_at3": 0.0
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 44,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "GEMINI.md",
+          "GEMINI.md"
+        ],
+        "margin": 0.0573,
+        "s1": 0.6015
+      }
+    },
+    {
+      "id": "H2-N1-ood",
+      "kind": "negative-ood",
+      "expected": "abstain",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 625,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/task-claiming.md",
+          "docs/review-169-cooking.md",
+          "CHARTER.md"
+        ],
+        "latency_ms": 17.18
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 154,
+        "chunks": 3,
+        "paths": [
+          ".agents/STATUS.md",
+          "docs/work-items/391-lot-ui-icons.md",
+          "docs/work-items/391-lot-icons.md"
+        ],
+        "latency_ms": 7.36
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 25,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "GEMINI.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 7.65
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.125 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 8,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0098,
+        "s1": 0.1247
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.301 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 8,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0105,
+        "s1": 0.3011
+      }
+    },
+    {
+      "id": "H2-N2-ood",
+      "kind": "negative-ood",
+      "expected": "abstain",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 598,
+        "chunks": 3,
+        "paths": [
+          "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md",
+          ".agents/rules/token-frugality.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 14.49
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 112,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "docs/work-items/391-lot-icons.md",
+          "CHARTER.md"
+        ],
+        "latency_ms": 10.96
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 72,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+          "docs/CI-ARTIFACT-STORAGE.md"
+        ],
+        "latency_ms": 9.32
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.309 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.1202,
+        "s1": 0.3093
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.309 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0001,
+        "s1": 0.3093
+      }
+    },
+    {
+      "id": "H2-N3-trap",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 668,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "AGENTS.md",
+          "CONTRIBUTING.md"
+        ],
+        "latency_ms": 23.13
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 669,
+        "chunks": 3,
+        "paths": [
+          "PRODUCT_PRINCIPLES.md",
+          ".agents/rules/ingredient-icons.md",
+          "docs/IMAGE-PROVENANCE.md"
+        ],
+        "latency_ms": 16.28
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 69,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          ".agents/roles/README.md",
+          "PRODUCT_PRINCIPLES.md"
+        ],
+        "latency_ms": 10.84
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.536 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0086,
+        "s1": 0.5356
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "marge=0.045 < delta=0.05",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.045,
+        "s1": 0.6437
+      }
+    },
+    {
+      "id": "H2-N4-trap",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 953,
+        "chunks": 3,
+        "paths": [
+          "AGENTS.md",
+          "docs/review-169-cooking.md",
+          "README.md"
+        ],
+        "latency_ms": 14.44
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 471,
+        "chunks": 3,
+        "paths": [
+          "docs/HERDR-WORKSPACE-NAMING.md",
+          "docs/review-169-cooking.md",
+          ".agents/rules/token-frugality.md"
+        ],
+        "latency_ms": 9.65
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 59,
+        "chunks": 3,
+        "paths": [
+          "docs/E2E-WORK-ITEM.md",
+          ".agents/rules/task-claiming.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 14.87
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.510 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0164,
+        "s1": 0.5103
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.529 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0039,
+        "s1": 0.5288
+      }
+    },
+    {
+      "id": "H2-N5-trap",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 748,
+        "chunks": 3,
+        "paths": [
+          "README.md",
+          "docs/review-169-cooking.md",
+          ".agents/STATUS.md"
+        ],
+        "latency_ms": 13.84
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 795,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-cooking.md",
+          "docs/review-169-design.md",
+          "CHARTER.md"
+        ],
+        "latency_ms": 10.7
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 135,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-recipe.md",
+          "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+          "docs/MEAL_PLANNING_NUTRITION.md"
+        ],
+        "latency_ms": 7.11
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.418 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 15,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0038,
+        "s1": 0.4179
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.525 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 15,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0014,
+        "s1": 0.5247
+      }
+    },
+    {
+      "id": "H2-N6-trap",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 930,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "docs/review-169-recipe.md",
+          "docs/review-169-recipe.md"
+        ],
+        "latency_ms": 14.81
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 1005,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-recipe.md",
+          "docs/review-169-cooking.md",
+          "docs/review-169-cooking.md"
+        ],
+        "latency_ms": 11.43
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 98,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-recipe.md",
+          "README.md",
+          "README.md"
+        ],
+        "latency_ms": 14.66
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.462 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0057,
+        "s1": 0.4621
+      },
+      "B2_fact_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.509 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 14,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0057,
+        "s1": 0.5093
+      }
+    },
+    {
+      "id": "H2-N7-trap",
+      "kind": "negative-trap",
+      "expected": "abstain",
+      "tokens_full": 72253,
+      "lexical": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 581,
+        "chunks": 3,
+        "paths": [
+          "docs/review-169-design.md",
+          "AGENTS.md",
+          ".agents/STATUS.md"
+        ],
+        "latency_ms": 29.78
+      },
+      "dense_sec": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 912,
+        "chunks": 3,
+        "paths": [
+          ".agents/rules/token-frugality.md",
+          "docs/review-169-design.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 13.46
+      },
+      "dense_fact": {
+        "success": null,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "tokens": 24,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "GEMINI.md",
+          "GEMINI.md"
+        ],
+        "latency_ms": 14.76
+      },
+      "A2_sec_policy": {
+        "decision": "abstain",
+        "reason": "s1=0.442 < tau=0.6",
+        "success": true,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": true,
+        "decision_correct_lenient": true,
+        "tokens": 12,
+        "chunks": 0,
+        "paths": [],
+        "margin": 0.0295,
+        "s1": 0.4416
+      },
+      "B2_fact_policy": {
+        "decision": "answer",
+        "reason": "s1=0.682 marge=0.085",
+        "success": false,
+        "retrieval": {
+          "rank1": null,
+          "recall_at3": null
+        },
+        "decision_correct_strict": false,
+        "decision_correct_lenient": false,
+        "tokens": 24,
+        "chunks": 3,
+        "paths": [
+          "GEMINI.md",
+          "GEMINI.md",
+          "GEMINI.md"
+        ],
+        "margin": 0.0846,
+        "s1": 0.6823
+      }
+    }
+  ]
+}
