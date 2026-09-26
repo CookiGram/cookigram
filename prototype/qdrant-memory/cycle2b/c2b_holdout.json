@@ -1,0 +1,365 @@
+{
+ "cycle": "2b",
+ "phase": "holdout-aveugle",
+ "version": 1,
+ "provenance": "C2B_HOLDOUT_MEASURE_GO etape A. 32 items ecrits SANS retrieval (aucun Qdrant lance avant ecriture+freeze). Ancres : 2 reservees freeze + 24 supp verifiees (1 occ. nouveau / 0 ancien), toutes disjointes dev/gate4/cycle2/bannis. Formulations inedites. Succes answer : >=1 gold top-3 ET >=1 ancre ; abstain : 0 chunk. Fige par commit AVANT toute mesure.",
+ "success_criterion": "answer : >=1 gold path top-3 ET >=1 ancre dans le contexte ; abstain : 0 chunk injecte. Retrieval reporte separement (rank-1, recall@3).",
+ "items": [
+  {
+   "id": "H2-A-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel tableau repartit les travaux entre les agents ?",
+   "golds": [
+    ".agents/rules/multi-agent-orchestration.md"
+   ],
+   "anchors": [
+    "Matrice d'Attribution"
+   ]
+  },
+  {
+   "id": "H2-B-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Comment la cartographie des moyens d'execution est-elle intitulee ?",
+   "golds": [
+    ".agents/rules/multi-agent-orchestration.md"
+   ],
+   "anchors": [
+    "Cartographie Réelle"
+   ]
+  },
+  {
+   "id": "H2-C-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle regle numerotee verrouille la taxonomie d'execution ?",
+   "golds": [
+    ".agents/rules/cooking-execution.md"
+   ],
+   "anchors": [
+    "Règle 24"
+   ]
+  },
+  {
+   "id": "H2-D-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel principe absolu ouvre les regles d'execution ?",
+   "golds": [
+    ".agents/rules/cooking-execution.md"
+   ],
+   "anchors": [
+    "Règle Absolue"
+   ]
+  },
+  {
+   "id": "H2-E-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel manifeste en six points fonde le projet ?",
+   "golds": [
+    "CHARTER.md"
+   ],
+   "anchors": [
+    "Les Six Piliers du Manifeste"
+   ]
+  },
+  {
+   "id": "H2-F-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle licence libre couvre le projet communautaire ?",
+   "golds": [
+    "CHARTER.md"
+   ],
+   "anchors": [
+    "Licence Libre"
+   ]
+  },
+  {
+   "id": "H2-G-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Quel esprit soude la communaute autour du projet ?",
+   "golds": [
+    "CHARTER.md"
+   ],
+   "anchors": [
+    "Esprit Communautaire"
+   ]
+  },
+  {
+   "id": "H2-H-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quels controles la contribution exige-t-elle en local ?",
+   "golds": [
+    "CONTRIBUTING.md"
+   ],
+   "anchors": [
+    "Contrôles locaux"
+   ]
+  },
+  {
+   "id": "H2-I-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Ou adresser une demande de tirage pour une recette ?",
+   "golds": [
+    "CONTRIBUTING.md"
+   ],
+   "anchors": [
+    "Pull request"
+   ]
+  },
+  {
+   "id": "H2-J-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle simplicite le projet revendique-t-il pour rester frugal ?",
+   "golds": [
+    "PRODUCT_PRINCIPLES.md"
+   ],
+   "anchors": [
+    "Simplicité et frugalité"
+   ]
+  },
+  {
+   "id": "H2-K-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelle identite visuelle le projet s'impose-t-il ?",
+   "golds": [
+    "PRODUCT_PRINCIPLES.md"
+   ],
+   "anchors": [
+    "Identité visuelle"
+   ]
+  },
+  {
+   "id": "H2-L-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Pourquoi les donnees doivent-elles rester deterministes ?",
+   "golds": [
+    "PRODUCT_PRINCIPLES.md"
+   ],
+   "anchors": [
+    "données déterministes"
+   ]
+  },
+  {
+   "id": "H2-M-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Avec quoi la frontiere du depot est-elle decrite ?",
+   "golds": [
+    "README.md"
+   ],
+   "anchors": [
+    "Frontière avec"
+   ]
+  },
+  {
+   "id": "H2-N-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel format de fiche la documentation impose-t-elle ?",
+   "golds": [
+    "README.md"
+   ],
+   "anchors": [
+    "Format d’une recette"
+   ]
+  },
+  {
+   "id": "H2-O-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Par quoi se conclut la feuille de route gourmande ?",
+   "golds": [
+    "README.md"
+   ],
+   "anchors": [
+    "Café, Digestif"
+   ]
+  },
+  {
+   "id": "H2-P-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel filet le plan d'action veut-il installer ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "filet de sécurité"
+   ]
+  },
+  {
+   "id": "H2-Q-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel contrat des fiches faut-il formaliser ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "contrat des recettes"
+   ]
+  },
+  {
+   "id": "H2-R-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Que doit devenir la PWA loin du reseau ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "PWA réellement utilisable"
+   ]
+  },
+  {
+   "id": "H2-S-hard",
+   "kind": "hard",
+   "expected": "answer",
+   "query": "Quelle dette d'interface et quel plan d'action la resorbent, et a quel rang ?",
+   "golds": [
+    "TODO.md"
+   ],
+   "anchors": [
+    "dette frontend"
+   ]
+  },
+  {
+   "id": "H2-T-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quelles taches les agents ont-ils en cours ?",
+   "golds": [
+    ".agents/STATUS.md"
+   ],
+   "anchors": [
+    "Tâches en cours"
+   ]
+  },
+  {
+   "id": "H2-U-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Sur quel systeme les jalons de maturite sont-ils nommes ?",
+   "golds": [
+    ".agents/STATUS.md"
+   ],
+   "anchors": [
+    "Kitchen OS"
+   ]
+  },
+  {
+   "id": "H2-V-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quel standard de fiche la consigne agent impose-t-elle ?",
+   "golds": [
+    "AGENTS.md"
+   ],
+   "anchors": [
+    "Standard des recettes"
+   ]
+  },
+  {
+   "id": "H2-W-para",
+   "kind": "paraphrase",
+   "expected": "answer",
+   "query": "Quelles specialites l'equipe multi-agents revendique-t-elle ?",
+   "golds": [
+    ".agents/roles/README.md"
+   ],
+   "anchors": [
+    "Spécialités de l'équipe"
+   ]
+  },
+  {
+   "id": "H2-X-direct",
+   "kind": "direct",
+   "expected": "answer",
+   "query": "Quels principes le produit declare-t-il non negociables ?",
+   "golds": [
+    ".agents/rules/product-governance.md"
+   ],
+   "anchors": [
+    "Principes non négociables"
+   ]
+  },
+  {
+   "id": "H2-Y-hard",
+   "kind": "hard",
+   "expected": "answer",
+   "query": "Dans quel ordre imperatif les taches doivent-elles etre traitees ?",
+   "golds": [
+    ".agents/rules/product-governance.md"
+   ],
+   "anchors": [
+    "Ordre de traitement impératif"
+   ]
+  },
+  {
+   "id": "H2-N1-ood",
+   "kind": "negative-ood",
+   "expected": "abstain",
+   "query": "Quelle est la capitale du Canada ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "H2-N2-ood",
+   "kind": "negative-ood",
+   "expected": "abstain",
+   "query": "En quelle annee l'homme a-t-il marche sur la Lune ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "H2-N3-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Quel delta la CI utilise-t-elle pour les illustrations ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "H2-N4-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Quel top-k faut-il injecter pour resumer les claims Herdr ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "H2-N5-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Quel gamma la politique du premier cycle recommandait-elle ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "H2-N6-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Quel chunking le gate 4 a-t-il fige pour la production ?",
+   "golds": [],
+   "anchors": []
+  },
+  {
+   "id": "H2-N7-trap",
+   "kind": "negative-trap",
+   "expected": "abstain",
+   "query": "Faut-il reindexer apres chaque commit sur main ?",
+   "golds": [],
+   "anchors": []
+  }
+ ]
+}
