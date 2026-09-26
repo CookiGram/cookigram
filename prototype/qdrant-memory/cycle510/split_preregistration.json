@@ -1,0 +1,35 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "authorization": "ANCHOR_DISJOINT_GO",
+  "phase": "method-freeze-and-split-preregistration",
+  "base_commit": "d8584dc1ceb6a4ce96bfb91c58a3dc5874faedb5",
+  "exception_scope": "local to #510; does not change standing methodology",
+  "precedent": "#508 cycle2b method only; no cycle2b golds used as tuning data",
+  "anchor_definition": "one atomic proposition with contiguous evidence in one H2 section; at most one gold per section",
+  "anchor_id": "sha256(cookigram-anchor-v1 + POSIX path + normalized heading path + stable proposition_key)",
+  "canonicalization": {
+    "path": "repository-relative POSIX path, case-sensitive",
+    "heading_path": "Unicode NFC, casefold, collapse Unicode whitespace, strip edge punctuation",
+    "proposition_key": "stable semantic proposition identifier, assigned before question wording; phrasing and row IDs do not affect identity"
+  },
+  "documents": {
+    "dev": [
+      {"path": "AGENTS.md", "h2_sections": 5, "structural_slots_only": true},
+      {"path": "README.en.md", "h2_sections": 9, "structural_slots_only": true}
+    ],
+    "holdout_reserve": [
+      {"path": "GEMINI.md", "h2_sections": 10, "structural_slots_only": true},
+      {"path": ".agents/roles/README.md", "h2_sections": 3, "structural_slots_only": true}
+    ]
+  },
+  "capacity": {"dev_structural_slots": 14, "holdout_reserve_structural_slots": 13},
+  "split_rule": "whole-document allocation fixed before any dev gold is written; no section slot can move across sides",
+  "anti_leakage": [
+    "no holdout gold, question, answer, evidence, label, or proposition key may be read, inspected, generated, or used during dev construction/calibration",
+    "a paraphrase or trivial rewording retains its stable proposition_key and canonical anchor identity",
+    "duplicate canonical anchor IDs and duplicate proposition keys within a set are rejected",
+    "holdout is not materialized in this phase and requires a new Human Owner GO"
+  ],
+  "holdout_created": false,
+  "measurement_started": false
+}
