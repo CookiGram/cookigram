@@ -4,7 +4,24 @@
  */
 
 import { getCurrentDinner, moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal } from "./planner-state.js";
-import { DEFAULT_USER_EQUIPMENT, EQUIPMENT_LABELS, PRESSURE_COOKER_MODEL_LABELS, getMissingEquipment, migrateUserEquipment, pressureCapsOf, togglePressureCookerCap, togglePressureCookerFamily } from "./equipment.js";
+import {
+  DEFAULT_USER_EQUIPMENT,
+  EQUIPMENT_LABELS,
+  EQUIPMENT_FEEDBACK_LABELS,
+  PRESSURE_COOKER_MODEL_LABELS,
+  getMissingEquipment,
+  migrateUserEquipment,
+  pressureCapsOf,
+  togglePressureCookerCap,
+  togglePressureCookerFamily,
+  EQUIPMENT_STATES,
+  DEFAULT_EQUIPMENT_PREFERENCES,
+  cycleEquipmentState,
+  getEquipmentStateFeedback,
+  migrateEquipmentPreferences,
+  isRecipeAdmissible,
+  getAdmissibleVariants,
+} from "./equipment.js";
 
 const STORAGE_KEY = "cookigram:meal-plan:v3";
 
@@ -356,6 +373,50 @@ const RECIPES = {
       { name: "Thym frais", qty: "3 branches", aisle: "Primeur" },
       { name: "Citron jaune", qty: "1 pièce", aisle: "Primeur" }
     ]
+  },
+  "carbonnade-flamande": {
+    id: "carbonnade-flamande",
+    title: "Carbonnade flamande à la bière brune & pain d'épices",
+    profile: "pleasure",
+    timeTotal: "1 h 30 min",
+    timeActive: "20 min",
+    appliance: "Thermomix / Instant Pot / Cocotte",
+    requiredEquipment: ["thermomix"],
+    dishes: "1 bol ou cocotte",
+    category: "mijoté",
+    description: "Paleron de bœuf fondant compoté à la bière brune et tartine de pain d'épices à la moutarde, lié et caramélisé.",
+    plants: ["Oignon", "Thym", "Laurier", "Pain d'épices", "Moutarde"],
+    variants: [
+      {
+        id: "thermomix",
+        name: "Thermomix (Mijotage doux régulé)",
+        default: true,
+        description: "Cuisson douce en sens inverse dans le bol Thermomix.",
+        requiredEquipment: ["thermomix"],
+        timeTotal: "1 h 30 min"
+      },
+      {
+        id: "instant-pot",
+        name: "Instant Pot (Haute Pression Express)",
+        description: "Saisie en mode Sauté puis braisage express sous pression en 45 minutes.",
+        requiredEquipment: [{ key: "pressure_cooker", values: ["instant_pot"] }],
+        timeTotal: "1 h 05 min"
+      },
+      {
+        id: "cocotte-fonte",
+        name: "Cocotte en fonte traditionnelle (Sans robot)",
+        description: "Cuisine traditionnelle sans robot avec mijotage très doux à couvert pendant 2 h 45.",
+        requiredEquipment: ["stovetop"],
+        timeTotal: "3 h 10 min"
+      }
+    ],
+    ingredients: [
+      { name: "Paleron de bœuf", qty: "800 g", aisle: "Boucherie & Poissonnerie" },
+      { name: "Oignons", qty: "400 g", aisle: "Primeur" },
+      { name: "Bière brune", qty: "400 ml", aisle: "Épicerie & Sec" },
+      { name: "Pain d'épices", qty: "3 tranches", aisle: "Épicerie & Sec" },
+      { name: "Moutarde de Dijon", qty: "30 g", aisle: "Épicerie & Sec" }
+    ]
   }
 };
 
@@ -415,6 +476,7 @@ function createDefaultState(startDate = new Date()) {
     currentStep: 1,
     startShoppingDate: startDate.toISOString(),
     userEquipment: { ...DEFAULT_USER_EQUIPMENT },
+    equipmentPreferences: { ...DEFAULT_EQUIPMENT_PREFERENCES },
     selectedKiffIds: ["porc-au-caramel"],
     selectedKiffSlots: {
       "porc-au-caramel": { dayIndex: 5, period: "dinner" }
@@ -440,6 +502,7 @@ function loadState() {
           if (day[period]?.type === "recipe") day[period].portions = normalizePortions(day[period].portions);
         }));
         state.userEquipment = migrateUserEquipment(state.userEquipment);
+        state.equipmentPreferences = migrateEquipmentPreferences(state.equipmentPreferences || state.userEquipment);
         return;
       }
     }
@@ -537,68 +600,91 @@ function init() {
   checkHash();
 }
 
-// BIND KITCHEN EQUIPMENT CHIPS
+// REPAINT EQUIPMENT CHIPS (Tri-state #506)
+function repaintEquipmentChips() {
+  const container = document.getElementById("equipment-chips");
+  if (!container) return;
+  const chips = container.querySelectorAll(".equip-chip");
+
+  chips.forEach(chip => {
+    const equip = chip.dataset.equip;
+    const cap = chip.dataset.cap || null;
+    const prefKey = cap || equip;
+    const curState = state.equipmentPreferences[prefKey] || EQUIPMENT_STATES.NEUTRAL;
+
+    chip.dataset.state = curState;
+    chip.classList.toggle("state-selected", curState === EQUIPMENT_STATES.SELECTED);
+    chip.classList.toggle("state-exclude", curState === EQUIPMENT_STATES.EXCLUDE);
+    chip.classList.toggle("state-neutral", curState === EQUIPMENT_STATES.NEUTRAL);
+    chip.classList.toggle("active", curState === EQUIPMENT_STATES.SELECTED);
+    chip.setAttribute("aria-pressed", curState === EQUIPMENT_STATES.SELECTED ? "true" : "false");
+
+    const label = cap ? (PRESSURE_COOKER_MODEL_LABELS[cap] || cap) : (EQUIPMENT_FEEDBACK_LABELS[equip] || EQUIPMENT_LABELS[equip] || equip);
+    const stateDesc = curState === EQUIPMENT_STATES.SELECTED ? "sélectionné" : (curState === EQUIPMENT_STATES.EXCLUDE ? "exclu" : "neutre");
+    chip.setAttribute("aria-label", `${label} : ${stateDesc}. Cliquer pour changer.`);
+
+    let indicator = chip.querySelector(".chip-state-indicator");
+    if (!indicator) {
+      indicator = document.createElement("span");
+      indicator.className = "chip-state-indicator";
+      indicator.setAttribute("aria-hidden", "true");
+      chip.appendChild(indicator);
+    }
+    indicator.textContent = curState === EQUIPMENT_STATES.SELECTED ? "✓" : (curState === EQUIPMENT_STATES.EXCLUDE ? "⊘" : "");
+  });
+}
+
+// BIND KITCHEN EQUIPMENT CHIPS (Tri-state #506)
 function bindEquipmentChips() {
   const container = document.getElementById("equipment-chips");
   if (!container) return;
   const chips = container.querySelectorAll(".equip-chip");
 
-  const pressureActive = () => pressureCapsOf(state.userEquipment).length > 0;
-  const repaintPressureChips = () => {
-    container.querySelectorAll('[data-equip="pressure_cooker"]').forEach(other => {
-      const otherCap = other.dataset.cap || null;
-      other.classList.toggle("active", otherCap ? pressureCapsOf(state.userEquipment).includes(otherCap) : pressureActive());
-    });
-  };
-
   chips.forEach(chip => {
-    const equip = chip.dataset.equip;
-    const cap = chip.dataset.cap || null;
-    const isPressureFamily = equip === "pressure_cooker" && !cap;
-    if (cap ? pressureCapsOf(state.userEquipment).includes(cap) : (isPressureFamily ? pressureActive() : (state.userEquipment && state.userEquipment[equip]))) {
-      chip.classList.add("active");
-    } else {
-      chip.classList.remove("active");
-    }
-
     chip.addEventListener("click", () => {
       if (chip.classList.contains("locked")) {
         showToast("🍳 Les plaques et poêles sont la base indispensable de toute cuisine !");
         return;
       }
-      let isNowActive;
-      if (cap && equip === "pressure_cooker") {
-        const next = togglePressureCookerCap(state.userEquipment.pressure_cooker, cap);
-        state.userEquipment.pressure_cooker = next;
-        isNowActive = next !== false && pressureCapsOf(state.userEquipment).includes(cap);
-      } else if (isPressureFamily) {
-        const next = togglePressureCookerFamily(state.userEquipment.pressure_cooker);
-        state.userEquipment.pressure_cooker = next;
-        isNowActive = next !== false;
-      } else {
-        isNowActive = !state.userEquipment[equip];
-        state.userEquipment[equip] = isNowActive;
-      }
-      // Repaint all pressure chips: family ownership is capability-based.
-      if (equip === "pressure_cooker") {
-        repaintPressureChips();
-      } else {
-        chip.classList.toggle("active", isNowActive);
-      }
-      saveState();
+      const equip = chip.dataset.equip;
+      const cap = chip.dataset.cap || null;
+      const prefKey = cap || equip;
+      const curState = state.equipmentPreferences[prefKey] || EQUIPMENT_STATES.NEUTRAL;
+      const nextState = cycleEquipmentState(curState);
+      state.equipmentPreferences[prefKey] = nextState;
 
-      const label = cap ? (PRESSURE_COOKER_MODEL_LABELS[cap] || cap) : (EQUIPMENT_LABELS[equip] || equip);
-      if (isNowActive) {
-        showToast(`✓ ${label} activé : les recettes correspondantes sont débloquées !`);
-      } else {
-        showToast(`✕ ${label} désactivé : les recettes nécessitant ce matériel sont signalées.`);
+      // Synchronisation compatibilité rétroactive state.userEquipment
+      if (nextState === EQUIPMENT_STATES.SELECTED) {
+        if (cap) {
+          state.userEquipment.pressure_cooker = togglePressureCookerCap(state.userEquipment.pressure_cooker, cap) || [cap];
+        } else if (equip === "pressure_cooker") {
+          state.userEquipment.pressure_cooker = ["generic"];
+        } else {
+          state.userEquipment[equip] = true;
+        }
+      } else if (nextState === EQUIPMENT_STATES.EXCLUDE) {
+        if (cap) {
+          state.userEquipment.pressure_cooker = false;
+        } else if (equip === "pressure_cooker") {
+          state.userEquipment.pressure_cooker = false;
+        } else {
+          state.userEquipment[equip] = false;
+        }
       }
+
+      saveState();
+      repaintEquipmentChips();
+
+      const toastMessage = getEquipmentStateFeedback(prefKey, nextState);
+      showToast(toastMessage);
 
       renderKiffList(document.querySelector(".filter-chips .chip.active")?.dataset.filter || "all");
       renderStep2();
       renderStep3();
     });
   });
+
+  repaintEquipmentChips();
 }
 
 // POPULATE DYNAMIC SHOPPING DAY SELECTOR
@@ -765,7 +851,7 @@ function bindNavigation() {
   });
 }
 
-// STEP 1: KIFFS SELECTION
+// STEP 1: KIFFS SELECTION (Tri-state filtering & tags #506)
 function renderKiffList(filterCategory) {
   el.kiffCardsContainer.innerHTML = "";
   const pleasureRecipes = Object.values(RECIPES).filter(r => r.profile === "pleasure");
@@ -774,11 +860,16 @@ function renderKiffList(filterCategory) {
     if (filterCategory !== "all" && recipe.category !== filterCategory) return;
 
     const isSelected = state.selectedKiffIds.includes(recipe.id);
+    const admissible = isRecipeAdmissible(recipe, state.equipmentPreferences);
+
+    // Règle de non-rétroactivité (#506) : une recette exclue est masquée SAUF si déjà sélectionnée
+    if (!admissible && !isSelected) return;
+
     const missingEquip = getMissingEquipment(recipe, state.userEquipment);
     const hasMissing = missingEquip.length > 0;
 
     const card = document.createElement("div");
-    card.className = `kiff-card ${isSelected ? "selected" : ""} ${hasMissing ? "incompatible-equip" : ""}`;
+    card.className = `kiff-card ${isSelected ? "selected" : ""} ${hasMissing || !admissible ? "incompatible-equip" : ""}`;
 
     const currentSlot = state.selectedKiffSlots[recipe.id] || { dayIndex: 5, period: "dinner" };
     const slotValue = `${currentSlot.dayIndex}-${currentSlot.period}`;
@@ -790,9 +881,43 @@ function renderKiffList(filterCategory) {
     `).join("");
 
     let warningBadgeHtml = "";
-    if (hasMissing) {
-      const names = missingEquip.map(e => EQUIPMENT_LABELS[e] || e).join(", ");
+    if (!admissible && isSelected) {
+      warningBadgeHtml = `<div class="equip-warning-badge">⚠️ Équipement exclu par vos préférences (conservé car sélectionné)</div>`;
+    } else if (hasMissing) {
+      const names = missingEquip.map(e => EQUIPMENT_FEEDBACK_LABELS[e] || EQUIPMENT_LABELS[e] || e).join(", ");
       warningBadgeHtml = `<div class="equip-warning-badge">⚠️ Matériel non configuré : ${names}</div>`;
+    }
+
+    // Extraire les clés d'équipement requises pour générer les tags interactifs (#506)
+    const equipKeys = new Set();
+    const reqList = recipe.requiredEquipment || [];
+    reqList.forEach(r => {
+      const k = typeof r === "string" ? r : r?.key;
+      if (k) equipKeys.add(k);
+    });
+    if (Array.isArray(recipe.variants)) {
+      recipe.variants.forEach(v => {
+        const vReq = v.requiredEquipment || (v.appliances ? Object.keys(v.appliances) : []);
+        vReq.forEach(r => {
+          const k = typeof r === "string" ? r : r?.key;
+          if (k) equipKeys.add(k);
+        });
+      });
+    }
+
+    let equipTagsHtml = "";
+    if (equipKeys.size > 0) {
+      equipTagsHtml = Array.from(equipKeys).map(k => {
+        const tagState = state.equipmentPreferences[k] || EQUIPMENT_STATES.NEUTRAL;
+        const tagLabel = EQUIPMENT_FEEDBACK_LABELS[k] || EQUIPMENT_LABELS[k] || k;
+        const stateDesc = tagState === EQUIPMENT_STATES.SELECTED ? "sélectionné" : (tagState === EQUIPMENT_STATES.EXCLUDE ? "exclu" : "neutre");
+        const icon = tagState === EQUIPMENT_STATES.SELECTED ? "✓ " : (tagState === EQUIPMENT_STATES.EXCLUDE ? "⊘ " : "");
+        return `<button type="button" class="equip-tag state-${tagState}" data-equip="${k}" aria-pressed="${tagState === EQUIPMENT_STATES.SELECTED}" aria-label="${tagLabel} : ${stateDesc}. Cliquer pour basculer la préférence." title="${tagLabel} (${stateDesc})">
+          <span class="equip-tag-icon">${icon}</span><span>🥘 ${tagLabel}</span>
+        </button>`;
+      }).join(" ");
+    } else {
+      equipTagsHtml = `<span class="badge">🥘 ${recipe.appliance}</span>`;
     }
 
     card.innerHTML = `
@@ -805,7 +930,7 @@ function renderKiffList(filterCategory) {
       <div class="kiff-card-tags">
         <span class="badge pleasure">✨ Plaisir</span>
         <span class="badge">⏱️ ${recipe.timeTotal}</span>
-        <span class="badge">🥘 ${recipe.appliance}</span>
+        ${equipTagsHtml}
       </div>
       ${isSelected ? `
         <div class="kiff-day-picker" onclick="event.stopPropagation()">
@@ -816,6 +941,35 @@ function renderKiffList(filterCategory) {
         </div>
       ` : ""}
     `;
+
+    // Interaction sur les tags d'équipement (#506)
+    card.querySelectorAll(".equip-tag").forEach(tagBtn => {
+      tagBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const equipKey = tagBtn.dataset.equip;
+        if (equipKey === "stovetop") {
+          showToast("🍳 Les plaques et poêles sont la base indispensable de toute cuisine !");
+          return;
+        }
+        const cur = state.equipmentPreferences[equipKey] || EQUIPMENT_STATES.NEUTRAL;
+        const next = cycleEquipmentState(cur);
+        state.equipmentPreferences[equipKey] = next;
+
+        // Synchronisation compatibilité rétroactive state.userEquipment
+        if (next === EQUIPMENT_STATES.SELECTED) {
+          state.userEquipment[equipKey] = true;
+        } else if (next === EQUIPMENT_STATES.EXCLUDE) {
+          state.userEquipment[equipKey] = false;
+        }
+
+        saveState();
+        repaintEquipmentChips();
+        showToast(getEquipmentStateFeedback(equipKey, next));
+        renderKiffList(document.querySelector(".filter-chips .chip.active")?.dataset.filter || "all");
+        renderStep2();
+        renderStep3();
+      });
+    });
 
     card.addEventListener("click", () => {
       if (hasMissing && !isSelected) {
@@ -907,6 +1061,10 @@ function renderHeroCard() {
   if (dinnerSlot?.type === "recipe") {
     const recipe = RECIPES[dinnerSlot.recipeId] || RECIPES["colin-alaska-tomate-estragon"];
     const isShort = state.shortEveningActive && recipe.shortEveningAlternative;
+    const isAdmissible = recipe ? isRecipeAdmissible(recipe, state.equipmentPreferences) : true;
+    const heroWarningBadgeHtml = !isAdmissible
+      ? `<div class="equip-warning-badge" style="margin-top: 6px;">⚠️ Recette incompatible avec vos préférences de matériel (repas conservé)</div>`
+      : "";
 
     const displayTitle = isShort ? recipe.shortEveningAlternative.title : recipe.title;
     const displayTimeTotal = isShort ? recipe.shortEveningAlternative.timeTotal : recipe.timeTotal;
@@ -921,6 +1079,7 @@ function renderHeroCard() {
         </div>
 
         <h1 class="hero-title">${displayTitle}</h1>
+        ${heroWarningBadgeHtml}
 
         <div class="hero-metrics-bar">
           <div class="metric-item">
@@ -1037,6 +1196,13 @@ function renderHeroCard() {
   }
 }
 
+function isSlotAdmissible(slot) {
+  if (slot?.type === "recipe" && RECIPES[slot.recipeId]) {
+    return isRecipeAdmissible(RECIPES[slot.recipeId], state.equipmentPreferences);
+  }
+  return true;
+}
+
 function renderWeekTimeline() {
   el.weekDaysContainer.innerHTML = "";
 
@@ -1066,6 +1232,7 @@ function renderWeekTimeline() {
             <div class="slot-left">
               <span class="slot-period-tag">Midi</span>
               <span class="slot-title">${getSlotDisplayTitle(day.lunch)}</span>
+              ${!isSlotAdmissible(day.lunch) ? '<span class="badge equip-incompatible-badge" title="Matériel exclu par vos préférences">⚠️ Incompatible</span>' : ''}
             </div>
             <div class="slot-right">
               <span class="badge ${getSlotBadgeClass(day.lunch)}">${getSlotBadgeLabel(day.lunch)}</span>
@@ -1078,6 +1245,7 @@ function renderWeekTimeline() {
             <div class="slot-left">
               <span class="slot-period-tag">Soir</span>
               <span class="slot-title">${getSlotDisplayTitle(day.dinner)}</span>
+              ${!isSlotAdmissible(day.dinner) ? '<span class="badge equip-incompatible-badge" title="Matériel exclu par vos préférences">⚠️ Incompatible</span>' : ''}
             </div>
             <div class="slot-right">
               <span class="badge ${getSlotBadgeClass(day.dinner)}">${getSlotBadgeLabel(day.dinner)}</span>

@@ -1612,10 +1612,27 @@ h2 {
   border-color: #d6d3d1;
 }
 
-.equip-chip.active {
+.equip-chip.active,
+.equip-chip.state-selected {
   background: #ecfdf5;
   border-color: #10b981;
   color: #047857;
+}
+
+.equip-chip.state-exclude {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #b91c1c;
+}
+
+.equip-chip.state-exclude .chip-state-indicator {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.equip-chip.state-selected .chip-state-indicator {
+  color: #059669;
+  font-weight: 800;
 }
 
 .equip-chip.locked {
@@ -1623,6 +1640,64 @@ h2 {
   background: #f0fdf4;
   border-color: #86efac;
   color: #166534;
+}
+
+.chip-state-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+/* Interactive equip tags on recipe cards (#506) */
+.equip-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  background: #f5f5f4;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.equip-tag:hover {
+  border-color: #a8a29e;
+  transform: translateY(-1px);
+}
+
+.equip-tag.state-selected {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #047857;
+}
+
+.equip-tag.state-exclude {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #b91c1c;
+  text-decoration: line-through;
+}
+
+.equip-tag.state-neutral {
+  background: #f5f5f4;
+  border-color: var(--border-default);
+  color: var(--text-muted);
+}
+
+.equip-incompatible-badge {
+  background: #fef2f2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fecaca;
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .equip-warning-badge {

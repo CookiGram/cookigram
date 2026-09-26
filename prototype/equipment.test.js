@@ -14,6 +14,15 @@ import {
   pressureCapsOf,
   togglePressureCookerCap,
   togglePressureCookerFamily,
+  EQUIPMENT_STATES,
+  DEFAULT_EQUIPMENT_PREFERENCES,
+  cycleEquipmentState,
+  getEquipmentStateFeedback,
+  migrateEquipmentPreferences,
+  getRecipeVariants,
+  isVariantAdmissible,
+  getAdmissibleVariants,
+  isRecipeAdmissible,
 } from "./equipment.js";
 
 const FULL = Object.fromEntries(CANONICAL_KEYS.map((key) => [key, true]));
@@ -205,3 +214,262 @@ test("clés historiques conservées", () => {
   assert.ok(isRecipeCompatible({ requiredEquipment: ["thermomix", "four"] }, { thermomix: true, four: true }));
   assert.ok(!isRecipeCompatible({ requiredEquipment: ["thermomix", "four"] }, { four: true }));
 });
+
+// --- Tests Modèle Tri-State & Filtrage par Variante (#506) ---
+
+test("tri-state : cycle neutral -> selected -> exclude -> neutral", () => {
+  assert.equal(cycleEquipmentState(EQUIPMENT_STATES.NEUTRAL), EQUIPMENT_STATES.SELECTED);
+  assert.equal(cycleEquipmentState(EQUIPMENT_STATES.SELECTED), EQUIPMENT_STATES.EXCLUDE);
+  assert.equal(cycleEquipmentState(EQUIPMENT_STATES.EXCLUDE), EQUIPMENT_STATES.NEUTRAL);
+  // Valeur inconnue ou absente démarre à selected
+  assert.equal(cycleEquipmentState(undefined), EQUIPMENT_STATES.SELECTED);
+  assert.equal(cycleEquipmentState("unknown"), EQUIPMENT_STATES.SELECTED);
+});
+
+test("tri-state : état initial neutral sur les 14 clés canoniques", () => {
+  const keys = Object.keys(DEFAULT_EQUIPMENT_PREFERENCES);
+  assert.equal(keys.length, 14);
+  for (const key of CANONICAL_KEYS) {
+    assert.equal(DEFAULT_EQUIPMENT_PREFERENCES[key], EQUIPMENT_STATES.NEUTRAL, `${key} n'est pas neutral`);
+  }
+  // En état initial neutre, aucune recette n'est filtrée
+  const recipeWithReqs = { requiredEquipment: ["four", "thermomix"] };
+  assert.ok(isRecipeAdmissible(recipeWithReqs, DEFAULT_EQUIPMENT_PREFERENCES));
+});
+
+test("tri-state : messages de feedback conformes à l'accessibilité", () => {
+  assert.equal(getEquipmentStateFeedback("thermomix", EQUIPMENT_STATES.SELECTED), "Thermomix sélectionné");
+  assert.equal(getEquipmentStateFeedback("four", EQUIPMENT_STATES.EXCLUDE), "Four exclu");
+  assert.equal(getEquipmentStateFeedback("air_fryer", EQUIPMENT_STATES.NEUTRAL), "Préférence Air Fryer supprimée");
+  assert.equal(getEquipmentStateFeedback("pressure_cooker", EQUIPMENT_STATES.SELECTED), "Autocuiseur sélectionné");
+});
+
+test("tri-state : persistance et migration tolérante de profil legacy", () => {
+  // Profil null ou vide
+  const def = migrateEquipmentPreferences(null);
+  assert.deepEqual(def, DEFAULT_EQUIPMENT_PREFERENCES);
+
+  // Profil legacy booléen (four=false -> exclude, thermomix=true -> selected)
+  const legacy1 = migrateEquipmentPreferences({ oven: false, thermomix: true, stovetop: true });
+  assert.equal(legacy1.four, EQUIPMENT_STATES.EXCLUDE);
+  assert.equal(legacy1.thermomix, EQUIPMENT_STATES.SELECTED);
+  // stovetop n'est jamais basculé en selected lors de la migration automatique
+  assert.equal(legacy1.stovetop, EQUIPMENT_STATES.NEUTRAL);
+
+  // Profil avec tableau de capacités (pressure_cooker: ['instant_pot'])
+  const legacy2 = migrateEquipmentPreferences({ instant_pot: true, air_fryer: true });
+  assert.equal(legacy2.pressure_cooker, EQUIPMENT_STATES.SELECTED);
+  assert.equal(legacy2.air_fryer, EQUIPMENT_STATES.SELECTED);
+
+  // Profil tri-state déjà valide préservé
+  const triState = migrateEquipmentPreferences({
+    four: EQUIPMENT_STATES.EXCLUDE,
+    thermomix: EQUIPMENT_STATES.SELECTED,
+    air_fryer: EQUIPMENT_STATES.NEUTRAL,
+  });
+  assert.equal(triState.four, EQUIPMENT_STATES.EXCLUDE);
+  assert.equal(triState.thermomix, EQUIPMENT_STATES.SELECTED);
+  assert.equal(triState.air_fryer, EQUIPMENT_STATES.NEUTRAL);
+});
+
+test("tri-state : combinaison OR de plusieurs équipements sélectionnés", () => {
+  const prefs = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    thermomix: EQUIPMENT_STATES.SELECTED,
+    air_fryer: EQUIPMENT_STATES.SELECTED,
+  };
+
+  // Une recette nécessitant thermomix doit être admissible
+  assert.ok(isRecipeAdmissible({ requiredEquipment: ["thermomix"] }, prefs));
+  // Une recette nécessitant air_fryer doit être admissible
+  assert.ok(isRecipeAdmissible({ requiredEquipment: ["air_fryer"] }, prefs));
+  // Une recette nécessitant four (non sélectionné) ne doit PAS être admissible
+  assert.ok(!isRecipeAdmissible({ requiredEquipment: ["four"] }, prefs));
+  // Une recette nécessitant stovetop (non sélectionné) ne doit PAS être admissible
+  assert.ok(!isRecipeAdmissible({ requiredEquipment: ["stovetop"] }, prefs));
+});
+
+test("tri-state : exclusion stricte d'un équipement", () => {
+  const prefs = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    four: EQUIPMENT_STATES.EXCLUDE,
+  };
+
+  // Recette avec four est rejetée
+  assert.ok(!isRecipeAdmissible({ requiredEquipment: ["four"] }, prefs));
+  // Recette sans four (ex. stovetop) est acceptée (pas de sélection positive active)
+  assert.ok(isRecipeAdmissible({ requiredEquipment: ["stovetop"] }, prefs));
+  assert.ok(isRecipeAdmissible({ requiredEquipment: ["thermomix"] }, prefs));
+});
+
+test("tri-state : combinaison sélection + exclusion simultanées", () => {
+  const prefs = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    thermomix: EQUIPMENT_STATES.SELECTED,
+    four: EQUIPMENT_STATES.EXCLUDE,
+  };
+
+  // Thermomix seul : admissible
+  assert.ok(isRecipeAdmissible({ requiredEquipment: ["thermomix"] }, prefs));
+  // Thermomix ET Four : rejeté car le Four est exclu (exclusion prioritaire)
+  assert.ok(!isRecipeAdmissible({ requiredEquipment: ["thermomix", "four"] }, prefs));
+  // Four seul : rejeté
+  assert.ok(!isRecipeAdmissible({ requiredEquipment: ["four"] }, prefs));
+  // Stovetop seul : rejeté car thermomix est sélectionné (filtre positif non satisfait)
+  assert.ok(!isRecipeAdmissible({ requiredEquipment: ["stovetop"] }, prefs));
+});
+
+test("tri-state : recette mono-variante", () => {
+  const mono = { id: "pommes-anna", requiredEquipment: ["four"] };
+
+  // Neutre
+  assert.ok(isRecipeAdmissible(mono, DEFAULT_EQUIPMENT_PREFERENCES));
+
+  // Four sélectionné
+  const prefsSelected = { ...DEFAULT_EQUIPMENT_PREFERENCES, four: EQUIPMENT_STATES.SELECTED };
+  assert.ok(isRecipeAdmissible(mono, prefsSelected));
+
+  // Four exclu
+  const prefsExcluded = { ...DEFAULT_EQUIPMENT_PREFERENCES, four: EQUIPMENT_STATES.EXCLUDE };
+  assert.ok(!isRecipeAdmissible(mono, prefsExcluded));
+});
+
+test("tri-state : recette multi-variante partiellement exclue (reste visible)", () => {
+  // Structure identique à la recette carbonnade-flamande du catalogue CookiGram
+  const carbonnade = {
+    id: "carbonnade-flamande",
+    title: "Carbonnade flamande à la bière brune & pain d'épices",
+    requiredEquipment: ["thermomix"],
+    variants: [
+      {
+        id: "thermomix",
+        name: "Thermomix (Mijotage doux régulé)",
+        default: true,
+        requiredEquipment: ["thermomix"],
+      },
+      {
+        id: "instant-pot",
+        name: "Instant Pot (Haute Pression Express)",
+        requiredEquipment: [{ key: "pressure_cooker", values: ["instant_pot"] }],
+      },
+      {
+        id: "cocotte-fonte",
+        name: "Cocotte en fonte traditionnelle (Sans robot)",
+        requiredEquipment: ["stovetop"],
+      },
+    ],
+  };
+
+  // Exclure thermomix : la recette reste admissible via instant-pot et cocotte-fonte
+  const prefsExThermomix = { ...DEFAULT_EQUIPMENT_PREFERENCES, thermomix: EQUIPMENT_STATES.EXCLUDE };
+  assert.ok(isRecipeAdmissible(carbonnade, prefsExThermomix));
+  const admissible1 = getAdmissibleVariants(carbonnade, prefsExThermomix);
+  assert.equal(admissible1.length, 2);
+  assert.deepEqual(admissible1.map((v) => v.id), ["instant-pot", "cocotte-fonte"]);
+
+  // Exclure thermomix ET pressure_cooker : la recette reste admissible via cocotte-fonte (stovetop)
+  const prefsExTwo = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    thermomix: EQUIPMENT_STATES.EXCLUDE,
+    pressure_cooker: EQUIPMENT_STATES.EXCLUDE,
+  };
+  assert.ok(isRecipeAdmissible(carbonnade, prefsExTwo));
+  const admissible2 = getAdmissibleVariants(carbonnade, prefsExTwo);
+  assert.equal(admissible2.length, 1);
+  assert.equal(admissible2[0].id, "cocotte-fonte");
+});
+
+test("tri-state : recette multi-variante totalement exclue (masquée)", () => {
+  const carbonnade = {
+    id: "carbonnade-flamande",
+    title: "Carbonnade flamande à la bière brune & pain d'épices",
+    requiredEquipment: ["thermomix"],
+    variants: [
+      {
+        id: "thermomix",
+        name: "Thermomix (Mijotage doux régulé)",
+        requiredEquipment: ["thermomix"],
+      },
+      {
+        id: "instant-pot",
+        name: "Instant Pot (Haute Pression Express)",
+        requiredEquipment: [{ key: "pressure_cooker", values: ["instant_pot"] }],
+      },
+      {
+        id: "cocotte-fonte",
+        name: "Cocotte en fonte traditionnelle (Sans robot)",
+        requiredEquipment: ["stovetop"],
+      },
+    ],
+  };
+
+  // Exclure les 3 équipements : thermomix, pressure_cooker, stovetop
+  const prefsExAll = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    thermomix: EQUIPMENT_STATES.EXCLUDE,
+    pressure_cooker: EQUIPMENT_STATES.EXCLUDE,
+    stovetop: EQUIPMENT_STATES.EXCLUDE,
+  };
+  assert.ok(!isRecipeAdmissible(carbonnade, prefsExAll));
+  assert.deepEqual(getAdmissibleVariants(carbonnade, prefsExAll), []);
+});
+
+test("tri-state : disjonction blender / immersion_blender (OR)", () => {
+  const soup = {
+    id: "soupe",
+    requiredEquipment: ["blender", "immersion_blender"],
+  };
+
+  // Exclure seulement blender : admissible car le mixeur plongeant est utilisable
+  const prefsExBlender = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    blender: EQUIPMENT_STATES.EXCLUDE,
+  };
+  assert.ok(isRecipeAdmissible(soup, prefsExBlender));
+
+  // Exclure seulement mixeur plongeant : admissible car le blender est utilisable
+  const prefsExImmersion = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    immersion_blender: EQUIPMENT_STATES.EXCLUDE,
+  };
+  assert.ok(isRecipeAdmissible(soup, prefsExImmersion));
+
+  // Exclure les deux : non admissible
+  const prefsExBoth = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    blender: EQUIPMENT_STATES.EXCLUDE,
+    immersion_blender: EQUIPMENT_STATES.EXCLUDE,
+  };
+  assert.ok(!isRecipeAdmissible(soup, prefsExBoth));
+
+  // Sélectionner blender : admissible (satisfait le filtre positif)
+  const prefsSelBlender = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    blender: EQUIPMENT_STATES.SELECTED,
+  };
+  assert.ok(isRecipeAdmissible(soup, prefsSelBlender));
+});
+
+test("tri-state : règle de non-rétroactivité (arbitrage PO 25/09/2026)", () => {
+  // Une recette exclue par préférences de matériel
+  const prefs = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    four: EQUIPMENT_STATES.EXCLUDE,
+  };
+  const recipe = { id: "pommes-anna", requiredEquipment: ["four"] };
+  assert.ok(!isRecipeAdmissible(recipe, prefs), "La recette doit être inadmissible sous ces préférences");
+
+  // Règle de non-rétroactivité pour la sélection de repas :
+  // Si le repas est déjà présent dans les kiffs sélectionnés, il ne doit PAS être supprimé silencieusement
+  const selectedKiffIds = ["pommes-anna"];
+  const isSelected = selectedKiffIds.includes(recipe.id);
+  const isAdmissible = isRecipeAdmissible(recipe, prefs);
+
+  // Le prédicat de visibilité préserve le repas sélectionné :
+  const shouldKeepVisible = isAdmissible || isSelected;
+  assert.ok(shouldKeepVisible, "Le repas planifié doit rester visible malgré l'incompatibilité");
+  // Mais son statut d'incompatibilité est détectable pour affichage d'un badge d'alerte :
+  assert.equal(isAdmissible, false);
+});
+
+
