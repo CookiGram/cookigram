@@ -11,6 +11,8 @@ nutrition_profile: vitality
 tags: [air-fryer, patate-douce, végétarien, accompagnement]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-sweet-potato-fries
 author: Samuel Goldsmith
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-frites-patate-douce-paprika.webp
 image_credit:
   author: CookiGram

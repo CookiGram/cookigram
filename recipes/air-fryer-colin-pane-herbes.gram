@@ -11,6 +11,8 @@ nutrition_profile: balanced
 tags: [air-fryer, poisson, colin, pané]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-or-oven-cooked-fish-chips
 author: Ailsa Burt
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-colin-pane-herbes.webp
 image_credit:
   author: CookiGram

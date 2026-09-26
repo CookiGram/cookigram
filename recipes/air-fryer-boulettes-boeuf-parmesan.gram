@@ -11,6 +11,8 @@ nutrition_profile: balanced
 tags: [air-fryer, bœuf, boulettes, familial]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-meatballs
 author: Samuel Goldsmith
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-boulettes-boeuf-parmesan.webp
 image_credit:
   author: CookiGram

@@ -11,6 +11,8 @@ nutrition_profile: balanced
 tags: [air-fryer, poulet, miel, moutarde]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-roast-chicken
 author: Samuel Goldsmith
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-cuisses-poulet-miel-moutarde.webp
 image_credit:
   author: CookiGram

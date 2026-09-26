@@ -11,6 +11,8 @@ nutrition_profile: balanced
 tags: [air-fryer, poulet, fromage, rapide]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-recipes
 author: Good Food team
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-quesadillas-poulet-fromage.webp
 image_credit:
   author: CookiGram

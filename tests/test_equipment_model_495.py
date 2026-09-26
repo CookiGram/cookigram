@@ -86,14 +86,19 @@ UTENSILS_OUT = frozenset({
 # all TM31-declared; 3 bouillons/fond + caramel carry no appliances block,
 # matching main-corpus stovetop practice), stand_mixer 0 -> 7 (A1 pates,
 # [standard]); all other counts unchanged.
+# Lane D recipe migration (issue #495):
+# - air_fryer: 0 -> 15 (15 air-fryer-*.gram recipes declared)
+# - instant_pot (7) migrated to pressure_cooker: [instant_pot]
+# - cookeo (1) migrated to pressure_cooker: [cookeo]
+# - pressure_cooker: 0 -> 8
 EXPECTED_KEY_COUNTS = {
     "thermomix": 112,
     "four": 21,
     "pizza_oven": 20,
-    "instant_pot": 7,
+    "pressure_cooker": 8,
+    "air_fryer": 15,
     "sous_vide": 6,
     "rice_cooker": 1,
-    "cookeo": 1,
     "stand_mixer": 7,
 }
 

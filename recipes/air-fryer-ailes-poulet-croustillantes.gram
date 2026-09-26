@@ -11,6 +11,8 @@ nutrition_profile: pleasure
 tags: [air-fryer, poulet, apéritif]
 source: https://www.bbcgoodfood.com/recipes/air-fried-chicken-wings/
 author: Anna Glover
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-ailes-poulet-croustillantes.webp
 image_credit:
   author: CookiGram

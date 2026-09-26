@@ -11,6 +11,8 @@ nutrition_profile: balanced
 tags: [air-fryer, saumon, poisson, rapide]
 source: https://www.bbcgoodfood.com/recipes/air-fryer-salmon
 author: Samuel Goldsmith
+appliances:
+  air_fryer: [standard]
 image: images/air-fryer-saumon-citron-aneth.webp
 image_credit:
   author: CookiGram

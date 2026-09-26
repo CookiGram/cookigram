@@ -12,7 +12,7 @@ tags: [sushi, thon, avocat, sans-poisson-cru, rapide]
 source: https://www.lespetitsplaisirsdedoro.fr/2021/05/sushi-cake-thon-avocat-cookeo.html
 author: Doro
 appliances:
-  cookeo: [Cookeo]
+  pressure_cooker: [cookeo]
 required_equipment:
   - Moule carré ou moule tablette
   - Film alimentaire
