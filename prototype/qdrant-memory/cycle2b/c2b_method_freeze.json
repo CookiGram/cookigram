@@ -1,0 +1,238 @@
+{
+ "cycle": "2b",
+ "phase": "method-freeze-pre-dev",
+ "frozen_note": "Freeze methodologique REDEFINE_CORPUS_GO. Aucune calibration, aucun dev-set, aucun holdout, aucune mesure. Prochains GO requis avant dev, calibration, freeze point, holdout, mesure.",
+ "date": "2026-09-26",
+ "base_commit": "ce5f3dde2e1a06ec2b69f7c59df4314fc9bd75d5",
+ "old_corpus": {
+  "scope": "docs/**/*.md (24) + decisions/* (1) + .agents/claims.json (resume 1 chunk)",
+  "paths": 26,
+  "section_chunks": 209,
+  "section_sha": "dc89e7a7a0a66f9f",
+  "fact_chunks": 881,
+  "fact_sha": "f198b30c9193d78d"
+ },
+ "new_paths": [
+  "AGENTS.md",
+  "CHARTER.md",
+  "CONTRIBUTING.md",
+  "GEMINI.md",
+  "PRODUCT_PRINCIPLES.md",
+  "README.md",
+  "README.en.md",
+  "TODO.md",
+  ".agents/STATUS.md",
+  ".agents/roles/README.md",
+  ".agents/rules/cooking-execution.md",
+  ".agents/rules/git-workflow.md",
+  ".agents/rules/image-assets.md",
+  ".agents/rules/ingredient-icons.md",
+  ".agents/rules/multi-agent-orchestration.md",
+  ".agents/rules/product-governance.md",
+  ".agents/rules/task-claiming.md",
+  ".agents/rules/token-frugality.md"
+ ],
+ "new_corpus": {
+  "section_chunks": 350,
+  "section_sha": "72b391ca91fb2460",
+  "fact_chunks": 1912,
+  "fact_sha": "38431cd1458610eb",
+  "c2b_only_sec": 141,
+  "c2b_only_fact": 936
+ },
+ "banned_golds": [
+  "docs/ATOMIC_ACTION_ILLUSTRATIONS.md",
+  "docs/CATALOGUE-CONTRACT-CORE.md",
+  "docs/CI-ARTIFACT-STORAGE.md",
+  "docs/E2E-LEDGER.md",
+  "docs/HERDR-WORKSPACE-NAMING.md",
+  "docs/IMAGE-PROVENANCE.md",
+  "docs/INSTANCE-IDENTITY.md",
+  "docs/MEAL-COMPOSITION-V1.md",
+  "docs/MEAL_PLANNING_NUTRITION.md",
+  "docs/PUBLIC-CONTENT-LINT.md",
+  "docs/equipment-add-appliance.md",
+  "docs/equipment-audit-495.md",
+  "docs/equipment-contract-495.md",
+  ".agents/claims.json",
+  "docs/E2E-LEAD-PROTOCOL.md",
+  "docs/E2E-WORK-ITEM.md",
+  "docs/PUBLIC-CONTRACT.md",
+  "docs/nutrition-profile-issue-136.md",
+  "docs/review-169-design.md",
+  "docs/work-items/391-lot-icons.md",
+  "docs/work-items/391-lot-ui-icons.md",
+  "decisions/PDR-0010-nutrition-plaisir-sante-meal-planning.md",
+  "docs/review-169-cooking.md",
+  "docs/review-169-recipe.md",
+  "docs/work-items/391-lot-header-brand.md",
+  "docs/work-items/391-lot-typography.md"
+ ],
+ "inclusion_rule": [
+  "fichier versionne au freeze, UTF-8",
+  "liste fermee 18 chemins, aucune autre source",
+  "pertinence produit/agent (gouvernance, principes, contribution, roadmap, statuts, orchestration)",
+  "contenu textuel >=1 section ## (image-assets/git-workflow = distracteurs indexes, jamais golds)",
+  "stabilite (pas de sortie generee)",
+  "zero des 26 bannis, zero item dev-14/holdout-8"
+ ],
+ "excluded_deliberately": [
+  "recipes/*.gram (233, ancres non uniques)",
+  "image-prompts/*.md (233, miroir recettes)",
+  ".gram/*.yaml (tabulaire, + collision clous-de-girofle)",
+  ".agents/skills/*, roles experts, scripts (sans ## stables / outillage)",
+  ".agents/claims.json (deja gold dev-14)"
+ ],
+ "selection_basis": "structure + pertinence, JAMAIS performance retrieval (aucun Qdrant lance ; ancres grep/comptage uniquement)",
+ "method_kept": [
+  "payload, filtres, top_k=3",
+  "metriques rank-1/recall@3 + decision stricte/indulgente",
+  "grille tau x delta, bras fact primaire, sec meme point, regle cycle 2"
+ ],
+ "rupture": "corpus change (209->350 sec, 881->1912 fact) : volumes/latences non comparables ; nature des golds change : taux non comparables ; seule la question de replication reste comparable",
+ "anchor_table": [
+  {
+   "anchor": "Six Piliers",
+   "gold": "CHARTER.md"
+  },
+  {
+   "anchor": "Contrôles locaux réellement disponibles",
+   "gold": "CONTRIBUTING.md"
+  },
+  {
+   "anchor": "Contributions assistées par agent",
+   "gold": "CONTRIBUTING.md"
+  },
+  {
+   "anchor": "Règles d'Or Développeurs",
+   "gold": ".agents/STATUS.md"
+  },
+  {
+   "anchor": "Jalons de Maturité",
+   "gold": ".agents/STATUS.md"
+  },
+  {
+   "anchor": "Mobile first",
+   "gold": "PRODUCT_PRINCIPLES.md"
+  },
+  {
+   "anchor": "Nutrition positive",
+   "gold": "PRODUCT_PRINCIPLES.md"
+  },
+  {
+   "anchor": "spécialistes conseillent",
+   "gold": "PRODUCT_PRINCIPLES.md"
+  },
+  {
+   "anchor": "P0 — Stabiliser",
+   "gold": "TODO.md"
+  },
+  {
+   "anchor": "P1 — Mettre en place",
+   "gold": "TODO.md"
+  },
+  {
+   "anchor": "P2 — Fiabiliser",
+   "gold": "TODO.md"
+  },
+  {
+   "anchor": "P3 — Qualité produit",
+   "gold": "TODO.md"
+  },
+  {
+   "anchor": "Vocabulaire officiel",
+   "gold": "README.md"
+  },
+  {
+   "anchor": "Frontière avec le moteur",
+   "gold": "README.md"
+  },
+  {
+   "anchor": "Roadmap — Entrée",
+   "gold": "README.md"
+  },
+  {
+   "anchor": "Verrou Distribué",
+   "gold": ".agents/rules/multi-agent-orchestration.md"
+  },
+  {
+   "anchor": "Watchdog de 15 minutes",
+   "gold": ".agents/rules/task-claiming.md"
+  },
+  {
+   "anchor": "INTERDICTION DE DOUBLON",
+   "gold": ".agents/rules/task-claiming.md"
+  },
+  {
+   "anchor": "Frugalité Éclairée",
+   "gold": ".agents/rules/token-frugality.md"
+  },
+  {
+   "anchor": "Model Tiering",
+   "gold": ".agents/rules/token-frugality.md"
+  },
+  {
+   "anchor": "Context Pruning",
+   "gold": ".agents/rules/token-frugality.md"
+  },
+  {
+   "anchor": "Taxonomie Obligatoire",
+   "gold": ".agents/rules/cooking-execution.md"
+  },
+  {
+   "anchor": "Règle 24",
+   "gold": ".agents/rules/cooking-execution.md"
+  },
+  {
+   "anchor": "Graceful Degradation",
+   "gold": ".agents/rules/ingredient-icons.md"
+  },
+  {
+   "anchor": "Direction artistique",
+   "gold": ".agents/rules/ingredient-icons.md"
+  },
+  {
+   "anchor": "Unité de Travail",
+   "gold": ".agents/rules/cooking-execution.md"
+  },
+  {
+   "anchor": "Quotas & Runtimes",
+   "gold": ".agents/rules/multi-agent-orchestration.md"
+  },
+  {
+   "anchor": "Matrice d'Attribution",
+   "gold": ".agents/rules/multi-agent-orchestration.md"
+  },
+  {
+   "anchor": "Dernières Livraisons",
+   "gold": ".agents/STATUS.md"
+  },
+  {
+   "anchor": "snapshot 3 sept",
+   "gold": "TODO.md"
+  }
+ ],
+ "capacity": {
+  "anchor_docs_distincts": 11,
+  "section_chunks_nouveau_perimetre": 90,
+  "slots_estimes": "11 docs x ~3 ancres > 60 (dev>=30 + holdout>=30 disjoints au gold et a l'ancre)",
+  "reserve_indexee_non_gold": [
+   "AGENTS.md",
+   "GEMINI.md",
+   "README.en.md",
+   ".agents/roles/README.md",
+   ".agents/rules/git-workflow.md"
+  ]
+ },
+ "collisions_connues": [
+  "CHARTER.md contient 'kiffs' (ancre bannie cycle1) : CHARTER n'est pas gold dans la table ; 'kiffs' reste interdit comme ancre future",
+  ".gram contient 'clous-de-girofle' mais .gram EXCLU du corpus : zero collision d'indexation"
+ ],
+ "procedure_next": [
+  "GO dev : c2b_dev.json >=30 (~23 answer + traps/OOD)",
+  "calibration DEV ONLY -> c2b_calibration.json",
+  "freeze point commite+pousse -> STOP",
+  "GO holdout : c2b_holdout.json >=30 disjoints",
+  "une mesure unique, sans retuning"
+ ]
+}
