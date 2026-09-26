@@ -121,8 +121,12 @@ jobs:
 
           pinned="$(tr -d '[:space:]' < .core-version)"
           current_builder="$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
+          current_contract_source_sha="$(python -c 'import json; print(json.load(open(".builder.json"))["contract_source_sha"])')"
+          current_contract_sha256="$(python -c 'import json; print(json.load(open(".builder.json"))["contract_sha256"])')"
           changed=true
-          if [[ "$core_sha" == "$pinned" && "$core_sha" == "$current_builder" ]]; then
+          if [[ "$core_sha" == "$pinned" && "$core_sha" == "$current_builder" \
+            && "$contract_source_sha" == "$current_contract_source_sha" \
+            && "$contract_sha256" == "$current_contract_sha256" ]]; then
             changed=false
           fi
 

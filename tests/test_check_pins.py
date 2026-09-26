@@ -139,6 +139,21 @@ def test_sync_dispatches_pages_with_validated_sha_and_ci_run() -> None:
     assert "--field ci_run_id='${{ steps.main_ci.outputs.run_id }}'" in workflow
 
 
+def test_sync_detects_contract_only_rotation() -> None:
+    workflow = yaml.safe_load((ROOT / ".github/workflows/sync-core-pin.yml").read_text(encoding="utf-8"))
+    run = next(
+        step["run"]
+        for step in workflow["jobs"]["sync"]["steps"]
+        if step.get("name") == "Resolve and verify public builder candidate"
+    )
+    decision = run.split("changed=true", 1)[1].split("fi", 1)[0]
+
+    # A Core pin can be identical while either Contract's immutable source or
+    # content digest rotates; both must participate in the no-change branch.
+    assert '"$contract_source_sha" == "$current_contract_source_sha"' in decision
+    assert '"$contract_sha256" == "$current_contract_sha256"' in decision
+
+
 def _pinned_builder() -> dict:
     return json.loads((ROOT / ".builder.json").read_text(encoding="utf-8"))
 
