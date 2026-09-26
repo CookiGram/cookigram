@@ -1,0 +1,189 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "phase": "holdout",
+  "authorization": "GO_HOLDOUT_510",
+  "split_preregistration": "split_preregistration.json",
+  "slot_rule": "exactement les 12 slots utilisables de reserve (GEMINI.md h2:1-10, .agents/roles/README.md h2:1-2) ; sections exclues AGENTS.md::h2:2 et .agents/roles/README.md::h2:3 sans gold",
+  "items": [
+    {
+      "id": "510-hold-001",
+      "type": "opportunity-field",
+      "anchor_type": "fact",
+      "question": "When documenting a feature opportunity instead of implementing it, what should the Observation part capture?",
+      "answer": "What you noticed.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["34. When you discover a feature opportunity", "Observation"],
+        "proposition_key": "feature-opportunity-observation-note",
+        "section_index": 1,
+        "anchor_id": "GEMINI.md::h2:1"
+      },
+      "evidence": "What you noticed."
+    },
+    {
+      "id": "510-hold-002",
+      "type": "opportunity-field",
+      "anchor_type": "fact",
+      "question": "When documenting a feature opportunity, what should the User value part explain?",
+      "answer": "Why it could matter.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["34. When you discover a feature opportunity", "User value"],
+        "proposition_key": "feature-opportunity-user-value",
+        "section_index": 2,
+        "anchor_id": "GEMINI.md::h2:2"
+      },
+      "evidence": "Why it could matter."
+    },
+    {
+      "id": "510-hold-003",
+      "type": "opportunity-field",
+      "anchor_type": "fact",
+      "question": "When documenting a feature opportunity, what should the Technical context part explain?",
+      "answer": "Why the current architecture does or doesn't support it.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["34. When you discover a feature opportunity", "Technical context"],
+        "proposition_key": "feature-opportunity-technical-context",
+        "section_index": 3,
+        "anchor_id": "GEMINI.md::h2:3"
+      },
+      "evidence": "Why current architecture does/doesn't support it."
+    },
+    {
+      "id": "510-hold-004",
+      "type": "opportunity-field",
+      "anchor_type": "fact",
+      "question": "What effort scale is used when documenting a feature opportunity?",
+      "answer": "XS/S/M/L/XL.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["34. When you discover a feature opportunity", "Approximate effort"],
+        "proposition_key": "feature-opportunity-effort-scale",
+        "section_index": 4,
+        "anchor_id": "GEMINI.md::h2:4"
+      },
+      "evidence": "XS/S/M/L/XL."
+    },
+    {
+      "id": "510-hold-005",
+      "type": "report-field",
+      "anchor_type": "fact",
+      "question": "In an end-of-task report, what goes under Implemented?",
+      "answer": "What changed.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["39. End-of-task report", "Implemented"],
+        "proposition_key": "end-of-task-report-implemented",
+        "section_index": 5,
+        "anchor_id": "GEMINI.md::h2:5"
+      },
+      "evidence": "What changed."
+    },
+    {
+      "id": "510-hold-006",
+      "type": "report-field",
+      "anchor_type": "fact",
+      "question": "In an end-of-task report, what does the Verification part cover?",
+      "answer": "The tests, build and visual checks performed.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["39. End-of-task report", "Verification"],
+        "proposition_key": "end-of-task-report-verification",
+        "section_index": 6,
+        "anchor_id": "GEMINI.md::h2:6"
+      },
+      "evidence": "Tests/build/visual checks performed."
+    },
+    {
+      "id": "510-hold-007",
+      "type": "report-field",
+      "anchor_type": "fact",
+      "question": "In an end-of-task report, what goes under Git?",
+      "answer": "Commit and push status.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["39. End-of-task report", "Git"],
+        "proposition_key": "end-of-task-report-git",
+        "section_index": 7,
+        "anchor_id": "GEMINI.md::h2:7"
+      },
+      "evidence": "Commit and push status."
+    },
+    {
+      "id": "510-hold-008",
+      "type": "report-field",
+      "anchor_type": "fact",
+      "question": "In an end-of-task report, what goes under GitHub?",
+      "answer": "Issue/PR status.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["39. End-of-task report", "GitHub"],
+        "proposition_key": "end-of-task-report-github",
+        "section_index": 8,
+        "anchor_id": "GEMINI.md::h2:8"
+      },
+      "evidence": "Issue/PR status."
+    },
+    {
+      "id": "510-hold-009",
+      "type": "report-field",
+      "anchor_type": "fact",
+      "question": "In an end-of-task report, what goes under Remaining?",
+      "answer": "Anything unresolved.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["39. End-of-task report", "Remaining"],
+        "proposition_key": "end-of-task-report-remaining",
+        "section_index": 9,
+        "anchor_id": "GEMINI.md::h2:9"
+      },
+      "evidence": "Anything unresolved."
+    },
+    {
+      "id": "510-hold-010",
+      "type": "report-field",
+      "anchor_type": "fact",
+      "question": "In an end-of-task report, what goes under Review?",
+      "answer": "Which specialist should verify the result, if applicable.",
+      "anchor": {
+        "path": "GEMINI.md",
+        "heading_path": ["39. End-of-task report", "Review"],
+        "proposition_key": "end-of-task-report-review",
+        "section_index": 10,
+        "anchor_id": "GEMINI.md::h2:10"
+      },
+      "evidence": "Which specialist should verify the result, if applicable."
+    },
+    {
+      "id": "510-hold-011",
+      "type": "agent-startup",
+      "anchor_type": "workflow",
+      "question": "After consulting the general directives, what must an agent do with its specialty profile and the associated rules when starting a task?",
+      "answer": "Load and adopt the profile matching its specialty, and scrupulously follow the workflow, product governance and validation rules.",
+      "anchor": {
+        "path": ".agents/roles/README.md",
+        "heading_path": ["Rôles et Profils d'Agents CookiGram 🍳", "Utilisation par les modèles et agents d'IA"],
+        "proposition_key": "agent-startup-profile-adoption",
+        "section_index": 1,
+        "anchor_id": ".agents/roles/README.md::h2:1"
+      },
+      "evidence": "2. Charger et adopter le profil correspondant à sa spécialité ci-dessous.\n3. Respecter scrupuleusement le workflow, la gouvernance produit et les règles de validation associées."
+    },
+    {
+      "id": "510-hold-012",
+      "type": "agent-profile",
+      "anchor_type": "definition",
+      "question": "What does the Product Lead Agent coordinate, and which workflow does it follow?",
+      "answer": "Proactive Head of Product coordinating product evolution, arbitrations with the Product Owner, filtering of expert recommendations and backlog ordering (workflow: observe → investigate → consolidate → challenge → recommend → discuss → decide with PO → specify → coordinate → verify → learn).",
+      "anchor": {
+        "path": ".agents/roles/README.md",
+        "heading_path": ["Rôles et Profils d'Agents CookiGram 🍳", "Profils d'Agents"],
+        "proposition_key": "product-lead-agent-backlog-workflow",
+        "section_index": 2,
+        "anchor_id": ".agents/roles/README.md::h2:2"
+      },
+      "evidence": "| **Product Lead Agent** | [`product-lead.md`](product-lead.md) | Head of Product proactif coordonnant l'évolution du produit, les arbitrages avec le Product Owner (@PierreCsn), le filtrage des recommandations d'experts et l'ordonnancement du backlog (workflow : *observe → investigate → consolidate → challenge → recommend → discuss → decide with PO → specify → coordinate → verify → learn*). |"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "issue": "CookiGram/cookigram#510",
+  "phase": "holdout-freeze-before-unique-measure",
+  "authorization": "GO_HOLDOUT_510",
+  "config": {
+    "retrieval": "strictement inchange (corpus 4 docs @ d8584dc, chunk_markdown + split_facts, paraphrase-multilingual-MiniLM-L12-v2 dim 384 COSINE, top_k=3, filtre project=cookigram, seuil 0.0, collections agent_memory_510 / agent_memory_fact_510)",
+    "policy_arm": "dense_fact (primaire, precedent c2b), dense_sec au meme point (secondaire)",
+    "point": {"tau": 0.6, "delta": 0.03, "dev_decision_lenient_fact": 0.905},
+    "point_source": "510_policy_calibration.json chosen, regle pre-enregistree max decision_lenient puis tau puis delta",
+    "cells": {
+      "lexical": "retrieval brut, sans politique",
+      "dense_sec": "retrieval brut, sans politique",
+      "dense_fact": "retrieval brut, sans politique",
+      "A2_sec_policy": "dense_sec + policy.decide @ (0.6, 0.03)",
+      "B2_fact_policy": "dense_fact + policy.decide @ (0.6, 0.03)"
+    },
+    "no_recalibration": true,
+    "no_retuning": true,
+    "no_metric_or_tiebreak_change": true
+  },
+  "inputs_sha16": {
+    "split_preregistration.json": "4ab1c71d8fc320ca",
+    "dev_set.json": "be92ae8196ce30df",
+    "dev_negatives.json": "8ecd0ad9a497b332",
+    "forbidden_508.json": "1808175580d202be",
+    "510_calibration.json": "908b8a0744b1508c",
+    "510_policy_calibration.json": "3bf3529f10f4a9c6",
+    "policy_preregistration.json": "049650e9b3b35d17",
+    "510_holdout.json": "2c280c116f9db3d8"
+  },
+  "corpora_pins": {"section_chunks": 44, "section_sha": "1c55730fe6de78e9", "fact_chunks": 414, "fact_sha": "07eae33590c88b5a"},
+  "composition": {"dev_positives": 13, "dev_negatives": 8, "holdout": 12, "holdout_slots": "GEMINI.md h2:1-10 + .agents/roles/README.md h2:1-2, tous answerable, zero negatif holdout pre-enregistre"},
+  "gates": "A2/B2 sont des cellules de mesure (precedent c2b_measure.py), pas des seuils passe/echec : aucun seuil de succes n'a ete pre-enregistre pour le holdout. Verdict mecanique = metriques calculees, sans conclusion passe/echec. Conclusion permise : comparaison descriptive DEV vs holdout (question de replication), sans implication de tuning.",
+  "measure": "unique (c510_measure.py), une seule execution ; tout incident instrumental invalide la mesure et impose STOP sans relance spontanee"
+}
