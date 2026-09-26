@@ -269,31 +269,13 @@ function isPressureSatisfied(values, caps) {
   return values.some((value) => effective.has(value));
 }
 
-// Filter predicate: which canonical appliance keys of `recipe` are missing
-// from `userEquipment`? Recipes use the key-presence shape
-// (`requiredEquipment: [...]`) with optional valued entries
-// (`{key, values}`); profiles use `{key: boolean}` plus capability arrays
-// for `pressure_cooker`.
-// - `oven` reads as `four`; legacy `instant_pot`/`cookeo` read as
-//   `pressure_cooker` (retrocompat, §7);
-// - `blender` + `immersion_blender` combine with OR: owning either device
-//   satisfies a recipe listing both (§6);
-// - `pizza_oven`: family ownership satisfies any model requirement (§2);
-// - utensil tokens never block (§8);
-// - unknown appliance keys fail closed: reported missing, never ignored (§7).
-export function getMissingEquipment(recipe, userEquipment) {
-  const required = recipe?.requiredEquipment;
+// Parse recipe requirement items into canonical keys and values
+export function parseRecipeRequirements(required) {
   if (!Array.isArray(required) || required.length === 0) return [];
-  const owned = normalizedOwnership(userEquipment);
-  const pressureCaps = pressureCapsOf(userEquipment);
-
   const keyed = [];
   const pushKeyed = (key, values) => {
     if (!keyed.some((entry) => entry.key === key)) keyed.push({ key, values });
   };
-  // A legacy `instant_pot` / `cookeo` requirement key keeps its model
-  // specificity: it reads as `pressure_cooker:[model]`, never as a generic
-  // family requirement (§4, §7).
   const aliasModel = (token) => (token === "instant_pot" || token === "cookeo" ? token : null);
   for (const raw of required) {
     if (raw && typeof raw === "object" && !Array.isArray(raw)) {
@@ -321,6 +303,27 @@ export function getMissingEquipment(recipe, userEquipment) {
     else if (isUtensilToken(raw)) continue;
     else pushKeyed(String(raw), null);
   }
+  return keyed;
+}
+
+// Filter predicate: which canonical appliance keys of `recipe` are missing
+// from `userEquipment`? Recipes use the key-presence shape
+// (`requiredEquipment: [...]`) with optional valued entries
+// (`{key, values}`); profiles use `{key: boolean}` plus capability arrays
+// for `pressure_cooker`.
+// - `oven` reads as `four`; legacy `instant_pot`/`cookeo` read as
+//   `pressure_cooker` (retrocompat, §7);
+// - `blender` + `immersion_blender` combine with OR: owning either device
+//   satisfies a recipe listing both (§6);
+// - `pizza_oven`: family ownership satisfies any model requirement (§2);
+// - utensil tokens never block (§8);
+// - unknown appliance keys fail closed: reported missing, never ignored (§7).
+export function getMissingEquipment(recipe, userEquipment) {
+  const required = recipe?.requiredEquipment;
+  const keyed = parseRecipeRequirements(required);
+  if (keyed.length === 0) return [];
+  const owned = normalizedOwnership(userEquipment);
+  const pressureCaps = pressureCapsOf(userEquipment);
 
   const wantsBlender = keyed.some((entry) => entry.key === "blender");
   const wantsImmersion = keyed.some((entry) => entry.key === "immersion_blender");
@@ -349,4 +352,199 @@ export function getMissingEquipment(recipe, userEquipment) {
 
 export function isRecipeCompatible(recipe, userEquipment) {
   return getMissingEquipment(recipe, userEquipment).length === 0;
+}
+
+// --- Tri-state equipment preferences model (#506) ---
+
+export const EQUIPMENT_STATES = Object.freeze({
+  NEUTRAL: "neutral",
+  SELECTED: "selected",
+  EXCLUDE: "exclude",
+});
+
+export const DEFAULT_EQUIPMENT_PREFERENCES = Object.freeze({
+  stovetop: "neutral",
+  four: "neutral",
+  thermomix: "neutral",
+  sous_vide: "neutral",
+  pressure_cooker: "neutral",
+  air_fryer: "neutral",
+  stand_mixer: "neutral",
+  rice_cooker: "neutral",
+  pizza_oven: "neutral",
+  blender: "neutral",
+  immersion_blender: "neutral",
+  food_processor: "neutral",
+  microwave: "neutral",
+  slow_cooker: "neutral",
+});
+
+// Exact cycle: neutral -> selected -> exclude -> neutral (#506)
+export function cycleEquipmentState(currentState) {
+  if (currentState === EQUIPMENT_STATES.SELECTED) return EQUIPMENT_STATES.EXCLUDE;
+  if (currentState === EQUIPMENT_STATES.EXCLUDE) return EQUIPMENT_STATES.NEUTRAL;
+  return EQUIPMENT_STATES.SELECTED;
+}
+
+// Shorter/clean feedback labels for notifications & feedback
+export const EQUIPMENT_FEEDBACK_LABELS = Object.freeze({
+  ...EQUIPMENT_LABELS,
+  pressure_cooker: "Autocuiseur",
+  instant_pot: "Instant Pot",
+  cookeo: "Cookeo",
+});
+
+// Accessible feedback messages conforme #506
+export function getEquipmentStateFeedback(equipKey, state) {
+  const label = EQUIPMENT_FEEDBACK_LABELS[equipKey] || EQUIPMENT_LABELS[equipKey] || equipKey;
+  switch (state) {
+    case EQUIPMENT_STATES.SELECTED:
+      return `${label} sélectionné`;
+    case EQUIPMENT_STATES.EXCLUDE:
+      return `${label} exclu`;
+    case EQUIPMENT_STATES.NEUTRAL:
+    default:
+      return `Préférence ${label} supprimée`;
+  }
+}
+
+// Tolerant migration for tri-state preferences
+export function migrateEquipmentPreferences(saved) {
+  const result = { ...DEFAULT_EQUIPMENT_PREFERENCES };
+  if (!saved || typeof saved !== "object" || Array.isArray(saved)) return result;
+
+  for (const [rawKey, rawValue] of Object.entries(saved)) {
+    const token = normalizeToken(rawKey).replace(/-/g, "_");
+    const canonical = CANONICAL_SET.has(token) ? token : READ_ALIASES[token];
+    if (!canonical) continue;
+
+    // Already a valid tri-state value
+    if (
+      rawValue === EQUIPMENT_STATES.NEUTRAL ||
+      rawValue === EQUIPMENT_STATES.SELECTED ||
+      rawValue === EQUIPMENT_STATES.EXCLUDE
+    ) {
+      result[canonical] = rawValue;
+      continue;
+    }
+
+    // Tolerant conversion from legacy boolean format:
+    if (rawValue === true || (Array.isArray(rawValue) && rawValue.length > 0)) {
+      if (canonical !== "stovetop") {
+        result[canonical] = EQUIPMENT_STATES.SELECTED;
+      }
+    } else if (rawValue === false && (token === "four" || token === "oven")) {
+      result.four = EQUIPMENT_STATES.EXCLUDE;
+    }
+  }
+  return result;
+}
+
+// Extract variants from recipe: multi-variant or single default variant
+export function getRecipeVariants(recipe) {
+  if (Array.isArray(recipe?.variants) && recipe.variants.length > 0) {
+    return recipe.variants.map((v, idx) => ({
+      id: v.id || `variant-${idx}`,
+      name: v.name || `Variante ${idx + 1}`,
+      description: v.description || "",
+      requiredEquipment: v.requiredEquipment || (v.appliances ? Object.keys(v.appliances) : (recipe.requiredEquipment || [])),
+      appliances: v.appliances || null,
+      timeTotal: v.timeTotal || recipe.timeTotal,
+      default: Boolean(v.default),
+    }));
+  }
+  return [
+    {
+      id: "default",
+      name: "Standard",
+      description: recipe?.description || "",
+      requiredEquipment: Array.isArray(recipe?.requiredEquipment) ? recipe.requiredEquipment : [],
+      appliances: recipe?.appliances || null,
+      timeTotal: recipe?.timeTotal,
+      default: true,
+    },
+  ];
+}
+
+// Evaluates whether a single variant is admissible according to tri-state preferences (#506)
+export function isVariantAdmissible(variant, preferences) {
+  const prefs = preferences || DEFAULT_EQUIPMENT_PREFERENCES;
+  const required = variant?.requiredEquipment || (variant?.appliances ? Object.keys(variant.appliances) : []);
+  const keyed = parseRecipeRequirements(required);
+
+  const excludedKeys = new Set();
+  const selectedKeys = new Set();
+
+  for (const [key, state] of Object.entries(prefs)) {
+    const canonical = normalizeEquipmentKey(key);
+    if (!CANONICAL_SET.has(canonical)) continue;
+    if (state === EQUIPMENT_STATES.EXCLUDE) excludedKeys.add(canonical);
+    else if (state === EQUIPMENT_STATES.SELECTED) selectedKeys.add(canonical);
+  }
+
+  const isExcluded = (key, values) => {
+    if (excludedKeys.has(key)) return true;
+    if (key === "pressure_cooker" && values && values.length > 0) {
+      return values.some((val) => prefs[val] === EQUIPMENT_STATES.EXCLUDE);
+    }
+    return false;
+  };
+
+  const isSelected = (key, values) => {
+    if (selectedKeys.has(key)) return true;
+    if (key === "pressure_cooker" && values && values.length > 0) {
+      return values.some((val) => prefs[val] === EQUIPMENT_STATES.SELECTED);
+    }
+    return false;
+  };
+
+  // Blender / immersion_blender disjunction:
+  const wantsBlender = keyed.some((e) => e.key === "blender");
+  const wantsImmersion = keyed.some((e) => e.key === "immersion_blender");
+  const isBlenderDisjunction = wantsBlender && wantsImmersion;
+
+  // 1. Exclude filter: if variant requires any excluded equipment, it is rejected.
+  for (const { key, values } of keyed) {
+    if (isBlenderDisjunction && (key === "blender" || key === "immersion_blender")) {
+      if (isExcluded("blender") && isExcluded("immersion_blender")) {
+        return false;
+      }
+      continue;
+    }
+    if (isExcluded(key, values)) {
+      return false;
+    }
+  }
+
+  // 2. Selected filter (OR combination):
+  // If no equipment is selected, any non-excluded variant is admissible.
+  if (selectedKeys.size === 0) {
+    return true;
+  }
+
+  // If positive filters exist, variant must require at least one selected appliance
+  for (const { key, values } of keyed) {
+    if (isBlenderDisjunction && (key === "blender" || key === "immersion_blender")) {
+      if (isSelected("blender") || isSelected("immersion_blender")) {
+        return true;
+      }
+      continue;
+    }
+    if (isSelected(key, values)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+// Return all admissible variants for a recipe given preferences
+export function getAdmissibleVariants(recipe, preferences) {
+  const variants = getRecipeVariants(recipe);
+  return variants.filter((v) => isVariantAdmissible(v, preferences));
+}
+
+// A recipe is admissible if at least one variant is admissible (#506)
+export function isRecipeAdmissible(recipe, preferences) {
+  return getAdmissibleVariants(recipe, preferences).length > 0;
 }
