@@ -139,6 +139,38 @@ def test_sync_dispatches_pages_with_validated_sha_and_ci_run() -> None:
     assert "--field ci_run_id='${{ steps.main_ci.outputs.run_id }}'" in workflow
 
 
+def test_sync_detects_contract_only_rotation() -> None:
+    workflow = yaml.safe_load((ROOT / ".github/workflows/sync-core-pin.yml").read_text(encoding="utf-8"))
+    run = next(
+        step["run"]
+        for step in workflow["jobs"]["sync"]["steps"]
+        if step.get("name") == "Resolve and verify public builder candidate"
+    )
+    decision = re.search(r"(?ms)^\s*changed=true\n(?P<body>\s*if \[\[.*?\n\s*fi)", run)
+    assert decision is not None
+    script = decision.group("body")
+
+    def changed_with(*, source_sha: str, digest: str) -> str:
+        result = subprocess.run(
+            [
+                "bash", "-e", "-c",
+                "core_sha=pinned\npinned=pinned\ncurrent_builder=pinned\n"
+                f"contract_source_sha={source_sha}\ncurrent_contract_source_sha=source-pinned\n"
+                f"contract_sha256={digest}\ncurrent_contract_sha256=digest-pinned\n"
+                f"changed=true\n{script}\nprintf '%s' \"$changed\"",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        return result.stdout
+
+    # Keep Core fixed: either Contract identity or content rotation must enable convergence.
+    assert changed_with(source_sha="source-pinned", digest="digest-pinned") == "false"
+    assert changed_with(source_sha="source-rotated", digest="digest-pinned") == "true"
+    assert changed_with(source_sha="source-pinned", digest="digest-rotated") == "true"
+
+
 def _pinned_builder() -> dict:
     return json.loads((ROOT / ".builder.json").read_text(encoding="utf-8"))
 
