@@ -13,8 +13,9 @@
       "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-517",
       "branch": "feat/issue-517-planner-descriptive-nutrition",
       "claimed_at": "2026-10-02T23:00:02+02:00",
-      "last_heartbeat": "2026-10-02T23:01:23+02:00",
-      "status": "in_progress"
+      "last_heartbeat": "2026-10-02T23:01:44+02:00",
+      "status": "pr_open",
+      "pr": 519
     }
   },
   "completed_claims": [
