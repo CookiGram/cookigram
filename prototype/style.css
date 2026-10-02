@@ -1,4 +1,4 @@
-/* CookiGram Kitchen OS — Prototype Ma Semaine (Meal Planning 80/20) */
+/* CookiGram Kitchen OS — Prototype Ma Semaine */
 
 :root {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -987,42 +987,50 @@ h2 {
   line-height: 1.35;
 }
 
-.ratio-bar-wrapper {
+.profile-stats {
   margin-bottom: 16px;
 }
 
-.ratio-labels {
+.profile-stats h4 {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.profile-stat {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 6px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-screen);
   font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 6px;
 }
 
-.ratio-vitality {
-  color: var(--vitality-color);
+.profile-stat strong {
+  font-size: 20px;
 }
 
-.ratio-pleasure {
-  color: var(--pleasure-color);
+.profile-stat small {
+  color: var(--text-muted);
+  font-size: 11px;
 }
 
-.ratio-bar {
-  height: 12px;
-  background: #e7e5e4;
-  border-radius: var(--radius-pill);
-  display: flex;
-  overflow: hidden;
-}
+.profile-stat.vitality strong { color: var(--vitality-color); }
+.profile-stat.balanced strong { color: var(--balanced-color); }
+.profile-stat.pleasure strong { color: var(--pleasure-color); }
 
-.ratio-fill-vitality {
-  background: linear-gradient(90deg, #10b981, #059669);
-  height: 100%;
-}
-
-.ratio-fill-pleasure {
-  background: linear-gradient(90deg, #f43f5e, #e11d48);
-  height: 100%;
+.profile-stats > p {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
 }
 
 .garden-grid {

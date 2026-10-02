@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>CookiGram — Ma Semaine (Meal Planning 80/20 & Vie Réelle)</title>
+  <title>CookiGram — Ma Semaine & Vie Réelle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
@@ -152,7 +152,7 @@
           <div class="status-counter">
             <span class="count-highlight" id="selected-kiffs-count">1</span> kiff(s) sélectionné(s)
           </div>
-          <div class="status-hint">💡 Conseil 80/20 : 1 ou 2 moments festifs pour allier plaisir et forme sans contrainte</div>
+          <div class="status-hint">Choisissez les recettes qui vous font envie pour votre semaine.</div>
         </div>
 
         <!-- Filter Chips -->
@@ -171,13 +171,13 @@
         <!-- Bottom Action Bar -->
         <div class="bottom-action-bar">
           <button id="btn-generate-week" class="btn primary full-width">
-            <span>Générer ma semaine 80/20</span>
+            <span>Générer ma semaine</span>
             <span class="btn-arrow">→</span>
           </button>
         </div>
       </section>
 
-      <!-- VIEW 2: Ma Semaine 80/20 & Vie Réelle -->
+      <!-- VIEW 2: Ma Semaine & Vie Réelle -->
       <section id="view-step-2" class="step-view">
         <div class="view-intro">
           <div class="intro-badge vitality">Semaine Glissante • 7 Jours</div>
@@ -255,19 +255,14 @@
             </div>
           </div>
 
-          <!-- 80/20 Ratio Indicator -->
-          <div class="ratio-bar-wrapper">
-            <div class="ratio-labels">
-              <span class="ratio-vitality" id="ratio-vitality-label">🍃 80% Vitalité & Équilibre</span>
-              <span class="ratio-pleasure" id="ratio-pleasure-label">✨ 20% Kiff & Plaisir</span>
+          <div class="profile-stats" aria-label="Répartition descriptive des profils des recettes planifiées">
+            <h4>Profils des recettes planifiées</h4>
+            <div class="profile-stats-grid">
+              <div class="profile-stat vitality"><strong id="profile-vitality-count">0</strong><span>Vitality</span><small id="profile-vitality-percent">0 %</small></div>
+              <div class="profile-stat balanced"><strong id="profile-balanced-count">0</strong><span>Balanced</span><small id="profile-balanced-percent">0 %</small></div>
+              <div class="profile-stat pleasure"><strong id="profile-pleasure-count">0</strong><span>Pleasure</span><small id="profile-pleasure-percent">0 %</small></div>
             </div>
-            <div class="ratio-bar">
-              <div class="ratio-fill-vitality" id="ratio-vitality-bar" style="width: 80%;"></div>
-              <div class="ratio-fill-pleasure" id="ratio-pleasure-bar" style="width: 20%;"></div>
-            </div>
-            <div class="ratio-advice-text" id="ratio-advice-msg" style="font-size: 13px; color: #57534e; margin-top: 8px; font-weight: 500; line-height: 1.4;">
-              💡 <strong>Conseil 80/20 :</strong> Équilibre idéal atteint cette semaine.
-            </div>
+            <p>Parts calculées parmi les recettes planifiées avec un profil renseigné.</p>
           </div>
 
           <!-- Plant Badges Grid -->
