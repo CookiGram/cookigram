@@ -5,19 +5,7 @@
     "max_heartbeat_age_minutes": 15,
     "require_approved_label": "potential-dev-work"
   },
-  "active_claims": {
-    "517": {
-      "issue": 517,
-      "title": "[PROTOTYPE] Retirer la doctrine nutrition 80/20 prescriptive du Planner",
-      "agent": "Codex",
-      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-517",
-      "branch": "feat/issue-517-planner-descriptive-nutrition",
-      "claimed_at": "2026-10-02T23:00:02+02:00",
-      "last_heartbeat": "2026-10-02T23:01:44+02:00",
-      "status": "pr_open",
-      "pr": 519
-    }
-  },
+  "active_claims": {},
   "completed_claims": [
     {
       "issue": 435,
