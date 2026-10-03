@@ -19238,7 +19238,7 @@
       ],
       "recipe_count": 15,
       "status": "MISSING",
-      "recommendation": "add family asset; generic oven alias acceptable for pizza_oven if product UI is satisfied",
+      "recommendation": "add dedicated family asset (air-fryer.webp); distinct from traditional oven",
       "observed_values": [
         "standard"
       ],
@@ -19584,7 +19584,7 @@
       ],
       "recipe_count": 8,
       "status": "MISSING",
-      "recommendation": "add family asset; generic oven alias acceptable for pizza_oven if product UI is satisfied",
+      "recommendation": "add generic family asset (multicuiseur.webp) and alias brands (Cookeo, Instant Pot) without requiring brand-specific visuals",
       "observed_values": [
         "True",
         "cookeo",
@@ -19668,7 +19668,7 @@
       ],
       "recipe_count": 22,
       "status": "MISSING",
-      "recommendation": "add family asset; generic oven alias acceptable for pizza_oven if product UI is satisfied",
+      "recommendation": "add dedicated family asset (four.webp) for standard oven cooking and baking",
       "observed_values": [
         "True",
         "chaleur-tournante",
@@ -19790,7 +19790,7 @@
       "recipes": [],
       "recipe_count": 0,
       "status": "MISSING",
-      "recommendation": "add family asset; generic oven alias acceptable for pizza_oven if product UI is satisfied",
+      "recommendation": "add family asset (blender.webp) when appliance declarations are introduced; currently 0 recipes",
       "observed_values": [],
       "base_declaration_recipes": [],
       "variant_declaration_recipes": [],
@@ -19810,7 +19810,7 @@
       "recipes": [],
       "recipe_count": 0,
       "status": "MISSING",
-      "recommendation": "add family asset; generic oven alias acceptable for pizza_oven if product UI is satisfied",
+      "recommendation": "alias to blender.webp or add dedicated immersion blender asset when needed; currently 0 recipes",
       "observed_values": [],
       "base_declaration_recipes": [],
       "variant_declaration_recipes": [],
@@ -20618,7 +20618,7 @@
           "veloute-potiron-cannelle"
         ]
       },
-      "priority": "P0"
+      "priority": null
     },
     {
       "snapshot": "2026-09-26",
