@@ -1,9 +1,10 @@
 /**
  * CookiGram Kitchen OS — Prototype « Ma Semaine » v3
- * Nutrition Plaisir & Santé (80/20) + Vie Réelle + Semaine Dynamique Glissante + Persistance LocalStorage
+ * Profils nutritionnels descriptifs + Vie Réelle + Semaine Dynamique Glissante + Persistance LocalStorage
  */
 
 import { getCurrentDinner, moveMeal, normalizePortions, recipeMeal, removeMeal, setMeal } from "./planner-state.js";
+import { summarizeNutritionProfiles } from "./nutrition-stats.js";
 import {
   DEFAULT_USER_EQUIPMENT,
   EQUIPMENT_LABELS,
@@ -547,11 +548,10 @@ const el = {
   weekStatsCallout: document.getElementById("week-stats-callout"),
   gardenCount: document.getElementById("garden-count"),
   gardenCheerMsg: document.getElementById("garden-cheer-msg"),
-  ratioVitalityLabel: document.getElementById("ratio-vitality-label"),
-  ratioPleasureLabel: document.getElementById("ratio-pleasure-label"),
-  ratioVitalityBar: document.getElementById("ratio-vitality-bar"),
-  ratioPleasureBar: document.getElementById("ratio-pleasure-bar"),
-  ratioAdviceMsg: document.getElementById("ratio-advice-msg"),
+  profileStats: Object.fromEntries(["vitality", "balanced", "pleasure"].map(profile => [profile, {
+    count: document.getElementById(`profile-${profile}-count`),
+    percent: document.getElementById(`profile-${profile}-percent`)
+  }])),
   gardenPlantsGrid: document.getElementById("garden-plants-grid"),
   shoppingAislesContainer: document.getElementById("shopping-aisles-container"),
   btnCopyShopping: document.getElementById("btn-copy-shopping"),
@@ -1459,47 +1459,12 @@ function renderMicrobiomeGarden() {
     el.gardenPlantsGrid.appendChild(tag);
   });
 
-  // Calcul dynamique du ratio 80/20 comme CONSEIL bienveillant (non bloquant)
-  let pleasureSlots = 0;
-  let vitalitySlots = 0;
-
-  state.weekPlan.forEach(day => {
-    [day.lunch, day.dinner].forEach(slot => {
-      if (slot) {
-        if (slot.type === "recipe") {
-          const r = RECIPES[slot.recipeId];
-          if (r && r.profile === "pleasure") {
-            pleasureSlots++;
-          } else {
-            vitalitySlots++;
-          }
-        } else if (slot.type === "eating_out") {
-          pleasureSlots++;
-        } else {
-          vitalitySlots++;
-        }
-      }
-    });
+  const profileStats = summarizeNutritionProfiles(state.weekPlan, RECIPES);
+  Object.entries(profileStats.counts).forEach(([profile, count]) => {
+    const stat = el.profileStats[profile];
+    if (stat?.count) stat.count.textContent = count;
+    if (stat?.percent) stat.percent.textContent = `${profileStats.percentages[profile]} %`;
   });
-
-  const totalEvaluated = (pleasureSlots + vitalitySlots) || 14;
-  const pleasurePercent = Math.round((pleasureSlots / totalEvaluated) * 100);
-  const vitalityPercent = 100 - pleasurePercent;
-
-  if (el.ratioVitalityLabel) el.ratioVitalityLabel.textContent = `🍃 ${vitalityPercent}% Vitalité & Équilibre (${vitalitySlots} repas)`;
-  if (el.ratioPleasureLabel) el.ratioPleasureLabel.textContent = `✨ ${pleasurePercent}% Plaisir & Kiffs (${pleasureSlots} repas)`;
-  if (el.ratioVitalityBar) el.ratioVitalityBar.style.width = `${vitalityPercent}%`;
-  if (el.ratioPleasureBar) el.ratioPleasureBar.style.width = `${pleasurePercent}%`;
-
-  if (el.ratioAdviceMsg) {
-    if (vitalityPercent >= 70 && vitalityPercent <= 85) {
-      el.ratioAdviceMsg.innerHTML = `💡 <strong>Conseil 80/20 :</strong> Super équilibre atteint ! Un socle d'énergie léger et digeste avec de vrais moments de fête sans culpabilité.`;
-    } else if (vitalityPercent > 85) {
-      el.ratioAdviceMsg.innerHTML = `💡 <strong>Conseil 80/20 :</strong> Semaine très légère et épurée. Vous avez toute la marge pour glisser un plat plaisir si l'envie vous prend !`;
-    } else {
-      el.ratioAdviceMsg.innerHTML = `💡 <strong>Conseil 80/20 :</strong> Semaine très généreuse et festive ! Astuce : accompagnez simplement vos repas d'une salade fraîche ou de légumes croquants.`;
-    }
-  }
 }
 
 function renderShoppingBasket() {
