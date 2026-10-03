@@ -339,3 +339,11 @@ Une fonctionnalité lointaine ne doit pas créer de dette architecturale aujourd
 ## Licence
 
 Le dépôt est distribué sous [licence MIT](LICENSE). Les recettes, images et sources externes peuvent avoir des conditions supplémentaires indiquées dans leurs métadonnées.
+
+<!-- cookigram-ecosystem:start -->
+## Écosystème CookiGram
+
+**Ce dépôt :** le catalogue public de CookiGram : recettes, ingrédients, assets, provenance et règles éditoriales. Il consomme Core/Contract mais ne porte pas le moteur applicatif.
+
+Repères : [catalogue public](https://github.com/CookiGram/cookigram) · [moteur](https://github.com/CookiGram/cookigram-core) · [contrat](https://github.com/CookiGram/cookigram-contract) · [CookiList](https://github.com/CookiGram/shopping-list) · [Home](https://github.com/CookiGram/home) · [MCP produit](https://github.com/CookiGram/cookigram-mcp) · [Bandleader](https://github.com/CookiGram/Bandleader) · [Orchestra](https://github.com/CookiGram/Orchestra) · [Journey](https://github.com/CookiGram/cookigram-journey).
+<!-- cookigram-ecosystem:end -->
