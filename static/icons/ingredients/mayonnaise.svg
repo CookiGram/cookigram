@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Jar body -->
+  <path fill="#faf5dc" stroke="#382a25" stroke-width="1.5" stroke-linejoin="round" d="M9 11h14v13.5c0 2.5-2 4.5-4.5 4.5h-5C11 29 9 27 9 24.5V11Z"/>
+  <!-- Creamy contents -->
+  <path fill="#fceea7" d="M10.5 13.5h11v10.5c0 1.5-1.2 2.8-2.8 2.8h-5.4c-1.5 0-2.8-1.3-2.8-2.8V13.5Z"/>
+  <!-- Mayonnaise dollop/surface swirl -->
+  <path fill="#fffbe6" stroke="#e8c85a" stroke-width="1.1" stroke-linecap="round" d="M12.5 17.5c2-1 4.5-1 7 .5"/>
+  <path fill="none" stroke="#e8c85a" stroke-width="1" stroke-linecap="round" d="M13.5 21c1.5-.7 3.5-.7 5 .3"/>
+  <!-- Jar lid / neck -->
+  <rect x="11" y="8" width="10" height="3" rx="0.8" fill="#d95a43" stroke="#382a25" stroke-width="1.4"/>
+  <rect x="9.5" y="5.5" width="13" height="3.5" rx="1.2" fill="#e86b54" stroke="#382a25" stroke-width="1.4"/>
+  <!-- Jar highlight -->
+  <path fill="#ffffff" opacity="0.6" d="M11.5 14h1.5v9.5h-1.5z"/>
+</svg>

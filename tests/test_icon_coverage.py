@@ -22,6 +22,8 @@ ICONS_DIR = ROOT / "static" / "icons" / "ingredients"
 # Mirror of Core ICON_FAMILY_BY_SLUG (preparation/cut variants sharing one
 # visual vocabulary instead of duplicating SVGs).
 ICON_FAMILY_BY_SLUG = {
+    "beurre-doux": "beurre",
+    "beurre-demi-sel": "beurre",
     "creme-fraiche-epaisse": "creme-fraiche",
     "creme-fraiche-liquide": "creme-fraiche",
     "saumon-frais": "saumon",
@@ -257,6 +259,15 @@ class IngredientIconCoverageTests(unittest.TestCase):
             if not _resolves(slug, (entry or {}).get("category", ""))
         ]
         self.assertEqual(missing, [], f"{len(missing)} Gram slug(s) without icon")
+
+    def test_remapping_and_p0_dedicated_icons(self):
+        self.assertEqual(ICON_FAMILY_BY_SLUG.get("beurre-doux"), "beurre")
+        self.assertEqual(ICON_FAMILY_BY_SLUG.get("beurre-demi-sel"), "beurre")
+        for slug in ("pate-a-pizza", "avocat", "mayonnaise", "nori", "patate-douce"):
+            self.assertTrue(
+                (ICONS_DIR / f"{slug}.svg").is_file(),
+                f"Missing dedicated icon for {slug}.svg",
+            )
 
 
 if __name__ == "__main__":

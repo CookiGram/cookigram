@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Outer skin -->
+  <path fill="#364d26" stroke="#25351c" stroke-width="1.5" stroke-linejoin="round" d="M16 4.5c-4.8 0-9 6.2-9 14.5C7 25 11 28.5 16 28.5s9-3.5 9-9.5c0-8.3-4.2-14.5-9-14.5Z"/>
+  <!-- Flesh -->
+  <path fill="#c8df84" stroke="#7e9e42" stroke-width="1.1" stroke-linejoin="round" d="M16 6.5c-3.8 0-7.2 5.2-7.2 12.5 0 5 3.2 8 7.2 8s7.2-3 7.2-8c0-7.3-3.4-12.5-7.2-12.5Z"/>
+  <!-- Pit -->
+  <circle cx="16" cy="20.5" r="4.8" fill="#784224" stroke="#482717" stroke-width="1.3"/>
+  <!-- Pit highlight -->
+  <path fill="#9c5e39" d="M14.5 17.5c1-.8 2.5-1 3.5-.8-1.5.3-2.5 1.2-2.8 2.3-.5-.4-.7-.9-.7-1.5Z"/>
+  <circle cx="17.8" cy="18.8" r="0.8" fill="#e8c29b"/>
+</svg>

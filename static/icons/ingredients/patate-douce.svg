@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Sweet potato outer tuber -->
+  <path fill="#a8432a" stroke="#382a25" stroke-width="1.5" stroke-linejoin="round" d="M4 18.5c1-6 8-12 17-10 6 1.3 8 5.5 7 8.5-1.5 4.5-7 10-14 10-5.5 0-9.5-3.5-10-8.5Z"/>
+  <!-- Cut slice showing vibrant orange flesh -->
+  <ellipse cx="20.5" cy="17" rx="6.5" ry="7.5" fill="#f27d26" stroke="#382a25" stroke-width="1.4" transform="rotate(-15 20.5 17)"/>
+  <!-- Inner ring highlight -->
+  <ellipse cx="20.5" cy="17" rx="4.8" ry="5.8" fill="#fa984a" transform="rotate(-15 20.5 17)"/>
+  <ellipse cx="20.5" cy="17" rx="2.5" ry="3.2" fill="#ffb473" transform="rotate(-15 20.5 17)"/>
+  <!-- Skin marks/creases -->
+  <path fill="none" stroke="#752b19" stroke-width="1.1" stroke-linecap="round" d="M8 14.5c2 1 3.5 3 4 5M7 21c1.5.5 3 .5 4 0"/>
+</svg>
