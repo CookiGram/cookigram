@@ -395,5 +395,15 @@ class UILabelTests(unittest.TestCase):
                                  f"label for {key} carries a brand: {label}")
 
 
+class ApplianceAssetTests(unittest.TestCase):
+    def test_p0_appliance_assets_exist(self):
+        utensils_dir = ROOT / "static" / "icons" / "utensils"
+        for slug in ("four", "air-fryer", "plaque-cuisson"):
+            for ext in (".webp", ".png", "-128.png"):
+                path = utensils_dir / f"{slug}{ext}"
+                self.assertTrue(path.is_file(), f"Missing appliance asset: {path}")
+
+
 if __name__ == "__main__":
     unittest.main()
+
