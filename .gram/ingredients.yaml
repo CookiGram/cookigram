@@ -3508,13 +3508,13 @@ ingredients:
     - foie gras cru de canard
     - foie gras de canard cru
     - foie gras cru
-    category: Viandes et abats
+    category: Viandes
   truffe-noire:
     name: Truffe noire
     aliases:
     - truffe noire
     - truffe noire du Périgord
-    category: Champignons
+    category: Fruits, légumes, légumineuses et oléagineux
   sauternes:
     name: Sauternes
     aliases:
