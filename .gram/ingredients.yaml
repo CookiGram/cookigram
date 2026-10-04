@@ -3502,3 +3502,27 @@ ingredients:
     aliases:
     - safran
     category: Herbes et épices
+  foie-gras-de-canard-cru:
+    name: Foie gras cru de canard
+    aliases:
+    - foie gras cru de canard
+    - foie gras de canard cru
+    - foie gras cru
+    category: Viandes et abats
+  truffe-noire:
+    name: Truffe noire
+    aliases:
+    - truffe noire
+    - truffe noire du Périgord
+    category: Champignons
+  sauternes:
+    name: Sauternes
+    aliases:
+    - sauternes
+    category: Boissons
+  figue-sechee:
+    name: Figue sèche
+    aliases:
+    - figue sèche
+    - figues sèches
+    category: Fruits secs
