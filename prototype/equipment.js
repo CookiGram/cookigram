@@ -18,6 +18,8 @@ export const CANONICAL_KEYS = Object.freeze([
   "slow_cooker",
   "thermomix",
   "sous_vide",
+  "barbecue",
+  "plancha",
   "stovetop",
 ]);
 
@@ -46,7 +48,33 @@ export const EQUIPMENT_LABELS = Object.freeze({
   slow_cooker: "Mijoteuse",
   thermomix: "Thermomix",
   sous_vide: "Sous-vide",
+  barbecue: "Barbecue",
+  plancha: "Plancha",
   stovetop: "Plaques & Poêles",
+});
+
+// Capability families have value-sensitive matching. Legacy `true` means the
+// user owns an unspecified model and remains a wildcard for compatibility.
+export const EQUIPMENT_CAPABILITIES = Object.freeze({
+  barbecue: Object.freeze(["charcoal_kettle", "gas_grill"]),
+  sous_vide: Object.freeze(["standard", "anova_precision_cooker"]),
+});
+export const EQUIPMENT_CAPABILITY_LABELS = Object.freeze({
+  charcoal_kettle: "Kettle charbon",
+  gas_grill: "Grill à gaz",
+  standard: "Standard",
+  anova_precision_cooker: "Thermoplongeur Anova",
+});
+
+const CAPABILITY_FAMILY_BY_VALUE = Object.freeze(Object.fromEntries(
+  Object.entries(EQUIPMENT_CAPABILITIES).flatMap(([family, values]) =>
+    values.filter((value) => value !== "standard").map((value) => [value, family])),
+));
+
+// Fuel requirements are recipe metadata, never food ingredients or appliances.
+export const COOKING_FUEL_TYPES = Object.freeze({
+  charcoal: Object.freeze(["briquettes"]),
+  smoking_wood: Object.freeze(["oak"]),
 });
 
 // Pressure-cooker capabilities (§4): one generic family capability plus
@@ -71,7 +99,10 @@ const UTENSILS_OUT = new Set(
     "casserole", "faitout", "cocotte", "cocotte en fonte", "poele", "sauteuse",
     "wok", "passoire", "saladier", "fouet", "spatule", "mandoline", "rape",
     "moules", "plaques", "pierre", "pelle", "pierre a pizza", "pelle a pizza",
-    "balance", "thermometre", "couteaux",
+    "balance", "thermometre", "couteaux", "grille de saisie en fonte",
+    "grille en fonte", "anneau a charbon", "anneau a briquettes",
+    "diffuseur", "diffuseur thermique", "deflecteur thermique", "separateurs a charbon",
+    "cheminee d'allumage", "cheminee d allumage", "cheminee d'allumage pour charbon",
   ].map(normalizeToken),
 );
 
@@ -174,6 +205,8 @@ export const DEFAULT_USER_EQUIPMENT = Object.freeze({
   four: true,
   thermomix: false,
   sous_vide: false,
+  barbecue: false,
+  plancha: false,
   pressure_cooker: false,
   air_fryer: false,
   stand_mixer: false,
@@ -203,6 +236,71 @@ function migratePressureValue(canonicalRaw, aliasValues) {
   return ordered.length ? ordered : false;
 }
 
+function normalizeCapabilityValue(value, family) {
+  const values = EQUIPMENT_CAPABILITIES[family];
+  if (!values) return [];
+  if (value === true) return ["generic"];
+  if (value === undefined || value === null || value === false) return [];
+  const raw = Array.isArray(value) ? value : [value];
+  const normalized = [];
+  for (const item of raw) {
+    if (typeof item !== "string") continue;
+    const token = normalizeToken(item).replace(/-/g, "_");
+    if ((values.includes(token) || token === "generic") && !normalized.includes(token)) normalized.push(token);
+  }
+  return normalized;
+}
+
+export function addEquipmentCapability(value, family, capability) {
+  const current = normalizeCapabilityValue(value, family);
+  if (!EQUIPMENT_CAPABILITIES[family]?.includes(capability)) return current;
+  if (current.includes("generic")) return [capability];
+  return current.includes(capability) ? current : [...current, capability];
+}
+
+export function removeEquipmentCapability(value, family, capability) {
+  const current = normalizeCapabilityValue(value, family);
+  if (!EQUIPMENT_CAPABILITIES[family]?.includes(capability)) return current.length ? current : false;
+  const next = current.filter((item) => item !== capability);
+  return next.length ? next : false;
+}
+
+export function toggleEquipmentCapability(value, family, capability) {
+  return normalizeCapabilityValue(value, family).includes(capability)
+    ? removeEquipmentCapability(value, family, capability)
+    : addEquipmentCapability(value, family, capability);
+}
+
+export function normalizeFuelRequirements(value) {
+  if (value === undefined || value === null) return {};
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new TypeError("fuel_requirements must be a dictionary");
+  }
+  const normalized = {};
+  for (const [rawType, rawValues] of Object.entries(value)) {
+    const type = normalizeToken(rawType).replace(/-/g, "_");
+    const allowed = COOKING_FUEL_TYPES[type];
+    if (!allowed) throw new TypeError(`unknown fuel requirement: ${rawType}`);
+    const values = Array.isArray(rawValues) ? rawValues : [rawValues];
+    const mapped = values.map((item) => normalizeToken(item).replace(/-/g, "_").trim());
+    if (!mapped.length || mapped.some((item) => !allowed.includes(item))) {
+      throw new TypeError(`invalid ${type} fuel requirement`);
+    }
+    normalized[type] = [...new Set(mapped)];
+  }
+  return normalized;
+}
+
+function capabilityRequirementSatisfied(family, values, userValue) {
+  const owned = normalizeCapabilityValue(userValue, family);
+  if (!owned.length) return false;
+  if (!values || values.length === 0) return true;
+  const wanted = values.map(normalizeRequirementValue);
+  if (owned.includes("generic")) return true;
+  if (wanted.includes("standard") && owned.some((cap) => cap !== "generic")) return true;
+  return wanted.some((cap) => owned.includes(cap));
+}
+
 // Tolerant migration of stored profiles. Presence-based: an explicitly stored
 // value always wins over its default, so an explicit `false` (e.g. oven off)
 // survives the oven → four normalization. Canonical spelling wins over a
@@ -229,6 +327,8 @@ export function migrateUserEquipment(saved) {
   for (const [canonical, entry] of byCanonical) {
     if (canonical === "pressure_cooker") {
       merged.pressure_cooker = migratePressureValue(entry.canonicalRaw, entry.aliases);
+    } else if (EQUIPMENT_CAPABILITIES[canonical]) {
+      merged[canonical] = normalizeCapabilityValue(entry.canonicalRaw, canonical);
     } else if (entry.canonicalRaw !== undefined) {
       merged[canonical] = Boolean(entry.canonicalRaw);
     } else {
@@ -243,9 +343,13 @@ function normalizedOwnership(userEquipment) {
   const owned = new Set();
   if (!userEquipment || typeof userEquipment !== "object") return owned;
   for (const [rawKey, value] of Object.entries(userEquipment)) {
-    if (!value) continue;
     const canonical = normalizeEquipmentKey(rawKey);
     if (!CANONICAL_SET.has(canonical)) continue;
+    if (EQUIPMENT_CAPABILITIES[canonical]) {
+      if (normalizeCapabilityValue(value, canonical).length) owned.add(canonical);
+      continue;
+    }
+    if (!value) continue;
     if (canonical === "pressure_cooker") continue; // capability-based, see pressureCapsOf
     owned.add(canonical);
   }
@@ -267,6 +371,14 @@ function isPressureSatisfied(values, caps) {
   const effective = new Set(caps);
   if (effective.has("generic")) effective.add("standard");
   return values.some((value) => effective.has(value));
+}
+
+function requirementsFromAppliances(appliances) {
+  if (!appliances || typeof appliances !== "object" || Array.isArray(appliances)) return [];
+  return Object.entries(appliances).map(([key, values]) => ({
+    key,
+    values: Array.isArray(values) ? values : null,
+  }));
 }
 
 // Parse recipe requirement items into canonical keys and values
@@ -309,8 +421,9 @@ export function parseRecipeRequirements(required) {
 // Filter predicate: which canonical appliance keys of `recipe` are missing
 // from `userEquipment`? Recipes use the key-presence shape
 // (`requiredEquipment: [...]`) with optional valued entries
-// (`{key, values}`); profiles use `{key: boolean}` plus capability arrays
-// for `pressure_cooker`.
+// (`{key, values}`), or the equivalent `appliances` map. Profiles use
+// `{key: boolean}` plus capability arrays for pressure_cooker, barbecue, and
+// sous_vide.
 // - `oven` reads as `four`; legacy `instant_pot`/`cookeo` read as
 //   `pressure_cooker` (retrocompat, §7);
 // - `blender` + `immersion_blender` combine with OR: owning either device
@@ -319,7 +432,9 @@ export function parseRecipeRequirements(required) {
 // - utensil tokens never block (§8);
 // - unknown appliance keys fail closed: reported missing, never ignored (§7).
 export function getMissingEquipment(recipe, userEquipment) {
-  const required = recipe?.requiredEquipment;
+  const required = Array.isArray(recipe?.requiredEquipment)
+    ? recipe.requiredEquipment
+    : requirementsFromAppliances(recipe?.appliances);
   const keyed = parseRecipeRequirements(required);
   if (keyed.length === 0) return [];
   const owned = normalizedOwnership(userEquipment);
@@ -339,6 +454,10 @@ export function getMissingEquipment(recipe, userEquipment) {
     }
     if (key === "pressure_cooker") {
       if (!isPressureSatisfied(values, pressureCaps)) missing.push(key);
+      continue;
+    }
+    if (EQUIPMENT_CAPABILITIES[key]) {
+      if (!capabilityRequirementSatisfied(key, values, userEquipment?.[key])) missing.push(key);
       continue;
     }
     if (CANONICAL_SET.has(key)) {
@@ -367,6 +486,8 @@ export const DEFAULT_EQUIPMENT_PREFERENCES = Object.freeze({
   four: "neutral",
   thermomix: "neutral",
   sous_vide: "neutral",
+  barbecue: "neutral",
+  plancha: "neutral",
   pressure_cooker: "neutral",
   air_fryer: "neutral",
   stand_mixer: "neutral",
@@ -396,7 +517,7 @@ export const EQUIPMENT_FEEDBACK_LABELS = Object.freeze({
 
 // Accessible feedback messages conforme #506
 export function getEquipmentStateFeedback(equipKey, state) {
-  const label = EQUIPMENT_FEEDBACK_LABELS[equipKey] || EQUIPMENT_LABELS[equipKey] || equipKey;
+  const label = EQUIPMENT_CAPABILITY_LABELS[equipKey] || EQUIPMENT_FEEDBACK_LABELS[equipKey] || EQUIPMENT_LABELS[equipKey] || equipKey;
   switch (state) {
     case EQUIPMENT_STATES.SELECTED:
       return `${label} sélectionné`;
@@ -416,6 +537,15 @@ export function migrateEquipmentPreferences(saved) {
   for (const [rawKey, rawValue] of Object.entries(saved)) {
     const token = normalizeToken(rawKey).replace(/-/g, "_");
     const canonical = CANONICAL_SET.has(token) ? token : READ_ALIASES[token];
+    const capabilityFamily = CAPABILITY_FAMILY_BY_VALUE[token];
+    if (capabilityFamily) {
+      if ([EQUIPMENT_STATES.NEUTRAL, EQUIPMENT_STATES.SELECTED, EQUIPMENT_STATES.EXCLUDE].includes(rawValue)) {
+        result[token] = rawValue;
+      } else if (rawValue === true || (Array.isArray(rawValue) && rawValue.length)) {
+        result[token] = EQUIPMENT_STATES.SELECTED;
+      }
+      continue;
+    }
     if (!canonical) continue;
 
     // Already a valid tri-state value
@@ -447,7 +577,7 @@ export function getRecipeVariants(recipe) {
       id: v.id || `variant-${idx}`,
       name: v.name || `Variante ${idx + 1}`,
       description: v.description || "",
-      requiredEquipment: v.requiredEquipment || (v.appliances ? Object.keys(v.appliances) : (recipe.requiredEquipment || [])),
+      requiredEquipment: v.requiredEquipment || (v.appliances ? requirementsFromAppliances(v.appliances) : (recipe.requiredEquipment || [])),
       appliances: v.appliances || null,
       timeTotal: v.timeTotal || recipe.timeTotal,
       default: Boolean(v.default),
@@ -458,7 +588,9 @@ export function getRecipeVariants(recipe) {
       id: "default",
       name: "Standard",
       description: recipe?.description || "",
-      requiredEquipment: Array.isArray(recipe?.requiredEquipment) ? recipe.requiredEquipment : [],
+      requiredEquipment: Array.isArray(recipe?.requiredEquipment)
+        ? recipe.requiredEquipment
+        : requirementsFromAppliances(recipe?.appliances),
       appliances: recipe?.appliances || null,
       timeTotal: recipe?.timeTotal,
       default: true,
@@ -474,9 +606,14 @@ export function isVariantAdmissible(variant, preferences) {
 
   const excludedKeys = new Set();
   const selectedKeys = new Set();
+  const selectedCapabilities = new Set();
 
   for (const [key, state] of Object.entries(prefs)) {
     const canonical = normalizeEquipmentKey(key);
+    if (CAPABILITY_FAMILY_BY_VALUE[canonical]) {
+      if (state === EQUIPMENT_STATES.SELECTED) selectedCapabilities.add(canonical);
+      continue;
+    }
     if (!CANONICAL_SET.has(canonical)) continue;
     if (state === EQUIPMENT_STATES.EXCLUDE) excludedKeys.add(canonical);
     else if (state === EQUIPMENT_STATES.SELECTED) selectedKeys.add(canonical);
@@ -484,6 +621,10 @@ export function isVariantAdmissible(variant, preferences) {
 
   const isExcluded = (key, values) => {
     if (excludedKeys.has(key)) return true;
+    if (EQUIPMENT_CAPABILITIES[key]) {
+      const alternatives = values?.length ? values : EQUIPMENT_CAPABILITIES[key];
+      return alternatives.every((value) => prefs[value] === EQUIPMENT_STATES.EXCLUDE);
+    }
     if (key === "pressure_cooker" && values && values.length > 0) {
       return values.some((val) => prefs[val] === EQUIPMENT_STATES.EXCLUDE);
     }
@@ -492,6 +633,10 @@ export function isVariantAdmissible(variant, preferences) {
 
   const isSelected = (key, values) => {
     if (selectedKeys.has(key)) return true;
+    if (EQUIPMENT_CAPABILITIES[key]) {
+      const alternatives = values?.length ? values : EQUIPMENT_CAPABILITIES[key];
+      return alternatives.some((value) => prefs[value] === EQUIPMENT_STATES.SELECTED);
+    }
     if (key === "pressure_cooker" && values && values.length > 0) {
       return values.some((val) => prefs[val] === EQUIPMENT_STATES.SELECTED);
     }
@@ -518,7 +663,7 @@ export function isVariantAdmissible(variant, preferences) {
 
   // 2. Selected filter (OR combination):
   // If no equipment is selected, any non-excluded variant is admissible.
-  if (selectedKeys.size === 0) {
+  if (selectedKeys.size === 0 && selectedCapabilities.size === 0) {
     return true;
   }
 

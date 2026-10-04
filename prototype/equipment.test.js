@@ -4,6 +4,8 @@ import {
   CANONICAL_KEYS,
   DEFAULT_USER_EQUIPMENT,
   EQUIPMENT_LABELS,
+  EQUIPMENT_CAPABILITIES,
+  EQUIPMENT_CAPABILITY_LABELS,
   PRESSURE_COOKER_MODELS,
   getMissingEquipment,
   isRecipeCompatible,
@@ -14,6 +16,8 @@ import {
   pressureCapsOf,
   togglePressureCookerCap,
   togglePressureCookerFamily,
+  toggleEquipmentCapability,
+  normalizeFuelRequirements,
   EQUIPMENT_STATES,
   DEFAULT_EQUIPMENT_PREFERENCES,
   cycleEquipmentState,
@@ -31,13 +35,17 @@ test("familles canoniques exposées avec libellés génériques sans marques", (
   for (const key of [
     "air_fryer", "stand_mixer", "rice_cooker", "pizza_oven", "pressure_cooker",
     "four", "blender", "immersion_blender", "food_processor", "microwave", "slow_cooker",
+    "barbecue", "plancha",
   ]) {
     assert.ok(CANONICAL_KEYS.includes(key), key);
     assert.ok(EQUIPMENT_LABELS[key], `label manquant: ${key}`);
   }
-  const brands = ["ooni", "koda", "cookeo", "instant pot", "instant_pot", "anova", "moulinex", "magimix"];
+  const brands = ["ooni", "koda", "cookeo", "instant pot", "instant_pot", "anova", "moulinex", "magimix", "weber", "master touch"];
   for (const [key, label] of Object.entries(EQUIPMENT_LABELS)) {
     if (key === "thermomix") continue;
+    for (const token of brands) {
+      assert.ok(!key.toLowerCase().includes(token), `clé canonique de marque interdite: ${key}`);
+    }
     for (const token of brands) {
       assert.ok(!label.toLowerCase().includes(token), `${key}: marque dans le libellé (${label})`);
     }
@@ -126,8 +134,92 @@ test("ustensiles ordinaires ne bloquent jamais", () => {
 });
 
 test("clés inconnues en échec fermé (signalées, jamais ignorées)", () => {
-  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["barbecue"] }, FULL), ["barbecue"]);
-  assert.ok(!isRecipeCompatible({ requiredEquipment: ["barbecue"] }, FULL));
+  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["barbacue"] }, FULL), ["barbacue"]);
+  assert.ok(!isRecipeCompatible({ requiredEquipment: ["barbacue"] }, FULL));
+});
+
+test("barbecue charcoal_kettle et gas_grill sont des capacités distinctes", () => {
+  const kettle = { requiredEquipment: [{ key: "barbecue", values: ["charcoal_kettle"] }] };
+  const gas = { requiredEquipment: [{ key: "barbecue", values: ["gas_grill"] }] };
+  assert.ok(CANONICAL_KEYS.includes("barbecue"));
+  assert.deepEqual(EQUIPMENT_CAPABILITIES.barbecue, ["charcoal_kettle", "gas_grill"]);
+  assert.equal(EQUIPMENT_LABELS.barbecue, "Barbecue");
+  assert.equal(EQUIPMENT_CAPABILITY_LABELS.charcoal_kettle, "Kettle charbon");
+  assert.deepEqual(getMissingEquipment(kettle, { barbecue: ["charcoal_kettle"] }), []);
+  assert.deepEqual(getMissingEquipment(kettle, { barbecue: ["gas_grill"] }), ["barbecue"]);
+  assert.deepEqual(getMissingEquipment(gas, { barbecue: ["gas_grill"] }), []);
+  assert.deepEqual(getMissingEquipment(gas, { barbecue: ["charcoal_kettle"] }), ["barbecue"]);
+  assert.deepEqual(getMissingEquipment(kettle, { barbecue: true }), []);
+  assert.deepEqual(
+    getMissingEquipment({ appliances: { barbecue: ["charcoal_kettle"] } }, { barbecue: ["gas_grill"] }),
+    ["barbecue"],
+  );
+});
+
+test("plancha reste une famille indépendante du barbecue à gaz", () => {
+  assert.ok(CANONICAL_KEYS.includes("plancha"));
+  assert.equal(EQUIPMENT_LABELS.plancha, "Plancha");
+  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["plancha"] }, { barbecue: ["gas_grill"] }), ["plancha"]);
+  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["barbecue"] }, { plancha: true }), ["barbecue"]);
+  assert.deepEqual(getMissingEquipment({ requiredEquipment: ["plancha"] }, { plancha: true }), []);
+});
+
+test("sous-vide générique, modèle nommé et ancien profil restent compatibles", () => {
+  const generic = { requiredEquipment: [{ key: "sous_vide", values: ["standard"] }] };
+  const anova = { requiredEquipment: [{ key: "sous_vide", values: ["anova_precision_cooker"] }] };
+  assert.deepEqual(getMissingEquipment(generic, { sous_vide: ["standard"] }), []);
+  assert.deepEqual(getMissingEquipment(generic, { sous_vide: ["anova_precision_cooker"] }), []);
+  assert.deepEqual(getMissingEquipment(anova, { sous_vide: ["standard"] }), ["sous_vide"]);
+  assert.deepEqual(getMissingEquipment(anova, { sous_vide: true }), []);
+  assert.deepEqual(migrateUserEquipment({ sous_vide: true }).sous_vide, ["generic"]);
+  assert.deepEqual(migrateUserEquipment({ sous_vide: ["standard"] }).sous_vide, ["standard"]);
+});
+
+test("combustibles : contrat fermé et séparé des appareils et ingrédients", () => {
+  assert.deepEqual(normalizeFuelRequirements({ charcoal: ["briquettes"], smoking_wood: ["oak"] }), {
+    charcoal: ["briquettes"],
+    smoking_wood: ["oak"],
+  });
+  assert.throws(() => normalizeFuelRequirements({ appliances: ["barbecue"] }), /unknown fuel requirement/);
+  assert.throws(() => normalizeFuelRequirements({ ingredients: ["briquettes"] }), /unknown fuel requirement/);
+  assert.throws(() => normalizeFuelRequirements({ smoking_wood: ["hickory"] }), /invalid smoking_wood/);
+});
+
+test("accessoires de barbecue restent des ustensiles non bloquants", () => {
+  const recipe = { requiredEquipment: [
+    "anneau à charbon", "diffuseur thermique", "séparateurs à charbon",
+    "cheminée d'allumage", "grille de saisie en fonte",
+  ] };
+  assert.deepEqual(getMissingEquipment(recipe, DEFAULT_USER_EQUIPMENT), []);
+  assert.ok(isRecipeCompatible(recipe, DEFAULT_USER_EQUIPMENT));
+});
+
+test("tri-state : raffinements barbecue sélectionnés et exclus sans faux blocage", () => {
+  const kettle = { requiredEquipment: [{ key: "barbecue", values: ["charcoal_kettle"] }] };
+  const gas = { requiredEquipment: [{ key: "barbecue", values: ["gas_grill"] }] };
+  const selectedKettle = { ...DEFAULT_EQUIPMENT_PREFERENCES, charcoal_kettle: EQUIPMENT_STATES.SELECTED };
+  assert.ok(isRecipeAdmissible(kettle, selectedKettle));
+  assert.ok(!isRecipeAdmissible(gas, selectedKettle));
+  const excludedKettle = { ...DEFAULT_EQUIPMENT_PREFERENCES, charcoal_kettle: EQUIPMENT_STATES.EXCLUDE };
+  assert.ok(!isRecipeAdmissible(kettle, excludedKettle));
+  assert.ok(isRecipeAdmissible(gas, excludedKettle));
+  const allBbqExcluded = {
+    ...DEFAULT_EQUIPMENT_PREFERENCES,
+    charcoal_kettle: EQUIPMENT_STATES.EXCLUDE,
+    gas_grill: EQUIPMENT_STATES.EXCLUDE,
+  };
+  assert.ok(!isRecipeAdmissible({ requiredEquipment: ["barbecue"] }, allBbqExcluded));
+  assert.deepEqual(toggleEquipmentCapability(["charcoal_kettle"], "barbecue", "charcoal_kettle"), false);
+  assert.equal(migrateEquipmentPreferences({ charcoal_kettle: EQUIPMENT_STATES.SELECTED }).charcoal_kettle, EQUIPMENT_STATES.SELECTED);
+  assert.equal(getEquipmentStateFeedback("charcoal_kettle", EQUIPMENT_STATES.SELECTED), "Kettle charbon sélectionné");
+});
+
+test("migration des profils barbecue, plancha et sous-vide générique", () => {
+  assert.deepEqual(migrateUserEquipment({ barbecue: true }).barbecue, ["generic"]);
+  assert.deepEqual(migrateUserEquipment({ barbecue: ["charcoal_kettle"] }).barbecue, ["charcoal_kettle"]);
+  assert.deepEqual(migrateUserEquipment({ plancha: true }).plancha, true);
+  assert.deepEqual(migrateUserEquipment({ sous_vide: true }).sous_vide, ["generic"]);
+  assert.deepEqual(migrateUserEquipment({ barbecue: ["weber"] }).barbecue, []);
 });
 
 test("migration tolérante du profil stocké", () => {
@@ -226,9 +318,9 @@ test("tri-state : cycle neutral -> selected -> exclude -> neutral", () => {
   assert.equal(cycleEquipmentState("unknown"), EQUIPMENT_STATES.SELECTED);
 });
 
-test("tri-state : état initial neutral sur les 14 clés canoniques", () => {
+test("tri-state : état initial neutral sur les 16 clés canoniques", () => {
   const keys = Object.keys(DEFAULT_EQUIPMENT_PREFERENCES);
-  assert.equal(keys.length, 14);
+  assert.equal(keys.length, 16);
   for (const key of CANONICAL_KEYS) {
     assert.equal(DEFAULT_EQUIPMENT_PREFERENCES[key], EQUIPMENT_STATES.NEUTRAL, `${key} n'est pas neutral`);
   }
@@ -471,5 +563,3 @@ test("tri-state : règle de non-rétroactivité (arbitrage PO 25/09/2026)", () =
   // Mais son statut d'incompatibilité est détectable pour affichage d'un badge d'alerte :
   assert.equal(isAdmissible, false);
 });
-
-
