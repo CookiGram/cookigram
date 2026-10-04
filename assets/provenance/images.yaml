@@ -7,6 +7,23 @@ static/images/air-fryer-pommes-terre-romarin.webp:
   sha256: 5677e6d6fa668265f99fe122d1722eea8d7a516d07b1447bddf21eba1989aec2
   attribution: CookiGram
 
+static/images/hauts-de-cuisse-poulet-fumes.webp:
+  recipe: hauts-de-cuisse-poulet-fumes
+  origin: generated
+  generator: OpenAI ImageGen
+  generated_at: '2026-10-04'
+  prompt: >-
+    Landscape 16:9 original CookiGram manga culinary illustration, warm semi-realistic
+    ink and watercolor with soft cel shading: four to six bone-in skin-on chicken
+    thighs smoked over oak, mahogany-brown crisp skin with subtle smoke marks and
+    restrained sheen, one piece opened to show juicy meat. Centered on simple platter
+    in three-quarter view, warm late-afternoon light, generous crop margins; generic
+    unbranded charcoal kettle softly in the distant background. Dish dominant; no
+    garnish or sides. No text, brands, watermark, people, photorealism or imitation
+    of any artist/studio/series.
+  sha256: 7b3a5d5182897f224ab1ae94c63d8aafd44b7a4fe81ad33a7fe27928545add98
+  attribution: CookiGram
+
 static/images/overnight-oats-pomme-cannelle-chia.webp:
   recipe: overnight-oats-pomme-cannelle-chia
   origin: generated

@@ -1,0 +1,70 @@
+---
+title: Hauts de cuisse de poulet fumés au kettle
+date_published: 2026-10-04
+date_modified: 2026-10-04
+portions: 4
+prep_time: 25 min
+total_time: 26 h 30 min
+spiciness: 0
+description: "Hauts de cuisse fumés au chêne, peau craquante et chair juteuse, salés à sec puis finis à feu vif sur le kettle."
+nutrition_profile: pleasure
+tags: [barbecue, poulet, fumé, kettle]
+source: https://github.com/PierreCsn/cookigram/issues/530
+author: Human Owner — brief CookiGram
+appliances:
+  barbecue: [charcoal_kettle]
+required_equipment:
+  - Kettle à charbon avec anneau à charbon et diffuseur thermique
+  - Cheminée d’allumage
+  - Thermomètre de grille et sonde alimentaire
+fuel_requirements:
+  charcoal: [briquettes]
+  smoking_wood: [oak]
+scaling: {enabled: false, reason: "Le dosage du sel est calculé sur le poids réel des morceaux et la disposition au kettle doit rester suffisamment espacée."}
+flavors:
+  pairing: [poulet, paprika fumé, chêne]
+  notes: [fumé, épicé doux, savoureux, croustillant]
+  harmony: "Le paprika fumé prolonge la fumée légère du chêne, tandis que la peau séchée prend un fini croustillant à feu vif."
+  tips: "Variante facultative, hors déroulé principal : vers 75 °C à cœur, badigeonner d’une fine couche de sauce BBQ, puis éventuellement d’une seconde quelques minutes plus tard; ne pas glacer plus tôt pour éviter de brûler les sucres."
+image: images/hauts-de-cuisse-poulet-fumes.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration sélectionnée et intégrée par un humain.
+image_generation:
+  provider: OpenAI ImageGen
+  generated_at: "2026-10-04"
+  prompt_file: image-prompts/hauts-de-cuisse-poulet-fumes.md
+---
+[Sécher au sel]
+- Peser les @cuisses de poulet{1,5 kg} avec peau et os.
+- Calculer 0,9 % de leur poids en @sel fin{13,5 g} (ajuster proportionnellement au poids réel).
+- Répartir le sel sur toutes les faces et glisser-en un peu sous la peau sans la détacher.
+- Poser peau vers le haut sur une #grille{} au-dessus d’un plat; réfrigérer à découvert ~{12 h} au minimum, jusqu’à 24 h.
+[Préparer le rub]
+- Mélanger le @paprika{8 g}, le @paprika fumé{4 g}, l’@ail en poudre{4 g} et l’@oignon en poudre{4 g}.
+- Ajouter le @poivre moulu{3 g}, le @thym{1 g}, le @cumin{1 g} et le @sucre roux{4 g}; ne pas ajouter de sel.
+- Pour une note piquante facultative, incorporer le @piment de Cayenne{0,3 g}.
+[Assaisonner]
+- Sortir le poulet, ne pas le rincer et le tamponner seulement si sa surface est humide.
+- Répartir le rub sur la chair et la peau; laisser tempérer le temps de préparer le kettle.
+[Allumer le kettle]
+- Remplir aux deux tiers l’#anneau à charbon{} de briquettes, sans tasser.
+- Allumer séparément 10 à 15 briquettes dans la #cheminée d’allumage{} jusqu’à ce qu’elles soient rougeoyantes et cendrées en surface.
+- Verser les briquettes allumées à une extrémité de l’anneau; garder les évents ouverts pour démarrer le tirage.
+[Installer le diffuseur]
+- Mettre en place le #diffuseur thermique{} et la grille de cuisson; ajouter une lèchefrite si le diffuseur n’en intègre pas.
+- Déposer un morceau de bois de chêne pour fumage (1 gros morceau) au début de la zone allumée; éviter toute charge excessive.
+- Fermer le couvercle et stabiliser la température au niveau de la grille à ^{160 C}, dans une plage de 150 à 165 °C.
+[Fumer]
+- Disposer les morceaux peau vers le haut au-dessus du diffuseur, sans les superposer; insérer la #sonde alimentaire{} dans la partie la plus épaisse d’un morceau, sans toucher l’os.
+- Fermer le couvercle et cuire indirectement ~{40 min} avant le premier contrôle; limiter les ouvertures.
+- Vérifier la température à cœur des morceaux les plus épais avec la #sonde alimentaire{}; poursuivre jusqu’à environ ^{71 C}, en contrôlant toutes les 10 min.
+[Rendre la peau croustillante]
+- Ouvrir davantage les évents et faire monter le kettle à ^{210 C}, dans une plage de 200 à 220 °C.
+- Poursuivre ~{10 min} peau vers le haut, jusqu’à une peau bien dorée et une température à cœur de 80 à 84 °C.
+- Vérifier avec la #sonde alimentaire{} dans la partie épaisse sans toucher l’os; la sécurité minimale est 74 °C à cœur, et la cible plus élevée améliore la tendreté de la cuisse.
+[Reposer]
+- Retirer les morceaux et les laisser reposer ~{8 min} sans les couvrir hermétiquement afin de préserver la peau croustillante.

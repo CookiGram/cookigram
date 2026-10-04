@@ -1,0 +1,3 @@
+# Prompt d’illustration — Hauts de cuisse de poulet fumés au kettle
+
+Landscape 16:9 original CookiGram manga culinary illustration, warm semi-realistic ink and watercolor with soft cel shading: four to six bone-in skin-on chicken thighs smoked over oak, mahogany-brown crisp skin with subtle smoke marks and restrained sheen, one piece opened to show juicy meat. Centered on simple platter in three-quarter view, warm late-afternoon light, generous crop margins; generic unbranded charcoal kettle softly in the distant background. Dish dominant; no garnish or sides. No text, brands, watermark, people, photorealism or imitation of any artist/studio/series.

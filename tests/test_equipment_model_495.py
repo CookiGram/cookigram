@@ -106,6 +106,7 @@ FUEL_REQUIREMENTS = {
 # - instant_pot (7) migrated to pressure_cooker: [instant_pot]
 # - cookeo (1) migrated to pressure_cooker: [cookeo]
 # - pressure_cooker: 0 -> 8
+# - #530 adds one barbecue: [charcoal_kettle] recipe
 EXPECTED_KEY_COUNTS = {
     "thermomix": 112,
     "four": 21,
@@ -115,6 +116,7 @@ EXPECTED_KEY_COUNTS = {
     "sous_vide": 6,
     "rice_cooker": 1,
     "stand_mixer": 7,
+    "barbecue": 1,
 }
 
 BRAND_TOKENS = (
