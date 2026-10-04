@@ -7,11 +7,16 @@ Product-owner decision applied here: the pressure-cooker family is
 values `[standard | instant_pot | cookeo]`. The flat alternative (three
 independent keys) is rejected, see §4.
 
+This contract was extended by issue [#520](https://github.com/CookiGram/cookigram/issues/520):
+`barbecue` and `plancha` are now canonical families, barbecue and sous-vide
+have explicit capability matching, and fuels use the independent
+`fuel_requirements` metadata described in §11.
+
 Lane B edits **no recipes and no prototype files** — contract + tests + docs
 only. Recipe migration belongs to its own lane; prototype profile/filter
 integration belongs to Lane C.
 
-## 1. Canonical key set (10 A+B families + kept legacy keys)
+## 1. Canonical key set (12 A+B+#520 families + kept legacy keys)
 
 All keys are `snake_case`, matching the existing convention
 (`pizza_oven`, `rice_cooker`, `sous_vide`).
@@ -29,14 +34,17 @@ All keys are `snake_case`, matching the existing convention
 | 9 | `food_processor` | B | Robot multifonction | `[standard]` |
 | 10 | `microwave` | B | Micro-ondes | `[standard]` |
 | 11 | `slow_cooker` | B | Mijoteuse | `[standard]` |
+| 12 | `barbecue` | #520 | Barbecue | `[charcoal_kettle \| gas_grill]` |
+| 13 | `plancha` | #520 | Plancha | `[standard]` |
 
 Kept legacy keys (unchanged, still valid): `thermomix`, `sous_vide`,
-`stovetop`. `thermomix` keeps its TM model list, `sous_vide` keeps its
-device-model values (see §2).
+`stovetop`. `thermomix` keeps its TM model list. `sous_vide` keeps
+`anova_precision_cooker` and adds `standard` for a non-branded generic device
+(see §2 and §12).
 
-Note on counting: waves A+B name 10 families; `four`/`oven` alignment is the
-normalization of an existing key (§5), and `thermomix`/`sous_vide`/`stovetop`
-are kept as-is. The full closed vocabulary is §7.
+Note on counting: waves A+B name 10 families; #520 adds two more. `four`/`oven`
+alignment normalizes an existing key (§5), while `thermomix`, `sous_vide`, and
+`stovetop` remain established families. The full closed vocabulary is §7.
 
 ## 2. Preserved variants (must not be lost)
 
@@ -47,7 +55,16 @@ are kept as-is. The full closed vocabulary is §7.
 - `thermomix`: model list `TM31, TM5, TM6, TM7`, in both inline
   (`thermomix: [TM31, TM5, TM6, TM7]`) and block-list (`- TM5`) syntax.
 - `four`: values `[standard, chaleur-tournante, convection]` (order-insensitive).
-- `sous_vide`: device-model values such as `anova_precision_cooker`.
+- `sous_vide`: device-model/capability values `standard` and
+  `anova_precision_cooker`. A recipe requiring `[standard]` accepts any
+  sous-vide capability. A profile declaring `[standard]` does not satisfy an
+  explicitly Anova-specific recipe. A legacy profile value `true` migrates
+  to `[generic]`, preserving the old family-wide match until the user chooses
+  an explicit capability.
+- `barbecue`: `charcoal_kettle` and `gas_grill` are distinct values under one
+  family key. A requirement naming one value matches that value only; the
+  family-only profile toggle means any barbecue. `plancha` is a separate
+  family even when the physical gas grill also has a plancha surface.
 
 ## 3. `[standard]` default
 
@@ -63,6 +80,41 @@ appliances:
 for `air_fryer`, `stand_mixer`, `rice_cooker`, `blender`,
 `immersion_blender`, `food_processor`, `microwave`, `slow_cooker`, and for
 `pizza_oven`/`pressure_cooker`/`four` when no model refinement applies.
+`plancha` uses `[standard]`. Barbecue and sous-vide use their explicit
+capabilities from §2.
+
+## 3.1 BBQ and generic sous-vide capabilities (#520)
+
+Canonical Gram examples:
+
+```yaml
+appliances:
+  barbecue: [charcoal_kettle]
+```
+
+```yaml
+appliances:
+  barbecue: [gas_grill]
+```
+
+```yaml
+appliances:
+  plancha: [standard]
+  sous_vide: [standard]
+```
+
+`barbecue` is one family with two distinct capabilities, not two appliances.
+A charcoal kettle never satisfies a recipe requiring `gas_grill`, or vice
+versa. A profile can own both. `plancha` matches independently from
+`barbecue: [gas_grill]`; declare both when the recipe genuinely needs both
+functions. No brand or kettle size is a canonical key or capability.
+
+The profile's legacy `sous_vide: true` migrates to `[generic]` to preserve
+historical compatibility with the existing Anova-valued corpus. New profiles
+may declare `sous_vide: [standard]` for a generic circulator; it satisfies
+generic `[standard]` recipes but not a requirement explicitly naming
+`anova_precision_cooker`. An Anova capability satisfies generic `[standard]`
+requirements as well as the matching Anova-specific requirement.
 
 ## 4. Pressure-cooker family (hierarchical — decided)
 
@@ -129,13 +181,13 @@ for such recipes (in general: within one recipe, `blender` and
   `- ...`) keep parsing.
 - **Unknown keys fail closed with an explicit message**: a parser encountering
   an appliance key outside the closed vocabulary below must reject it with an
-  error naming the key (e.g. `unknown appliance key: 'barbecue'`) instead of
+  error naming the key (e.g. `unknown appliance key: 'barbacue'`) instead of
   silently ignoring it. Silent ignore would hide typos (`airfryer`) and block
   future keys from being added deliberately via `docs/equipment-add-appliance.md`.
 - Closed vocabulary (canonical + read aliases): `air_fryer`, `stand_mixer`,
   `rice_cooker`, `pizza_oven`, `pressure_cooker`, `four`, `oven` (alias),
   `blender`, `immersion_blender`, `food_processor`, `microwave`,
-  `slow_cooker`, `thermomix`, `sous_vide`, `stovetop`, plus migration-read
+  `slow_cooker`, `barbecue`, `plancha`, `thermomix`, `sous_vide`, `stovetop`, plus migration-read
   aliases `instant_pot`, `cookeo` (normalized per §4; new content must emit
   `pressure_cooker`).
 
@@ -145,11 +197,13 @@ The following remain in `required_equipment` and must never become
 `appliances:` keys (out-of-scope list from issue #495): casserole, faitout,
 cocotte en fonte, poêle, sauteuse, wok, passoire, saladier, fouet, spatule,
 mandoline, râpe, moules, plaques, pierre/pelle à pizza, balance, thermomètre,
-couteaux. A recipe requiring only such standard utensils must never be blocked
-by the equipment filter.
+couteaux, pizza stone/peel, searing grate, charcoal ring, heat diffuser,
+charcoal dividers, and chimney starter. These functional accessories remain
+descriptive entries in `required_equipment`, never `appliances` keys, and do
+not block the equipment filter.
 
-Deferred P2/P3 devices (not in this contract): barbecue, plancha,
-deep fryer, bread maker, ice cream maker, waffle maker, dehydrator,
+Deferred P2/P3 devices (not in this contract): deep fryer, bread maker, ice
+cream maker, waffle maker, dehydrator,
 yogurt maker, raclette/fondue/etc.
 
 ## 9. No brands in primary UI labels
@@ -168,3 +222,32 @@ catalogue; no new brand labels are introduced.)
 allowlist in `cookigram-core`). This contract introduces no core change: new
 canonical keys validate as long as the shape holds. See
 `docs/equipment-add-appliance.md` for the procedure to add a future appliance.
+
+## 11. Fuel requirements (#520)
+
+Fuels are recipe metadata, separate from both `ingredients` and `appliances`.
+The optional field is a closed, deterministic mapping named
+`fuel_requirements`; its keys are fuel classes and its values are lists of
+canonical fuel types:
+
+```yaml
+fuel_requirements:
+  charcoal: [briquettes]
+  smoking_wood: [oak]
+```
+
+The initial vocabulary is `charcoal: [briquettes]` and `smoking_wood: [oak]`.
+Add a value only for an explicit recipe need and matching support; do not put
+charcoal or smoking wood in the food ingredient list or appliance map. The
+pinned Core recipe uses a generic metadata dictionary and validates
+`appliances` as key-to-list-of-strings, so the optional metadata field needs
+no Core schema change. Consumers needing fuel matching must opt into this
+contract explicitly; there is no fuel-profile filter in the current UI.
+
+## 12. Accessory and fuel boundary (#520)
+
+Examples for `required_equipment` are `anneau à charbon`, `diffuseur
+thermique`, `séparateurs à charbon`, `cheminée d'allumage`, and `grille de
+saisie en fonte`. Accessories are human-readable and non-blocking to equipment
+filtering so a functional equivalent can be used. They are not combustibles;
+fuel choices belong only in `fuel_requirements`.

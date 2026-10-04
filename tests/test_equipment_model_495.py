@@ -40,6 +40,8 @@ CANONICAL_KEYS = frozenset({
     "slow_cooker",
     "thermomix",
     "sous_vide",
+    "barbecue",
+    "plancha",
     "stovetop",
 })
 
@@ -68,6 +70,8 @@ UI_LABELS = {
     "slow_cooker": "Mijoteuse",
     "thermomix": "Thermomix",
     "sous_vide": "Sous-vide",
+    "barbecue": "Barbecue",
+    "plancha": "Plancha",
     "stovetop": "Plaques & Poêles",
 }
 
@@ -76,8 +80,19 @@ UTENSILS_OUT = frozenset({
     "casserole", "faitout", "cocotte", "poele", "poêle", "sauteuse", "wok",
     "passoire", "saladier", "fouet", "spatule", "mandoline", "rape", "râpe",
     "moules", "plaques", "pierre", "pelle", "balance", "thermometre",
-    "thermomètre", "couteaux",
+    "thermomètre", "couteaux", "grille de saisie en fonte", "grille en fonte",
+    "anneau à charbon", "diffuseur", "diffuseur thermique", "séparateurs à charbon",
+    "cheminée d'allumage",
 })
+
+CAPABILITY_VALUES = {
+    "barbecue": frozenset({"charcoal_kettle", "gas_grill"}),
+    "sous_vide": frozenset({"standard", "anova_precision_cooker"}),
+}
+FUEL_REQUIREMENTS = {
+    "charcoal": frozenset({"briquettes"}),
+    "smoking_wood": frozenset({"oak"}),
+}
 
 # Expected origin/main corpus inventory (Lane A audit, re-verified here).
 # thermomix re-pinned 63 -> 87 after the #492 wave (24 new TM31 hits,
@@ -105,6 +120,7 @@ EXPECTED_KEY_COUNTS = {
 BRAND_TOKENS = (
     "ooni", "koda", "fyra", "karu", "roccbox", "gozney", "cookeo",
     "instant pot", "instant_pot", "anova", "moulinex", "magimix",
+    "weber", "master touch", "master_touch",
 )
 
 
@@ -161,6 +177,10 @@ def normalize_appliances(raw):
             lowered = value.strip().lower()
             if lowered == "instant_pot_6qt":
                 lowered = "instant_pot"
+            if canonical in CAPABILITY_VALUES:
+                lowered = lowered.replace("-", "_")
+                if lowered not in CAPABILITY_VALUES[canonical]:
+                    raise ValueError(f"unknown {canonical} capability: {lowered!r}")
             mapped.append(lowered)
         normalized.setdefault(canonical, [])
         for value in mapped:
@@ -199,10 +219,33 @@ def is_satisfied(requirements, user):
         if key == "pressure_cooker":
             if not set(user[key]) & set(values):
                 return False
+        elif key in CAPABILITY_VALUES:
+            owned = set(user[key])
+            if "generic" in owned:
+                continue
+            if "standard" in values and owned:
+                continue
+            if not owned.intersection(values):
+                return False
         # Other families: key ownership suffices (single-value `[standard]`
         # families and exact model lists such as thermomix TM variants, where
         # any owned model entry counts as family ownership in this contract).
     return True
+
+
+def normalize_fuel_requirements(raw):
+    """Validate the optional fuel_requirements mapping independently."""
+    if not isinstance(raw, dict):
+        raise ValueError("fuel_requirements must be a mapping")
+    normalized = {}
+    for fuel_class, raw_values in raw.items():
+        if fuel_class not in FUEL_REQUIREMENTS:
+            raise ValueError(f"unknown fuel requirement: {fuel_class!r}")
+        values = raw_values if isinstance(raw_values, list) else [raw_values]
+        if not values or any(value not in FUEL_REQUIREMENTS[fuel_class] for value in values):
+            raise ValueError(f"invalid {fuel_class} fuel requirement")
+        normalized[fuel_class] = list(dict.fromkeys(values))
+    return normalized
 
 
 def corpus_appliance_hits():
@@ -224,6 +267,16 @@ class ParsingTests(unittest.TestCase):
                     parse_appliances_block(f"appliances:\n  {key}: [standard]\n"),
                     [{key: ["standard"]}],
                 )
+        self.assertEqual(
+            parse_appliances_block("appliances:\n  barbecue: [charcoal_kettle]\n  plancha: [standard]\n"),
+            [{"barbecue": ["charcoal_kettle"], "plancha": ["standard"]}],
+        )
+
+    def test_barbecue_block_list_values_parse(self):
+        self.assertEqual(
+            parse_appliances_block("appliances:\n  barbecue:\n  - gas_grill\n"),
+            [{"barbecue": ["gas_grill"]}],
+        )
 
     def test_new_keys_normalize_cleanly(self):
         raw = {"air_fryer": ["standard"], "blender": ["standard"],
@@ -237,8 +290,10 @@ class ParsingTests(unittest.TestCase):
         )
 
     def test_unknown_keys_fail_closed_with_explicit_message(self):
-        with self.assertRaisesRegex(ValueError, "unknown appliance key: 'barbecue'"):
-            normalize_appliances({"barbecue": ["standard"]})
+        self.assertEqual(normalize_appliances({"barbecue": ["charcoal_kettle"]}),
+                         {"barbecue": ["charcoal_kettle"]})
+        with self.assertRaisesRegex(ValueError, "unknown appliance key: 'barbacue'"):
+            normalize_appliances({"barbacue": ["standard"]})
         with self.assertRaisesRegex(ValueError, "unknown appliance key: 'airfryer'"):
             normalize_appliances({"airfryer": ["standard"]})
 
@@ -360,6 +415,48 @@ class PressureCookerTests(unittest.TestCase):
                                       {"pressure_cooker": ["instant_pot"]}))
 
 
+class BbqAndSousVideTests(unittest.TestCase):
+    def test_barbecue_capabilities_match_only_their_own_model(self):
+        kettle = normalize_appliances({"barbecue": ["charcoal_kettle"]})
+        gas = normalize_appliances({"barbecue": ["gas_grill"]})
+        self.assertTrue(is_satisfied(kettle, {"barbecue": ["charcoal_kettle"]}))
+        self.assertFalse(is_satisfied(kettle, {"barbecue": ["gas_grill"]}))
+        self.assertTrue(is_satisfied(gas, {"barbecue": ["gas_grill"]}))
+        self.assertFalse(is_satisfied(gas, {"barbecue": ["charcoal_kettle"]}))
+        self.assertTrue(is_satisfied(kettle, {"barbecue": ["generic"]}))
+
+    def test_plancha_is_independent_from_gas_grill(self):
+        plancha = normalize_appliances({"plancha": ["standard"]})
+        self.assertTrue(is_satisfied(plancha, {"plancha": ["standard"]}))
+        self.assertFalse(is_satisfied(plancha, {"barbecue": ["gas_grill"]}))
+
+    def test_generic_sous_vide_and_anova_specific_matching(self):
+        generic = normalize_appliances({"sous_vide": ["standard"]})
+        anova = normalize_appliances({"sous_vide": ["anova_precision_cooker"]})
+        self.assertTrue(is_satisfied(generic, {"sous_vide": ["standard"]}))
+        self.assertTrue(is_satisfied(generic, {"sous_vide": ["anova_precision_cooker"]}))
+        self.assertFalse(is_satisfied(anova, {"sous_vide": ["standard"]}))
+        self.assertTrue(is_satisfied(anova, {"sous_vide": ["generic"]}))
+
+    def test_unknown_capability_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "unknown barbecue capability"):
+            normalize_appliances({"barbecue": ["weber_kettle"]})
+
+
+class FuelContractTests(unittest.TestCase):
+    def test_fuels_are_structured_outside_appliances_and_ingredients(self):
+        self.assertEqual(
+            normalize_fuel_requirements({"charcoal": ["briquettes"], "smoking_wood": ["oak"]}),
+            {"charcoal": ["briquettes"], "smoking_wood": ["oak"]},
+        )
+        with self.assertRaisesRegex(ValueError, "unknown fuel requirement"):
+            normalize_fuel_requirements({"appliances": ["barbecue"]})
+        with self.assertRaisesRegex(ValueError, "unknown fuel requirement"):
+            normalize_fuel_requirements({"ingredients": ["briquettes"]})
+        with self.assertRaisesRegex(ValueError, "invalid smoking_wood"):
+            normalize_fuel_requirements({"smoking_wood": ["hickory"]})
+
+
 class UtensilTests(unittest.TestCase):
     def test_no_utensil_is_an_appliance_key_in_corpus(self):
         for path, key, _values in corpus_appliance_hits():
@@ -378,15 +475,27 @@ class UtensilTests(unittest.TestCase):
             with self.subTest(recipe=path.name):
                 self.assertTrue(is_satisfied({}, bare))
 
+    def test_bbq_accessories_remain_out_of_the_appliance_vocabulary(self):
+        for accessory in ("anneau à charbon", "diffuseur thermique", "séparateurs à charbon",
+                          "cheminée d'allumage", "grille de saisie en fonte"):
+            self.assertIn(accessory, UTENSILS_OUT)
+            with self.subTest(accessory=accessory), self.assertRaises(ValueError):
+                normalize_appliances({accessory: ["standard"]})
+
 
 class UILabelTests(unittest.TestCase):
     def test_labels_cover_all_contract_families(self):
         for key in ("air_fryer", "stand_mixer", "rice_cooker", "pizza_oven",
                     "pressure_cooker", "four", "blender", "immersion_blender",
-                    "food_processor", "microwave", "slow_cooker"):
+                    "food_processor", "microwave", "slow_cooker", "barbecue", "plancha"):
             self.assertIn(key, UI_LABELS, key)
 
     def test_no_brands_in_primary_labels(self):
+        for key in CANONICAL_KEYS:
+            if key == "thermomix":
+                continue  # established family name, documented in §9
+            for token in BRAND_TOKENS:
+                self.assertNotIn(token, key.lower(), f"canonical appliance key carries a brand: {key}")
         for key, label in UI_LABELS.items():
             if key == "thermomix":
                 continue  # established family name, documented in §9
@@ -406,4 +515,3 @@ class ApplianceAssetTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

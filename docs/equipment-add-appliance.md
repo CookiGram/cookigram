@@ -1,6 +1,7 @@
 # Adding a new appliance (equipment contract v2)
 
 Parent issue: https://github.com/CookiGram/cookigram/issues/495.
+BBQ extension: https://github.com/CookiGram/cookigram/issues/520.
 Canonical contract: `docs/equipment-contract-495.md`.
 Corpus audit: `docs/equipment-audit-495.md`.
 
@@ -8,6 +9,9 @@ Corpus audit: `docs/equipment-audit-495.md`.
 
 - `snake_case`, English, singular family noun: `air_fryer`, `stand_mixer`,
   `rice_cooker`, `pizza_oven`, `pressure_cooker`.
+- BBQ families added by #520 are `barbecue` (`charcoal_kettle` or `gas_grill`)
+  and `plancha` (`standard`). Do not make fuel, accessories, brands, or kettle
+  sizes into appliance keys.
 - One key per device **family**, not per brand or size. Brands, sizes, and
   model variants go in the **values** list (`pizza_oven: [ooni, koda, …]`,
   `pressure_cooker: [instant_pot, cookeo]`), never in the key.
@@ -24,12 +28,24 @@ Corpus audit: `docs/equipment-audit-495.md`.
 - If the new device is a model/capability of an existing family (a new
   multicooker brand, a new pizza-oven make), add a **value** to the existing
   key — do not create a key.
+- Capability families match explicitly named values: `barbecue: [charcoal_kettle]`
+  does not match `barbecue: [gas_grill]`. A generic legacy boolean profile is
+  wildcard-compatible; new profiles should select explicit capabilities.
+- Sous-vide recipes may use `[standard]` when any circulator works. Keep
+  `anova_precision_cooker` only when the recipe genuinely depends on that
+  named capability. Legacy boolean sous-vide profiles preserve their old
+  family-wide behavior.
+- Combustibles are declared separately as `fuel_requirements`, for example
+  `charcoal: [briquettes]` or `smoking_wood: [oak]`. They are not ingredients
+  or appliances. Standard optional utensils/accessories stay in
+  `required_equipment` and remain non-blocking.
 
 ## 3. Label rule
 
 - Primary UI label is generic French with **no brands**: Air Fryer, Robot
   pâtissier, Rice cooker, Four à pizza, Autocuiseur / Multicuiseur, Blender,
-  Mixeur plongeant, Robot multifonction, Micro-ondes, Mijoteuse.
+  Mixeur plongeant, Robot multifonction, Micro-ondes, Mijoteuse, Barbecue,
+  Plancha.
 - Brands/models appear only in secondary refinements, tooltips, or variant
   names. Add the label to the `UI_LABELS` table in
   `tests/test_equipment_model_495.py` and to the contract §1 table.

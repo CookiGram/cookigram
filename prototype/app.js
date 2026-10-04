@@ -8,6 +8,7 @@ import { summarizeNutritionProfiles } from "./nutrition-stats.js";
 import {
   DEFAULT_USER_EQUIPMENT,
   EQUIPMENT_LABELS,
+  EQUIPMENT_CAPABILITY_LABELS,
   EQUIPMENT_FEEDBACK_LABELS,
   PRESSURE_COOKER_MODEL_LABELS,
   getMissingEquipment,
@@ -15,6 +16,8 @@ import {
   pressureCapsOf,
   togglePressureCookerCap,
   togglePressureCookerFamily,
+  addEquipmentCapability,
+  removeEquipmentCapability,
   EQUIPMENT_STATES,
   DEFAULT_EQUIPMENT_PREFERENCES,
   cycleEquipmentState,
@@ -619,7 +622,7 @@ function repaintEquipmentChips() {
     chip.classList.toggle("active", curState === EQUIPMENT_STATES.SELECTED);
     chip.setAttribute("aria-pressed", curState === EQUIPMENT_STATES.SELECTED ? "true" : "false");
 
-    const label = cap ? (PRESSURE_COOKER_MODEL_LABELS[cap] || cap) : (EQUIPMENT_FEEDBACK_LABELS[equip] || EQUIPMENT_LABELS[equip] || equip);
+    const label = cap ? (PRESSURE_COOKER_MODEL_LABELS[cap] || EQUIPMENT_CAPABILITY_LABELS[cap] || cap) : (EQUIPMENT_FEEDBACK_LABELS[equip] || EQUIPMENT_LABELS[equip] || equip);
     const stateDesc = curState === EQUIPMENT_STATES.SELECTED ? "sélectionné" : (curState === EQUIPMENT_STATES.EXCLUDE ? "exclu" : "neutre");
     chip.setAttribute("aria-label", `${label} : ${stateDesc}. Cliquer pour changer.`);
 
@@ -656,7 +659,11 @@ function bindEquipmentChips() {
       // Synchronisation compatibilité rétroactive state.userEquipment
       if (nextState === EQUIPMENT_STATES.SELECTED) {
         if (cap) {
-          state.userEquipment.pressure_cooker = togglePressureCookerCap(state.userEquipment.pressure_cooker, cap) || [cap];
+          if (equip === "pressure_cooker") {
+            state.userEquipment.pressure_cooker = togglePressureCookerCap(state.userEquipment.pressure_cooker, cap) || [cap];
+          } else {
+            state.userEquipment[equip] = addEquipmentCapability(state.userEquipment[equip], equip, cap);
+          }
         } else if (equip === "pressure_cooker") {
           state.userEquipment.pressure_cooker = ["generic"];
         } else {
@@ -664,7 +671,8 @@ function bindEquipmentChips() {
         }
       } else if (nextState === EQUIPMENT_STATES.EXCLUDE) {
         if (cap) {
-          state.userEquipment.pressure_cooker = false;
+          if (equip === "pressure_cooker") state.userEquipment.pressure_cooker = false;
+          else state.userEquipment[equip] = removeEquipmentCapability(state.userEquipment[equip], equip, cap);
         } else if (equip === "pressure_cooker") {
           state.userEquipment.pressure_cooker = false;
         } else {
