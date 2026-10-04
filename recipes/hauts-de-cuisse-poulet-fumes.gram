@@ -39,7 +39,8 @@ image_generation:
   prompt_file: image-prompts/hauts-de-cuisse-poulet-fumes.md
 ---
 [Sécher au sel]
-- Peser les @cuisses de poulet{1,5 kg} avec peau et os, puis calculer 0,9 % de leur poids en @sel fin{13,5 g} (ajuster proportionnellement au poids réel).
+- Peser les @cuisses de poulet{1,5 kg} avec peau et os.
+- Calculer 0,9 % de leur poids en @sel fin{13,5 g} (ajuster proportionnellement au poids réel).
 - Répartir le sel sur toutes les faces et glisser-en un peu sous la peau sans la détacher.
 - Poser peau vers le haut sur une #grille{} au-dessus d’un plat; réfrigérer à découvert ~{12 h} au minimum, jusqu’à 24 h.
 [Préparer le rub]
