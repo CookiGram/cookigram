@@ -1289,6 +1289,21 @@ ingredients:
     status: incomplete
     source: Sirop d'érable pour servir indiqué par la source Cookidoo (r348143) ;
       aucune donnée physique ou nutritionnelle ajoutée.
+  foie-gras-de-canard-cru:
+    status: incomplete
+    source: Ingrédient identifié dans les recettes de foie gras sous vide de Chefounet
+      et de l'Atelier des Chefs ; données CIQUAL nutritionnelles à compléter.
+  truffe-noire:
+    status: incomplete
+    source: Truffe noire (Tuber melanosporum) mentionnée dans la recette de Chefounet
+      et les références de l'Académie du Goût ; données CIQUAL à compléter.
+  sauternes:
+    status: incomplete
+    source: Sauternes mentionné dans la recette de terrine mi-cuite des Produits de
+      Nouvelle-Aquitaine ; données nutritionnelles à compléter.
+  figue-sechee:
+    status: incomplete
+    source: Figue sèche mesurée dans la recette de terrine aux figues et Sauternes (750g) ; données nutritionnelles spécifiques à compléter.
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES
