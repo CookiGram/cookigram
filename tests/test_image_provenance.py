@@ -125,6 +125,7 @@ class ImageProvenanceTests(unittest.TestCase):
             "sauce-bechamel",
             "sauce-hollandaise",
             "sauce-mayonnaise",
+            "hauts-de-cuisse-poulet-fumes",
         })
 
     def test_temporary_credit_is_rejected(self):
