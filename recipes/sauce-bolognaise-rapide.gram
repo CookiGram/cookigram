@@ -11,9 +11,11 @@ spiciness: 0
 tags: [sauce, bolognaise, bœuf, tomate, thermomix, familial]
 source: https://cookidoo.fr/recipes/recipe/fr-FR/r154302
 author: Cookidoo
-# Adaptation originale CookiGram. Inspirations : Cookidoo (quantités et durée totale,
-# https://cookidoo.fr/recipes/recipe/fr-FR/r154302) ; Cookomix, Spaghettis bolognaise
-# (gestes Thermomix et cuisson de la viande, https://www.cookomix.com/recettes/spaghettis-bolognaise-thermomix/).
+# Adaptation originale CookiGram fondée sur le brouillon accepté de l'issue #540.
+# Inspirations de composition et de durée totale : Cookidoo
+# (https://cookidoo.fr/recipes/recipe/fr-FR/r154302) ; gestes Thermomix adaptés de
+# Cookomix, Spaghettis bolognaise
+# (https://www.cookomix.com/recettes/spaghettis-bolognaise-thermomix/).
 # Les réglages ci-dessous sont éditoriaux, non reproduits d'une méthode Cookidoo.
 appliances:
   thermomix: [TM5, TM6, TM7]
