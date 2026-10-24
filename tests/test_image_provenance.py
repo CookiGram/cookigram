@@ -13,6 +13,12 @@ import sys
 sys.modules[SPEC.name] = AUDIT
 SPEC.loader.exec_module(AUDIT)
 
+MINIMUM_IMAGE_PROVENANCE_RECORDS = 99
+
+
+def _meets_inventory_floor(actual: int, minimum: int) -> bool:
+    return actual >= minimum
+
 
 class ImageProvenanceTests(unittest.TestCase):
     def test_generated_replacements_have_valid_provenance(self):
@@ -20,7 +26,7 @@ class ImageProvenanceTests(unittest.TestCase):
         self.assertEqual(findings, [])
 
         manifest = yaml.safe_load((ROOT / AUDIT.PROVENANCE_MANIFEST).read_text(encoding="utf-8"))
-        self.assertTrue(manifest)
+        self.assertTrue(_meets_inventory_floor(len(manifest), MINIMUM_IMAGE_PROVENANCE_RECORDS))
         actual_recipe_provenance = {
             record.get("recipe") or record.get("subject", {}).get("recipe")
             for record in manifest.values()
@@ -129,6 +135,10 @@ class ImageProvenanceTests(unittest.TestCase):
             "hauts-de-cuisse-poulet-fumes",
         }
         self.assertTrue(expected_recipe_provenance <= actual_recipe_provenance)
+
+    def test_provenance_inventory_floor_rejects_deletions_and_allows_additions(self):
+        self.assertTrue(_meets_inventory_floor(MINIMUM_IMAGE_PROVENANCE_RECORDS + 1, MINIMUM_IMAGE_PROVENANCE_RECORDS))
+        self.assertFalse(_meets_inventory_floor(MINIMUM_IMAGE_PROVENANCE_RECORDS - 1, MINIMUM_IMAGE_PROVENANCE_RECORDS))
 
     def test_temporary_credit_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
