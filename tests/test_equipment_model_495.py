@@ -101,6 +101,7 @@ FUEL_REQUIREMENTS = {
 # all TM31-declared; 3 bouillons/fond + caramel carry no appliances block,
 # matching main-corpus stovetop practice), stand_mixer 0 -> 7 (A1 pates,
 # [standard]); all other counts unchanged.
+# Issue #540 adds one TM5/TM6/TM7 Thermomix recipe.
 # Lane D recipe migration (issue #495):
 # - air_fryer: 0 -> 15 (15 air-fryer-*.gram recipes declared)
 # - instant_pot (7) migrated to pressure_cooker: [instant_pot]
@@ -108,7 +109,7 @@ FUEL_REQUIREMENTS = {
 # - pressure_cooker: 0 -> 8
 # - #530 adds one barbecue: [charcoal_kettle] recipe
 EXPECTED_KEY_COUNTS = {
-    "thermomix": 112,
+    "thermomix": 113,
     "four": 21,
     "pizza_oven": 20,
     "pressure_cooker": 8,
