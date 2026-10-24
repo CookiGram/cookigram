@@ -3230,6 +3230,7 @@ ingredients:
   sauce-burger:
     name: Sauce burger du commerce
     aliases:
+    - sauce-burger
     - sauce burger
     category: Condiments et assaisonnements
   cacahuetes:
