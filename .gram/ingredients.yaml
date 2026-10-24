@@ -3227,6 +3227,11 @@ ingredients:
     - bœuf haché
     - viande de bœuf hachée
     category: Viandes
+  sauce-burger:
+    name: Sauce burger du commerce
+    aliases:
+    - sauce burger
+    category: Condiments et assaisonnements
   cacahuetes:
     name: Cacahuètes
     aliases:

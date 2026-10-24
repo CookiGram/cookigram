@@ -1,0 +1,65 @@
+---
+title: Rice bowl express au bœuf haché
+date_published: 2026-10-25
+date_modified: 2026-10-25
+portions: 4
+prep_time: 10 min
+total_time: 45 min
+spiciness: 0
+description: "Un bol quotidien de riz blanc moelleux et de bœuf haché bien saisi, relevé d'une sauce burger crémeuse."
+tags: [riz, boeuf, rapide, quotidien]
+source: https://youtu.be/M3tYTsY4A84
+author: Ethan Chlebowski
+required_equipment:
+  - Casserole avec couvercle
+  - Grande poêle
+  - Thermomètre alimentaire
+scaling:
+  enabled: true
+  min_portions: 2
+  max_portions: 6
+  step: 2
+  note: Les durées de cuisson du riz et de la viande ne changent pas avec les portions; adapter la taille de la poêle pour saisir sans entasser.
+image: images/rice-bowl-boeuf-hache.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour cette fiche.
+image_generation:
+  provider: OpenAI
+  model: unknown
+  generated_at: "2026-10-25"
+  prompt_file: image-prompts/rice-bowl-boeuf-hache.md
+---
+
+[Préparer le riz]
+- Rincer le @riz-long-blanc{300 g} dans une #passoire{} jusqu'à ce que l'eau soit presque claire, puis l'égoutter.
+- Mettre le riz dans une #casserole{} avec l'@eau{600 g} et le @sel{3 g}.
+
+[Cuire le riz]
+- Porter à ébullition, couvrir et cuire à feu très doux ~{15 min}; le liquide doit être absorbé.
+- Retirer du feu et laisser reposer à couvert ~{10 min}; les grains doivent être tendres.
+- Égrainer le riz à la fourchette.
+
+[Préparer la viande]
+- Chauffer l'@huile d'olive{15 g} dans une #poêle{} large à feu moyen-vif jusqu'à ce qu'elle soit fluide et chatoyante.
+- Ajouter le @boeuf-hache{500 g} en l'émiettant en morceaux réguliers; saler avec le @sel{3 g}.
+
+[Saisir le bœuf]
+- Étaler la viande en une couche et la laisser dorer sans la remuer ~{3 min}; le dessous doit être bien coloré.
+- Poursuivre la cuisson en remuant et en séparant les morceaux ~{5 min}; vérifier au thermomètre une température à cœur d'au moins ^{71 C} partout.
+
+[Dresser les bols]
+- Répartir le riz chaud et le bœuf dans quatre bols.
+- Ajouter l'@sauce-burger{100 g} et servir aussitôt.
+- Facultatif : proposer à table des cornichons égouttés ou des herbes fraîches. Pour changer, la sauce burger peut être remplacée par une sauce barbecue, une salsa ou une sauce piquante; choisir une seule sauce par bol.
+
+## Préparation anticipée et conservation
+
+Refroidir rapidement séparément le riz et la viande, en petites portions peu profondes, puis réfrigérer ou congeler sans attendre. Pour le riz, viser un refroidissement en moins d'une heure et une conservation réfrigérée maximale de 24 heures; congeler les portions destinées à être gardées plus longtemps. Conserver la viande cuite au réfrigérateur au plus 3 à 4 jours ou la congeler. Décongeler au réfrigérateur. Réchauffer chaque préparation une seule fois, jusqu'à ce qu'elle soit fumante à cœur; mélanger à mi-parcours au micro-ondes.
+
+La sauce burger est un produit du commerce : vérifier l'étiquette pour les allergènes et suivre ses consignes de conservation après ouverture.
+
+Repères : cuisson du bœuf haché à 71 °C minimum selon [FoodSafety.gov](https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures) ; refroidissement du riz en moins d'une heure, conservation au réfrigérateur jusqu'à 24 heures et réchauffage unique jusqu'à ce qu'il soit fumant selon la [Food Standards Agency](https://www.food.gov.uk/print/pdf/node/4286). Pour les restes de viande, suivre les durées générales de [FoodSafety.gov](https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety).
