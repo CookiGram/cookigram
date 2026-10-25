@@ -213,6 +213,26 @@ Every imported recipe must declare a `scaling` block. Use `enabled: true` only w
 
 Do not assume every Thermomix recipe is fixed, but treat bowl capacity, minimum mixing volume, blade coverage, heating behavior, and model-specific guided programs as reasons to assess it carefully. When unsure, mark the recipe fixed instead of presenting unverified scaled quantities.
 
+## Atomic Cooking Step contract for new recipes
+
+Follow the normative [Atomic Cooking Step contract](https://github.com/CookiGram/cookigram-core/blob/main/docs/atomic-cooking-steps.md) whenever importing, creating, or substantially restructuring a recipe. Keep macro phases readable, but every executable `- ` sub-step must represent **one immediately checkable culinary gesture or machine setting**. Do not merge separate actions just to reduce checklist length.
+
+- **R0 / `ATOMIC_EMPTY_STEP` (ERROR)**: no empty action (without text or sub-steps).
+- **R1 / `ATOMIC_SUCCESSION_CONJUNCTION` (WARNING)**: split successive independent gestures linked by `puis`, `ensuite`, `avant de`, etc.
+- **R2 / `ATOMIC_MULTIPLE_ACTION_VERBS` (WARNING)**: separate independent action sentences within one bullet.
+- **R3 / `ATOMIC_MULTIPLE_ACTION_VERBS` (WARNING)**: separate coordinated verbs from different culinary families, e.g. adding ingredients and then browning them.
+- **R4 / `ATOMIC_MISSING_SUBSTEPS` (WARNING)**: turn composite prose-only actions into checkable sub-steps.
+
+Preserve legitimate **single continuous gestures**, rather than mechanically splitting on `et` or `puis`: e.g. `saler et poivrer`, `remuer et surveiller`, washing followed immediately by draining/drying, a single verb with multiple ingredients, `fouetter en versant l'huile`, modality/surveillance (`cuire en remuant`) and observable stop criteria (`jusqu'à ce que...`). Ingredient preparation descriptors and purpose clauses are not separate actions. Do not game the checker by suppressing annotations or rewriting instructions to hide real gestures.
+
+**Mandatory new-recipe gate**: after drafting and before submitting an import PR, run the *pinned repository Core version* of the strict atomic checker on every newly created or materially restructured recipe:
+
+```bash
+python -m generator.recipe_check --strict-atomic --root /absolute/path/to/cookigram /absolute/path/to/cookigram/recipes/<slug>.gram
+```
+
+Run from the Core checkout/installed environment matching the content repository's `.core-version`; set `--root` to the content repository root so ingredient and recipe validation reads the correct catalogue, and supply the recipe's absolute path. Do not assume that the command works from a content-only checkout. Report the exact Core revision, command and result in the PR. **STOP on any warning/error for a new recipe**: fix the offending instructions or document a genuine false positive for review; a false-positive claim is not a passing strict check. Existing historical recipes retain the normal non-strict compatibility path; do not globally enable strict atomic validation on the entire historical catalogue as part of an import.
+
 ## Validate
 
 1. **Validation atomique rapide (< 2 s)** :
