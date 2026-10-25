@@ -27,16 +27,29 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 flavors: {pairing: [poulet, riz, poireau, paprika fumé], notes: [réconfortant, parfumé, familial], harmony: "Le riz absorbe les sucs du poulet et le bouillon arrondit les légumes."}
 ---
 [Assaisonner le poulet]
-- Mélanger le @paprika fumé{1 c. à soupe}, la @coriandre moulue{1 c. à soupe}, l'@ail{2 gousses, râpées} et l'@huile végétale{2 c. à café}.
+- Mettre le @paprika fumé{1 c. à soupe} dans un récipient.
+- Ajouter la @coriandre moulue{1 c. à soupe}.
+- Ajouter l'@ail{2 gousses, râpées}.
+- Ajouter l'@huile végétale{2 c. à café}.
+- Mélanger.
 - Enrober les @cuisses de poulet{600 g, désossées et sans peau}.
 [Dorer]
-- Chauffer une #poêle profonde{} et dorer le poulet ~{5 min}.
+- Chauffer une #poêle profonde{}.
+- Dorer le poulet ~{5 min}.
 - Réserver.
 [Cuire le riz]
-- Verser le @bouillon de légumes{700 ml}, ajouter le @riz brun{250 g}, les @poireaux{320 g, émincés}, l'@origan{1 c. à café} et le @laurier{2 feuilles}.
+- Verser le @bouillon de légumes{700 ml}.
+- Ajouter le @riz brun{250 g}.
+- Ajouter les @poireaux{320 g, émincés}.
+- Ajouter l'@origan{1 c. à café}.
+- Ajouter le @laurier{2 feuilles}.
 - Déposer le poulet dessus.
-- Couvrir et mijoter ~{20 min}; le riz doit être tendre et le poulet cuit à cœur.
+- Couvrir.
+- Mijoter ~{20 min}; le riz doit être tendre et le poulet cuit à cœur.
 [Ajouter les légumes]
-- Ajouter les @légumes surgelés{320 g}, couvrir et poursuivre ~{5 min}.
-- Couper le feu et laisser reposer ~{5 min}.
+- Ajouter les @légumes surgelés{320 g}.
+- Couvrir.
+- Poursuivre la cuisson ~{5 min}.
+- Couper le feu.
+- Laisser reposer ~{5 min}.
 - Servir.
