@@ -23,7 +23,8 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Préparer]
 - Mélanger les @poivrons{3 pièces, en lanières}, l'@oignon{1 pièce, émincé}, l'@huile d'olive{1 c. à soupe}, le @paprika{1 c. à café} et le @sel{1/2 c. à café}.
-- Ajouter la @saucisse fumée{4 pièces} et répartir dans le #panier air fryer{}.
+- Ajouter la @saucisse fumée{4 pièces}.
+- Répartir dans le #panier air fryer{}.
 [Rôtir]
 - Cuire à ^{190 C} ~{20 min}, en secouant le panier à mi-cuisson.
 - Les saucisses doivent être dorées à cœur et les légumes légèrement caramélisés.
