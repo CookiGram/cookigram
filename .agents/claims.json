@@ -16,6 +16,16 @@
       "last_heartbeat": "2026-10-25T02:33:07+01:00",
       "status": "pr_open",
       "pr": 550
+    },
+    "499": {
+      "issue": 499,
+      "title": "Atomicité v2 — lot récent R2, reliquat de trois recettes",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-recent-r2-20261025",
+      "branch": "chatgpt/499-atomic-recent-r2-remnants-20261025",
+      "claimed_at": "2026-10-25T23:13:06+01:00",
+      "last_heartbeat": "2026-10-25T23:13:50+01:00",
+      "status": "in_progress"
     }
   },
   "completed_claims": [
