@@ -49,8 +49,11 @@ image_generation:
   prompt_file: image-prompts/pate-brisee.md
 ---
 [Sablage]
-- Mettre la @farine de blé{150 g}, le @beurre doux{75 g, froid en morceaux} et le @sel{0,5 c. à café} dans la cuve du #robot pâtissier{}.
+- Mettre la @farine de blé{150 g} dans la cuve du #robot pâtissier{}.
+- Ajouter le @beurre doux{75 g, froid en morceaux}.
+- Ajouter le @sel{0,5 c. à café}.
 - Sabler à la #feuille{} jusqu'à obtenir une texture de sable grossier.
 - Ajouter l'@eau{50 g}.
 - Agglomérer sans surtravailler : la pâte forme une boule homogène.
-- Filmer et réserver au frais avant fonçage.
+- Filmer la pâte.
+- Réserver au frais avant fonçage.
