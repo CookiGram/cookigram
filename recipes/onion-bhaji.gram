@@ -55,7 +55,16 @@ image_generation:
   prompt_file: image-prompts/onion-bhaji.md
 ---
 [Pâte]
-- Mettre la @farine de pois chiches{85 g}, le @yaourt nature{50 g}, l'@œuf{1 gros}, le @garam masala{1 c. à soupe}, le @fenugrec{1 c. à soupe de feuilles séchées}, le @jus de citron{1 c. à soupe}, le @cumin moulu{1 c. à café}, le @sel marin{1 c. à café fin}, le @piment du Cachemire{1 c. à café en poudre} et l'@eau{35 g} dans le bol.
+- Mettre @farine de pois chiches{85 g} dans le bol.
+- Ajouter @yaourt nature{50 g}.
+- Ajouter @œuf{1 gros}.
+- Ajouter @garam masala{1 c. à soupe}.
+- Ajouter @fenugrec{1 c. à soupe de feuilles séchées}.
+- Ajouter @jus de citron{1 c. à soupe}.
+- Ajouter @cumin moulu{1 c. à café}.
+- Ajouter @sel marin{1 c. à café fin}.
+- Ajouter @piment du Cachemire{1 c. à café en poudre}.
+- Ajouter @eau{35 g}.
 - Mélanger ~{10 s} à vitesse 4.
 - Racler les parois.
 - Ajouter les @oignons{300 g, gros finement tranchés à 2 mm}.
