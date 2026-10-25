@@ -298,6 +298,22 @@ class ImageProvenanceTests(unittest.TestCase):
         )
         return root
 
+    def test_temporary_credit_with_generation_detects_prompt_drift(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._legacy_credit_root(
+                directory, "actual prompt\n", "different prompt", True
+            )
+            recipe = root / "recipes/dish.gram"
+            recipe.write_text(
+                recipe.read_text(encoding="utf-8").replace(
+                    AUDIT.LEGACY_GENERATED_CREDIT, AUDIT.TEMPORARY_CREDIT
+                ),
+                encoding="utf-8",
+            )
+            statuses = {finding.status for finding in AUDIT.audit(root)}
+            self.assertIn("temporary-credit", statuses)
+            self.assertIn("provenance-prompt-mismatch", statuses)
+
     def test_legacy_credit_with_generation_block_flags_prompt_mismatch(self):
         """#560: the #546 blank-line drift must not escape under legacy credit."""
         with tempfile.TemporaryDirectory() as directory:
