@@ -75,7 +75,8 @@ image_generation:
 - Laisser pousser de nouveau jusqu'à ce que la pâte regonfle nettement.
 
 [Cuisson]
-- Chauffer le #gaufrier{} légèrement huilé à l'@huile d'arachide{}.
+- Huiler manuellement le #gaufrier{} avec l'@huile d'arachide{}.
+- Préchauffer le #gaufrier{}.
 - Déposer des boules de pâte dans le gaufrier.
 - Refermer le gaufrier.
 - Cuire jusqu'à coloration dorée et caramélisée.
