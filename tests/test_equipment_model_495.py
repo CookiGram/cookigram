@@ -108,6 +108,7 @@ FUEL_REQUIREMENTS = {
 # - cookeo (1) migrated to pressure_cooker: [cookeo]
 # - pressure_cooker: 0 -> 8
 # - #530 adds one barbecue: [charcoal_kettle] recipe
+# - #521 adds three barbecue recipes (two charcoal_kettle, one gas_grill) and one plancha
 EXPECTED_KEY_COUNTS = {
     "thermomix": 113,
     "four": 21,
@@ -117,7 +118,8 @@ EXPECTED_KEY_COUNTS = {
     "sous_vide": 6,
     "rice_cooker": 1,
     "stand_mixer": 7,
-    "barbecue": 1,
+    "barbecue": 4,
+    "plancha": 1,
 }
 
 BRAND_TOKENS = (
