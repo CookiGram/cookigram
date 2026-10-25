@@ -1,6 +1,6 @@
 ---
 date_published: 2026-09-24
-date_modified: 2026-09-24
+date_modified: 2026-10-25
 title: Pierogi ruskie au fromage frais
 portions: 50
 prep_time: 1 h 30 min
@@ -21,7 +21,9 @@ scaling: {enabled: false, reason: "La farce et le façonnage d’environ 50 piè
 flavors: {pairing: [pomme de terre, fromage frais, oignon, beurre], notes: [doux, crémeux, doré], harmony: "La farce douce et acidulée est relevée par l’oignon fondu et le beurre."}
 ---
 [Cuire les pommes de terre]
-- Verser l’@eau{500 g} dans le bol et placer les @pommes de terre{600 g} en morceaux de 3 cm dans le Varoma.
+- Verser l’@eau{500 g} dans le bol.
+- Placer les @pommes de terre{600 g} en morceaux de 3 cm dans le Varoma.
+- Installer le Varoma sur le bol.
 - Cuire ~{25 min} à ^{Varoma}, vitesse 1.
 - Laisser refroidir complètement au réfrigérateur ~{15 min}.
 [Préparer la farce]
@@ -29,14 +31,25 @@ flavors: {pairing: [pomme de terre, fromage frais, oignon, beurre], notes: [doux
 - Ajouter le @beurre{50 g}.
 - Faire revenir ~{4 min} à ^{Varoma}, vitesse 1.
 - Réserver l’oignon fondu.
-- Écraser les pommes de terre avec la @ricotta{250 g}, le @fromage cottage{250 g} et l’oignon fondu.
+- Ajouter la @ricotta{250 g}.
+- Ajouter le @fromage cottage{250 g}.
+- Ajouter l’oignon fondu.
+- Écraser les pommes de terre avec les ingrédients ajoutés.
 - Réserver la farce au frais.
 [Pétrir la pâte]
-- Ajouter l’@eau{250 g} chaude et l’@œuf{1} à la @farine{560 g}.
+- Mettre la @farine{560 g} dans le bol.
+- Ajouter l’@eau{250 g} chaude.
+- Ajouter l’@œuf{1}.
 - Pétrir ~{2 min}.
-- Abaisser la pâte et découper environ 50 disques.
+- Abaisser la pâte.
+- Découper environ 50 disques.
 [Façonner et pocher]
-- Garnir chaque disque de farce, humidifier un bord et pincer pour fermer en demi-lune.
+- Garnir chaque disque de farce.
+- Humidifier un bord de chaque disque.
+- Pincer pour fermer en demi-lune.
 - Pocher par lots dans une grande casserole d’eau frémissante ~{4 min}; ils sont cuits lorsqu’ils remontent.
 [Servir]
-- Faire fondre le @beurre{120 g} avec l’@oignon{180 g} en dés à la #poêle{} jusqu’à blondissement et napper les pierogi.
+- Faire fondre le @beurre{120 g} à la poêle.
+- Ajouter l’@oignon{180 g} en dés à la #poêle{}.
+- Faire revenir jusqu’à blondissement.
+- Napper les pierogi de beurre à l’oignon.

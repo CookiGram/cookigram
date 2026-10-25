@@ -1,6 +1,6 @@
 ---
 date_published: 2026-09-24
-date_modified: 2026-09-24
+date_modified: 2026-10-25
 title: Bibimbap coréen
 portions: 6
 prep_time: 40 min
@@ -21,33 +21,74 @@ scaling: {enabled: false, reason: "Les cuissons sont successives et le dressage 
 flavors: {pairing: [riz, bœuf, légumes, gochujang], notes: [umami, pimenté, sésame], harmony: "Les légumes frais tempèrent la viande marinée et le condiment coréen relevé."}
 ---
 [Hacher l’aromate]
-- Hacher l’@ail{8 gousses} et le @gingembre{15 g} ~{3 s} à vitesse 7.
+- Ajouter l’@ail{8 gousses} dans le bol.
+- Ajouter le @gingembre{15 g}.
+- Hacher ~{3 s} à vitesse 7.
 - Réserver cette préparation.
 [Mariner les viandes]
-- Mélanger une cuillerée de la préparation ail-gingembre avec la @sauce soja salée{2 c. à soupe}, le @miel{1 c. à café} et l’@huile de sésame{2 c. à soupe} ~{1 min} à vitesse 3.
-- Enrober le @bœuf{200 à 300 g}, le @haché de porc{200 à 300 g}, les @shiitakés{4} tranchés et les @graines de sésame{1 c. à café}; réserver au frais.
+- Mettre une cuillerée de la préparation ail-gingembre dans le bol.
+- Ajouter la @sauce soja salée{2 c. à soupe}.
+- Ajouter le @miel{1 c. à café}.
+- Ajouter l’@huile de sésame{2 c. à soupe}.
+- Mélanger ~{1 min} à vitesse 3.
+- Ajouter le @bœuf{200 à 300 g}.
+- Ajouter le @haché de porc{200 à 300 g}.
+- Ajouter les @shiitakés{4} tranchés.
+- Ajouter les @graines de sésame{1 c. à café}.
+- Enrober les viandes et les shiitakés de marinade; réserver au frais.
 [Préparer les légumes]
 - Rincer le @riz rond{350 g} jusqu’à ce que l’eau soit claire.
 - Mettre le riz rincé à tremper.
-- Disposer séparément le @concombre{1}, les @carottes{1 à 2}, la @courgette{1 petite} et le @poivron rouge{1} en fines lamelles sur le plateau Varoma; saler et laisser dégorger.
-- Verser l’@eau{1000 g}, le @sel{2 pincées} et les @pousses de soja{200 g} dans le bol.
+- Disposer le @concombre{1} en fines lamelles sur le plateau Varoma.
+- Disposer les @carottes{1 à 2} en fines lamelles sur le plateau Varoma.
+- Disposer la @courgette{1 petite} en fines lamelles sur le plateau Varoma.
+- Disposer le @poivron rouge{1} en fines lamelles sur le plateau Varoma.
+- Saler les légumes et les laisser dégorger.
+- Verser l’@eau{1000 g} dans le bol.
+- Ajouter le @sel{2 pincées}.
+- Ajouter les @pousses de soja{200 g}.
 - Cuire ~{13 min} à ^{100 C}, sens inverse, vitesse cuillère.
 - Poser le Varoma garni sur le bol.
 - Cuire les légumes ~{7 min} à ^{Varoma}, sens inverse, vitesse cuillère.
 - Réserver les légumes cuits.
-- Égoutter les pousses et les assaisonner avec un peu de préparation ail-gingembre et d’@huile de sésame{1 c. à café}.
+- Égoutter les pousses.
+- Ajouter un peu de préparation ail-gingembre aux pousses.
+- Ajouter l’@huile de sésame{1 c. à café}.
+- Mélanger les pousses pour les assaisonner.
 [Cuire les épinards]
 - Porter l’@eau{1700 g} à ébullition dans le bol ~{15 min} à ^{100 C}, vitesse 1.
 - Ajouter les @épinards{300 g}.
 - Cuire ~{1 min} à ^{100 C}, sens inverse, vitesse cuillère.
-- Égoutter et presser les épinards.
-- Assaisonner les épinards avec un peu d’aromate, l’@oignon nouveau{1}, l’@huile de sésame{1 c. à soupe} et les @graines de sésame{1 c. à soupe}.
+- Égoutter les épinards.
+- Presser les épinards.
+- Ajouter un peu de préparation ail-gingembre aux épinards.
+- Ajouter l’@oignon nouveau{1}.
+- Ajouter l’@huile de sésame{1 c. à soupe}.
+- Ajouter les @graines de sésame{1 c. à soupe}.
+- Mélanger les épinards pour les assaisonner.
 [Cuire le riz]
-- Chauffer 1000 g d’eau de cuisson réservée avec le @sel{2 pincées} et l’@huile végétale{10 g} ~{3 min} à ^{100 C}, vitesse 1.
-- Cuire le riz rincé dans le panier cuisson ~{12 min} à ^{100 C}, vitesse 4; égrainer.
+- Verser 1000 g d’eau de cuisson réservée dans le bol.
+- Ajouter le @sel{2 pincées}.
+- Ajouter l’@huile végétale{10 g}.
+- Chauffer ~{3 min} à ^{100 C}, vitesse 1.
+- Cuire le riz rincé dans le panier cuisson ~{12 min} à ^{100 C}, vitesse 4.
+- Égrainer le riz cuit.
 [Cuire les viandes et les œufs]
 - Faire griller les viandes marinées et les champignons à la #poêle{} jusqu’à cuisson complète.
 - Cuire les @œufs{6} au plat dans l’@huile végétale{10 g} à la #poêle{}.
 [Assembler]
-- Répartir riz, viandes, légumes et @kimchi{150 g} dans six bols; déposer un œuf sur chacun.
-- Ajouter l’@huile de sésame{1 c. à soupe}, les @graines de sésame{1 c. à soupe}, l’@oignon nouveau{1} et le @gochujang{100 g} à table.
+- Répartir le riz dans six bols.
+- Répartir les viandes grillées dans les six bols.
+- Répartir les champignons grillés dans les six bols.
+- Disposer séparément les lamelles de concombre dans les bols.
+- Disposer séparément les lamelles de carotte dans les bols.
+- Disposer séparément les lamelles de courgette dans les bols.
+- Disposer séparément les lamelles de poivron dans les bols.
+- Ajouter les épinards dans les bols.
+- Ajouter les pousses de soja dans les bols.
+- Ajouter le @kimchi{150 g} dans les bols.
+- Déposer un œuf au plat sur chaque bol.
+- Ajouter l’@huile de sésame{1 c. à soupe} à table.
+- Ajouter les @graines de sésame{1 c. à soupe} à table.
+- Ajouter l’@oignon nouveau{1} à table.
+- Ajouter le @gochujang{100 g} à table.

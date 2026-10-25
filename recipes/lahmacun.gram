@@ -1,6 +1,6 @@
 ---
 date_published: 2026-09-24
-date_modified: 2026-09-24
+date_modified: 2026-10-25
 title: Lahmacun, pizza turque
 portions: 6
 prep_time: 15 min
@@ -21,18 +21,36 @@ scaling: {enabled: false, reason: "Le four accueille deux disques à la fois et 
 flavors: {pairing: [bœuf, agneau, tomate, paprika], notes: [épicé, herbacé, grillé], harmony: "La pâte légère accueille une garniture épicée et juteuse sans masquer le persil."}
 ---
 [Pétrir la pâte]
-- Mélanger la @farine{400 g}, l’@eau{200 g}, la @levure boulangère{20 g} et le @sel{1 1/2 c. à café}; pétrir ~{2 min}.
+- Mettre la @farine{400 g} dans le bol.
+- Ajouter l’@eau{200 g}.
+- Ajouter la @levure boulangère{20 g}.
+- Ajouter le @sel{1 1/2 c. à café}.
+- Pétrir ~{2 min}.
 - Former une boule et laisser pousser ~{30 min} sous un torchon humide.
 [Hacher les aromates]
-- Hacher le @persil{3 brins}, le @piment doux mariné{1}, l’@oignon{80 g} et la @tomate{150 g} ~{5 s} à vitesse 6.
+- Ajouter le @persil{3 brins} dans le bol.
+- Ajouter le @piment doux mariné{1}.
+- Ajouter l’@oignon{80 g}.
+- Ajouter la @tomate{150 g}.
+- Hacher ~{5 s} à vitesse 6.
 [Préparer la garniture]
-- Ajouter le @bœuf haché{200 g}, l’@agneau haché{200 g}, l’@huile d'olive{40 g}, le @concentré de tomate{50 g}, le @sel{1 c. à café}, le @poivre{1/4 c. à café} et le @paprika fort{1 c. à café}.
+- Ajouter le @bœuf haché{200 g}.
+- Ajouter l’@agneau haché{200 g}.
+- Ajouter l’@huile d'olive{40 g}.
+- Ajouter le @concentré de tomate{50 g}.
+- Ajouter le @sel{1 c. à café}.
+- Ajouter le @poivre{1/4 c. à café}.
+- Ajouter le @paprika fort{1 c. à café}.
 - Mélanger ~{40 s} en sens inverse, vitesse 3.
 [Façonner]
-- Préchauffer le #four{} à ^{250 C} et chemiser une plaque de papier cuisson.
-- Diviser la pâte en six pâtons et les abaisser en disques fins de 23 à 25 cm.
+- Préchauffer le #four{} à ^{250 C}.
+- Chemiser une plaque de papier cuisson.
+- Diviser la pâte en six pâtons.
+- Abaisser les pâtons en disques fins de 23 à 25 cm.
 - Étaler la garniture en laissant une bordure libre d’environ 1 cm.
 [Cuire]
 - Enfourner deux disques à la fois ~{10 min} jusqu’à ce que la pâte soit dorée; renouveler avec les autres disques.
 [Servir]
-- Rouler les pains encore chauds; accompagner selon goût de @citron{1} et de feuilles de @persil{quelques brins}.
+- Rouler les pains encore chauds.
+- Accompagner de @citron{1} selon le goût.
+- Ajouter des feuilles de @persil{quelques brins} au service.

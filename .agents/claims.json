@@ -6,6 +6,18 @@
     "require_approved_label": "potential-dev-work"
   },
   "active_claims": {
+    "499": {
+      "issue": 499,
+      "title": "Atomicité v2 — lot Air Fryer falafels restant",
+      "agent": "Codex (supervision ChatGPT)",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-air-fryer-20261025",
+      "branch": "feat/issue-499-air-fryer-falafels",
+      "claimed_at": "2026-10-25T23:12:48+01:00",
+      "last_heartbeat": "2026-10-25T23:54:00+01:00",
+      "status": "pr_open",
+      "pr": 614,
+      "scope": ["recipes/air-fryer-falafels-pois-chiches.gram"]
+    },
     "521": {
       "issue": 521,
       "title": "Pack recettes BBQ — pulled pork, côte de bœuf reverse-sear et smash burgers plancha",
@@ -16,6 +28,26 @@
       "last_heartbeat": "2026-10-25T02:33:07+01:00",
       "status": "pr_open",
       "pr": 550
+    },
+    "499": {
+      "issue": 499,
+      "title": "Atomicité v2 — audit sémantique du catalogue et granularité adaptable en Cook Mode (lot recent-r1 restant)",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-recent-r1-20261025",
+      "branch": "feat/499-recent-recipes-r1-20261025",
+      "claimed_at": "2026-10-25T23:12:09+01:00",
+      "last_heartbeat": "2026-10-25T23:44:07+01:00",
+      "status": "pr_open",
+      "scope": [
+        "bibimbap",
+        "okonomiyaki",
+        "gyoza",
+        "lahmacun",
+        "pierogi-ruskie",
+        "polenta-poireau-bleu-auvergne",
+        "poulet-korma-safran-raisins"
+      ],
+      "pr": 619
     },
     "499-r2": {
       "issue": 499,

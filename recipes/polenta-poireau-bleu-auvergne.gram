@@ -14,7 +14,7 @@ tags:
 - accompagnement
 - thermomix
 - végétarien
-date_modified: 2026-09-24
+date_modified: 2026-10-25
 source: https://cookidoo.fr/recipes/recipe/fr-fr/r808469
 author: Isabelle Guerre
 image: images/polenta-poireau-bleu-auvergne.webp
@@ -62,7 +62,10 @@ flavors:
 ---
 
 [Cuire le poireau dans le bouillon]
-- Porter l'@eau{1000 g} à frémissement dans une #casserole{} avec le @sel{au goût} et le @cube de bouillon de volaille{1}.
+- Verser l'@eau{1000 g} dans une #casserole{}.
+- Ajouter le @sel{au goût}.
+- Ajouter le @cube de bouillon de volaille{1}.
+- Porter à frémissement.
 - Ajouter le @poireau{1, en rondelles de 0,5 cm}.
 - Cuire à feu moyen jusqu'à ce que le poireau soit tendre.
 - Prélever et réserver 3 c. à soupe de rondelles de poireau.
@@ -76,6 +79,9 @@ flavors:
 - Retirer le fouet papillon.
 
 [Finir et servir]
-- Ajouter le @bleu d'Auvergne{100 g, en morceaux} et la @crème fraîche{100 g}.
+- Ajouter le @bleu d'Auvergne{100 g, en morceaux}.
+- Ajouter la @crème fraîche{100 g}.
 - Mélanger ~{20 s} à vitesse 3.
-- Servir aussitôt avec les poireaux réservés, le @poivre moulu{au goût} et quelques copeaux de bleu.
+- Servir aussitôt avec les poireaux réservés.
+- Ajouter le @poivre moulu{au goût}.
+- Parsemer de quelques copeaux de bleu.
