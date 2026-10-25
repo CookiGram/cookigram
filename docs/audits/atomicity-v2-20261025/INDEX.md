@@ -323,3 +323,19 @@ La [PR #582](https://github.com/CookiGram/cookigram/pull/582) a été **fusionn�
 Les fichiers `lot-07.md` et `lot-08.md` ajoutent les fiches historiques **109 à 144**, portant la couverture des relevés textuels à **144/274 fichiers (52,6 %)**. **130/274** restent au seul pré-audit heuristique. Les indices I/S et la présence de variantes sont vérifiés dans le snapshot historique, mais les variantes `steps.replace` complexes et la conformité culinaire ne sont **pas** attestées par ces relevés : ne pas confondre couverture documentaire et recettes totalement qualifiées.
 
 Nouvelle [PR #583](https://github.com/CookiGram/cookigram/pull/583) ouverte sur cinq sauces/chutney (`sauce-roquefort`, `sauce-bearnaise`, `sauce-green-goddess`, `sauce-tomate-herbes`, `chutney-tamarin`) : **réserver ces cinq fichiers** jusqu'à fusion ou fermeture. Leurs données ont conservé l'ordre des annotations, temps, températures, vitesses et sections lors des modifications ; ne pas conclure à une fusion avant CI du HEAD.
+
+
+## Clôture du relevé textuel historique — lots 01 à 16
+
+**Les 16 lots `lot-01.md` à `lot-16.md` sont maintenant présents** et indexent les **274/274 fichiers `.gram`** du snapshot `main@de01e13ab1eadd90626030d6bef8a5eb05feaa6f` (lots 01–02 : 36 fichiers revus plus finement ; lots 03–16 : 238 fichiers avec indices textuels et présence de clés `variants:` relevés). **Important : il s'agit de 100 % de couverture documentaire textuelle, pas 100 % d'atomicité corrigée, ni 100 % de qualification culinaire**. Le triage I/S peut rater des anomalies et détecter des faux positifs. Les variantes YAML (`steps.replace`, `steps.add`, autres structures) n'ont pas été déroulées/rendues intégralement. Les données de recette ont évolué depuis ce commit ; ce snapshot ne doit pas réinitialiser les fichiers fusionnés.
+
+### Intégration actualisée
+
+La [PR #583](https://github.com/CookiGram/cookigram/pull/583) a été fusionnée (squash `a54a1c002e2f351adb3f4eb418bed2422fe33577`) après CI publique et strict-atomic PASS au HEAD `111b38672565ee12fefdbf6c163808ce23bd2c9a`. Elle a intégré cinq recettes (`sauce-roquefort`, `sauce-bearnaise`, `sauce-green-goddess`, `sauce-tomate-herbes`, `chutney-tamarin`). Les cinq fichiers ne sont plus sous PR ouverte. Avec les 48 corrections déjà fusionnées lors des passages précédents, cela fait **53 recettes nouvellement fusionnées dans ces opérations**, plus **12 déjà fusionnées historiquement**, soit **65 recettes traitées** dans cette cohorte. Ne pas confondre ces 65 avec les 274 qui n'ont qu'un relevé textuel.
+
+### Travail restant pour qualifier #499
+
+1. Dérouler et comparer les variantes structurées contre leurs étapes effectives ; les cas `replace` doivent être testés au niveau du modèle de recette.
+2. Refaire l'ownership contre le `main` actualisé avant chaque correction, et distinguer les PR d'autres domaines ainsi que les claims locaux non visibles.
+3. Inspecter les faux PASS du strict-atomic et proposer des fixtures dans Core #393 (périmètre distinct).
+4. Corriger puis valider les recettes restantes par lots ; ne pas déclarer #499 fermée tant que les défauts confirmés ne sont pas traités.
