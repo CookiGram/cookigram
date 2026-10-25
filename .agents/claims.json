@@ -13,8 +13,9 @@
       "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-521-bbq-20261025",
       "branch": "feat/issue-521-bbq-pack",
       "claimed_at": "2026-10-25T03:28:17+01:00",
-      "last_heartbeat": "2026-10-25T02:32:41+01:00",
-      "status": "in_progress"
+      "last_heartbeat": "2026-10-25T02:33:07+01:00",
+      "status": "pr_open",
+      "pr": 550
     }
   },
   "completed_claims": [
