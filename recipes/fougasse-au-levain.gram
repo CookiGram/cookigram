@@ -57,7 +57,8 @@ image_generation:
 [Nourrir le levain]
 - Chauffer l'@eau{150 g} dans le bol du Thermomix ~{2 min} à ^{37 C}, vitesse 1.
 - Verser l'eau tiède dans un bocal d'environ 500 g.
-- Ajouter le @levain de blé{20 g} et la @farine{150 g}.
+- Ajouter le @levain de blé{20 g}.
+- Ajouter la @farine{150 g}.
 - Mélanger soigneusement.
 - Poser le couvercle sans fermer hermétiquement.
 - Laisser fermenter ~{12 h} dans un endroit proche de ^{24 C}.
@@ -66,12 +67,15 @@ image_generation:
 - Huiler un bac d'environ 30 × 20 × 8 cm avec l'@huile d'olive{5 g}.
 
 [Mélanger la pâte]
-- Mettre l'@eau{200 g, froide} et le levain préparé dans le bol du Thermomix.
-- Ajouter la @farine{400 g} et la @levure boulangère{1 g, fraîche}.
+- Mettre l'@eau{200 g, froide} dans le bol du Thermomix.
+- Ajouter le levain préparé.
+- Ajouter la @farine{400 g}.
+- Ajouter la @levure boulangère{1 g, fraîche}.
 - Mélanger ~{10 s} à vitesse 4.
 
 [Pétrir la pâte]
-- Ajouter l'@huile d'olive{15 g} et le @sel{10 g}.
+- Ajouter l'@huile d'olive{15 g}.
+- Ajouter le @sel{10 g}.
 - Laisser reposer dans le bol ~{15 min}.
 - Pétrir en mode pétrin ~{5 min}.
 
