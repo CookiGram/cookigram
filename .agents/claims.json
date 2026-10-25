@@ -13,8 +13,9 @@
       "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-varoma-20261025",
       "branch": "chatgpt/499-varoma-ballotines-20261025",
       "claimed_at": "2026-10-25T23:12:48+01:00",
-      "last_heartbeat": "2026-10-25T23:16:12+01:00",
-      "status": "in_progress",
+      "last_heartbeat": "2026-10-25T23:16:33+01:00",
+      "status": "pr_open",
+      "pr": 618,
       "scope": ["recipes/ballotines-poulet-legumes-riesling.gram"]
     },
     "521": {
