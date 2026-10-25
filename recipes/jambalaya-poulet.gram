@@ -67,7 +67,9 @@ image_generation:
 - Hacher ~{7 s} à vitesse 5 et racler les parois avec la #spatule{}.
 
 [Faire revenir la garniture]
-- Ajouter l'@huile d'olive{25 g}, le @chorizo{130 g, doux, en dés} et le @poivron{270 g, rouge, en dés}.
+- Ajouter l'@huile d'olive{25 g}.
+- Ajouter le @chorizo{130 g, doux, en dés}.
+- Ajouter le @poivron{270 g, rouge, en dés}.
 - Faire revenir ~{6 min} à ^{120 C}, sens inverse, vitesse cuillère.
 
 [Installer le bouillon et le riz]
