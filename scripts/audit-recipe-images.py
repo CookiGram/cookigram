@@ -25,6 +25,7 @@ from PIL import Image, UnidentifiedImageError
 PLACEHOLDER = "images/placeholder-recipe.jpg"
 TEMPORARY_CREDIT = "Illustration temporaire"
 GENERATED_CREDIT = "Illustration générée pour CookiGram"
+LEGACY_GENERATED_CREDIT = "Illustration générée par IA pour CookiGram"
 # Migration boundary: the older "Illustration générée par IA pour CookiGram"
 # records are intentionally not required to have a manifest entry yet. New or
 # repaired generated assets use GENERATED_CREDIT and must be manifested.
@@ -304,6 +305,35 @@ def audit(root: Path) -> list[Finding]:
                         message="le prompt du manifest diffère du prompt versionné",
                     )
                 )
+        else:
+            # #560: un enregistrement historique au crédit legacy reste dispensé
+            # de provenance tant qu'il ne porte pas de bloc ``generation:``.
+            # Dès qu'il en porte un, la synchronisation manifest↔fichier
+            # (recette et prompt) est auditée comme pour le crédit migré,
+            # sans exiger de migration du libellé ni de création d'entrée.
+            asset_key = f"static/{image}" if image else ""
+            record = manifest.get(asset_key)
+            if isinstance(record, dict) and isinstance(record.get("generation"), dict):
+                if _subject_recipe(record) != recipe_path.stem:
+                    findings.append(
+                        Finding(
+                            recipe=recipe_path.relative_to(root).as_posix(),
+                            image=image,
+                            prompt_file=prompt,
+                            status="provenance-mismatch",
+                            message="la recette du manifest ne correspond pas au fichier",
+                        )
+                    )
+                elif prompt_path.is_file() and record.get("prompt") != prompt_path.read_text(encoding="utf-8").strip():
+                    findings.append(
+                        Finding(
+                            recipe=recipe_path.relative_to(root).as_posix(),
+                            image=image,
+                            prompt_file=prompt,
+                            status="provenance-prompt-mismatch",
+                            message="le prompt du manifest diffère du prompt versionné",
+                        )
+                    )
         if not prompt_path.is_file():
             findings.append(
                 Finding(
