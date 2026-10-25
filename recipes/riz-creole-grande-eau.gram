@@ -34,13 +34,19 @@ image_generation:
 ---
 
 [Chauffer l'eau]
-- Porter à forte ébullition l'@eau{3 l} dans une #grande casserole{} avec le @sel{15 g}.
+- Verser l'@eau{3 l} dans une #grande casserole{}.
+- Ajouter le @sel{15 g}.
+- Porter l'eau à forte ébullition.
 
 [Cuire le riz]
-- Rincer le @riz-long-blanc{300 g}, le verser dans l'eau bouillante et remuer une fois.
-- Cuire sans couvercle ~{12 min}; goûter un grain, qui doit être tendre sans être pâteux.
+- Rincer le @riz-long-blanc{300 g}.
+- Verser le riz dans l'eau bouillante.
+- Remuer une fois.
+- Cuire sans couvercle ~{12 min}.
+- Goûter un grain, qui doit être tendre sans être pâteux.
 
 [Égoutter et servir]
 - Égoutter immédiatement le riz dans la #passoire fine{}.
 - Laisser la vapeur s'échapper ~{2 min}.
-- Égrainer délicatement et servir.
+- Égrainer délicatement.
+- Servir.
