@@ -57,11 +57,15 @@ image_generation:
 
 [Cuisson]
 - Insérer le #fouet{} dans le bol.
-- Mettre dans le bol les @jaunes d'œufs{4}, le @sucre en poudre{50 g} et le @lait{300 g}.
-- Ajouter les graines et la gousse de vanille.
+- Mettre les @jaunes d'œufs{4} dans le bol.
+- Ajouter le @sucre en poudre{50 g}.
+- Ajouter le @lait{300 g}.
+- Ajouter les graines de vanille.
+- Ajouter la gousse de vanille.
 - Chauffer ~{9 min} à ^{80 C}, en sens inverse et vitesse 2 : la crème nappe la cuillère.
 
 [Finition]
 - Retirer le fouet.
-- Transvaser la crème et ôter la gousse de vanille.
+- Transvaser la crème.
+- Ôter la gousse de vanille.
 - Servir tiède ou froid.
