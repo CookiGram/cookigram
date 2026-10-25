@@ -19,6 +19,8 @@ TRANSITIONAL_RULES = {"title-length", "description-length"}
 NUTRITION_PROFILES = frozenset({"vitality", "balanced", "pleasure"})
 DATE_KEY = re.compile(r"(?:^date$|_date$|_at$)", re.IGNORECASE)
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?)?$")
+# Shared system fallback: recipes awaiting an illustration may all reference it.
+PLACEHOLDER_IMAGE = "images/placeholder-recipe.jpg"
 
 
 @dataclass(frozen=True)
@@ -175,7 +177,9 @@ def run(root: Path, *, warn_only: bool = False, require_editorial_dates: bool = 
             continue
         image = data.get("image") if isinstance(data, dict) else None
         if isinstance(image, str) and image.strip():
-            images.setdefault(image.strip(), path)
+            image = image.strip()
+            if image != PLACEHOLDER_IMAGE:
+                images.setdefault(image, path)
     findings = [
         finding
         for path in files

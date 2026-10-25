@@ -1,0 +1,74 @@
+---
+title: Pulled pork fumé au chêne
+date_published: 2026-10-25
+date_modified: 2026-10-25
+portions: 8
+prep_time: 20 min
+total_time: 22 h 20 min
+spiciness: 0
+description: "Épaule de porc fumée au chêne, croûte épicée et chair fondante effilochée après une longue cuisson au kettle."
+tags: [barbecue, porc, fumé, pulled-pork, kettle]
+source: https://amazingribs.com/tested-recipes/pork-recipes/perfect-pulled-pork-recipe/
+author: Meathead
+appliances:
+  barbecue: [charcoal_kettle]
+required_equipment:
+  - Kettle à charbon avec couvercle, anneau à charbon et diffuseur thermique
+  - Cheminée d’allumage
+  - Bac récupérateur résistant à la chaleur
+  - Thermomètre de grille
+  - Sonde alimentaire
+fuel_requirements:
+  charcoal: [briquettes]
+  smoking_wood: [oak]
+scaling:
+  enabled: false
+  reason: "La masse et la géométrie de l'épaule ainsi que la durée de combustion du serpent de briquettes ne se multiplient pas linéairement."
+flavors:
+  pairing: [porc, paprika, chêne, sucre roux]
+  notes: [fumé, épicé doux, caramélisé, fondant]
+  harmony: "La croûte doucement sucrée accueille la fumée de chêne et contraste avec les fibres juteuses de l'épaule."
+  tips: "Rub sans sel adapté au Memphis Dust de Meathead (https://amazingribs.com/tested-recipes/spice-rubs-and-pastes/meatheads-memphis-dust-rub-recipe/); méthode du serpent de briquettes décrite par Weber (https://www.weber.com/US/en/recipes/pork/classic-pulled-pork/weber-2394742.html)."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+---
+
+[Préparer l’épaule]
+- Parer seulement les gros amas de gras externes et laisser une fine couche sur l’@épaule de porc{2,2 kg, avec os}.
+- Répartir le @sel{2,5 c. à café, gros sel casher selon la source} sur toute la surface; couvrir et laisser saler au réfrigérateur ~{12 h}.
+
+[Préparer le mélange d’épices]
+- Mélanger le @sucre roux{1 c. à soupe + 1 3/4 c. à café}, le @sucre{1 c. à soupe + 1 3/4 c. à café}, le @paprika{1 c. à soupe} et l’@ail en poudre{1 1/2 c. à café}.
+- Ajouter le @poivre moulu{3/4 c. à café}, le @gingembre en poudre{3/4 c. à café}, l’@oignon en poudre{3/4 c. à café} et le @romarin{1/2 c. à café, séché et moulu}.
+- Sortir l’épaule du froid et répartir le mélange sans ajouter de sel supplémentaire.
+
+[Former le serpent]
+- Disposer les briquettes non allumées en deux rangées jointives sur environ trois quarts du pourtour de l’anneau à charbon, en suivant le bord de la cuve.
+- Installer le #diffuseur thermique{} et le bac récupérateur au centre, sous la grille de cuisson.
+- Allumer 8 à 10 briquettes dans la #cheminée d’allumage{}; les déposer à une extrémité du serpent.
+- Placer un morceau de bois de chêne pour fumage au départ du serpent; garder les accessoires et le combustible hors des ingrédients alimentaires.
+
+[Stabiliser la cuisson]
+- Fermer le couvercle et régler les évents pour stabiliser la température au niveau de la grille autour de ^{107 C}, sans dépasser durablement ^{121 C}.
+- Attendre que la fumée devienne légère.
+- Vérifier que la température reste stable.
+
+[Fumer l’épaule]
+- Insérer la #sonde alimentaire{} au centre de la partie la plus épaisse, à distance de l’os.
+- Poser l’épaule côté gras vers le haut sur la zone indirecte, au-dessus du diffuseur.
+- Refermer le couvercle.
+- Cuire sans durée fixe jusqu’à ce que la croûte soit sèche au toucher et que la viande traverse le palier autour de ^{65 C}; surveiller la température de grille et le combustible.
+
+[Envelopper et attendrir]
+- Envelopper l’épaule dans deux épaisseurs de papier aluminium et la replacer sur la zone indirecte.
+- Poursuivre jusqu’à environ ^{95 C} à cœur et jusqu’à ce qu’une sonde glisse dans plusieurs zones avec très peu de résistance.
+
+[Reposer et effilocher]
+- Retirer la viande et la laisser reposer enveloppée jusqu’à ce qu’elle soit assez maniable pour être effilochée.
+- Effilocher la viande avec deux fourchettes.
+- Retirer l’os et les gros morceaux de gras.
+- Mélanger une partie du jus récupéré dans le papier à la viande effilochée.
+- Servir immédiatement; ne pas utiliser le temps de cuisson comme seul critère de tendreté.

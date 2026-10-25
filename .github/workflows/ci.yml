@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, feat/issue-533-agent-e0f6c4a3]
   workflow_dispatch:
 
 concurrency:
@@ -60,6 +60,7 @@ jobs:
         run: python -m pytest tests -q
 
   qualified-pages-artifact:
+    if: ${{ github.event_name != 'pull_request' }}
     name: Build qualified Pages artifact
     runs-on: ubuntu-latest
     permissions:
@@ -222,6 +223,158 @@ jobs:
           path: _site
           include-hidden-files: true
           retention-days: 1
+
+  qualified-pages-pr-check:
+    if: ${{ github.event_name == 'pull_request' }}
+    name: Validate qualified Pages build (PR, no publication)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      CONTENT_SHA: ${{ github.sha }}
+      CONTRACT_VERSION: "1.1.0"
+    steps:
+      - name: Checkout CookiGram Recettes (Public)
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Read pinned public builder
+        id: builder
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path(".builder.json").read_text(encoding="utf-8"))
+          for key in ("release", "artifact", "sha256", "core_sha", "contract_version", "contract_source_sha", "contract_artifact", "contract_sha256"):
+              value = data.get(key)
+              if not isinstance(value, str) or not value.strip():
+                  raise SystemExit(f"Invalid .builder.json field: {key}")
+              print(f"{key}={value}")
+          PY
+          test "$(tr -d '[:space:]' < .core-version)" = "$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
+
+      - name: Install validation dependencies
+        run: python -m pip install "PyYAML>=6,<7"
+
+      - name: Verify pins
+        run: python scripts/check-pins.py --json
+
+      - name: Download and verify pinned builder
+        env:
+          BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+          BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          builder_path="$RUNNER_TEMP/$BUILDER_ARTIFACT"
+          builder_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${BUILDER_RELEASE}/${BUILDER_ARTIFACT}"
+          echo "Builder source: $builder_url"
+          echo "Expected SHA256: $BUILDER_SHA256"
+          curl --fail --location --retry 3 --output "$builder_path" "$builder_url"
+          printf '%s  %s\n' "$BUILDER_SHA256" "$builder_path" | sha256sum --check --status
+          echo "SHA256 verification: PASS"
+
+      - name: Extract and verify Core + Contract bundle
+        env:
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/builder"
+          tar -xzf "$RUNNER_TEMP/$BUILDER_ARTIFACT" -C "$RUNNER_TEMP/builder"
+          (cd "$RUNNER_TEMP/builder" && sha256sum --check SHA256SUMS)
+          # Soudure D1 (#404) : le pin Contract du builder et le contrat embarqué
+          # ne peuvent plus diverger silencieusement.
+          python scripts/check-pins.py --check-manifest "$RUNNER_TEMP/builder/manifest.json" --core-sha "${{ steps.builder.outputs.core_sha }}" --contract-source-sha "${{ steps.builder.outputs.contract_source_sha }}"
+
+      - name: Install pinned builder
+        env:
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install "Jinja2>=3.1,<4" "PyYAML>=6,<7"
+          pip install --no-index --no-deps "$RUNNER_TEMP/builder"/cookigram_core-*.whl "$RUNNER_TEMP/builder"/cookigram_contract-*.whl
+
+      - name: Strict atomic check on changed recipes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          # Gate #359 : seul le périmètre modifié est exigé strict — les
+          # warnings historiques hors périmètre ne bloquent jamais la chaîne.
+          head="${{ github.sha }}"
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            base="$PR_BASE"
+          elif [[ -n "$PUSH_BEFORE" && "$PUSH_BEFORE" != "0000000000000000000000000000000000000000" ]]; then
+            base="$PUSH_BEFORE"
+          else
+            base="main"
+          fi
+          listing="$(gh api "repos/${GITHUB_REPOSITORY}/compare/${base}...${head}" --jq '[.files[] | select(.filename | startswith("recipes/") and endswith(".gram")) | select(.status != "removed") | .filename] | join(" ")')"
+          if [[ -z "$listing" ]]; then
+            echo "No recipes changed; strict-atomic gate vacuous."
+            exit 0
+          fi
+          # shellcheck disable=SC2206
+          changed=($listing)
+          printf 'Strict-atomic scope (%d): %s\n' "${#changed[@]}" "${changed[*]}"
+          python -m generator.recipe_check --strict-atomic --root . "${changed[@]}"
+
+      - name: Build qualified static site once
+        env:
+          COOKIGRAM_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
+          COOKIGRAM_CONTRACT_SHA: ${{ steps.builder.outputs.contract_source_sha }}
+          COOKIGRAM_CONTRACT_ARTIFACT: ${{ steps.builder.outputs.contract_artifact }}
+          COOKIGRAM_CONTRACT_SHA256: ${{ steps.builder.outputs.contract_sha256 }}
+        run: python -m generator.build --content-dir . --output _site
+
+      - name: Verify generated site and write qualification provenance
+        env:
+          BUILDER_RELEASE: ${{ steps.builder.outputs.release }}
+          BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
+          BUILDER_SHA256: ${{ steps.builder.outputs.sha256 }}
+          BUILDER_CORE_SHA: ${{ steps.builder.outputs.core_sha }}
+          COOKIGRAM_CONTRACT_SHA: ${{ steps.builder.outputs.contract_source_sha }}
+          COOKIGRAM_CONTRACT_ARTIFACT: ${{ steps.builder.outputs.contract_artifact }}
+          COOKIGRAM_CONTRACT_SHA256: ${{ steps.builder.outputs.contract_sha256 }}
+          PAGES_ARTIFACT: cookigram-pages-${{ github.sha }}
+          QUALIFYING_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          python scripts/check-generated-surfaces.py --site-dir _site
+          python - <<'PY'
+          import datetime
+          import json
+          import os
+          from pathlib import Path
+
+          provenance = {
+              "content_sha": os.environ["CONTENT_SHA"],
+              "core_sha": os.environ["BUILDER_CORE_SHA"],
+              "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "contract_version": os.environ["CONTRACT_VERSION"],
+              "contract_source_sha": os.environ["COOKIGRAM_CONTRACT_SHA"],
+              "contract_artifact": os.environ["COOKIGRAM_CONTRACT_ARTIFACT"],
+              "contract_sha256": os.environ["COOKIGRAM_CONTRACT_SHA256"],
+              "builder_release": os.environ["BUILDER_RELEASE"],
+              "builder_artifact": os.environ["BUILDER_ARTIFACT"],
+              "builder_sha256": os.environ["BUILDER_SHA256"],
+              "pages_artifact": os.environ["PAGES_ARTIFACT"],
+              "qualifying_ci_run_id": os.environ["QUALIFYING_RUN_ID"],
+          }
+          Path("_site/provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
+          print(json.dumps(provenance, indent=2))
+          PY
 
   private-integration:
     name: Intégration Core privée (push de confiance uniquement)

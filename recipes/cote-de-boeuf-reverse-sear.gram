@@ -1,0 +1,63 @@
+---
+title: Côte de bœuf reverse-sear au kettle
+date_published: 2026-10-25
+date_modified: 2026-10-25
+portions: 2
+prep_time: 15 min
+total_time: 1 h 30 min
+spiciness: 0
+description: "Côte de bœuf doucement cuite à chaleur indirecte, puis saisie sur fonte pour une croûte brune et parfumée."
+tags: [barbecue, boeuf, reverse-sear, kettle]
+source: https://www.certifiedangusbeef.com/recipes/recipedetail.aspx?id=949
+author: Certified Angus Beef Test Kitchen
+appliances:
+  barbecue: [charcoal_kettle]
+required_equipment:
+  - Kettle à charbon avec couvercle
+  - Cheminée d’allumage
+  - Thermomètre de grille
+  - Grille de saisie en fonte
+  - Sonde alimentaire
+fuel_requirements:
+  charcoal: [briquettes]
+scaling:
+  enabled: false
+  reason: "La côte épaisse doit rester espacée sur la zone indirecte et son temps dépend de sa géométrie et de la température réelle du kettle."
+flavors:
+  pairing: [côte de bœuf, ail, thym, romarin]
+  notes: [grillé, viande, herbacé, juteux]
+  harmony: "La cuisson douce garde un cœur uniforme tandis que la saisie vive forme une croûte brune autour du gras de la côte."
+  tips: "Adaptation kettle de la méthode reverse-sear publiée par Steak School (https://steakschool.com/barbecue/reverse-sear-steak/). Pour la sécurité, atteindre au moins 63 °C à cœur et laisser reposer 3 min (USDA FSIS)."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+---
+
+[Assaisonner la côte]
+- Déposer les @côte de bœuf{2 pièces de 450 g, épaisses de 4 à 5 cm} sur un plat propre.
+- Répartir le @sel{2 c. à café, gros sel} et le @poivre moulu{1 c. à café} sur les deux faces.
+
+[Préparer le kettle]
+- Allumer 15 briquettes dans la #cheminée d’allumage{}.
+- Les disposer d’un côté de la cuve et laisser l’autre moitié sans braises pour créer une zone indirecte.
+- Installer la #grille de saisie en fonte{} et régler les évents pour stabiliser la zone de cuisson autour de ^{110 C}.
+
+[Cuire en indirect]
+- Insérer la #sonde alimentaire{} au centre de chaque côte, sans toucher l’os ni une poche de gras.
+- Poser les côtes au-dessus de la zone sans braises; fermer le couvercle et cuire indirectement jusqu’à environ ^{43 C} à cœur.
+- Retirer les côtes et les laisser reposer le temps de raviver les braises; mesurer la température plutôt que de se fier à une durée fixe.
+
+[Créer la braise de saisie]
+- Ajouter 15 briquettes à la cheminée et les allumer jusqu’à ce qu’elles soient bien embrasées.
+- Répartir les braises chaudes sous la grille de saisie; ouvrir les évents et laisser la fonte devenir très chaude.
+
+[Saisir et vérifier]
+- Badigeonner les @côte de bœuf{2 pièces} d’@huile d’olive{1 c. à soupe} sur toutes les faces.
+- Saisir directement ~{2 min} par face, en tournant jusqu’à obtenir une croûte brune.
+- Vérifier la température au centre de chaque pièce avec la sonde; pour la recommandation de sécurité retenue ici, poursuivre jusqu’à ^{63 C} à cœur.
+
+[Reposer et trancher]
+- Poser les côtes sur une planche propre et les laisser reposer ~{3 min} au minimum.
+- Trancher contre les fibres et servir aussitôt.

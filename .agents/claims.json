@@ -5,7 +5,19 @@
     "max_heartbeat_age_minutes": 15,
     "require_approved_label": "potential-dev-work"
   },
-  "active_claims": {},
+  "active_claims": {
+    "521": {
+      "issue": 521,
+      "title": "Pack recettes BBQ — pulled pork, côte de bœuf reverse-sear et smash burgers plancha",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-521-bbq-20261025",
+      "branch": "feat/issue-521-bbq-pack",
+      "claimed_at": "2026-10-25T03:28:17+01:00",
+      "last_heartbeat": "2026-10-25T02:33:07+01:00",
+      "status": "pr_open",
+      "pr": 550
+    }
+  },
   "completed_claims": [
     {
       "issue": 435,

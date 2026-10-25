@@ -1,0 +1,86 @@
+---
+title: Sauce bolognaise rapide
+date_published: 2026-10-24
+date_modified: 2026-10-24
+portions: 5
+prep_time: 10 min
+total_time: 50 min
+description: "Adaptation originale CookiGram inspirée de Cookidoo et Cookomix : sauce au bœuf, tomate et vin rouge en 50 minutes."
+nutrition_profile: balanced
+spiciness: 0
+tags: [sauce, bolognaise, bœuf, tomate, thermomix, familial]
+source: https://cookidoo.fr/recipes/recipe/fr-FR/r154302
+author: CookiGram (adaptation originale)
+# Adaptation originale CookiGram fondée sur le brouillon accepté de l'issue #540.
+# Inspirations de composition et de durée totale : Cookidoo
+# (https://cookidoo.fr/recipes/recipe/fr-FR/r154302) ; gestes Thermomix adaptés de
+# Cookomix, Spaghettis bolognaise
+# (https://www.cookomix.com/recettes/spaghettis-bolognaise-thermomix/).
+# Les réglages ci-dessous sont éditoriaux, non reproduits d'une méthode Cookidoo.
+appliances:
+  thermomix: [TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM5, TM6 ou TM7
+  - Panier cuisson
+scaling:
+  enabled: false
+  reason: Quantités calibrées pour cinq portions et le bol Thermomix ; ne pas augmenter au-delà du repère maximal de remplissage.
+flavors:
+  pairing: [bœuf, tomate, carotte, origan]
+  notes: [tomaté, savoureux, herbacé]
+  harmony: "La douceur des légumes et du coulis équilibre le bœuf relevé par le vin rouge et l'origan."
+  tips: "Servir avec des pâtes ou utiliser comme garniture de lasagnes, sans les cuire dans le bol."
+conservation:
+  fridge_days: 3
+  freezable: true
+  reheat: "Réchauffer doucement à la casserole en remuant, ou au Thermomix à 90 °C, sens inverse, vitesse cuillère."
+image: images/sauce-bolognaise-rapide.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée puis optimisée en WebP pour CookiGram.
+image_generation:
+  provider: OpenAI
+  model: gpt-image
+  generated_at: "2026-10-24"
+  prompt_file: image-prompts/sauce-bolognaise-rapide.md
+---
+
+[Préparer les légumes]
+- Éplucher l'@oignon{120 g}, la @carotte{100 g} et la @branche de céleri{60 g}.
+- Couper les légumes en morceaux.
+- Éplucher les @gousses d'ail{2}.
+
+[Hacher le soffritto]
+- Mettre les légumes et l'ail dans le #bol Thermomix{}.
+- Mixer ~{5 s} à vitesse 5.
+- Racler les parois avec la #spatule{}.
+
+[Faire revenir]
+- Ajouter l'@huile d'olive{20 g} dans le bol.
+- Cuire ~{5 min} à ^{120 C}, vitesse 1, sans le gobelet doseur ; poser le #panier cuisson{} sur le couvercle.
+- Les légumes doivent devenir tendres et odorants sans brunir fortement.
+
+[Cuire le bœuf]
+- Ajouter le @bœuf haché{500 g}, en l'émiettant en petits morceaux.
+- Cuire ~{7 min} à ^{100 C}, sens inverse, vitesse cuillère, avec le panier cuisson sur le couvercle.
+- Vérifier que la viande a perdu sa couleur rouge et se répartit en petits grains.
+
+[Déglacer au vin]
+- Verser le @vin rouge{80 g} dans le bol.
+- Cuire ~{3 min} à ^{100 C}, sens inverse, vitesse cuillère, panier cuisson sur le couvercle.
+- En fin de cycle, l'odeur d'alcool doit être atténuée.
+
+[Mijoter la sauce]
+- Ajouter le @coulis de tomate{500 g}, le @concentré de tomate{40 g}, la @feuille de laurier{1}, l'@origan séché{1 c. à café}, le @sel{1/2 c. à café} et le @poivre noir{2 pincées}.
+- Mélanger à la spatule pour décoller le fond et répartir les ingrédients.
+- Cuire ~{25 min} à ^{100 C}, sens inverse, vitesse cuillère, panier cuisson sur le couvercle.
+- La sauce doit frémir doucement ; vérifier qu'elle nappe la cuillère et que les légumes sont fondants.
+
+[Rectifier et servir]
+- Retirer la feuille de laurier et goûter ; ajuster le sel si nécessaire.
+- Servir la sauce seule avec des pâtes, ou l'utiliser pour des lasagnes.
