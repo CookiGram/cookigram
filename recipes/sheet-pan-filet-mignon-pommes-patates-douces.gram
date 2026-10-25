@@ -36,7 +36,10 @@ image_generation:
 
 [Assembler la plaque]
 - Répartir les @pommes{4 pièces, en 8 quartiers chacune} et les @patates douces{2 moyennes, en petits quartiers} sur une #plaque de cuisson{}.
-- Ajouter l'@huile d'olive{1 c. à soupe, sur 2 c. à soupe au total}, le @romarin séché{1 c. à soupe, sur 2 c. à soupe au total}, le @sel{0.5 c. à café, sur 1 c. à café au total} et le @poivre moulu{0.5 c. à café, sur 1 c. à café au total}.
+- Ajouter l'@huile d'olive{1 c. à soupe, sur 2 c. à soupe au total}.
+- Ajouter le @romarin séché{1 c. à soupe, sur 2 c. à soupe au total}.
+- Ajouter le @sel{0.5 c. à café, sur 1 c. à café au total}.
+- Ajouter le @poivre moulu{0.5 c. à café, sur 1 c. à café au total}.
 - Placer le filet mignon au centre et l'arroser avec l'@huile d'olive{1 c. à soupe, sur 2 c. à soupe au total}.
 
 [Rôtir]
@@ -46,6 +49,8 @@ image_generation:
 - Mélanger le @sirop d'érable{120 ml} et la @moutarde de Dijon{120 ml}.
 - Badigeonner la moitié du glaçage sur le porc, les pommes et les patates douces.
 - Remettre au four ~{10 min}.
-- Vérifier que le porc atteint au moins ^{63 C à cœur} et que les patates douces sont tendres.
+- Vérifier que le porc atteint au moins ^{63 C à cœur}.
+- Vérifier que les patates douces sont tendres.
 - Laisser reposer le porc ~{5 min}.
-- Le trancher et servir avec le reste du glaçage à côté.
+- Trancher le porc.
+- Servir avec le reste du glaçage à côté.

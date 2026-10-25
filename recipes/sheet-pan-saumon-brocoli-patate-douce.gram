@@ -34,8 +34,11 @@ image_generation:
 ## Saumon miel-moutarde, brocoli & patate douce sur une plaque
 
 [Préparer la plaque]
-- Préchauffer le #four{} à ^{220 C} et couvrir une #plaque de cuisson{} de papier cuisson.
-- Poser le @saumon{450 g, filet entier sans peau} au centre de la plaque et ajouter le @sel{selon goût} et le @poivre moulu{selon goût}.
+- Préchauffer le #four{} à ^{220 C}.
+- Couvrir une #plaque de cuisson{} de papier cuisson.
+- Poser le @saumon{450 g, filet entier sans peau} au centre de la plaque.
+- Ajouter le @sel{selon goût}.
+- Ajouter le @poivre moulu{selon goût}.
 
 [Assaisonner les légumes]
 - Mélanger le @brocoli{1 tête, en fleurettes}, la @patate douce{1 pièce moyenne, en bâtonnets}, l'@ail{4 gousses, entières}, l'@huile d'olive{2 c. à café}, le @sel{selon goût} et le @poivre moulu{selon goût}.
@@ -48,4 +51,5 @@ image_generation:
 
 [Caraméliser]
 - Passer sous le gril du #four{} pendant ~{3 min} en restant devant le four pour caraméliser le dessus sans brûler le miel.
-- Mélanger délicatement les légumes avec le glaçage tombé sur la plaque et servir aussitôt.
+- Mélanger délicatement les légumes avec le glaçage tombé sur la plaque.
+- Servir aussitôt.
