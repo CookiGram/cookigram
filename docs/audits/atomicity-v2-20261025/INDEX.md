@@ -316,3 +316,10 @@ Légende : `I` = lignes avec plusieurs ingrédients annotés et incorporation; `
 `lot-06.md` consigne les recettes historiques **91 à 108** (18 fiches supplémentaires, 16 avec signaux à examiner, 3 avec indication de variantes). **108/274** recettes disposent ainsi d'un relevé textuel complémentaire ; **166/274** restent uniquement dans l'inventaire heuristique. Cette mesure **n'est pas** une qualification culinaire indépendante, et les variantes YAML complexes ne sont pas encore entièrement validées.
 
 La [PR #582](https://github.com/CookiGram/cookigram/pull/582) a été **fusionnée**, après correction d'un échec strict-atomic sur la sauce miso-gingembre et CI du HEAD `80faeaf4` SUCCESS (squash `a323c19d8913b842dedff8d81fbd91822704cf1e`). Les cinq recettes de cette PR sont donc `MERGED` et non plus réservées par une PR ouverte. Avec les **43 recettes** précédemment intégrées dans nos lots et les cinq de #582, cela fait **48 recettes nouvellement fusionnées**, **60** avec les 12 fusions antérieures recensées. Statuts historiques du registre de 274 toujours datés : ne pas les prendre pour des claims actifs.
+
+
+## Avancement massifié des relevés — lots 07 et 08, 25/10/2026
+
+Les fichiers `lot-07.md` et `lot-08.md` ajoutent les fiches historiques **109 à 144**, portant la couverture des relevés textuels à **144/274 fichiers (52,6 %)**. **130/274** restent au seul pré-audit heuristique. Les indices I/S et la présence de variantes sont vérifiés dans le snapshot historique, mais les variantes `steps.replace` complexes et la conformité culinaire ne sont **pas** attestées par ces relevés : ne pas confondre couverture documentaire et recettes totalement qualifiées.
+
+Nouvelle [PR #583](https://github.com/CookiGram/cookigram/pull/583) ouverte sur cinq sauces/chutney (`sauce-roquefort`, `sauce-bearnaise`, `sauce-green-goddess`, `sauce-tomate-herbes`, `chutney-tamarin`) : **réserver ces cinq fichiers** jusqu'à fusion ou fermeture. Leurs données ont conservé l'ordre des annotations, temps, températures, vitesses et sections lors des modifications ; ne pas conclure à une fusion avant CI du HEAD.
