@@ -46,21 +46,31 @@ image_generation:
 ## Pains pita maison gonflés à la poêle
 
 [activate-yeast | Tiédir l'eau et dissoudre la levure]
-- Mettre l'@eau{240 g}, le @sucre{5 g} et la @levure boulangère{15 g, fraîche émiettée} dans le bol du Thermomix.
+- Mettre l'@eau{240 g} dans le bol du Thermomix.
+- Ajouter le @sucre{5 g}.
+- Ajouter la @levure boulangère{15 g, fraîche émiettée}.
 - Chauffer ~{2 min} à ^{37 C}, vitesse 2.
 
 [knead-dough | Pétrir la pâte à pita]
-- Ajouter la @farine de blé{400 g, type T55 ou T65}, l'@huile d'olive{20 g} et le @sel{1 c. à café}.
+- Ajouter la @farine de blé{400 g, type T55 ou T65}.
+- Ajouter l'@huile d'olive{20 g}.
+- Ajouter le @sel{1 c. à café}.
 - Pétrir en mode pétrin pendant ~{3 min} jusqu'à obtenir une boule de pâte souple et non collante.
-- Transvaser dans un #saladier{} huilé, couvrir d'un linge propre et laisser pointer ~{50 min} à température ambiante jusqu'à ce que la pâte ait doublé de volume.
+- Transvaser dans un #saladier{} huilé.
+- Couvrir d'un linge propre.
+- Laisser pointer ~{50 min} à température ambiante jusqu'à ce que la pâte ait doublé de volume.
 
 [roll-cook | Abaisser et gonfler à sec à la poêle]
-- Déposer la pâte sur un plan de travail légèrement fariné et diviser en 6 pâtons égaux (environ 110 g chacun).
-- Former de petites boules et les laisser détendre ~{5 min} sous un linge.
+- Déposer la pâte sur un plan de travail légèrement fariné.
+- Diviser en 6 pâtons égaux (environ 110 g chacun).
+- Former de petites boules.
+- Les laisser détendre ~{5 min} sous un linge.
 - À l'aide d'un #rouleau à pâtisserie{}, étaler chaque boule en un disque régulier d'environ 15 cm de diamètre et 3 à 4 mm d'épaisseur.
 - Chauffer une grande #poêle en fonte{} à feu vif à sec (sans matière grasse).
 - Déposer un disque de pâte dans la poêle fumante :
   - Cuire ~{30 s} sur la première face jusqu'à apparition de petites bulles.
   - Retourner et cuire ~{1 min} : le pain se met à gonfler spectaculairement comme un ballon.
   - Retourner une dernière fois ~{30 s} pour dorer légèrement les deux côtés.
-- Débarrasser sur une assiette et envelopper d'un torchon pour conserver toute l'humidité et le moelleux. Garnir de viandes mijotées, légumes ou tartinables.
+- Débarrasser sur une assiette.
+- Envelopper d'un torchon pour conserver toute l'humidité et le moelleux.
+- Garnir de viandes mijotées, légumes ou tartinables.
