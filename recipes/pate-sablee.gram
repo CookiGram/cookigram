@@ -50,11 +50,14 @@ image_generation:
   prompt_file: image-prompts/pate-sablee.md
 ---
 [Sablage]
-- Mettre la @farine de blé{250 g}, le @beurre demi-sel{140 g, en morceaux} et le @sucre en poudre{100 g} dans la cuve du #robot pâtissier{}.
+- Mettre la @farine de blé{250 g} dans la cuve du #robot pâtissier{}.
+- Ajouter le @beurre demi-sel{140 g, en morceaux} dans la cuve.
+- Ajouter le @sucre en poudre{100 g} dans la cuve.
 - Sabler à la #feuille{} jusqu'à obtenir une texture de sable fin.
 - Ajouter l'@œuf{1}.
 - Mélanger jusqu'à agglomération : la pâte forme une boule homogène.
 
 [Repos]
-- Aplatir légèrement la pâte et la filmer.
+- Aplatir légèrement la pâte.
+- Filmer la pâte.
 - Laisser reposer au frais ~{1 h} : la pâte est ferme et se découpe nettement.
