@@ -25,11 +25,18 @@ flavors:
   notes: [grillé, croustillant, fondant, salé]
   harmony: "La croûte saisie des galettes équilibre le cheddar fondant et la mie toastée du pain."
   tips: "La sonde doit confirmer au moins 71,1 °C au centre du bœuf haché; la recette arrondit la cible à 72 °C (USDA FSIS, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart)."
-image: images/placeholder-recipe.jpg
+image: images/smash-burgers-plancha.webp
 image_credit:
   author: CookiGram
-  source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  source: https://github.com/CookiGram/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-10-25'
+  prompt_file: image-prompts/smash-burgers-plancha.md
 ---
 
 [Préparer les pains]

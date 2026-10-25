@@ -29,11 +29,18 @@ flavors:
   notes: [fumé, épicé doux, caramélisé, fondant]
   harmony: "La croûte doucement sucrée accueille la fumée de chêne et contraste avec les fibres juteuses de l'épaule."
   tips: "Rub sans sel adapté au Memphis Dust de Meathead (https://amazingribs.com/tested-recipes/spice-rubs-and-pastes/meatheads-memphis-dust-rub-recipe/); méthode du serpent de briquettes décrite par Weber (https://www.weber.com/US/en/recipes/pork/classic-pulled-pork/weber-2394742.html)."
-image: images/placeholder-recipe.jpg
+image: images/pulled-pork-fume-au-chene.webp
 image_credit:
   author: CookiGram
-  source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  source: https://github.com/CookiGram/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-10-25'
+  prompt_file: image-prompts/pulled-pork-fume-au-chene.md
 ---
 
 [Préparer l’épaule]

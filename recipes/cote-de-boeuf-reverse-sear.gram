@@ -28,11 +28,18 @@ flavors:
   notes: [grillé, viande, herbacé, juteux]
   harmony: "La cuisson douce garde un cœur uniforme tandis que la saisie vive forme une croûte brune autour du gras de la côte."
   tips: "Adaptation kettle de la méthode reverse-sear publiée par Steak School (https://steakschool.com/barbecue/reverse-sear-steak/). Pour la sécurité, atteindre au moins 63 °C à cœur et laisser reposer 3 min (USDA FSIS)."
-image: images/placeholder-recipe.jpg
+image: images/cote-de-boeuf-reverse-sear.webp
 image_credit:
   author: CookiGram
-  source: https://github.com/PierreCsn/cookigram
-  license: Illustration temporaire
+  source: https://github.com/CookiGram/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour CookiGram, optimisée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI image generation
+  model: unknown
+  generated_at: '2026-10-25'
+  prompt_file: image-prompts/cote-de-boeuf-reverse-sear.md
 ---
 
 [Assaisonner la côte]
