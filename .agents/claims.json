@@ -8,15 +8,15 @@
   "active_claims": {
     "499": {
       "issue": 499,
-      "title": "Atomicité Varoma — ballotines-poulet-legumes-riesling (sous-chantier #569)",
-      "agent": "Codex",
-      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-varoma-20261025",
-      "branch": "chatgpt/499-varoma-ballotines-20261025",
+      "title": "Atomicité v2 — lot Air Fryer falafels restant",
+      "agent": "Codex (supervision ChatGPT)",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-air-fryer-20261025",
+      "branch": "feat/issue-499-air-fryer-falafels",
       "claimed_at": "2026-10-25T23:12:48+01:00",
-      "last_heartbeat": "2026-10-25T23:16:33+01:00",
+      "last_heartbeat": "2026-10-25T23:54:00+01:00",
       "status": "pr_open",
-      "pr": 618,
-      "scope": ["recipes/ballotines-poulet-legumes-riesling.gram"]
+      "pr": 614,
+      "scope": ["recipes/air-fryer-falafels-pois-chiches.gram"]
     },
     "521": {
       "issue": 521,
