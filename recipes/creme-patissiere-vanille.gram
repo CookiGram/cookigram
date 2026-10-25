@@ -53,7 +53,12 @@ image_generation:
   prompt_file: image-prompts/creme-patissiere-vanille.md
 ---
 [Cuisson]
-- Mettre dans le bol le @lait{250 g}, la @farine de blé{25 g}, l'@œuf{1 entier}, le @jaune d'œuf{1}, le @sucre vanille{5 g} et le @sucre en poudre{35 g}.
+- Mettre le @lait{250 g} dans le bol.
+- Ajouter la @farine de blé{25 g}.
+- Ajouter l'@œuf{1 entier}.
+- Ajouter le @jaune d'œuf{1}.
+- Ajouter le @sucre vanille{5 g}.
+- Ajouter le @sucre en poudre{35 g}.
 - Cuire ~{6 min} à ^{90 C} et vitesse 4 : la crème est épaisse et nappante.
 - Mixer ~{5 s} à vitesse 9 : la crème est parfaitement lisse.
 
