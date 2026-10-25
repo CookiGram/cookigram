@@ -309,3 +309,10 @@ Légende : `I` = lignes avec plusieurs ingrédients annotés et incorporation; `
 ## Audit lot 05 — ajout du 25/10/2026
 
 `lot-05.md` complète les relevés du snapshot historique pour les recettes **73–90**. Au total, **90/274 fichiers** ont désormais une fiche de revue textuelle additionnelle ; **184/274** restent au stade de l'inventaire heuristique initial. Cela **ne signifie pas** 90 recettes qualifiées sémantiquement ni une couverture structurée de toutes les variantes YAML. Nouvelle [PR #582](https://github.com/CookiGram/cookigram/pull/582) ouverte sur les sauces miso-gingembre, tahini/yaourt/citron, cacahuète/citron vert, pesto ail des ours et tapenade noire : traiter ces cinq fichiers comme **réservés** jusqu'à fusion ou fermeture de la PR. Ne pas les sélectionner de nouveau. Le registre de propriété historique au-dessus reste daté.
+
+
+## Lot 06 et fusion #582 (25 octobre 2026)
+
+`lot-06.md` consigne les recettes historiques **91 à 108** (18 fiches supplémentaires, 16 avec signaux à examiner, 3 avec indication de variantes). **108/274** recettes disposent ainsi d'un relevé textuel complémentaire ; **166/274** restent uniquement dans l'inventaire heuristique. Cette mesure **n'est pas** une qualification culinaire indépendante, et les variantes YAML complexes ne sont pas encore entièrement validées.
+
+La [PR #582](https://github.com/CookiGram/cookigram/pull/582) a été **fusionnée**, après correction d'un échec strict-atomic sur la sauce miso-gingembre et CI du HEAD `80faeaf4` SUCCESS (squash `a323c19d8913b842dedff8d81fbd91822704cf1e`). Les cinq recettes de cette PR sont donc `MERGED` et non plus réservées par une PR ouverte. Avec les **43 recettes** précédemment intégrées dans nos lots et les cinq de #582, cela fait **48 recettes nouvellement fusionnées**, **60** avec les 12 fusions antérieures recensées. Statuts historiques du registre de 274 toujours datés : ne pas les prendre pour des claims actifs.
