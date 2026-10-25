@@ -6,6 +6,16 @@
     "require_approved_label": "potential-dev-work"
   },
   "active_claims": {
+    "499": {
+      "issue": 499,
+      "title": "Atomicité v2 — lot Air Fryer falafels restant",
+      "agent": "Codex (supervision ChatGPT)",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-air-fryer-20261025",
+      "branch": "feat/issue-499-air-fryer-falafels",
+      "claimed_at": "2026-10-25T23:12:48+01:00",
+      "last_heartbeat": "2026-10-25T23:12:48+01:00",
+      "status": "active"
+    },
     "521": {
       "issue": 521,
       "title": "Pack recettes BBQ — pulled pork, côte de bœuf reverse-sear et smash burgers plancha",

@@ -24,9 +24,19 @@ image_generation: {prompt_file: image-prompts/air-fryer-falafels-pois-chiches.md
 scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Préparer la pâte]
-- Mixer les @pois chiches{400 g, cuits et égouttés}, l'@oignon{1 pièce, haché}, l'@ail{1 gousse}, le @cumin{1 c. à café}, la @coriandre moulue{1 c. à café} et le @persil frais{1 poignée}.
-- Incorporer l'@œuf{1 pièce}, le @sel{1/2 c. à café} et le @poivre moulu{2 pincées}.
+- Mettre les @pois chiches{400 g, cuits et égouttés} dans le bol du mixeur.
+- Ajouter l'@oignon{1 pièce, haché}.
+- Ajouter l'@ail{1 gousse}.
+- Ajouter le @cumin{1 c. à café}.
+- Ajouter la @coriandre moulue{1 c. à café}.
+- Ajouter le @persil frais{1 poignée}.
+- Mixer les ingrédients réunis.
+- Ajouter l'@œuf{1 pièce}.
+- Ajouter le @sel{1/2 c. à café}.
+- Ajouter le @poivre moulu{2 pincées}.
+- Mélanger pour incorporer les ingrédients.
 - Former 12 galettes.
 [Cuire]
-- Huiler les falafels avec l'@huile végétale{1 c. à soupe} et cuire dans le #panier air fryer{} à ^{190 C} ~{15 min}.
-- Retourner à mi-cuisson; les falafels doivent être dorés et fermes.
+- Huiler les falafels avec l'@huile végétale{1 c. à soupe}.
+- Cuire dans le #panier air fryer{} à ^{190 C} ~{15 min}, en les retournant à mi-cuisson.
+- Les falafels doivent être dorés et fermes.
