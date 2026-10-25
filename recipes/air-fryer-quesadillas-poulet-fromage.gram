@@ -27,4 +27,5 @@ scaling: {enabled: true, min: 2, max: 4, step: 1}
 [Cuire]
 - Déposer les quesadillas dans le #panier air fryer{}.
 - Cuire à ^{190 C} ~{8 min}, en retournant à mi-cuisson.
-- Le fromage doit être fondu et les tortillas dorées; couper en triangles.
+- Vérifier que le fromage est fondu et que les tortillas sont dorées.
+- Couper les quesadillas en triangles.
