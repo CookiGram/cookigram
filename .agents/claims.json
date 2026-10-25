@@ -13,8 +13,9 @@
       "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-air-fryer-20261025",
       "branch": "feat/issue-499-air-fryer-falafels",
       "claimed_at": "2026-10-25T23:12:48+01:00",
-      "last_heartbeat": "2026-10-25T23:12:48+01:00",
-      "status": "active"
+      "last_heartbeat": "2026-10-25T23:13:47+01:00",
+      "status": "pr_open",
+      "pr": 614
     },
     "521": {
       "issue": 521,
