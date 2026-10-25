@@ -24,8 +24,14 @@ image_generation: {prompt_file: image-prompts/air-fryer-courgettes-panees-parmes
 scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Paner]
-- Couper les @courgettes{3 pièces} en bâtonnets et les passer dans les @œufs{2 pièces, battus}.
-- Mélanger la @chapelure{100 g}, le @parmesan{50 g}, l'@ail en poudre{1/2 c. à café} et le @sel{1/2 c. à café}; enrober les courgettes.
+- Couper les @courgettes{3 pièces} en bâtonnets.
+- Passer les bâtonnets dans les @œufs{2 pièces, battus}.
+- Mettre la @chapelure{100 g} dans un récipient.
+- Ajouter le @parmesan{50 g}.
+- Ajouter l'@ail en poudre{1/2 c. à café}.
+- Ajouter le @sel{1/2 c. à café}.
+- Mélanger la panure.
+- Enrober les courgettes.
 [Cuire]
 - Vaporiser l'@huile d'olive{1 c. à soupe}.
 - Cuire dans le #panier air fryer{} à ^{200 C} ~{12 min}, en retournant à mi-cuisson.
