@@ -49,7 +49,14 @@ image_generation:
 - Faire suer ~{3 min} à ^{120 C} et vitesse 1.
 
 [Cuire les légumes et lentilles]
-- Ajouter la courge @butternut{500 g, coupée en morceaux}, les @lentilles corail{100 g, rincées}, les @pommes de terre{100 g, coupées en dés}, le @curry{1 c. à café}, le @cube de bouillon de volaille{1 pièce}, le @sel{1 pincée}, le @poivre{1 pincée} et l'@eau{600 g}.
+- Ajouter @butternut{500 g, coupée en morceaux}.
+- Ajouter @lentilles corail{100 g, rincées}.
+- Ajouter @pommes de terre{100 g, coupées en dés}.
+- Ajouter @curry{1 c. à café}.
+- Ajouter @cube de bouillon de volaille{1 pièce}.
+- Ajouter @sel{1 pincée}.
+- Ajouter @poivre{1 pincée}.
+- Ajouter @eau{600 g}.
 - Poser le couvercle avec le gobelet doseur.
 - Cuire ~{25 min} à ^{100 C} et vitesse 1.
 
