@@ -24,11 +24,12 @@
       "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-plat-de-cote-20261025",
       "branch": "feat/499-atomic-plat-de-cote-20261025",
       "claimed_at": "2026-10-25T23:12:05+01:00",
-      "last_heartbeat": "2026-10-25T23:12:05+01:00",
-      "status": "in_progress",
+      "last_heartbeat": "2026-10-25T23:14:44+01:00",
+      "status": "pr_open",
       "scope": [
         "recipes/plat-de-cote-boeuf-instant-pot.gram"
-      ]
+      ],
+      "pr": 617
     }
   },
   "completed_claims": [
