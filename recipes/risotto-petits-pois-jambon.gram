@@ -42,11 +42,17 @@ image_generation:
 - Cuire ~{2 min} à ^{120 C}, vitesse 1.
 
 [Cuire le risotto]
-- Ajouter l'@eau{600 g}, le @cube de bouillon de légumes{1 pièce} et les @petits pois{150 g}.
-- Saler avec le @sel{} et poivrer avec le @poivre moulu{}.
+- Ajouter l'@eau{600 g}.
+- Ajouter le @cube de bouillon de légumes{1 pièce}.
+- Ajouter les @petits pois{150 g}.
+- Saler avec le @sel{}.
+- Poivrer avec le @poivre moulu{}.
 - Cuire ~{15 min} à ^{100 C}, sens inverse, vitesse cuillère.
 
 [Finir et servir]
-- Ajouter le @jambon{150 g, en dés} et la @ricotta{100 g, émiettée}.
-- Arroser d'un filet d'huile d'olive et parsemer de @persil frais{quelques feuilles, ciselé}.
-- Rectifier l'assaisonnement et servir sans attendre.
+- Ajouter le @jambon{150 g, en dés}.
+- Ajouter la @ricotta{100 g, émiettée}.
+- Arroser d'un filet d'huile d'olive.
+- Parsemer de @persil frais{quelques feuilles, ciselé}.
+- Rectifier l'assaisonnement.
+- Servir sans attendre.
