@@ -64,6 +64,20 @@
         "recipes/sables-parmesan-sesame.gram",
         "recipes/puree-pommes-de-terre.gram"
       ]
+    },
+    "499": {
+      "issue": 499,
+      "title": "Atomicité v2 — lot plat-de-côte, correction ciblée et qualification",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-plat-de-cote-20261025",
+      "branch": "feat/499-atomic-plat-de-cote-20261025",
+      "claimed_at": "2026-10-25T23:12:05+01:00",
+      "last_heartbeat": "2026-10-25T23:44:08+01:00",
+      "status": "pr_open",
+      "scope": [
+        "recipes/plat-de-cote-boeuf-instant-pot.gram"
+      ],
+      "pr": 617
     }
   },
   "completed_claims": [
