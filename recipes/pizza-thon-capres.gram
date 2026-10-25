@@ -44,7 +44,9 @@ image_generation:
 - Vérifier qu'elle glisse librement.
 
 [Garnir la pizza]
-- Répartir @sauce tomate{80 g} et @mozzarella{90 g} et @thon{80 g, égoutté} sur le centre en laissant 2 cm de bord.
+- Répartir @sauce tomate{80 g} sur le centre en laissant 2 cm de bord.
+- Ajouter @mozzarella{90 g}.
+- Ajouter @thon{80 g, égoutté}.
 - Garnir avec l'@câpres{15 g}.
 - Garnir avec l'@olives noires{25 g}.
 - Garnir avec l'@oignon{30 g, émincé}.
