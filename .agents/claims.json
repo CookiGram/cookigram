@@ -24,7 +24,7 @@
       "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-recent-r1-20261025",
       "branch": "feat/499-recent-recipes-r1-20261025",
       "claimed_at": "2026-10-25T23:12:09+01:00",
-      "last_heartbeat": "2026-10-25T23:17:42+01:00",
+      "last_heartbeat": "2026-10-25T23:44:07+01:00",
       "status": "pr_open",
       "scope": [
         "bibimbap",
@@ -36,6 +36,22 @@
         "poulet-korma-safran-raisins"
       ],
       "pr": 619
+    },
+    "499-r2": {
+      "issue": 499,
+      "title": "Atomicité v2 — lot récent R2, reliquat de trois recettes",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-recent-r2-20261025",
+      "branch": "chatgpt/499-atomic-recent-r2-remnants-20261025",
+      "claimed_at": "2026-10-25T23:13:06+01:00",
+      "last_heartbeat": "2026-10-25T23:16:26+01:00",
+      "status": "pr_open",
+      "pr": 615,
+      "scope": [
+        "recipes/tzatziki-grec.gram",
+        "recipes/sables-parmesan-sesame.gram",
+        "recipes/puree-pommes-de-terre.gram"
+      ]
     }
   },
   "completed_claims": [
