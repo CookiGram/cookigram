@@ -24,7 +24,15 @@ image_generation: {prompt_file: image-prompts/air-fryer-crevettes-ail-citron.md}
 scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Assaisonner]
-- Mélanger les @crevettes{500 g, décortiquées} avec l'@huile d'olive{1 c. à soupe}, l'@ail{2 gousses, hachées}, le @paprika{1 c. à café} et le @sel{1/2 c. à café}.
+- Mettre les @crevettes{500 g, décortiquées} dans un récipient.
+- Ajouter l'@huile d'olive{1 c. à soupe}.
+- Ajouter l'@ail{2 gousses, hachées}.
+- Ajouter le @paprika{1 c. à café}.
+- Ajouter le @sel{1/2 c. à café}.
+- Mélanger pour enrober les crevettes.
 [Cuire]
-- Étaler les crevettes dans le #panier air fryer{} et cuire à ^{200 C} ~{8 min}, en secouant à mi-cuisson.
-- Ajouter le @jus de citron{1 citron} et le @persil frais{2 c. à soupe}; servir quand les crevettes sont opaques et fermes.
+- Étaler les crevettes dans le #panier air fryer{}.
+- Cuire à ^{200 C} ~{8 min}, en secouant à mi-cuisson.
+- Ajouter le @jus de citron{1 citron}.
+- Ajouter le @persil frais{2 c. à soupe}.
+- Servir quand les crevettes sont opaques et fermes.
