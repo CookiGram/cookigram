@@ -38,5 +38,6 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 - Former 12 galettes.
 [Cuire]
 - Huiler les falafels avec l'@huile végétale{1 c. à soupe}.
-- Cuire dans le #panier air fryer{} à ^{190 C} ~{15 min}, en les retournant à mi-cuisson.
+- Déposer les falafels dans le #panier air fryer{}.
+- Cuire à ^{190 C} ~{15 min}, en les retournant à mi-cuisson.
 - Les falafels doivent être dorés et fermes.
