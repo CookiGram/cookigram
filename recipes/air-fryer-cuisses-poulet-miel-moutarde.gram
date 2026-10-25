@@ -24,7 +24,11 @@ image_generation: {prompt_file: image-prompts/air-fryer-cuisses-poulet-miel-mout
 scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Préparer la laque]
-- Mélanger le @miel{30 g}, la @moutarde de Dijon{30 g}, l'@huile d'olive{1 c. à soupe} et le @paprika{1 c. à café}.
+- Mettre le @miel{30 g} dans un récipient.
+- Ajouter la @moutarde de Dijon{30 g}.
+- Ajouter l'@huile d'olive{1 c. à soupe}.
+- Ajouter le @paprika{1 c. à café}.
+- Mélanger pour obtenir la laque.
 - Enrober les @cuisses de poulet{800 g} avec la moitié de la préparation.
 [Cuire]
 - Déposer les cuisses dans le #panier air fryer{}.
