@@ -21,8 +21,13 @@ scaling: {enabled: false, reason: "Les pousses de pâte et la cuisson vapeur se 
 flavors: {pairing: [porc, shiitaké, ciboule, sauce huître], notes: [moelleux, savoureux, doux], harmony: "La brioche légèrement sucrée équilibre le porc umami et la ciboule."}
 ---
 [Faire lever la pâte]
-- Réunir le @lait{200 g}, la @levure boulangère{2 c. à café} et le @sucre{20 g}; chauffer ~{3 min} à ^{37 C}, vitesse 1.
-- Ajouter la @farine avec levure incorporée{350 g}, la @levure chimique{1 c. à café} et l’@huile végétale{30 g}.
+- Verser le @lait{200 g} dans le bol.
+- Ajouter la @levure boulangère{2 c. à café}.
+- Ajouter le @sucre{20 g}.
+- Chauffer ~{3 min} à ^{37 C}, vitesse 1.
+- Ajouter la @farine avec levure incorporée{350 g}.
+- Ajouter la @levure chimique{1 c. à café}.
+- Ajouter l’@huile végétale{30 g}.
 - Mélanger ~{6 s} à vitesse 6.
 - Pétrir ~{4 min}.
 - Former une boule.
@@ -34,8 +39,16 @@ flavors: {pairing: [porc, shiitaké, ciboule, sauce huître], notes: [moelleux, 
 - Écaler les œufs.
 [Préparer la farce]
 - Réhydrater les champignons séchés dans de l’eau bouillante ~{10 min}; égoutter.
-- Hacher l’@oignon nouveau{2} (partie blanche), la @ciboulette{20 brins}, la @saucisse chinoise{2} en tronçons et les @shiitaké{10 g} séchés réhydratés ~{7 s} à vitesse 7.
-- Ajouter le @haché de porc{500 g}, le @vinaigre de riz{2 c. à café}, la @sauce huître{2 c. à soupe}, le @sel{1/4 c. à café} et le @poivre{1/4 c. à café}.
+- Mettre l’@oignon nouveau{2} (partie blanche) dans le bol.
+- Ajouter la @ciboulette{20 brins}.
+- Ajouter la @saucisse chinoise{2} en tronçons.
+- Ajouter les @shiitaké{10 g} séchés réhydratés.
+- Hacher ~{7 s} à vitesse 7.
+- Ajouter le @haché de porc{500 g}.
+- Ajouter le @vinaigre de riz{2 c. à café}.
+- Ajouter la @sauce huître{2 c. à soupe}.
+- Ajouter le @sel{1/4 c. à café}.
+- Ajouter le @poivre{1/4 c. à café}.
 - Mélanger ~{20 s} en sens inverse, vitesse 3.
 - Former 12 boulettes de farce autour des œufs de caille.
 - Verser l’@eau{1000 g} dans le bol.
