@@ -50,20 +50,33 @@ image_generation:
 ---
 [Mise en place]
 - Concasser la @carcasse de poulet{1 petite carcasse cuite, en morceaux}.
-- Tailler l'@oignon{1 petit, en quartiers}, l'@ail{1 gousse}, la @carotte{1, en rondelles} et le @céleri{25 g, en tronçons de 2 cm}.
+- Tailler l'@oignon{1 petit, en quartiers}.
+- Tailler l'@ail{1 gousse}.
+- Tailler la @carotte{1, en rondelles}.
+- Tailler le @céleri{25 g, en tronçons de 2 cm}.
 - Émincer le @poireau{25 g de feuilles vertes, en morceaux}.
 
 [Marmite]
-- Déposer la carcasse et les légumes dans une #cocotte{} avec le @thym{2 brins frais}, le @laurier{1 feuille fraîche} et le @clou de girofle{1, optionnel}.
+- Déposer la carcasse dans une #cocotte{}.
+- Ajouter l'oignon.
+- Ajouter l'ail.
+- Ajouter la carotte.
+- Ajouter le céleri.
+- Ajouter le poireau.
+- Ajouter le @thym{2 brins frais}.
+- Ajouter le @laurier{1 feuille fraîche}.
+- Ajouter le @clou de girofle{1, optionnel}.
 - Verser l'@eau{850 g} froide à hauteur.
-- Ajouter le @sel{1 c. à café} et le @poivre{1 pincée moulue}.
+- Ajouter le @sel{1 c. à café}.
+- Ajouter le @poivre{1 pincée moulue}.
 
 [Ébullition]
 - Porter à franche ébullition sur feu vif.
 - Écumer soigneusement la surface à l'#écumoire{} : le liquide doit rester limpide.
 
 [Mijotage]
-- Baisser au frémissement et couvrir.
+- Baisser le feu jusqu'au frémissement.
+- Couvrir la cocotte.
 - Laisser mijoter ~{1 h 30} : la viande se détache des os et le bouillon est doré et parfumé.
 
 [Filtration]
