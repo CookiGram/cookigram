@@ -86,6 +86,86 @@ def _workflow_data(root: Path, findings: list[Finding]) -> dict[Path, dict[str, 
     return data
 
 
+ACTION_PIN_RE = re.compile(r"^[\w.-]+/[\w.-]+@[0-9a-f]{40}$")
+ACTION_TAG_RE = re.compile(r"^[\w.-]+/[\w.-]+@v\d")
+
+
+def _uses_legacy_tag(uses: object) -> bool:
+    return isinstance(uses, str) and ACTION_TAG_RE.match(uses) is not None and ACTION_PIN_RE.match(uses) is None
+
+
+def _check_reproducibility(root: Path, data: dict[Path, dict[str, Any]], findings: list[Finding]) -> None:
+    """Garde-fous de reproductibilité (#434).
+
+    Les actions GitHub doivent être épinglées par SHA de commit (le tag
+    reste en commentaire pour la lisibilité), les dépendances pip par
+    version exacte, et ``provenance.json`` doit dériver de
+    ``SOURCE_DATE_EPOCH`` — jamais de l'horloge murale.
+    """
+    for relative in WORKFLOWS:
+        try:
+            text = (root / relative).read_text(encoding="utf-8")
+        except OSError:
+            continue
+        workflow = data.get(relative, {})
+        for job_name, job in (workflow.get("jobs", {}) or {}).items():
+            if not isinstance(job, dict):
+                continue
+            for step in job.get("steps", []) or []:
+                if not isinstance(step, dict):
+                    continue
+                uses = step.get("uses")
+                if _uses_legacy_tag(uses):
+                    findings.append(
+                        Finding(
+                            "unpinned-action",
+                            "error",
+                            f"{relative} : l'action `{uses}` doit être épinglée par SHA (#434).",
+                            {"job": job_name, "uses": uses},
+                        )
+                    )
+        for lineno, line in enumerate(text.splitlines(), start=1):
+            stripped = line.strip()
+            if stripped.startswith("#"):
+                continue
+            if re.search(r"pip install --upgrade pip(\s|$|\"|')", stripped) and "==" not in stripped:
+                findings.append(
+                    Finding(
+                        "unpinned-pip-upgrade",
+                        "error",
+                        f"{relative}:{lineno} : `pip install --upgrade pip` doit être pinné (`pip==...`) (#434).",
+                    )
+                )
+            if "pip install" in stripped and ("Pillow" in stripped or "pytest" in stripped or "PyYAML" in stripped or "Jinja2" in stripped):
+                if re.search(r"(>=|<=|~=|>|<)", stripped):
+                    findings.append(
+                        Finding(
+                            "floating-pip-range",
+                            "error",
+                            f"{relative}:{lineno} : dépendance pip flottante — pinner par version exacte (#434).",
+                        )
+                    )
+        # Seule la CI écrit provenance.json (les étapes « write
+        # qualification provenance ») ; Pages ne fait que la vérifier.
+        writes_provenance = "write qualification provenance" in text
+        if "datetime.datetime.now" in text and writes_provenance:
+            findings.append(
+                Finding(
+                    "nondeterministic-provenance",
+                    "error",
+                    f"{relative} : provenance.json dérive de l'horloge murale — utiliser SOURCE_DATE_EPOCH (#434).",
+                )
+            )
+        if writes_provenance and ("write-provenance.py" not in text or "SOURCE_DATE_EPOCH" not in text):
+                findings.append(
+                    Finding(
+                        "provenance-epoch-missing",
+                        "error",
+                        f"{relative} : provenance.json doit passer par scripts/write-provenance.py avec SOURCE_DATE_EPOCH (#434).",
+                    )
+                )
+
+
 def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: list[Finding]) -> tuple[str | None, str | None]:
     try:
         core_pin = (root / ".core-version").read_text(encoding="utf-8").strip()
@@ -111,11 +191,21 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
         except OSError:
             text = ""
         core_job = workflow.get("jobs", {}).get("private-integration" if relative.name == "ci.yml" else "build", {})
-        checkout = next((step for step in core_job.get("steps", []) if isinstance(step, dict) and step.get("uses") == "actions/checkout@v4" and step.get("with", {}).get("repository") == "CookiGram/cookigram-core"), None)
+
+        def _is_core_checkout(step: object) -> bool:
+            if not isinstance(step, dict):
+                return False
+            uses = step.get("uses")
+            if not (uses == "actions/checkout@v4" or (isinstance(uses, str) and uses.startswith("actions/checkout@"))):
+                return False
+            with_cfg = step.get("with")
+            return isinstance(with_cfg, dict) and with_cfg.get("repository") == "CookiGram/cookigram-core"
+
+        checkout = next((step for step in core_job.get("steps", []) if _is_core_checkout(step)), None)
         if relative.name == "pages.yml" and (root / BUILDER_CONFIG).is_file():
             if isinstance(checkout, dict):
                 findings.append(Finding("private-core-checkout-in-pages", "error", "pages.yml checkout encore le Core privé."))
-            qualified_artifact = "actions/download-artifact@v4" in text and "run-id:" in text and "cookigram-pages-" in text
+            qualified_artifact = "actions/download-artifact@" in text and "run-id:" in text and "cookigram-pages-" in text
             public_builder = ".builder.json" in text and "sha256sum" in text and "releases/download" in text
             if not qualified_artifact and not public_builder:
                 findings.append(Finding("public-builder-not-verified", "error", "pages.yml ne consomme pas un builder public piné et vérifié."))
@@ -124,6 +214,7 @@ def _check_workflows(root: Path, data: dict[Path, dict[str, Any]], findings: lis
                 findings.append(Finding("core-pin-not-used", "error", f"{relative} ne checkout pas Core avec la sortie du pin local."))
             if "core-version" not in text:
                 findings.append(Finding("core-pin-not-read", "error", f"{relative} ne lit pas .core-version."))
+    _check_reproducibility(root, data, findings)
 
     if pages and "CONTRACT_VERSION:" in str(pages):
         findings.append(Finding("duplicate-contract-pin", "error", "La version du contrat est définie hors du job public CI."))
