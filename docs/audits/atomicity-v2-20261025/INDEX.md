@@ -304,3 +304,8 @@ Légende : `I` = lignes avec plusieurs ingrédients annotés et incorporation; `
 - Les modifications de #570 sont intégrées sur le HEAD `db622662` avec les référents explicités. Le double rinçage du raita était préexistant : point qualité éditorial à suivre, pas une régression d'atomicité.
 
 **État documentaire :** lots 01 à 04 déposés, soit **72 recettes** avec relevé détaillé ou textuel complémentaire. Les autres 202 recettes du snapshot restent uniquement au stade de l'inventaire heuristique et nécessitent une véritable qualification humaine ; les variantes YAML structurées ne sont pas entièrement qualifiées. Aucune approbation indépendante ni test de rendu ne sont revendiqués pour la documentation.
+
+
+## Audit lot 05 — ajout du 25/10/2026
+
+`lot-05.md` complète les relevés du snapshot historique pour les recettes **73–90**. Au total, **90/274 fichiers** ont désormais une fiche de revue textuelle additionnelle ; **184/274** restent au stade de l'inventaire heuristique initial. Cela **ne signifie pas** 90 recettes qualifiées sémantiquement ni une couverture structurée de toutes les variantes YAML. Nouvelle [PR #582](https://github.com/CookiGram/cookigram/pull/582) ouverte sur les sauces miso-gingembre, tahini/yaourt/citron, cacahuète/citron vert, pesto ail des ours et tapenade noire : traiter ces cinq fichiers comme **réservés** jusqu'à fusion ou fermeture de la PR. Ne pas les sélectionner de nouveau. Le registre de propriété historique au-dessus reste daté.
