@@ -44,7 +44,9 @@ image_generation:
 - Vérifier qu'elle glisse librement.
 
 [Garnir la pizza]
-- Répartir @sauce tomate{80 g} et @mozzarella{90 g} et @jambon{45 g} sur le centre en laissant 2 cm de bord.
+- Répartir @sauce tomate{80 g} sur le centre en laissant 2 cm de bord.
+- Ajouter @mozzarella{90 g}.
+- Ajouter @jambon{45 g}.
 - Garnir avec les @champignons de Paris{60 g}.
 - Garnir avec les @cœurs d'artichaut{50 g}.
 - Garnir avec les @olives noires{25 g}.
