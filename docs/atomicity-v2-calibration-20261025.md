@@ -27,16 +27,32 @@ Les quatre premiers témoignent d'instructions d'ajout multi-ingrédients ; le c
 
 **Collision connue** : `aioli-citron-capres.gram` figure dans le lot 1 proposé ; l'exclure tant que #552 est ouverte. Le témoin porc aigre-doux est également détenu par #551. Les trois recettes pilotes de #541 restent exclues de la campagne.
 
-## Dépendance Core non levée
+## Convergence Core vérifiée (correction du préflight)
 
-Au moment de la lecture GitHub, `.core-version` sur `main` de CookiGram référence `5c91478a355a7ea6637433783e8f9f700f60ce3b`. Les PR Core #340, #343, #345, #352 et #353 sont fermées. **Leur inclusion effective dans un nouveau pin, la reproductibilité du build et le résultat du strict atomic gate ne sont pas encore qualifiés.** Ne pas changer le pin par supposition : préparer un changement séparé, tester et faire qualifier.
+Au moment de la lecture GitHub, `.core-version` sur `main` de CookiGram référence `5c91478a355a7ea6637433783e8f9f700f60ce3b`. Les merge commits des cinq PR ont été comparés individuellement au pin actuel à l'aide de GitHub compare. #340 (`887c0443`), #343 (`a952a6c0`), #345 (`f970d6da`), #352 (`7d4433b2`) et #353 (`dce1223c`) sont **tous des ancêtres** de `5c91478a355a7ea6637433783e8f9f700f60ce3b` (statut `ahead`, `behind_by=0` depuis chacun des commits de fusion vers le pin). Le pin contient donc déjà ces changements Atomic. **Aucune mise à jour du pin n'est nécessaire à cette fin.** Reste à exécuter/qualifier le strict gate et le build effectif sur cette version.
 
 ## Critères restant à satisfaire avant cinq vagues
 
-1. Compléter la revue de quinze recettes représentatives, en documentant le fichier, la ligne, la version, le résultat du gate et l'arbitrage sémantique.
-2. Qualifier le Core effectivement épinglé par le dépôt public (install/build/gates et rendu Cook Mode).
+1. Qualifier la revue des quinze recettes ci-dessous en ajoutant les numéros de ligne, le résultat du gate (non exécuté) et la décision indépendante de chaque cas limite.
+2. Exécuter les gates et le build sur le Core déjà épinglé par le dépôt public (install/build/gates et rendu Cook Mode).
 3. Revérifier claims opérationnels, PR ouvertes et ownership exact/hiérarchique, en particulier les lots 1–5, avant mutation.
 4. Faire valider les cas limites de découpage, en distinguant incorporation d'ingrédients et une seule opération de cuisson/mélange.
 5. Qualification indépendante des PR recettes. **Aucun merge automatique.**
 
 Statut : **PARTIAL / NOT PASS**. Ce document ne prétend pas lever le gate #499.
+
+## Neuf recettes supplémentaires examinées sur main (15 fichiers au total)
+
+| Fichier | Témoin observé | Revue sémantique préliminaire |
+|---|---|---|
+| `arepas-poulet-avocat.gram` | Mettre eau, carotte, pomme de terre, poireau, coriandre, cube et huile dans le bol | Plusieurs incorporations indépendantes : scinder, sans modifier la cuisson du poulet |
+| `banh-bao-porc.gram` | Ajouter farine, levure chimique et huile ; farce porc + vinaigre + sauce huître + sel + poivre | Ajouts composites : scinder ; conserver opération de mélange séparée |
+| `guacamole-classique.gram` | Ajouter oignon, piment et ail ; puis avocat, jus de citron et sel | Deux séquences d'incorporation à atomiser |
+| `houmous-classique.gram` | Ajouter pois chiches et huile de sésame ; huile d'olive et citron ; sel, paprika et piment | Trois ajouts composites ; texture finale liée au mixage |
+| `pate-a-crepes.gram` | Mettre lait, farine, œufs et sel dans la cuve | Quatre gestes d'incorporation indépendants |
+| `sauce-bechamel.gram` | Ajouter lait, sel, poivre et noix de muscade | Quatre ajouts indépendants ; préserver cuisson et repère « nappe la cuillère » |
+| `air-fryer-crevettes-ail-citron.gram` | Mélanger les crevettes avec huile, ail, paprika, sel ; secouer à mi-cuisson | Découper les ingrédients de l'enrobage sans changer le geste de mélange ; évaluer le secouage comme action indépendante |
+| `one-pot-poulet-riz-legumes.gram` | Mélanger paprika, coriandre, ail et huile ; verser bouillon et ajouter riz, poireaux, origan et laurier | Plusieurs préparations et ajouts distincts ; préserver enchaînement et paramètres de cuisson |
+| `chili-con-carne.gram` | Mettre poivrons, oignon, ail ensemble ; ajouter huile, viande, cumin, paprika | Ajouts multi-ingrédients ; distinguer incorporation et programme machine |
+
+Ces 15 fichiers constituent maintenant **une revue qualitative initiale**, pas 15 validations du strict gate. Le résultat réel du linter, les lignes et une qualification indépendante restent **NOT RUN / NOT PASS**. Les cas composites ci-dessus sont observés dans le texte GitHub ; ne pas assimiler l'examen lexical à un verdict automatique.
