@@ -94,21 +94,26 @@ FUEL_REQUIREMENTS = {
     "smoking_wood": frozenset({"oak"}),
 }
 
-# Expected origin/main corpus inventory (Lane A audit, re-verified here).
+# Minimum origin/main corpus inventory (Lane A audit, re-verified here).
+# These counts are deletion floors, not an exact snapshot: adding a recipe must
+# not re-pin every appliance count (same policy as the catalog floors in
+# #547/#548). Dropping a declaration below its floor still fails.
 # thermomix re-pinned 63 -> 87 after the #492 wave (24 new TM31 hits,
 # verified one by one against the merged corpus; all other counts unchanged).
 # #493 wave: thermomix 87 -> 112 (+25: 8 A2 + 1 puree + 5 B1 + 5 B2 + 6 C,
 # all TM31-declared; 3 bouillons/fond + caramel carry no appliances block,
 # matching main-corpus stovetop practice), stand_mixer 0 -> 7 (A1 pates,
 # [standard]); all other counts unchanged.
+# Issue #540 adds one TM5/TM6/TM7 Thermomix recipe.
 # Lane D recipe migration (issue #495):
 # - air_fryer: 0 -> 15 (15 air-fryer-*.gram recipes declared)
 # - instant_pot (7) migrated to pressure_cooker: [instant_pot]
 # - cookeo (1) migrated to pressure_cooker: [cookeo]
 # - pressure_cooker: 0 -> 8
 # - #530 adds one barbecue: [charcoal_kettle] recipe
+# - #521 adds three barbecue recipes (two charcoal_kettle, one gas_grill) and one plancha
 EXPECTED_KEY_COUNTS = {
-    "thermomix": 112,
+    "thermomix": 113,
     "four": 21,
     "pizza_oven": 20,
     "pressure_cooker": 8,
@@ -116,7 +121,8 @@ EXPECTED_KEY_COUNTS = {
     "sous_vide": 6,
     "rice_cooker": 1,
     "stand_mixer": 7,
-    "barbecue": 1,
+    "barbecue": 4,
+    "plancha": 1,
 }
 
 BRAND_TOKENS = (
@@ -258,6 +264,16 @@ def corpus_appliance_hits():
                 yield path, key, values
 
 
+def inventory_floor_regressions(counts, floors=EXPECTED_KEY_COUNTS):
+    """Return the appliance keys whose corpus count fell below ``floors``.
+
+    Floors catch silent deletions while allowing later recipe additions, so a
+    recipe PR only has to declare its appliances truthfully rather than update
+    a global snapshot that also depends on unrelated branches.
+    """
+    return sorted(key for key, minimum in floors.items() if counts.get(key, 0) < minimum)
+
+
 class ParsingTests(unittest.TestCase):
     def test_new_keys_parse_inline(self):
         blocks = parse_appliances_block("appliances:\n  air_fryer: [standard]\n")
@@ -305,12 +321,29 @@ class RetrocompatTests(unittest.TestCase):
         for path, key, _values in corpus_appliance_hits():
             self.assertIn(key, KNOWN_KEYS, f"{path.name}: {key}")
 
-    def test_corpus_inventory_matches_audit(self):
+    def test_corpus_inventory_meets_audit_floors(self):
         from collections import Counter
         counts = Counter()
         for _path, key, _values in corpus_appliance_hits():
             counts[key] += 1
-        self.assertEqual(dict(counts), EXPECTED_KEY_COUNTS)
+        regressions = inventory_floor_regressions(counts)
+        self.assertEqual(
+            regressions, [],
+            f"appliance inventory fell below the audited floors: {regressions}",
+        )
+
+    def test_inventory_floors_reject_deletions_and_allow_additions(self):
+        self.assertEqual(inventory_floor_regressions(EXPECTED_KEY_COUNTS), [])
+        with_addition = {
+            **EXPECTED_KEY_COUNTS,
+            "sous_vide": EXPECTED_KEY_COUNTS["sous_vide"] + 5,
+        }
+        self.assertEqual(inventory_floor_regressions(with_addition), [])
+        deleted = {
+            **EXPECTED_KEY_COUNTS,
+            "sous_vide": EXPECTED_KEY_COUNTS["sous_vide"] - 1,
+        }
+        self.assertEqual(inventory_floor_regressions(deleted), ["sous_vide"])
 
     def test_every_corpus_value_list_is_nonempty_strings(self):
         for path, key, values in corpus_appliance_hits():

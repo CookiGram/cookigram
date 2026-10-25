@@ -13,17 +13,27 @@ assert SPEC and SPEC.loader
 sys.modules[SPEC.name] = LINTER
 SPEC.loader.exec_module(LINTER)
 
+MINIMUM_PUBLIC_RECIPE_FILES = 271
+
+
+def _meets_inventory_floor(actual: int, minimum: int) -> bool:
+    return actual >= minimum
+
 
 class PublicContentLintTests(unittest.TestCase):
     def test_public_corpus_is_deterministically_clean_except_seo_advisories(self) -> None:
         result = LINTER.run(ROOT, warn_only=True, require_editorial_dates=True)
-        self.assertEqual(result["files"], 270)  # 233 + 36 (#493 wave) + #530
+        self.assertTrue(_meets_inventory_floor(result["files"], MINIMUM_PUBLIC_RECIPE_FILES))
         self.assertEqual(result["summary"]["errors"], 0)
         self.assertEqual(result["summary"]["warnings"], 0)
         self.assertEqual(
             json.dumps(result, ensure_ascii=False),
             json.dumps(LINTER.run(ROOT, warn_only=True, require_editorial_dates=True), ensure_ascii=False),
         )
+
+    def test_recipe_inventory_floor_rejects_deletions_and_allows_additions(self) -> None:
+        self.assertTrue(_meets_inventory_floor(MINIMUM_PUBLIC_RECIPE_FILES + 1, MINIMUM_PUBLIC_RECIPE_FILES))
+        self.assertFalse(_meets_inventory_floor(MINIMUM_PUBLIC_RECIPE_FILES - 1, MINIMUM_PUBLIC_RECIPE_FILES))
 
 
     def test_duplicate_yaml_key_is_a_blocking_error(self) -> None:
