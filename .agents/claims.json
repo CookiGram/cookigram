@@ -16,6 +16,25 @@
       "last_heartbeat": "2026-10-25T02:33:07+01:00",
       "status": "pr_open",
       "pr": 550
+    },
+    "499": {
+      "issue": 499,
+      "title": "Atomicité v2 — audit sémantique du catalogue et granularité adaptable en Cook Mode (lot recent-r1 restant)",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-recent-r1-20261025",
+      "branch": "feat/499-recent-recipes-r1-20261025",
+      "claimed_at": "2026-10-25T23:12:09+01:00",
+      "last_heartbeat": "2026-10-25T23:17:00+01:00",
+      "status": "in_progress",
+      "scope": [
+        "bibimbap",
+        "okonomiyaki",
+        "gyoza",
+        "lahmacun",
+        "pierogi-ruskie",
+        "polenta-poireau-bleu-auvergne",
+        "poulet-korma-safran-raisins"
+      ]
     }
   },
   "completed_claims": [
