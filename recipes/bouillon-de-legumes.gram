@@ -50,20 +50,34 @@ image_generation:
   prompt_file: image-prompts/bouillon-de-legumes.md
 ---
 [Mise en place]
-- Tailler l'@oignon{1, en quartiers}, l'@ail{1 gousse}, les @carottes{150 g, en morceaux, avec leurs épluchures} et le @fenouil{100 g, en morceaux}.
-- Émincer le @poireau{200 g de vert, en morceaux} et détailler le @gingembre frais{10 g, en lamelles}.
+- Tailler l'@oignon{1, en quartiers}.
+- Tailler l'@ail{1 gousse}.
+- Tailler les @carottes{150 g, en morceaux, avec leurs épluchures}.
+- Tailler le @fenouil{100 g, en morceaux}.
+- Émincer le @poireau{200 g de vert, en morceaux}.
+- Détailler le @gingembre frais{10 g, en lamelles}.
 
 [Marmite]
-- Déposer tous les légumes dans une grande #cocotte{} avec le @bouquet garni{1}, le @laurier{1 feuille} et le @clou de girofle{1}.
+- Déposer l'oignon dans une grande #cocotte{}.
+- Ajouter l'ail.
+- Ajouter les carottes.
+- Ajouter le fenouil.
+- Ajouter le poireau.
+- Ajouter le gingembre.
+- Ajouter le @bouquet garni{1}.
+- Ajouter le @laurier{1 feuille}.
+- Ajouter le @clou de girofle{1}.
 - Verser l'@eau{1200 g} froide à hauteur.
-- Assaisonner de @sel{selon le goût} et de @poivre{selon le goût}.
+- Assaisonner de @sel{selon le goût}.
+- Assaisonner de @poivre{selon le goût}.
 
 [Ébullition]
 - Porter à franche ébullition sur feu vif.
 - Écumer soigneusement la surface à l'#écumoire{} : le liquide doit rester limpide.
 
 [Mijotage]
-- Baisser au frémissement et couvrir.
+- Baisser le feu jusqu'au frémissement.
+- Couvrir la cocotte.
 - Laisser mijoter ~{1 h} : les légumes ont cédé leurs sucs et le bouillon est limpide et parfumé.
 
 [Filtration]
