@@ -27,11 +27,23 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 flavors: {pairing: [lentilles corail, coco, tomate, curry], notes: [crémeux, épicé, végétal], harmony: "La coco adoucit les épices et donne aux lentilles une texture veloutée."}
 ---
 [Rissoler les aromates]
-- Chauffer l'@huile végétale{2 c. à soupe} dans une #casserole{} et faire revenir l'@oignon{1 pièce, haché} ~{5 min}.
-- Ajouter l'@ail{4 gousses, écrasées}, le @gingembre{20 g, râpé}, le @curry en poudre{2 c. à café}, le @cumin{1/2 c. à café} et le @curcuma{1/2 c. à café}.
+- Chauffer l'@huile végétale{2 c. à soupe} dans une #casserole{}.
+- Faire revenir l'@oignon{1 pièce, haché} ~{5 min}.
+- Ajouter l'@ail{4 gousses, écrasées}.
+- Ajouter le @gingembre{20 g, râpé}.
+- Ajouter le @curry en poudre{2 c. à café}.
+- Ajouter le @cumin{1/2 c. à café}.
+- Ajouter le @curcuma{1/2 c. à café}.
 - Cuire ~{2 min} jusqu'à ce que les épices soient odorantes.
 [Mijoter]
-- Ajouter les @tomates concassées{400 g}, l'@eau{720 ml}, le @lait de coco{400 ml} et les @lentilles corail{190 g}.
-- Porter à frémissement, couvrir et mijoter ~{35 min}; les lentilles doivent être tendres et la sauce crémeuse.
+- Ajouter les @tomates concassées{400 g}.
+- Ajouter l'@eau{720 ml}.
+- Ajouter le @lait de coco{400 ml}.
+- Ajouter les @lentilles corail{190 g}.
+- Porter à frémissement.
+- Couvrir la casserole.
+- Mijoter ~{35 min}; les lentilles doivent être tendres et la sauce crémeuse.
 [Rectifier]
-- Assaisonner avec le @sel{1 c. à café} et le @poivre moulu{2 pincées}; ajouter un peu d'eau si le curry épaissit trop.
+- Assaisonner avec le @sel{1 c. à café}.
+- Ajouter le @poivre moulu{2 pincées}.
+- Ajouter un peu d'eau si le curry épaissit trop.
