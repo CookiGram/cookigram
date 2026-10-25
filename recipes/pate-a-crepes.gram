@@ -53,7 +53,10 @@ image_generation:
 ---
 [Liaison]
 - Faire fondre le @beurre doux{50 g} en #casserole{} à feu doux.
-- Mettre le @lait{600 g}, la @farine de blé{250 g}, les @œufs{4} et le @sel{1 pincée} dans la cuve du #robot pâtissier{}.
+- Mettre le @lait{600 g} dans la cuve du #robot pâtissier{}.
+- Ajouter la @farine de blé{250 g}.
+- Ajouter les @œufs{4}.
+- Ajouter le @sel{1 pincée}.
 - Ajouter le beurre fondu.
 - Fouetter ~{20 s} au #fouet{} : la pâte est fluide et sans grumeaux.
 
@@ -62,7 +65,10 @@ image_generation:
 
 [Cuisson]
 - Chauffer la #crêpière{} légèrement beurrée sur feu moyen.
-- Verser une louche et répartir en inclinant.
+- Verser une louche de pâte.
+- Répartir la pâte en inclinant la crêpière.
 - Cuire jusqu'à ce que les bords dorent et se décollent.
-- Retourner et cuire l'autre face : la crêpe est dorée des deux côtés.
-- Empiler sous torchon et recommencer jusqu'à épuisement.
+- Retourner la crêpe.
+- Cuire l'autre face : la crêpe est dorée des deux côtés.
+- Empiler les crêpes sous un torchon.
+- Recommencer jusqu'à épuisement de la pâte.
