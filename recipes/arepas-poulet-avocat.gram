@@ -21,19 +21,38 @@ scaling: {enabled: false, reason: "Les galettes sont façonnées individuellemen
 flavors: {pairing: [maïs, poulet, avocat, cheddar], notes: [doux, crémeux, doré], harmony: "La galette toastée enveloppe une garniture fraîche et onctueuse."}
 ---
 [Préparer la pâte]
-- Mélanger la @farine de maïs précuite{230 g}, l’@eau{380 g} et le @sel{1 c. à café} ~{20 s} à vitesse 6.
-- Transférer la pâte dans un saladier et couvrir.
+- Mettre la @farine de maïs précuite{230 g} dans le bol.
+- Ajouter l’@eau{380 g}.
+- Ajouter le @sel{1 c. à café}.
+- Mélanger ~{20 s} à vitesse 6.
+- Transférer la pâte dans un saladier.
+- Couvrir le saladier.
 [Cuire le poulet]
-- Mettre l’@eau{1000 g}, la @carotte{1}, la @pomme de terre{1}, le @poireau{1 morceau}, la @coriandre fraîche{3 brins}, le @cube de bouillon de volaille{1} et l’@huile d'olive{30 g} dans le bol.
-- Cuire le @poulet{300 à 350 g} en morceaux dans le panier cuisson ~{20 min} à ^{Varoma}, vitesse 1.
-- Effilocher le poulet ~{4 s} en sens inverse, vitesse 4; réserver.
+- Mettre l’@eau{1000 g} dans le bol.
+- Ajouter la @carotte{1}.
+- Ajouter la @pomme de terre{1}.
+- Ajouter le @poireau{1 morceau}.
+- Ajouter la @coriandre fraîche{3 brins}.
+- Ajouter le @cube de bouillon de volaille{1}.
+- Ajouter l’@huile d'olive{30 g}.
+- Mettre le @poulet{300 à 350 g} en morceaux dans le panier cuisson.
+- Cuire ~{20 min} à ^{Varoma}, vitesse 1.
+- Effilocher le poulet ~{4 s} en sens inverse, vitesse 4.
+- Réserver le poulet effiloché.
 [Mélanger la garniture]
 - Hacher l’@oignon rouge{50 g} ~{3 s} à vitesse 5.
 - Couper l’@avocat{1} en dés.
-- Ajouter l’avocat au poulet avec l’oignon, la @mayonnaise{2 à 3 c. à soupe}, le @sel{1 pincée} et le @poivre{1 pincée}.
+- Ajouter l’avocat au poulet.
+- Ajouter l’oignon haché.
+- Ajouter la @mayonnaise{2 à 3 c. à soupe}.
+- Ajouter le @sel{1 pincée}.
+- Ajouter le @poivre{1 pincée}.
 [Cuire les galettes]
-- Diviser la pâte en huit portions et façonner des disques de 9 cm.
+- Diviser la pâte en huit portions.
+- Façonner des disques de 9 cm.
 - Dorer les arepas sur les deux faces dans une #poêle{} à feu moyen.
-- Enfourner à ^{200 C} ~{15 min}; ouvrir chaque galette sans la séparer.
+- Enfourner à ^{200 C} ~{15 min}.
+- Ouvrir chaque galette sans la séparer.
 [Garnir]
-- Répartir la garniture et le @cheddar{70 à 80 g} râpé dans les arepas chaudes.
+- Répartir la garniture dans les arepas chaudes.
+- Ajouter le @cheddar{70 à 80 g} râpé dans les arepas chaudes.
