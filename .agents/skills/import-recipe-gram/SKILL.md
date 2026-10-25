@@ -228,10 +228,10 @@ Preserve legitimate **single continuous gestures**, rather than mechanically spl
 **Mandatory new-recipe gate**: after drafting and before submitting an import PR, run the *pinned repository Core version* of the strict atomic checker on every newly created or materially restructured recipe:
 
 ```bash
-python -m generator.recipe_check --strict-atomic recipes/<slug>.gram
+python -m generator.recipe_check --strict-atomic --root /absolute/path/to/cookigram /absolute/path/to/cookigram/recipes/<slug>.gram
 ```
 
-Run from the Core checkout/installed environment matching the content repository's `.core-version`; where Core and content are separate, provide the target recipe path to that Core invocation. Do not assume that the command works from a content-only checkout. Report the exact Core revision, command and result in the PR. **STOP on any warning/error for a new recipe**: fix the offending instructions or document a genuine false positive for review; a false-positive claim is not a passing strict check. Existing historical recipes retain the normal non-strict compatibility path; do not globally enable strict atomic validation on the entire historical catalogue as part of an import.
+Run from the Core checkout/installed environment matching the content repository's `.core-version`; set `--root` to the content repository root so ingredient and recipe validation reads the correct catalogue, and supply the recipe's absolute path. Do not assume that the command works from a content-only checkout. Report the exact Core revision, command and result in the PR. **STOP on any warning/error for a new recipe**: fix the offending instructions or document a genuine false positive for review; a false-positive claim is not a passing strict check. Existing historical recipes retain the normal non-strict compatibility path; do not globally enable strict atomic validation on the entire historical catalogue as part of an import.
 
 ## Validate
 
