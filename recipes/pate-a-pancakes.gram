@@ -52,10 +52,14 @@ image_generation:
 ---
 [Liaison]
 - Faire fondre le @beurre{75 g} en #casserole{} à feu doux.
-- Mettre le @lait{300 g}, le @sucre en poudre{30 g} et les @œufs{2} dans la cuve du #robot pâtissier{}.
+- Mettre le @lait{300 g} dans la cuve du #robot pâtissier{}.
+- Ajouter le @sucre en poudre{30 g}.
+- Ajouter les @œufs{2}.
 - Ajouter le beurre fondu.
 - Fouetter ~{50 s} au #fouet{} : le mélange est homogène.
-- Ajouter la @farine de blé{250 g}, la @levure chimique{1 c. à café} et le @sel{1 pincée}.
+- Ajouter la @farine de blé{250 g}.
+- Ajouter la @levure chimique{1 c. à café}.
+- Ajouter le @sel{1 pincée}.
 - Fouetter ~{30 s} : la pâte est lisse et épaisse.
 - Racler les parois.
 - Fouetter encore ~{30 s}.
@@ -64,8 +68,10 @@ image_generation:
 - Laisser reposer ~{30 min} : des bulles parsèment la surface.
 
 [Cuisson]
-- Chauffer une #poêle{} légèrement beurrée sur feu moyen.
+- Beurrer légèrement une #poêle{}.
+- Chauffer la poêle sur feu moyen.
 - Verser des petits tas de pâte.
 - Cuire jusqu'à ce que des bulles éclatent en surface.
-- Retourner et cuire l'autre face : le pancake est doré et gonflé.
+- Retourner le pancake.
+- Cuire l'autre face : le pancake est doré et gonflé.
 - Servir chaud avec du @sirop d'érable{au service}.
