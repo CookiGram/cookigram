@@ -24,7 +24,12 @@ image_generation: {prompt_file: image-prompts/air-fryer-chou-fleur-croustillant.
 scaling: {enabled: true, min: 2, max: 6, step: 1}
 ---
 [Préparer la pâte]
-- Mélanger la @farine{100 g}, le @paprika{1 c. à café}, le @piment rouge{1/2 c. à café}, le @sel{1/2 c. à café} et l'@eau{120 ml}.
+- Mettre la @farine{100 g} dans un récipient.
+- Ajouter le @paprika{1 c. à café}.
+- Ajouter le @piment rouge{1/2 c. à café}.
+- Ajouter le @sel{1/2 c. à café}.
+- Ajouter l'@eau{120 ml}.
+- Mélanger pour obtenir une pâte.
 - Enrober les @chou-fleur{600 g, en fleurettes} dans la pâte.
 - Égoutter légèrement les fleurettes.
 [Cuire]
