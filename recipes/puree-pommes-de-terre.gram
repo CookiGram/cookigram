@@ -51,14 +51,19 @@ image_generation:
   prompt_file: image-prompts/puree-pommes-de-terre.md
 ---
 [Mise en place]
-- Éplucher et couper les @pommes de terre{1000 g, en morceaux}.
+- Éplucher les pommes de terre.
+- Couper les @pommes de terre{1000 g, en morceaux}.
 
 [Cuisson]
 - Insérer le #fouet{} dans le bol.
-- Mettre les pommes de terre dans le bol, verser le @lait{350 g} et saler de @sel{selon le goût}.
+- Mettre les pommes de terre dans le bol.
+- Verser le @lait{350 g} dans le bol.
+- Saler avec le @sel{selon le goût}.
 - Cuire ~{25 min} à ^{100 C} et vitesse 1 : les pommes de terre sont fondantes.
 
 [Liaison]
-- Ajouter le @beurre{30 g} et le @parmesan{30 g, râpé}.
+- Ajouter le @beurre{30 g}.
+- Ajouter le @parmesan{30 g, râpé}.
 - Fouetter ~{30 s} à vitesse 3 : la purée est lisse et homogène.
-- Retirer le fouet et servir chaud.
+- Retirer le fouet.
+- Servir chaud.
