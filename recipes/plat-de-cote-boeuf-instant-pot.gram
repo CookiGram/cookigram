@@ -71,7 +71,8 @@ variants:
       natural-release: |
         [release-cookeo | Fin de cuisson et repos]
         - Laisser le Cookeo évacuer automatiquement la vapeur sous pression.
-        - Attendre que la pression soit retombée et qu’aucune vapeur ne sorte de la valve avant de déverrouiller le couvercle.
+        - Attendre que la pression soit retombée et qu’aucune vapeur ne sorte de la valve.
+        - Déverrouiller le couvercle.
         - À l'ouverture du couvercle, laisser reposer la viande ~{10 min} dans son jus cuve ouverte ou en maintien au chaud pour détendre les chairs.
         - Sortir délicatement les morceaux de bœuf confits avec une #pince de cuisine{}.
         - Déposer les morceaux dans un plat de service creux.
