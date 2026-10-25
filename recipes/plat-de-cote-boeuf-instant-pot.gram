@@ -4,7 +4,7 @@ date_published: 2026-09-03
 date_modified: 2026-10-25
 portions: 6
 prep_time: 15 min
-total_time: 1 h 25 min
+total_time: 1 h 40 min
 spiciness: 0
 description: "Plat de côte de bœuf fondant braisé au vin rouge, carottes et aromates (Instant Pot, Cookeo ou cocotte en fonte)."
 nutrition_profile: pleasure
@@ -36,7 +36,7 @@ variants:
   name: Moulinex Cookeo
   description: Saisie en mode Dorer dans la cuve antiadhésive, puis 45 min en cuisson sous pression et réduction rapide.
   prep_time: 15 min
-  total_time: 1 h 15 min
+  total_time: 1 h 28 min
   appliances:
     cookeo: true
   steps:
@@ -71,6 +71,7 @@ variants:
       natural-release: |
         [release-cookeo | Fin de cuisson et repos]
         - Laisser le Cookeo évacuer automatiquement la vapeur sous pression.
+        - Attendre que la pression soit retombée et qu’aucune vapeur ne sorte de la valve avant de déverrouiller le couvercle.
         - À l'ouverture du couvercle, laisser reposer la viande ~{10 min} dans son jus cuve ouverte ou en maintien au chaud pour détendre les chairs.
         - Sortir délicatement les morceaux de bœuf confits avec une #pince de cuisine{}.
         - Déposer les morceaux dans un plat de service creux.
@@ -86,7 +87,7 @@ variants:
   name: Cocotte en fonte traditionnelle (Sans robot)
   description: Mijotage traditionnel à feu doux pendant 2 h 45 pour une viande confite à l'ancienne et des sucs concentrés.
   prep_time: 20 min
-  total_time: 3 h 10 min
+  total_time: 3 h 36 min
   appliances: {}
   steps:
     replace:
@@ -166,6 +167,22 @@ variants:
         - Fermer le couvercle de l'#instant pot{}.
         - Positionner la soupape sur **Sealing**.
         - Cuire sous haute pression (**Pressure Cook / High Pressure**) pendant ~{70 min} (la montée en pression est plus longue pour décongeler le cœur de la viande).
+      natural-release: |
+        [release-frozen | Décompression naturelle et repos]
+        - Laisser la pression retomber sans intervenir après la cuisson.
+        - Attendre que la tige de verrouillage soit abaissée ou que l’appareil indique qu’il peut être ouvert, et qu’il n’y ait plus de pression dans la cuve.
+        - Ne jamais forcer l’ouverture du couvercle.
+        - Laisser reposer la viande dans son jus cuve ouverte ou en maintien au chaud pour détendre les chairs.
+        - Sortir délicatement les morceaux de bœuf confits avec une #pince de cuisine{}.
+        - Déposer les morceaux dans un plat de service creux.
+      reduce-sauce: |
+        [reduce-sauce-frozen | Réduire et napper la sauce]
+        - Retirer le thym de la cuve.
+        - Retirer le laurier de la cuve.
+        - Réactiver le mode **Sauté** de l’Instant Pot.
+        - Laisser réduire la sauce à gros bouillons pendant ~{8 min} jusqu’à consistance nappeuse et brillante.
+        - Napper généreusement le bœuf fondant de sauce au vin rouge.
+        - Servir bien chaud.
 image: images/plat-de-cote-boeuf-instant-pot.jpg
 image_credit:
   author: CookiGram
@@ -214,6 +231,8 @@ image_generation:
 [natural-release | Décompression naturelle et repos]
 - Laisser la pression descendre naturellement pendant ~{15 min} sans toucher la soupape pour éviter le dessèchement de la viande.
 - Tourner la soupape sur **Venting** pour libérer la vapeur résiduelle.
+- Attendre que la tige de verrouillage soit abaissée ou que l’appareil indique qu’il peut être ouvert, et qu’il n’y ait plus de pression dans la cuve.
+- Ne jamais forcer l’ouverture du couvercle.
 - Ouvrir le couvercle.
 - Transférer délicatement les morceaux de bœuf confits dans un plat creux à l'aide d'une #pince de cuisine{}.
 
