@@ -27,14 +27,19 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 flavors: {pairing: [saucisse, haricot blanc, tomate, basilic], notes: [tomaté, généreux, herbacé], harmony: "Le jus de tomate enrobe les haricots et recueille les sucs des saucisses."}
 ---
 [Dorer les saucisses]
-- Chauffer l'@huile d'olive{1 c. à soupe} dans une #cocotte{} et faire dorer la @saucisse fumée{4 pièces, sans la peau et émiettée} ~{8 min}.
+- Chauffer l'@huile d'olive{1 c. à soupe} dans une #cocotte{}.
+- Faire dorer la @saucisse fumée{4 pièces, sans la peau et émiettée} ~{8 min}.
 - Ajouter l'@ail{1 c. à soupe, haché}.
 - Cuire ~{1 min} ; l'ail doit être odorant sans brunir.
 [Mijoter]
-- Ajouter les @tomates concassées{800 g} et la moitié du @basilic frais{10 g}.
+- Ajouter les @tomates concassées{800 g}.
+- Ajouter la moitié du @basilic frais{10 g}.
 - Mélanger.
 - Incorporer les @haricots blancs{250 g, cuits}.
-- Couvrir et mijoter ~{10 min}.
+- Couvrir la cocotte.
+- Mijoter ~{10 min}.
 [Servir]
-- Goûter et rectifier avec le @sel{1/2 c. à café} et le @poivre moulu{2 pincées}.
+- Goûter la préparation.
+- Rectifier avec le @sel{1/2 c. à café}.
+- Ajouter le @poivre moulu{2 pincées}.
 - Parsemer le reste du @basilic frais{10 g}.

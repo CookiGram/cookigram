@@ -27,13 +27,22 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 flavors: {pairing: [riz, champignons, tomate, romarin], notes: [terreux, végétal, mijoté], harmony: "Les champignons donnent de la profondeur au riz tandis que la tomate apporte une acidité équilibrante."}
 ---
 [Préparer la base]
-- Rincer le @riz basmati{200 g} et l'égoutter.
-- Chauffer l'@huile d'olive{1 c. à soupe} dans une #cocotte{} et faire revenir l'@oignon{1 pièce, haché} ~{5 min}.
-- Ajouter le @romarin{2 c. à café} et les @champignons de Paris{250 g, en quartiers}.
+- Rincer le @riz basmati{200 g}.
+- Égoutter le riz.
+- Chauffer l'@huile d'olive{1 c. à soupe} dans une #cocotte{}.
+- Faire revenir l'@oignon{1 pièce, haché} ~{5 min}.
+- Ajouter le @romarin{2 c. à café}.
+- Ajouter les @champignons de Paris{250 g, en quartiers}.
 - Cuire ~{3 min}.
 [Mijoter]
-- Ajouter le @riz basmati{200 g}, les @poivrons{2 pièces, émincés}, les @tomates concassées{400 g}, le @bouillon de légumes{425 ml} et le @poivre moulu{2 pincées}.
-- Porter à ébullition, couvrir et cuire au #four{} à ^{190 C} ~{25 min}; le riz doit être tendre et le liquide absorbé.
+- Ajouter le @riz basmati{200 g}.
+- Ajouter les @poivrons{2 pièces, émincés}.
+- Ajouter les @tomates concassées{400 g}.
+- Ajouter le @bouillon de légumes{425 ml}.
+- Ajouter le @poivre moulu{2 pincées}.
+- Porter à ébullition.
+- Couvrir la cocotte.
+- Cuire au #four{} à ^{190 C} ~{25 min}; le riz doit être tendre et le liquide absorbé.
 [Servir]
 - Laisser reposer couvert ~{5 min}.
 - Incorporer le @persil frais{1 poignée, haché}.
