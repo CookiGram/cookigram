@@ -2327,3 +2327,64 @@ static/images/sables-parmesan-sesame.webp:
     visual_profile:
       name: CookiGram manga culinary
       revision: 1
+
+static/images/cote-de-boeuf-reverse-sear.webp:
+  subject:
+    type: recipe
+    recipe: cote-de-boeuf-reverse-sear
+  origin: generated
+  generated_at: '2026-10-25'
+  prompt: '# Côte de bœuf reverse-sear au kettle
+
+
+    Original horizontal 16:9 warm CookiGram manga culinary illustration of a thick bone-in côte de bœuf reverse seared on a simple tabletop, deep browned crust and a single cut slice showing juicy interior, salt and pepper only, no garnish. Soft charcoal kettle cue in background. Three-quarter view, safe crop margins, fine ink contours, hand-painted watercolor texture, soft cel shading, semi-realistic appetizing food, warm natural light. No text, logos, people, packaging, photorealism, or imitation of existing imagery.'
+  sha256: 92660710ee1a3c09400d1188fc817643a41fb1527b109fb5d65762af644d0271
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: audit-missing-images-20261025
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/pulled-pork-fume-au-chene.webp:
+  subject:
+    type: recipe
+    recipe: pulled-pork-fume-au-chene
+  origin: generated
+  generated_at: '2026-10-25'
+  prompt: '# Pulled pork fumé au chêne
+
+
+    Original horizontal 16:9 warm CookiGram manga culinary illustration of pulled pork smoked over oak: a whole pork shoulder with a dry paprika-and-brown-sugar bark and a modest portion of tender pork already pulled into visible strands beside it, mixed with a little cooking juice. No buns, sauce, slaw, herbs, or unsupported sides. Warm uncluttered home-kitchen tabletop with a subtle unbranded charcoal kettle and faint oak smoke cue. Three-quarter view, centred subject and safe crop margins. Elegant fine ink contours, hand-painted watercolor texture, soft cel shading, believable appetizing food, generic original manga cookbook style, warm natural light. No text, logos, people, packaging, photorealism, named artist imitation, or copied existing image.'
+  sha256: 8094ca5fd4514ec747f5f1f35d8deb65522b79a1454587d55903508cb9216c32
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: audit-missing-images-20261025
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
+static/images/smash-burgers-plancha.webp:
+  subject:
+    type: recipe
+    recipe: smash-burgers-plancha
+  origin: generated
+  generated_at: '2026-10-25'
+  prompt: '# Smash burgers au cheddar à la plancha
+
+
+    Original horizontal 16:9 CookiGram manga cookbook illustration of smash burgers au cheddar à la plancha. Show one assembled toasted hamburger bun with two very thin crispy-edged beef patties and melted cheddar between them, plus a second open burger beside it displaying the stacked patties. No vegetables, pickles, sauces, or sides because none are in the recipe. Warm uncluttered home-kitchen tabletop, subtle unbranded flat griddle cue in soft background. Three-quarter view, centred arrangement with generous safe crop margins. Strongly illustrated, not photographic: elegant expressive fine ink contours, visible hand-painted watercolor washes and paper texture, gentle cel-shaded highlights, slightly simplified but believable appetizing food shapes, warm natural light, generic original manga culinary style. No text, logos, people, hands, packaging, photorealism, named artist imitation, or copied existing image.'
+  sha256: e25f20cb9f18cf713fd101a791b2fbfd68c3c2f397cea4b49e10fef184a2b84f
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: audit-missing-images-20261025
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1

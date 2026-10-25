@@ -1,3 +1,3 @@
-# Prompt — Côte de bœuf reverse-sear au kettle
+# Côte de bœuf reverse-sear au kettle
 
-Illustration culinaire originale au style manga culinaire CookiGram, format horizontal 16:9. Montrer une côte de bœuf épaisse, tranchée en biais, avec une croûte brunie par la saisie et un intérieur juteux, reposant sur une planche près d’une grille en fonte et d’un kettle à charbon discret. Lumière chaude, détails de viande appétissants, sans branding ni texte. À générer dans le cadre de l’audit visuel #500.
+Original horizontal 16:9 warm CookiGram manga culinary illustration of a thick bone-in côte de bœuf reverse seared on a simple tabletop, deep browned crust and a single cut slice showing juicy interior, salt and pepper only, no garnish. Soft charcoal kettle cue in background. Three-quarter view, safe crop margins, fine ink contours, hand-painted watercolor texture, soft cel shading, semi-realistic appetizing food, warm natural light. No text, logos, people, packaging, photorealism, or imitation of existing imagery.
