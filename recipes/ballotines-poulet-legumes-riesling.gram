@@ -22,7 +22,7 @@ appliances:
   - TM6
   - TM7
 required_equipment:
-  - Thermomix TM31, TM5, TM6 ou TM7
+  - Thermomix TM5, TM6 ou TM7
   - Varoma avec plateau vapeur
   - Panier cuisson
   - Spatule
@@ -54,46 +54,75 @@ image_generation:
 ---
 
 [Préparer les tagliatelles]
-- À l'aide d'un #économe{}, détailler les @carottes{4 pièces} et les @panais{4 pièces, env. 100 g chacun} en tagliatelles dans le #Varoma{}, en s'arrêtant au cœur.
+- À l'aide d'un #économe{}, détailler les @carottes{4 pièces} en tagliatelles dans le #Varoma{}, en s'arrêtant au cœur.
+- À l'aide d'un économe, détailler les @panais{4 pièces, env. 100 g chacun} en tagliatelles dans le Varoma, en s'arrêtant au cœur.
 - Réserver les cœurs de légumes pour la farce.
 
 [Hacher la farce]
-- Mettre les @fruits secs variés{50 g}, les @champignons de Paris{50 g, en morceaux}, la moitié de l'@oignon{160 g au total (80 g pour la farce et 80 g pour le velouté), coupé en deux}, le @persil frais{5 brins}, les cœurs de carotte et panais, le @sel{6 pincées au total} et le @poivre moulu{4 pincées au total} dans le bol.
+- Mettre les @fruits secs variés{50 g} dans le bol.
+- Ajouter les @champignons de Paris{50 g, en morceaux}.
+- Ajouter la moitié de l'@oignon{160 g au total (80 g pour la farce et 80 g pour le velouté), coupé en deux}.
+- Ajouter le @persil frais{5 brins}.
+- Ajouter les cœurs de carotte.
+- Ajouter les cœurs de panais.
+- Ajouter le @sel{6 pincées au total}.
+- Ajouter le @poivre moulu{4 pincées au total}.
 - Mixer ~{5 s} à vitesse 7.
 
 [Cuire la farce]
 - Réserver 20 g du @beurre doux{35 g au total} pour le velouté.
 - Ajouter les 15 g restants dans le bol.
 - Faire revenir ~{6 min} à ^{120 C} et vitesse 1, sans gobelet doseur.
-- Ouvrir chaque @filet de poulet{6 pièces, sans peau} en portefeuille, l'aplatir entre deux feuilles de papier cuisson avec un rouleau à pâtisserie.
-- Poser une tranche de @lard{6 tranches fines} sur du film alimentaire résistant à la chaleur, déposer un filet aplati et le tartiner de farce.
+- Ouvrir chaque @filet de poulet{6 pièces, sans peau} en portefeuille.
+- Aplatir chaque filet entre deux feuilles de papier cuisson avec un rouleau à pâtisserie.
+- Poser une tranche de @lard{6 tranches fines} sur du film alimentaire résistant à la chaleur.
+- Déposer un filet aplati sur chaque tranche de lard.
+- Tartiner chaque filet de farce.
 - Rouler serré dans le lard à l'aide du film.
-- Rouler la ballotine d'avant en arrière pour l'homogénéiser et nouer les extrémités.
-- Poser les six ballotines sur le plateau vapeur et réserver au réfrigérateur.
+- Rouler chaque ballotine d'avant en arrière pour l'homogénéiser.
+- Nouer les extrémités de chaque ballotine.
+- Poser les six ballotines sur le plateau vapeur.
+- Réserver le plateau au réfrigérateur.
 - Réserver 2 c. à soupe de farce.
-- Transvaser le reste de farce dans le #panier cuisson{} et nettoyer le bol.
+- Transvaser le reste de farce dans le #panier cuisson{}.
+- Nettoyer le bol.
 
 [Préparer la base du velouté]
-- Mettre l'autre moitié de l'oignon, le @poireau{100 g, en tronçons} et la @pomme de terre{100 g, en morceaux} dans le bol.
+- Mettre l'autre moitié de l'oignon dans le bol.
+- Ajouter le @poireau{100 g, en tronçons}.
+- Ajouter la @pomme de terre{100 g, en morceaux}.
 - Hacher ~{5 s} à vitesse 5.
 - Racler les parois avec la #spatule{}.
 - Ajouter le beurre restant.
 - Faire revenir ~{4 min} à ^{120 C} et vitesse 2, sans gobelet doseur.
 
 [Cuire au Varoma]
-- Ajouter l'@eau{200 g}, le @cube de bouillon{1 pièce} et le @riesling{200 g}.
-- Insérer le panier cuisson avec le reste de farce et mettre en place le Varoma avec les tagliatelles et les ballotines.
+- Ajouter l'@eau{200 g}.
+- Ajouter le @cube de bouillon{1 pièce}.
+- Ajouter le @riesling{200 g}.
+- Insérer le panier cuisson avec le reste de farce.
+- Mettre en place le Varoma avec les tagliatelles et les ballotines.
 - Cuire à la vapeur ~{30 min} à ^{Varoma} et vitesse 1.
-- Retirer le Varoma et le panier et maintenir au chaud.
+- Retirer le Varoma.
+- Retirer le panier cuisson.
+- Maintenir les préparations au chaud.
 
 [Mixer velouté et sauce]
-- Ajouter le @lait{100 g}, la @crème fraîche épaisse{100 g, 40 % M.G. min.}, le sel restant et le poivre restant.
-- Activer le mode Mixage à vitesse 10 ; transvaser le velouté en gardant un fond dans le bol, à hauteur du couteau le plus bas.
+- Ajouter le @lait{100 g}.
+- Ajouter la @crème fraîche épaisse{100 g, 40 % M.G. min.}.
+- Ajouter le sel restant.
+- Ajouter le poivre restant.
+- Activer le mode Mixage à vitesse 10.
+- Transvaser le velouté en gardant un fond dans le bol, à hauteur du couteau le plus bas.
 - Ajouter les 2 c. à soupe de farce réservées.
 - Mixer ~{20 s} à vitesse 10 pour obtenir la sauce.
 
 [Dresser]
 - Servir le velouté au riesling en entrée.
 - Former de jolis nids avec les tagliatelles de carotte et de panais.
-- Ajouter une quenelle de farce et une ballotine coupée en deux en biseau.
-- Napper d'un cordon de sauce et servir aussitôt.
+- Façonner une quenelle de farce.
+- Déposer la quenelle de farce dans l'assiette.
+- Couper une ballotine en deux en biseau.
+- Ajouter les morceaux de ballotine.
+- Napper d'un cordon de sauce.
+- Servir aussitôt.
