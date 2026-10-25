@@ -2,6 +2,15 @@ ingredients:
   betterave:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
+  cote-de-boeuf:
+    source: Ingrédient générique ajouté pour CookiGram/cookigram#521 ; valeurs nutritionnelles à compléter depuis CIQUAL.
+    status: incomplete
+  epaule-de-porc:
+    source: Ingrédient générique ajouté pour CookiGram/cookigram#521 ; valeurs nutritionnelles à compléter depuis CIQUAL.
+    status: incomplete
+  pain-hamburger:
+    source: Produit céréalier générique ajouté pour CookiGram/cookigram#521 ; valeurs nutritionnelles à compléter depuis CIQUAL.
+    status: incomplete
   noix:
     source: ANSES-CIQUAL
     status: verified
