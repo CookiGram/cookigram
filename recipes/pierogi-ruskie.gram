@@ -37,9 +37,9 @@ flavors: {pairing: [pomme de terre, fromage frais, oignon, beurre], notes: [doux
 - Écraser les pommes de terre avec les ingrédients ajoutés.
 - Réserver la farce au frais.
 [Pétrir la pâte]
-- Mettre l’@eau{250 g} chaude dans le bol.
+- Mettre la @farine{560 g} dans le bol.
+- Ajouter l’@eau{250 g} chaude.
 - Ajouter l’@œuf{1}.
-- Ajouter la @farine{560 g}.
 - Pétrir ~{2 min}.
 - Abaisser la pâte.
 - Découper environ 50 disques.
