@@ -26,7 +26,12 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 [Paner]
 - Passer les @filets de poisson{600 g} dans la @farine{80 g}.
 - Passer le poisson fariné dans les @œufs{2 pièces, battus}.
-- Mélanger la @chapelure{150 g}, le @persil frais{1 c. à soupe}, le @zeste de citron{1 citron} et le @sel{1 c. à café}; presser la panure sur le poisson.
+- Mettre la @chapelure{150 g} dans un récipient.
+- Ajouter le @persil frais{1 c. à soupe}.
+- Ajouter le @zeste de citron{1 citron}.
+- Ajouter le @sel{1 c. à café}.
+- Mélanger la panure.
+- Presser la panure sur le poisson.
 [Cuire]
 - Vaporiser l'@huile d'olive{1 c. à soupe} sur le poisson et cuire dans le #panier air fryer{} à ^{200 C} ~{12 min}.
 - Le panage doit être doré et le poisson opaque à cœur.
