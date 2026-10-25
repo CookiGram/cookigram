@@ -45,11 +45,16 @@ image_generation:
 ## Sauce Béarnaise classique inratable
 
 [chop-aromatics | Hacher les échalotes et l'estragon]
-- Mettre les @échalotes{2 pièces, épluchées et coupées en deux} et les feuilles d'@estragon frais{15 g} dans le bol du Thermomix.
-- Hacher ~{5 s} à vitesse 5. Racler les parois du bol avec la #spatule{}.
+- Mettre les @échalotes{2 pièces, épluchées et coupées en deux} dans le bol du Thermomix.
+- Ajouter les feuilles d'@estragon frais{15 g}.
+- Hacher ~{5 s} à vitesse 5.
+- Racler les parois du bol avec la #spatule{}.
 
 [reduce-vinegar | Réduire le vin blanc et le vinaigre]
-- Ajouter le @vin blanc sec{50 g}, le @vinaigre de vin blanc{30 g}, le @sel{0.5 c. à café} et le @poivre{2 pincées}.
+- Ajouter le @vin blanc sec{50 g}.
+- Ajouter le @vinaigre de vin blanc{30 g}.
+- Ajouter le @sel{0.5 c. à café}.
+- Ajouter le @poivre{2 pincées}.
 - Cuire ~{5 min} à ^{Varoma} (ou 120°C sur TM5/TM6/TM7), vitesse 1 sans le gobelet doseur pour concentrer l'essence aromatique par évaporation.
 - Laisser tiédir le bol ~{5 min}, jusqu'à redescendre sous 60 °C pour éviter toute coagulation prématurée.
 
@@ -59,4 +64,6 @@ image_generation:
 - Émulsionner ~{3 min} à ^{80 C}, vitesse 3.
 - Régler ~{4 min} à ^{80 C}, vitesse 3.
 - Incorporer le @beurre doux{180 g, coupé en dés et mou} progressivement par l'orifice du couvercle, morceau par morceau.
-- Retirer le fouet, verser la sauce onctueuse dans une #saucière{} tiédie et servir immédiatement avec une belle pièce de bœuf grillée.
+- Retirer le fouet.
+- Verser la sauce onctueuse dans une #saucière{} tiédie.
+- Servir immédiatement avec une belle pièce de bœuf grillée.
