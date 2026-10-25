@@ -254,5 +254,102 @@ class ImageProvenanceTests(unittest.TestCase):
             )
 
 
+    def _legacy_credit_root(self, directory: str, prompt_file_text: str,
+                            manifest_prompt: str, with_generation: bool) -> Path:
+        """Fixture for #560: legacy credit with or without a generation block."""
+        import hashlib
+
+        from PIL import Image as PILImage
+
+        root = Path(directory)
+        (root / "recipes").mkdir()
+        (root / "static/images").mkdir(parents=True)
+        (root / "image-prompts").mkdir(parents=True)
+        PILImage.new("RGB", (4, 4)).save(root / "static/images/dish.png")
+        digest = hashlib.sha256((root / "static/images/dish.png").read_bytes()).hexdigest()
+        (root / "image-prompts/dish.md").write_text(prompt_file_text, encoding="utf-8")
+        (root / "recipes/dish.gram").write_text(
+            "---\nimage: images/dish.png\nimage_credit:\n"
+            f"  license: {AUDIT.LEGACY_GENERATED_CREDIT}\n"
+            "image_generation: {prompt_file: image-prompts/dish.md}\n---\n",
+            encoding="utf-8",
+        )
+        record: dict = {
+            "origin": "generated",
+            "subject": {"type": "recipe", "recipe": "dish"},
+            "generated_at": "2026-10-25",
+            "prompt": manifest_prompt,
+            "sha256": digest,
+            "attribution": "CookiGram",
+        }
+        if with_generation:
+            record["generation"] = {
+                "tool": "image_gen",
+                "provider": "OpenAI",
+                "model": "unknown",
+                "batch": "issue-560-fixture",
+                "visual_profile": {"name": "CookiGram manga culinary", "revision": 1},
+            }
+        else:
+            record["generator"] = "image_gen"
+        (root / "assets/provenance").mkdir(parents=True)
+        (root / "assets/provenance/images.yaml").write_text(
+            yaml.safe_dump({"static/images/dish.png": record}), encoding="utf-8"
+        )
+        return root
+
+    def test_temporary_credit_with_generation_detects_prompt_drift(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._legacy_credit_root(
+                directory, "actual prompt\n", "different prompt", True
+            )
+            recipe = root / "recipes/dish.gram"
+            recipe.write_text(
+                recipe.read_text(encoding="utf-8").replace(
+                    AUDIT.LEGACY_GENERATED_CREDIT, AUDIT.TEMPORARY_CREDIT
+                ),
+                encoding="utf-8",
+            )
+            statuses = {finding.status for finding in AUDIT.audit(root)}
+            self.assertIn("temporary-credit", statuses)
+            self.assertIn("provenance-prompt-mismatch", statuses)
+
+    def test_legacy_credit_with_generation_block_flags_prompt_mismatch(self):
+        """#560: the #546 blank-line drift must not escape under legacy credit."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._legacy_credit_root(
+                directory,
+                prompt_file_text="line1\n\nline2\n",
+                manifest_prompt="line1\nline2",
+                with_generation=True,
+            )
+            statuses = {finding.status for finding in AUDIT.audit(root)}
+            self.assertIn("provenance-prompt-mismatch", statuses)
+
+    def test_legacy_credit_with_generation_block_passes_when_in_sync(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._legacy_credit_root(
+                directory,
+                prompt_file_text="shared prompt\n",
+                manifest_prompt="shared prompt",
+                with_generation=True,
+            )
+            self.assertEqual(AUDIT.audit(root), [])
+
+    def test_legacy_credit_without_generation_block_stays_unaudited(self):
+        """Migration boundary #393: pure legacy records keep no sync requirement."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._legacy_credit_root(
+                directory,
+                prompt_file_text="line1\n\nline2\n",
+                manifest_prompt="line1\nline2",
+                with_generation=False,
+            )
+            statuses = {finding.status for finding in AUDIT.audit(root)}
+            self.assertNotIn("provenance-prompt-mismatch", statuses)
+            self.assertNotIn("provenance-mismatch", statuses)
+            self.assertNotIn("missing-provenance", statuses)
+
+
 if __name__ == "__main__":
     unittest.main()
