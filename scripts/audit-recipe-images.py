@@ -305,7 +305,7 @@ def audit(root: Path) -> list[Finding]:
                         message="le prompt du manifest diffère du prompt versionné",
                     )
                 )
-        else:
+        if license_name != GENERATED_CREDIT:
             # #560: un enregistrement historique au crédit legacy reste dispensé
             # de provenance tant qu'il ne porte pas de bloc ``generation:``.
             # Dès qu'il en porte un, la synchronisation manifest↔fichier
