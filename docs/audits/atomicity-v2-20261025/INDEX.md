@@ -292,3 +292,15 @@ Légende : `I` = lignes avec plusieurs ingrédients annotés et incorporation; `
 6. Toute PR doit disposer d'une vérification indépendante du contenu, strict-atomic/Core build, contrôle Cook Mode et approvals avant fusion.
 
 **État** : 274/274 éléments présents dans le registre de triage, mais la **qualification sémantique approfondie de chaque instruction et de chaque variante demeure ouverte**.
+
+## Actualisation de propriété après fusions (25/10/2026, snapshot distinct)
+
+**Ne pas utiliser les anciennes colonnes `PR_...` de ce registre comme statut courant.** Elles décrivent uniquement la photographie historique `de01e13`. Le suivi GitHub #499 consigne les fusions effectuées depuis ce snapshot :
+
+- Fusionnées antérieurement : **12 recettes** dans #551–#558 (hors PR documentaire #554).
+- Fusionnées pendant les passages #499 suivants : **43 recettes supplémentaires** dans #562, #563, #564, #565, #566, #570, #574, #576, #578, #579, #580, #581.
+- **55 recettes distinctes** au total correspondant aux PR recettes déjà fusionnées recensées, sous réserve de la définition de la cohorte de 100.
+- Trois candidates du pilote #541 exclues ; 3 fichiers BBQ liés au claim #521 exclus ; ne pas confondre les PR de nouvelles recettes #534/#546 avec des recettes à atomiser.
+- Les modifications de #570 sont intégrées sur le HEAD `db622662` avec les référents explicités. Le double rinçage du raita était préexistant : point qualité éditorial à suivre, pas une régression d'atomicité.
+
+**État documentaire :** lots 01 à 04 déposés, soit **72 recettes** avec relevé détaillé ou textuel complémentaire. Les autres 202 recettes du snapshot restent uniquement au stade de l'inventaire heuristique et nécessitent une véritable qualification humaine ; les variantes YAML structurées ne sont pas entièrement qualifiées. Aucune approbation indépendante ni test de rendu ne sont revendiqués pour la documentation.
