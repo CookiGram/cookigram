@@ -56,7 +56,9 @@ image_generation:
 - Réserver quelques graines pour la finition.
 
 [Faire revenir les légumes]
-- Ajouter les @pommes de terre{3, pelées et en morceaux}, les @poireaux{2, blanc et un tiers du vert, émincés} et le @céleri{1 branche, en tronçons}.
+- Ajouter @pommes de terre{3, pelées et en morceaux}.
+- Ajouter @poireaux{2, blanc et un tiers du vert, émincés}.
+- Ajouter @céleri{1 branche, en tronçons}.
 - Faire revenir ~{5 min} à ^{100 C}, vitesse 0,5.
 - Racler les parois avec la #spatule{}.
 

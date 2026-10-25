@@ -53,7 +53,9 @@ image_generation:
 - Faire suer ~{5 min} à ^{120 C}, vitesse 1.
 
 [Cuire les asperges]
-- Ajouter l'@eau{300 g, sur 500 g au total}, le @cube de bouillon de légumes{1} et le @cerfeuil frais{10 g}.
+- Ajouter @eau{300 g, sur 500 g au total}.
+- Ajouter @cube de bouillon de légumes{1}.
+- Ajouter @cerfeuil frais{10 g}.
 - Installer le #Varoma{} avec les pointes d'asperges sur le plateau vapeur et cuire ~{15 min} à ^{Varoma}, vitesse 1.
 - Retirer le Varoma et réserver les pointes.
 
