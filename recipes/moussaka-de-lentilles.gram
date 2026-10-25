@@ -66,7 +66,8 @@ flavors:
 ---
 
 [Faire tremper les lentilles]
-- Mettre les @lentilles corail{130 g} dans un récipient avec l'@eau{330 g}.
+- Mettre les @lentilles corail{130 g} dans un récipient.
+- Ajouter l'@eau{330 g}.
 - Laisser tremper ~{1 h}.
 - Égoutter les lentilles.
 
@@ -78,7 +79,9 @@ flavors:
 - Transférer le parmesan dans un récipient et réserver.
 
 [Préparer la base tomate]
-- Mettre les @oignons{130 g, en quartiers}, les @gousses d'ail{2} et le @poivron rouge{120 g, en morceaux} dans le bol.
+- Mettre les @oignons{130 g, en quartiers} dans le bol.
+- Ajouter les @gousses d'ail{2} dans le bol.
+- Ajouter le @poivron rouge{120 g, en morceaux} dans le bol.
 - Hacher ~{5 s} à vitesse 5.
 - Transférer les légumes hachés dans une #casserole{}.
 - Ajouter l'@huile d'olive{20 g} dans la casserole.
@@ -87,8 +90,10 @@ flavors:
 - Ajouter la @tomate{400 g, pelée en conserve avec son jus} dans le bol.
 - Mixer ~{3 s} à vitesse 5.
 - Verser le @vin rouge{120 g} dans le bol.
-- Ajouter l'@origan{1 c. à soupe} et le @gingembre en poudre{1 c. à café}.
-- Ajouter le @sel{2 c. à café} et le @poivre moulu{1/2 c. à café}.
+- Ajouter l'@origan{1 c. à soupe}.
+- Ajouter le @gingembre en poudre{1 c. à café}.
+- Ajouter le @sel{2 c. à café}.
+- Ajouter le @poivre moulu{1/2 c. à café}.
 - Installer le Varoma.
 - Cuire ~{1170 s} à ^{Varoma}, en sens inverse et vitesse 1.
 - Retirer le Varoma.
@@ -102,10 +107,13 @@ flavors:
 - Répartir la sauce aux lentilles sur les aubergines.
 
 [Préparer la béchamel]
-- Mettre le @beurre doux{20 g}, le @lait{270 g} et la @farine{20 g} dans le bol rincé.
+- Mettre le @beurre doux{20 g} dans le bol rincé.
+- Ajouter le @lait{270 g}.
+- Ajouter la @farine{20 g}.
 - Cuire ~{8 min} à ^{100 C} et vitesse 4.
 - Ajouter le @parmesan{40 g, râpé et réservé}.
-- Ajouter le @sel{2 pincées} et le @poivre blanc moulu{2 pincées}.
+- Ajouter le @sel{2 pincées}.
+- Ajouter le @poivre blanc moulu{2 pincées}.
 - Mélanger ~{5 s} à vitesse 4.
 
 [Gratiner la moussaka]
