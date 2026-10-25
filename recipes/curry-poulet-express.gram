@@ -70,7 +70,9 @@ image_generation:
 - Pendant ce temps, répartir le poulet mariné dans le #Varoma{} et sur le #plateau vapeur{}.
 
 [Cuire la sauce et le poulet]
-- Ajouter la @pulpe de tomate{270 g}, l'@eau{160 g}, le reste du sel et du curry dans le bol.
+- Ajouter la @pulpe de tomate{270 g} dans le bol.
+- Ajouter l'@eau{160 g}.
+- Ajouter le reste du sel et du curry.
 - Installer l'ensemble Varoma et cuire ~{15 min} à ^{Varoma}, vitesse 1.
 - En parallèle, cuire le @riz basmati{240 g} dans une casserole comme indiqué sur son paquet.
 
