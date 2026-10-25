@@ -1,0 +1,59 @@
+---
+title: Smash burgers au cheddar à la plancha
+date_published: 2026-10-25
+date_modified: 2026-10-25
+portions: 4
+prep_time: 15 min
+total_time: 30 min
+spiciness: 0
+description: "Deux fines galettes de bœuf croustillantes, cheddar fondant et pain toasté à la plancha bien chaude."
+tags: [barbecue, boeuf, burger, plancha]
+source: https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab
+author: J. Kenji López-Alt
+appliances:
+  barbecue: [gas_grill]
+  plancha: [standard]
+required_equipment:
+  - Grill à gaz équipé d’une plancha lisse
+  - Spatule rigide large ou presse à burger
+  - Sonde alimentaire à lecture rapide
+scaling:
+  enabled: false
+  reason: "La plancha doit rester assez chaude et peu chargée pour saisir les galettes; le rendement dépend de sa surface utile."
+flavors:
+  pairing: [bœuf, cheddar, pain à hamburger, cornichons]
+  notes: [grillé, croustillant, fondant, salé]
+  harmony: "La croûte saisie des galettes équilibre le cheddar fondant et la mie toastée du pain."
+  tips: "La sonde doit confirmer au moins 71,1 °C au centre du bœuf haché; la recette arrondit la cible à 72 °C (USDA FSIS, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart)."
+image: images/placeholder-recipe.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration temporaire
+---
+
+[Préparer les pains]
+- Couper les @pain à hamburger{4 pièces} en deux et les garder prêts près de la plancha.
+
+[Portionner le bœuf]
+- Diviser le @bœuf haché{440 g} en huit portions de 55 g, roulées sans les tasser.
+- Garder les portions au réfrigérateur pendant que la plancha chauffe.
+
+[Chauffer la plancha]
+- Préchauffer la plancha du #grill à gaz{} à feu vif pendant ~{2 min}; la surface doit être très chaude.
+- Préparer une spatule rigide et une surface propre pour les pains cuits.
+
+[Saisir les galettes]
+- Déposer deux portions froides sur la plancha chaude et les écraser immédiatement en disques très fins avec la spatule.
+- Assaisonner chaque galette avec le @sel{à convenance} et le @poivre moulu{à convenance}.
+- Cuire sans les déplacer jusqu’à ce que les bords soient brunis et que le dessus commence à perdre sa couleur rosée, environ ~{45 s}.
+
+[Retourner et faire fondre le cheddar]
+- Racler chaque galette de la plancha avec la spatule pour conserver la croûte, puis la retourner.
+- Mesurer chaque galette au centre en insérant la #sonde alimentaire{} par le côté; poursuivre la cuisson jusqu’à ^{72 C} à cœur.
+- Pour chaque duo, poser une des @cheddar{4 tranches, une par burger} sur une galette et empiler la seconde dessus; laisser fondre, en travaillant par lots.
+
+[Toaster et assembler]
+- Poser les demi-pains préparés côté mie sur la plancha juste assez longtemps pour les dorer légèrement.
+- Déposer deux galettes empilées sur la base de chaque pain, refermer et servir sans attendre.
+- Laver mains, plancha et ustensiles après contact avec le bœuf cru; utiliser une sonde propre entre les mesures.
