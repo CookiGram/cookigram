@@ -6,6 +6,18 @@
     "require_approved_label": "potential-dev-work"
   },
   "active_claims": {
+    "499": {
+      "issue": 499,
+      "title": "Atomicité Varoma — ballotines-poulet-legumes-riesling (sous-chantier #569)",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-atomic-codex-varoma-20261025",
+      "branch": "chatgpt/499-varoma-ballotines-20261025",
+      "claimed_at": "2026-10-25T23:12:48+01:00",
+      "last_heartbeat": "2026-10-25T23:16:33+01:00",
+      "status": "pr_open",
+      "pr": 618,
+      "scope": ["recipes/ballotines-poulet-legumes-riesling.gram"]
+    },
     "521": {
       "issue": 521,
       "title": "Pack recettes BBQ — pulled pork, côte de bœuf reverse-sear et smash burgers plancha",
