@@ -27,12 +27,18 @@ scaling: {enabled: true, min: 2, max: 6, step: 1}
 flavors: {pairing: [orzo, crevettes, citron, persil], notes: [iodé, crémeux, acidulé], harmony: "Le bouillon hydrate l’orzo et le citron allège la richesse du plat."}
 ---
 [Nacrer l’orzo]
-- Faire fondre le @beurre{30 g} dans une #casserole{} et cuire les @échalotes{2 c. à soupe, ciselées} ~{5 min}.
+- Faire fondre le @beurre{30 g} dans une #casserole{}.
+- Cuire les @échalotes{2 c. à soupe, ciselées} ~{5 min}.
 - Ajouter l'@orzo{180 g}.
 - Mélanger ~{1 min} pour enrober les grains.
 [Cuire]
 - Verser le @bouillon de volaille{420 ml}.
 - Cuire ~{10 min} en remuant, jusqu'à ce que l'orzo soit tendre et le bouillon presque absorbé.
-- Ajouter les @crevettes{225 g, cuites et décortiquées}, couvrir et laisser réchauffer ~{2 min}.
+- Ajouter les @crevettes{225 g, cuites et décortiquées}.
+- Couvrir la casserole.
+- Laisser réchauffer ~{2 min}.
 [Terminer]
-- Incorporer le @jus de citron{60 ml}, le @persil frais{2 c. à soupe, ciselé}, le @sel{1/2 c. à café} et le @poivre moulu{2 pincées}.
+- Incorporer le @jus de citron{60 ml}.
+- Ajouter le @persil frais{2 c. à soupe, ciselé}.
+- Ajouter le @sel{1/2 c. à café}.
+- Ajouter le @poivre moulu{2 pincées}.
