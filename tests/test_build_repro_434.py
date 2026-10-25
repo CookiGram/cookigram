@@ -103,10 +103,43 @@ def test_write_provenance_end_to_end_deterministic(tmp_path, monkeypatch) -> Non
     monkeypatch.chdir(tmp_path)
     assert write_provenance.main(["--site-dir", str(site)]) == 0
     first = (site / "provenance.json").read_bytes()
+    first_run = (site / "provenance-run.json").read_bytes()
     assert write_provenance.main(["--site-dir", str(site)]) == 0
     second = (site / "provenance.json").read_bytes()
     assert first == second
     assert json.loads(first)["built_at"] == EPOCH_ISO
+    assert json.loads(first_run)["qualifying_ci_run_id"] == "123456"
+
+
+def test_provenance_stable_across_different_run_ids(tmp_path, monkeypatch) -> None:
+    """Revue #573 : deux runs du même commit, deux run ids distincts.
+
+    ``provenance.json`` doit rester octet-pour-octet identique (le run id
+    n'y figure plus) ; seule l'attestation ``provenance-run.json`` porte
+    le run id, en désignant exactement l'artefact déterministe.
+    """
+    site_a = tmp_path / "_site_a"
+    site_b = tmp_path / "_site_b"
+    monkeypatch.chdir(tmp_path)
+    for key, value in _base_env(QUALIFYING_RUN_ID="111111").items():
+        monkeypatch.setenv(key, value)
+    assert write_provenance.main(["--site-dir", str(site_a)]) == 0
+    for key, value in _base_env(QUALIFYING_RUN_ID="222222").items():
+        monkeypatch.setenv(key, value)
+    assert write_provenance.main(["--site-dir", str(site_b)]) == 0
+
+    provenance_a = (site_a / "provenance.json").read_bytes()
+    provenance_b = (site_b / "provenance.json").read_bytes()
+    assert provenance_a == provenance_b, "provenance.json must not depend on the CI run id"
+    assert "qualifying_ci_run_id" not in json.loads(provenance_a)
+
+    run_a = json.loads((site_a / "provenance-run.json").read_text(encoding="utf-8"))
+    run_b = json.loads((site_b / "provenance-run.json").read_text(encoding="utf-8"))
+    assert run_a["qualifying_ci_run_id"] == "111111"
+    assert run_b["qualifying_ci_run_id"] == "222222"
+    for run in (run_a, run_b):
+        assert run["content_sha"] == json.loads(provenance_a)["content_sha"]
+        assert run["pages_artifact"] == json.loads(provenance_a)["pages_artifact"]
 
 
 def _all_uses() -> list[tuple[str, str, str]]:
@@ -166,3 +199,29 @@ def test_provenance_steps_avoid_wall_clock() -> None:
     assert "datetime.datetime.now" not in text
     assert text.count("scripts/write-provenance.py") == 2
     assert "SOURCE_DATE_EPOCH" in text
+
+
+def test_pages_verifies_run_attestation_without_weakening_proofs() -> None:
+    text = (WORKFLOWS / "pages.yml").read_text(encoding="utf-8")
+    # Le run id ne vit plus dans provenance.json ...
+    run_block = text.split("Verify qualified artifact provenance", 1)[1]
+    assert "provenance-run.json" in run_block
+    assert '"qualifying_ci_run_id"' in run_block
+    # ... mais chaque preuve exacte est conservée ...
+    for field in (
+        '"content_sha"',
+        '"core_sha"',
+        '"contract_version"',
+        '"contract_source_sha"',
+        '"contract_artifact"',
+        '"contract_sha256"',
+        '"builder_release"',
+        '"builder_artifact"',
+        '"builder_sha256"',
+        '"pages_artifact"',
+    ):
+        assert field in run_block, f"missing exact proof for {field}"
+    # ... et l'attestation est liée à l'artefact vérifié.
+    assert 'run.get("content_sha") == provenance.get("content_sha")' in run_block
+    assert 'run.get("pages_artifact") == provenance.get("pages_artifact")' in run_block
+    assert 'run.get("qualifying_ci_run_id") == os.environ["EXPECTED_CI_RUN_ID"]' in run_block

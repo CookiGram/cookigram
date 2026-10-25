@@ -129,6 +129,13 @@ jobs:
           from pathlib import Path
 
           provenance = json.loads(Path("_site/provenance.json").read_text(encoding="utf-8"))
+          run = json.loads(Path("_site/provenance-run.json").read_text(encoding="utf-8"))
+          # Liaison (#434, revue #573) : l'attestation de run désigne
+          # exactement l'artefact déterministe vérifié ci-dessous — le
+          # run id ne vit plus dans provenance.json, sans rien retirer
+          # aux contrôles : chaque preuve exacte est conservée.
+          assert run.get("content_sha") == provenance.get("content_sha"), (run.get("content_sha"), provenance.get("content_sha"))
+          assert run.get("pages_artifact") == provenance.get("pages_artifact"), (run.get("pages_artifact"), provenance.get("pages_artifact"))
           expected = {
               "content_sha": os.environ["EXPECTED_CONTENT_SHA"],
               "core_sha": os.environ["EXPECTED_CORE_SHA"],
@@ -140,11 +147,12 @@ jobs:
               "builder_artifact": os.environ["EXPECTED_BUILDER_ARTIFACT"],
               "builder_sha256": os.environ["EXPECTED_BUILDER_SHA256"],
               "pages_artifact": f"cookigram-pages-{os.environ['EXPECTED_CONTENT_SHA']}",
-              "qualifying_ci_run_id": os.environ["EXPECTED_CI_RUN_ID"],
           }
           for key, value in expected.items():
               assert provenance.get(key) == value, (key, provenance.get(key), value)
+          assert run.get("qualifying_ci_run_id") == os.environ["EXPECTED_CI_RUN_ID"], (run.get("qualifying_ci_run_id"), os.environ["EXPECTED_CI_RUN_ID"])
           print(json.dumps(provenance, indent=2))
+          print(json.dumps(run, indent=2))
           PY
 
       - name: Configure Pages
