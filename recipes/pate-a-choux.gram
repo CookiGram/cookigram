@@ -51,7 +51,11 @@ image_generation:
   prompt_file: image-prompts/pate-a-choux.md
 ---
 [Panade]
-- Porter à ébullition l'@eau{220 g}, le @beurre{120 g, en morceaux}, le @sel{1 pincée} et le @sucre{15 g, optionnel} en #casserole{}.
+- Mettre l'@eau{220 g} dans une #casserole{}.
+- Ajouter le @beurre{120 g, en morceaux}.
+- Ajouter le @sel{1 pincée}.
+- Ajouter le @sucre{15 g, optionnel} si souhaité.
+- Porter le mélange à ébullition.
 - Ajouter la @farine de blé{170 g} hors du feu.
 - Dessécher sur feu moyen en remuant : la pâte forme une boule qui se détache et un voile blanc nappe le fond.
 - Transvaser dans la cuve du #robot pâtissier{}.

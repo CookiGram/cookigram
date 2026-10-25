@@ -60,9 +60,11 @@ variants:
     replace:
       emulsion: |
         [mettre-pot | Mettre les ingrédients dans le pot]
-        - Poser le pot de 500 ml sur une balance et tarer.
+        - Poser le pot de 500 ml sur une balance.
+        - Tarer la balance.
         - Verser directement dans le pot l'@œuf{67 g, entier pasteurisé ; équivalent redimensionné de 1⅓ gros œuf américain}.
-        - Ajouter le @jus de citron{13 ml} et la @moutarde de Dijon{7 ml}.
+        - Ajouter le @jus de citron{13 ml}.
+        - Ajouter la @moutarde de Dijon{7 ml}.
         - Ajouter le @sel{⅔ c. à café}.
         - Verser l'@huile végétale{320 ml, neutre} sur les ingrédients sans remuer.
       repos: |
@@ -90,9 +92,14 @@ image_generation:
 ---
 [emulsion | Émulsion]
 - Poser un récipient à bec verseur sur le couvercle du bol.
-- Peser l'@huile de tournesol{200 g} dedans et réserver.
+- Peser l'@huile de tournesol{200 g} dedans.
+- Réserver.
 - Insérer le #fouet{} dans le bol.
-- Mettre les @jaunes d'œufs{2}, la @moutarde de Dijon{1 à 2 c. à café, selon le goût}, le @vinaigre de vin{1 c. à soupe, rouge}, le @sel{1 pincée} et le @poivre{1 pincée moulue} dans le bol.
+- Mettre les @jaunes d'œufs{2} dans le bol.
+- Ajouter la @moutarde de Dijon{1 à 2 c. à café, selon le goût}.
+- Ajouter le @vinaigre de vin{1 c. à soupe, rouge}.
+- Ajouter le @sel{1 pincée}.
+- Ajouter le @poivre{1 pincée moulue}.
 - Fouetter ~{2 min} à vitesse 4 en versant lentement l'huile sur le couvercle : elle coule en mince filet sur le fouet en marche et la mayonnaise est ferme.
 
 [repos | Repos]
