@@ -44,7 +44,9 @@ image_generation:
 - Vérifier qu'elle glisse librement.
 
 [Garnir la pizza]
-- Répartir @sauce tomate{75 g} et @mozzarella{60 g} et @jambon cru{50 g} sur le centre en laissant 2 cm de bord.
+- Répartir @sauce tomate{75 g} sur le centre en laissant 2 cm de bord.
+- Ajouter @mozzarella{60 g}.
+- Ajouter @jambon cru{50 g}.
 - Garnir avec l'@burrata{100 g}.
 - Garnir avec l'@basilic frais{8 feuilles}.
 
