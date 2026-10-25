@@ -63,8 +63,8 @@ image_generation:
 - Ajouter les @champignons de Paris{50 g, en morceaux}.
 - Ajouter la moitié de l'@oignon{160 g au total (80 g pour la farce et 80 g pour le velouté), coupé en deux}.
 - Ajouter le @persil frais{5 brins}.
-- Ajouter les cœurs de carotte.
-- Ajouter les cœurs de panais.
+- Ajouter les @carottes{cœurs issus des 4 pièces déjà annotées}.
+- Ajouter les @panais{cœurs issus des 4 pièces déjà annotées}.
 - Ajouter le @sel{6 pincées au total}.
 - Ajouter le @poivre moulu{4 pincées au total}.
 - Mixer ~{5 s} à vitesse 7.
@@ -88,7 +88,7 @@ image_generation:
 - Nettoyer le bol.
 
 [Préparer la base du velouté]
-- Mettre l'autre moitié de l'oignon dans le bol.
+- Mettre l'@oignon{80 g, moitié réservée au velouté sur 160 g au total, coupé en deux} dans le bol.
 - Ajouter le @poireau{100 g, en tronçons}.
 - Ajouter la @pomme de terre{100 g, en morceaux}.
 - Hacher ~{5 s} à vitesse 5.
@@ -110,8 +110,8 @@ image_generation:
 [Mixer velouté et sauce]
 - Ajouter le @lait{100 g}.
 - Ajouter la @crème fraîche épaisse{100 g, 40 % M.G. min.}.
-- Ajouter le sel restant.
-- Ajouter le poivre restant.
+- Ajouter le @sel{reste des 6 pincées déjà déclarées}.
+- Ajouter le @poivre moulu{reste des 4 pincées déjà déclarées}.
 - Activer le mode Mixage à vitesse 10.
 - Transvaser le velouté en gardant un fond dans le bol, à hauteur du couteau le plus bas.
 - Ajouter les 2 c. à soupe de farce réservées.
