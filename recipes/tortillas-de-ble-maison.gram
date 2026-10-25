@@ -55,11 +55,14 @@ image_generation:
 ## Tortillas de blé maison à la poêle
 
 [Mélanger les ingrédients secs]
-- Verser la @farine{500 g}, le @sel{1 c. à café} et la @levure chimique{1 c. à café} dans le bol du Thermomix.
+- Verser la @farine{500 g} dans le bol du Thermomix.
+- Ajouter le @sel{1 c. à café}.
+- Ajouter la @levure chimique{1 c. à café}.
 - Mélanger ~{10 s} à vitesse 3.
 
 [Pétrir la pâte]
-- Ajouter l'@huile d'olive{80 g} et l'@eau{250 g, tiède}.
+- Ajouter l'@huile d'olive{80 g}.
+- Ajouter l'@eau{250 g, tiède}.
 - Pétrir en mode pétrin ~{2 min}.
 
 [Laisser reposer la pâte]

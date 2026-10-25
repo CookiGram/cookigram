@@ -52,12 +52,14 @@ image_generation:
 ## Bretzels maison au bain alcalin
 
 [Activer la levure]
-- Verser l'@eau{150 g} et le @lait demi-écrémé{150 g} dans le bol du Thermomix.
+- Verser l'@eau{150 g} dans le bol du Thermomix.
+- Ajouter le @lait demi-écrémé{150 g}.
 - Ajouter la @levure boulangère{2 sachets, sèche}.
 - Chauffer ~{2 min} à ^{37 C}, vitesse 2.
 
 [Pétrir la pâte]
-- Ajouter la @farine{500 g} et le @sel{10 g}.
+- Ajouter la @farine{500 g}.
+- Ajouter le @sel{10 g}.
 - Pétrir en mode pétrin ~{3 min}.
 - Ajouter le @beurre doux{35 g, mou}.
 - Pétrir en mode pétrin ~{3 min}, jusqu'à incorporation complète.
@@ -68,7 +70,9 @@ image_generation:
 - Laisser lever ~{1 h} à température ambiante.
 
 [Préparer le bain]
-- Verser l'@eau{1000 g}, le @sel{2 c. à café} et le @bicarbonate de sodium{100 g} dans une casserole.
+- Verser l'@eau{1000 g} dans une casserole.
+- Ajouter le @sel{2 c. à café}.
+- Ajouter le @bicarbonate de sodium{100 g}.
 - Porter le bain à ébullition.
 
 [Façonner les bretzels]
