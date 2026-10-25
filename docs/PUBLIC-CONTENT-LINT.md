@@ -8,6 +8,8 @@ Les erreurs bloquantes sont : frontmatter absent, fermé incorrectement ou non m
 
 Les longueurs SEO ne prennent aucune décision éditoriale : elles signalent seulement une recommandation mesurable (`W001` : titre 30–60 caractères ; `W002` : description 70–160 caractères). Elles restent des avertissements même en mode bloquant. Aucun vocabulaire de tags n’est imposé : la règle existante est seulement « liste non vide, chaînes non vides, sans doublon insensible à la casse ».
 
+Le placeholder système partagé `images/placeholder-recipe.jpg` est une exception : plusieurs recettes en attente d’illustration peuvent le référencer sans être signalées comme doublons. Tout autre chemin d’image partagé reste une erreur.
+
 Les dates dont la clé est `date`, se termine par `_date` ou `_at` (par exemple `image_generation.generated_at`) doivent être ISO 8601. Les dates calendaires `YYYY-MM-DD` du corpus sont acceptées.
 
 ## Utilisation et compatibilité fork
