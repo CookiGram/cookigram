@@ -6,6 +6,8 @@ l'artefact Pages aux runs qualifiés sur `main`, et nettoyer après déploiement
 
 from pathlib import Path
 
+import re
+
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,8 +32,8 @@ def test_site_build_and_verification_still_run_unconditionally() -> None:
 
 def test_site_upload_reserved_to_qualified_main_runs() -> None:
     steps = _steps(_load("ci.yml"), "qualified-pages-artifact")
-    uploads = [step for step in steps if isinstance(step, dict) and step.get("uses") == "actions/upload-artifact@v4"]
-    assert len(uploads) == 1
+    uploads = [step for step in steps if isinstance(step, dict) and re.fullmatch(r"actions/upload-artifact@[0-9a-f]{40}", str(step.get("uses") or ""))]
+    assert len(uploads) == 1, "upload-artifact doit être épinglé par SHA (#434)"
     upload = uploads[0]
     assert upload["with"]["path"] == "_site"
     assert upload["with"]["retention-days"] == 1
