@@ -59,6 +59,9 @@ ingredients:
     status: manual
     source: Recettes de salades CookiGram (salade César, grecque, lentilles, pois
       chiches, pâtes)
+  sauce-burger:
+    source: Sauce burger commerciale générique, marque non précisée ; aucune donnée nutritionnelle ajoutée.
+    status: incomplete
   viande-de-boeuf-a-mijoter:
     source: Ingrédient générique ; valeur nutritionnelle à compléter depuis CIQUAL.
     status: incomplete
