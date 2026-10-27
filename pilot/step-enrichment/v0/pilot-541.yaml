@@ -1,0 +1,115 @@
+schema: cookigram.step-enrichment.v0
+pilot_id: cookigram-541-two-recipes-v0
+scope: experimental-only
+generated_at: 2026-10-27
+generation:
+  provider: OpenAI Codex
+  model: "GPT-6 runtime; exact deployment identifier is not exposed"
+  prompt_version: 1
+  prompt: >-
+    Produce concise, optional Why and How explanations for the cited recipe
+    steps. Keep the source recipe as authority. Do not change or invent any
+    quantity, time, temperature, appliance setting, equipment, ingredient,
+    unsupported safety claim, or variant procedure. Ground explanations in the
+    source step and the listed official technique references. Return no primary
+    instruction override unless clarification can be made without changing the
+    procedure.
+  primary_instruction_policy: preserve-source
+review:
+  ai_editorial_check: complete
+  culinary_safety_review: pending
+  product_acceptance: pending
+sources:
+  thermomix_slow_cooking:
+    url: https://cookidoo.thermomix.com/foundation/en-US/articles/slow-cooking
+    publisher: Cookidoo / Vorwerk
+    supports: "Long, gentle cooking tenderizes tougher cuts; use reference-recipe settings."
+  thermomix_reverse:
+    url: https://consultant.thermomix.com/wp-content/uploads/2024/06/Basic-functions-and-TM-modes-2024-CA.Final_.pdf
+    publisher: Vorwerk
+    supports: "Reverse rotation at low speeds helps prevent delicate foods from falling apart."
+  instant_pot_release:
+    url: https://instantpot.com/pages/frequently-asked-questions
+    publisher: Instant Pot
+    supports: "Keep hands and face away from steam; do not open before pressure is released."
+  saute_flavor:
+    url: https://cookidoo.thermomix.com/foundation/en-US/articles/slow-cooking
+    publisher: Cookidoo / Vorwerk
+    supports: "Sautéing or caramelizing aromatics before slow cooking develops a deeper flavor."
+  recipe_step_only:
+    source: "The exact source recipe revision identified by each recipe SHA-256 below."
+    supports: "Context and observable endpoints stated in that source step only."
+recipes:
+  - recipe_id: osso-buco-milanaise
+    source_file: recipes/osso-buco-milanaise.gram
+    source_sha256: 1c9d1717496ae49eaa39350e2d2504413a16c02596dcf60d9e4d2ff0a669deba
+    source_revision: 747182d0e932ad12fd3ca1edbded83be6e80d50c
+    recipe_source:
+      url: https://cookidoo.fr
+      author: Pierre Cousin
+    variant_policy: exact-variant-only
+    enrichments:
+      - step_id: simmer-veal
+        variant_id: thermomix
+        instruction: null
+        why: >-
+          Le jarret devient plus tendre avec une cuisson longue et douce ; cette
+          étape applique ce principe avec les réglages de la recette source.
+        how: >-
+          Conserve le sens inverse et la vitesse mijotage indiqués. Le sens
+          inverse à basse vitesse limite le risque de défaire les morceaux ;
+          le panier reste posé sur le couvercle comme dans l’étape source.
+        references: [thermomix_slow_cooking, thermomix_reverse]
+        review_status: proposed
+      - step_id: simmer-veal
+        variant_id: instant-pot
+        instruction: null
+        why: >-
+          Cette variante remplace le mijotage Thermomix par la cuisson sous
+          haute pression prévue pour l’Instant Pot afin d’obtenir un jarret
+          fondant ; les deux méthodes ne se cumulent pas.
+        how: >-
+          Après les 10 minutes de détente naturelle indiquées dans la variante,
+          éloigne visage et mains de la sortie de vapeur ; n’ouvre que lorsque
+          la pression est retombée et que le flotteur est descendu.
+        references: [instant_pot_release]
+        review_status: proposed
+    excluded_variants:
+      - variant_id: cocotte-fonte
+        reason: >-
+          Pas d’aide générée dans ce pilote : la description de variante annonce
+          2 h de mijotage, alors que l’étape de remplacement indique 1 h 45.
+          Faire clarifier la recette avant d’attacher un conseil à cette méthode.
+  - recipe_id: sauce-bolognaise-rapide
+    source_file: recipes/sauce-bolognaise-rapide.gram
+    source_sha256: dc7e3062645b31f704caa48b3c05a3d02408b26e6dada451209ddd0204f6f5f6
+    source_revision: 747182d0e932ad12fd3ca1edbded83be6e80d50c
+    recipe_source:
+      url: https://cookidoo.fr/recipes/recipe/fr-FR/r154302
+      author: CookiGram (adaptation originale)
+      additional_inspiration: https://www.cookomix.com/recettes/spaghettis-bolognaise-thermomix/
+    variant_policy: default-only
+    enrichments:
+      - step_ref: macro:03:faire-revenir
+        variant_id: default
+        instruction: null
+        why: >-
+          Faire revenir les aromates avant la tomate développe leur parfum et
+          construit la base aromatique de la sauce.
+        how: >-
+          Garde le repère d’arrêt déjà donné : légumes tendres et odorants, sans
+          brunir fortement. Les réglages et la durée restent ceux de l’étape.
+        references: [saute_flavor, recipe_step_only]
+        review_status: proposed
+      - step_ref: macro:06:mijoter-la-sauce
+        variant_id: default
+        instruction: null
+        why: >-
+          Le mijotage réunit les saveurs de la tomate, des aromates et du bœuf,
+          tout en laissant la sauce réduire.
+        how: >-
+          À la fin du cycle prévu, vérifie les deux repères de la recette : la
+          sauce frémit doucement, nappe la cuillère et les légumes sont fondants.
+          Ils permettent de juger le résultat sans ajouter de durée au protocole.
+        references: [recipe_step_only]
+        review_status: proposed
