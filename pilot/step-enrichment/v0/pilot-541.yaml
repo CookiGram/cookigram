@@ -17,7 +17,8 @@ generation:
   primary_instruction_policy: preserve-source
 review:
   ai_editorial_check: complete
-  culinary_safety_review: pending
+  culinary_provenance_review: pass
+  ux_contract_review: pass
   product_acceptance: pending
 invalidation:
   source_hash: source_recipe_sha256

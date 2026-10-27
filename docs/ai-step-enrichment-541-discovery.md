@@ -55,8 +55,8 @@ contient quatre propositions `Pourquoi ?` / `Comment ?` : deux variantes de
 la source d’instructions : aucun remplacement principal n’est fourni. La
 variante cocotte de l’osso-buco est explicitement exclue du pilote, car sa
 description annonce 2 h de mijotage et son étape de remplacement 1 h 45. Les
-explications culinaires sont marquées `proposed`; la revue culinaire/sécurité et
-l’acceptation produit restent `pending`.
+revues indépendantes culinaire/provenance et UX/contrat sont PASS. Les entrées
+restent `proposed`; l’acceptation produit reste `pending`.
 
 Le sidecar est expérimental et aucun chargeur/UI Core ne le consomme dans ce
 dépôt. La réversibilité consiste à supprimer/désactiver le fichier ; le parcours
@@ -66,12 +66,11 @@ hash invalide toutes les aides de cette recette. Le rattachement est uniforméme
 `step_ref`, combiné à `variant_id`. Les `.gram` doivent rester byte-à-byte
 identiques.
 
-Contrôles attendus avant PR : chargement YAML du sidecar, validation des clés et
+Contrôles passés avant PR : chargement YAML du sidecar, validation des clés et
 références de recette/variante/étape, comparaison des hashes aux sources, absence
 de mutation des `.gram`, puis `git diff --check`. Les contrôles applicatifs des
 boutons, timers, cases à cocher, variantes et navigation nécessitent Core et ne
-sont pas satisfaits par le seul sidecar. Toute revue culinaire/sécurité reste un
-prérequis d’acceptation avant merge.
+sont pas satisfaits par le seul sidecar ; aucun raccordement Core/UI n’est inclus.
 
 ## Audit du corpus pilote
 
@@ -203,9 +202,9 @@ rester une démonstration isolée/fixture.
 
 - Relever un snapshot/hash des deux fichiers pilotes avant génération ; vérifier qu’ils
   sont inchangés après le pilote.
-- Comparer chaque texte proposé au contexte source et à la variante résolue ;
-  revue culinaire humaine obligatoire sur exactitude, sécurité et absence de
-  valeurs inventées.
+- Les revues indépendantes culinaire/provenance et UX/contrat sont PASS pour le
+  présent état du sidecar ; toute modification ultérieure de texte ou de
+  rattachement nécessite une nouvelle revue.
 - Contrôler la correspondance de `step_ref`, des variantes et du hash complet ; couvrir les étapes
   remplacées osso-buco et les étapes héritées dans chaque variante.
 - Vérifier aide absente, une seule aide présente et deux aides présentes ; aucun
@@ -223,7 +222,7 @@ inchangée, cohérence des variantes et restauration exacte après désactivatio
 
 ## Suite autorisée
 
-La suite est la revue culinaire/sécurité du sidecar et la vérification par Core
-du contrat et du raccordement éventuel dans un prototype isolé. La généralisation
-devra faire l’objet d’une décision GO / ITERATE / NO-GO séparée. Pas de merge,
-déploiement ni migration catalogue dans le cadre de ce document.
+L’acceptation produit reste `pending`. Tout raccordement ultérieur devra être
+vérifié dans Core comme prototype isolé. La généralisation devra faire l’objet
+d’une décision GO / ITERATE / NO-GO séparée. Pas de merge, déploiement ni
+migration catalogue dans le cadre de ce document.
