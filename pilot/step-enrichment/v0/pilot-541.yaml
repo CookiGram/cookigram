@@ -19,15 +19,21 @@ review:
   ai_editorial_check: complete
   culinary_safety_review: pending
   product_acceptance: pending
+invalidation:
+  source_hash: source_recipe_sha256
+  on_mismatch: disable_all_enrichments_for_that_recipe
+  per_step_fallback: false
+field_semantics:
+  no_enrichment_entry: "No help is attached to the step; render no help controls or placeholder."
+  missing_or_null_value: "Equivalent: that field has no value; render no control and do not inherit from another variant."
+  instruction_missing_or_null: "Keep the canonical .gram instruction unchanged; no override is supplied."
+  non_empty_string: "Render that optional content behind its own control, collapsed by default."
+  empty_string: invalid
 sources:
   thermomix_slow_cooking:
     url: https://cookidoo.thermomix.com/foundation/en-US/articles/slow-cooking
     publisher: Cookidoo / Vorwerk
     supports: "Long, gentle cooking tenderizes tougher cuts; use reference-recipe settings."
-  thermomix_reverse:
-    url: https://consultant.thermomix.com/wp-content/uploads/2024/06/Basic-functions-and-TM-modes-2024-CA.Final_.pdf
-    publisher: Vorwerk
-    supports: "Reverse rotation at low speeds helps prevent delicate foods from falling apart."
   instant_pot_release:
     url: https://instantpot.com/pages/frequently-asked-questions
     publisher: Instant Pot
@@ -37,31 +43,36 @@ sources:
     publisher: Cookidoo / Vorwerk
     supports: "Sautéing or caramelizing aromatics before slow cooking develops a deeper flavor."
   recipe_step_only:
-    source: "The exact source recipe revision identified by each recipe SHA-256 below."
+    source: "The exact recipe-file revision identified by source_recipe_sha256 below."
     supports: "Context and observable endpoints stated in that source step only."
 recipes:
   - recipe_id: osso-buco-milanaise
     source_file: recipes/osso-buco-milanaise.gram
-    source_sha256: 1c9d1717496ae49eaa39350e2d2504413a16c02596dcf60d9e4d2ff0a669deba
+    source_recipe_sha256: 1c9d1717496ae49eaa39350e2d2504413a16c02596dcf60d9e4d2ff0a669deba
     source_revision: 747182d0e932ad12fd3ca1edbded83be6e80d50c
     recipe_source:
-      url: https://cookidoo.fr
-      author: Pierre Cousin
+      url_as_recorded: https://cookidoo.fr
+      exact_url_status: non_verifiable
+      exact_url: null
+      recipe_metadata_author: Pierre Cousin
+      source_author: null
+      verification_note: >-
+        The recipe file records only the Cookidoo homepage. Public Cookidoo
+        results located during review do not uniquely match this recipe's
+        ingredients and quantities; no exact recipe page or source author is
+        inferred.
     variant_policy: exact-variant-only
     enrichments:
-      - step_id: simmer-veal
+      - step_ref: macro:simmer-veal
         variant_id: thermomix
         instruction: null
         why: >-
           Le jarret devient plus tendre avec une cuisson longue et douce ; cette
           étape applique ce principe avec les réglages de la recette source.
-        how: >-
-          Conserve le sens inverse et la vitesse mijotage indiqués. Le sens
-          inverse à basse vitesse limite le risque de défaire les morceaux ;
-          le panier reste posé sur le couvercle comme dans l’étape source.
-        references: [thermomix_slow_cooking, thermomix_reverse]
+        how: null
+        references: [thermomix_slow_cooking]
         review_status: proposed
-      - step_id: simmer-veal
+      - step_ref: macro:simmer-veal
         variant_id: instant-pot
         instruction: null
         why: >-
@@ -82,7 +93,7 @@ recipes:
           Faire clarifier la recette avant d’attacher un conseil à cette méthode.
   - recipe_id: sauce-bolognaise-rapide
     source_file: recipes/sauce-bolognaise-rapide.gram
-    source_sha256: dc7e3062645b31f704caa48b3c05a3d02408b26e6dada451209ddd0204f6f5f6
+    source_recipe_sha256: dc7e3062645b31f704caa48b3c05a3d02408b26e6dada451209ddd0204f6f5f6
     source_revision: 747182d0e932ad12fd3ca1edbded83be6e80d50c
     recipe_source:
       url: https://cookidoo.fr/recipes/recipe/fr-FR/r154302

@@ -61,7 +61,10 @@ l’acceptation produit restent `pending`.
 Le sidecar est expérimental et aucun chargeur/UI Core ne le consomme dans ce
 dépôt. La réversibilité consiste à supprimer/désactiver le fichier ; le parcours
 actuel n’est donc pas affecté. La recette source de chaque aide est épinglée par
-révision Git et SHA-256. Les `.gram` doivent rester byte-à-byte identiques.
+révision Git et SHA-256 de l’intégralité du fichier `.gram`. Tout changement de
+hash invalide toutes les aides de cette recette. Le rattachement est uniformément
+`step_ref`, combiné à `variant_id`. Les `.gram` doivent rester byte-à-byte
+identiques.
 
 Contrôles attendus avant PR : chargement YAML du sidecar, validation des clés et
 références de recette/variante/étape, comparaison des hashes aux sources, absence
@@ -74,7 +77,7 @@ prérequis d’acceptation avant merge.
 
 | Recette | État observé | Valeur pour le pilote | Points de contrôle |
 | --- | --- | --- | --- |
-| `osso-buco-milanaise` | IDs de macro-étapes stables (`make-gremolata`, `brown-soffritto`, `simmer-veal`), variante par défaut Thermomix et remplacements `instant-pot` / `cocotte-fonte` | Braiserie longue, technique et variantes substantielles | Les aides doivent suivre les étapes remplacées ; les temps/gestes cocotte et pression restent propres à leur variante. La cuisson Thermomix à 120 °C exclut TM31, mais la recette publiée le liste encore : point hors scope à ne pas retoucher ici. |
+| `osso-buco-milanaise` | IDs de macro-étapes stables (`make-gremolata`, `brown-soffritto`, `simmer-veal`), variante par défaut Thermomix et remplacements `instant-pot` / `cocotte-fonte` | Braiserie longue, technique et variantes substantielles | Les aides doivent suivre les étapes remplacées ; les temps/gestes cocotte et pression restent propres à leur variante. La cuisson Thermomix à 120 °C exclut TM31, mais la recette publiée le liste encore : point hors scope à ne pas retoucher ici. L’URL exacte Cookidoo et l’auteur de la source ne sont pas vérifiés. |
 | `tzatziki-grec` | Quatre macro-actions sans identifiants explicites ; Thermomix TM31/TM5/TM6/TM7, sans variante déclarée | Préparation froide, égouttage et texture | Collision #499/#615 levée après merge. Il faut stabiliser la correspondance d’étape sans changer le `.gram`. |
 | `sauce-bolognaise-rapide` | Sept macro-actions sans identifiants explicites ; Thermomix TM5/TM6/TM7, sans variante déclarée | Sofritto, cuisson viande, réduction et repères observables déjà présents | Les aides doivent éviter de répéter l’instruction et ne pas créer de réglage supplémentaire. Recette récemment ajoutée depuis #540 : relire sa provenance avant d’écrire des explications culinaires. |
 
@@ -103,9 +106,12 @@ schema: cookigram.step-enrichment.v0
 recipe: osso-buco-milanaise
 source:
   revision: <git-commit>
-  sha256: <sha256-du-fichier-gram>
-  source_url: https://cookidoo.fr
-  source_author: Pierre Cousin
+  source_recipe_sha256: <sha256-du-fichier-gram>
+  url_as_recorded: https://cookidoo.fr
+  exact_url_status: non_verifiable
+  exact_url: null
+  recipe_metadata_author: Pierre Cousin
+  source_author: null
 generation:
   method: assisted-ai
   model: <identifiant-et-version-exacts>
@@ -115,43 +121,57 @@ review:
   status: proposed # proposed | culinary-reviewed | accepted | rejected
   reviewer: null
 steps:
-  - step_id: simmer-veal
+  - step_ref: macro:simmer-veal
     variant_id: thermomix # default explicite; ou instant-pot / cocotte-fonte
-    source_step_sha256: <sha256-du-texte-source-de-l-etape>
-    instruction: null # proposition uniquement si une clarification est requise
+    instruction: null # absent ou null = conserver l'instruction .gram
     why: null
     how: null
 ```
 
 Règles du contrat :
 
-1. `instruction`, `why` et `how` sont des champs optionnels indépendants ; valeur
-   absente signifie aucun bouton ni espace UI. La recette source reste exécutable
-   seule.
-2. `recipe + variant_id + step_id + source_step_sha256` identifient le contexte.
-   Pour une recette sans identifiants explicites, le pilote doit référencer
-   l’identifiant généré par le parseur s’il existe ; sinon, utiliser temporairement
-   l’ordinal de macro-étape avec hash du texte exact, et invalider l’enrichissement
-   si le hash change. Ne pas créer d’identifiant implicite qui survivrait à une
-   modification de texte sans revue.
-3. Les étapes héritées ne reçoivent que des aides génériques si celles-ci restent
+1. Si aucune entrée d’enrichissement n’existe pour une étape, elle n’a pas d’aide.
+   Dans une entrée, `instruction`, `why` et `how` restent facultatifs. Une valeur
+   non vide de `why` ou `how` rend uniquement sa commande dédiée, repliée par
+   défaut. Champ absent et `null` ont le même sens : aucun contenu, aucune
+   commande et aucun espace réservé ; ils ne déclenchent pas d’héritage d’une
+   autre variante. Une chaîne vide est invalide. `instruction` absent ou `null`
+   signifie conserver exactement l’instruction canonique `.gram`, sans override.
+2. Une seule forme de rattachement est utilisée partout : `step_ref` est une
+   chaîne canonique. Pour les macro-actions nommées, elle vaut
+   `macro:<id-gram>` ; quand aucun ID n’existe, elle vaut
+   `macro:<ordinal-1-based>:<titre-normalisé>`. `variant_id` est un champ
+   distinct et obligatoire. La paire `variant_id + step_ref` identifie l’étape
+   résolue ; aucune forme alternative `step_id` n’est utilisée.
+3. Chaque recette porte `source_recipe_sha256`, calculé sur les octets complets du
+   fichier `.gram`. Tout écart de hash invalide **toutes** les aides attachées à
+   cette recette jusqu’à régénération et revue ; aucun fallback par étape, titre,
+   ancien texte ou autre variante n’est permis. Cette invalidation complète
+   empêche qu’une aide reste attachée après une modification du contexte recette.
+4. Les étapes héritées ne reçoivent que des aides génériques si celles-ci restent
    exactes pour toutes les variantes ; toute aide dépendant d’un équipement,
    réglage, temps ou geste propre à une variante doit la cibler explicitement.
    Les remplacements de variante doivent résoudre leurs propres aides et ne pas
    afficher celles de l’étape remplacée.
-4. L’instruction principale ne peut changer silencieusement la procédure. Toute
+5. L’instruction principale ne peut changer silencieusement la procédure. Toute
    proposition qui modifie le geste, l’ordre, une quantité, un temps, une
    température, un équipement ou un état de sécurité est rejetée ou renvoyée à
    une révision de recette distincte, sourcée et approuvée.
-5. Conserver snapshot Git, hash de source, provenance/auteur d’origine,
+6. Conserver snapshot Git, hash de source, provenance/auteur d’origine,
    générateur/modèle/version de prompt, statut et identité de revue humaine.
    La suppression/désactivation du sidecar rétablit exactement l’expérience
    originale ; aucune écriture n’est faite dans les `.gram`.
-6. Les textes générés sont statiques au moment de préparation/build. Aucun appel
+7. Les textes générés sont statiques au moment de préparation/build. Aucun appel
    de modèle ou service réseau ne doit être requis en Mode Cuisine.
 
-Ce schéma est une proposition de cadrage, pas une affirmation que le parseur
-Core accepte ces champs ou que `step_id` existe dans toutes les recettes.
+Pour `osso-buco-milanaise`, le fichier `.gram` donne seulement `https://cookidoo.fr`
+et indique `Pierre Cousin` comme auteur de la fiche locale. La page exacte
+Cookidoo n’a pas été confirmée ; le sidecar garde l’URL enregistrée sous
+`url_as_recorded`, marque `exact_url_status: non_verifiable` et ne présente pas
+l’auteur de la fiche comme auteur confirmé de la source.
+
+Ce schéma est expérimental et reste à valider côté Core ; le format de référence
+du pilote est le `step_ref` ci-dessus.
 
 ## Parcours et point d’extension minimal à vérifier dans Core
 
@@ -181,23 +201,21 @@ rester une démonstration isolée/fixture.
 
 ## Évaluation et contrôles nécessaires à la reprise
 
-- Relever un snapshot/hash des trois fichiers avant génération ; vérifier qu’ils
+- Relever un snapshot/hash des deux fichiers pilotes avant génération ; vérifier qu’ils
   sont inchangés après le pilote.
 - Comparer chaque texte proposé au contexte source et à la variante résolue ;
   revue culinaire humaine obligatoire sur exactitude, sécurité et absence de
   valeurs inventées.
-- Contrôler la correspondance des identifiants et hashes ; couvrir les étapes
+- Contrôler la correspondance de `step_ref`, des variantes et du hash complet ; couvrir les étapes
   remplacées osso-buco et les étapes héritées dans chaque variante.
 - Vérifier aide absente, une seule aide présente et deux aides présentes ; aucun
   bouton ou espace vide pour une aide absente.
 - Dans Core, tester manuellement variante, timer, checkbox, navigation et reprise
   de progression avec aides fermées/ouvertes. Les tests applicatifs doivent être
   ajoutés/exécutés dans `cookigram-core`, pas dans le dépôt de contenu.
-- Exécuter les validations publiques documentées ici pour tout changement de
-  contenu : parsing YAML des fichiers `.gram` pertinents et `python
-  scripts/audit-recipe-images.py --check`. Aucun test local n’est lancé puisque
-  ce livrable ne modifie pas le contenu et que les outils applicatifs vivent dans
-  Core.
+- Pour le sidecar du pilote, charger le YAML, vérifier le schéma, les références
+  et les hashes source, puis confirmer que les fichiers `.gram` restent inchangés.
+  Les contrôles du parcours Cooking nécessitent Core.
 
 Mesures de décision : clarté/repères observables, aucune régression culinaire,
 spécificité pédagogique, découvrabilité sans distraction, lecture par défaut
