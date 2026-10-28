@@ -1,0 +1,69 @@
+---
+title: Rice bowl au porc haché, gochujang et soja
+date_published: 2026-10-28
+date_modified: 2026-10-28
+portions: 4
+prep_time: 10 min
+total_time: 40 min
+spiciness: 2
+description: "Porc haché caramélisé au gochujang et soja, servi sur un riz long léger avec une touche d'oignon nouveau."
+tags: [plat, coréen, riz, porc, gochujang]
+# La méthode du riz est adaptée de recipes/riz-blanc-long-casserole.gram (BBC Good Food).
+# La source dit « soy sauce » sans autre précision ; la base ne permet la sauce soja salée que comme libellé qualifié.
+source: https://thesubversivetable.com/gochujang-pork-bowls/
+author: Lis Lam
+required_equipment:
+  - Casserole avec couvercle
+  - Wok ou grande poêle
+  - Thermomètre alimentaire
+scaling:
+  enabled: false
+  reason: "Les quantités de riz et la cuisson du porc sont prévues pour quatre portions ; les temps de cuisson ne sont pas validés à une autre échelle."
+image: images/rice-bowl-porc-hache-gochujang.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée pour cette fiche.
+image_generation:
+  provider: OpenAI ImageGen
+  generated_at: "2026-10-28"
+  prompt_file: image-prompts/rice-bowl-porc-hache-gochujang.md
+---
+
+[Rincer le riz]
+- Rincer le @riz-long-blanc{300 g} dans une #passoire fine{} jusqu'à ce que l'eau soit presque claire.
+- Égoutter le riz.
+- Verser le riz dans une #casserole{}.
+- Ajouter l'@eau{600 g} et le @sel{4 g}.
+- Porter à frémissement.
+- Couvrir et cuire à feu très doux ~{10 min} sans soulever le couvercle.
+
+[Laisser reposer le riz]
+- Couper le feu sous le riz.
+- Laisser reposer à couvert ~{10 min}; l'eau doit être absorbée et les grains tendres.
+
+[Préparer la marinade]
+- Mélanger le @gochujang{60 ml}, le @mirin{2 c. à soupe}, le @sucre{2 c. à soupe}, la @sauce soja salée{1 c. à soupe} et l'@huile de sésame{1 c. à soupe} dans un bol.
+- Ajouter le @porc haché{450 g} dans le bol.
+- Mélanger pour l'enrober de marinade.
+
+[Cuire les aromates]
+- Chauffer l'@huile végétale{2 c. à soupe} dans un #wok{} ou une #poêle{} à feu moyen-vif.
+- Ajouter l'@oignon{1 petit (ou 1/2 gros)}, l'@ail{4 gousses} et le @gingembre{5 cm} hachés.
+- Faire revenir ~{2 min}, jusqu'à ce que l'oignon soit tendre et translucide.
+
+[Dorer le porc]
+- Ajouter le porc haché mariné dans le wok.
+- Émietter la viande avec une spatule.
+- Cuire ~{4 min} en remuant, jusqu'à ce qu'elle ne soit plus rosée.
+- Mesurer la température au cœur avec un #thermomètre alimentaire{} et poursuivre la cuisson jusqu'à ^{71 C}.
+- Poursuivre la cuisson ~{2 min}, jusqu'à ce que des morceaux soient bien dorés et caramélisés.
+- Couper le feu.
+- Ajouter l'@oignon nouveau{2} émincé.
+
+[Terminer le riz et servir]
+- Égrainer le riz à la fourchette.
+- Répartir le riz dans quatre bols.
+- Garnir avec le porc au gochujang.
