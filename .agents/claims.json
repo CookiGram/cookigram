@@ -48,6 +48,23 @@
       ],
       "pr": 619
     },
+    "389": {
+      "issue": 389,
+      "title": "Recipe title hygiene — tranche Air Fryer (3 titres)",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-389-title-audit-20261027",
+      "branch": "chatgpt/389-title-audit-20261027",
+      "claimed_at": "2026-10-27T07:46:26Z",
+      "last_heartbeat": "2026-10-29T17:26:28Z",
+      "status": "pr_open",
+      "pr": 625,
+      "scope": [
+        "recipes/air-fryer-tofu-croustillant.gram",
+        "recipes/air-fryer-saumon-citron-aneth.gram",
+        "recipes/air-fryer-ailes-poulet-croustillantes.gram",
+        "docs/recipe-title-inventory-389.md"
+      ]
+    },
     "499-r2": {
       "issue": 499,
       "title": "Atomicité v2 — lot récent R2, reliquat de trois recettes",
