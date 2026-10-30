@@ -97,19 +97,17 @@
     },
     "376": {
       "issue": 376,
-      "title": "[LOT Variantes] Certain splits — 3 recettes",
+      "title": "[LOT Variantes] Split ciblé carbonnade-flamande — Instant Pot",
       "agent": "Codex (ChatGPT)",
-      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-376-certain-splits-20261029",
-      "branch": "chatgpt/376-certain-splits-20261029",
-      "claimed_at": "2026-10-29T19:10:40+01:00",
-      "last_heartbeat": "2026-10-29T19:12:05+01:00",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-376-carbonnade-split-20261030",
+      "branch": "chatgpt/376-carbonnade-split-20261030",
+      "claimed_at": "2026-10-30T09:00:00+01:00",
+      "last_heartbeat": "2026-10-30T09:00:00+01:00",
       "status": "pr_open",
       "scope": [
-        "recipes/osso-buco-milanaise.gram",
-        "recipes/poulet-basquaise.gram",
-        "recipes/shakshuka-feta-oeufs.gram"
+        "recipes/carbonnade-flamande.gram"
       ],
-      "pr": 626
+      "pr": 627
     }
   },
   "completed_claims": [

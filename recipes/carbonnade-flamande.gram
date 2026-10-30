@@ -45,7 +45,7 @@ variants:
     total_time: 1 h 05 min
     steps:
       replace:
-        simmer-carbonnade: "[simmer-carbonnade | Cuisson sous haute pression Instant Pot]\n- Poser les @tranches de pain d'épices{3 tranches, tartinées de moutarde} sur la viande dans la cuve de l'#autocuiseur Instant Pot{}.\n- Fermer le couvercle et positionner la valve sur Sealing.\n- Lancer la cuisson sous haute pression (High Pressure) pendant ~{45 min}.\n- Laisser la pression redescendre naturellement pendant ~{10 min}, puis libérer le reste de vapeur.\n- Ouvrir, mélanger à la spatule pour incorporer le pain d'épices dissous : la sauce est brillante et onctueuse."
+        simmer-carbonnade: "[simmer-carbonnade | Cuisson sous haute pression Instant Pot]\n- Poser les @tranches de pain d'épices{3 tranches, tartinées de moutarde} sur la viande dans la cuve de l'#autocuiseur Instant Pot{}.\n- Fermer le couvercle et positionner la valve sur Sealing.\n- Lancer la cuisson sous haute pression (High Pressure) pendant ~{45 min}.\n- Laisser la pression redescendre naturellement pendant ~{10 min}, puis libérer le reste de vapeur.\n- Ouvrir le couvercle.\n- Mélanger à la spatule pour incorporer le pain d'épices dissous : la sauce est brillante et onctueuse."
   - id: cocotte-fonte
     name: Cocotte en fonte traditionnelle (Sans robot)
     description: Cuisine traditionnelle sans robot avec mijotage très doux à couvert pendant 2 h 45.
