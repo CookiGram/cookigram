@@ -94,8 +94,10 @@
         "recipes/plat-de-cote-boeuf-instant-pot.gram"
       ],
       "pr": 617
-    },
-    "376": {
+    }
+  },
+  "completed_claims": [
+    {
       "issue": 376,
       "title": "[LOT Variantes] Split ciblé carbonnade-flamande — Instant Pot",
       "agent": "Codex (ChatGPT)",
@@ -103,14 +105,15 @@
       "branch": "chatgpt/376-carbonnade-split-20261030",
       "claimed_at": "2026-10-30T09:00:00+01:00",
       "last_heartbeat": "2026-10-30T09:00:00+01:00",
-      "status": "pr_open",
+      "status": "merged",
       "scope": [
         "recipes/carbonnade-flamande.gram"
       ],
-      "pr": 627
-    }
-  },
-  "completed_claims": [
+      "pr": 627,
+      "merged_at": "2026-10-30T08:26:22Z",
+      "reconciled_by": "Codex (ChatGPT)",
+      "reconciliation": "satisfied by PR #627; issue #376 remains open"
+    },
     {
       "issue": 435,
       "title": "[DOCS] TODO.md : snapshot d audit périmé",
