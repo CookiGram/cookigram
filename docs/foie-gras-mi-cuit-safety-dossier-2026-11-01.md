@@ -18,7 +18,7 @@ l'équivalence de contenant, de charge ou de profil thermique.
 L'ANSES décrit des facteurs de maîtrise propres au foie gras et précise que le traitement
 mi-cuit n'est pas le traitement destiné à inactiver la toxine botulinique; sa conclusion
 insiste sur la chaîne du froid. Ce rapport éclaire les dangers, mais ne qualifie aucun des
-deux barèmes CookiGram. [Rapport ANSES 2019-SA-0114, section foie gras](https://www.anses.fr/fr/system/files/BIORISK2019SA0114Ra-1.pdf).
+deux barèmes CookiGram. [Rapport ANSES 2019-SA-0114, § 3.4.2.2, pp. 70–71](https://www.anses.fr/fr/system/files/BIORISK2019SA0114Ra-1.pdf#page=70).
 
 Le NCHFP explique que la position du point froid et la pénétration de chaleur varient avec
 la forme et taille du bocal, la texture et taille des morceaux, le ratio solide/liquide,
@@ -109,10 +109,18 @@ catalogue public ou l'aperçu construit.
 
 ## Barrière et responsabilités
 
-`.gram/publication-exclusions.json` liste les cinq
-slugs; `scripts/check-publication-exclusions.py --check` échoue dès qu'un `.gram` correspondant
-apparaît dans `recipes/`. La CI publique l'exécute avant validation/build. Le test unitaire
-injecte une recette témoin et vérifie l'échec. C'est une barrière catalogue contre l'ajout à
+`.gram/publication-exclusions.json` liste les cinq slugs et l'identité textuelle stable
+`foie gras`. `scripts/check-publication-exclusions.py` échoue sur un slug listé ou sur toute
+recette contenant cette expression, quelle que soit son nom de fichier, son titre ou ses tags.
+La comparaison normalise la casse, les accents, les espaces et la ponctuation (par exemple
+`foie-gras` et `FOIE GRAS` sont détectés). C'est volontairement fail-closed : même une nouvelle
+recette distincte utilisant ou mentionnant le foie gras reste exclue jusqu'à une décision de
+qualification explicite. Le manifeste absent, invalide ou privé de sa règle d'identité fait
+également échouer le contrôle.
+
+La CI publique l'exécute avant validation, build, aperçu et déploiement Pages. Les tests
+injectent des copies renommées, un manifeste incomplet et des contrôles négatifs (foie de
+volaille, magret sous vide et pâté végétal). C'est une barrière catalogue contre l'ajout à
 `main`, pas une nouvelle capacité de filtre à la volée dans Core. Un moteur qui ingère un
 répertoire fourni par un tiers doit respecter sa propre configuration de filtrage; cette
 capacité reste à établir dans `cookigram-core` si nécessaire.

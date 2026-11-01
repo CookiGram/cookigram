@@ -93,7 +93,7 @@ jobs:
           python-version: "3.12"
 
       - name: Bloquer les recettes temporairement exclues avant déploiement
-        run: python scripts/check-publication-exclusions.py --check
+        run: python scripts/check-publication-exclusions.py
 
       - name: Install validation dependencies
         run: python -m pip install "PyYAML==6.0.2"
