@@ -3529,3 +3529,10 @@ ingredients:
     aliases:
     - safran
     category: Herbes et épices
+  foie-gras-de-canard-cru:
+    name: Foie gras cru de canard
+    aliases:
+    - foie gras cru de canard
+    - foie gras de canard cru
+    - foie gras cru
+    category: Viandes

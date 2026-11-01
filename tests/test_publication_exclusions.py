@@ -28,7 +28,7 @@ def test_sanitary_hold_recipes_are_absent_from_public_catalogue() -> None:
 
 
 def _fixture_root(tmp_path: Path) -> None:
-    (tmp_path / ".gram").mkdir()
+    (tmp_path / ".gram").mkdir(parents=True)
     (tmp_path / "recipes").mkdir()
     manifest = json.loads((ROOT / ".gram/publication-exclusions.json").read_text(encoding="utf-8"))
     (tmp_path / ".gram/publication-exclusions.json").write_text(json.dumps(manifest), encoding="utf-8")
@@ -39,11 +39,15 @@ def _fixture_root(tmp_path: Path) -> None:
     aliases:
       - foie gras cru de canard
       - foie gras de canard cru
-      - foie de canard
+      - foie gras cru
   foie-de-volaille:
     name: Foie de volaille
     aliases:
       - foie de volaille
+  foie-de-canard-frais:
+    name: Foie de canard frais
+    aliases:
+      - foie de canard
   magret-de-canard:
     name: Magret de canard
     aliases:
@@ -92,14 +96,14 @@ def test_gate_rejects_full_recipe_copy_renamed_and_reworded_via_canonical_id(tmp
     result = _run_gate(tmp_path)
     assert result.returncode == 1
     assert "recipes/renamed-terrine-de-canard.gram" in result.stdout
-    assert "foie de canard" in result.stdout
+    assert "method fingerprint" in result.stdout
 
 
 def test_gate_resolves_new_ingredient_aliases_to_blocked_canonical_id(tmp_path: Path) -> None:
     _fixture_root(tmp_path)
     registry_path = tmp_path / ".gram/ingredients.yaml"
     registry = registry_path.read_text(encoding="utf-8").replace(
-        "      - foie de canard\n", "      - foie de canard\n      - foie de canard fermier\n"
+        "      - foie gras cru\n", "      - foie gras cru\n      - foie de canard fermier\n"
     )
     registry_path.write_text(registry, encoding="utf-8")
     recipe = tmp_path / "recipes/terrine-paraphrase.gram"
@@ -112,6 +116,55 @@ def test_gate_resolves_new_ingredient_aliases_to_blocked_canonical_id(tmp_path: 
     assert result.returncode == 1
     assert "excluded canonical ingredient identity" in result.stdout
     assert "foie de canard fermier" in result.stdout
+
+
+def test_gate_rejects_full_copy_using_new_canonical_id_by_method_fingerprint(tmp_path: Path) -> None:
+    _fixture_root(tmp_path)
+    registry_path = tmp_path / ".gram/ingredients.yaml"
+    registry = registry_path.read_text(encoding="utf-8") + """\n  foie-de-canard-fermier:
+    name: Foie de canard fermier
+    aliases:
+      - foie de canard fermier
+"""
+    registry_path.write_text(registry, encoding="utf-8")
+    fixture = ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram"
+    recipe = tmp_path / "recipes/paraphrased/terrine-de-canard-fermier.gram"
+    recipe.parent.mkdir(parents=True)
+    recipe.write_text(
+        fixture.read_text(encoding="utf-8"), encoding="utf-8"
+    )
+
+    result = _run_gate(tmp_path)
+    assert result.returncode == 1
+    assert "method fingerprint" in result.stdout
+
+
+def test_gate_fails_closed_if_mandatory_canonical_id_is_removed_or_renamed(tmp_path: Path) -> None:
+    for replacement in ("", "  foie-de-canard-fermier:\n    name: Foie gras cru de canard\n    aliases:\n      - foie gras cru de canard\n      - foie gras de canard cru\n      - foie gras cru\n    category: Viandes\n"):
+        fixture_root = tmp_path / ("removed" if not replacement else "renamed")
+        _fixture_root(fixture_root)
+        registry_path = fixture_root / ".gram/ingredients.yaml"
+        registry = registry_path.read_text(encoding="utf-8")
+        old_entry = "  foie-gras-de-canard-cru:\n    name: Foie gras cru de canard\n    aliases:\n      - foie gras cru de canard\n      - foie gras de canard cru\n      - foie gras cru\n"
+        registry_path.write_text(registry.replace(old_entry, replacement), encoding="utf-8")
+        result = _run_gate(fixture_root)
+        assert result.returncode != 0
+
+
+def test_gate_fails_closed_on_protected_alias_collision(tmp_path: Path) -> None:
+    _fixture_root(tmp_path)
+    registry_path = tmp_path / ".gram/ingredients.yaml"
+    registry_path.write_text(
+        registry_path.read_text(encoding="utf-8") + """\n  foie-gras-alternate:
+    name: Foie gras cru de canard
+    aliases:
+      - foie gras cru de canard
+""",
+        encoding="utf-8",
+    )
+
+    result = _run_gate(tmp_path)
+    assert result.returncode != 0
 
 
 def test_manifest_cannot_weaken_hardcoded_canonical_exclusion(tmp_path: Path) -> None:
@@ -135,6 +188,7 @@ def test_gate_allows_legitimate_non_foie_gras_recipes(tmp_path: Path) -> None:
     controls = {
         "foie-de-volaille-poele.gram": "---\ntitle: Foie de volaille poêlé\ntags: [volaille]\n---\n@foie de volaille{300 g}\nPoêler jusqu'à cuisson complète.",
         "magret-canard-sous-vide.gram": "---\ntitle: Magret de canard sous vide\ndescription: Une note rappelle le foie gras servi en accompagnement.\ntags: [canard, sous-vide]\n---\n@magret de canard cru{400 g}\nCuire sous vide.",
+        "foie-de-canard-saute.gram": "---\ntitle: Foie de canard frais sauté\ntags: [canard]\n---\n@foie de canard{300 g}\nPoêler à la dernière minute.",
         "gras-de-canard.gram": "---\ntitle: Pommes de terre au gras de canard\n---\n@gras de canard{30 g}\nRôtir les pommes de terre.",
         "pate-vegetal.gram": "---\ntitle: Pâté végétal\n---\n@lentilles{250 g}\nCuire puis mixer.",
     }
@@ -159,6 +213,33 @@ def test_gate_fails_closed_if_manifest_omits_required_recipe_ids(tmp_path: Path)
 def test_gate_fails_closed_if_ingredient_registry_is_malformed(tmp_path: Path) -> None:
     _fixture_root(tmp_path)
     (tmp_path / ".gram/ingredients.yaml").write_text("ingredients: []\n", encoding="utf-8")
+
+    result = _run_gate(tmp_path)
+    assert result.returncode != 0
+
+
+def test_gate_fails_closed_if_mandatory_alias_is_removed(tmp_path: Path) -> None:
+    _fixture_root(tmp_path)
+    registry_path = tmp_path / ".gram/ingredients.yaml"
+    registry_path.write_text(
+        registry_path.read_text(encoding="utf-8").replace("      - foie gras cru de canard\n", "", 1),
+        encoding="utf-8",
+    )
+
+    result = _run_gate(tmp_path)
+    assert result.returncode != 0
+
+
+def test_gate_fails_closed_on_duplicate_registry_keys(tmp_path: Path) -> None:
+    _fixture_root(tmp_path)
+    registry_path = tmp_path / ".gram/ingredients.yaml"
+    registry_path.write_text(
+        registry_path.read_text(encoding="utf-8") + """\n  foie-gras-de-canard-cru:
+    name: Replaced alias entry
+    aliases: []
+""",
+        encoding="utf-8",
+    )
 
     result = _run_gate(tmp_path)
     assert result.returncode != 0
