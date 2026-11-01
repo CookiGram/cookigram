@@ -119,28 +119,34 @@ def test_gate_resolves_new_ingredient_aliases_to_blocked_canonical_id(tmp_path: 
 
 
 def test_gate_rejects_full_copy_using_new_canonical_id_by_method_fingerprint(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    registry_path = tmp_path / ".gram/ingredients.yaml"
-    registry = registry_path.read_text(encoding="utf-8") + """\n  foie-de-canard-fermier:
+    formatting_variants = (
+        ("500 mL", "^{55 degrees Celsius}", "80 minutes"),
+        ("0.5 L", "^{131°F}", "1 h 20 min"),
+    )
+    for index, (volume, temperature, duration) in enumerate(formatting_variants):
+        root = tmp_path / f"variant-{index}"
+        _fixture_root(root)
+        registry_path = root / ".gram/ingredients.yaml"
+        registry = registry_path.read_text(encoding="utf-8") + """\n  foie-de-canard-fermier:
     name: Foie de canard fermier
     aliases:
       - foie de canard fermier
 """
-    registry_path.write_text(registry, encoding="utf-8")
-    fixture = ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram"
-    recipe = tmp_path / "recipes/paraphrased/terrine-de-canard-fermier.gram"
-    recipe.parent.mkdir(parents=True)
-    altered_full_copy = (
-        fixture.read_text(encoding="utf-8")
-        .replace("500 ml", "500mL")
-        .replace("^{55 C}", "^{55 degrees Celsius}")
-        .replace("80 min", "80 minutes")
-    )
-    recipe.write_text(altered_full_copy, encoding="utf-8")
+        registry_path.write_text(registry, encoding="utf-8")
+        fixture = ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram"
+        recipe = root / "recipes/paraphrased/terrine-de-canard-fermier.gram"
+        recipe.parent.mkdir(parents=True)
+        altered_full_copy = (
+            fixture.read_text(encoding="utf-8")
+            .replace("500 ml", volume)
+            .replace("^{55 C}", temperature)
+            .replace("80 min", duration)
+        )
+        recipe.write_text(altered_full_copy, encoding="utf-8")
 
-    result = _run_gate(tmp_path)
-    assert result.returncode == 1
-    assert "method fingerprint" in result.stdout
+        result = _run_gate(root)
+        assert result.returncode == 1, result.stdout + result.stderr
+        assert "method fingerprint" in result.stdout
 
 
 def test_gate_fails_closed_if_mandatory_canonical_id_is_removed_or_renamed(tmp_path: Path) -> None:

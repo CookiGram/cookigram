@@ -39,6 +39,24 @@ def normalize_identity(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", unaccented).strip()
 
 
+def has_500_ml_method_volume(source: str) -> bool:
+    return bool(
+        re.search(r"\b500\s*(?:ml|millilitres?|milliliters?)\b", source, re.IGNORECASE)
+        or re.search(r"\b(?:0[.,]5|[.,]5|1\s*/\s*2)\s*(?:l|litres?|liters?)\b", source, re.IGNORECASE)
+    )
+
+
+def has_80_min_method_duration(source: str) -> bool:
+    return bool(
+        re.search(r"\b80\s*(?:min(?:ute)?s?)\b", source, re.IGNORECASE)
+        or re.search(
+            r"\b1\s*(?:h|hr|hrs|heure|heures|hour|hours)\s*20\s*(?:min(?:ute)?s?)?\b",
+            source,
+            re.IGNORECASE,
+        )
+    )
+
+
 def excluded_recipes(root: Path) -> list[tuple[str, str]]:
     manifest_path = root / ".gram/publication-exclusions.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -117,12 +135,13 @@ def excluded_recipes(root: Path) -> list[tuple[str, str]]:
         # intentionally specific to the unvalidated 500 ml jar/bag/barème.
         method = normalize_identity(source)
         method_markers = (
-            bool(re.search(r"\b500\s*(?:ml|millilitres?|milliliters?)\b", method)),
-            bool(re.search(r"\b55\s*(?:c(?:elsius)?|(?:degrees?|degres?)\s*(?:c|celsius))\b", method)),
-            bool(re.search(r"\b80\s*(?:min(?:ute)?s?)\b", method)),
+            has_500_ml_method_volume(source),
+            bool(re.search(r"\b55\s*(?:(?:degrees?|degres?)\s*)?(?:c|celsius)\b", method)),
+            bool(re.search(r"\b131\s*(?:(?:degrees?|degres?)\s*)?(?:f|fahrenheit)\b", method)),
+            has_80_min_method_duration(source),
             "bocal ouvert" in method and "sac de cuisson sous vide" in method,
         )
-        if all(method_markers):
+        if method_markers[0] and (method_markers[1] or method_markers[2]) and method_markers[3] and method_markers[4]:
             findings.append((relative_path, "excluded unqualified jar/bag/55 C/80 min method fingerprint"))
     return findings
 
