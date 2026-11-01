@@ -9,7 +9,23 @@ import re
 import unicodedata
 from pathlib import Path
 
-REQUIRED_CONTENT_TERMS = {"foie gras"}
+import yaml
+
+REQUIRED_EXCLUDED_RECIPE_SLUGS = frozenset({
+    "foie-gras-armagnac-quatre-epices-sous-vide",
+    "foie-gras-nature-sous-vide",
+    "foie-gras-poivre-vert-sous-vide",
+    "foie-gras-sauternes-figue-sous-vide",
+    "foie-gras-truffe-noire-sous-vide",
+})
+BLOCKED_CANONICAL_INGREDIENT_IDS = frozenset({"foie-gras-de-canard-cru"})
+BLOCKED_INGREDIENT_TOKENS = frozenset({
+    "foie gras cru de canard",
+    "foie gras de canard cru",
+    "foie gras cru",
+    "foie de canard",
+    "foie de canard cru",
+})
 
 
 def normalize_identity(text: str) -> str:
@@ -25,16 +41,32 @@ def excluded_recipes(root: Path) -> list[tuple[str, str]]:
     if not isinstance(manifest, dict):
         raise ValueError(f"Invalid publication exclusion manifest: {manifest_path}")
     slugs = manifest.get("excluded_recipe_slugs")
-    terms = manifest.get("excluded_content_terms")
-    if (manifest.get("schema_version") != 1 or not isinstance(slugs, list)
-            or not isinstance(terms, list) or not slugs or not terms):
+    if manifest.get("schema_version") != 1 or not isinstance(slugs, list):
         raise ValueError(f"Invalid publication exclusion manifest: {manifest_path}")
     if any(not isinstance(slug, str) or not slug or "/" in slug for slug in slugs):
         raise ValueError(f"Invalid recipe slug in publication exclusion manifest: {manifest_path}")
-    normalized_terms = [normalize_identity(term) for term in terms if isinstance(term, str) and term.strip()]
-    if (len(normalized_terms) != len(terms) or any(not term for term in normalized_terms)
-            or not REQUIRED_CONTENT_TERMS.issubset(normalized_terms)):
-        raise ValueError(f"Invalid content term in publication exclusion manifest: {manifest_path}")
+    if frozenset(slugs) != REQUIRED_EXCLUDED_RECIPE_SLUGS:
+        raise ValueError(f"Required recipe exclusions were changed: {manifest_path}")
+
+    ingredient_manifest = root / ".gram/ingredients.yaml"
+    ingredient_data = yaml.safe_load(ingredient_manifest.read_text(encoding="utf-8"))
+    ingredients = ingredient_data.get("ingredients") if isinstance(ingredient_data, dict) else None
+    if not isinstance(ingredients, dict):
+        raise ValueError(f"Invalid ingredient registry: {ingredient_manifest}")
+    alias_to_ids: dict[str, set[str]] = {}
+    for canonical_id, entry in ingredients.items():
+        if not isinstance(canonical_id, str) or not isinstance(entry, dict):
+            raise ValueError(f"Invalid ingredient entry in {ingredient_manifest}: {canonical_id!r}")
+        aliases = entry.get("aliases", [])
+        if not isinstance(aliases, list) or any(not isinstance(alias, str) for alias in aliases):
+            raise ValueError(f"Invalid aliases for ingredient {canonical_id!r} in {ingredient_manifest}")
+        labels = [canonical_id, entry.get("name", ""), *aliases]
+        for label in labels:
+            if isinstance(label, str) and label.strip():
+                alias_to_ids.setdefault(normalize_identity(label), set()).add(canonical_id)
+
+    blocked_ids = BLOCKED_CANONICAL_INGREDIENT_IDS
+    blocked_tokens = {normalize_identity(token) for token in BLOCKED_INGREDIENT_TOKENS}
 
     findings: list[tuple[str, str]] = []
     for recipe in sorted((root / "recipes").rglob("*.gram")):
@@ -42,10 +74,14 @@ def excluded_recipes(root: Path) -> list[tuple[str, str]]:
         if recipe.stem in slugs:
             findings.append((relative_path, "excluded recipe slug"))
             continue
-        content = normalize_identity(recipe.read_text(encoding="utf-8"))
-        matched_terms = [term for term in normalized_terms if re.search(rf"\b{re.escape(term)}\b", content)]
-        if matched_terms:
-            findings.append((relative_path, f"excluded content identity: {', '.join(matched_terms)}"))
+        source = recipe.read_text(encoding="utf-8")
+        tokens = [normalize_identity(token) for token in re.findall(r"@([^{}\n]+)\{", source)]
+        matched = sorted({
+            token for token in tokens
+            if token in blocked_tokens or alias_to_ids.get(token, set()) & blocked_ids
+        })
+        if matched:
+            findings.append((relative_path, f"excluded canonical ingredient identity: {', '.join(matched)}"))
     return findings
 
 

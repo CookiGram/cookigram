@@ -102,25 +102,29 @@ de cuisson de remplacement :
 - Garder ingrédients, provenance, prompts et images existants; la barrière de catalogue
   n'efface ni les fichiers sources éventuels ni les actifs visuels.
 
-L'exclusion est réversible : retirer un slug du manifeste n'est admissible qu'après qu'une
-preuve indépendante couvre sa formule, sa charge, son contenant, le cycle complet, le
-refroidissement et la durée revendiquée. Une recette exclue ne doit pas apparaître dans le
-catalogue public ou l'aperçu construit.
+L'exclusion est réversible après qu'une preuve indépendante couvre la formule, la charge, le
+contenant, le cycle complet, le refroidissement et toute durée revendiquée. Le script exige
+la liste de slugs complète codée en dur; retirer un slug du JSON seul échoue. Une recette
+exclue ne doit pas apparaître dans le catalogue public ou l'aperçu construit.
 
 ## Barrière et responsabilités
 
-`.gram/publication-exclusions.json` liste les cinq slugs et l'identité textuelle stable
-`foie gras`. `scripts/check-publication-exclusions.py` échoue sur un slug listé ou sur toute
-recette contenant cette expression, quelle que soit son nom de fichier, son titre ou ses tags.
-La comparaison normalise la casse, les accents, les espaces et la ponctuation (par exemple
-`foie-gras` et `FOIE GRAS` sont détectés). C'est volontairement fail-closed : même une nouvelle
-recette distincte utilisant ou mentionnant le foie gras reste exclue jusqu'à une décision de
-qualification explicite. Le manifeste absent, invalide ou privé de sa règle d'identité fait
-également échouer le contrôle.
+`.gram/publication-exclusions.json` liste les cinq slugs et `scripts/check-publication-exclusions.py`
+impose cette liste ainsi que l'identité canonique `foie-gras-de-canard-cru`, codées dans le
+script pour que le JSON ne puisse pas les retirer. Le garde lit les mentions d'ingrédients
+`@...{}` des recettes et résout le nom ou chacun de ses alias via `.gram/ingredients.yaml`.
+Ainsi le même ID canonique reste bloqué si la recette est renommée ou si son ingrédient est
+réécrit en un alias ajouté au registre, comme « foie de canard fermier ». Quelques libellés
+spécifiques de foie gras/foie de canard sont aussi bloqués directement dans une mention
+d'ingrédient si le registre ne donne pas encore l'alias canonique. Les mots dans une description
+ou une source ne suffisent pas à déclencher la barrière; magret accompagné d'une mention de foie
+gras et gras de canard restent des contrôles négatifs. Un manifeste ou registre manquant ou
+malformé fait échouer le contrôle.
 
 La CI publique l'exécute avant validation, build, aperçu et déploiement Pages. Les tests
-injectent des copies renommées, un manifeste incomplet et des contrôles négatifs (foie de
-volaille, magret sous vide et pâté végétal). C'est une barrière catalogue contre l'ajout à
+injectent une copie complète renommée et réécrite, un alias paraphrasé résolu au même ID,
+un manifeste incomplet et des contrôles négatifs (foie de volaille, magret sous vide avec
+mention éditoriale, gras de canard et pâté végétal). C'est une barrière catalogue contre l'ajout à
 `main`, pas une nouvelle capacité de filtre à la volée dans Core. Un moteur qui ingère un
 répertoire fourni par un tiers doit respecter sa propre configuration de filtrage; cette
 capacité reste à établir dans `cookigram-core` si nécessaire.
