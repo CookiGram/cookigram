@@ -117,9 +117,9 @@ def excluded_recipes(root: Path) -> list[tuple[str, str]]:
         # intentionally specific to the unvalidated 500 ml jar/bag/barème.
         method = normalize_identity(source)
         method_markers = (
-            "500 ml" in method,
-            "55 c" in method,
-            "80 min" in method,
+            bool(re.search(r"\b500\s*(?:ml|millilitres?|milliliters?)\b", method)),
+            bool(re.search(r"\b55\s*(?:c(?:elsius)?|(?:degrees?|degres?)\s*(?:c|celsius))\b", method)),
+            bool(re.search(r"\b80\s*(?:min(?:ute)?s?)\b", method)),
             "bocal ouvert" in method and "sac de cuisson sous vide" in method,
         )
         if all(method_markers):

@@ -130,9 +130,13 @@ def test_gate_rejects_full_copy_using_new_canonical_id_by_method_fingerprint(tmp
     fixture = ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram"
     recipe = tmp_path / "recipes/paraphrased/terrine-de-canard-fermier.gram"
     recipe.parent.mkdir(parents=True)
-    recipe.write_text(
-        fixture.read_text(encoding="utf-8"), encoding="utf-8"
+    altered_full_copy = (
+        fixture.read_text(encoding="utf-8")
+        .replace("500 ml", "500mL")
+        .replace("^{55 C}", "^{55 degrees Celsius}")
+        .replace("80 min", "80 minutes")
     )
+    recipe.write_text(altered_full_copy, encoding="utf-8")
 
     result = _run_gate(tmp_path)
     assert result.returncode == 1
