@@ -141,6 +141,7 @@ def test_gate_rejects_full_copy_using_new_canonical_id_by_method_fingerprint(tmp
             .replace("500 ml", volume)
             .replace("^{55 C}", temperature)
             .replace("80 min", duration)
+            .replace("@foie de canard{", "@foie de canard fermier{")
         )
         recipe.write_text(altered_full_copy, encoding="utf-8")
 
