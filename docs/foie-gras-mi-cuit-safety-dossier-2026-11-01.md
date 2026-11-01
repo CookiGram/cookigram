@@ -109,23 +109,29 @@ exclue ne doit pas apparaître dans le catalogue public ou l'aperçu construit.
 
 ## Barrière et responsabilités
 
-`.gram/publication-exclusions.json` liste les cinq slugs et `scripts/check-publication-exclusions.py`
-impose cette liste ainsi que l'identité canonique `foie-gras-de-canard-cru`, codées dans le
-script pour que le JSON ne puisse pas les retirer. L'entrée canonique et ses trois alias source
-sont également exigés dans `.gram/ingredients.yaml`; leur suppression, renommage ou collision
-avec un autre ID fait échouer le contrôle. Le garde lit les mentions d'ingrédients `@...{}` et
-résout chaque nom/alias via le registre. Pour couvrir un ID alternatif ajouté à un duplicata
-intégral, il reconnaît aussi la signature étroite du procédé #534 : bocal 500 ml ouvert dans
-sac sous vide, bain à 55 °C et 80 min. Un foie de canard frais sauté avec l'alias générique
-`foie de canard` reste autorisé; il n'a ni l'ID bloqué ni cette signature. Les mots en prose,
-description ou source ne suffisent pas à déclencher le garde. Un manifeste ou registre manquant
-ou malformé fait échouer le contrôle.
+`.gram/publication-exclusions.json` conserve la liste lisible des cinq slugs mis en attente.
+La barrière exécutable est désormais `.gram/approved-recipes.json`, une liste exhaustive des
+276 chemins `recipes/**/*.gram` présents dans le corpus approuvé, avec le SHA-256 exact des
+octets de chaque fichier. Le SHA-256 du manifeste lui-même est épinglé dans
+`scripts/check-publication-exclusions.py`. Le contrôle échoue si un fichier est ajouté, supprimé,
+renommé ou modifié, ou si le manifeste est absent, mal formé ou différent de l'empreinte épinglée.
+Il ne classe pas les recettes à partir de mots, d'ingrédients ou de prose : une recette approuvée
+inchangée qui cite une méthode dans un commentaire ne déclenche donc pas de faux positif.
+
+**Impact et workflow d'évolution :** tout ajout ou changement de recette publié nécessite une
+mise à jour délibérée de son hash et du SHA épinglé dans le même changement revu. Pour préparer
+cette mise à jour, recalculer la table triée depuis les fichiers `.gram` de `recipes/`, examiner
+chaque diff de recette et la table, puis mettre à jour le digest épinglé. Un renommage requiert
+la suppression de l'ancien chemin et l'ajout du nouveau. La revue doit confirmer explicitement
+que chaque recette ajoutée ou modifiée est autorisée à paraître dans le catalogue. Le garde
+n'autorise jamais une recette uniquement parce que l'auteur a modifié le manifeste : manifeste
+et code pin doivent changer ensemble et passer en revue. Cela ajoute une étape éditoriale à chaque
+mise à jour du corpus; c'est le coût d'une barrière déterministe contre les copies réécrites.
 
 La CI publique l'exécute avant validation, build, aperçu et déploiement Pages. Les tests
-injectent une copie complète renommée et réécrite, un alias paraphrasé résolu au même ID,
-un nouvel ID canonique avec la méthode d'origine, un manifeste/registre incomplet et des
-contrôles négatifs (foie de volaille, foie de canard frais sauté, magret sous vide avec mention
-éditoriale, gras de canard et pâté végétal). C'est une barrière catalogue contre l'ajout à
+couvrent le corpus inchangé, une copie complète renommée et réécrite, une copie remplaçant un
+chemin approuvé, les chemins supprimés/ajoutés, une recette éditoriale qui cite ces termes sans
+déclencher de détection textuelle et les erreurs de schéma/digest. C'est une barrière catalogue contre l'ajout à
 `main`, pas une nouvelle capacité de filtre à la volée dans Core. Un moteur qui ingère un
 répertoire fourni par un tiers doit respecter sa propre configuration de filtrage; cette
 capacité reste à établir dans `cookigram-core` si nécessaire.

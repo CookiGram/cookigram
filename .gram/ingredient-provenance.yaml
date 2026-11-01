@@ -1301,10 +1301,6 @@ ingredients:
     status: incomplete
     source: Sirop d'érable pour servir indiqué par la source Cookidoo (r348143) ;
       aucune donnée physique ou nutritionnelle ajoutée.
-  foie-gras-de-canard-cru:
-    status: incomplete
-    source: Ingrédient identifié dans les recettes de foie gras sous vide de Chefounet
-      et de l'Atelier des Chefs ; données CIQUAL nutritionnelles à compléter.
 sources:
   ciqual:
     name: Table Ciqual de l'ANSES

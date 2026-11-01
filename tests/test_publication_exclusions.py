@@ -1,3 +1,5 @@
+import hashlib
+import importlib.util
 import json
 import subprocess
 import sys
@@ -6,254 +8,110 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts/check-publication-exclusions.py"
-FOIE_GRAS_SLUGS = {
-    "foie-gras-armagnac-quatre-epices-sous-vide",
-    "foie-gras-nature-sous-vide",
-    "foie-gras-poivre-vert-sous-vide",
-    "foie-gras-sauternes-figue-sous-vide",
-    "foie-gras-truffe-noire-sous-vide",
-}
+spec = importlib.util.spec_from_file_location("publication_gate", SCRIPT)
+gate = importlib.util.module_from_spec(spec)
+assert spec.loader is not None
+spec.loader.exec_module(gate)
 
 
-def test_sanitary_hold_recipes_are_absent_from_public_catalogue() -> None:
-    manifest = json.loads((ROOT / ".gram/publication-exclusions.json").read_text(encoding="utf-8"))
-    assert set(manifest["excluded_recipe_slugs"]) == FOIE_GRAS_SLUGS
+def _manifest(root: Path, recipes: dict[str, bytes]) -> str:
+    entries = {name: hashlib.sha256(content).hexdigest() for name, content in sorted(recipes.items())}
+    raw = (json.dumps({"schema_version": 1, "recipes": entries}, indent=2) + "\n").encode()
+    path = root / ".gram/approved-recipes.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(raw)
+    for name, content in recipes.items():
+        target = root / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(content)
+    return hashlib.sha256(raw).hexdigest()
+
+
+def test_unchanged_public_corpus_matches_pinned_baseline() -> None:
     result = subprocess.run(
-        [sys.executable, str(SCRIPT), "--root", str(ROOT)],
-        check=False,
-        capture_output=True,
-        text=True,
+        [sys.executable, str(SCRIPT)], check=False, capture_output=True, text=True
     )
     assert result.returncode == 0, result.stdout + result.stderr
+    manifest = json.loads((ROOT / ".gram/approved-recipes.json").read_text(encoding="utf-8"))
+    actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / "recipes").rglob("*.gram")}
+    assert set(manifest["recipes"]) == actual
 
 
-def _fixture_root(tmp_path: Path) -> None:
-    (tmp_path / ".gram").mkdir(parents=True)
-    (tmp_path / "recipes").mkdir()
-    manifest = json.loads((ROOT / ".gram/publication-exclusions.json").read_text(encoding="utf-8"))
-    (tmp_path / ".gram/publication-exclusions.json").write_text(json.dumps(manifest), encoding="utf-8")
-    (tmp_path / ".gram/ingredients.yaml").write_text(
-        """ingredients:
-  foie-gras-de-canard-cru:
-    name: Foie gras cru de canard
-    aliases:
-      - foie gras cru de canard
-      - foie gras de canard cru
-      - foie gras cru
-  foie-de-volaille:
-    name: Foie de volaille
-    aliases:
-      - foie de volaille
-  foie-de-canard-frais:
-    name: Foie de canard frais
-    aliases:
-      - foie de canard
-  magret-de-canard:
-    name: Magret de canard
-    aliases:
-      - magret de canard cru
-  gras-de-canard:
-    name: Gras de canard
-    aliases:
-      - gras de canard
-  lentilles:
-    name: Lentilles
-    aliases:
-      - lentilles
-""",
-        encoding="utf-8",
+def test_full_copy_renamed_and_reworded_is_rejected_by_path_inventory(tmp_path: Path) -> None:
+    approved = {"recipes/legitimate.gram": b"---\ntitle: Approved\n---\n@duck{1 g}\n"}
+    pinned = _manifest(tmp_path, approved)
+    copy = (ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram").read_bytes()
+    altered = copy.replace(b"bocal ouvert", b"bocal sans couvercle").replace(
+        b"sac de cuisson sous vide", b"sac sous vide"
+    ).replace(b"@foie de canard{", b"@foie de canard fermier{")
+    (tmp_path / "recipes/terrine-reworded.gram").write_bytes(altered)
+
+    findings = gate.validate(tmp_path, pinned)
+    assert any("unapproved recipe path: recipes/terrine-reworded.gram" in item for item in findings)
+
+
+def test_full_copy_over_existing_approved_path_is_rejected_by_content_hash(tmp_path: Path) -> None:
+    path = "recipes/approved.gram"
+    pinned = _manifest(tmp_path, {path: b"approved recipe\n"})
+    (tmp_path / path).write_bytes(
+        (ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram").read_bytes()
+    )
+    assert f"approved recipe content changed: {path}" in gate.validate(tmp_path, pinned)
+
+
+def test_unmodified_approved_prose_quoting_method_terms_is_not_a_false_positive(tmp_path: Path) -> None:
+    path = "recipes/editorial-note.gram"
+    quoted_prose = (
+        "---\ntitle: Note\n---\nCette recette compare les expressions bocal sans couvercle "
+        "et sac sous vide, sans les appliquer.\n"
+    ).encode()
+    pinned = _manifest(tmp_path, {path: quoted_prose})
+    assert gate.validate(tmp_path, pinned) == []
+
+
+def test_added_recipe_requires_deliberate_baseline_update(tmp_path: Path) -> None:
+    pinned = _manifest(tmp_path, {"recipes/approved.gram": b"approved\n"})
+    (tmp_path / "recipes/new-recipe.gram").write_text("quoted method prose", encoding="utf-8")
+    assert gate.validate(tmp_path, pinned) == ["unapproved recipe path: recipes/new-recipe.gram"]
+
+
+def test_renamed_or_removed_approved_path_fails_closed(tmp_path: Path) -> None:
+    old = "recipes/approved.gram"
+    pinned = _manifest(tmp_path, {old: b"approved\n"})
+    (tmp_path / old).rename(tmp_path / "recipes/renamed.gram")
+    findings = gate.validate(tmp_path, pinned)
+    assert f"unapproved recipe path: recipes/renamed.gram" in findings
+    assert f"approved recipe is missing or renamed: {old}" in findings
+
+
+def test_manifest_mutation_or_invalid_schema_fails_closed(tmp_path: Path) -> None:
+    pinned = _manifest(tmp_path, {"recipes/approved.gram": b"approved\n"})
+    manifest_path = tmp_path / ".gram/approved-recipes.json"
+    manifest_path.write_text('{"schema_version":1,"recipes":{}}\n', encoding="utf-8")
+    assert any(
+        item.startswith("approved recipe manifest digest does not match the pinned value:")
+        for item in gate.validate(tmp_path, pinned)
     )
 
-
-def _run_gate(root: Path) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(
-        [sys.executable, str(SCRIPT), "--root", str(root)],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-
-
-def test_gate_rejects_excluded_slugs_even_without_recipe_content(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    manifest = json.loads((tmp_path / ".gram/publication-exclusions.json").read_text(encoding="utf-8"))
-    for slug in manifest["excluded_recipe_slugs"]:
-        (tmp_path / "recipes" / f"{slug}.gram").write_text("fixture", encoding="utf-8")
-
-    result = _run_gate(tmp_path)
-    assert result.returncode == 1
-    for slug in manifest["excluded_recipe_slugs"]:
-        assert f"recipes/{slug}.gram" in result.stdout
+    malformed = tmp_path / "bad"
+    malformed_pin = _manifest(malformed, {"recipes/approved.gram": b"approved\n"})
+    data = json.loads((malformed / ".gram/approved-recipes.json").read_text())
+    data["recipes"] = []
+    raw = (json.dumps(data) + "\n").encode()
+    (malformed / ".gram/approved-recipes.json").write_bytes(raw)
+    findings = gate.validate(malformed, hashlib.sha256(raw).hexdigest())
+    assert any("invalid approved recipe manifest schema" in item for item in findings)
 
 
-def test_gate_rejects_full_recipe_copy_renamed_and_reworded_via_canonical_id(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    fixture = ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram"
-    copy = tmp_path / "recipes/renamed-terrine-de-canard.gram"
-    copy.parent.mkdir(exist_ok=True)
-    copy.write_text(fixture.read_text(encoding="utf-8"), encoding="utf-8")
-
-    result = _run_gate(tmp_path)
-    assert result.returncode == 1
-    assert "recipes/renamed-terrine-de-canard.gram" in result.stdout
-    assert "method fingerprint" in result.stdout
-
-
-def test_gate_resolves_new_ingredient_aliases_to_blocked_canonical_id(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    registry_path = tmp_path / ".gram/ingredients.yaml"
-    registry = registry_path.read_text(encoding="utf-8").replace(
-        "      - foie gras cru\n", "      - foie gras cru\n      - foie de canard fermier\n"
-    )
-    registry_path.write_text(registry, encoding="utf-8")
-    recipe = tmp_path / "recipes/terrine-paraphrase.gram"
-    recipe.write_text(
-        "---\ntitle: Terrine familiale\ntags: [canard]\n---\n@foie de canard fermier{450 g}\nCuire au bain-marie.",
-        encoding="utf-8",
-    )
-
-    result = _run_gate(tmp_path)
-    assert result.returncode == 1
-    assert "excluded canonical ingredient identity" in result.stdout
-    assert "foie de canard fermier" in result.stdout
-
-
-def test_gate_rejects_full_copy_using_new_canonical_id_by_method_fingerprint(tmp_path: Path) -> None:
-    formatting_variants = (
-        ("500 mL", "^{55 degrees Celsius}", "80 minutes"),
-        ("0.5 L", "^{131°F}", "1 h 20 min"),
-    )
-    for index, (volume, temperature, duration) in enumerate(formatting_variants):
-        root = tmp_path / f"variant-{index}"
-        _fixture_root(root)
-        registry_path = root / ".gram/ingredients.yaml"
-        registry = registry_path.read_text(encoding="utf-8") + """\n  foie-de-canard-fermier:
-    name: Foie de canard fermier
-    aliases:
-      - foie de canard fermier
-"""
-        registry_path.write_text(registry, encoding="utf-8")
-        fixture = ROOT / "tests/fixtures/publication-exclusions/renamed-terrine-de-canard.gram"
-        recipe = root / "recipes/paraphrased/terrine-de-canard-fermier.gram"
-        recipe.parent.mkdir(parents=True)
-        altered_full_copy = (
-            fixture.read_text(encoding="utf-8")
-            .replace("500 ml", volume)
-            .replace("^{55 C}", temperature)
-            .replace("80 min", duration)
-            .replace("@foie de canard{", "@foie de canard fermier{")
-        )
-        recipe.write_text(altered_full_copy, encoding="utf-8")
-
-        result = _run_gate(root)
-        assert result.returncode == 1, result.stdout + result.stderr
-        assert "method fingerprint" in result.stdout
-
-
-def test_gate_fails_closed_if_mandatory_canonical_id_is_removed_or_renamed(tmp_path: Path) -> None:
-    for replacement in ("", "  foie-de-canard-fermier:\n    name: Foie gras cru de canard\n    aliases:\n      - foie gras cru de canard\n      - foie gras de canard cru\n      - foie gras cru\n    category: Viandes\n"):
-        fixture_root = tmp_path / ("removed" if not replacement else "renamed")
-        _fixture_root(fixture_root)
-        registry_path = fixture_root / ".gram/ingredients.yaml"
-        registry = registry_path.read_text(encoding="utf-8")
-        old_entry = "  foie-gras-de-canard-cru:\n    name: Foie gras cru de canard\n    aliases:\n      - foie gras cru de canard\n      - foie gras de canard cru\n      - foie gras cru\n"
-        registry_path.write_text(registry.replace(old_entry, replacement), encoding="utf-8")
-        result = _run_gate(fixture_root)
-        assert result.returncode != 0
-
-
-def test_gate_fails_closed_on_protected_alias_collision(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    registry_path = tmp_path / ".gram/ingredients.yaml"
-    registry_path.write_text(
-        registry_path.read_text(encoding="utf-8") + """\n  foie-gras-alternate:
-    name: Foie gras cru de canard
-    aliases:
-      - foie gras cru de canard
-""",
-        encoding="utf-8",
-    )
-
-    result = _run_gate(tmp_path)
-    assert result.returncode != 0
-
-
-def test_manifest_cannot_weaken_hardcoded_canonical_exclusion(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    manifest_path = tmp_path / ".gram/publication-exclusions.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    manifest["blocked_canonical_ingredient_ids"] = []
-    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
-    recipe = tmp_path / "recipes/terrine-fromage.gram"
-    recipe.write_text(
-        "---\ntitle: Terrine\n---\n@foie gras cru de canard{450 g}", encoding="utf-8"
-    )
-
-    result = _run_gate(tmp_path)
-    assert result.returncode == 1
-    assert "terrine-fromage.gram" in result.stdout
-
-
-def test_gate_allows_legitimate_non_foie_gras_recipes(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    controls = {
-        "foie-de-volaille-poele.gram": "---\ntitle: Foie de volaille poêlé\ntags: [volaille]\n---\n@foie de volaille{300 g}\nPoêler jusqu'à cuisson complète.",
-        "magret-canard-sous-vide.gram": "---\ntitle: Magret de canard sous vide\ndescription: Une note rappelle le foie gras servi en accompagnement.\ntags: [canard, sous-vide]\n---\n@magret de canard cru{400 g}\nCuire sous vide.",
-        "foie-de-canard-saute.gram": "---\ntitle: Foie de canard frais sauté\ntags: [canard]\n---\n@foie de canard{300 g}\nPoêler à la dernière minute.",
-        "gras-de-canard.gram": "---\ntitle: Pommes de terre au gras de canard\n---\n@gras de canard{30 g}\nRôtir les pommes de terre.",
-        "pate-vegetal.gram": "---\ntitle: Pâté végétal\n---\n@lentilles{250 g}\nCuire puis mixer.",
-    }
-    for filename, content in controls.items():
-        (tmp_path / "recipes" / filename).write_text(content, encoding="utf-8")
-
-    result = _run_gate(tmp_path)
-    assert result.returncode == 0, result.stdout + result.stderr
-
-
-def test_gate_fails_closed_if_manifest_omits_required_recipe_ids(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    manifest_path = tmp_path / ".gram/publication-exclusions.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    manifest["excluded_recipe_slugs"] = []
-    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
-
-    result = _run_gate(tmp_path)
-    assert result.returncode != 0
-
-
-def test_gate_fails_closed_if_ingredient_registry_is_malformed(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    (tmp_path / ".gram/ingredients.yaml").write_text("ingredients: []\n", encoding="utf-8")
-
-    result = _run_gate(tmp_path)
-    assert result.returncode != 0
-
-
-def test_gate_fails_closed_if_mandatory_alias_is_removed(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    registry_path = tmp_path / ".gram/ingredients.yaml"
-    registry_path.write_text(
-        registry_path.read_text(encoding="utf-8").replace("      - foie gras cru de canard\n", "", 1),
-        encoding="utf-8",
-    )
-
-    result = _run_gate(tmp_path)
-    assert result.returncode != 0
-
-
-def test_gate_fails_closed_on_duplicate_registry_keys(tmp_path: Path) -> None:
-    _fixture_root(tmp_path)
-    registry_path = tmp_path / ".gram/ingredients.yaml"
-    registry_path.write_text(
-        registry_path.read_text(encoding="utf-8") + """\n  foie-gras-de-canard-cru:
-    name: Replaced alias entry
-    aliases: []
-""",
-        encoding="utf-8",
-    )
-
-    result = _run_gate(tmp_path)
-    assert result.returncode != 0
+def test_recipe_hash_must_be_well_formed(tmp_path: Path) -> None:
+    _manifest(tmp_path, {"recipes/approved.gram": b"approved\n"})
+    path = tmp_path / ".gram/approved-recipes.json"
+    data = json.loads(path.read_text())
+    data["recipes"]["recipes/approved.gram"] = "not-a-hash"
+    raw = (json.dumps(data) + "\n").encode()
+    path.write_bytes(raw)
+    findings = gate.validate(tmp_path, hashlib.sha256(raw).hexdigest())
+    assert any("invalid recipe path or SHA-256" in item for item in findings)
 
 
 def test_every_catalogue_build_and_pages_deployment_runs_the_gate_first() -> None:
@@ -261,31 +119,18 @@ def test_every_catalogue_build_and_pages_deployment_runs_the_gate_first() -> Non
 
     ci = yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
     for name, job in ci["jobs"].items():
-        steps = job.get("steps", [])
-        commands = "\n".join(str(step.get("run", "")) for step in steps)
+        commands = "\n".join(str(step.get("run", "")) for step in job.get("steps", []))
         gate_position = commands.find("check-publication-exclusions.py")
-        protected = [marker for marker in (
-            "generator.build", "generator.recipe_check", "cookigram_contract validate"
-        ) if marker in commands]
-        for marker in protected:
-            assert gate_position >= 0 and gate_position < commands.find(marker), (
-                f"publication exclusion gate missing before {marker} in CI job {name}"
-            )
-        if gate_position >= 0:
-            assert "PyYAML==6.0.2" in commands[:gate_position], (
-                f"PyYAML must be installed before ingredient identity resolution in CI job {name}"
-            )
+        for marker in ("generator.build", "generator.recipe_check", "cookigram_contract validate"):
+            if marker in commands:
+                assert gate_position >= 0 and gate_position < commands.find(marker), (
+                    f"publication gate missing before {marker} in CI job {name}"
+                )
 
     pages = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
-    pages_steps = pages["jobs"]["build"]["steps"]
-    gate_positions = [
-        i for i, step in enumerate(pages_steps)
-        if "check-publication-exclusions.py" in str(step.get("run", ""))
-    ]
-    assert gate_positions, "publication exclusion gate missing from Pages workflow"
-    gate_position = next(i for i, step in enumerate(pages_steps) if "check-publication-exclusions.py" in str(step.get("run", "")))
-    yaml_install = next(i for i, step in enumerate(pages_steps) if "PyYAML==6.0.2" in str(step.get("run", "")))
-    assert yaml_install < gate_position, "PyYAML must be installed before ingredient identity resolution in Pages"
+    steps = pages["jobs"]["build"]["steps"]
+    gate_positions = [i for i, step in enumerate(steps) if "check-publication-exclusions.py" in str(step.get("run", ""))]
+    assert gate_positions, "publication gate missing from Pages workflow"
     for name in ("Download exactly the qualified Pages artifact", "Configure Pages", "Upload Pages Artifact", "Deploy to GitHub Pages"):
-        target = next(i for i, step in enumerate(pages_steps) if step.get("name") == name)
-        assert any(i < target for i in gate_positions), f"publication exclusion gate missing before {name}"
+        target = next(i for i, step in enumerate(steps) if step.get("name") == name)
+        assert any(i < target for i in gate_positions), f"publication gate missing before {name}"
