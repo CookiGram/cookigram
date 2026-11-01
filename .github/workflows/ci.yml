@@ -25,6 +25,9 @@ jobs:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
+      - name: Bloquer les recettes temporairement exclues avant build
+        run: python scripts/check-publication-exclusions.py --check
+
       - name: Set up Python 3.12
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
@@ -45,6 +48,9 @@ jobs:
         run: |
           python -m pip install "git+https://github.com/CookiGram/cookigram-contract.git@${CONTRACT_SHA}"
           python -m pip install "Pillow==11.3.0" "pytest==8.3.5"
+
+      - name: Bloquer les recettes temporairement exclues pour validation sanitaire
+        run: python scripts/check-publication-exclusions.py --check
 
       - name: Vérifier les pins et produire le rapport JSON
         run: python scripts/check-pins.py --json
@@ -77,6 +83,9 @@ jobs:
     steps:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Bloquer les recettes temporairement exclues avant aperçu
+        run: python scripts/check-publication-exclusions.py --check
 
       - name: Set up Python 3.12
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
@@ -226,6 +235,9 @@ jobs:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
+      - name: Bloquer les recettes temporairement exclues avant aperçu
+        run: python scripts/check-publication-exclusions.py --check
+
       - name: Set up Python 3.12
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
@@ -361,6 +373,9 @@ jobs:
     steps:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Bloquer les recettes temporairement exclues avant intégration/build
+        run: python scripts/check-publication-exclusions.py --check
 
       - name: Read pinned Core SHA
         id: core-ref
