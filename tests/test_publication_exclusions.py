@@ -18,6 +18,7 @@ FOIE_GRAS_SLUGS = {
 def test_sanitary_hold_recipes_are_absent_from_public_catalogue() -> None:
     manifest = json.loads((ROOT / ".gram/publication-exclusions.json").read_text(encoding="utf-8"))
     assert set(manifest["excluded_recipe_slugs"]) == FOIE_GRAS_SLUGS
+    assert manifest["excluded_content_terms"] == ["foie gras"]
     result = subprocess.run(
         [sys.executable, str(SCRIPT), "--root", str(ROOT)],
         check=False,
@@ -92,6 +93,20 @@ def test_gate_fails_closed_when_manifest_loses_identity_rule(tmp_path: Path) -> 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest["excluded_content_terms"] = []
     manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    result = _run_gate(tmp_path)
+    assert result.returncode != 0
+
+
+def test_gate_fails_closed_if_content_identity_is_narrowed(tmp_path: Path) -> None:
+    _fixture_root(tmp_path)
+    manifest_path = tmp_path / ".gram/publication-exclusions.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["excluded_content_terms"] = ["foie gras mi cuit"]
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    (tmp_path / "recipes/renamed-terrine.gram").write_text(
+        "---\ntitle: Terrine maison\n---\n@foie gras cru de canard{450 g}", encoding="utf-8"
+    )
 
     result = _run_gate(tmp_path)
     assert result.returncode != 0

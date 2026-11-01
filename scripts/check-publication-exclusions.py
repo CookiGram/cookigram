@@ -9,6 +9,8 @@ import re
 import unicodedata
 from pathlib import Path
 
+REQUIRED_CONTENT_TERMS = {"foie gras"}
+
 
 def normalize_identity(text: str) -> str:
     """Normalize punctuation, accents, case and whitespace for family matching."""
@@ -30,7 +32,8 @@ def excluded_recipes(root: Path) -> list[tuple[str, str]]:
     if any(not isinstance(slug, str) or not slug or "/" in slug for slug in slugs):
         raise ValueError(f"Invalid recipe slug in publication exclusion manifest: {manifest_path}")
     normalized_terms = [normalize_identity(term) for term in terms if isinstance(term, str) and term.strip()]
-    if len(normalized_terms) != len(terms) or any(not term for term in normalized_terms):
+    if (len(normalized_terms) != len(terms) or any(not term for term in normalized_terms)
+            or not REQUIRED_CONTENT_TERMS.issubset(normalized_terms)):
         raise ValueError(f"Invalid content term in publication exclusion manifest: {manifest_path}")
 
     findings: list[tuple[str, str]] = []
