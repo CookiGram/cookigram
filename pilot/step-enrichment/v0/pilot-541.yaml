@@ -17,7 +17,7 @@ generation:
   primary_instruction_policy: preserve-source
 review:
   ai_editorial_check: complete
-  culinary_provenance_review: pass
+  culinary_provenance_review: needs_follow_up_on_instant_pot_release
   ux_contract_review: pass
   product_acceptance: pending
 invalidation:
@@ -80,12 +80,16 @@ recipes:
           Cette variante remplace le mijotage Thermomix par la cuisson sous
           haute pression prévue pour l’Instant Pot afin d’obtenir un jarret
           fondant ; les deux méthodes ne se cumulent pas.
-        how: >-
-          Après les 10 minutes de détente naturelle indiquées dans la variante,
-          éloigne visage et mains de la sortie de vapeur ; n’ouvre que lorsque
-          la pression est retombée et que le flotteur est descendu.
+        how: null
         references: [instant_pot_release]
         review_status: proposed
+    safety_review_note: >-
+      Aide Comment suspendue pour Instant Pot : la recette source prévoit
+      10 minutes de détente naturelle puis ouverture de valve, alors que
+      la FAQ officielle Instant Pot déconseille la décompression rapide
+      de préparations épaisses, dont les ragoûts. Le geste canonique doit
+      être réévalué selon le modèle et la consistance avant toute
+      explication opérationnelle. Ce pilote ne modifie pas le .gram.
     excluded_variants:
       - variant_id: cocotte-fonte
         reason: >-
