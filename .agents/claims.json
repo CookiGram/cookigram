@@ -63,6 +63,23 @@
       ],
       "pr": 619
     },
+    "389": {
+      "issue": 389,
+      "title": "Recipe title hygiene — tranche Air Fryer (3 titres)",
+      "agent": "Codex",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-389-title-audit-20261027",
+      "branch": "chatgpt/389-title-audit-20261027",
+      "claimed_at": "2026-10-27T07:46:26Z",
+      "last_heartbeat": "2026-10-29T17:26:28Z",
+      "status": "pr_open",
+      "pr": 625,
+      "scope": [
+        "recipes/air-fryer-tofu-croustillant.gram",
+        "recipes/air-fryer-saumon-citron-aneth.gram",
+        "recipes/air-fryer-ailes-poulet-croustillantes.gram",
+        "docs/recipe-title-inventory-389.md"
+      ]
+    },
     "499-r2": {
       "issue": 499,
       "title": "Atomicité v2 — lot récent R2, reliquat de trois recettes",
@@ -95,6 +112,23 @@
     }
   },
   "completed_claims": [
+    {
+      "issue": 376,
+      "title": "[LOT Variantes] Split ciblé carbonnade-flamande — Instant Pot",
+      "agent": "Codex (ChatGPT)",
+      "workspace": "/home/pierrecsn/Project/CookiGram/worktrees/cookigram-376-carbonnade-split-20261030",
+      "branch": "chatgpt/376-carbonnade-split-20261030",
+      "claimed_at": "2026-10-30T09:00:00+01:00",
+      "last_heartbeat": "2026-10-30T09:00:00+01:00",
+      "status": "merged",
+      "scope": [
+        "recipes/carbonnade-flamande.gram"
+      ],
+      "pr": 627,
+      "merged_at": "2026-10-30T08:26:22Z",
+      "reconciled_by": "Codex (ChatGPT)",
+      "reconciliation": "satisfied by PR #627; issue #376 remains open"
+    },
     {
       "issue": 435,
       "title": "[DOCS] TODO.md : snapshot d audit périmé",
