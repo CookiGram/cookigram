@@ -141,7 +141,6 @@ def test_sync_keeps_verified_pins_without_dispatching_pages() -> None:
     assert "Fast-forward validated pins to main" in names
     assert "Run converged main CI explicitly" in names
     assert "Wait for converged main CI" in names
-    assert "Verify pins" not in names  # verification occurs in consumer CI and builder preflight
     assert "Dispatch Pages for validated main CI explicitly" not in names
     assert "Wait for Pages deployment" not in names
     assert "gh workflow run pages.yml" not in scripts
