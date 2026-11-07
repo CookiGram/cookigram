@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "reason": "Qualification de sécurité alimentaire incomplète; voir docs/foie-gras-mi-cuit-safety-dossier-2026-11-01.md",
+  "excluded_recipe_slugs": [
+    "foie-gras-armagnac-quatre-epices-sous-vide",
+    "foie-gras-nature-sous-vide",
+    "foie-gras-poivre-vert-sous-vide",
+    "foie-gras-sauternes-figue-sous-vide",
+    "foie-gras-truffe-noire-sous-vide"
+  ]
+}
