@@ -44,7 +44,10 @@ jobs:
       - name: Installer les dépendances de validation publiques
         run: |
           python -m pip install "git+https://github.com/CookiGram/cookigram-contract.git@${CONTRACT_SHA}"
-          python -m pip install "Pillow==11.3.0" "pytest==8.3.5"
+          python -m pip install "Pillow==11.3.0" "pytest==8.3.5" "PyYAML==6.0.2"
+
+      - name: Bloquer les recettes temporairement exclues pour validation sanitaire
+        run: python scripts/check-publication-exclusions.py
 
       - name: Vérifier les pins et produire le rapport JSON
         run: python scripts/check-pins.py --json
@@ -103,6 +106,9 @@ jobs:
 
       - name: Install validation dependencies
         run: python -m pip install "PyYAML==6.0.2"
+
+      - name: Bloquer les recettes temporairement exclues avant build
+        run: python scripts/check-publication-exclusions.py
 
       - name: Verify pins
         run: python scripts/check-pins.py --json
@@ -292,6 +298,9 @@ jobs:
           pip install "Jinja2==3.1.6" "PyYAML==6.0.2"
           pip install --no-index --no-deps "$RUNNER_TEMP/builder"/cookigram_core-*.whl "$RUNNER_TEMP/builder"/cookigram_contract-*.whl
 
+      - name: Bloquer les recettes temporairement exclues avant aperçu
+        run: python scripts/check-publication-exclusions.py
+
       - name: Strict atomic check on changed recipes
         env:
           GH_TOKEN: ${{ github.token }}
@@ -389,6 +398,8 @@ jobs:
           # du Core sans résolution réseau flottante (chemin dev explicite).
           pip install "git+https://github.com/CookiGram/cookigram-contract.git@${{ steps.contract-ref.outputs.sha }}"
           pip install -e ./core
+          python -m pip install "PyYAML==6.0.2"
+          python scripts/check-publication-exclusions.py
           python scripts/check-pins.py --markdown --no-remote
           python -m generator.recipe_check --root .
           python -m generator.build --content-dir . --output /tmp/_test_site
