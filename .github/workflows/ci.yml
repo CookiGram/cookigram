@@ -183,6 +183,7 @@ jobs:
           COOKIGRAM_CONTRACT_SHA: ${{ steps.builder.outputs.contract_source_sha }}
           COOKIGRAM_CONTRACT_ARTIFACT: ${{ steps.builder.outputs.contract_artifact }}
           COOKIGRAM_CONTRACT_SHA256: ${{ steps.builder.outputs.contract_sha256 }}
+          COOKIGRAM_STEP_HELP_PILOT: '1'
         run: python -m generator.build --content-dir . --output _site
 
       - name: Verify generated site and write qualification provenance

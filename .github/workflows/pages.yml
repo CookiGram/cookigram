@@ -10,10 +10,6 @@ on:
         description: "Successful CI run qualifying that commit"
         required: true
         type: string
-  workflow_run:
-    workflows: [CI]
-    types: [completed]
-    branches: [main]
 permissions:
   contents: read
   # actions: write (#482) : suppression best-effort de l'artefact qualifié
@@ -26,11 +22,11 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     env:
-      CONTENT_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.content_sha || github.event.workflow_run.head_sha }}
-      CI_RUN_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.ci_run_id || github.event.workflow_run.id }}
+      CONTENT_SHA: ${{ inputs.content_sha }}
+      CI_RUN_ID: ${{ inputs.ci_run_id }}
     steps:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4

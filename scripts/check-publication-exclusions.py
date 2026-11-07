@@ -9,7 +9,7 @@ from pathlib import Path
 
 APPROVED_MANIFEST = Path(".gram/approved-recipes.json")
 # Updated only with a reviewed change to the approved recipe baseline.
-APPROVED_MANIFEST_SHA256 = "67e1a23bc20a56545389381fe56d3984a2a5113e276f9d3ba008179b1f7573d1"
+APPROVED_MANIFEST_SHA256 = "347c573cd1a17eeddb86df80ffdb3e68c883082fd21de9fd88dd6ca09d878928"
 
 
 def sha256(data: bytes) -> str:
