@@ -96,11 +96,11 @@ def test_pages_provenance_uses_the_checked_out_content_sha() -> None:
     workflow = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
     build = workflow["jobs"]["build"]
     triggers = workflow.get("on", workflow[True])
-    expected_ref = "${{ github.event_name == 'workflow_dispatch' && inputs.content_sha || github.event.workflow_run.head_sha }}"
+    expected_ref = "${{ inputs.content_sha }}"
 
     assert build["env"]["CONTENT_SHA"] == expected_ref
-    assert build["env"]["CI_RUN_ID"] == "${{ github.event_name == 'workflow_dispatch' && inputs.ci_run_id || github.event.workflow_run.id }}"
-    assert "workflow_dispatch" in triggers
+    assert build["env"]["CI_RUN_ID"] == "${{ inputs.ci_run_id }}"
+    assert set(triggers) == {"workflow_dispatch"}, "Pages publication must require explicit dispatch"
     assert set(triggers["workflow_dispatch"]["inputs"]) == {"content_sha", "ci_run_id"}
     checkout = next(step for step in build["steps"] if step.get("name") == "Checkout CookiGram Recettes (Public)")
     assert checkout["with"]["ref"] == "${{ env.CONTENT_SHA }}"
@@ -132,11 +132,19 @@ def test_qualified_contract_version_matches_builder(tmp_path, monkeypatch) -> No
     assert any(item.code == "qualified-contract-mismatch" and item.status == "error" for item in drifted.findings)
 
 
-def test_sync_dispatches_pages_with_validated_sha_and_ci_run() -> None:
-    workflow = (ROOT / ".github/workflows/sync-core-pin.yml").read_text(encoding="utf-8")
-    assert "gh workflow run pages.yml" in workflow
-    assert "--field content_sha='${{ steps.candidate.outputs.sha }}'" in workflow
-    assert "--field ci_run_id='${{ steps.main_ci.outputs.run_id }}'" in workflow
+def test_sync_keeps_verified_pins_without_dispatching_pages() -> None:
+    workflow = yaml.safe_load((ROOT / ".github/workflows/sync-core-pin.yml").read_text(encoding="utf-8"))
+    steps = workflow["jobs"]["sync"]["steps"]
+    names = {step.get("name") for step in steps}
+    scripts = "\n".join(step.get("run", "") for step in steps)
+
+    assert "Fast-forward validated pins to main" in names
+    assert "Run converged main CI explicitly" in names
+    assert "Wait for converged main CI" in names
+    assert "Verify pins" not in names  # verification occurs in consumer CI and builder preflight
+    assert "Dispatch Pages for validated main CI explicitly" not in names
+    assert "Wait for Pages deployment" not in names
+    assert "gh workflow run pages.yml" not in scripts
 
 
 def test_sync_detects_contract_only_rotation() -> None:
