@@ -39,12 +39,15 @@ ICON_FAMILY_BY_SLUG = {
     "roti-de-porc": "porc",
     "riz-a-risotto": "riz",
     "riz-basmati": "riz",
+    "riz-sushi": "riz",
     "riz-long-blanc": "riz",
     "farfalle": "pates",
     "penne": "pates",
     "torsades": "pates",
     "nouilles-chinoises": "pates",
+    "orzo": "pates",
     "champignons-de-paris": "champignon",
+    "shiitake": "champignon",
     "concentre-de-tomate": "concentre-tomate",
     "cube-de-bouillon-de-volaille": "bouillon-volaille",
     "cube-de-bouillon": "cube-de-bouillon",
@@ -259,6 +262,33 @@ class IngredientIconCoverageTests(unittest.TestCase):
             if not _resolves(slug, (entry or {}).get("category", ""))
         ]
         self.assertEqual(missing, [], f"{len(missing)} Gram slug(s) without icon")
+
+    def test_issue_500_family_aliases_and_fallback_separation(self):
+        import tempfile
+        from unittest.mock import patch
+
+        with tempfile.TemporaryDirectory() as temporary:
+            icons = Path(temporary)
+            for family in ("champignon", "pates", "riz", "oignon", "farine"):
+                (icons / f"{family}.svg").write_text("<svg/>", encoding="utf-8")
+
+            cases = {
+                "shiitake": ("champignon", "Légumes et aromates", "oignon"),
+                "orzo": ("pates", "Épicerie salée", "farine"),
+                "riz-sushi": ("riz", "Céréales et féculents", "riz"),
+            }
+            with patch.dict(globals(), {"ICONS_DIR": icons}):
+                for slug, (family, category, fallback) in cases.items():
+                    self.assertEqual(ICON_FAMILY_BY_SLUG.get(slug), family)
+                    self.assertEqual(_icon_file(slug), icons / f"{family}.svg")
+                    self.assertTrue(_resolves(slug, category))
+
+                    # Without the family asset, only a real category fallback can resolve.
+                    (icons / f"{family}.svg").unlink()
+                    self.assertEqual(_resolves(slug, category), family != fallback)
+                    (icons / f"{family}.svg").write_text("<svg/>", encoding="utf-8")
+
+                self.assertTrue(_resolves("fallback-only", "Légumes et aromates"))
 
     def test_remapping_and_p0_dedicated_icons(self):
         self.assertEqual(ICON_FAMILY_BY_SLUG.get("beurre-doux"), "beurre")
