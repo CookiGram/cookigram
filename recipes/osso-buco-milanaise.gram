@@ -1,7 +1,7 @@
 ---
 title: Osso buco de veau à la milanaise & gremolata
 date_published: 2026-09-03
-date_modified: 2026-09-15
+date_modified: 2026-11-06
 portions: 4
 prep_time: 20 min
 total_time: 1 h 20 min
@@ -39,14 +39,6 @@ variants:
     total_time: 1 h 20 min
     appliances:
       thermomix: [TM31, TM5, TM6, TM7]
-  - id: instant-pot
-    name: Instant Pot (Haute Pression Express)
-    description: Saisie en mode Sauté puis 40 min sous haute pression pour un jarret ultra-fondant.
-    prep_time: 15 min
-    total_time: 55 min
-    steps:
-      replace:
-        simmer-veal: "[simmer-veal | Cuisson sous pression Instant Pot]\n- Déposer les rouelles de veau et la garniture dans la cuve de l'#autocuiseur Instant Pot{}.\n- Fermer le couvercle, fermer la valve et lancer la cuisson sous haute pression (High Pressure) pendant ~{40 min}.\n- Laisser retomber la pression ~{10 min} puis ouvrir la valve.\n- Saupoudrer de la gremolata au persil et zeste de citron au moment de dresser."
   - id: cocotte-fonte
     name: Cocotte en fonte traditionnelle (Sans robot)
     description: Cuisine traditionnelle sans robot avec dorage à vif et mijotage doux à feu doux 2 h 00.
