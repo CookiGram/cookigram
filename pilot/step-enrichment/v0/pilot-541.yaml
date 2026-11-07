@@ -73,16 +73,6 @@ recipes:
         how: null
         references: [thermomix_slow_cooking]
         review_status: proposed
-      - step_ref: macro:simmer-veal
-        variant_id: instant-pot
-        instruction: null
-        why: >-
-          Cette variante remplace le mijotage Thermomix par la cuisson sous
-          haute pression prévue pour l’Instant Pot afin d’obtenir un jarret
-          fondant ; les deux méthodes ne se cumulent pas.
-        how: null
-        references: [instant_pot_release]
-        review_status: proposed
     safety_review_note: >-
       Aide Comment suspendue pour Instant Pot : la recette source prévoit
       10 minutes de détente naturelle puis ouverture de valve, alors que
