@@ -49,8 +49,8 @@ sources:
 recipes:
   - recipe_id: osso-buco-milanaise
     source_file: recipes/osso-buco-milanaise.gram
-    source_recipe_sha256: 1c9d1717496ae49eaa39350e2d2504413a16c02596dcf60d9e4d2ff0a669deba
-    source_revision: 747182d0e932ad12fd3ca1edbded83be6e80d50c
+    source_recipe_sha256: 40b2be9a711ef026a4ed2289860939b819c472b8c71920af402e8fdcc6ce6b1b
+    source_revision: 67f1dd6797eda7740e0611ab783ecf5110fac94c
     recipe_source:
       url_as_recorded: https://cookidoo.fr
       exact_url_status: non_verifiable
