@@ -139,3 +139,15 @@ capacité reste à établir dans `cookigram-core` si nécessaire.
 **Déblocage de #534 :** la PR reste BLOCKED indépendamment du statut CI. Il faut une qualification
 indépendante, une revue de la matrice et des fiches corrigées, puis vérifier la barrière,
 le catalogue et tout chemin d'aperçu/build avant toute décision de publication.
+
+## Politique A — mise à jour proportionnée du catalogue approuvé (#637)
+
+Décision du propriétaire (2026-11-07) : conserver le gel d'intégrité des 276 recettes avec une revue **limitée aux recettes réellement modifiées**, adaptée au risque. Le garde vérifie uniquement chemins et octets approuvés : il **ne classe pas** automatiquement la sécurité des recettes, et un manifeste modifié avec son pin ne constitue pas une autorisation de publication.
+
+1. **Éditorial** — orthographe, lisibilité, Pourquoi / Comment sans changement de procédé : examiner le diff ciblé, exécuter les tests utiles et obtenir la validation explicite du propriétaire.
+2. **Culinaire** — ajout de recette, ingrédients, quantités, durée, température ou méthode : contrôler la cohérence du procédé et des étapes, les tests pertinents, puis obtenir la validation explicite du propriétaire.
+3. **Sanitaire sensible** — notamment sous-vide, bocaux/conserves, refroidissement, conservation et aliments crus à risque : conserver le blocage de publication jusqu'à qualification sanitaire documentée du procédé complet; la validation propriétaire seule ne suffit pas. En cas de doute, utiliser ce niveau.
+
+Après les contrôles : recalculer le SHA-256 **des octets exacts** des seuls fichiers `recipes/**/*.gram` changés et modifier leurs entrées dans `.gram/approved-recipes.json` (ajout/suppression/renommage compris), sans approuver les autres changements du corpus par défaut; recalculer ensuite le SHA-256 **du manifeste entier** et actualiser `APPROVED_MANIFEST_SHA256` dans `scripts/check-publication-exclusions.py`. Vérifier le diff manifeste/pin, les tests du garde, les autres CI applicables et le HEAD exact avant toute décision de fusion. Respecter toute approbation GitHub obligatoire; cette politique ne crée pas d'exception aux protections de branche.
+
+**Exclusion maintenue :** les cinq slugs de `.gram/publication-exclusions.json` liés à #534 restent interdits de publication, y compris leurs copies renommées ou reformulées, jusqu'à qualification sanitaire indépendante. Ne jamais les ajouter à la base approuvée pour faire passer la CI. #534 reste **BLOCKED**; le gel éditorial n'est ni une validation culinaire ni une autorisation de déploiement.
