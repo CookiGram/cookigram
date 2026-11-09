@@ -11,11 +11,18 @@ nutrition_profile: pleasure
 tags: [canard, abats, riz, rice cooker, soja, gingembre, coriandre]
 source: "Recette originale proposée par le propriétaire du projet dans l'issue CookiGram #647; pas encore testée après cuisson."
 author: Pierre Cousin & CookiGram
-image: images/magret-canard-sous-vide.jpg
+image: images/coeurs-de-canard-soja-gingembre-riz.webp
 image_credit:
   author: CookiGram
   source: https://github.com/PierreCsn/cookigram
-  license: CC-BY-SA-4.0
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale générée et intégrée pour cette fiche.
+image_generation:
+  provider: OpenAI
+  model: unknown
+  generated_at: "2026-11-09"
+  prompt_file: image-prompts/coeurs-de-canard-soja-gingembre-riz.md
 appliances:
   rice_cooker: [standard]
 required_equipment:
