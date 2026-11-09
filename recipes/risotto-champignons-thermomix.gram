@@ -1,0 +1,85 @@
+---
+title: Risotto aux champignons au Thermomix
+date_published: '2026-11-09'
+date_modified: '2026-11-09'
+portions: 4
+prep_time: 15 min
+total_time: 41 min
+description: Riz crémeux aux champignons de Paris, relevé de vin blanc et de parmesan, préparé maison au Thermomix.
+spiciness: 0
+tags: [risotto, champignons, thermomix, italien]
+source: https://yummix.fr/risotto-champignons-thermomix/
+author: Lyse / Yummix
+flavors:
+  pairing: [champignons, riz à risotto, vin blanc, parmesan]
+  notes: [crémeux, boisé, savoureux]
+  harmony: "Les champignons apportent leur profondeur boisée au riz nacré, tandis que le vin blanc et le parmesan équilibrent la richesse du beurre."
+  tips: "Pour une note plus intense, les cèpes séchés facultatifs renforcent le goût des champignons."
+image: images/risotto-champignons-thermomix.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration originale sélectionnée et intégrée pour CookiGram.
+image_generation:
+  provider: OpenAI
+  model: ChatGPT image generation
+  generated_at: "2026-11-09"
+  prompt_file: image-prompts/risotto-champignons-thermomix.md
+appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+source_appliances:
+  thermomix: [TM31, TM5, TM6, TM7]
+required_equipment:
+  - Thermomix TM31, TM5, TM6 ou TM7
+  - Panier cuisson (TM31, TM5 et TM6)
+  - Spatule
+scaling:
+  enabled: false
+  reason: "Quantités et volume de liquide calibrés pour quatre portions et la capacité du bol Thermomix ; une autre échelle n'est pas validée."
+---
+
+## Risotto aux champignons au Thermomix
+
+[Parfumer le riz]
+- Mettre la @gousse d'ail{1} et les @cèpes séchés{5 g, facultatifs} dans le bol Thermomix.
+- Hacher ~{5 s} à vitesse 8.
+
+[Préparer l'échalote]
+- Ajouter les @échalotes{100 g, épluchées et coupées en deux} dans le bol.
+- Hacher ~{5 s} à vitesse 5.
+- Racler les parois du bol avec la #spatule{}.
+
+[Faire blondir l'échalote]
+- Ajouter l'@huile d'olive{20 g} dans le bol.
+- Faire blondir ~{3 min} à ^{Varoma} sur TM31, ou à 120 °C sur TM5, TM6 et TM7, vitesse 1, sans gobelet doseur ou sur-couvercle.
+
+[Préparer les champignons]
+- Laver les @champignons de Paris{300 g} sans les laisser tremper.
+- Couper leur pied terreux.
+- Émincer les champignons en lamelles.
+
+[Ajouter le riz aux champignons]
+- Ajouter les champignons préparés dans le bol.
+- Ajouter le @riz à risotto{320 g, Carnaroli ou Arborio}.
+- Verser le @vin blanc{120 g, sec}.
+- Cuire ~{6 min} à ^{Varoma} sur TM31, ou à 120 °C sur TM5, TM6 et TM7, vitesse mijotage, sans gobelet doseur ou sur-couvercle.
+
+[Cuire dans le bouillon]
+- Verser l'@eau{750 g} dans le bol.
+- Émietter le @cube de bouillon{1, de légumes ou de volaille} dans le bol.
+- Ajouter le @sel{0,5 c. à café rase}.
+- Racler le fond du bol avec la spatule.
+- Cuire sans gobelet doseur ou sur-couvercle.
+- Sur TM31, TM5 et TM6, poser le panier cuisson sur le couvercle pendant la cuisson.
+- Cuire ~{17 min} à ^{100 C}, sens inverse, vitesse mijotage.
+- Vérifier que le riz est cuit à cœur ; prolonger la cuisson si nécessaire.
+- Si besoin, prolonger de ~{3 min} pour que le riz soit cuit à cœur.
+
+[Finir et servir]
+- Ajouter le @beurre doux{40 g, en morceaux ou substitut végétal} dans le bol.
+- Ajouter le @parmesan{50 g, râpé ou parmesan végétal}.
+- Assaisonner de @poivre moulu{au goût}.
+- Mélanger délicatement avec la spatule.
+- Servir sans attendre, avec le @persil frais{3 brins, ciselés et facultatifs}.
