@@ -44,7 +44,10 @@ export const formatWeekCoverage = (planned, expected) => {
 };
 
 const caloriesFor = recipe => {
-  const calories = Number(recipe?.nutrition?.calories);
+  const value = recipe?.nutrition?.calories;
+  if (typeof value !== "number" && typeof value !== "string") return null;
+  if (typeof value === "string" && value.trim() === "") return null;
+  const calories = typeof value === "number" ? value : Number(value);
   return Number.isFinite(calories) && calories >= 0 ? calories : null;
 };
 
