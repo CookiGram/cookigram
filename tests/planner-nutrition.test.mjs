@@ -36,7 +36,7 @@ test("daily nutrition stays hidden when one planned recipe has no reliable value
 });
 
 test("daily nutrition rejects empty and non-numeric calorie values", async t => {
-  for (const calories of [null, "", "   ", true, false, Infinity, -Infinity, NaN]) {
+  for (const calories of [null, "", "   ", true, false, [], [180], {}, -1, Infinity, -Infinity, NaN, "not numeric", "Infinity"]) {
     await t.test(`rejects ${String(calories)}`, () => {
       const summary = summarizeDayNutrition(
         [{ moment: "Midi", items: [{ slug: "main" }, { slug: "invalid" }] }],
