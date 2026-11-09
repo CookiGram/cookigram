@@ -223,6 +223,13 @@ ingredients:
       carbs: 1.9
       fat: 0.5
       protein: 2.1
+  coeurs-de-canard:
+    name: Cœurs de canard
+    aliases:
+    - cœurs de canard
+    - coeur de canard
+    - coeurs de canard
+    category: Boucherie et volailles
   coulis-de-tomate:
     name: Coulis de tomate
     aliases:
