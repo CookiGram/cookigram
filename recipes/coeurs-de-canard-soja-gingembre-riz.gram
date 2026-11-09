@@ -1,0 +1,94 @@
+---
+title: Cœurs de canard laqués soja-gingembre, riz à l'ail et chimichurri
+date_published: 2026-11-09
+date_modified: 2026-11-09
+portions: 2
+prep_time: 20 min
+total_time: 35 min
+spiciness: 1
+description: "Cœurs de canard laqués au soja et au gingembre, servis avec un riz à l'ail au rice cooker et un chimichurri frais à la coriandre."
+nutrition_profile: pleasure
+tags: [canard, abats, riz, rice cooker, soja, gingembre, coriandre]
+source: "Recette originale proposée par le propriétaire du projet dans l'issue CookiGram #647; pas encore testée après cuisson."
+author: Pierre Cousin & CookiGram
+image: images/magret-canard-sous-vide.jpg
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: CC-BY-SA-4.0
+appliances:
+  rice_cooker: [standard]
+required_equipment:
+  - Rice cooker avec graduation de dosage adaptée
+  - Poêle
+  - Thermomètre alimentaire à lecture rapide
+  - Passoire fine
+  - Planche à découper
+  - Couteau
+scaling:
+  enabled: false
+  reason: Le repère d'eau et le programme dépendent du rice cooker utilisé; les portions et la géométrie de cuisson des cœurs ne sont pas validées au-delà de deux portions.
+flavors:
+  pairing: [riz jasmin, riz basmati]
+  notes: [ail, gingembre, soja, acidulé, herbacé]
+  harmony: "Le glaçage soja-gingembre savoureux et les cœurs dorés s'équilibrent avec le riz parfumé à l'ail et la fraîcheur acidulée des herbes."
+  tips: "La durée de cuisson des cœurs varie selon leur taille, la poêle et la puissance du feu. Mesurer chaque cœur ouvert au centre et poursuivre jusqu'à au moins 74 °C; ne pas servir saignant. Utiliser le repère d'eau du fabricant pour 150 g de riz, sans ajouter de volume universel."
+---
+
+[Rincer et lancer le riz]
+- Rincer le @riz long blanc{150 g} dans une #passoire fine{} jusqu'à ce que l'eau soit presque claire.
+- Égoutter le riz.
+- Émincer finement l'@ail{3 gousses}.
+- Râper le @gingembre frais{1 c. à café}.
+- Chauffer l'@huile végétale{1 c. à café} dans une petite #poêle{} à feu doux.
+- Faire revenir l'ail dans la poêle ~{1 min}; il doit devenir odorant sans brunir.
+- Ajouter le gingembre dans la poêle.
+- Faire revenir ~{1 min} en remuant; les aromates doivent rester pâles et parfumés.
+- Transférer le riz égoutté dans la cuve du #rice cooker{}.
+- Ajouter l'huile aromatique de la poêle au riz.
+- Ajouter l'@huile de sésame{1 c. à café}.
+- Ajouter la @sauce soja salée{1 c. à café}.
+- Ajouter l'@eau{selon le repère du fabricant pour 150 g de riz}.
+- Lancer le programme normal de cuisson du riz.
+- Garder le riz fermé en maintien au chaud jusqu'au service; les grains doivent être tendres et le liquide absorbé.
+
+[Préparer le chimichurri]
+- Ciseler finement la @coriandre fraîche{1/2 bouquet, feuilles et tiges tendres}.
+- Ciseler finement le @persil plat{1/4 bouquet, feuilles et tiges tendres}.
+- Râper l'@ail{1 petite gousse} dans un bol.
+- Râper le @gingembre frais{1 c. à café} dans le bol.
+- Ajouter le @jus de citron vert{1 c. à soupe} au bol.
+- Ajouter l'@huile végétale{2 c. à soupe} au bol.
+- Ajouter l'@huile de sésame{1/2 c. à café} au bol.
+- Ajouter le @piment rouge{1 pincée}.
+- Ajouter le @sel{1 pincée}.
+- Incorporer les herbes ciselées au mélange sans le mixer.
+- Laisser reposer le chimichurri ~{15 min}; les herbes doivent être imprégnées mais rester fraîches.
+
+[Parer les cœurs et préparer le glaçage]
+- Ouvrir les @cœurs de canard{325 g} en portefeuille dans la longueur.
+- Retirer les gros vaisseaux et les caillots avec un #couteau{}.
+- Éponger soigneusement les cœurs avec du papier absorbant.
+- Mélanger la @sauce soja salée{1.5 c. à soupe}, le @miel{1 c. à café}, le @vinaigre de riz{1 c. à café} et l'@eau{1 c. à soupe} dans un petit bol.
+- Hacher finement l'@ail{2 gousses} dans un autre récipient.
+- Râper le @gingembre frais{2 c. à café} avec l'ail.
+
+[Saisir et laquer les cœurs]
+- Chauffer l'@huile végétale{1 c. à soupe} dans une #poêle{} à feu moyen-vif jusqu'à ce qu'elle soit fluide et chatoyante.
+- Disposer les cœurs ouverts en une seule couche dans la poêle chaude.
+- Saisir les cœurs en les retournant pour colorer les deux faces; adapter la durée à leur taille et à la poêle.
+- Baisser à feu moyen.
+- Ajouter l'ail et le gingembre râpé dans la poêle.
+- Remuer ~{30 s}; les aromates doivent être parfumés sans brunir.
+- Verser le glaçage soja-miel dans la poêle.
+- Remuer les cœurs dans le glaçage jusqu'à ce qu'il réduise et les nappe.
+- Ajouter de l'@eau{1 c. à soupe supplémentaire si nécessaire} si le glaçage épaissit avant que les cœurs soient cuits.
+- Vérifier chaque cœur ouvert au centre avec le #thermomètre alimentaire{}.
+- Poursuivre la cuisson jusqu'à au moins ^{74 C à cœur} dans chaque morceau; les abats de volaille ne doivent pas être servis saignants.
+
+[Aérer et servir]
+- Aérer le riz à la #spatule à riz{} dès la fin du programme.
+- Répartir le riz chaud dans deux assiettes.
+- Répartir les cœurs laqués et leurs sucs sur le riz.
+- Ajouter le chimichurri cru au dernier moment.
+- Servir aussitôt.

@@ -5,6 +5,9 @@ ingredients:
   cote-de-boeuf:
     source: Ingrédient générique ajouté pour CookiGram/cookigram#521 ; valeurs nutritionnelles à compléter depuis CIQUAL.
     status: incomplete
+  coeurs-de-canard:
+    source: Ingrédient générique demandé pour CookiGram/cookigram#647 ; valeurs nutritionnelles laissées absentes jusqu'à vérification CIQUAL.
+    status: incomplete
   epaule-de-porc:
     source: Ingrédient générique ajouté pour CookiGram/cookigram#521 ; valeurs nutritionnelles à compléter depuis CIQUAL.
     status: incomplete
