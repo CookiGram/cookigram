@@ -185,35 +185,70 @@ jobs:
           echo "base=${base}" >> "$GITHUB_OUTPUT"
           git push --force-with-lease origin "HEAD:${BRANCH}"
 
-      - name: Run candidate consumer CI explicitly
-        if: steps.builder.outputs.changed == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$BRANCH"
-
-      - name: Wait for candidate CI
+      - name: Wait for candidate branch visibility
         if: steps.builder.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
           candidate='${{ steps.candidate.outputs.sha }}'
-          run_id=""
-          for _ in $(seq 1 60); do
-            run_id="$(gh run list \
+          observed=""
+          for _ in $(seq 1 12); do
+            observed="$(gh api "repos/$GITHUB_REPOSITORY/branches/$BRANCH" --jq '.commit.sha')"
+            [[ "$observed" == "$candidate" ]] && break
+            sleep 5
+          done
+          if [[ "$observed" != "$candidate" ]]; then
+            echo "Candidate branch SHA is not visible: expected $candidate, got $observed" >&2
+            exit 1
+          fi
+
+      - name: Dispatch and verify candidate CI
+        if: steps.builder.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          candidate='${{ steps.candidate.outputs.sha }}'
+          list_runs() {
+            gh run list \
               --repo "$GITHUB_REPOSITORY" \
               --workflow ci.yml \
               --branch "$BRANCH" \
               --event workflow_dispatch \
-              --limit 20 \
-              --json databaseId,headSha \
-              --jq ".[] | select(.headSha == \"${candidate}\") | .databaseId" \
-              | head -n1)"
-            [[ -n "$run_id" ]] && break
+              --limit 50 \
+              --json databaseId,headSha
+          }
+          for attempt in 1 2; do
+            observed="$(gh api "repos/$GITHUB_REPOSITORY/branches/$BRANCH" --jq '.commit.sha')"
+            if [[ "$observed" != "$candidate" ]]; then
+              echo "Candidate branch moved: expected $candidate, got $observed" >&2
+              exit 1
+            fi
+            baseline="$(list_runs | jq '[.[].databaseId] | max // 0')"
+            gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$BRANCH"
+
+            run_id=""
+            run_sha=""
+            for _ in $(seq 1 30); do
+              found="$(list_runs | jq -r --argjson baseline "$baseline" \
+                '[.[] | select(.databaseId > $baseline)] | sort_by(.databaseId) | first | if . == null then empty else "\(.databaseId) \(.headSha)" end')"
+              if [[ -n "$found" ]]; then
+                read -r run_id run_sha <<< "$found"
+                break
+              fi
+              sleep 2
+            done
+            if [[ -z "$run_id" ]]; then
+              echo "No new candidate CI run observed after dispatch; refusing to retry ambiguously" >&2
+              exit 1
+            fi
+            if [[ "$run_sha" == "$candidate" ]]; then
+              gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
+              exit 0
+            fi
+            echo "Candidate CI run $run_id used $run_sha instead of $candidate (attempt $attempt/2)" >&2
+            [[ "$attempt" -eq 1 ]] || exit 1
             sleep 5
           done
-          test -n "$run_id"
-          gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
 
       - name: Fast-forward validated pins to main
         if: steps.builder.outputs.changed == 'true'
