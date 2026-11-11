@@ -146,7 +146,7 @@ jobs:
           BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
         run: |
           python -m pip install --upgrade "pip==25.3"
-          pip install "Jinja2==3.1.6" "PyYAML==6.0.2"
+          pip install "Jinja2==3.1.6" "PyYAML==6.0.2" "Pillow==11.3.0"
           pip install --no-index --no-deps "$RUNNER_TEMP/builder"/cookigram_core-*.whl "$RUNNER_TEMP/builder"/cookigram_contract-*.whl
 
       - name: Strict atomic check on changed recipes
@@ -295,7 +295,7 @@ jobs:
           BUILDER_ARTIFACT: ${{ steps.builder.outputs.artifact }}
         run: |
           python -m pip install --upgrade "pip==25.3"
-          pip install "Jinja2==3.1.6" "PyYAML==6.0.2"
+          pip install "Jinja2==3.1.6" "PyYAML==6.0.2" "Pillow==11.3.0"
           pip install --no-index --no-deps "$RUNNER_TEMP/builder"/cookigram_core-*.whl "$RUNNER_TEMP/builder"/cookigram_contract-*.whl
 
       - name: Bloquer les recettes temporairement exclues avant aperçu
