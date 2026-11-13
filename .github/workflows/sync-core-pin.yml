@@ -296,6 +296,22 @@ jobs:
           echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
           gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
 
+      - name: Dispatch Pages after validated main CI
+        if: steps.builder.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          candidate='${{ steps.candidate.outputs.sha }}'
+          run_id='${{ steps.main_ci.outputs.run_id }}'
+          test -n "$candidate"
+          test -n "$run_id"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/branches/main" --jq '.commit.sha')" = "$candidate"
+          gh workflow run pages.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            --field content_sha="$candidate" \
+            --field ci_run_id="$run_id"
+
       - name: Report convergence
         if: always()
         run: |
