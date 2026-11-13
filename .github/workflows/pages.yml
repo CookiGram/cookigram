@@ -10,6 +10,10 @@ on:
         description: "Successful CI run qualifying that commit"
         required: true
         type: string
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
 permissions:
   contents: read
   # actions: write (#482) : suppression best-effort de l'artefact qualifié
@@ -22,11 +26,16 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    if: github.event_name == 'workflow_dispatch'
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event != 'pull_request' &&
+       github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-latest
     env:
-      CONTENT_SHA: ${{ inputs.content_sha }}
-      CI_RUN_ID: ${{ inputs.ci_run_id }}
+      CONTENT_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.content_sha || github.event.workflow_run.head_sha }}
+      CI_RUN_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.ci_run_id || github.event.workflow_run.id }}
     steps:
       - name: Checkout CookiGram Recettes (Public)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
@@ -52,28 +61,29 @@ jobs:
 
           test "$(tr -d '[:space:]' < .core-version)" = "$(python -c 'import json; print(json.load(open(".builder.json"))["core_sha"])')"
 
-      - name: Verify explicitly dispatched CI provenance
-        if: github.event_name == 'workflow_dispatch'
+      - name: Verify qualifying CI provenance
         env:
           EXPECTED_CONTENT_SHA: ${{ env.CONTENT_SHA }}
           EXPECTED_CI_RUN_ID: ${{ env.CI_RUN_ID }}
+          EXPECTED_CI_EVENT: ${{ github.event_name == 'workflow_dispatch' && 'workflow_dispatch' || github.event.workflow_run.event }}
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           [[ "$EXPECTED_CONTENT_SHA" =~ ^[0-9a-f]{40}$ ]]
           [[ "$EXPECTED_CI_RUN_ID" =~ ^[0-9]+$ ]]
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$EXPECTED_CI_RUN_ID" > "$RUNNER_TEMP/ci-run.json"
-          python - "$RUNNER_TEMP/ci-run.json" "$EXPECTED_CONTENT_SHA" "$EXPECTED_CI_RUN_ID" <<'PY'
+          python - "$RUNNER_TEMP/ci-run.json" "$EXPECTED_CONTENT_SHA" "$EXPECTED_CI_RUN_ID" "$EXPECTED_CI_EVENT" <<'PY'
           import json
           import sys
           from pathlib import Path
 
           run = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          expected_sha, expected_id = sys.argv[2:]
+          expected_sha, expected_id = sys.argv[2:4]
+          expected_event = sys.argv[4]
           expected = {
               "id": int(expected_id),
               "path": ".github/workflows/ci.yml",
-              "event": "workflow_dispatch",
+              "event": expected_event,
               "head_branch": "main",
               "head_sha": expected_sha,
               "status": "completed",
@@ -81,6 +91,7 @@ jobs:
           }
           for key, value in expected.items():
               assert run.get(key) == value, (key, run.get(key), value)
+          assert expected_event in {"push", "workflow_dispatch"}, expected_event
           PY
 
       - name: Set up Python 3.12
