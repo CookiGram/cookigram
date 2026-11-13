@@ -96,12 +96,18 @@ def test_pages_provenance_uses_the_checked_out_content_sha() -> None:
     workflow = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
     build = workflow["jobs"]["build"]
     triggers = workflow.get("on", workflow[True])
-    expected_ref = "${{ inputs.content_sha }}"
+    expected_ref = "${{ github.event_name == 'workflow_dispatch' && inputs.content_sha || github.event.workflow_run.head_sha }}"
 
     assert build["env"]["CONTENT_SHA"] == expected_ref
-    assert build["env"]["CI_RUN_ID"] == "${{ inputs.ci_run_id }}"
-    assert set(triggers) == {"workflow_dispatch"}, "Pages publication must require explicit dispatch"
+    assert build["env"]["CI_RUN_ID"] == "${{ github.event_name == 'workflow_dispatch' && inputs.ci_run_id || github.event.workflow_run.id }}"
+    assert set(triggers) == {"workflow_dispatch", "workflow_run"}
     assert set(triggers["workflow_dispatch"]["inputs"]) == {"content_sha", "ci_run_id"}
+    assert triggers["workflow_run"]["workflows"] == ["CI"]
+    assert triggers["workflow_run"]["types"] == ["completed"]
+    assert triggers["workflow_run"]["branches"] == ["main"]
+    assert "conclusion == 'success'" in build["if"]
+    assert "head_branch == 'main'" in build["if"]
+    assert "event != 'pull_request'" in build["if"]
     checkout = next(step for step in build["steps"] if step.get("name") == "Checkout CookiGram Recettes (Public)")
     assert checkout["with"]["ref"] == "${{ env.CONTENT_SHA }}"
 
@@ -110,6 +116,7 @@ def test_pages_provenance_uses_the_checked_out_content_sha() -> None:
     provenance = next(step for step in build["steps"] if step.get("name") == "Verify qualified artifact provenance")
     assert 'provenance = json.loads(Path("_site/provenance.json")' in provenance["run"]
     assert '"qualifying_ci_run_id"' in provenance["run"]
+    assert '"event": expected_event' in next(step for step in build["steps"] if step.get("name") == "Verify qualifying CI provenance")["run"]
 
 
 def test_qualified_contract_version_matches_builder(tmp_path, monkeypatch) -> None:
