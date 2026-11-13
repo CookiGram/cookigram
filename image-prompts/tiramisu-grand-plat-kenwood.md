@@ -1,0 +1,5 @@
+# Tiramisu traditionnel au Kenwood — grand plat
+
+Illustration culinaire originale horizontale 16:9 pour CookiGram. Un grand plat rectangulaire en céramique claire, garni de tiramisu au mascarpone et saupoudré de cacao amer, avec une part prélevée et servie dans une assiette au premier plan. Montrer clairement deux couches de biscuits à la cuillère imbibés de café séparées par une crème ivoire onctueuse. Petite tasse d'expresso et quelques biscuits à la cuillère discrets, sur une table de cuisine chaleureuse et sobre.
+
+Identité visuelle CookiGram : illustration manga culinaire contemporaine, contours fins à l'encre brun foncé, texture aquarelle peinte, cel-shading doux, lumière naturelle chaude, palette crème / cacao / ambre, textures appétissantes mais crédibles. Vue de trois quarts à environ 45 degrés, plat dominant avec marges de recadrage pour les cartes mobiles. Aucune photographie ni photoréalisme, aucun texte, logo, marque, filigrane, personnage ou élément sans rapport avec la recette. Ne pas imiter d'artiste ou studio précis.
