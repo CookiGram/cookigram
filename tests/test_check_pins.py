@@ -139,18 +139,29 @@ def test_qualified_contract_version_matches_builder(tmp_path, monkeypatch) -> No
     assert any(item.code == "qualified-contract-mismatch" and item.status == "error" for item in drifted.findings)
 
 
-def test_sync_keeps_verified_pins_without_dispatching_pages() -> None:
-    workflow = yaml.safe_load((ROOT / ".github/workflows/sync-core-pin.yml").read_text(encoding="utf-8"))
-    steps = workflow["jobs"]["sync"]["steps"]
-    names = {step.get("name") for step in steps}
-    scripts = "\n".join(step.get("run", "") for step in steps)
+def test_sync_dispatches_pages_only_after_successful_main_ci() -> None:
+    sync = yaml.safe_load((ROOT / ".github/workflows/sync-core-pin.yml").read_text(encoding="utf-8"))
+    steps = sync["jobs"]["sync"]["steps"]
+    names = [step.get("name") for step in steps]
+    ci_index = names.index("Wait for converged main CI")
+    pages_index = names.index("Dispatch Pages after validated main CI")
+    assert pages_index == ci_index + 1
+    assert "gh run watch \"$run_id\" --repo \"$GITHUB_REPOSITORY\" --exit-status" in steps[ci_index]["run"]
 
-    assert "Fast-forward validated pins to main" in names
-    assert "Run converged main CI explicitly" in names
-    assert "Wait for converged main CI" in names
-    assert "Dispatch Pages for validated main CI explicitly" not in names
-    assert "Wait for Pages deployment" not in names
-    assert "gh workflow run pages.yml" not in scripts
+    dispatch = steps[pages_index]
+    assert dispatch["if"] == "steps.builder.outputs.changed == 'true'"
+    script = dispatch["run"]
+    assert 'test "$(gh api "repos/$GITHUB_REPOSITORY/branches/main" --jq \'.commit.sha\')" = "$candidate"' in script
+    assert "gh workflow run pages.yml" in script
+    assert '--field content_sha="$candidate"' in script
+    assert '--field ci_run_id="$run_id"' in script
+    assert "steps.candidate.outputs.sha" in script
+    assert "steps.main_ci.outputs.run_id" in script
+
+    pages = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
+    build = pages["jobs"]["build"]
+    provenance = next(step for step in build["steps"] if step.get("name") == "Verify qualifying CI provenance")
+    assert 'assert expected_event in {"push", "workflow_dispatch"}' in provenance["run"]
 
 
 def test_sync_detects_contract_only_rotation() -> None:
