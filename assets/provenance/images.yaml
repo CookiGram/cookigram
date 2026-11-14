@@ -2448,3 +2448,37 @@ static/images/smash-burgers-plancha.webp:
     visual_profile:
       name: CookiGram manga culinary
       revision: 1
+
+
+# Provenance complémentaire pour tiramisu-grand-plat-kenwood.webp :
+# PNG source RGB 1672 × 941, SHA-256 7cd209750c131c1ffe5c8dfd3157dfe628dc42243f8e28eba345dfc78a933cc7.
+# Dérivé WebP RGB 1280 × 720, qualité 84, redimensionnement LANCZOS (méthode 6).
+# Identifiant de dossier de sortie fourni par l'outil (batch) : 01a1d9d5-e80b-7701-a418-e18edbdd5d7f; ID de génération dédié non exposé.
+static/images/tiramisu-grand-plat-kenwood.webp:
+  subject:
+    type: recipe
+    recipe: tiramisu-grand-plat-kenwood
+  origin: generated
+  generated_at: '2026-11-14'
+  prompt: |-
+    Use case: illustration-story
+    Asset type: horizontal 16:9 hero illustration for a responsive recipe website
+    Primary request: Create an entirely original manga-inspired culinary illustration of “Tiramisu traditionnel au Kenwood — grand plat” based only on this written dish description, not on any existing photograph.
+    Scene/backdrop: A simple warm home-kitchen tabletop, softly suggested and uncluttered.
+    Subject: A large 35 × 25 cm rectangular pale ceramic dish containing traditional tiramisu, topped with a complete, even dusting of unsweetened cocoa powder. One serving has been removed; show that portion on a small plain plate in the foreground. Make the cut face clearly show two distinct close-packed layers of coffee-dipped ladyfinger biscuits, separated by smooth ivory mascarpone cream, with a cream layer beneath and a thin cream finish above. Include a small plain espresso cup and a few ladyfinger biscuits discreetly. No other garnishes.
+    Style/medium: polished contemporary manga food illustration, elegant fine dark-brown ink contours, hand-painted watercolor texture and soft cel shading, appetizing but believable food textures, distinctive original CookiGram visual identity; generic manga aesthetic, not imitating any named artist, studio, series or existing artwork.
+    Composition/framing: landscape 16:9, three-quarter view at about 45 degrees, dish centred with safe crop margins for mobile and desktop cards. No human figures.
+    Lighting/mood: warm natural late-afternoon kitchen light, welcoming and homely.
+    Colour palette: ivory cream, cocoa brown, coffee amber, pale ceramic and warm wood.
+    Constraints: visually faithful to the described tiramisu; show exactly two biscuit layers separated by mascarpone cream; fully original composition; suitable as a website recipe illustration.
+    Avoid: text, letters, logos, brand marks, watermarks, packaging, characters, faces, photorealism, additional toppings.
+  sha256: de4be5ca88b92f640beaa79f5fa057c7041d371b26c4ac04e5a4ccc0d3a85009
+  attribution: CookiGram
+  generation:
+    tool: image_gen
+    batch: 01a1d9d5-e80b-7701-a418-e18edbdd5d7f
+    provider: OpenAI
+    model: unknown
+    visual_profile:
+      name: CookiGram manga culinary
+      revision: 1
