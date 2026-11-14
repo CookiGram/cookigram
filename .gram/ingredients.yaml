@@ -26,6 +26,11 @@ ingredients:
       carbs: 64.0
       fat: 0.7
       protein: 16.5
+  amaretto:
+    name: Amaretto
+    aliases:
+    - amaretto
+    category: Boissons et alcools
   amande-en-poudre:
     name: Amandes en poudre
     aliases:
