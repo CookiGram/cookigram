@@ -19,6 +19,36 @@ Les références sont des **témoins documentaires** basés sur la version consu
 
 Une famille visuelle de `generator/cooking_actions.py` (par ex. `mix`) est trop large pour identifier avec certitude une technique pédagogique ; **aucun appariement automatique fondé uniquement sur `visual_action`**.
 
+## Propagation d'un « Comment ? » à tout le catalogue
+
+**Invariant produit proposé : enrichir une action canonique reconnue doit bénéficier à toutes ses occurrences compatibles, sans édition de chaque recette.**
+
+Séparer explicitement trois identités :
+
+1. **`canonical_action_id`** : type sémantique réutilisable, par exemple `scrape-bowl-walls`. Stable à travers les recettes lorsque le geste et ses préconditions sont réellement identiques.
+2. **`atomic_occurrence_id`** : l'instance de cette action dans une recette, une variante et une étape ; son état de validation et sa reprise restent strictement locaux (#499).
+3. **`technique_id`** : fiche « Comment ? » éditoriale, versionnée, référencée par une action canonique éventuellement spécialisée pour un appareil/contexte. Une technique peut être associée à plusieurs occurrences ; elle n'a pas à être copiée dans leurs recettes.
+
+Flux cible (conceptuel, aucun code de production dans ce pilote) :
+
+```text
+Recette A / action atomique --+
+Recette B / action atomique --+--> action canonique reconnue + contexte
+Recette C / action atomique --+               |
+                                             v
+                                technique « Comment ? » approuvée
+                                             |
+                                aide affichée à la demande (0..1)
+```
+
+Une amélioration d'une fiche approuvée se diffuse au prochain build (ou chargement de contenu, selon architecture future) à **toutes les occurrences admissibles**. Il ne faut ni recopier le texte « Comment ? » dans chaque `.gram`, ni multiplier les sidecars par recette pour un conseil réellement générique.
+
+La propagation est **conditionnelle** : même orthographe ≠ même geste ; gestes identiques avec matériels incompatibles ≠ même procédure. Le resolver doit faire une association explicite ou prouvée, vérifier les préconditions et choisir au plus une aide par occurrence : override approuvé de recette/variante d'abord, puis fiche canonique contextuelle approuvée, sinon aucune aide. Ne pas utiliser seul `visual_action` ou une recherche par sous-chaîne.
+
+**Changement à grande portée = revue d'impact** : lors d'une modification de technique, produire la liste des recettes, variantes et occurrences concernées, détecter les exceptions et requalifier l'aide avant publication. Un changement rédactionnel partagé ne doit jamais modifier les gestes, réglages, durées, quantités ou contrôles de progression des recettes.
+
+Le schéma expérimental `techniques.yaml` actuel montre deux références **manuelles** à une même technique ; ce n'est pas encore une propagation automatique. Les identifiants ci-dessus sont une cible de conception, non un changement contractuel, et leur interopérabilité avec les actions officielles de Gram reste à étudier.
+
 ## Sélection proposée pour une future implémentation
 
 1. Priorité à l'aide `how` recette + variante explicitement revue (pilote #541), si présente et applicable à l'action affichée.
