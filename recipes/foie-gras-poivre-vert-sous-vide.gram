@@ -1,0 +1,63 @@
+---
+title: Foie gras au poivre vert en bocal sous vide
+date_published: 2026-10-04
+date_modified: 2026-10-04
+portions: 1
+prep_time: 25 min
+total_time: 28 h 15 min
+spiciness: 1
+description: Terrine de canard fondante, relevée par des grains de poivre vert concassés et une cuisson douce en bocal sous vide.
+tags: [foie-gras, canard, poivre-vert, sous-vide, terrine]
+source: https://www.atelierdeschefs.fr/recettes/5153/terrine-de-canard-au-poivre-vert/
+author: L'Atelier des Chefs
+image: images/foie-gras-poivre-vert-sous-vide.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use
+  modifications: Illustration générée par IA puis optimisée pour le Web.
+image_generation:
+  provider: OpenAI ImageGen
+  generated_at: "2026-10-04"
+  prompt_file: image-prompts/foie-gras-poivre-vert-sous-vide.md
+scaling:
+  enabled: true
+  min: 1
+  max: 2
+  step: 1
+  note: Chaque portion correspond à un bocal de 500 ml garni de 450 g de foie. Les durées de marinade, cuisson, refroidissement et maturation ne se multiplient pas.
+appliances:
+  sous_vide:
+  - anova_precision_cooker
+required_equipment:
+  - Thermoplongeur sous-vide (Anova ou équivalent)
+  - Bocal en verre de 500 ml adapté à la chaleur
+  - Sac de cuisson sous vide assez large pour contenir le bocal
+flavors:
+  pairing: [foie gras, poivre vert, sel]
+  notes: [fondant, poivré, végétal]
+  harmony: Les notes végétales du poivre vert contrastent avec la douceur grasse du foie.
+conservation:
+  fridge_days: 3
+  freezable: false
+---
+
+[Déveiner]
+- Garder le @foie gras cru de canard{450 g, environ 100 % du poids du foie} bien froid; séparer les lobes et retirer délicatement les veines visibles.
+[Assaisonner]
+- Répartir le @sel{4,5 g, 1 % du poids du foie} et le @poivre vert{4,5 g, 1 % du poids du foie, égoutté et grossièrement concassé; dosage adapté du 10 g/kg publié pour une terrine de canard par L’Atelier des Chefs} sur toutes les faces.
+- Couvrir et laisser mariner au réfrigérateur ~{2 h}.
+[Mettre en bocal]
+- Reconstituer les lobes et les tasser dans un #bocal en verre de 500 ml{} propre, sans dépasser l'épaulement; presser doucement pour chasser les poches d'air. Le CIFOG indique environ 450 g de foie pour ce volume (https://lefoiegras.fr/uploads/ckeditor/Manuel%20technique/GSGSCO0140%20-%20Le%20Precis_CIFOG%20-%20A4%20-%2044p%20-%20FR%20-%20BD%20sans%20TDC.pdf).
+- Placer le bocal ouvert dans un #sac de cuisson sous vide{} assez large; évacuer l'air autour du bocal et souder le sac. Le contenu reste dans le bocal, utilisé comme terrine.
+[Cuire]
+- Immerger le sac dans le bain du #thermoplongeur{} réglé à ^{55 C} et cuire ~{80 min}, barème publié pour une terrine de 500 g par Chefounet.
+- Référence du barème : https://www.chef-pierre-henri.kitchen/recette-du-foie-gras-de-canard-au-pineau-et-a-la-truffe-en-terrine-cuisson-basse-temperature-sous-vide/ ; l'emploi d'un bocal ouvert dans le sac est une adaptation de contenant non validée dans cette source.
+- Le foie est pris et le gras commence à apparaître en périphérie; ce procédé ne stérilise pas le bocal.
+[Refroidir rapidement]
+- Sortir le sac et le plonger aussitôt dans un bain glacé ~{30 min}, repère donné pour un sac de foie gras par Zwilling (https://www.zwilling.com/fr/magazine/recettes/fresh-and-save-recipes/fois-gras-sous-vide.html); maintenir le sac fermé pendant le refroidissement.
+- Réfrigérer immédiatement à ^{4 C maximum} et ne jamais conserver à température ambiante.
+[Laisser maturer]
+- Garder le bocal dans le sac fermé au réfrigérateur pendant ~{24 h} avant dégustation.
+- Par prudence, consommer dans les 3 jours après cuisson; garder sans interruption entre 0 et 4 °C (USDA recommande quelques jours pour les viandes sous vide : https://ask.fsis.usda.gov/article/Can-Clostridium-botulinum-be-in-vacuum--packaged-foods). Le sous-vide ne rend pas cette préparation stable en placard.
