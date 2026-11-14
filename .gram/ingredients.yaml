@@ -94,6 +94,12 @@ ingredients:
       carbs: 14.0
       fat: 14.0
       protein: 20.0
+  cafe:
+    name: Café
+    aliases:
+    - café
+    - café fort
+    category: Boissons et liquides
   bouquet-garni:
     name: Bouquet garni
     aliases:
