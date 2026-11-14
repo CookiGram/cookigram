@@ -10,50 +10,58 @@ Le fichier `techniques.yaml` contient **un seul** exemple : `thermomix.scrape-bo
 
 Les références sont des **témoins documentaires** basés sur la version consultée des recettes ; elles ne constituent **pas** un mécanisme de recherche automatique et n'ont ni garantie de stabilité ni index atomique contractuel. La résolution future devra utiliser des identifiants stables et vérifier les variantes finales, les ingrédients/matériels et le texte courant avant affichage.
 
-## Distinctions sémantiques
+## Correction de frontière : action syntaxique → micro-recette CookiGram
 
-- **Quoi** : l'instruction canonique issue de la recette `.gram`.
-- **Comment générique** : technique partageable, associée à une action et à un contexte matériel précis ; ne doit jamais remplacer l'instruction.
-- **Comment contextuel** : précision approuvée pour une recette/variante précise ; prioritaire sur le générique quand les deux existent.
-- **Pourquoi** : justification liée à l'objectif culinaire de l'étape ; demeure principalement spécifique à la recette.
+**Décision de conception proposée (14 novembre 2026)** : l'action appartient d'abord à la **syntaxe de la recette** ; l'application résout éventuellement une **micro-recette pédagogique « Comment ? »** en fonction de cette action, de l'ingrédient et du matériel.
 
-Une famille visuelle de `generator/cooking_actions.py` (par ex. `mix`) est trop large pour identifier avec certitude une technique pédagogique ; **aucun appariement automatique fondé uniquement sur `visual_action`**.
+La syntaxe officielle de Gram accepte un marqueur d'action optionnel en début d'étape, par exemple :
 
-## Propagation d'un « Comment ? » à tout le catalogue
-
-**Invariant produit proposé : enrichir une action canonique reconnue doit bénéficier à toutes ses occurrences compatibles, sans édition de chaque recette.**
-
-Séparer explicitement trois identités :
-
-1. **`canonical_action_id`** : type sémantique réutilisable, par exemple `scrape-bowl-walls`. Stable à travers les recettes lorsque le geste et ses préconditions sont réellement identiques.
-2. **`atomic_occurrence_id`** : l'instance de cette action dans une recette, une variante et une étape ; son état de validation et sa reprise restent strictement locaux (#499).
-3. **`technique_id`** : fiche « Comment ? » éditoriale, versionnée, référencée par une action canonique éventuellement spécialisée pour un appareil/contexte. Une technique peut être associée à plusieurs occurrences ; elle n'a pas à être copiée dans leurs recettes.
-
-Flux cible (conceptuel, aucun code de production dans ce pilote) :
-
-```text
-Recette A / action atomique --+
-Recette B / action atomique --+--> action canonique reconnue + contexte
-Recette C / action atomique --+               |
-                                             v
-                                technique « Comment ? » approuvée
-                                             |
-                                aide affichée à la demande (0..1)
+```gram
+[Émincer] l'@oignon{1}.
 ```
 
-Une amélioration d'une fiche approuvée se diffuse au prochain build (ou chargement de contenu, selon architecture future) à **toutes les occurrences admissibles**. Il ne faut ni recopier le texte « Comment ? » dans chaque `.gram`, ni multiplier les sidecars par recette pour un conseil réellement générique.
+Source : https://gram-lang.org/docs/reference/syntax/document-structure/ — *Action verbs*. Le marqueur porte le **verbe de l'action**, pas la méthode détaillée. Ne pas créer un verbe syntaxique distinct pour `émincer-oignon` et `émincer-ail`.
 
-La propagation est **conditionnelle** : même orthographe ≠ même geste ; gestes identiques avec matériels incompatibles ≠ même procédure. Le resolver doit faire une association explicite ou prouvée, vérifier les préconditions et choisir au plus une aide par occurrence : override approuvé de recette/variante d'abord, puis fiche canonique contextuelle approuvée, sinon aucune aide. Ne pas utiliser seul `visual_action` ou une recherche par sous-chaîne.
+**Attention à l'état de CookiGram** : dans notre dialecte de production, `[Hacher le soffritto]` nomme actuellement une *macro-phase* et chaque `- ...` est une sous-étape atomique. Il n'existe **pas encore** de marqueur d'action Gram officiel distinct pour chaque sous-étape dans notre parser. C'est une frontière à étudier avant tout rattachement automatique ; ce pilote n'introduit aucune nouvelle syntaxe.
 
-**Changement à grande portée = revue d'impact** : lors d'une modification de technique, produire la liste des recettes, variantes et occurrences concernées, détecter les exceptions et requalifier l'aide avant publication. Un changement rédactionnel partagé ne doit jamais modifier les gestes, réglages, durées, quantités ou contrôles de progression des recettes.
+Exemples conceptuels de résolution côté **application**, pas des éléments de grammaire :
 
-Le schéma expérimental `techniques.yaml` actuel montre deux références **manuelles** à une même technique ; ce n'est pas encore une propagation automatique. Les identifiants ci-dessus sont une cible de conception, non un changement contractuel, et leur interopérabilité avec les actions officielles de Gram reste à étudier.
+| Action syntaxique | Ingrédient / matériel contextualisé | Micro-recette « Comment ? » choisie |
+| --- | --- | --- |
+| `Émincer` | oignon + couteau | `how.emincer-oignon-couteau` |
+| `Émincer` | ail + couteau | `how.emincer-ail-couteau` |
+| `Émincer` | ingrédient compatible sans spécialisation | `how.emincer-generique` si revue et réellement appropriée |
+| `Racler` | bol Thermomix + spatule | `how.racler-parois-thermomix` |
+| `Ajouter` | sel | aucun, sauf besoin pédagogique explicite |
+
+Ces IDs sont des **illustrations conceptuelles**, pas des identifiants stabilisés ni un contenu publié. Les noms des techniques ne doivent pas polluer le langage Gram.
+
+### Trois identités et une aide effective
+
+- **Action syntaxique** : le marqueur de méthode/verb de Gram (quand réellement disponible dans l'AST) ; le texte de la recette conserve l'ingrédient, les quantités, les réglages et l'ordre. Une normalisation des synonymes, si nécessaire, relève d'un adapter CookiGram.
+- **Occurrence atomique** : action exécutée dans une recette/variante/phase précise, avec son identité stable pour la progression (#499). Elle ne se confond ni avec le verbe syntaxique ni avec l'aide.
+- **Micro-recette pédagogique** : contenu applicatif versionné expliquant la réalisation d'un geste générique ou spécialisé pour un ingrédient/outil ; réutilisable dans plusieurs recettes. Elle peut contenir plusieurs gestes explicatifs, exemples ou visuels, **sans injecter de nouvelles actions obligatoires, durées, ingrédients ou dépendances dans la recette principale**.
+
+Le résultat de la résolution est **0..1 « Comment ? » par occurrence atomique**. Une même micro-recette peut être réutilisée dans de nombreuses occurrences compatibles. Le « Pourquoi ? » reste plutôt lié au contexte de la recette.
+
+Ce mécanisme n'est **pas** le `@use` de Gram : `@use` importe une préparation réelle dans la recette et sa planification ; nos micro-recettes sont des **aides pédagogiques facultatives**, sans effet sur la planification.
+
+### Propagation et contrôle d'impact
+
+L'application peut sélectionner automatiquement une micro-recette approuvée d'après l'action syntaxique, puis l'ingrédient/objet concerné, le matériel, la variante et d'éventuelles préconditions. Une action présente dans 40 recettes peut ainsi recevoir une aide partagée sans éditer 40 fichiers `.gram`.
+
+Le resolver doit être **déterministe et fail-closed** : même verbe n'implique pas même geste, un matériel non reconnu ou un contexte ambigu entraîne l'absence d'aide, pas un conseil incorrect. Ne pas déduire une micro-recette de `visual_action` seul ou d'une recherche par sous-chaîne.
+
+Lors d'une modification de micro-recette partagée, produire la **liste des recettes, variantes et occurrences concernées**, détecter les exceptions et requalifier le conseil avant publication. La propagation est effective au prochain build (ou chargement, selon l'architecture future), jamais en réécrivant silencieusement les recettes.
+
+**Le fichier `techniques.yaml` existant reste un témoin documentaire « Racler les parois »**, à deux occurrences liées manuellement. Il ne démontre **ni** la présence effective de marqueurs syntaxiques sur ces atomes dans CookiGram **ni** la propagation automatique. Son schéma et son nom ne sont pas normatifs ; une éventuelle migration vers un format `microrecipes` fera l'objet d'un changement séparé et qualifié.
 
 ## Sélection proposée pour une future implémentation
 
-1. Priorité à l'aide `how` recette + variante explicitement revue (pilote #541), si présente et applicable à l'action affichée.
-2. Sinon, technique générique revue, correspondance exacte ou sémantiquement démontrée avec l'action atomique et son contexte.
-3. Sinon, aucune aide. Ne pas hériter d'une autre variante, d'un matériel voisin ou d'une action homonyme.
+1. Priorité à l'aide `how` recette + variante explicitement revue (pilote #541), si présente et applicable à l'action atomique affichée.
+2. Sinon, micro-recette **spécialisée** approuvée : action + ingrédient/objet + équipement + contexte compatibles.
+3. Sinon, micro-recette **générique** approuvée pour cette action, si elle reste pertinente pour cet ingrédient et ce matériel.
+4. Sinon, aucune aide. Ne pas hériter d'une autre variante, d'un matériel voisin ou d'une action homonyme.
 
 Le contenu `how_candidate` n'est **pas approuvé** ; `reviewed_how: null` signifie absence d'aide publiable. Les champs `review.culinary` et `review.appliance_safety` sont `pending`. Une revue culinaire et des sources suffisantes sont nécessaires avant toute adoption, surtout pour un geste lié à un appareil.
 
@@ -63,10 +71,10 @@ Sur ordinateur, un survol pourrait offrir un bref aperçu, mais **le clic doit �
 
 ## Ownership
 
-- **Catalogue / instance** : fiches pédagogiques, provenance, contextes et éventuels médias.
+- **Catalogue / instance** : bibliothèque de micro-recettes pédagogiques, provenance, spécialisations et éventuels médias.
 - **Contract** : seulement un schéma optionnel stable *si* la fonctionnalité est adoptée ; aucune extension requise dans cette expérience.
-- **Core** : résolution/présentation avec feature flag, fixtures et tests, dans une PR ultérieure distincte.
-- **Gram** : possible futur point d'interopérabilité pour l'identité des actions, sans migration de syntaxe requise.
+- **Core** : adapter entre la syntaxe/parsing des actions et les occurrences atomiques, résolution contextuelle, présentation avec feature flag, fixtures et tests ; PR ultérieure distincte.
+- **Gram** : propriétaire de la syntaxe du marqueur d'action `[Verbe]` dans le langage officiel ; aucune bibliothèque de micro-recettes à imposer upstream.
 
 ## Non-objectifs / gates
 
