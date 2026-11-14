@@ -62,6 +62,12 @@ ingredients:
       fat: 0.2
       protein: 0.9
     piece_weight: 250.0
+  biscuits-a-la-cuillere:
+    name: Biscuits à la cuillère
+    aliases:
+    - biscuits à la cuillère
+    - biscuit à la cuillère
+    category: Épicerie sucrée
   beurre-doux:
     name: Beurre doux
     aliases:
