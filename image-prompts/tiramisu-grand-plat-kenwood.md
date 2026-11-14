@@ -13,3 +13,7 @@ Identité visuelle CookiGram : illustration manga culinaire contemporaine, conto
 - SHA-256 des octets source : `9b0228e3e11f974ad729f22f03af9c806a4e1480cf16d39c137ae5ad4975237c`.
 - Statut : **image générée, binaire non encore importé dans la branche** ; cette provenance ne doit pas être interprétée comme une intégration de l'actif.
 - Intégration attendue : importer les octets de ce PNG (ou un dérivé documenté) dans le répertoire d'illustrations suivant les conventions existantes et lier la recette à cet actif ; vérifier son empreinte et sa présence avant validation.
+- Dérivé web préparé : `tiramisu-grand-plat-kenwood.webp` (1280 × 720, WebP qualité 84), issu du PNG source ci-dessus ; SHA-256 `38289c7e37913576fe54ff8ab9c8ad9c25d0bb770d95ea2daf66e2846c943172`.
+- Chemin de publication prévu : `static/images/tiramisu-grand-plat-kenwood.webp` ; lien recette attendu : `images/tiramisu-grand-plat-kenwood.webp`.
+- **État du dérivé : préparé hors dépôt, NON importé**. Ne renseigner `image`, `image_credit`, `image_generation` et `assets/provenance/images.yaml` qu'après transfert effectif des octets, vérification du SHA-256 et vérification des conventions `docs/IMAGE-PROVENANCE.md`.
+
