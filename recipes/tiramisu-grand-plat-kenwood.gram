@@ -17,6 +17,18 @@ scaling:
   enabled: false
   reason: Les réglages du robot, la taille du plat et les couches de biscuits sont calibrés pour 10 à 12 parts.
 nutrition_profile: pleasure
+image: images/tiramisu-grand-plat-kenwood.webp
+image_credit:
+  author: CookiGram
+  source: https://github.com/PierreCsn/cookigram
+  license: Illustration générée par IA pour CookiGram
+  license_url: https://openai.com/policies/terms-of-use/
+  modifications: Illustration générée avec OpenAI ImageGen, puis redimensionnée et exportée en WebP 1280 × 720.
+image_generation:
+  provider: OpenAI
+  model: unknown
+  generated_at: '2026-11-14'
+  prompt_file: image-prompts/tiramisu-grand-plat-kenwood.md
 ---
 
 ## Tiramisu traditionnel au Kenwood — grand plat
