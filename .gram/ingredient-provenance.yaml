@@ -111,6 +111,15 @@ ingredients:
   beurre-demi-sel:
     source: ANSES-CIQUAL
     status: verified
+  amaretto:
+    source: Liqueur facultative de la recette CookiGram #654 ; aucune valeur nutritionnelle ajoutée.
+    status: incomplete
+  biscuits-a-la-cuillere:
+    source: Biscuits indiqués dans la recette CookiGram #654 ; données nutritionnelles variables selon la marque et non ajoutées.
+    status: incomplete
+  cafe:
+    source: Café préparé pour la recette CookiGram #654 ; aucune valeur nutritionnelle ajoutée.
+    status: incomplete
   cacao-en-poudre:
     source: Estimation nutritionnelle pour cacao en poudre non sucré.
     status: estimated

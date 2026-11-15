@@ -26,6 +26,11 @@ ingredients:
       carbs: 64.0
       fat: 0.7
       protein: 16.5
+  amaretto:
+    name: Amaretto
+    aliases:
+    - amaretto
+    category: Boissons et alcools
   amande-en-poudre:
     name: Amandes en poudre
     aliases:
@@ -57,6 +62,12 @@ ingredients:
       fat: 0.2
       protein: 0.9
     piece_weight: 250.0
+  biscuits-a-la-cuillere:
+    name: Biscuits à la cuillère
+    aliases:
+    - biscuits à la cuillère
+    - biscuit à la cuillère
+    category: Épicerie sucrée
   beurre-doux:
     name: Beurre doux
     aliases:
@@ -94,6 +105,12 @@ ingredients:
       carbs: 14.0
       fat: 14.0
       protein: 20.0
+  cafe:
+    name: Café
+    aliases:
+    - café
+    - café fort
+    category: Boissons et liquides
   bouquet-garni:
     name: Bouquet garni
     aliases:
