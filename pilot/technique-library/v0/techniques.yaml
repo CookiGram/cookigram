@@ -1,0 +1,45 @@
+# Experimental technique-library witness for #656.
+# This is NOT a production contract, runtime sidecar, or approved culinary advice.
+# No code reads this file. The schema is illustrative and intentionally versioned.
+schema: cookigram.technique-library.pilot.v0
+status: experimental-unreviewed
+scope: "CookiGram/cookigram#656"
+techniques:
+  - id: thermomix.scrape-bowl-walls
+    version: 1
+    status: unreviewed
+    action: scrape
+    context:
+      appliance: thermomix
+      tool: spatula
+      object: bowl-walls
+    title: "Racler les parois du bol"
+    how_candidate: >-
+      Lorsque le mélangeur est arrêté, ramener délicatement vers le fond
+      du bol les ingrédients restés sur les parois à l'aide de la spatule
+      adaptée à l'appareil.
+    reviewed_how: null
+    review:
+      culinary: pending
+      appliance_safety: pending
+      sources: []
+    source_of_truth: "instructions in each recipe .gram file"
+    behavior:
+      no_instruction_override: true
+      no_runtime_generation: true
+      display_only_when_reviewed: true
+      ambiguous_match: omit
+      unsupported_appliance: omit
+    witnesses:
+      - recipe: sauce-bolognaise-rapide
+        source_file: recipes/sauce-bolognaise-rapide.gram
+        variant: default
+        phase_label: "Hacher le soffritto"
+        atomic_action_index: 3
+        exact_instruction: "Racler les parois avec la #spatule{}."
+      - recipe: tzatziki-grec
+        source_file: recipes/tzatziki-grec.gram
+        variant: default
+        phase_label: "Hacher les aromates"
+        atomic_action_index: 4
+        exact_instruction: "Racler les parois avec la #spatule{}."
